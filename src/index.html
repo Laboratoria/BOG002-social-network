@@ -1,12 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <script type="module" src="main.js"></script>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Social Network</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+  </head>
+  <body>
+    <section class="grid-container">
+      <div class="header" id="header"></div>
+      <div class="colum1"></div>
+      <div class="main" id="main"></div>
+      <div class="colum2"></div>
+      <div class="footer"></div>
+    </section>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    
+      <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-auth.js"></script>
+  
+  <script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyA2m-bpDqmXGFYJbMrfjW2J77TVNXINzS0",
+    authDomain: "social-network-lab-2030d.firebaseapp.com",
+    projectId: "social-network-lab-2030d",
+    storageBucket: "social-network-lab-2030d.appspot.com",
+    messagingSenderId: "394433220416",
+    appId: "1:394433220416:web:c1629dcc59e45f53bd74a5",
+    measurementId: "G-LMMGYHH9BN"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+    <script type='module' src="main.js"></script>
+  </body>
 </html>
