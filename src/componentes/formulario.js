@@ -1,8 +1,7 @@
-export function CrearFormulario() {  
+export function CrearFormulario() {
+  const formulario = document.createElement("form");
 
-    const formulario = document.createElement ('form');
-    
-    const html = `
+  const html = `
     <div><input type="email" id="usuario" placeholder="Ingrese email" required/></div>
             <div><input type="password" id="contrasena" placeholder="Ingrese contraseña" 
             required minlength="6"/></div>
@@ -10,8 +9,7 @@ export function CrearFormulario() {
             <div><button id="btnR"> Registrate </button></div>
             <img src="img/th.jpg" alt="Registro con Google" id="botonGoogle"/>
     
-    `
-    formulario.innerHTML = html;
-    return formulario;
-    }
-    
+    `;
+  formulario.innerHTML = html;
+  return formulario;
+}
