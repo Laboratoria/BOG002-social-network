@@ -1,8 +1,8 @@
-#WALKTER#
+# WALKTER #
 
 Proyecto: Social Network
 
-##Prototipos##
+## Prototipos ##
 - Sign in
 - Sign up
 - Inicio: mapa
