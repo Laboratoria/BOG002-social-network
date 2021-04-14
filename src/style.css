@@ -40,6 +40,10 @@
  
 }
 
+#botonGoogle {
+    width: 10vw;
+  }
+
 .footer {
   grid-area: footer;
 }

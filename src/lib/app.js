@@ -28,4 +28,20 @@ export function registrar (){
    });
   }
     
+  export function registroGoogle (){
+
+    const botonGoogle = document.getElementById('botonGoogle');
     
+    botonGoogle.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log('click');
+      const provider = new firebase.auth.GoogleAuthProvider();
+      auth.signInWithPopup(provider).then((result) => {
+        console.log(result);
+        console.log("google sign in");
+      })
+      .catch(err => {
+        console.log(err);
+      })
+    });
+    }    
