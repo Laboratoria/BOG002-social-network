@@ -5,7 +5,7 @@ import {
   registroGoogle,
   registroFacebook,
 } from "./aplicativos/app.js";
-import ingresar from "./aplicativos/ingreso"
+import {ingresar} from "./aplicativos/ingreso.js"
 
 const main = document.getElementById("main");
 main.appendChild(CrearFormulario());

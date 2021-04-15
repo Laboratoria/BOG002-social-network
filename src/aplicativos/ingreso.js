@@ -1,5 +1,5 @@
 
-import { VistaReglas } from "../componentes/reglas";
+import { VistaReglas } from "../componentes/reglas.js";
 
 export function ingresar() {
   const email = document.getElementById("usuario");

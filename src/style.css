@@ -40,10 +40,23 @@
  
 }
 
+.inputIngreso{
+  border: 0;
+  border-bottom: 1px solid black;
+  background-color:#EDF0F2;
+  padding: 5px 3px;
+}
+
 #botonGoogle {
-    width: 10vw;
+    width: 40vmin;
   }
 
+#botonFacebook {
+  width: 40vmin;
+}
 .footer {
   grid-area: footer;
+}
+ol {
+  text-align: start;
 }
