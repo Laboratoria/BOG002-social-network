@@ -1,12 +1,17 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable semi */
+/* eslint-disable linebreak-style */
+/* eslint-disable import/extensions */
+/* eslint-disable quotes */
+/* eslint-disable import/no-unresolved */
 // Este es el punto de entrada de tu aplicacion
-import { crearHeader } from "./componentes/header.js";
-import { CrearFormulario } from "./componentes/formulario.js";
+import { CrearFormulario } from "../componentes/formulario.js";
 import {
   registrar,
   registroGoogle,
   registroFacebook,
 } from "./aplicativos/app.js";
-import {ingresar} from './ingreso.js'
+import ingresar from "./aplicativos/ingreso"
 
 const main = document.getElementById("main");
 main.appendChild(CrearFormulario());

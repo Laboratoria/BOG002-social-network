@@ -1,6 +1,12 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable quotes */
+/* eslint-disable no-console */
 // aqui exportaras las funciones que necesites
 
-import { VistaReglas } from "./componentes/reglas.js";
+import VistaReglas from "./ingreso";
+
+
+// creando cuenta de usuario
 
 export function registrar() {
   window.location = "#login";
@@ -9,18 +15,18 @@ export function registrar() {
 
   document.addEventListener("click", (e) => {
     if (e.target.matches("#btnR")) {
+      // eslint-disable-next-line no-undef
       firebase
         .auth()
         .createUserWithEmailAndPassword(email.value, contrasena.value)
         .then((userCredential) => {
           // Signed in
-          var user = userCredential.user;
+          let {user} = userCredential;
           console.log("registrado", user);
           // ...
         })
         .catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
+          let errorMessage = error.message;
           console.log(errorMessage);
           // ..
         });
@@ -29,7 +35,6 @@ export function registrar() {
 }
 
 // registro con Google
-
 export function registroGoogle() {
   const botonGoogle = document.getElementById("botonGoogle");
 
@@ -57,7 +62,6 @@ export function registroGoogle() {
 }
 
 // registro con Facebook
-
 export function registroFacebook() {
   const botonFacebook = document.getElementById("botonFacebook");
 

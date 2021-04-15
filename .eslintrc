@@ -18,6 +18,8 @@
     "sourceType": "module"
   },
   "rules": {
+    "no-console":"warn",
+    "quotes" :"off",
     "linebreak-style": 0,
     "prefer-destructuring": 0,
     "import/extensions": 0,

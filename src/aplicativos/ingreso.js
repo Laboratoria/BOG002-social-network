@@ -1,4 +1,11 @@
-import { VistaReglas } from "./componentes/reglas.js";
+/* eslint-disable linebreak-style */
+/* eslint-disable no-var */
+/* eslint-disable quotes */
+/* eslint-disable spaced-comment */
+/* eslint-disable import/prefer-default-export */
+
+// eslint-disable-next-line import/no-unresolved
+import { VistaReglas } from "../componentes/reglas";
 
 export function ingresar() {
   const email = document.getElementById("usuario");
@@ -9,10 +16,11 @@ export function ingresar() {
       e.preventDefault();
       console.log("click");
       // Autenticación del usuario
+      // eslint-disable-next-line no-undef
       auth
         .signInWithEmailAndPassword(email.value, contrasena.value)
         .then((userCredential) => {
-          var user = userCredential.user;
+          var {user} = userCredential;
           console.log("Puede ingresar", user);
           window.location = "#reglas";
           if (document.getElementById("main").hasChildNodes()) {
@@ -23,7 +31,6 @@ export function ingresar() {
           }
         })
         .catch((error) => {
-          var errorCode = error.code;
           var errorMessage = error.message;
           console.log(errorMessage);
           // ..

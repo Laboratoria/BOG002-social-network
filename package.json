@@ -21,9 +21,9 @@
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
     "babel-jest": "^26.3.0",
-    "eslint": "^7.7.0",
-    "eslint-config-airbnb-base": "^14.2.0",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.1.0",
     "htmlhint": "^0.14.0",
     "jest": "^26.4.2",
@@ -34,5 +34,20 @@
   },
   "engines": {
     "node": ">=10"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "firebase": "^8.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DianaCato/BOG002-social-network.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/DianaCato/BOG002-social-network/issues"
+  },
+  "homepage": "https://github.com/DianaCato/BOG002-social-network#readme"
 }
