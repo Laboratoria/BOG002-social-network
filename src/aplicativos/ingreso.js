@@ -1,10 +1,4 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-var */
-/* eslint-disable quotes */
-/* eslint-disable spaced-comment */
-/* eslint-disable import/prefer-default-export */
 
-// eslint-disable-next-line import/no-unresolved
 import { VistaReglas } from "../componentes/reglas";
 
 export function ingresar() {

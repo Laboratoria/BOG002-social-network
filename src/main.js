@@ -1,9 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable semi */
-/* eslint-disable linebreak-style */
-/* eslint-disable import/extensions */
-/* eslint-disable quotes */
-/* eslint-disable import/no-unresolved */
 // Este es el punto de entrada de tu aplicacion
 import { CrearFormulario } from "../componentes/formulario.js";
 import {
