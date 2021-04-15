@@ -39,7 +39,8 @@
     "test": "test"
   },
   "dependencies": {
-    "firebase": "^8.4.1"
+    "firebase": "^8.4.1",
+    "firebaseui": "^4.8.0"
   },
   "repository": {
     "type": "git",
