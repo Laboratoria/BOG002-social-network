@@ -1,5 +1,7 @@
 // aqui exportaras las funciones que necesites
 
+import { VistaReglas } from "./componentes/reglas.js";
+
 export function registrar() {
   window.location = "#login";
   const email = document.getElementById("usuario");
@@ -12,35 +14,44 @@ export function registrar() {
         .createUserWithEmailAndPassword(email.value, contrasena.value)
         .then((userCredential) => {
           // Signed in
-          const user = userCredential.user;
-          //console.log('registrado');
+          var user = userCredential.user;
+          console.log("registrado", user);
           // ...
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          //console.log(errorMessage);
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log(errorMessage);
           // ..
         });
     }
   });
 }
 
+//registro con Google
+
 export function registroGoogle() {
   const botonGoogle = document.getElementById("botonGoogle");
 
   botonGoogle.addEventListener("click", (e) => {
     e.preventDefault();
-    //console.log('click');
+    console.log("click");
     const provider = new firebase.auth.GoogleAuthProvider();
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        //console.log(result);
-        //console.log('google sign in');
+        console.log(result);
+        console.log("google sign in");
+        window.location = "#reglas";
+        if (document.getElementById("main").hasChildNodes()) {
+          document
+            .getElementById("main")
+            .removeChild(document.getElementById("main").childNodes[0]);
+          document.getElementById("main").appendChild(VistaReglas());
+        }
       })
       .catch((err) => {
-        //console.log(err);
+        console.log(err);
       });
   });
 }
@@ -48,17 +59,24 @@ export function registroGoogle() {
 //registro con Facebook
 
 export function registroFacebook() {
-  const botonFacebook = document.getElementById('botonFacebook');
+  const botonFacebook = document.getElementById("botonFacebook");
 
-  botonFacebook.addEventListener('click', (e) => {
+  botonFacebook.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log('click');
+    console.log("click");
     const provider = new firebase.auth.FacebookAuthProvider();
     auth
       .signInWithPopup(provider)
       .then((result) => {
         console.log(result);
-        console.log('Facebook sign in');
+        console.log("Facebook sign in");
+        window.location = "#reglas";
+        if (document.getElementById("main").hasChildNodes()) {
+          document
+            .getElementById("main")
+            .removeChild(document.getElementById("main").childNodes[0]);
+          document.getElementById("main").appendChild(VistaReglas());
+        }
       })
       .catch((err) => {
         console.log(err);
