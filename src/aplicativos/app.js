@@ -28,7 +28,7 @@ export function registrar() {
   });
 }
 
-//registro con Google
+// registro con Google
 
 export function registroGoogle() {
   const botonGoogle = document.getElementById("botonGoogle");
@@ -56,7 +56,7 @@ export function registroGoogle() {
   });
 }
 
-//registro con Facebook
+// registro con Facebook
 
 export function registroFacebook() {
   const botonFacebook = document.getElementById("botonFacebook");
