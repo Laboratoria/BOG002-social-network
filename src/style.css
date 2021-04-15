@@ -5,3 +5,169 @@ body{
     margin: 0;
     padding: 0;
 }
+.interfazRegistro{
+    height:100vh;
+    display: grid;
+    background: black;
+    grid-gap: 0.7vw;
+    padding: 0.8em;
+    grid-template-columns: repeat(8, 1fr); 
+    grid-template-rows: repeat(4,1fr)
+}
+.imageLogin{
+  height:22.3vh;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  z-index: 1;
+  position: relative;
+}
+.interfazRegistro::after {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    z-index:24;
+}
+.photograph{
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+  .photograph:nth-child(2){
+    grid-column-start: span 2;
+  }
+  .photograph:nth-child(5){
+    grid-column-start: span 3;
+  }
+  .photograph:nth-child(6){
+    grid-column-start: span 3;
+  }
+  .photograph:nth-child(12){
+    grid-column-end: span 2;
+  }
+  .photograph:nth-child(16){
+    grid-column-end: span 2;
+  }
+  .photograph:nth-child(19){
+    grid-column-end: span 3;
+  }
+  .photograph:nth-child(22){
+    grid-column-end: span 2;
+  }
+.divFormRegister{
+    position: fixed;
+    display: flex;
+    z-index: 30;
+    width: 27.5vw;
+    height: 70vh;
+    margin-top: 13.3vh;
+    background:#EAE6CA;
+    left: 36.3vw;
+    justify-content: center;
+    border-radius: 10px;  
+}
+.imgTrama{
+    z-index: 31;
+    width: 27.5vw;
+    height: 27vh;
+    position: absolute;
+    z-index: 35;
+}
+.titleForm{
+    margin-top:22vh;
+    font-family: "Segoe UI";
+    font-weight: 700;
+    font-size: 1.3em;
+}
+.formRegister{
+    position: absolute;
+    width: 30vw;
+    height: 70vh;
+    margin-top: 33vh;
+    margin-left: 12.3vw;
+    z-index: 35;
+}
+.imgIcon{
+    width: 1.8vw;
+    height: 4vh;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    margin-bottom: -1.3vh;
+    padding-bottom: 0.8vh; 
+}
+.imgLogo{
+    width: 7.5vw;
+    height: 15vh;
+    margin-top: 7vh;
+    position: fixed;
+    z-index: 45;
+}
+.inputNameRegister{
+    border: 0;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    width: 15.5vw;
+    padding-bottom: 0.5vh;
+    padding-left: 1vw;
+    background: none;
+    text-align: left;
+    font-family: "Segoe UI";
+    font-weight: 700;
+    font-size: 1em;
+}
+.inputEmailRegister{
+    border: 0;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    width: 15.5vw;
+    margin-top: 3.5vh;
+    padding-bottom: 0.5vh;
+    padding-left: 1vw;
+    background: none;
+    text-align: left;
+    font-family: "Segoe UI";
+    font-weight: 700;
+    font-size: 1em;
+}
+.inputPasswordRegister{
+    top: 20vh;
+    border: 0;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    width: 12.8vw;
+    margin-top: 3.5vh;
+    padding-bottom: 0.5vh;
+    padding-left: 1vw;
+    background: none;
+    text-align: left;
+    font-family: "Segoe UI";
+    font-weight: 700;
+    font-size: 1em;
+}
+.buttonEnvioRegistro{
+    margin-top: 4vh;
+    margin-left: 1.7vw;
+    width: 14.3vw ;
+    height:5vh ;
+    background: #2671E1;
+    color: white;
+    border: 0;
+    font-family: "Segoe UI";
+    font-weight: 700;
+    font-size: 1em;
+    box-shadow: 1vh 0.5vw 2vh 0 rgba(0,0,0,0.5);
+    border-radius: 5px;
+}
+.imgVibility{
+    width: 1.8vw;
+    height: 3.5vh;
+    margin-bottom: -1vh;
+    justify-content:center;
+    background: none;
+}
+.buttonVibility{
+    border: 0;
+    background: none;
+    padding-bottom: 0.6vh;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
