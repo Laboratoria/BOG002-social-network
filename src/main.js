@@ -6,6 +6,7 @@ import {
   registroFacebook,
 } from "./aplicativos/app.js";
 import {ingresar} from "./aplicativos/ingreso.js"
+import {CrearRegistro} from "./componentes/registro.js"
 
 const main = document.getElementById("main");
 main.appendChild(CrearFormulario());
@@ -14,3 +15,11 @@ registrar();
 registroGoogle();
 registroFacebook();
 ingresar();
+
+document.addEventListener ("click", (e) => {
+  if (e.target.matches("a")) {
+    location.replace("#registro")
+    CrearRegistro();
+}})  
+
+

@@ -1,29 +1,29 @@
 // aqui exportaras las funciones que necesites
 
-import {VistaReglas} from "../componentes/reglas.js";
+import { irReglas } from "./redireccionReglas.js";
 
 // creando cuenta de usuario
 export function registrar() {
-  window.location = "#login";
-  const email = document.getElementById("usuario");
-  const contrasena = document.getElementById("contrasena");
-
+  const informacion = document.getElementsByClassName("formInformacion");
+  const errorUsuario = document.getElementsByClassName("errorRegistro");
   document.addEventListener("click", (e) => {
     if (e.target.matches("#btnR")) {
-      firebase
+        console.log(errorUsuario);
+    firebase
         .auth()
-        .createUserWithEmailAndPassword(email.value, contrasena.value)
+        .createUserWithEmailAndPassword(informacion[0][1].value, informacion[0][2].value)
         .then((userCredential) => {
           // Signed in
           let {user} = userCredential;
-          console.log("registrado", user);
+          irReglas();
         })
         .catch((error) => {
           let errorMessage = error.message;
-          console.log(errorMessage);
+          document.getElementById("errorRegistro").innerHTML = errorMessage;
+          
         });
-    }
-  });
+    }}
+  );
 }
 
 // registro con Google
@@ -39,13 +39,7 @@ export function registroGoogle() {
       .then((result) => {
         console.log(result);
         console.log("google sign in");
-        window.location = "#reglas";
-        if (document.getElementById("main").hasChildNodes()) {
-          document
-            .getElementById("main")
-            .removeChild(document.getElementById("main").childNodes[0]);
-          document.getElementById("main").appendChild(VistaReglas());
-        }
+        irReglas();
       })
       .catch((err) => {
         console.log(err);
@@ -66,13 +60,7 @@ export function registroFacebook() {
       .then((result) => {
         console.log(result);
         console.log("Facebook sign in");
-        window.location = "#reglas";
-        if (document.getElementById("main").hasChildNodes()) {
-          document
-            .getElementById("main")
-            .removeChild(document.getElementById("main").childNodes[0]);
-          document.getElementById("main").appendChild(VistaReglas());
-        }
+       irReglas();
       })
       .catch((err) => {
         console.log(err);
