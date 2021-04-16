@@ -14,7 +14,7 @@ body{
   grid-template-columns: repeat(3, 1fr); 
   grid-template-rows: repeat(4,1fr)
 }
-.imageLogin{
+.hideElement{
   display: none;
 }
 .imageMobile{
@@ -74,7 +74,7 @@ body{
 }
 .formRegister{
   position: absolute;
-  width: 53vw;
+  width: 57vw;
   height: 70vh;
   margin-top: 33vh;
   margin-left: 0;
@@ -82,29 +82,27 @@ body{
 }
 form input:hover{
   cursor: text;
-  background: rgb(0,0,0,0.1);
-  border-top-left-radius: 5px;
-  border-top-right-radius:5px;
 }
 .imgIcon{
-  width:4vw;
+  width:5vw;
   height: 3.8vh;
-  border-bottom: 1px solid rgb(0, 0, 0);
   margin-bottom: -1.3vh;
-  padding-bottom: 0.8vh; 
+  padding-bottom: 0.8vh;
+  margin-right: -1vw;
 }
 .inputNameRegister{
   border: 0;
   border-bottom: 1px solid rgb(0, 0, 0);
   width: 47vw;
   padding-bottom: 0.5vh;
-  padding-left: 2vw;
+  padding-left: 2.5vw;
   background: none;
   text-align: left;
   font-family: "Segoe UI";
   font-weight: 700;
   font-size: 1em;
   outline:none;
+  margin-left: 0;
 }
 .inputEmailRegister{
   border: 0;
@@ -112,7 +110,7 @@ form input:hover{
   width:47vw;
   margin-top: 3.5vh;
   padding-bottom: 0.5vh;
-  padding-left: 2vw;
+  padding-left: 2.5vw;
   background: none;
   text-align: left;
   font-family: "Segoe UI";
@@ -124,10 +122,10 @@ form input:hover{
   top: 20vh;
   border: 0;
   border-bottom: 1px solid rgb(0, 0, 0);
-  width: 39vw;
+  width: 40vw;
   margin-top: 3.8vh;
   padding-bottom: 0.5vh;
-  padding-left: 2vw;
+  padding-left: 2.5vw;
   background: none;
   text-align: left;
   font-family: "Segoe UI";
@@ -137,8 +135,8 @@ form input:hover{
 }
 .buttonEnvioRegistro{
   margin-top: 4vh;
-  margin-left: 1.8vw;
-  width: 48vw ;
+  margin-left: 2vw;
+  width: 50vw ;
   height:5vh ;
   background: #2671E1;
   color: white;
@@ -153,18 +151,31 @@ form input:hover{
 .imgVisibility{
   width: 4.6vw;
   height: 3.5vh;
-  margin-bottom: -1vh;
+  margin-top: 1vh;
   justify-content:center;
   background: none;
+  margin-bottom: -1vh;
 }
 .buttonVisibility{
   border: 0;
   background: none;
-  padding-bottom: 0.7vh;
+  padding-bottom: 1.1vh;
   border-bottom: 1px solid rgb(0, 0, 0);
   outline:none;
   cursor: pointer;
+  margin-left: -1vw; 
 }
+.popupEmail{
+  width: 30vw;
+  color:rgb(0, 0, 141);
+  border: rgb(99, 99, 99) solid 1px;
+  background: rgba(242, 243, 243, 0.747);
+  border-radius: 5px;
+  font-family: "Segoe UI";
+  font-size: 1em;
+  margin-left: 2vw;
+}
+
 @media (min-width: 1200px) {
 
   .interfazRegistro{
@@ -175,7 +186,7 @@ form input:hover{
     grid-template-columns: repeat(8, 1fr); 
     grid-template-rows: repeat(4,1fr)
   }
-  .imageLogin{
+  .hideElement{
     display: grid;
     height:22.3vh;
     width: 100%;
@@ -238,16 +249,18 @@ form input:hover{
   font-size: 1.3em;
   }
   .formRegister{
-  width: 30vw;
+  width: 25vw;
   height: 70vh;
   margin-top: 33vh;
-  margin-left: 11.8vw;
+  margin-left: 7vw;
   }
   .imgIcon{
   width: 1.8vw;
   height: 4vh;
   margin-bottom: -1.3vh;
-  padding-bottom: 0.8vh; 
+  padding-bottom: 0.8vh;
+  border-bottom: 1px solid rgb(0, 0, 0); 
+  margin-right:0.1vw;
   }
   .imgLogo{
   width: 7.5vw;
@@ -276,20 +289,26 @@ form input:hover{
   font-size: 1em;
   }
   .buttonEnvioRegistro{
-  margin-top: 4vh;
-  margin-left: 1.5vw;
-  width: 15vw ;
-  height:5vh ;
-  font-size: 1em;
+    margin-top: 4vh;
+    margin-left: 1.5vw;
+    width: 15vw ;
+    height:5vh ;
+    font-size: 1em;
   }
-  .imgVisibility{
-  width: 1.8vw;
-  height: 3.5vh;
-  margin-bottom: -1vh;
-  justify-content:center;
+    .imgVisibility{
+    width: 1.8vw;
+    height: 3.5vh;
+    justify-content:center;
   }
-  .buttonVisibility{
-  padding-bottom: 0.6vh;
+    .buttonVisibility{
+    padding-bottom: 0.6vh;
+    margin-left:-0.3vw;
+    padding-bottom: 1.1vh;
   }
-
+  .popupEmail{
+    width: 15vw;
+    border-radius: 5px;
+    font-size: 0.6em;
+    margin-left: 2vw;
+  }
 }
