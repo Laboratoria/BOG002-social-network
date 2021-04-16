@@ -1,3 +1,7 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable quotes */
+/* eslint-disable linebreak-style */
+/* eslint-disable import/prefer-default-export */
 export function VistaReglas() {
   const reglas = document.createElement("ol");
 

@@ -1,6 +1,10 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable quotes */
+/* eslint-disable import/extensions */
+/* eslint-disable linebreak-style */
 // aqui exportaras las funciones que necesites
 
-import {VistaReglas} from "../componentes/reglas.js";
+import { VistaReglas } from "../componentes/reglas";
 
 // creando cuenta de usuario
 export function registrar() {
@@ -10,17 +14,20 @@ export function registrar() {
 
   document.addEventListener("click", (e) => {
     if (e.target.matches("#btnR")) {
+      // eslint-disable-next-line no-undef
       firebase
         .auth()
         .createUserWithEmailAndPassword(email.value, contrasena.value)
         .then((userCredential) => {
           // Signed in
-          let {user} = userCredential;
-          console.log("registrado", user);
+          // eslint-disable-next-line prefer-const
+          let { user } = userCredential;
+          // console.log("registrado", user);
         })
         .catch((error) => {
+          // eslint-disable-next-line prefer-const
           let errorMessage = error.message;
-          console.log(errorMessage);
+          // console.log(errorMessage);
         });
     }
   });
@@ -32,13 +39,15 @@ export function registroGoogle() {
 
   botonGoogle.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("click");
+    // console.log("click");
+    // eslint-disable-next-line no-undef
     const provider = new firebase.auth.GoogleAuthProvider();
+    // eslint-disable-next-line no-undef
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        console.log(result);
-        console.log("google sign in");
+        // console.log(result);
+        // console.log("google sign in");
         window.location = "#reglas";
         if (document.getElementById("main").hasChildNodes()) {
           document
@@ -48,7 +57,7 @@ export function registroGoogle() {
         }
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   });
 }
@@ -59,13 +68,15 @@ export function registroFacebook() {
 
   botonFacebook.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("click");
+    // console.log("click");
+    // eslint-disable-next-line no-undef
     const provider = new firebase.auth.FacebookAuthProvider();
+    // eslint-disable-next-line no-undef
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        console.log(result);
-        console.log("Facebook sign in");
+        // console.log(result);
+        // console.log("Facebook sign in");
         window.location = "#reglas";
         if (document.getElementById("main").hasChildNodes()) {
           document
@@ -75,7 +86,7 @@ export function registroFacebook() {
         }
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
       });
   });
 }

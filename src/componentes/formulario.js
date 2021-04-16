@@ -1,5 +1,9 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable quotes */
+/* eslint-disable linebreak-style */
+/* eslint-disable import/prefer-default-export */
 export function CrearFormulario() {
-  const formulario = document.createElement('form');
+  const formulario = document.createElement("form");
 
   const html = `
     <div><input type="email" class="inputIngreso" id="usuario" placeholder="Ingrese email" required/></div>
