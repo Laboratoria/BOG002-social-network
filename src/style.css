@@ -9,26 +9,21 @@ body{
   height:100vh;
   display: grid;
   background: black;
-  grid-gap: 0.7vw;
+  grid-gap: 2vw;
   padding: 0.8em;
   grid-template-columns: repeat(3, 1fr); 
   grid-template-rows: repeat(4,1fr)
 }
-.photograph{
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
+.imageLogin{
+  display: none;
 }
-.photographMobile{
-  height:20vh;
+.imageMobile{
+  height:22.7vh;
   width: 100%;
   object-fit: cover;
   border-radius: 5px;
   z-index: 1;
   position: relative;
-}
-.imageLogin{
-  display: none;
 }
 .photograph:nth-child(2){
   grid-column-start: span 2;
@@ -36,29 +31,265 @@ body{
 .photograph:nth-child(6){
   grid-column-start: span 2;
 }
+.interfazRegistro::after {
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+  z-index:24;
+}
+.divFormRegister{
+  position: fixed;
+  display: flex;
+  z-index: 30;
+  width:73vw;
+  height: 70vh;
+  margin-top: 12vh;
+  background:#EAE6CA;
+  left: 13vw;
+  justify-content: center;
+  border-radius: 10px;  
+}
+.imgTrama{
+  width: 72vw;
+  height: 20vh;
+  position: absolute;
+  z-index: 35;
+}
+.imgLogo{
+  width: 25vw;
+  height: 13vh;
+  margin-top: 5vh;
+  position: fixed;
+  z-index: 45;
+}
+.titleForm{
+  margin-top:22vh;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  font-size: 1.2em;
+}
+.formRegister{
+  position: absolute;
+  width: 53vw;
+  height: 70vh;
+  margin-top: 33vh;
+  margin-left: 0;
+  z-index: 35;
+}
+form input:hover{
+  cursor: text;
+  background: rgb(0,0,0,0.1);
+  border-top-left-radius: 5px;
+  border-top-right-radius:5px;
+}
+.imgIcon{
+  width:4vw;
+  height: 3.8vh;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  margin-bottom: -1.3vh;
+  padding-bottom: 0.8vh; 
+}
+.inputNameRegister{
+  border: 0;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  width: 47vw;
+  padding-bottom: 0.5vh;
+  padding-left: 2vw;
+  background: none;
+  text-align: left;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  font-size: 1em;
+  outline:none;
+}
+.inputEmailRegister{
+  border: 0;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  width:47vw;
+  margin-top: 3.5vh;
+  padding-bottom: 0.5vh;
+  padding-left: 2vw;
+  background: none;
+  text-align: left;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  font-size: 1em;
+  outline:none;
+}
+.inputPasswordRegister{
+  top: 20vh;
+  border: 0;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  width: 39vw;
+  margin-top: 3.8vh;
+  padding-bottom: 0.5vh;
+  padding-left: 2vw;
+  background: none;
+  text-align: left;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  font-size: 1em;
+  outline:none;
+}
+.buttonEnvioRegistro{
+  margin-top: 4vh;
+  margin-left: 1.8vw;
+  width: 48vw ;
+  height:5vh ;
+  background: #2671E1;
+  color: white;
+  border: 0;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  font-size: 1em;
+  box-shadow: 1vh 0.5vw 2vh 0 rgba(0,0,0,0.5);
+  border-radius: 5px;
+  cursor: pointer;
+}
+.imgVisibility{
+  width: 4.6vw;
+  height: 3.5vh;
+  margin-bottom: -1vh;
+  justify-content:center;
+  background: none;
+}
+.buttonVisibility{
+  border: 0;
+  background: none;
+  padding-bottom: 0.7vh;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  outline:none;
+  cursor: pointer;
+}
+@media (min-width: 1200px) {
 
-/* tablets */
-@media (min-width: 768px) {
   .interfazRegistro{
     height:100vh;
+    display: grid;
     grid-gap: 0.7vw;
     padding: 0.8em;
-    grid-template-columns: repeat(6, 1fr); 
-    grid-template-rows: repeat(4,1fr);
-  }
-  .imageLogin{
-    height:22.3vh;
-    width: 100%;
-    border-radius: 10px;
-  }
-
-}
-
-/* desktop */
-@media (min-width: 992px) {
-  .interfazRegistro{
     grid-template-columns: repeat(8, 1fr); 
     grid-template-rows: repeat(4,1fr)
+  }
+  .imageLogin{
+    display: grid;
+    height:22.3vh;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    z-index: 1;
+    position: relative;
+  }
+  .imageMobile{
+    height:22.3vh;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    z-index: 1;
+    position: relative;
+  }
+  .photograph{
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+  .photograph:nth-child(2){
+  grid-column-start: span 2;
+  }
+  .photograph:nth-child(5){
+  grid-column-start: span 3;
+  }
+  .photograph:nth-child(6){
+  grid-column-start: span 3;
+  }
+  .photograph:nth-child(12){
+  grid-column-end: span 2;
+  }
+  .photograph:nth-child(16){
+  grid-column-end: span 2;
+  }
+  .photograph:nth-child(19){
+  grid-column-end: span 2;
+  }
+  .photograph:nth-child(20){
+    grid-column-end: span 2;
+    }
+  .photograph:nth-child(22){
+  grid-column-end: span 2;
+  }
+  .divFormRegister{
+  width: 27.5vw;
+  height: 70vh;
+  margin-top: 13.3vh;
+  left: 36.3vw;
+  justify-content: center;
+  border-radius: 10px;  
+  }
+  .imgTrama{
+  width: 27.5vw;
+  height: 27vh;
+  }
+  .titleForm{
+  margin-top:22vh;
+  font-size: 1.3em;
+  }
+  .formRegister{
+  width: 30vw;
+  height: 70vh;
+  margin-top: 33vh;
+  margin-left: 11.8vw;
+  }
+  .imgIcon{
+  width: 1.8vw;
+  height: 4vh;
+  margin-bottom: -1.3vh;
+  padding-bottom: 0.8vh; 
+  }
+  .imgLogo{
+  width: 7.5vw;
+  height: 15vh;
+  margin-top: 7vh;
+  }
+  .inputNameRegister{
+  width: 16.5vw;
+  padding-bottom: 0.5vh;
+  padding-left: 1vw;
+  font-size: 1em;
+  }
+  .inputEmailRegister{
+  width: 16.5vw;
+  margin-top: 3.5vh;
+  padding-bottom: 0.5vh;
+  padding-left: 1vw;
+  font-size: 1em;
+  }
+  .inputPasswordRegister{
+  top: 20vh;
+  width: 14vw;
+  margin-top: 3.5vh;
+  padding-bottom: 0.5vh;
+  padding-left: 1vw;
+  font-size: 1em;
+  }
+  .buttonEnvioRegistro{
+  margin-top: 4vh;
+  margin-left: 1.5vw;
+  width: 15vw ;
+  height:5vh ;
+  font-size: 1em;
+  }
+  .imgVisibility{
+  width: 1.8vw;
+  height: 3.5vh;
+  margin-bottom: -1vh;
+  justify-content:center;
+  }
+  .buttonVisibility{
+  padding-bottom: 0.6vh;
   }
 
 }

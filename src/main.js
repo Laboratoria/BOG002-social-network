@@ -56,6 +56,7 @@ function userRegistration(event){
 }  
 
 document.querySelector(".buttonVisibility").addEventListener('click', () => {
+  console.log("entro")
   const changeType = document.getElementById("userPassword");
     if(changeType.type === "password"){
       changeType.type = "text";
