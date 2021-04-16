@@ -1,5 +1,5 @@
 // Este es el punto de entrada de tu aplicacion
-import { CrearFormulario } from "../componentes/formulario.js";
+import { CrearFormulario } from "./componentes/formulario.js";
 import {
   registrar,
   registroGoogle,
