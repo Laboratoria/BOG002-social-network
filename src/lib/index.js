@@ -56,7 +56,7 @@ export const Information = (username, email, password) => {
     divFormRegister.appendChild(messageExito);
     const SignupRegister = document.createElement('button');
     SignupRegister.type = 'button';
-    SignupRegister.innerText = 'Inicia sesion';
+    SignupRegister.innerText = 'Iniciar sesion';
     SignupRegister.className = 'buttonInicioSesion';
     messageExito.appendChild(SignupRegister);
   })

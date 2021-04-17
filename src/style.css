@@ -135,9 +135,9 @@ form input:hover{
 }
 .buttonEnvioRegistro{
   margin-top: 4vh;
-  margin-left: 2vw;
+  margin-left: 3vw;
   width: 50vw ;
-  height:5vh ;
+  height:6vh ;
   background: #2671E1;
   color: white;
   border: 0;
@@ -147,6 +147,9 @@ form input:hover{
   box-shadow: 1vh 0.5vw 2vh 0 rgba(0,0,0,0.5);
   border-radius: 5px;
   cursor: pointer;
+}
+button.buttonEnvioRegistro:hover{
+  background: rgba(8, 0, 117, 0.884); ;
 }
 .imgVisibility{
   width: 4.6vw;
@@ -182,7 +185,7 @@ form input:hover{
   width:73.1vw;
   height: 70vh;
   margin-top: 0;
-  background-image: url('imagesIcon/nomada.png');
+  background-image: url('imagesIcon/nomadas.png');
   background-color:#eae6ca;
   background-size:100% 100%;
   background-repeat:no-repeat;
@@ -194,17 +197,18 @@ form input:hover{
   text-align:center;
   flex-direction: column;
   align-items: center;
-  padding-top: 14vh;
+  padding-top: 16vh;
   border-radius: 10px;
-  border-top: rgb(158, 158, 158) double 8vh;
-  border-bottom:rgb(158, 158, 158) double 8vh;
-  
+  border-top: silver 9vh solid;
+  border-bottom: silver 9vh solid;
+  border-image-source: url("imagesIcon/trama_exit.png");
+  border-image-slice: 40;
 }
 .buttonInicioSesion{
-  margin-top: 9vh;
+  margin-top: 15.5vh;
   margin-left: 2vw;
   width: 50vw ;
-  height:5vh ;
+  height:7vh ;
   background: #2671E1;
   color: white;
   border: 0;
@@ -214,6 +218,9 @@ form input:hover{
   box-shadow: 1vh 0.5vw 2vh 0 rgba(0,0,0,0.5);
   border-radius: 5px;
   cursor: pointer;
+}
+button.buttonInicioSesion:hover{
+  background: rgba(8, 0, 117, 0.884); ;
 }
 @media (min-width: 1200px) {
 
@@ -267,7 +274,7 @@ form input:hover{
   }
   .photograph:nth-child(20){
     grid-column-end: span 2;
-    }
+  }
   .photograph:nth-child(22){
   grid-column-end: span 2;
   }
@@ -328,13 +335,13 @@ form input:hover{
   font-size: 1em;
   }
   .buttonEnvioRegistro{
-    margin-top: 4vh;
+    margin-top: 3.5vh;
     margin-left: 1.5vw;
     width: 15vw ;
-    height:5vh ;
+    height:6.2vh ;
     font-size: 1em;
   }
-    .imgVisibility{
+  .imgVisibility{
     width: 1.8vw;
     height: 3.5vh;
     justify-content:center;
@@ -342,7 +349,7 @@ form input:hover{
     .buttonVisibility{
     padding-bottom: 0.6vh;
     margin-left:-0.3vw;
-    padding-bottom: 1.1vh;
+    padding-bottom: 1.2vh;
   }
   .popupEmail{
     width: 15vw;
@@ -354,14 +361,15 @@ form input:hover{
     width:27.5vw;
     height: 70vh;
     margin-top: 0;
-    padding-top:18vh;
+    padding-top:16vh;
     font-size: 1.1em;
     border-radius: none;
   }
   .buttonInicioSesion{
-    margin-top: 5.6vh;
+    margin-top: 4.5vh;
     margin-left: 1.3vw;
     width: 15vw ;
-    height:7vh ;
+    height:6.8vh ;
   }
+
 }
