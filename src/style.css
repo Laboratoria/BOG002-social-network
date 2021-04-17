@@ -166,16 +166,55 @@ form input:hover{
   margin-left: -1vw; 
 }
 .popupEmail{
-  width: 30vw;
-  color:rgb(0, 0, 141);
+  width: 50vw;
+  color:rgb(68, 68, 68);
   border: rgb(99, 99, 99) solid 1px;
-  background: rgba(242, 243, 243, 0.747);
+  background: rgba(255, 255, 255, 0.952);
   border-radius: 5px;
-  font-family: "Segoe UI";
-  font-size: 1em;
-  margin-left: 2vw;
+  font-family: "arial";
+  font-size: 0.85em;
+  margin-left: 1.5vw;
+  position: absolute;
+  text-align:center ;
 }
-
+.messageExitoso{
+  z-index: 80;
+  width:73.1vw;
+  height: 70vh;
+  margin-top: 0;
+  background-image: url('imagesIcon/nomada.png');
+  background-color:#eae6ca;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  color: rgb(65, 64, 64);
+  font-family: "Segoe UI";
+  font-weight: 700;
+  font-size: 1.2em;
+  position: fixed;
+  text-align:center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 14vh;
+  border-radius: 10px;
+  border-top: rgb(158, 158, 158) double 8vh;
+  border-bottom:rgb(158, 158, 158) double 8vh;
+  
+}
+.buttonInicioSesion{
+  margin-top: 9vh;
+  margin-left: 2vw;
+  width: 50vw ;
+  height:5vh ;
+  background: #2671E1;
+  color: white;
+  border: 0;
+  font-family: "Segoe UI";
+  font-weight: 700;
+  font-size: 1em;
+  box-shadow: 1vh 0.5vw 2vh 0 rgba(0,0,0,0.5);
+  border-radius: 5px;
+  cursor: pointer;
+}
 @media (min-width: 1200px) {
 
   .interfazRegistro{
@@ -255,12 +294,12 @@ form input:hover{
   margin-left: 7vw;
   }
   .imgIcon{
-  width: 1.8vw;
+  width: 2vw;
   height: 4vh;
   margin-bottom: -1.3vh;
   padding-bottom: 0.8vh;
   border-bottom: 1px solid rgb(0, 0, 0); 
-  margin-right:0.1vw;
+  margin-right:-0.5vw;
   }
   .imgLogo{
   width: 7.5vw;
@@ -308,7 +347,21 @@ form input:hover{
   .popupEmail{
     width: 15vw;
     border-radius: 5px;
-    font-size: 0.6em;
+    font-size: 0.8em;
     margin-left: 2vw;
+  }
+  .messageExitoso{
+    width:27.5vw;
+    height: 70vh;
+    margin-top: 0;
+    padding-top:18vh;
+    font-size: 1.1em;
+    border-radius: none;
+  }
+  .buttonInicioSesion{
+    margin-top: 5.6vh;
+    margin-left: 1.3vw;
+    width: 15vw ;
+    height:7vh ;
   }
 }

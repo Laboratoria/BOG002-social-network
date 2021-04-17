@@ -17,7 +17,7 @@ export const Information = (username, email, password) => {
     switch (errorCode) {
       case 'auth/email-already-in-use':
         popupEmail.style.display = 'block';
-        popupEmail.innerHTML = 'Este correo ha sido registrado por otro usuario';
+        popupEmail.innerHTML = 'Su correo ya se encuentra registrado';
         // popupEmail.classList.toggle('show');
         setTimeout(() => {
           popupEmail.style.display = 'none';
@@ -47,6 +47,18 @@ export const Information = (username, email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
     // Signed in
     const user = userCredential.user;
+    const divFormRegister = document.getElementById('divFormRegister');
+    const confirmationRegistro = document.getElementById('formRegister');
+    confirmationRegistro.style.display = 'none';
+    const messageExito = document.createElement('div');
+    messageExito.textContent = 'Tu registro se ha realizado con exito!!!!';
+    messageExito.className = 'messageExitoso';
+    divFormRegister.appendChild(messageExito);
+    const SignupRegister = document.createElement('button');
+    SignupRegister.type = 'button';
+    SignupRegister.innerText = 'Inicia sesion';
+    SignupRegister.className = 'buttonInicioSesion';
+    messageExito.appendChild(SignupRegister);
   })
     .catch((error) => {
       const errorCode = error.code;
