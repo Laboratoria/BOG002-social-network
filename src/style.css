@@ -183,13 +183,15 @@ button.buttonEnvioRegistro:hover{
 .messageExitoso{
   z-index: 80;
   width:73.1vw;
-  height: 70vh;
+  height: 71vh;
   margin-top: 0;
   background-image: url('imagesIcon/nomadas.png');
   background-color:#eae6ca;
-  background-size:100% 100%;
+  background-size: 60% 40%;
+  background-attachment: fixed;
+  background-position: center; 
   background-repeat:no-repeat;
-  color: rgb(65, 64, 64);
+  color: rgb(53, 52, 52);
   font-family: "Segoe UI";
   font-weight: 700;
   font-size: 1.2em;
@@ -199,10 +201,10 @@ button.buttonEnvioRegistro:hover{
   align-items: center;
   padding-top: 16vh;
   border-radius: 10px;
-  border-top: silver 9vh solid;
-  border-bottom: silver 9vh solid;
-  border-image-source: url("imagesIcon/trama_exit.png");
-  border-image-slice: 40;
+  border-top: rgba(192, 192, 192, 0) 9vh solid;
+  border-bottom: rgba(192, 192, 192, 0) 9vh solid;
+  border-image-source: url("imagesIcon/tran.png");
+  border-image-slice: 30;
 }
 .buttonInicioSesion{
   margin-top: 15.5vh;
@@ -349,7 +351,7 @@ button.buttonInicioSesion:hover{
     .buttonVisibility{
     padding-bottom: 0.6vh;
     margin-left:-0.3vw;
-    padding-bottom: 1.2vh;
+    padding-bottom: 1.1vh;
   }
   .popupEmail{
     width: 15vw;
@@ -361,13 +363,20 @@ button.buttonInicioSesion:hover{
     width:27.5vw;
     height: 70vh;
     margin-top: 0;
-    padding-top:16vh;
-    font-size: 1.1em;
+    padding-top:18vh;
+    font-size: 1.2em;
     border-radius: none;
+    background-size: 20% 42%;
+    background-attachment: fixed;
+    text-align: center;
+    align-items: center;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: 40vh;
   }
   .buttonInicioSesion{
-    margin-top: 4.5vh;
-    margin-left: 1.3vw;
+    margin-top: 16vh;
+    margin-right: 2.3vw;
     width: 15vw ;
     height:6.8vh ;
   }
