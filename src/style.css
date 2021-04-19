@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@200&display=swap');
+
+[class ^= "icon"]{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.searching {
+    width: 500px;
+    height: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+div input:first-child{
+    width: 500px;
+    height: 20px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: 'Archivo', sans-serif;
+}
+
+header img{
+    float: right;
+    padding: 5px;
+}
