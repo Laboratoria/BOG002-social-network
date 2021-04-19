@@ -10,6 +10,38 @@
     font-size: 18px; 
 }
 
+[class ^= "icon"]{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.searching {
+    width: 500px;
+    height: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+div input:first-child{
+    width: 500px;
+    height: 20px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: 'Archivo', sans-serif;
+}
+
+header img{
+    float: right;
+    padding: 5px;
+}
+
+/* Settings */
+
 h1 {
     font-family: 'Fredoka One', cursive;
     font-size: 72px;
@@ -90,4 +122,5 @@ section {
 
 .icon {
     height: 48px;
+    cursor: pointer;
 }
