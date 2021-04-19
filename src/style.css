@@ -61,7 +61,7 @@ section {
 
 .rigth{
     background-color: var(--amarillo);
-    width: 72%; 
+    width: 72%;
 }
 
 .input-image {
@@ -70,6 +70,10 @@ section {
     background-color: #F0EEEE;
     text-align: center;
     flex-grow: 1;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .button-upload {
@@ -82,4 +86,8 @@ section {
     border: none;
     background-color: var(--morado);
     color: #FFF;
+}
+
+.icon {
+    height: 48px;
 }
