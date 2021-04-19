@@ -18,6 +18,8 @@ Puedes acceder a la versión web haciendo click [aqui](https://dsandovalm.github
 
 #### Baja fidelidad ####
 - Sign in
+[!Sign in Desktop](./src/images/figma/sn_ld_signin.png)
+[!Sign in Phone](./src/images/figma/sn_lp_signin.png)
 - Sign up
 - Inicio: mapa
 - Modal: publicación
