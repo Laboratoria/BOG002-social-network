@@ -1,14 +1,14 @@
 // Este es el punto de entrada de tu aplicacion
-import { CrearFormulario } from "./componentes/formulario.js";
+import CrearFormulario from './componentes/formulario.js';
 import {
   registrar,
   registroGoogle,
   registroFacebook,
-} from "./aplicativos/app.js";
-import {ingresar} from "./aplicativos/ingreso.js"
-import {CrearRegistro} from "./componentes/registro.js"
+} from './aplicativos/app.js';
+import ingresar from './aplicativos/ingreso.js';
+import CrearRegistro from './componentes/registro.js';
 
-const main = document.getElementById("main");
+const main = document.getElementById('main');
 main.appendChild(CrearFormulario());
 
 registrar();
@@ -16,10 +16,9 @@ registroGoogle();
 registroFacebook();
 ingresar();
 
-document.addEventListener ("click", (e) => {
-  if (e.target.matches("a")) {
-    location.replace("#registro")
+document.addEventListener('click', (e) => {
+  if (e.target.matches('a')) {
+    location.replace('#registro');
     CrearRegistro();
-}})  
-
-
+  }
+});

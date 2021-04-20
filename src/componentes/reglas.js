@@ -1,5 +1,5 @@
-export function VistaReglas() {
-  const reglas = document.createElement("ol");
+export default function VistaReglas() {
+  const reglas = document.createElement('ol');
 
   const htmlReglas = ` <h1>Reglas de la comunidad HUC</h1>
     <li><details><summary>Las publicaciones deben llevar fuentes confiables</summary>

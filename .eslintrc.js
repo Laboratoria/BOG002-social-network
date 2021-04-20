@@ -1,3 +1,5 @@
+/* eslint-disable quote-props */
+/* eslint-disable quotes */
 module.exports = {
   env: {
     browser: true,
@@ -11,6 +13,6 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-
+    "import/extensions":0,
   },
 };

@@ -1,4 +1,4 @@
-export function CrearFormulario() {
+export default function CrearFormulario() {
   const formulario = document.createElement('form');
 
   const html = `
