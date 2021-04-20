@@ -1,15 +1,11 @@
 import { myFunction } from './lib/index.js';
+import { changeSettings } from './view/settingsPad.js';
 
 myFunction();
+// - - -  - - -  - - -  - - - LISTENERS
 
-const btnA = document.querySelector('btnSing-in');
-const divB = document.getElementById('Login');
-const divC = document.getElementById('New-account');
+document.getElementById("settPic").addEventListener('click', changeSettings.picture)
+document.getElementById("settName").addEventListener('click', changeSettings.name)
+document.getElementById("settMail").addEventListener('click', changeSettings.email)
+document.getElementById("settPassword").addEventListener('click', changeSettings.password)
 
-btnA.addEventListener('click', () => {
-    if(divB.style.display === 'none'){
-        divC.style.display = 'block';
-    } else {
-        divB.style.display = 'none';
-    }
-});

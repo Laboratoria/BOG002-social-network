@@ -17,11 +17,31 @@ Puedes acceder a la versión web haciendo click [aqui](https://dsandovalm.github
 ### Prototipos ###
 
 #### Baja fidelidad ####
+
 - Sign in
+![Sign in Desktop](./src/images/figma/sn_ld_signin.png)
+![Sign in Phone](./src/images/figma/sn_lp_signin.png)
+
 - Sign up
-- Inicio: mapa
-- Modal: publicación
+![Sign up Desktop](./src/images/figma/sn_ld_signup.png)
+![Sign up Phone](./src/images/figma/sn_lp_signup.png)
+
+- Inicio: mapa. Publicaciones en pop ups
+![Timeline Desktop](./src/images/figma/sn_ld_timeline.png)
+![Timeline Phone](./src/images/figma/sn_lp_timeline.png)
+
 - Perfil de usuario
+![Timeline Desktop](./src/images/figma/sn_ld_profile.png)
+![Timeline Phone](./src/images/figma/sn_lp_profile.png)
+
+- Configuración
+![Settings Desktop](./src/images/figma/sn_ld_settings.png)
+![Settings Phone](./src/images/figma/sn_lp_settings.png)
+
+- Creación de Publicaciones
+![Create post](./src/images/figma/sn_lp_create.png)
+![Camera](./src/images/figma/sn_lp_camera.png)
+
 
 **Feedback recibido**
 
