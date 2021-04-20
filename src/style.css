@@ -1,4 +1,14 @@
+#inicio{display: block}
+#muro{display: none}
+#settings{display: none}
 
+[class ^= "icon"]{
+    width: auto;
+    height: 40px;
+    cursor: pointer;
+}
+
+/*
 :root {
     --amarillo: #FCDB4B; 
     --morado: #9f4bf2; 
@@ -11,11 +21,7 @@
     font-size: 18px; 
 }
 
-[class ^= "icon"]{
-    width: auto;
-    height: 40px;
-    cursor: pointer;
-}
+
 
 .searching {
     width: 500px;
@@ -41,7 +47,7 @@ header img{
     padding: 5px;
 }
 
-/* Settings */
+ Settings 
 
 h1 {
     font-family: 'Fredoka One', cursive;
@@ -120,8 +126,4 @@ section {
     background-color: var(--morado);
     color: #FFF;
 }
-
-.icon {
-    height: 48px;
-    cursor: pointer;
-}
+*/
