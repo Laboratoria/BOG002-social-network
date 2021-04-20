@@ -8,6 +8,8 @@
   <title>Nomadas Colombia</title>
   <link rel="stylesheet " href="style.css " />
   <!---<link rel= "stylesheet " href="style2.css "/> --->
+  <link rel = "preconnect" href = "https://fonts.gstatic.com">
+  <link href = "https://fonts.googleapis.com/css2? family = Roboto: wght @ 700 & display = swap" rel = "hoja de estilo">
 </head>
 
 <body>
@@ -52,7 +54,31 @@
     <div class="photograph"><img src="imagesPrincipal/20-medellin.jpg" class="hideElement"></div>
     <div class="photograph"><img src="imagesPrincipal/22-negrita_cartagena.jpg" class="hideElement"></div>
 
-    <div class="divFormRegister" id="divFormRegister">
+    <div class="divSignIn" id="divSignIn">
+      <img class="imgLogoHome" src="imagesIcon/Complete_logo.png">
+      <img class="imgTramaHome" src="imagesIcon/textureGray.png">
+
+      <form class="formHome" id="formHome"autocomplete="off">
+        <img class="imgIcon" src="imagesIcon/atGray.png" />
+        <input class="inputEmailHome" placeholder="Correo electrónico" type="email" id="userEmailHome"
+        required></input><br>
+        <img class="imgIcon" src="imagesIcon/lockedGray.png" />
+        <input class="inputPasswordHome" placeholder="Contraseña" type="password" id="userPasswordHome" minlength="7" required></input>
+        <button class="buttonVisibilityHome" type="button">
+          <img class="imgVisibilityHome" id="noVisibilityHome" src="imagesIcon/NoVisibility.png" style="display:block;" />
+          <img class="imgVisibilityHome" id="visibilityHome" src="imagesIcon/ver.png" style="display:none;" />
+        </button>
+        <button class="buttonInicioSesionHome" type="submit">Iniciar sesión</button>
+        <p id="o">_______<img class="imgO" src="imagesIcon/o.png">_______</p>
+        <button class="buttonInicioGoogle" type="submit">Ingresa con Google<img id="logoGoogle" src="imagesIcon/google.png"></button>
+        <h3 id="question">¿Aún no tienes cuenta?</h3>
+        <a id="linkRegister" href="#divFormRegister">Registrate aquí</a>
+      </form>
+      
+    </div> 
+
+
+    <div class="divFormRegister" id="divFormRegister" style="display: none;">
       <img class="imgLogo" src="imagesIcon/Complete_logo.png">
       <img class="imgTrama" src="imagesIcon/textureGray.png">
       <h3 class="titleForm">Formulario Registro</h3>
@@ -68,7 +94,7 @@
         <div class="popupPassword" style="display: none;"><p></p></div> 
         <button class="buttonVisibility" type="button">
           <img class="imgVisibility" id="noVisibility" src="imagesIcon/NoVisibility.png" style="display:block;" />
-          <img class="imgVisibility" id="visibility" src="imagesIcon/ver.png" style="display:none;" />
+          <img class="imgVisibility" id="visibility" src="imagesIcon/ver.png" style="display:none;"/>
         </button><br>
         <br>
         <button class="buttonEnvioRegistro" type="submit">Registrarme</button>

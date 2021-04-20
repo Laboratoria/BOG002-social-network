@@ -25,7 +25,7 @@ export const Information = (email, password) => new Promise((resolve, reject) =>
       reject(errorCode);
     });
 });
-/*
+
 export const assignName = (username) => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -35,4 +35,4 @@ export const assignName = (username) => {
     }
     // console.log(user);
   });
-}; */
+};

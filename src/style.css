@@ -44,7 +44,7 @@ body{
 .divFormRegister{
   position: fixed;
   display: flex;
-  z-index: 30;
+  z-index: 50;
   width:73vw;
   height: 70vh;
   margin-top: 12vh;
@@ -65,19 +65,21 @@ body{
   margin-top: 5vh;
   position: fixed;
   z-index: 45;
+  margin-left: 23vw;
 }
 .titleForm{
   margin-top:22vh;
-  font-family: "Segoe UI";
+  font-family:'Roboto', sans-serif;
   font-weight: 700;
   font-size: 1.2em;
+  margin-left: 10vw;
 }
 .formRegister{
   position: absolute;
   width: 57vw;
   height: 70vh;
-  margin-top: 33vh;
-  margin-left: 0;
+  margin-top: 4vh;
+  margin-left: 10vw;
   z-index: 35;
 }
 form input:hover{
@@ -98,7 +100,7 @@ form input:hover{
   padding-left: 2.5vw;
   background: none;
   text-align: left;
-  font-family: "Segoe UI";
+  font-family:'Roboto', sans-serif;
   font-weight: 700;
   font-size: 1em;
   outline:none;
@@ -113,7 +115,7 @@ form input:hover{
   padding-left: 2.5vw;
   background: none;
   text-align: left;
-  font-family: "Segoe UI";
+  font-family:'Roboto', sans-serif;
   font-weight: 700;
   font-size: 1em;
   outline:none;
@@ -128,7 +130,7 @@ form input:hover{
   padding-left: 2.5vw;
   background: none;
   text-align: left;
-  font-family: "Segoe UI";
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 1em;
   outline:none;
@@ -141,7 +143,7 @@ form input:hover{
   background: #2671E1;
   color: white;
   border: 0;
-  font-family: "Segoe UI";
+  font-family:'Roboto', sans-serif;
   font-weight: 700;
   font-size: 1em;
   box-shadow: 1vh 0.5vw 2vh 0 rgba(0,0,0,0.5);
@@ -166,7 +168,7 @@ button.buttonEnvioRegistro:hover{
   border-bottom: 1px solid rgb(0, 0, 0);
   outline:none;
   cursor: pointer;
-  margin-left: -1vw; 
+  margin-left: -1.1vw; 
 }
 .popupEmail{
   width: 50vw;
@@ -192,7 +194,7 @@ button.buttonEnvioRegistro:hover{
   background-position: center; 
   background-repeat:no-repeat;
   color: rgb(53, 52, 52);
-  font-family: "Segoe UI";
+  font-family:'Roboto', sans-serif;
   font-weight: 700;
   font-size: 1.2em;
   position: fixed;
@@ -214,7 +216,7 @@ button.buttonEnvioRegistro:hover{
   background: #2671E1;
   color: white;
   border: 0;
-  font-family: "Segoe UI";
+  font-family:'Roboto', sans-serif;
   font-weight: 700;
   font-size: 1em;
   box-shadow: 1vh 0.5vw 2vh 0 rgba(0,0,0,0.5);
@@ -293,14 +295,15 @@ button.buttonInicioSesion:hover{
   height: 27vh;
   }
   .titleForm{
-  margin-top:22vh;
+  margin-top:24vh;
   font-size: 1.3em;
+  margin-left: 6vw;
   }
   .formRegister{
   width: 25vw;
   height: 70vh;
-  margin-top: 33vh;
-  margin-left: 7vw;
+  margin-top: 3vh;
+  margin-left: 4.5vw;
   }
   .imgIcon{
   width: 2vw;
@@ -313,7 +316,8 @@ button.buttonInicioSesion:hover{
   .imgLogo{
   width: 7.5vw;
   height: 15vh;
-  margin-top: 7vh;
+  margin-top: 6vh;
+  margin-left: 10vw;
   }
   .inputNameRegister{
   width: 16.5vw;
@@ -337,7 +341,7 @@ button.buttonInicioSesion:hover{
   font-size: 1em;
   }
   .buttonEnvioRegistro{
-    margin-top: 3.5vh;
+    margin-top: 3vh;
     margin-left: 1.5vw;
     width: 15vw ;
     height:6.2vh ;
@@ -348,7 +352,7 @@ button.buttonInicioSesion:hover{
     height: 3.5vh;
     justify-content:center;
   }
-    .buttonVisibility{
+  .buttonVisibility{
     padding-bottom: 0.6vh;
     margin-left:-0.3vw;
     padding-bottom: 1.1vh;
@@ -380,5 +384,259 @@ button.buttonInicioSesion:hover{
     width: 15vw ;
     height:6.8vh ;
   }
+
+}
+/* Interfaz HOME PAGE */
+.divSignIn{
+  position: fixed;
+  display: flex;
+  z-index: 30;
+  width:73vw;
+  height: 70vh;
+  margin-top: 12vh;
+  background:#EAE6CA;
+  left: 13vw;
+  justify-content: center;
+  border-radius: 10px;  
+}
+.imgTramaHome{
+  width: 72vw;
+  height: 20vh;
+  position: absolute;
+  z-index: 35;
+}
+.imgLogoHome{
+  width: 25vw;
+  height: 13vh;
+  margin-top: 5vh;
+  position: fixed;
+  z-index: 45;
+}
+.formHome{
+  position: absolute;
+  width: 57vw;
+  height: 70vh;
+  margin-top: 18vh;
+  margin-left: 0;
+  z-index: 35;
+}
+.inputEmailHome{
+  border: 0;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  width:47vw;
+  margin-top: 3.5vh;
+  padding-bottom: 0.5vh;
+  padding-left: 2.5vw;
+  background: none;
+  text-align: left;
+  font-family:'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  outline:none;
+}
+.inputPasswordHome{
+  top: 20vh;
+  border: 0;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  width: 40vw;
+  margin-top: 3.8vh;
+  padding-bottom: 0.5vh;
+  padding-left: 2.5vw;
+  background: none;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  outline:none;
+}
+.imgVisibilityHome{
+  width: 4.6vw;
+  height: 3.5vh;
+  margin-top: 1vh;
+  justify-content:center;
+  background: none;
+  margin-bottom: -1vh;
+}
+.buttonVisibilityHome{
+  border: 0;
+  background: none;
+  padding-bottom: 1.1vh;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  outline:none;
+  cursor: pointer;
+  margin-left: -1vw; 
+}
+.buttonInicioSesionHome{
+  margin-top: 3.8vh;
+  margin-left: 0;
+  width: 58.5vw ;
+  height:5.5vh ;
+  background: #B81818;
+  color: white;
+  border: 0;
+  font-family:'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  box-shadow: 1vh 0.5vw 2vh 0 rgba(0,0,0,0.5);
+  border-radius: 5px;
+  cursor: pointer;
+}
+button.buttonInicioSesionHome:hover{
+  background: rgba(131, 0, 0, 0.884); ;
+}
+#o{
+  text-align: center;
+  margin-top: 0;
+  margin-bottom:1.5vh ;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.5em;
+  display: flex;
+  margin-left:1.5vw;
+  align-items: center;
+}
+.imgO{
+  margin-top: 4vh;
+  width: 4.6vw;
+  height: 1.5vh;
+  padding-left: 2vw;
+  margin-right: 2vw;
+}
+.buttonInicioGoogle{
+  margin-top: 3vh;
+  margin-left: 0;
+  width: 58.5vw ;
+  height:5.5vh ;
+  background: #32AFB5;
+  color: white;
+  border: 0;
+  font-family:'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+  box-shadow: 1vh 0.5vw 2vh 0 rgba(0,0,0,0.5);
+  border-radius: 5px;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  padding-left: 4vw;
+}
+button.buttonInicioGoogle:hover{
+  background: #00838a;
+}
+#logoGoogle{
+  margin-left: 2vw;
+  padding-left: 2vw;
+}
+#question{
+  margin-top: 2vh;
+  width: 57vw;
+  height: 3vh ;
+  text-align: center;
+  padding-left: 0;
+  margin-left: 2vw;
+  position: absolute;
+  font-family:'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 1.05em;
+  display: flex;
+ 
+}
+#linkRegister{
+  margin-top: 7vh;
+  font-family:'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  margin-left: 12vw;
+}
+@media (min-width: 1200px) {
+  .divSignIn{
+    width: 27.5vw;
+    height: 70vh;
+    margin-top: 13.3vh;
+    left: 36.3vw;
+    justify-content: center;
+    border-radius: 10px;  
+}
+.imgTramaHome{
+  width: 27.5vw;
+  height: 27vh;
+}
+.imgLogoHome{
+  width: 7.5vw;
+  height: 15vh;
+  margin-top: 6vh;
+}
+.formHome{
+  width: 25vw;
+  height: 70vh;
+  margin-top: 21vh;
+  margin-left: 6.7vw;
+}
+.imgVisibilityHome{
+  width: 1.8vw;
+  height: 3.5vh;
+  justify-content:center;
+}
+.inputEmailHome{
+  width: 16.5vw;
+  margin-top: 3.5vh;
+  padding-bottom: 0.5vh;
+  padding-left: 1vw;
+  font-size: 1em;
+  }
+  .inputPasswordHome{
+  top: 20vh;
+  width: 14vw;
+  margin-top: 3.5vh;
+  padding-bottom: 0.5vh;
+  padding-left: 1vw;
+  font-size: 1em;
+  }
+.buttonVisibilityHome{
+  padding-bottom: 0.6vh;
+  margin-left:-0.3vw;
+  padding-bottom: 1.1vh
+}
+  .buttonInicioSesionHome{
+    margin-top: 2.8vh;
+    margin-left: 0;
+    width: 18vw ;
+    height:6vh ;
+    font-size: 1em;
+}
+  .buttonInicioGoogle{
+    margin-top: 2.3vh;
+    width: 18vw ;
+    height:6vh ;
+    font-size: 1em;
+    padding-left: 2vw;
+}
+  #logoGoogle{
+    margin-left: 0.8vw;
+    padding-left:0.8vw;
+}
+  #o{
+    font-weight: 500;
+    font-size: 1.4em;
+    margin-top:-1vh;
+    margin-left: 1.5vw;
+}  
+.imgO{
+  margin-top: 4vh;
+  width: 1.8vw;
+  height: 1.5vh;
+  padding-left: 1vw;
+  margin-right: 1vw;
+}
+  #question{
+    margin-top: 2vh; 
+    font-size: 0.95em;
+    margin-left: 2.5vw;
+}
+#linkRegister{
+    margin-left: 4.7vw;
+}
 
 }

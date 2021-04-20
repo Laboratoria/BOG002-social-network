@@ -79,3 +79,32 @@ document.querySelector('.buttonVisibility').addEventListener('click', () => {
     document.getElementById('noVisibility').style.display = 'block';
   }
 });
+
+// Visual password de la interfaz inicio de sesion HOME//
+
+document.querySelector('.formHome').addEventListener('submit', userRegistration);
+
+document.querySelector('.buttonVisibilityHome').addEventListener('click', () => {
+  const changeType = document.getElementById('userPassword');
+  if (changeType.type === 'password') {
+    changeType.type = 'text';
+    document.getElementById('visibilityHome').style.display = 'block';
+    document.getElementById('noVisibilityHome').style.display = 'none';
+  } else {
+    changeType.type = 'password';
+    document.getElementById('visibilityHome').style.display = 'none';
+    document.getElementById('noVisibilityHome').style.display = 'block';
+  }
+});
+
+changePages();
+
+function changePages() {
+  const inicioHome = document.getElementById('linkRegister');
+  inicioHome.onclick = function () {
+    document.querySelector('.divSignIn').style.display = 'none';
+    document.querySelector('.divFormRegister').style.display = 'block';
+    document.querySelector('.imgLogo').style.display = 'block';
+    document.querySelector('.imgTrama').style.display = 'block';
+  };
+}
