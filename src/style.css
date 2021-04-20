@@ -2,52 +2,38 @@
 #muro{display: none}
 #settings{display: none}
 
+body {margin:0}
+
+/* Selector de clases que comiencen con 'icon', define tamaño y cursor en toda la app*/
 [class ^= "icon"]{
     width: auto;
     height: 40px;
     cursor: pointer;
 }
 
-/*
+/* Variables de definción de colores*/
 :root {
     --amarillo: #FCDB4B; 
     --morado: #9f4bf2; 
     --verde: #05ce78;
 }
 
+/* Todo el archivo con tipografía, tamaño y borde igual*/
 * {
     box-sizing: border-box;
     font-family: 'Archivo', sans-serif;
     font-size: 18px; 
 }
 
-
-
-.searching {
-    width: 500px;
-    height: 10px;
-    border: 1px solid black;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    padding: 15px;
+/* Configuración de tamaño para las secciones*/
+section {
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
 }
 
-div input:first-child{
-    width: 500px;
-    height: 20px;
-    border: none;
-    outline: none;
-    font-size: 20px;
-    font-family: 'Archivo', sans-serif;
-}
 
-header img{
-    float: right;
-    padding: 5px;
-}
-
- Settings 
+/*
 
 h1 {
     font-family: 'Fredoka One', cursive;
@@ -61,15 +47,6 @@ h2 {
     border-bottom: 2px solid #000;
 }
 
-body {
-    margin:0;
-}
-
-section {
-    width: 100vw;
-    height: 100vh;
-    padding: 20px;
-}
 
 .header {
     display: flex;
