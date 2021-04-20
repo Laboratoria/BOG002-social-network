@@ -11,8 +11,8 @@
 }
 
 [class ^= "icon"]{
-    width: 40px;
-    height: auto;
+    width: auto;
+    height: 40px;
     cursor: pointer;
 }
 
