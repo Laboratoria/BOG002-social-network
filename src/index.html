@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Walkter</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
+  <link rel="stylesheet" href="style.css" />
+ </head>
 <body>
+  <section id="muro">
+    <header>
+      <img class="icon-profile" src="images/icons/icon-profile.png">
+      <img class="icon-settings" src="images/icons/icon-settings.png">
+      <div class="searching">
+        <input type="text" maxlength="100" autocomplete="off">
+        <input class="icon-lupa" src="images/icons/icon-lupa.png" type="image">
+      </div>
+    </header>
+    <div id="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254508.3928106861!2d-74.24789140391782!3d4.648625932164217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bfd2da6cb29%3A0x239d635520a33914!2zQm9nb3TDoQ!5e0!3m2!1ses!2sco!4v1618855424331!5m2!1ses!2sco" width="100%" height="900px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+  </section>
   <script type="module" src="main.js"></script>
 </body>
 </html>
