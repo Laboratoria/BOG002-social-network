@@ -1,19 +1,19 @@
-function llamarlibreria() {
-  const firebaseConfig = {
-    apiKey: 'AIzaSyCNJzDnQucoug5jUE-5pEodaacilcQTyAw',
-    authDomain: 'nomadas-3c02d.firebaseapp.com',
-    databaseURL: 'https://nomadas-3c02d.firebaseio.com',
-    projectId: 'nomadas-3c02d',
-    storageBucket: 'nomadas-3c02d.appspot.com',
-    messagingSenderId: '189718883297',
-    appId: '1:189718883297:web:c200b22cbcb8c28c4a80a0',
-  };
+// function llamarlibreria() {
+const firebaseConfig = {
+  apiKey: 'AIzaSyCNJzDnQucoug5jUE-5pEodaacilcQTyAw',
+  authDomain: 'nomadas-3c02d.firebaseapp.com',
+  databaseURL: 'https://nomadas-3c02d.firebaseio.com',
+  projectId: 'nomadas-3c02d',
+  storageBucket: 'nomadas-3c02d.appspot.com',
+  messagingSenderId: '189718883297',
+  appId: '1:189718883297:web:c200b22cbcb8c28c4a80a0',
+};
 
-  firebase.initializeApp(firebaseConfig);
-}
+firebase.initializeApp(firebaseConfig);
+// }
 
 export const Information = (email, password) => new Promise((resolve, reject) => {
-  llamarlibreria();
+  // llamarlibreria();
   firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
     // Signed in
     const user = userCredential.user;

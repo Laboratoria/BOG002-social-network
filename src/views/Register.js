@@ -1,13 +1,13 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { Information } from './lib/index.js';
+import { Information, assignName } from '../auth/newUser';
 
 // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
 let arrayUser;
 
 function userRegistration(event) {
   event.preventDefault();
-  // const username = document.querySelector('.inputNameRegister').value;
+  const username = document.querySelector('.inputNameRegister').value;
   const email = document.querySelector('.inputEmailRegister').value;
   const password = document.querySelector('.inputPasswordRegister').value;
 
@@ -17,7 +17,7 @@ function userRegistration(event) {
     const usuario = document.createElement('div');
     usuario.innerHTML = arrayUser;
     usuario.className = 'divGhost';
-    //  assignName(username);
+    assignName(username);
     const divFormRegister = document.getElementById('divFormRegister');
     const confirmationRegistro = document.getElementById('formRegister');
     confirmationRegistro.style.display = 'none';
@@ -79,9 +79,6 @@ document.querySelector('.buttonVisibility').addEventListener('click', () => {
     document.getElementById('noVisibility').style.display = 'block';
   }
 });
-
-// Visual password de la interfaz inicio de sesion HOME//
-
 document.querySelector('.formHome').addEventListener('submit', userRegistration);
 
 document.querySelector('.buttonVisibilityHome').addEventListener('click', () => {
@@ -97,14 +94,14 @@ document.querySelector('.buttonVisibilityHome').addEventListener('click', () => 
   }
 });
 
-changePages();
-
 function changePages() {
   const inicioHome = document.getElementById('linkRegister');
-  inicioHome.onclick = function () {
+  inicioHome.onclick = () => {
     document.querySelector('.divSignIn').style.display = 'none';
     document.querySelector('.divFormRegister').style.display = 'block';
     document.querySelector('.imgLogo').style.display = 'block';
     document.querySelector('.imgTrama').style.display = 'block';
   };
 }
+
+changePages();
