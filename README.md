@@ -43,11 +43,6 @@ Puedes acceder a la versión web haciendo click [aqui](https://dsandovalm.github
 ![Camera](./src/images/figma/sn_lp_camera.png)
 
 
-![Interfaz 1](https://user-images.githubusercontent.com/72315710/114764182-3dbdc900-9d29-11eb-9925-4c0c821780b4.PNG)
-![Interfaz 2](https://user-images.githubusercontent.com/72315710/114764186-3e565f80-9d29-11eb-8374-ad000177ad52.PNG)
-![Interfaz 3](https://user-images.githubusercontent.com/72315710/114764189-3eeef600-9d29-11eb-8d35-289db263411f.PNG)
-
-
 **Feedback recibido**
 
 #### Alta fidelidad ####
