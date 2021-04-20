@@ -11,45 +11,53 @@
 </head>
  
 <body>
-  <section>
+  <section id="inicio">
+
     <div id="Presentation">
-      <img class="logo" src="Images/Logo.png" alt="logoWalkter">
-      <h2 class="text1">Apostemos por vías más seguras para todos.</h2>
+      <h1>WALKTER</h1>
+      <h2 class="slogan">Apostemos por vías más seguras para todos.</h2>
       <img class="app" src="Images/Web image.png" att="app">
     </div>
-      <div id="login">
-        <img class="yellowContainer" src="Images/Login section.png" alt="contenedorAmarillo">
-        <input type="text" id="email" placeholder="Correo electrónico">
-        <input type="password" id="password" placeholder="Contraseña">
-        <p><a class="forgetMyPassword">Olvide contraseña</a></p>
-        <img class="o" src="Images/O.png" alt="line">
-        <a href="https://www.gmail.com/" target="_blank"><img class="gmail" src="Images/Google.png" alt="Gmail"></a>
-        <a href="https://www.facebook.com/" target="_blank"><img class="facebook" src="Images/Facebook.png" alt="Facebook"></a>
-        <button class="btnSing-in" name="boton" type="submit">Iniciar sesión</button>
+
+    <div id="login">
+      <!--contenedor amarillo en CSS-->
+      <input type="text" id="email" placeholder="Correo electrónico">
+      <input type="password" id="password" placeholder="Contraseña">
+      <p><a class="forgetMyPassword" type="button">Olvide contraseña</a></p>
+      <img class="o" src="Images/O.png" alt="line"><!--mirar si se puede hacer la línea con CSS-->
+      <a href="https://www.gmail.com/" target="_blank"><img class="gmail" src="Images/Google.png" alt="Gmail"></a>
+      <a href="https://www.facebook.com/" target="_blank"><img class="facebook" src="Images/Facebook.png" alt="Facebook"></a>
+      <button id="btnSing-in" name="boton" type="submit">Iniciar sesión</button>
+
         <div id="New-user">
-          <img class="purpleContainer" src="Images/Create account section.png" alt="contenedorMorado">
+          <!--contenedor morado en CSS-->
           <p class="crearCuenta">¿No tienes una cuenta?</p>
           <button class="btnCreate-account" name="boton" type="submit">Crear cuenta</button>
         </div>
-        </div>
-          <div id="New-account">
-            <img class="registerContainer" src="Images/Register.png" atl="contenedorRegistro">
-            <p class="snRegister">Registrarme con:</p>
-            <a href="https://www.gmail.com/" target="_blank"><img class="gmail1" src="Images/Google.png" alt="Gmail"></a>
-            <a href="https://www.facebook.com/" target="_blank"><img class="facebook1" src="Images/Facebook.png" alt="Facebook"></a>
-            <img class="o1" src="Images/O.png" alt="line">
-            <input type="text" id="email1" placeholder="Correo electrónico">
-            <input type="password" id="password1" placeholder="Contraseña">
-            <input type="passwordconfirm" id="password2" placeholder="Confirmar contraseña">
-            <button class="btnCreate-account1" name="boton" type="submit">Crear cuenta</button>
-            <p><a class="optionSingIn">O iniciar sesión</a></p>
-          </div>
+    </div>
+
+    <div id="New-account">
+      <!--contenedor amarillo en CSS-->
+      <p class="snRegister">Registrarme con:</p>
+
+      <a href="https://www.gmail.com/" target="_blank"><img class="gmail1" src="Images/Google.png" alt="Gmail"></a>
+      <a href="https://www.facebook.com/" target="_blank"><img class="facebook1" src="Images/Facebook.png" alt="Facebook"></a>
+      
+      <img class="o1" src="Images/O.png" alt="line">
+      <input type="text" id="email1" placeholder="Correo electrónico">
+      <input type="password" id="password1" placeholder="Contraseña">
+      <input type="passwordconfirm" id="password2" placeholder="Confirmar contraseña">
+      <button class="btnCreate-account1" name="boton" type="submit">Crear cuenta</button>
+      <p><a class="optionSingIn" type="button">O iniciar sesión</a></p>
+    </div>
+
   </section>
   
   <section id = "muro">
+
     <header>
       <img class="icon-profile" src="images/icons/icon-profile.png">
-      <img class="icon-settings" src="images/icons/icon-settings.png">
+      <img id = "icon-settings" class="icon-settings" src="images/icons/icon-settings.png">
       <div class="searching">
         <input type="text" maxlength="100" autocomplete="off">
         <input class="icon-lupa" src="images/icons/icon-lupa.png" type="image">
@@ -58,9 +66,11 @@
     <div id="map">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254508.3928106861!2d-74.24789140391782!3d4.648625932164217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bfd2da6cb29%3A0x239d635520a33914!2zQm9nb3TDoQ!5e0!3m2!1ses!2sco!4v1618855424331!5m2!1ses!2sco" width="100%" height="900px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
+
   </section>
   
-  <section>
+  <section id = "settings">
+    
     <div class="header">
       <div>
         <h1>WALKTER</h1>
@@ -72,7 +82,6 @@
     </div>
 
     <div class="content">
-
       <div class="left pad">
         <div>
           <h2>Información Personal</h2>
@@ -95,12 +104,10 @@
         </div>
         <button class="button-upload">Subir</button>
       </div>
-      
     </div>
 
   </section>
   
-
   <script type="module" src="main.js"></script>
 </body>
 </html>
