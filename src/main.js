@@ -13,15 +13,14 @@ document.getElementById('btnSing-in').addEventListener('click',() => Continue(mu
 document.getElementById('icon-settings').addEventListener('click',() => Continue(settings));
 
 
-function hide(){
+function Hide(){
     inicio.style.display = 'none'
     muro.style.display = 'none'
     settings.style.display = 'none'
 }
 
 function Continue(section){
-    hide()
+    Hide()
     section.style.display = 'block'
 }
-console.log(Continue)
 
