@@ -17,15 +17,31 @@ Puedes acceder a la versión web haciendo click [aqui](https://dsandovalm.github
 ### Prototipos ###
 
 #### Baja fidelidad ####
+
 - Sign in
 ![Sign in Desktop](./src/images/figma/sn_ld_signin.png)
 ![Sign in Phone](./src/images/figma/sn_lp_signin.png)
+
 - Sign up
 ![Sign up Desktop](./src/images/figma/sn_ld_signup.png)
 ![Sign up Phone](./src/images/figma/sn_lp_signup.png)
-- Inicio: mapa
-- Modal: publicación
+
+- Inicio: mapa. Publicaciones en pop ups
+![Timeline Desktop](./src/images/figma/sn_ld_timeline.png)
+![Timeline Phone](./src/images/figma/sn_lp_timeline.png)
+
 - Perfil de usuario
+![Timeline Desktop](./src/images/figma/sn_ld_profile.png)
+![Timeline Phone](./src/images/figma/sn_lp_profile.png)
+
+- Configuración
+![Settings Desktop](./src/images/figma/sn_ld_settings.png)
+![Settings Phone](./src/images/figma/sn_lp_settings.png)
+
+- Creación de Publicaciones
+![Create post](./src/images/figma/sn_lp_create.png)
+![Camera](./src/images/figma/sn_lp_camera.png)
+
 
 ![Interfaz 1](https://user-images.githubusercontent.com/72315710/114764182-3dbdc900-9d29-11eb-9925-4c0c821780b4.PNG)
 ![Interfaz 2](https://user-images.githubusercontent.com/72315710/114764186-3e565f80-9d29-11eb-8374-ad000177ad52.PNG)
