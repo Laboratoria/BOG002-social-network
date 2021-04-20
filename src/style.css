@@ -46,14 +46,14 @@ body {
  }
 
  .input {
-    color:#923367;
-    width: 239px;
-    height: 35px;
-    left: 81px;
-    top: 277px;    
-    background: #FFFFFF;
-    border: 1px solid #923367;
-    box-sizing: border-box;
-    border-radius: 4px;
-    margin: 2%;
- }
+   color:#923367;
+   width: 239px;
+   height: 35px;
+   left: 81px;
+   top: 277px;    
+   background: #FFFFFF;
+   border: 1px solid #923367;
+   box-sizing: border-box;
+   border-radius: 4px;
+   margin: 2%;
+}
