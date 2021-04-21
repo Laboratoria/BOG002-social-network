@@ -32,14 +32,116 @@ section {
     padding: 20px;
 }
 
-
-/*
-
 h1 {
+    display: flex;
+    margin: auto;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-right: 10px;
     font-family: 'Fredoka One', cursive;
-    font-size: 72px;
+    font-size: 35px;
 }
 
+
+.container-login {
+    display: flex;
+    margin: 0px;
+    width: 225px;
+    height: 320px;
+    background: var(--amarillo);
+    border-radius: 20px; 
+}
+
+#email {
+    display: flex;
+    margin: 20px;
+    width: 180px;
+    height: 40px;   
+    margin-top: 30px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 15px; 
+    font-size: 15px;
+}
+
+#password {
+    display: flex;
+    margin: 20px;
+    width: 180px;
+    height: 40px;   
+    margin-top: 20px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 15px; 
+    font-size: 15px;
+}
+
+.forgetMyPassword {
+    display: flex;
+    margin: 30px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 13px;
+    cursor: pointer;
+    color: rgb(0, 162, 255);
+    
+}
+
+#btnSing-in {
+    display: flex;
+    margin: auto;
+    padding: 12px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: transparent; 
+    font-size: 15px;
+    color: #ffffff;
+    background-color: var(--morado);
+}
+
+.o {
+    display: flex;
+    margin: auto;
+    width: 200px;
+}
+
+.icon-gmail {
+    position: absolute;
+    left: 80px;
+}
+
+.icon-facebook {
+    position: absolute;
+    left: 140px;
+}
+
+.new-user{
+    position: absolute;
+    margin: 0px;
+    width: 225px;
+    height: 100px;
+    top: 410px;
+    background: var(--verde);
+    border-radius: 20px;
+}
+
+#btnCreate-account {
+    display: flex;
+    margin: auto;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: transparent; 
+    font-size: 15px;
+    color: #ffffff;
+    background-color: var(--morado);
+}
+
+.title-Newaccount {
+    text-align: center;
+}
+/*
 h2 {
     margin-top: 0;
     font-size: 27px; 

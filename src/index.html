@@ -12,32 +12,32 @@
  
 <body>
   <section id="inicio">
-
+    
     <div id="Presentation">
       <h1>WALKTER</h1>
-      <h2 class="slogan">Apostemos por vías más seguras para todos.</h2>
-      <img class="app" src="Images/Web image.png" att="app">
+      <!--<h2 class="slogan">Apostamos por vías más seguras para todos.</h2>
+      <img class="app" src="Images/Web image.png" att="app">-->
     </div>
-
-    <div id="login">
-      <!--contenedor amarillo en CSS-->
-      <input type="text" id="email" placeholder="Correo electrónico">
-      <input type="password" id="password" placeholder="Contraseña">
-      <p><a class="forgetMyPassword" type="button">Olvide contraseña</a></p>
-      <img class="o" src="Images/O.png" alt="line"><!--mirar si se puede hacer la línea con CSS-->
-      <a href="https://www.gmail.com/" target="_blank"><img class="gmail" src="Images/Google.png" alt="Gmail"></a>
-      <a href="https://www.facebook.com/" target="_blank"><img class="facebook" src="Images/Facebook.png" alt="Facebook"></a>
-      <button id="btnSing-in" name="boton" type="submit">Iniciar sesión</button>
-
-        <div id="New-user">
+    <div class="container-login">
+      <div id="login">
+        <input type="email" id="email" placeholder="Correo electrónico">
+        <input type="password" id="password" placeholder="Contraseña">
+        <p><a class="forgetMyPassword" type="button">Olvide contraseña</a></p>
+        <button id="btnSing-in" name="boton" type="submit">Iniciar sesión</button>
+        <img class="o" src="Images/O.png" alt="line"><!--mirar si se puede hacer la línea con CSS-->
+        <a href="https://www.gmail.com/" target="_blank"><img class="icon-gmail" src="Images/Google.png" alt="Gmail"></a>
+        <a href="https://www.facebook.com/" target="_blank"><img class="icon-facebook" src="Images/Facebook.png" alt="Facebook"></a>
+      </div>
+    
+        <div class="new-user">
           <!--contenedor morado en CSS-->
-          <p class="crearCuenta">¿No tienes una cuenta?</p>
-          <button class="btnCreate-account" name="boton" type="submit">Crear cuenta</button>
+          <p class="title-Newaccount">¿No tienes una cuenta?</p>
+          <button id="btnCreate-account" name="boton" type="submit">Crear cuenta</button>
         </div>
     </div>
 
-    <div id="New-account">
-      <!--contenedor amarillo en CSS-->
+    <!--<div id="New-account">
+      contenedor amarillo en CSS
       <p class="snRegister">Registrarme con:</p>
 
       <a href="https://www.gmail.com/" target="_blank"><img class="gmail1" src="Images/Google.png" alt="Gmail"></a>
@@ -49,7 +49,7 @@
       <input type="passwordconfirm" id="password2" placeholder="Confirmar contraseña">
       <button class="btnCreate-account1" name="boton" type="submit">Crear cuenta</button>
       <p><a class="optionSingIn" type="button">O iniciar sesión</a></p>
-    </div>
+    </div>-->
 
   </section>
   
@@ -109,5 +109,24 @@
   </section>
   
   <script type="module" src="main.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBiVALgySDsp6bALlL-FP2bBZeQs7msfw4",
+    authDomain: "walkter-64c60.firebaseapp.com",
+    projectId: "walkter-64c60",
+    storageBucket: "walkter-64c60.appspot.com",
+    messagingSenderId: "172224009434",
+    appId: "1:172224009434:web:3287d8c4c673d36f4f01e3"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 </body>
 </html>
