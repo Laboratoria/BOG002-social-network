@@ -1,5 +1,6 @@
 // aqui exportaras las funciones que necesites
 
+import { crearUsuario } from '../firebaseController/firebaseFunctions.js';
 import irReglas from './redireccionReglas.js';
 
 // creando cuenta de usuario
@@ -8,21 +9,16 @@ export function registrar() {
   const errorUsuario = document.getElementsByClassName('errorRegistro');
   document.addEventListener('click', (e) => {
     if (e.target.matches('#btnR')) {
-      console.log(errorUsuario);
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(informacion[0][1].value, informacion[0][2].value)
-        .then((userCredential) => {
-          // Signed in
-          const { user } = userCredential;
-          irReglas();
-        })
-        .catch((error) => {
-          const errorMessage = error.message;
-          document.getElementById('errorRegistro').innerHTML = errorMessage;
-        });
-    }
-  });
+      if (crearUsuario(informacion[0][1].value, informacion[0][2].value)){
+        console.log(crearUsuario(informacion[0][1].value, informacion[0][2].value));
+        irReglas();
+      }
+     else {
+      document.getElementById('errorRegistro').innerHTML = crearUsuario(informacion[0][1].value, informacion[0][2].value);
+     console.log ("esto no debe estar pasando");
+     }
+}
+})
 }
 
 // registro con Google
