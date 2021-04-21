@@ -1,68 +1,81 @@
+/* eslint-disable prefer-arrow-callback */
 // aqui exportaras las funciones que necesites
 
-import irReglas from './redireccionReglas.js';
+import irReglas from "./redireccionReglas.js";
 
-// creando cuenta de usuario
-export function registrar() {
-  const informacion = document.getElementsByClassName('formInformacion');
-  const errorUsuario = document.getElementsByClassName('errorRegistro');
-  document.addEventListener('click', (e) => {
-    if (e.target.matches('#btnR')) {
-      console.log(errorUsuario);
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(informacion[0][1].value, informacion[0][2].value)
-        .then((userCredential) => {
-          // Signed in
-          const { user } = userCredential;
-          irReglas();
-        })
-        .catch((error) => {
-          const errorMessage = error.message;
-          document.getElementById('errorRegistro').innerHTML = errorMessage;
-        });
-    }
-  });
+// CREAR CUENTA MAIL Y PWD
+function createAccount(mail, pwd) {
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(mail, pwd)
+    .then(function () {
+      window.socialNetwork.verification();
+    })
+    .catch(function (error) {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      if (errorCode === "auth/email-already-in-use") {
+        alert("Correo en uso");
+      }
+      if (errorCode === "auth/invalid-email") {
+        alert("Email inválido");
+      }
+      if (errorCode === "auth/weak-password") {
+        alert("Contraseña tiene que tener más de 6 caracteres");
+      }
+      console.log(`${errorCode} ${errorMessage}`);
+    });
 }
 
-// registro con Google
-export function registroGoogle() {
-  const botonGoogle = document.getElementById('botonGoogle');
-
-  botonGoogle.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log('click');
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result);
-        console.log('google sign in');
-        irReglas();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
+// LOGIN CON GOOGLE
+function googleLogin() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  firebase.auth().signInWithRedirect(provider);
 }
 
-// registro con Facebook
-export function registroFacebook() {
-  const botonFacebook = document.getElementById('botonFacebook');
+// LOGIN CON FACEBOOK
 
-  botonFacebook.addEventListener('click', (e) => {
-    e.preventDefault();
-    console.log('click');
-    const provider = new firebase.auth.FacebookAuthProvider();
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result);
-        console.log('Facebook sign in');
-        irReglas();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
+function facebookLogin() {
+  const provider = new firebase.auth.FacebookAuthProvider();
+  firebase.auth().signInWithRedirect(provider);
+}
+
+// LOGIN CON EMAIL Y PWD
+function emailLogin(email, password) {
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .catch(function (error) {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      if (errorCode === "auth/invalid-email") {
+        alert("Email inválido");
+      }
+      if (errorCode === "auth/user-disabled") {
+        alert("Usuario deshabilitado");
+      }
+      if (errorCode === "auth/user-not-found") {
+        alert("Usuario no encontrado");
+      }
+      if (errorCode === "auth/wrong-password") {
+        alert("Contraseña incorrecta");
+      }
+      console.log(`${errorCode} ${errorMessage}`);
+      // ...
+    });
+}
+
+function logout() {
+  firebase
+    .auth()
+    .signOut()
+    .then(function () {
+      // Sign-out successful.
+    })
+    .catch(function (error) {
+      // An error happened.
+      console.log(error);
+    });
 }

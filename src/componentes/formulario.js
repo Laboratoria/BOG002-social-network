@@ -4,7 +4,7 @@ export default function CrearFormulario() {
   const html = `
     <div>
     <p class="teachers-font">Si ya tienes cuenta, inicia sesión!</p>
-    <input type="email" class="inputIngreso" id="usuario" placeholder="Ingresar correo" required/>
+            <input type="email" class="inputIngreso" id="usuario" placeholder="Ingresar correo" required/>
             <input type="password" class="inputIngreso" id="contrasena" placeholder="Ingresar contraseña" 
             required minlength="6"/>
              <button id="btnI">Iniciar Sesion</button>
