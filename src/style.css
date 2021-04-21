@@ -53,10 +53,7 @@
     cursor: pointer;
   }
 
-  button:hover {
-    color: white;
-    background-color: rgb(1, 12, 15);
-}
+  
 
 .registro{
   color: rgb(1, 12, 15);

@@ -12,7 +12,9 @@ body {
     padding: 3vh; 
     color: black;
     text-align: center;
+     
   }
+
   .colum1 {
     grid-area: column1;
   }
@@ -80,7 +82,8 @@ body {
 
   #reglasHuc {
       background-color:rgba(235, 228, 228, 0.82) ;
-  }
+      
+    }
   
   details {
       width: 48vw;

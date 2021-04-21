@@ -7,8 +7,8 @@ export default function CrearFormulario() {
     <input type="email" class="inputIngreso" id="usuario" placeholder="Ingresar correo" required/>
             <input type="password" class="inputIngreso" id="contrasena" placeholder="Ingresar contraseña" 
             required minlength="6"/>
-            <div id="mesagge"></div>
              <button id="btnI">Iniciar Sesion</button>
+             <div id="mesagge"></div>
              <p id="registro">¿No tienes cuenta? Registrate <a href="#registro">AQUÍ</a>
              <p id="registro"">------------------  O  ------------------</p>
             <img src="img/singFacebook.png" alt="Registro con Facebook" id="botonFacebook"/>
