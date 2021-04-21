@@ -1,24 +1,24 @@
 // aqui exportaras las funciones que necesites
 
-import { crearUsuario } from '../firebaseController/firebaseFunctions.js';
+import { crearUsuario, providerFacebook, providerGoogle } from '../firebaseController/firebaseFunctions.js';
 import irReglas from './redireccionReglas.js';
 
 // creando cuenta de usuario
 export function registrar() {
   const informacion = document.getElementsByClassName('formInformacion');
-  const errorUsuario = document.getElementsByClassName('errorRegistro');
   document.addEventListener('click', (e) => {
     if (e.target.matches('#btnR')) {
-      if (crearUsuario(informacion[0][1].value, informacion[0][2].value)){
-        console.log(crearUsuario(informacion[0][1].value, informacion[0][2].value));
-        irReglas();
-      }
-     else {
-      document.getElementById('errorRegistro').innerHTML = crearUsuario(informacion[0][1].value, informacion[0][2].value);
-     console.log ("esto no debe estar pasando");
-     }
-}
-})
+      crearUsuario(informacion[0][1].value, informacion[0][2].value)
+        .then(() => {
+          irReglas();
+          const mesaggeUserNew = document.createTextNode("¡Registro exitoso!");
+          document.getElementById("main").insertBefore(mesaggeUserNew, document.getElementById("main").childNodes[0]);
+        })
+        .catch((error) => {
+          document.getElementById('errorRegistro').innerHTML = `Ocurrio un error: ${error.message}`;
+        });
+    }
+  });
 }
 
 // registro con Google
@@ -27,17 +27,13 @@ export function registroGoogle() {
 
   botonGoogle.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('click');
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result);
-        console.log('google sign in');
+    providerGoogle()
+      .then(() => {
         irReglas();
       })
       .catch((err) => {
-        console.log(err);
+        const errorMensagge = document.createTextNode(`Ocurrio un error: ${err.message}`);
+        document.getElementById("main").appendChild(errorMensagge);
       });
   });
 }
@@ -48,17 +44,13 @@ export function registroFacebook() {
 
   botonFacebook.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('click');
-    const provider = new firebase.auth.FacebookAuthProvider();
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        console.log(result);
-        console.log('Facebook sign in');
+    providerFacebook()
+      .then(() => {
         irReglas();
       })
       .catch((err) => {
-        console.log(err);
+        const errorMensagge = document.createTextNode(`Ocurrio un error: ${err.message}`);
+        document.getElementById("main").appendChild(errorMensagge);
       });
   });
 }
