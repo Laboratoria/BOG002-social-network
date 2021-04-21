@@ -1,18 +1,8 @@
 // aqui exportaras las funciones que necesites
-
+import {vistas} from './vistas.js';
 
 const idregistro= document.getElementById("registro")
 
-
-const vistas = ()=>{
-  const texto=
-  `<h5>Holis esto es una prueba</h5>
-  <p>A ver si esta verga funciona</p>`;
-  const divregistro=document.createElement('div');
-  divregistro.innerHTML=texto;
-  console.log(vistas)
-  return divregistro
-  };
 const router = (route)=>{
   console.log(route)
   switch (route){
