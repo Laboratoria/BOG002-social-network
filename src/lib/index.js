@@ -1,15 +1,16 @@
 // aqui exportaras las funciones que necesites
-import {vistas} from './vistas.js';
+import {registro} from './vistas.js';
 
-const idregistro= document.getElementById("registro")
+let idregistro= document.getElementById("registro")
 
 const router = (route)=>{
-  console.log(route)
+  idregistro.innerHTML="";
+  console.log(route) 
   switch (route){
     case '#/inicio':
         return console.log ("aiuda")
    case '#/registro':{
-     return idregistro.appendChild(vistas())
+     return idregistro.appendChild(registro())
    }
        default:
            return console.log("si funciona pero  esta enlazando la principal")
@@ -18,8 +19,6 @@ const router = (route)=>{
 };
 
 export const myFunction = () => {
-  // aqui tu codigo
-
   window.addEventListener('hashchange',()=>{
     router(window.location.hash);
     
