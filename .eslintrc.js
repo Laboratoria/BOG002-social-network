@@ -14,5 +14,6 @@ module.exports = {
   },
   rules: {
     "import/extensions":0,
+    "quotes":0,
   },
 };

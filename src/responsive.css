@@ -1,31 +1,26 @@
-* {
-    margin: 0;
-    padding: 0;
-  }
+body {
+    background-image: url(./img/huc.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
   .grid-container {
     display: grid;
     grid-template-areas: 'header header header header' 'column1 main main column2' 'footer footer footer footer'
   }
   .grid-container div {
-    padding: 5vmin; 
+    padding: 3vh; 
     color: black;
     text-align: center;
-    background-color: #EDF0F2;
   }
-  .header {
-    grid-area: header;
-    background-image: url(./img/huc.jpg);
-    background-size: 100% auto; 
-    height: 25vh;
-  }
-  
   .colum1 {
     grid-area: column1;
   }
   
   .main {
      grid-area: main;
-    justify-items: start;
+    justify-items: center;
+    margin-top: 10vh;
   }
   
   .colum2 {
@@ -38,11 +33,11 @@
     margin: 10px auto;
     padding: 12px;
     border-radius: 10px;
-    border: 0.5px solid rgb(11, 89, 116);
+    border: 0.5px solid rgb(1, 12, 15);
   }
 
   button {
-    display: block;
+    
     margin: 10px auto;
     border: 0.5px solid rgb(1, 12, 15);
     padding: 10px;
@@ -57,21 +52,11 @@
     color: white;
     background-color: rgb(1, 12, 15);
 }
-
-.registro{
-  color: rgb(1, 12, 15);
-    text-align: center;
-    margin-left: 13px;
-    margin-top: 5px;
-    cursor: pointer;
-}
-  p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+  
+  #btnI{
+    margin-left: 2vw;
   }
+
   #mesagge {
     color: red;
   }
@@ -87,9 +72,33 @@
     width: 50vmin;
   }
 
-  .footer {
-    grid-area: footer;
+  form {
+    background: rgba(235, 228, 228, 0.82);
+    width: 30vw;
+    margin-left: 20vw;
+  }
+
+  #reglasHuc {
+      background-color:rgba(235, 228, 228, 0.82) ;
+  }
+  
+  details {
+      width: 48vw;
+      margin-right: 0;
   }
   ol {
     text-align: start;
+    justify-content: flex-start;
+  }
+  li {
+      padding: 2vh;
+      text-align: start;
+      margin-left: 5vw;
+  }
+#buttonReglas {
+    margin-top: 5vh;
+}
+
+.footer {
+    grid-area: footer;
   }
