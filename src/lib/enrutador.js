@@ -1,16 +1,17 @@
 // aqui exportaras las funciones que necesites
 import { formularioRegistro} from './vistas.js';
 
-const idregistro = document.querySelector('#registro');
+const idRegistro = document.querySelector('#registro');
 
 export const router = (route) => {
-  idregistro.innerHTML = '';
+  idRegistro.innerHTML = '';
   console.log(route);
   switch (route) {
     case '#/inicio':
       console.log('aiuda');
       break;
     case '#/registro': 
+      idRegistro.innerHTML=`<formulario-registro></formulario-registro>`;
       formularioRegistro();
     break;
     default:
