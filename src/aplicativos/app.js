@@ -1,7 +1,11 @@
 // aqui exportaras las funciones que necesites
+import firebaseInitialize from '../firebaseController/firebaseConfig.js';
 
 import { crearUsuario, providerFacebook, providerGoogle } from '../firebaseController/firebaseFunctions.js';
 import irReglas from './redireccionReglas.js';
+
+// Inicializando firebase
+firebaseInitialize();
 
 // creando cuenta de usuario
 export function registrar() {

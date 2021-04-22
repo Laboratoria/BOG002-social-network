@@ -1,9 +1,7 @@
-import { auth } from "./firebaseConfig.js";
-
-export const crearUsuario = (email, password) => auth
+export const crearUsuario = (email, password) => firebase.auth()
   .createUserWithEmailAndPassword(email, password);
 
-export const nuevoIngreso = (email, password) => auth
+export const nuevoIngreso = (email, password) => firebase.auth()
   .signInWithEmailAndPassword(email, password);
 
 export const providerGoogle = () => {
