@@ -1,4 +1,4 @@
-import { App } from "./App.js";
+import { App } from "./app/App.js";
 
 
 document.addEventListener("DOMContentLoaded", App);
