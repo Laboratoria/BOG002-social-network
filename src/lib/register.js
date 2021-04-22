@@ -1,4 +1,4 @@
-// Template register
+// Template
 
 /*<div id="form-container">
         <h1 class="register-tittle">Register</h1>
