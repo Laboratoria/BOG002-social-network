@@ -1,8 +1,11 @@
 export function Register() {
-
-    const register = document.createElement("div")
-        //console.log("soy filtro");
-    register.innerHTML = `<h1> I'm Home Page </h1> 
+  const template = document.querySelector('#template');
+  if (template) {
+    template.innerHTML = '';
+  }
+  const register = document.createElement('div');
+  register.innerHTML = 
+  `<h1> I'm Register </h1> 
     <div id="form-container">
             <h1 class="register-tittle">Register</h1>
             <div class="form">
