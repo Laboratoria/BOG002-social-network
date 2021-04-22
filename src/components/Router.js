@@ -1,9 +1,9 @@
-import { Landing } from "./Landing.js";
+import { Landing, random } from "./Landing.js";
 import { Register } from "./Register.js";
+import { Login } from "./Login.js"
 
 export function Router() {
     let { hash } = location;
-    console.log(hash);
 
     //console.log(hash);
 
@@ -19,31 +19,22 @@ export function Router() {
         document.getElementById("template").innerHTML = "<h2>Se carga lo anterior</h2>";
     }*/
 
-    const routes = {
-        '#/': Landing,
-        '#/register': Register,
-        //'#/login': Login
-    };
-
     const root = document.querySelector('#template');
     console.log(root)
     switch (hash) {
         case '':
         case '#/':
-            //return Landing()
+            console.log(Landing())
             root.appendChild(Landing());
-
-
-
-
+            random()
             break;
         case '#/register':
             root.appendChild(Register());
-            console.log("landing");
             break;
-
-
-
+        case '#/login':
+            root.appendChild(Login());
+            console.log("Login de la ley");
+            break;
         default:
             console.log("landing default");
             break;
