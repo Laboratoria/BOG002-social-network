@@ -1,11 +1,8 @@
+import { reset } from "./Utils.js";
 export function Register() {
-  const template = document.querySelector('#template');
-  if (template) {
-    template.innerHTML = '';
-  }
-  const register = document.createElement('div');
-  register.innerHTML = 
-  `<h1> I'm Register </h1> 
+  reset();
+  const register = document.createElement("div");
+  register.innerHTML = `<h1> I'm Register </h1> 
     <div id="form-container">
             <h1 class="register-tittle">Register</h1>
             <div class="form">
@@ -37,7 +34,7 @@ export function Register() {
                 <!-- botones para ingreso con fb y gmail -->
               </div>
             </div>
-          </div>`
+          </div>`;
 
-    return register;
+  return register;
 }
