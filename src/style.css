@@ -5,7 +5,7 @@ body{
     margin: 0;
     padding: 0;
 }
-.interfazRegistro{
+.register-login-container{
   height:100vh;
   display: grid;
   background: black;
@@ -31,7 +31,7 @@ body{
 .photograph:nth-child(6){
   grid-column-start: span 2;
 }
-.interfazRegistro::after {
+.register-login-container::after {
   content:"";
   position:absolute;
   top:0;
@@ -41,7 +41,7 @@ body{
   background:rgba(0,0,0,0.4);
   z-index:24;
 }
-.divFormRegister{
+.cardContainer{
   position: fixed;
   display: flex;
   z-index: 50;
@@ -53,6 +53,7 @@ body{
   justify-content: center;
   border-radius: 10px;  
 }
+
 .imgTrama{
   width: 72vw;
   height: 20vh;
@@ -65,21 +66,20 @@ body{
   margin-top: 5vh;
   position: fixed;
   z-index: 45;
-  margin-left: 23vw;
 }
 .titleForm{
   margin-top:22vh;
   font-family:'Roboto', sans-serif;
   font-weight: 700;
   font-size: 1.2em;
-  margin-left: 10vw;
+  margin-left: 2vw; 
 }
 .formRegister{
   position: absolute;
   width: 57vw;
   height: 70vh;
-  margin-top: 4vh;
-  margin-left: 10vw;
+  margin-top: 30vh;
+  margin-left: 3vw;
   z-index: 35;
 }
 form input:hover{
@@ -228,7 +228,7 @@ button.buttonInicioSesion:hover{
 }
 @media (min-width: 1200px) {
 
-  .interfazRegistro{
+  .register-login-container{
     height:100vh;
     display: grid;
     grid-gap: 0.7vw;
@@ -282,7 +282,7 @@ button.buttonInicioSesion:hover{
   .photograph:nth-child(22){
   grid-column-end: span 2;
   }
-  .divFormRegister{
+  .cardContainer{
   width: 27.5vw;
   height: 70vh;
   margin-top: 13.3vh;
@@ -297,27 +297,25 @@ button.buttonInicioSesion:hover{
   .titleForm{
   margin-top:24vh;
   font-size: 1.3em;
-  margin-left: 6vw;
+  margin-left: 0.6em;
   }
   .formRegister{
   width: 25vw;
   height: 70vh;
-  margin-top: 3vh;
-  margin-left: 4.5vw;
+  margin-top: 35vh;
+  margin-left: 5.2vw;
   }
   .imgIcon{
   width: 2vw;
   height: 4vh;
   margin-bottom: -1.3vh;
-  padding-bottom: 0.8vh;
-  border-bottom: 1px solid rgb(0, 0, 0); 
-  margin-right:-0.5vw;
+  padding-bottom: 0.1vh;
+  margin-right:0.5vw;
   }
   .imgLogo{
   width: 7.5vw;
   height: 15vh;
   margin-top: 6vh;
-  margin-left: 10vw;
   }
   .inputNameRegister{
   width: 16.5vw;
@@ -342,7 +340,7 @@ button.buttonInicioSesion:hover{
   }
   .buttonEnvioRegistro{
     margin-top: 3vh;
-    margin-left: 1.5vw;
+    margin-left:2.6vw;
     width: 15vw ;
     height:6.2vh ;
     font-size: 1em;
@@ -387,18 +385,7 @@ button.buttonInicioSesion:hover{
 
 }
 /* Interfaz HOME PAGE */
-.divSignIn{
-  position: fixed;
-  display: flex;
-  z-index: 30;
-  width:73vw;
-  height: 70vh;
-  margin-top: 12vh;
-  background:#EAE6CA;
-  left: 13vw;
-  justify-content: center;
-  border-radius: 10px;  
-}
+
 .imgTramaHome{
   width: 72vw;
   height: 20vh;
@@ -551,7 +538,7 @@ button.buttonInicioGoogle:hover{
   margin-left: 12vw;
 }
 @media (min-width: 1200px) {
-  .divSignIn{
+  .loginForm{
     width: 27.5vw;
     height: 70vh;
     margin-top: 13.3vh;

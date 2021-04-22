@@ -2,70 +2,15 @@
 
 // Este es el punto de entrada de tu aplicacion
 
-import { Information, assignName } from './auth/newUser.js';
-
+// import { Information, assignName } from './auth/newUser.js';
+import { renderFormRegister } from './views/Register.js';
+// import { renderLogin } from './views/LogIn.js'
+import { gridImage } from './components/image-grid.js'
+import { renderFormLogin } from './views/LogIn.js'
+import { card } from './components/register-login_card.js'
 // For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
 let arrayUser;
-
-function userRegistration(event) {
-  event.preventDefault();
-  const username = document.querySelector('.inputNameRegister').value;
-  const email = document.querySelector('.inputEmailRegister').value;
-  const password = document.querySelector('.inputPasswordRegister').value;
-
-  Information(email, password).then((user) => {
-    // console.log(user);
-    arrayUser = user;
-    const usuario = document.createElement('div');
-    usuario.innerHTML = arrayUser;
-    usuario.className = 'divGhost';
-    assignName(username);
-    const divFormRegister = document.getElementById('divFormRegister');
-    const confirmationRegistro = document.getElementById('formRegister');
-    confirmationRegistro.style.display = 'none';
-    const messageExito = document.createElement('div');
-    messageExito.textContent = 'Tu registro se ha realizado con exito!!!!';
-    messageExito.className = 'messageExitoso';
-    divFormRegister.appendChild(messageExito);
-    const SignupRegister = document.createElement('button');
-    SignupRegister.type = 'button';
-    SignupRegister.innerText = 'Iniciar sesion';
-    SignupRegister.className = 'buttonInicioSesion';
-    messageExito.appendChild(SignupRegister);
-  }).catch((error) => {
-    // console.log(error);
-    const popupEmail = document.querySelector('.popupEmail');
-    const popupPassword = document.querySelector('.popupPassword');
-    switch (error) {
-      case 'auth/email-already-in-use':
-        popupEmail.style.display = 'block';
-        popupEmail.innerHTML = 'Su correo ya se encuentra registrado';
-        // popupEmail.classList.toggle('show');
-        setTimeout(() => {
-          popupEmail.style.display = 'none';
-        }, 5000);
-        break;
-      case 'auth/invalid-email':
-        popupEmail.style.display = 'block';
-        popupEmail.innerHTML = 'Correo invalido';
-        // popupEmail.classList.toggle('show');
-        setTimeout(() => {
-          popupEmail.style.display = 'none';
-        }, 5000);
-        break;
-      case 'auth/weak-password':
-        popupPassword.style.display = 'block';
-        popupPassword.innerHTML = 'Contraseña invalida';
-        // popupPassword.classList.toggle('show');
-        setTimeout(() => {
-          popupPassword.style.display = 'none';
-        }, 3000);
-        break;
-      default:
-        break;
-    }
-  });
-}
+/*
 
 document.querySelector('.formRegister').addEventListener('submit', userRegistration);
 
@@ -106,4 +51,55 @@ function changePages() {
   };
 }
 
-changePages();
+changePages();*/
+
+const rootContainer = document.getElementById('root');
+let hash = window.location.hash.substring(1);
+document.addEventListener('DOMContentLoaded', renderRegister());
+window.addEventListener('hashchange', () => {
+  let hash = window.location.hash.substring(1);
+  Router(hash)}) 
+// console.log(hash);
+  function Router(hash){
+    console.log(hash);
+    switch(hash){
+      case 'LogInToRegister':
+        renderRegister();
+        break;
+      case 'profile':
+        renderProfile();
+        break;
+      case 'post':
+        renderPost();
+        break;
+      case 'login':
+        // renderLogin();
+        break;
+      default:
+        break;  
+    }
+  }
+function renderLogin(){
+    const $divg = document.createElement("div"); 
+    $divg.classList.add('register-login-container');
+    document.querySelector('.body').appendChild($divg);
+    gridImage($divg);
+    const $newDiv = $divg.appendChild(card());
+    renderFormLogin($newDiv); 
+    console.log("ingresa render login");
+}
+
+function renderRegister(){
+  const $divg = document.createElement("div"); 
+  $divg.classList.add('register-login-container');
+  document.querySelector('.body').appendChild($divg);
+  gridImage($divg);
+  const $newDiv = $divg.appendChild(card());
+  renderFormRegister($newDiv);
+}
+
+function renderProfile(){
+  const container = `<p> esto es profile </p>`;
+  document.querySelector('.body').insertAdjacentHTML('beforeend', container);
+}
+

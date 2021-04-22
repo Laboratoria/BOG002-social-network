@@ -12,7 +12,7 @@
   <link href = "https://fonts.googleapis.com/css2? family = Roboto: wght @ 700 & display = swap" rel = "hoja de estilo">
 </head>
 
-<body>
+<body class="body">
 
   <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
@@ -26,80 +26,15 @@
   <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
 
+ 
 
-  <section class="interfazRegistro">
+  <!-- <div id="root">
+    <a href="#home">Home</a>
+    <a href="#post">Post</a>
+    <a href="#profile">Profile</a>
+    <a href="#login">Login</a>
+  </div> -->
 
-    <div class="photograph"><img src="imagesPrincipal/14-cartagena.jpg" class="imageMobile"></div>
-    <div class="photograph"><img src="imagesPrincipal/6-Guatavita.jpg" class="imageMobile"></div>
-    <div class="photograph"><img src="imagesPrincipal/18-rio-amazonas.jpg" class="imageMobile"></div>
-    <div class="photograph"><img src="imagesPrincipal/9-tatacoa.jpg" class="imageMobile"></div>
-    <div class="photograph"><img src="imagesPrincipal/5-caballo.jpg" class="imageMobile"></div>
-    <div class="photograph"><img src="imagesPrincipal/19-tayrona.jpeg" class="imageMobile"></div>
-    <div class="photograph"><img src="imagesPrincipal/2-coveñas.jpg" class="imageMobile"></div>
-    <div class="photograph"><img src="imagesPrincipal/11-bandera.jpg" class="imageMobile"></div>
-    <div class="photograph"><img src="imagesPrincipal/17-Santuario-las-lajas.jpg" class="imageMobile"></div>
-    <div class="photograph"><img src="imagesPrincipal/21-caño_cristales.jpg" class="imageMobile"></div>
-    <div class="photograph"><img src="imagesPrincipal/3-jeep_huilense.jpg" class="hideElement"></div>
-    <div class="photograph"><img src="imagesPrincipal/12-llanos.jpg" class="hideElement"></div>
-    <div class="photograph"><img src="imagesPrincipal/4-leopardo.jpg" class="hideElement"></div>
-    <div class="photograph"><img src="imagesPrincipal/7-san_andres.jpeg" class="hideElement"></div>
-    <div class="photograph"><img src="imagesPrincipal/8-cartagena.jpeg" class="hideElement"></div>
-    <div class="photograph"><img src="imagesPrincipal/1-bog.jpg" class="hideElement"></div>
-    <div class="photograph"><img src="imagesPrincipal/13-bici.jpg" class="hideElement"></div>
-    <div class="photograph"><img src="imagesPrincipal/10-vista.jpg" class="hideElement"></div>
-    <div class="photograph"><img src="imagesPrincipal/15-cali.jpg" class="hideElement"></div>
-    <div class="photograph"><img src="imagesPrincipal/16-ballenas.jpg" class="hideElement"></div>
-    <div class="photograph"><img src="imagesPrincipal/20-medellin.jpg" class="hideElement"></div>
-    <div class="photograph"><img src="imagesPrincipal/22-negrita_cartagena.jpg" class="hideElement"></div>
-
-    <div class="divSignIn" id="divSignIn">
-      <img class="imgLogoHome" src="imagesIcon/Complete_logo.png">
-      <img class="imgTramaHome" src="imagesIcon/textureGray.png">
-
-      <form class="formHome" id="formHome"autocomplete="off">
-        <img class="imgIcon" src="imagesIcon/atGray.png" />
-        <input class="inputEmailHome" placeholder="Correo electrónico" type="email" id="userEmailHome"
-        required></input><br>
-        <img class="imgIcon" src="imagesIcon/lockedGray.png" />
-        <input class="inputPasswordHome" placeholder="Contraseña" type="password" id="userPasswordHome" minlength="7" required></input>
-        <button class="buttonVisibilityHome" type="button">
-          <img class="imgVisibilityHome" id="noVisibilityHome" src="imagesIcon/NoVisibility.png" style="display:block;" />
-          <img class="imgVisibilityHome" id="visibilityHome" src="imagesIcon/ver.png" style="display:none;" />
-        </button>
-        <button class="buttonInicioSesionHome" type="submit">Iniciar sesión</button>
-        <p id="o">_______<img class="imgO" src="imagesIcon/o.png">_______</p>
-        <button class="buttonInicioGoogle" type="submit">Ingresa con Google<img id="logoGoogle" src="imagesIcon/google.png"></button>
-        <h3 id="question">¿Aún no tienes cuenta?</h3>
-        <a id="linkRegister" href="#divFormRegister">Registrate aquí</a>
-      </form>
-      
-    </div> 
-
-
-    <div class="divFormRegister" id="divFormRegister" style="display: none;">
-      <img class="imgLogo" src="imagesIcon/Complete_logo.png">
-      <img class="imgTrama" src="imagesIcon/textureGray.png">
-      <h3 class="titleForm">Formulario Registro</h3>
-      <form class="formRegister" id="formRegister"autocomplete="off">
-        <img class="imgIcon" src="imagesIcon/UserGray.png" />
-        <input class="inputNameRegister" placeholder="Nombre Completo" type="text" id="userName" minlength="7" pattern="[A-Z a-z]{1,30}" required></input><br>
-        <img class="imgIcon" src="imagesIcon/atGray.png" />
-        <input class="inputEmailRegister" placeholder="Correo electrónico" type="email" id="userEmail"
-          required></input><br>
-        <div class="popupEmail" style="display: none;"><p></p></div> 
-        <img class="imgIcon" src="imagesIcon/lockedGray.png" />
-        <input class="inputPasswordRegister" placeholder="Contraseña" type="password" id="userPassword" minlength="7" required></input>
-        <div class="popupPassword" style="display: none;"><p></p></div> 
-        <button class="buttonVisibility" type="button">
-          <img class="imgVisibility" id="noVisibility" src="imagesIcon/NoVisibility.png" style="display:block;" />
-          <img class="imgVisibility" id="visibility" src="imagesIcon/ver.png" style="display:none;"/>
-        </button><br>
-        <br>
-        <button class="buttonEnvioRegistro" type="submit">Registrarme</button>
-      </form>
-    </div>
-
-  </section>
 
   <script type="module" src="index.js"></script>
 </body>
