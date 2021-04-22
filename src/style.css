@@ -31,7 +31,7 @@ body{
 .photograph:nth-child(6){
   grid-column-start: span 2;
 }
-.register-login-container::after {
+/* .register-login-container::after {
   content:"";
   position:absolute;
   top:0;
@@ -40,7 +40,7 @@ body{
   height:100%;
   background:rgba(0,0,0,0.4);
   z-index:24;
-}
+} */
 .cardContainer{
   position: fixed;
   display: flex;

@@ -1,15 +1,8 @@
-// import { services } from './firebase/services.js';
-
 // Este es el punto de entrada de tu aplicacion
+// import { services } from './firebase/services.js';
+import { configurationFireBase } from './firebase/config.js';
+import { router } from './controls/router.js';
 
-// import { Information, assignName } from './auth/newUser.js';
-import { renderFormRegister } from './views/Register.js';
-// import { renderLogin } from './views/LogIn.js'
-import { gridImage } from './components/image-grid.js'
-import { renderFormLogin } from './views/LogIn.js'
-import { card } from './components/register-login_card.js'
-// For Firebase JavaScript SDK v7.20.0 and later, `measurementId` is an optional field
-let arrayUser;
 /*
 
 document.querySelector('.formRegister').addEventListener('submit', userRegistration);
@@ -53,53 +46,25 @@ function changePages() {
 
 changePages();*/
 
-const rootContainer = document.getElementById('root');
-let hash = window.location.hash.substring(1);
-document.addEventListener('DOMContentLoaded', renderRegister());
-window.addEventListener('hashchange', () => {
-  let hash = window.location.hash.substring(1);
-  Router(hash)}) 
+configurationFireBase();
+
+// document.addEventListener('DOMContentLoaded', renderLogin());
+
 // console.log(hash);
-  function Router(hash){
-    console.log(hash);
-    switch(hash){
-      case 'LogInToRegister':
-        renderRegister();
-        break;
-      case 'profile':
-        renderProfile();
-        break;
-      case 'post':
-        renderPost();
-        break;
-      case 'login':
-        // renderLogin();
-        break;
-      default:
-        break;  
-    }
-  }
-function renderLogin(){
-    const $divg = document.createElement("div"); 
-    $divg.classList.add('register-login-container');
-    document.querySelector('.body').appendChild($divg);
-    gridImage($divg);
-    const $newDiv = $divg.appendChild(card());
-    renderFormLogin($newDiv); 
-    console.log("ingresa render login");
-}
 
-function renderRegister(){
-  const $divg = document.createElement("div"); 
-  $divg.classList.add('register-login-container');
-  document.querySelector('.body').appendChild($divg);
-  gridImage($divg);
-  const $newDiv = $divg.appendChild(card());
-  renderFormRegister($newDiv);
-}
+const init = () => {
 
-function renderProfile(){
-  const container = `<p> esto es profile </p>`;
-  document.querySelector('.body').insertAdjacentHTML('beforeend', container);
-}
+  let hash = window.location.hash.substring(1);
+  console.log("entra index js")
+  router(hash);
+
+  window.addEventListener('hashchange', () => {
+    let hash = window.location.hash.substring(1);
+    console.log("entra add listener hash");
+    router(hash);
+  }) 
+
+} 
+
+init();
 
