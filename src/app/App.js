@@ -1,5 +1,5 @@
-import { Router } from "./components/Router.js";
-import { Landing } from "./components/Landing.js";
+import { Router } from "../components/Router.js";
+import { Landing } from "../components/Landing.js";
 
 export function App() {
     console.log("holi");
