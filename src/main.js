@@ -1,10 +1,18 @@
 /* eslint-disable import/named */
 // Este es el punto de entrada de tu aplicacion
+import { router} from './lib/enrutador.js';
 
-import { myFunction } from './lib/index.js';
-import { formularioRegistro, botonInicio } from './lib/vistas.js';
+//import { formularioRegistro} from './lib/vistas.js';
 
-myFunction();
+const init = () => {
+    //pintar la vista en la que estoy
+    window.addEventListener('hashchange', () => {
+        router(window.location.hash);
+      });
+}
+init();
 
-formularioRegistro();
-botonInicio();
+
+
+
+
