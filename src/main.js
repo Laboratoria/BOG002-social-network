@@ -18,7 +18,7 @@ ingresar();
 
 document.addEventListener('click', (e) => {
   if (e.target.matches('a')) {
-    location.replace('#registro');
+  // window.location.assign('registro');
     CrearRegistro();
   }
 });
