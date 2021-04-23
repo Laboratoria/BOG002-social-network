@@ -1,8 +1,9 @@
-export function Login() {
+import { reset } from "./Utils.js";
 
-    const login = document.createElement("div")
-        //console.log("soy filtro");
-    login.innerHTML = `<h1> I'm Login </h1> 
+export function Login() {
+  reset();
+  const login = document.createElement("div");
+  login.innerHTML = `<h1> I'm Login </h1> 
     <div id="form-container">
             <h1 class="login-tittle">Login</h1>
             <div class="form">
@@ -23,7 +24,7 @@ export function Login() {
               <div class="social">
               </div>
             </div>
-          </div>`
+          </div>`;
 
-    return login;
+  return login;
 }
