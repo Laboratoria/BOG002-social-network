@@ -1,3 +1,4 @@
+import { nuevoIngreso } from '../firebaseController/firebaseFunctions.js';
 import irReglas from './redireccionReglas.js';
 
 export default function ingresar() {
@@ -8,16 +9,13 @@ export default function ingresar() {
   document.addEventListener('click', (e) => {
     if (e.target.matches('#btnI')) {
       e.preventDefault();
-
-      auth
-        .signInWithEmailAndPassword(email.value, contrasena.value)
-        .then((userCredential) => {
-          const { user } = userCredential;
+      nuevoIngreso(email.value, contrasena.value)
+        .then(() => {
           irReglas();
         })
         .catch((error) => {
           const errorMessage = error.message;
-          document.getElementById('mesagge').innerHTML = errorMessage;
+          document.getElementById('mesagge').innerHTML = `Se ha producido un error: ${errorMessage}`;
         });
     }
   });

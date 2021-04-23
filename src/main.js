@@ -1,37 +1,50 @@
-import { registrar } from "./aplicativos/app";
+import CrearFormulario from "./componentes/formulario.js";
+import {
+  registrar,
+  registroGoogle,
+  registroFacebook,
+} from "./aplicativos/app.js";
+import ingresar from "./aplicativos/ingreso.js";
+import CrearRegistro from "./componentes/registro.js";
+
+const main = document.getElementById("main");
+main.appendChild(CrearFormulario());
+
+registrar();
+registroGoogle();
+registroFacebook();
+ingresar();
 
 document.addEventListener("DOMContentLoaded", (event) => {
   // Initialize Firebase
-  const firebaseConfig = {
-    apiKey: "AIzaSyA2m-bpDqmXGFYJbMrfjW2J77TVNXINzS0",
-    authDomain: "social-network-lab-2030d.firebaseapp.com",
-    projectId: "social-network-lab-2030d",
-    storageBucket: "social-network-lab-2030d.appspot.com",
-    messagingSenderId: "394433220416",
-    appId: "1:394433220416:web:c1629dcc59e45f53bd74a5",
-    measurementId: "G-LMMGYHH9BN",
+  const config = {
+    apiKey: "AIzaSyAzb47AU23OXlHs6sjt-uGq9ZcbwuaBVTg",
+    authDomain: "red-social-profesores.firebaseapp.com",
+    databaseURL: "https://red-social-profesores.firebaseio.com",
+    projectId: "red-social-profesores",
+    storageBucket: "",
+    messagingSenderId: "847131414857",
   };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  CrearFormulario();
+  firebase.initializeApp(config);
+  loginPage();
 
-  // BOTON QUE CREA CUENTA
-  document.getElementById("btnI").addEventListener("click", () => {
-    const mail = document.getElementById("usuario").value;
-    const pwd = document.getElementById("contrasena").value;
-    registrar(mail, pwd);
+  // BOTON LOGIN CON GOOGLE
+  document
+    .getElementById("google-login")
+    .addEventListener("click", googleLogin);
+
+  // BOTON LOGIN CON FACEBOOK
+  document
+    .getElementById("facebook-login")
+    .addEventListener("click", facebookLogin);
+
+  // BOTON PARA LOGIN CON EMAIL Y PASSWORD
+  document.getElementById("login-btn").addEventListener("click", () => {
+    const email = document.getElementById("login-mail").value;
+    const password = document.getElementById("login-pwd").value;
+    emailLogin(email, password);
   });
+
+  // BOTON QUE VUELVE AL LOGIN
+  document.getElementById("volver").addEventListener("click", loginPage);
 });
-
-// BOTON LOGIN CON GOOGLE
-document.getElementById("google-login").addEventListener("click", googleLogin)
-  
-// BOTON LOGIN CON FACEBOOK
-document.getElementById("facebook-login").addEventListener("click", facebookLogin)
-
-// BOTON PARA LOGIN CON EMAIL Y PASSWORD
-document.getElementById("login-btn").addEventListener("click", ()=> {
-  const email = document.getElementById("login-mail").value;
-  const password = document.getElementById("login-pwd").value;
-  emailLogin(email, password);
-})
