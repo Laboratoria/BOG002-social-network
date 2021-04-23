@@ -1,3 +1,4 @@
+import { reset } from "./Utils.js";
 export function Landing() {
     reset();
     const template = document.createElement("div");
@@ -12,30 +13,21 @@ export function Landing() {
           <button id="logIn">Log In</button>
       </div>
     </div>
-    `);
+    `
+    );
+    return template;
+}
 
-    //DOM
+export function random() {
+    const btnRegister = document.getElementById("signUp");
+    btnRegister.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.assign("#/register");
+    });
 
-    /*const btnRegister = document.getElementById("signUp");
-    console.log(btnRegister);
-
-    btnRegister.addEventListener('click', (e) => {
-        e.preventDefault()
-        window.location.assign('#/register');
-
-    });*/
-
-
-    export function random() {
-        const btnRegister = document.getElementById("signUp");
-        btnRegister.addEventListener("click", (e) => {
-            e.preventDefault();
-            window.location.assign("#/register");
-        });
-
-        const btnLogin = document.getElementById("logIn");
-        btnLogin.addEventListener("click", (e) => {
-            e.preventDefault();
-            window.location.assign("#/login");
-        });
-    }
+    const btnLogin = document.getElementById("logIn");
+    btnLogin.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.assign("#/login");
+    });
+};
