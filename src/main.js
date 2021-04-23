@@ -1,7 +1,16 @@
+/* eslint-disable import/named */
 // Este es el punto de entrada de tu aplicacion
+import { router} from './lib/enrutador.js';
 
-import { myFunction } from './lib/index.js';
+const init = () => {
+    //pintar la vista en la que estoy
+    window.addEventListener('hashchange', () => {
+        router(window.location.hash);
+      });
+}
+init();
 
-myFunction();
+
+
 
 

@@ -1,21 +1,41 @@
-export const registro = ()=>{
-    const texto=
-    `<h5>Holis esto es una prueba</h5>
-    <p>A ver si esto funciona</p>`;
-    const divregistro=document.createElement('div');
-    divregistro.innerHTML=texto;
-    console.log(divregistro)
-    return divregistro
-    };
+/* eslint-disable no-useless-constructor */
+/* eslint-disable indent */
+
+
+export const formularioRegistro = () => {
   
-    export const inicio= ()=>{
-        const texto=
-        `<h5>Holis esto es una prueba</h5>
-        <p>A ver si esto funciona</p>`;
-        const divregistro=document.createElement('div');
-        divregistro.innerHTML=texto;
-        console.log(divregistro)
-        return divregistro
-        };
-      
-       
+  class formRegistro extends HTMLElement {
+  constructor() {
+      super();
+  }
+
+  connectedCallback() {
+      // eslint-disable-next-line quotes
+      this.innerHTML = `<form >
+      <div class="container">
+        <h1>Register</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+    
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+    
+        <label for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+        <hr>
+    
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+        <button type="submit" class="registerbtn">Register</button>
+      </div>
+    
+      <div class="container signin">
+        <p>Already have an account? <a href="#">Sign in</a>.</p>
+      </div>
+    </form>`;
+  }
+}
+window.customElements.define( "formulario-registro",formRegistro);
+};
