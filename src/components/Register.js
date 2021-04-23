@@ -2,7 +2,7 @@ import { reset } from "./Utils.js";
 export function Register() {
   reset();
   const register = document.createElement("div");
-  register.innerHTML = `<h1> I'm Register </h1> 
+  register.innerHTML = ` 
     <div id="form-container">
             <h1 class="register-tittle">Register</h1>
             <div class="form">

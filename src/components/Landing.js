@@ -1,5 +1,6 @@
 import { reset } from "./Utils.js";
 export function Landing() {
+  reset();
   const template = document.createElement("div");
   template.insertAdjacentHTML(
     "afterbegin",
@@ -20,5 +21,11 @@ export function random() {
   btnRegister.addEventListener("click", (e) => {
     e.preventDefault();
     window.location.assign("#/register");
+  });
+
+  const btnLogin = document.getElementById("logIn");
+  btnLogin.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.assign("#/login");
   });
 }
