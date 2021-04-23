@@ -4,7 +4,6 @@ import { configurationFireBase } from './firebase/config.js';
 import { router } from './controls/router.js';
 
 /*
-
 document.querySelector('.formRegister').addEventListener('submit', userRegistration);
 
 document.querySelector('.buttonVisibility').addEventListener('click', () => {
@@ -44,7 +43,7 @@ function changePages() {
   };
 }
 
-changePages();*/
+changePages(); */
 
 configurationFireBase();
 
@@ -53,18 +52,15 @@ configurationFireBase();
 // console.log(hash);
 
 const init = () => {
-
   let hash = window.location.hash.substring(1);
-  console.log("entra index js")
+  document.querySelector('.body').innerHTML = '';
   router(hash);
 
   window.addEventListener('hashchange', () => {
-    let hash = window.location.hash.substring(1);
-    console.log("entra add listener hash");
+    hash = window.location.hash.substring(1);
+    document.querySelector('.body').innerHTML = '';
     router(hash);
-  }) 
-
-} 
+  });
+};
 
 init();
-
