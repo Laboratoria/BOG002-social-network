@@ -1,10 +1,10 @@
 import { reset } from "./Utils.js";
 export function Landing() {
-  reset();
-  const template = document.createElement("div");
-  template.insertAdjacentHTML(
-    "afterbegin",
-    `<div id="container">
+    reset();
+    const template = document.createElement("div");
+    template.insertAdjacentHTML(
+        "afterbegin",
+        `<div id="container">
       <img class="logo" src="./assets/gleam.svg" alt="Gleam logo">
         <p class="copy"> Welcome, we're the best and inclusive app in the world just 
         created for your Freedom, inclusion, and love. </p>
@@ -14,20 +14,20 @@ export function Landing() {
       </div>
     </div>
     `
-  );
-  return template;
+    );
+    return template;
 }
 
 export function random() {
-  const btnRegister = document.getElementById("signUp");
-  btnRegister.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.location.assign("#/register");
-  });
+    const btnRegister = document.getElementById("signUp");
+    btnRegister.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.assign("#/register");
+    });
 
-  const btnLogin = document.getElementById("logIn");
-  btnLogin.addEventListener("click", (e) => {
-    e.preventDefault();
-    window.location.assign("#/login");
-  });
-}
+    const btnLogin = document.getElementById("logIn");
+    btnLogin.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.assign("#/login");
+    });
+};
