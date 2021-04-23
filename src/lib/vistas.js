@@ -3,6 +3,7 @@
 
 
 export const formularioRegistro = () => {
+  
   class formRegistro extends HTMLElement {
   constructor() {
       super();
@@ -10,7 +11,7 @@ export const formularioRegistro = () => {
 
   connectedCallback() {
       // eslint-disable-next-line quotes
-      this.innerHTML = `<form action="action_page.php">
+      this.innerHTML = `<form >
       <div class="container">
         <h1>Register</h1>
         <p>Please fill in this form to create an account.</p>
