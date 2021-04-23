@@ -14,53 +14,104 @@ body{
 }
 
 @media only screen and (max-width: 700px ){
+    #seccionInicio{
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        grid-template-rows: 40% 30% 30%;
+        height: 100vh;
+        justify-content: center;
+    }
+    #seccionInicio .div{
+        text-align: center;
+    }
+
+
     #logo{
+        grid-column: 1/4;
         display: flex;
         align-content: center;
         justify-content: center;
         margin-top: 25px;
         margin-bottom: 20px;
     }
-    #opcionesInicio a {
+    .opcionesInicio a {
         background-color: rgba(161, 5, 0, 0.79);
         border: none;
         margin: 20px;
-        margin-top: 40px;
         padding: 10px;
         width: 40%;
         border-radius: 22px;
-        margin-left: 0%;
         text-align: center;
         font-size:x-large;
         cursor: pointer;
         color: white;
         font-weight: bold;
-
     }
-    #opcionesInicio button{
+
+
+    .opcionesInicio button{
         background-color: transparent;
         border: none;
-       
-        
         border-radius: 22px;
-   
         text-align: center;
         font-family: 'Cormorant Garamond', serif;
         font-size:x-large;
         cursor: pointer;
         color: white;
         font-weight: bold;
+        justify-content: center;
+        align-content: center;
+    
 
     }
    
-    #opcionesInicio{
+    .opcionesInicio{
+        margin-top: 60px;
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        align-content: space-between;
+       grid-row: 2/3;
+       grid-column: 2/3;
+
+    }
+    .opcionesRegistro a {
+        background-color: rgba(161, 5, 0, 0.79);
+        border: none;
+        margin: 20px;
+        padding: 10px;
+        width: 40%;
+        border-radius: 22px;
+        text-align: center;
+        font-size:x-large;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+    }
+
+
+    .opcionesRegistro button{
+        background-color: transparent;
+        border: none;
+        border-radius: 22px;
+        text-align: center;
+        font-family: 'Cormorant Garamond', serif;
+        font-size:x-large;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
         justify-content: center;
         align-content: center;
-        flex-wrap: wrap;
-        margin-left: 30px;
-        margin-top: 70px;
+    
+
+    }
+   
+    .opcionesRegistro{
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        align-content: space-between;
+       grid-row: 3/4;
+       grid-column: 2/3;
 
     }
 }

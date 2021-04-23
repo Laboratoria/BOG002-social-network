@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 /* eslint-disable no-useless-constructor */
 /* eslint-disable indent */
 export const registro = () => {
@@ -16,7 +17,9 @@ export const formularioRegistro = () => {
 
     connectedCallback() {
         // eslint-disable-next-line quotes
-        this.innerHTML = `<a href="#/registro"><button>Registro</button></a>`;
+        this.innerHTML = `<div>
+        <a href="#/registro"><button>Registro</button></a>
+        </div>`;
     }
 }
 window.customElements.define('boton-registro', formRegistro);

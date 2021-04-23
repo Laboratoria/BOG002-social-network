@@ -1,5 +1,5 @@
 // aqui exportaras las funciones que necesites
-import { registro } from './vistas.js';
+import { formularioRegistro } from './vistas.js';
 
 const idregistro = document.getElementById('registro');
 
@@ -10,7 +10,7 @@ const router = (route) => {
     case '#/inicio':
       return console.log('aiuda');
     case '#/registro': {
-      return idregistro.appendChild(registro());
+      return idregistro.appendChild(formularioRegistro());
     }
     default:
       return console.log('si funciona pero  esta enlazando la principal');
