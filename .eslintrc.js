@@ -17,6 +17,9 @@ module.exports = {
   globals: {
       firebase: "readonly",
       auth: "readonly",
+      describe: "readonly",
+      it: "readonly",
+      expect: "readonly",
         },
   rules: {
     "import/extensions": 0,

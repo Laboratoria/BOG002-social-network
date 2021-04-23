@@ -13,15 +13,20 @@ const auth = () => {
     signInWithEmailAndPassword: (email, password) => {
       return new Promise((resolve) => {
         resolve({
-         operationType: "signIn",
+          operationType: "signIn",
           Email: email,
           Pasword: password,
         });
       });
     },
-
-  };
-};
+    signInWithPopup: (provider) => {
+      return new Promise((resolve) => {
+        resolve("signIn")
+      }
+      )
+    },
+  }
+}
 
 const firebase = {
   auth: auth,
