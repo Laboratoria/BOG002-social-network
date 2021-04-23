@@ -5,7 +5,9 @@ export function Landing() {
   template.insertAdjacentHTML(
     "afterbegin",
     `<div id="container">
-      <img src="./assets/gleam.svg" alt="Gleam logo">
+      <img class="logo" src="./assets/gleam.svg" alt="Gleam logo">
+        <p class="copy"> Welcome, we're the best and inclusive app in the world just 
+        created for your Freedom, inclusion, and love. </p>
       <div class="btns-container-mobile">
           <button id="signUp">Enjoy Gleam</button>
           <button id="logIn">Log In</button>

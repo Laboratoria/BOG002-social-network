@@ -2,6 +2,7 @@
     box-sizing: border-box;
     font: inherit;
     color: inherit;
+    font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -10,4 +11,54 @@ body {
     font-family: 'Lato', sans-serif;
     color: rgb(84, 84, 84);
     height: 100vh;
+}
+
+#template #container {
+    display: flex;
+    position: relative;
+    vertical-align: middle;
+    flex-direction: column;
+    padding: 30px;
+    top: 80px;
+
+}
+
+.btns-container-mobile {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    top: 115px;
+}
+
+.copy {
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    top: 30px;
+    font-weight: 500;
+}
+
+#signUp {
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    height: 50px;
+    text-decoration: none;
+    background-color: #630092;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#logIn {
+    border: 2px solid #630092;
+    border-radius: 50px;
+    cursor: pointer;
+    height: 50px;
+    text-decoration: none;
+    background-color: white;
+    color: #630092;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
 }
