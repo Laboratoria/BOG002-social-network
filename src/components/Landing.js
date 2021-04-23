@@ -1,14 +1,16 @@
 export function Landing() {
-
-    const template = document.createElement("div")
-    console.log("holiiii");
-    template.insertAdjacentHTML('afterbegin',
+    reset();
+    const template = document.createElement("div");
+    template.insertAdjacentHTML(
+        "afterbegin",
         `<div id="container">
-        <img src="./assets/gleam.svg" alt="Gleam logo">
-        <div class="btns-container-mobile">
-            <a href="#/register" id="signUp">Enjoy Gleam</a>
-            <a href="#/login" id="logIn">Log In</a>
-        </div>
+      <img class="logo" src="./assets/gleam.svg" alt="Gleam logo">
+        <p class="copy"> Welcome, we're the best and inclusive app in the world just 
+        created for your Freedom, inclusion, and love. </p>
+      <div class="btns-container-mobile">
+          <button id="signUp">Enjoy Gleam</button>
+          <button id="logIn">Log In</button>
+      </div>
     </div>
     `);
 
@@ -24,5 +26,16 @@ export function Landing() {
     });*/
 
 
-    return template;
-}
+    export function random() {
+        const btnRegister = document.getElementById("signUp");
+        btnRegister.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.assign("#/register");
+        });
+
+        const btnLogin = document.getElementById("logIn");
+        btnLogin.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.assign("#/login");
+        });
+    }

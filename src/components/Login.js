@@ -3,7 +3,7 @@ import { reset } from "./Utils.js";
 export function Login() {
   reset();
   const login = document.createElement("div");
-  login.innerHTML = `<h1> I'm Login </h1> 
+  login.innerHTML = ` 
     <div id="form-container">
             <h1 class="login-tittle">Login</h1>
             <div class="form">
