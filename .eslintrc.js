@@ -1,3 +1,5 @@
+/* eslint-disable object-curly-spacing */
+/* eslint-disable indent */
 /* eslint-disable quote-props */
 /* eslint-disable quotes */
 module.exports = {
@@ -12,8 +14,12 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
+  globals: {
+      firebase: "readonly",
+      auth: "readonly",
+        },
   rules: {
-    "import/extensions":0,
-    "quotes":0,
+    "import/extensions": 0,
+    "quotes": 0,
   },
 };
