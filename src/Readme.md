@@ -18,6 +18,6 @@ Se trata de una maravillosa forma para potenciar las economías locales y apoyar
 
  Familias y/o amigos que deseen compartir momentos alrededor de la comida y los lugares.
 
- <img src="../images/1.jpg" width="200" height="200">
- <img src="../images/2.jpg" width="200" height="200">
+ <img src="../images/1.jpg" width="500" height="800">
+ <img src="../images/2.jpg" width="500" height="800">
  
