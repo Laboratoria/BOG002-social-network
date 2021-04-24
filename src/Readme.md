@@ -19,5 +19,5 @@ Se trata de una maravillosa forma para potenciar las economías locales y apoyar
  Familias y/o amigos que deseen compartir momentos alrededor de la comida y los lugares.
 
  <img src="../images/1.jpg">
- ![img](../images/1.jpg)
- ![img](../images/2.jpg)
+ <img src="../images/2.jpg">
+ 
