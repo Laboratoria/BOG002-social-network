@@ -18,16 +18,17 @@
       <!--<h2 class="slogan">Apostamos por vías más seguras para todos.</h2>
       <img class="app" src="Images/Web image.png" att="app">-->
     </div>
-    <div class="container-login">
-      <div id="login">
-        <input type="email" id="email" placeholder="Correo electrónico">
-        <input type="password" id="password" placeholder="Contraseña">
+    <div class="signin">
+      <form id="signin-form">
+        <input type="email" id="signin-email" placeholder="Correo electrónico">
+        <input type="password" id="signin-password" placeholder="Contraseña">
         <p><a class="forgetMyPassword" type="button">Olvide contraseña</a></p>
-        <button id="btnSing-in" name="boton" type="submit">Iniciar sesión</button>
+        <button id="btnSign-in" name="boton" type="submit">Iniciar sesión</button>
         <img class="o" src="Images/O.png" alt="line"><!--mirar si se puede hacer la línea con CSS-->
         <a href="https://www.gmail.com/" target="_blank"><img class="icon-gmail" src="Images/Google.png" alt="Gmail"></a>
         <a href="https://www.facebook.com/" target="_blank"><img class="icon-facebook" src="Images/Facebook.png" alt="Facebook"></a>
-      </div>
+      </form>
+     </div>
     
         <div class="new-user">
           <!--contenedor morado en CSS-->
@@ -36,20 +37,21 @@
         </div>
     </div>
 
-    <!--<div id="New-account">
+    <div id="signup">
+      <form id="signup-form">
       contenedor amarillo en CSS
       <p class="snRegister">Registrarme con:</p>
-
       <a href="https://www.gmail.com/" target="_blank"><img class="gmail1" src="Images/Google.png" alt="Gmail"></a>
       <a href="https://www.facebook.com/" target="_blank"><img class="facebook1" src="Images/Facebook.png" alt="Facebook"></a>
       
       <img class="o1" src="Images/O.png" alt="line">
-      <input type="text" id="email1" placeholder="Correo electrónico">
-      <input type="password" id="password1" placeholder="Contraseña">
+      <input type="email" id="signup-email" placeholder="Correo electrónico">
+      <input type="password" id="signup-password" placeholder="Contraseña">
       <input type="passwordconfirm" id="password2" placeholder="Confirmar contraseña">
       <button class="btnCreate-account1" name="boton" type="submit">Crear cuenta</button>
-      <p><a class="optionSingIn" type="button">O iniciar sesión</a></p>
-    </div>-->
+      <p><a class="optionSignIn" type="button">O iniciar sesión</a></p>
+    </form>
+    </div>
 
   </section>
   
@@ -95,7 +97,6 @@
           <p>Desactivar cuenta</p>
         </div>
       </div>
-      
       <div class="rigth pad" id="settPad">
         <h2>Selecciona una foto para tu perfil</h2>
         <div class="input-image">
@@ -109,11 +110,13 @@
   </section>
   
   <script type="module" src="main.js"></script>
+  <!-- FIREBASE SCRIPTS -->
   <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
 
 <script>
   // Your web app's Firebase configuration
@@ -127,6 +130,9 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+
+</script>
 </script>
 </body>
 </html>
