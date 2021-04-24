@@ -13,7 +13,7 @@ document.getElementById('settPassword').addEventListener('click', changeSettings
 function Hide() {
   inicio.style.display = 'none';
   muro.style.display = 'none';
-  settings.style.display = 'none';
+  settings.style.display = 'none'; 
 }
 
 function Continue(section) {
