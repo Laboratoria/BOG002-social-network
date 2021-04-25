@@ -1,7 +1,5 @@
 /* eslint-disable no-useless-constructor */
 /* eslint-disable indent */
-
-
 export const formularioRegistro = () => {
   
   class formRegistro extends HTMLElement {
@@ -11,7 +9,7 @@ export const formularioRegistro = () => {
 
   connectedCallback() {
       // eslint-disable-next-line quotes
-      this.innerHTML = `<form >
+      this.innerHTML =  `<form>
       <div class="container">
         <h1>Register</h1>
         <p>Please fill in this form to create an account.</p>
@@ -37,5 +35,12 @@ export const formularioRegistro = () => {
     </form>`;
   }
 }
-window.customElements.define( "formulario-registro",formRegistro);
+
+
+if (window.customElements.get("formulario-registro")===undefined){
+  window.customElements.define("formulario-registro",formRegistro);
+}  else  {
+  window.customElements.get("formulario-registro");
+};
+
 };

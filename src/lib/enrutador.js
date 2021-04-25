@@ -4,7 +4,7 @@ import { formularioRegistro} from './vistas.js';
 
 const idRegistro = document.querySelector('#registro');
 
-export const router = (route) => {
+export const router = (route,componenteHtml) => {
   idRegistro.innerHTML = '';
   console.log(route);
   switch (route) {
@@ -12,8 +12,9 @@ export const router = (route) => {
       console.log('aiuda');
       break;
     case '#/registro': 
-    idRegistro.innerHTML=`<formulario-registro></formulario-registro>`;
-      formularioRegistro();
+    componenteHtml.style.display="none";  
+    idRegistro.innerHTML=`<formulario-registro></formulario-registro>`
+    formularioRegistro();
     break;
     default:
       return console.log('si funciona pero  esta enlazando la principal');
