@@ -8,14 +8,6 @@ export const formularioRegistro = () => {
       super();
   }
 
-<<<<<<< HEAD
-    connectedCallback() {
-        // eslint-disable-next-line quotes
-        this.innerHTML = `<div>
-        <a href="#/registro"><button>Registro</button></a>
-        </div>`;
-    }
-=======
   connectedCallback() {
       // eslint-disable-next-line quotes
       this.innerHTML =  `<form>
@@ -43,7 +35,6 @@ export const formularioRegistro = () => {
       </div>
     </form>`;
   }
->>>>>>> ccfc4d9ee042dedd86bc881e7e8740a2cabc6248
 }
 
 
