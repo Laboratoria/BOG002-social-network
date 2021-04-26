@@ -2,14 +2,30 @@
 #muro{display: none}
 #settings{display: none}
 
-body {margin:0}
+/*Parámetros generales*/
 
-/* Selector de clases que comiencen con 'icon', define tamaño y cursor en toda la app*/
+body {margin:0;}
+
+/* Selector de clases que comiencen con 'icon', configuración de íconos en toda la app*/
 [class ^= "icon"]{
     width: auto;
     height: 40px;
     cursor: pointer;
+    margin: 2px;
 }
+
+/*Selector de clases que comiencen con 'btn', configuración de botones en toda la app*/
+[id ^= btn] {
+    padding: 12px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: transparent; 
+    font-size: 15px;
+    color: #ffffff;
+    background-color: var(--morado);
+}
+
 
 /* Variables de definción de colores*/
 :root {
@@ -21,134 +37,103 @@ body {margin:0}
 /* Todo el archivo con tipografía, tamaño y borde igual*/
 * {
     box-sizing: border-box;
-    font-family: 'Archivo', sans-serif;
-    font-size: 18px; 
+    font-family: 'Archivo', sans-serif; 
 }
 
-/* Configuración de tamaño para las secciones*/
+/* Configuración de tamaño para todas las secciones*/
 section {
     width: 100vw;
     height: 100vh;
-    padding: 20px;
+    padding: 15px;
 }
 
+/*Parámetros título Walkter en las secciones que se use como h1*/
 h1 {
-    display: flex;
-    margin: auto;
-    margin-top: 0;
-    margin-bottom: 10px;
-    padding-right: 10px;
     font-family: 'Fredoka One', cursive;
-    font-size: 35px;
 }
 
+/*Sección de inicio de sesión*/
 
-.container-login {
-    display: flex;
-    margin: 0px;
-    width: 225px;
-    height: 320px;
+/* Imagen en landing page*/
+.img-login {
+    width: 600px;
+    margin-bottom: 0;
+}
+
+/*Configuración del tamaño para slogan*/
+.slogan{
+    font-size: 40px;
+    letter-spacing: 3px;
+}
+
+/*Configuracion de divisón de registro en landing page*/
+#signin-form {
+    width: auto;
+    height: fit-content;
     background: var(--amarillo);
-    border-radius: 20px; 
+    border-radius: 30px;
+    text-align: center;
 }
 
-#email {
-    display: flex;
-    margin: 20px;
-    width: 180px;
-    height: 40px;   
-    margin-top: 30px;
+/* Configuración inputs sing-in*/
+[class ^= "input"]{
+    width: 250px;
+    height: 30px;
+    margin: 10px;
+    padding: 6px; 
     border: 1px solid #000000;
     box-sizing: border-box;
     border-radius: 15px; 
     font-size: 15px;
 }
 
-#password {
-    display: flex;
-    margin: 20px;
-    width: 180px;
-    height: 40px;   
-    margin-top: 20px;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    border-radius: 15px; 
-    font-size: 15px;
-}
-
-.forgetMyPassword {
-    display: flex;
-    margin: 30px;
-    margin-top: 10px;
-    margin-bottom: 0px;
+/*Parametros del link en caso de olvidar contraseña*/
+.link-forgetMyPassword {
+    margin-top: 0px;
     font-size: 13px;
     cursor: pointer;
     color: rgb(0, 162, 255);
-    
 }
 
-#btnSing-in {
-    display: flex;
-    margin: auto;
-    padding: 12px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    border-radius: 15px;
-    border: transparent; 
-    font-size: 15px;
-    color: #ffffff;
-    background-color: var(--morado);
+/*Línea divisoria Sign In y Sign Up*/
+.line{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ffffff;
+    display: block;
 }
 
-.o {
-    display: flex;
-    margin: auto;
-    width: 200px;
-}
-
-.icon-gmail {
-    position: absolute;
-    left: 80px;
-}
-
-.icon-facebook {
-    position: absolute;
-    left: 140px;
-}
-
-.new-user{
-    position: absolute;
-    margin: 0px;
-    width: 225px;
-    height: 100px;
-    top: 410px;
+/*Contenedor de registro o cuenta*/
+.container-new-user{
+    width: auto;
+    height: fit-content;
     background: var(--verde);
     border-radius: 20px;
-}
-
-#btnCreate-account {
-    display: flex;
-    margin: auto;
-    padding: 12px;
-    cursor: pointer;
-    border-radius: 15px;
-    border: transparent; 
-    font-size: 15px;
-    color: #ffffff;
-    background-color: var(--morado);
-}
-
-.title-Newaccount {
     text-align: center;
 }
-/*
-h2 {
-    margin-top: 0;
-    font-size: 27px; 
-    padding-bottom:10px ;
-    border-bottom: 2px solid #000;
+
+/*Sección del muro*/
+
+/*Parámetros del primer input en una división (tener en cuenta si no hay más así)*/
+#muro header input{
+    border-radius: 20px;
+    font-size: 20px;
 }
 
+/*Posición de los imagenes (iconos) en la sección header de muro*/
+footer img{padding: 0.5px}
+
+.icon-profile,#icon-settings{
+    float: right
+}
+/*Propiedades del mapa*/
+#mapa{
+    width: 100%;
+    height: 530px; /*Solo sirve en mobile, hacer responsive*/
+    padding: 10px; 
+}
+
+/* Sección Settings*/
 
 .header {
     display: flex;
@@ -205,4 +190,52 @@ h2 {
     background-color: var(--morado);
     color: #FFF;
 }
-*/
+
+/*Responsive*/
+
+/* Responsive para dispositivos Mobile*/
+@media screen 
+  and (max-width: 800px){
+
+    #Presentation {display: none}
+    #muro header img{display: none}
+
+    #signin-form h1{
+        margin: 0;
+        padding: 20px;
+        font-size: 50px
+    }
+
+    #muro header input{
+        width: auto;
+        height: 40px;
+    }
+}
+
+/* Responsive para dispositivos Desktop*/
+@media screen 
+  and (max-width: 2000px)
+  and (min-width: 800px){
+
+    #signin-form  h1 {display: none}
+    #muro footer {display: none}
+
+    #Presentation h1{font-size: 90px}
+    .header h1{font-size: 60px}
+
+    #inicio{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+	    align-items: center;
+	    align-content: stretch;
+    }
+
+    #inicio > div{
+        flex: 1;
+    }
+
+    #muro header input{
+        width: 400px;
+    }
+}

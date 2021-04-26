@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Walkter</title>
   <meta charset="UTF-8">
@@ -7,77 +8,80 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Archivo&family=Fredoka+One&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=Archivo&family=Fredoka+One&display=swap" rel="stylesheet">
 </head>
- 
+
 <body>
   <section id="inicio">
-    
+
     <div id="Presentation">
       <h1>WALKTER</h1>
-      <!--<h2 class="slogan">Apostamos por vías más seguras para todos.</h2>
-      <img class="app" src="Images/Web image.png" att="app">-->
+      <h2 class="slogan">Apostemos por vías más seguras para todos.</h2>
+      <img class="img-login" src="Images/Web image.png" att="app">
     </div>
-    <div class="container-login">
-      <div id="login">
-        <input type="email" id="email" placeholder="Correo electrónico">
-        <input type="password" id="password" placeholder="Contraseña">
-        <p><a class="forgetMyPassword" type="button">Olvide contraseña</a></p>
-        <button id="btnSing-in" name="boton" type="submit">Iniciar sesión</button>
-        <img class="o" src="Images/O.png" alt="line"><!--mirar si se puede hacer la línea con CSS-->
-        <a href="https://www.gmail.com/" target="_blank"><img class="icon-gmail" src="Images/Google.png" alt="Gmail"></a>
-        <a href="https://www.facebook.com/" target="_blank"><img class="icon-facebook" src="Images/Facebook.png" alt="Facebook"></a>
+
+    <div id="register">
+      <form id="signin-form">
+        <h1>WALKTER</h1>
+        <input type="email" class="input-email" id="signin-email" placeholder="Correo electrónico">
+        <input type="password" class="input-password" id="signin-password" placeholder="Contraseña">
+        <p><a class="link-forgetMyPassword" type="button">Olvide la contraseña</a></p>
+        <button id="btn-sing-in" name="boton" type="submit">Iniciar sesión</button>
+        <span class="line"></span>
+        <img class="icon-gmail" id="googleLogin" type="button" src="Images/Google.png" alt="Gmail">
+        <img class="icon-facebook" id="facebookLogin" type="button" src="Images/Facebook.png" alt="Facebook">
+      </form>
+
+      <div class="container-new-user">
+        <p class="title-Newaccount">¿No tienes una cuenta?</p>
+        <form id="signup-form">
+          <p class="snRegister">Registrarme con:</p>
+          <input type="email" class="input-signup-email" id="signup-email" placeholder="Correo electrónico">
+          <input type="password" class="input-signup-password" id="signup-password" placeholder="Contraseña">
+          <input type="passwordconfirm" class="input-password2" id="password2" placeholder="Confirmar contraseña">
+          <button id="btn-create-account" name="boton" type="submit">Crear cuenta</button>
+          <span class="line">o</span>
+          <img class="icon-gmail" id="GoogleLogin" type="button" src="Images/Google.png" alt="Gmail">
+          <img class="icon-facebook" id="FacebookLogin" type="button" src="Images/Facebook.png" alt="Facebook">
+        </form>
       </div>
-    
-        <div class="new-user">
-          <!--contenedor morado en CSS-->
-          <p class="title-Newaccount">¿No tienes una cuenta?</p>
-          <button id="btnCreate-account" name="boton" type="submit">Crear cuenta</button>
-        </div>
     </div>
-
-    <!--<div id="New-account">
-      contenedor amarillo en CSS
-      <p class="snRegister">Registrarme con:</p>
-
-      <a href="https://www.gmail.com/" target="_blank"><img class="gmail1" src="Images/Google.png" alt="Gmail"></a>
-      <a href="https://www.facebook.com/" target="_blank"><img class="facebook1" src="Images/Facebook.png" alt="Facebook"></a>
-      
-      <img class="o1" src="Images/O.png" alt="line">
-      <input type="text" id="email1" placeholder="Correo electrónico">
-      <input type="password" id="password1" placeholder="Contraseña">
-      <input type="passwordconfirm" id="password2" placeholder="Confirmar contraseña">
-      <button class="btnCreate-account1" name="boton" type="submit">Crear cuenta</button>
-      <p><a class="optionSingIn" type="button">O iniciar sesión</a></p>
-    </div>-->
 
   </section>
-  
-  <section id = "muro">
+
+  <section id="muro">
 
     <header>
       <img class="icon-profile" src="images/icons/icon-profile.png">
-      <img id = "icon-settings" class="icon-settings" src="images/icons/icon-settings.png">
-      <div class="searching">
-        <input type="text" maxlength="100" autocomplete="off">
-        <input class="icon-lupa" src="images/icons/icon-lupa.png" type="image">
-      </div>
+      <img id="icon-settings" class="icon-settings" src="images/icons/icon-settings.png">
+      <input type="text" maxlength="100" autocomplete="off">
+      <img id=icon-lupa src="images/icons/icon-lupa.png">
     </header>
-    <div id="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254508.3928106861!2d-74.24789140391782!3d4.648625932164217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bfd2da6cb29%3A0x239d635520a33914!2zQm9nb3TDoQ!5e0!3m2!1ses!2sco!4v1618855424331!5m2!1ses!2sco" width="100%" height="900px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
+
+    <!--<div id="map">
+      <iframe id="mapa"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254508.3928106861!2d-74.24789140391782!3d4.648625932164217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bfd2da6cb29%3A0x239d635520a33914!2zQm9nb3TDoQ!5e0!3m2!1ses!2sco!4v1618855424331!5m2!1ses!2sco"
+        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>-->
+
+    <footer>
+      <img class="icon-profile" src="images/icons/icon-profile.png">
+      <img id="icon-settings" class="icon-settings" src="images/icons/icon-settings.png">
+    </footer>
 
   </section>
-  
-  <section id = "settings">
-    
+
+  <section id="settings">
+
     <div class="header">
       <div>
         <h1>WALKTER</h1>
         <img src="" alt="">
       </div>
       <div id="home">
-        <img class="icon" src="https://raw.githubusercontent.com/dsandovalm/BOG002-social-network/main/src/images/icons/icon-home.png" alt="">
+        <img class="icon-home" id="icon-home"
+          src="https://raw.githubusercontent.com/dsandovalm/BOG002-social-network/main/src/images/icons/icon-home.png"
+          alt="">
       </div>
     </div>
 
@@ -91,15 +95,16 @@
           <p id="settPassword">Cambiar contraseña</p>
         </div>
         <div>
-          <p>Cerrar sesión</p>
+          <p type=button>Cerrar sesión</p>
           <p>Desactivar cuenta</p>
         </div>
       </div>
-      
       <div class="rigth pad" id="settPad">
         <h2>Selecciona una foto para tu perfil</h2>
         <div class="input-image">
-          <img src="https://raw.githubusercontent.com/dsandovalm/BOG002-social-network/main/src/images/icons/icon-uploadImg.png" alt="Inicio">
+          <img
+            src="https://raw.githubusercontent.com/dsandovalm/BOG002-social-network/main/src/images/icons/icon-uploadImg.png"
+            alt="Inicio">
           <p>Selecciona del ordenador</p>
         </div>
         <button class="button-upload">Subir</button>
@@ -107,26 +112,31 @@
     </div>
 
   </section>
-  
-  <script type="module" src="main.js"></script>
+
+  <!-- FIREBASE SCRIPTS -->
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
+  <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyBiVALgySDsp6bALlL-FP2bBZeQs7msfw4",
-    authDomain: "walkter-64c60.firebaseapp.com",
-    projectId: "walkter-64c60",
-    storageBucket: "walkter-64c60.appspot.com",
-    messagingSenderId: "172224009434",
-    appId: "1:172224009434:web:3287d8c4c673d36f4f01e3"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBiVALgySDsp6bALlL-FP2bBZeQs7msfw4",
+      authDomain: "walkter-64c60.firebaseapp.com",
+      projectId: "walkter-64c60",
+      storageBucket: "walkter-64c60.appspot.com",
+      messagingSenderId: "172224009434",
+      appId: "1:172224009434:web:3287d8c4c673d36f4f01e3"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+  </script>
+
+  <script type="module" src="main.js"></script>
 </body>
+
 </html>
