@@ -71,7 +71,7 @@
     font-size: 20px;   
   }
 
-  .parrafos {
+  #parrafos {
     font-size: 14px;
   }
 
@@ -108,9 +108,6 @@
      
 }
 
-.login {
-  margin: 10px auto;
-}
 
 .login p {
   margin: 1em;
