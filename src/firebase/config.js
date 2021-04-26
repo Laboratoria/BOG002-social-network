@@ -10,5 +10,5 @@ const firebaseConfig = {
 
 export function configurationFireBase() {
   firebase.initializeApp(firebaseConfig);
-  console.log('corrio configuracion firebase');
+  // console.log('corrio configuracion firebase');
 }

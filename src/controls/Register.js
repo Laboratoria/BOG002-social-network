@@ -1,17 +1,17 @@
-import { Information, assignName } from '../auth/newUser.js';
+import { Information } from '../auth/newUser.js';
 
 export function userRegistration(event) {
   event.preventDefault();
   const username = document.querySelector('.inputName').value;
   const email = document.querySelector('.inputEmail').value;
   const password = document.querySelector('.inputPassword').value;
-  Information(email, password)
+  Information(email, password, username)
     .then((user) => {
-      // console.log(user);
+      // console.log(user.displayName);
       const usuario = document.createElement('div');
       usuario.innerHTML = user;
       usuario.className = 'divGhost';
-      assignName(username);
+      // assignName(username);
       const cardContainer = document.querySelector('.cardContainer');
       const confirmationRegistro = document.getElementById('formRegister');
       const title = document.querySelector('.titleForm');

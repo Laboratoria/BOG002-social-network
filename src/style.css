@@ -106,25 +106,11 @@ form input:hover{
   outline:none;
   margin-left: 0;
 }
-.inputEmail{
-  border: 0;
-  border-bottom: 1px solid rgb(0, 0, 0);
-  width:47vw;
-  margin-top: 3.5vh;
-  padding-bottom: 0.5vh;
-  padding-left: 2.5vw;
-  background: none;
-  text-align: left;
-  font-family:'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 1em;
-  outline:none;
-}
 .inputPassword{
   top: 20vh;
   border: 0;
   border-bottom: 1px solid rgb(0, 0, 0);
-  width: 41vw;;
+  width: 41vw;
   margin-top: 3.8vh;
   padding-bottom: 0.5vh;
   padding-left: 2.5vw;
@@ -151,7 +137,7 @@ form input:hover{
   cursor: pointer;
 }
 button.buttonEnvioRegistro:hover{
-  background: rgba(8, 0, 117, 0.884); ;
+  background: rgba(8, 0, 117, 0.884);
 }
 .imgVisibility{
   width: 6.6vw;
@@ -176,7 +162,7 @@ button.buttonEnvioRegistro:hover{
   border: rgb(99, 99, 99) solid 1px;
   background: rgba(255, 255, 255, 0.952);
   border-radius: 5px;
-  font-family: "arial";
+  font-family: 'Roboto', sans-serif;
   font-size: 0.85em;
   margin-left: 1.5vw;
   position: absolute;
@@ -224,7 +210,7 @@ button.buttonEnvioRegistro:hover{
   cursor: pointer;
 }
 button.buttonInicioSesion:hover{
-  background: rgba(8, 0, 117, 0.884); ;
+  background: rgba(8, 0, 117, 0.884);
 }
 
 .imgTramaHome{
@@ -288,7 +274,7 @@ button.buttonInicioSesion:hover{
   cursor: pointer;
 }
 button.buttonInicioSesionHome:hover{
-  background: rgba(131, 0, 0, 0.884); ;
+  background: rgba(131, 0, 0, 0.884);
 }
 #o{
   text-align: center;
@@ -299,7 +285,6 @@ button.buttonInicioSesionHome:hover{
   font-size: 1.5em;
   display: flex;
   margin-left:1.5vw;
-  align-items: center;
 }
 .imgO{
   margin-top: 4vh;
@@ -448,14 +433,6 @@ button.buttonInicioGoogle:hover{
   }
   .inputName{
   width: 15vw;
-  padding-bottom: 0.5vh;
-  padding-left: 1vw;
-  font-size: 1em;
-  }
-  .inputPassword{
-  top: 20vh;
-  width: 14vw;
-  margin-top: 3.5vh;
   padding-bottom: 0.5vh;
   padding-left: 1vw;
   font-size: 1em;

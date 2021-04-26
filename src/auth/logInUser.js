@@ -16,7 +16,7 @@ export const LogInGoogle = () => new Promise((resolve) => {
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth()
     .signInWithPopup(provider)
-    .then((user) => {
+    .then(() => {
     /** @type {firebase.auth.OAuthCredential} */
       // const credential = result.credential;
       // const token = credential.accessToken;
