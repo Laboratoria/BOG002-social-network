@@ -1,22 +1,21 @@
 * {
+   margin: 0%;
+   padding: 0%;
+ 
+}
+body {
     background-repeat: no-repeat;
-    background: url("imagenes/img2.jpg") no-repeat center center fixed;
+    background: url("Imagenes/img2blur.jpg") no-repeat center center fixed;
     background-size: 100% 100%;
-    filter: blur(5px);
-    
-  
 }
 
-/* @media (max-width:360px){
-    *{
-        position:absolute;
-        filter: blur(5px); */
-        /* width: 704.5px;
-        height: 640px;
-        left: -207px; */
+ @media (max-width:500px){
+    body{
+        background-image: url("Imagenes/fondoblur.jpg");
       
-  /*   } */
+    }
+    
    
 
 
-/* } */
+}
