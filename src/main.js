@@ -24,11 +24,6 @@ function Continue(section){
     section.style.display = 'block'
 }
 
-
-//Crear cuenta con Google
-
-//Crear cuenta con Facebook
-
 //Iniciar sesión con Google
 const googleBtn = document.querySelector('#googleLogin')
 
@@ -36,16 +31,24 @@ googleBtn.addEventListener('click',e =>{
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider)
         .then(result => {
-            console.log('google sign in ')
-            signupForm.reset();
+            var credential = result.credential;
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
         })
-        .catch(err => {
-            console.log(err)
+        .catch((error) => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
         })
 })
 
 //Iniciar sesión con Facebook
-
 const fbBtn = document.querySelector('#facebookLogin')
 
 fbBtn.addEventListener('click',e =>{
@@ -53,10 +56,19 @@ fbBtn.addEventListener('click',e =>{
     const provider = new firebase.auth.FacebookAuthProvider();
     auth.signInWithPopup(provider)
         .then(result => {
-            console.log('facebook sign in ')
-            signupForm.reset();
+            var credential = result.credential;
+            // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+            var token = credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
         })
-        .catch(err => {
-            console.log(err)
+        .catch(error => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
         })
 })
