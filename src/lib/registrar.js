@@ -1,4 +1,3 @@
-
 var firebase = require("firebase/app");
 
 // Add the Firebase products that you want to use
