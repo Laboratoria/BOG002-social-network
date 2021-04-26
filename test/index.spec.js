@@ -3,7 +3,12 @@
 import MockFirebase from "../_mocks_/firebase-mock";
 
 // importamos la funcion que vamos a testear
-import { crearUsuario, nuevoIngreso, providerFacebook } from "../src/firebaseController/firebaseFunctions";
+import {
+  crearUsuario,
+  nuevoIngreso,
+  providerFacebook,
+  providerGoogle,
+} from "../src/firebaseController/firebaseFunctions";
 
 global.firebase = MockFirebase();
 // testeando funcion de registro con email and pwd
@@ -32,7 +37,16 @@ describe("ingresar con email", () => {
 describe("ingresar con facebook", () => {
   it("ingresar con usuario de Facebbok", () => {
     providerFacebook().then((credential) => {
-      console.log(credential);
+      // console.log(credential);
+      expect(credential).toBe("signIn");
+    });
+  });
+});
+
+describe("ingresar con google", () => {
+  it("ingresar con usuario de google", () => {
+    providerGoogle().then((credential) => {
+      // console.log(credential);
       expect(credential).toBe("signIn");
     });
   });

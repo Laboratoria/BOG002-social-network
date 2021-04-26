@@ -5,11 +5,13 @@ export default function CrearRegistro() {
   registroUsuario.setAttribute("class", "formInformacion");
 
   const htmlRegitro = `
+        <p>Ingresa un email y contraseña</p>
         <div><input type="text" class="inputIngreso" id="nombreUsuario" placeholder="Ingresar nombre" required/></div>
         <div><input type="email" class="inputIngreso" id="usuarioEmail" placeholder="Ingresar correo" required/></div>
         <div><input type="password" class="inputIngreso" id="usuarioContrasena" placeholder="Crear contraseña" required minlength="6"/></div>
-        <div><input type="password" class="inputIngreso" id="confirmarContrasena" placeholder="Repetir contraseña" required minlength="6"/></div>
         <div><button id="btnR"> Registrarme </button></div>
+        <div><button id="btnV">volver</button></div>
+
          `;
   registroUsuario.innerHTML = htmlRegitro;
   const mensajeError = document.createElement("div");

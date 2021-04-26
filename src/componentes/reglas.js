@@ -20,6 +20,7 @@ export default function VistaReglas() {
      <li><details><summary>No aceptamos publicaciones sobre drogas</summary>
      <p>Las publicaciones sobre drogas no van acorde con la extensión, además de ser contenido denunciable.</p></details></li>
     <li><details><summary>Sólo post de relevancia histórica o científica</summary><p>Las publicaciones que carezcan de ello no serán aceptadas, no queremos afectar la calidad del contenido del grupo </p></details></li>
+    <button id="btnC"> Aceptar y Continuar</button>
     `;
   reglas.innerHTML = htmlReglas;
   return reglas;
