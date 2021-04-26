@@ -54,6 +54,15 @@ body {
     color: white;
     background-color: rgb(1, 12, 15);
 }
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 20px;
+}
   
   #btnI{
     margin-left: 2vw;
@@ -73,6 +82,47 @@ body {
   #botonFacebook {
     width: 50vmin;
   }
+
+  .icono {
+    max-width: 25px;
+    vertical-align: middle;
+    padding: 5px;
+    display: inline-block;
+}
+
+.login {
+  padding: 0 10px;
+  background-color: white;
+  display: block;
+  border-radius: 10px;
+  margin: 10px;
+  width: 250px;
+  cursor: pointer;
+    
+}
+.login {
+  margin: 10px auto;
+}
+
+.login p {
+  margin: 1em;
+  display: inline-block;
+  color: #737373
+} 
+
+.login.facebook p{
+  margin: 1em 0.4em;
+}
+
+/* .parrafos {
+  display: block;
+  text-align: center;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 20px;
+} */
 
   form {
     background: rgba(235, 228, 228, 0.82);

@@ -10,7 +10,7 @@ export default function CrearRegistro() {
         <div><input type="email" class="inputIngreso" id="usuarioEmail" placeholder="Ingresar correo" required/></div>
         <div><input type="password" class="inputIngreso" id="usuarioContrasena" placeholder="Crear contraseña" required minlength="6"/></div>
         <div><button id="btnR"> Registrarme </button></div>
-        <div><button id="btnV">volver</button></div>
+        <div><button id="volver">Volver</button></div>
 
          `;
   registroUsuario.innerHTML = htmlRegitro;
