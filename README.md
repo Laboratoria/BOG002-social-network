@@ -1,3 +1,5 @@
+$env:GOOGLE_APPLICATION_CREDENTIALS="D:\LAURAS\Laboratoria\Proyecto 3\BOG002-social-network\social-network-59c00-firebase-adminsdk-vxshl-af2244d001.json"
+
 # Creando una Red Social
 
 ## Índice
