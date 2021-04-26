@@ -5,7 +5,15 @@
 @media  (max-width: 600px){
 
 main #Bienvenida{
- background-image:url(imagenes/Fondo.jpg);
-
-    }  
+ /* background-image:url(imagenes/Fondo.jpg); */
+width: 100px;
+height: 100px;
+    }
+    
+    body{
+        background-image:url(imagenes/Fondo.jpg);
+        width: 100px;
+        height: 100px;
+    
+}
 }
