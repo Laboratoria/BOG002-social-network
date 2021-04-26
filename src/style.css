@@ -78,22 +78,9 @@ body{
 .registro{
   display: grid;
   border: solid ;
-  /*Se puede reemplazar por fraccion,1 fr 1 fr 1 fr y asi*/
 
-  /*repeat(voy a repetirlo este numero de veces,con medida 1 fr) para cuando hayan muchas columnas*/
-
-  /*valores minimos y maximos de las columnas no importa cuanto texto tenga quiero un valor minimo de 100px y maximo automatico
-  grid-template-columns: minmax(100px, auto)*/
-  /*grid grid-auto-rows: establece pixeles para todos*/
-  /*align-items: vertical*/
-  /*justify align-items: glyph-orientation-horizontal: */
-  /*grid lines me define el alto y ancho de un elemento
-  es asi entonces para elemento1.{grid-column:1/4 (de la linea 1 hasta la linea 4-que traduce)}*/
- /*grid-template-columns:1fr 2fr 1fr;*/
  grid-template-rows: 1fr;
- /*espaciado*/
- /*column-gap*/
- /*rowgap*/
+
  row-gap:5em;
 
 }
@@ -109,7 +96,7 @@ body{
 }
 .superior{
   display: grid;
-  grid-template-rows:1fr 3fr ;
+  grid-template-rows:2fr 2fr ;
 }
 
 .inputInicio{
@@ -123,6 +110,8 @@ body{
 .botonRegistro{
   display: flex;
   justify-content: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 .inputsRegistro{
   display: flex;
@@ -138,4 +127,8 @@ body{
   display: grid;
   row-gap: 2em;
   grid-template-rows: 1fr 1fr 1fr 3fr 1 fr 1 fr
+}
+.inicioGoogle{
+  display: grid;
+  grid-template-columns: 50% 50%;
 }

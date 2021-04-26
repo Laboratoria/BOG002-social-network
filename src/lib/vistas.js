@@ -12,8 +12,12 @@ export const formularioRegistro = () => {
       this.innerHTML =  `<form action="">
       <div class="superior">
        <div> <h1>Registro</h1></div>
-       <div>Aca la imagen de google</div>
+       <div class="inicioGoogle" id="inicioGoogle">
+       <div><input type="image" name="boton" value="pasar" id="botongoogle" src="./imagenes/simbologoogle.png" width="50%" height="50%" > </div>
+       <div>Registrate con google</div>
+
       </div>
+     </div>
  
       <div class="contenedorinputreregistro">
  
