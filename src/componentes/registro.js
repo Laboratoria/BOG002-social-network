@@ -1,6 +1,7 @@
 /* eslint-disable quotes */
 /* eslint-disable space-before-blocks */
 export default function CrearRegistro() {
+  window.location = "#registro";
   const registroUsuario = document.createElement("form");
   registroUsuario.setAttribute("class", "formInformacion");
 

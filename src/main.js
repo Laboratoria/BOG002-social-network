@@ -31,6 +31,7 @@ document.addEventListener("click", (e) => {
   e.preventDefault();
   if (e.target.matches("#volver")) {
     main.innerHTML = "";
+    window.location = "#login";
     main.appendChild(CrearFormulario());
   }
 });
