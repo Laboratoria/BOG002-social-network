@@ -1,91 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="style.css" />
-  <title>WikiMoms</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="style.css" />
+    <title>WikiMoms</title>
+  </head>
 
-<body>
+  <body>
+    <div id="root"></div>
+  </body>   
+  <script type='module' src='./main.js'></script>
 
-  <section id="screenLogIn">
-    <header>
-      <img src="images/LogowikimomsMobile.png">
-      <h2>WikiMoms te ayuda a compartir experiencias en tus etapas de embarazo, lactancia y postparto.</h2>
-    </header>
+  <!--firebase-->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
 
-    <main>
-      <div class="containerLogIn">
-        <form id="signIn">
-          <input type="email" id="signInEmail" placeholder="Correo electronico" class="input" required>
-          <input type="password" id="signInpassword" placeholder="Contraseña" class="input" required>
-          <button class="button" id="btnLogIn">Iniciar Sesión</button>
-        </form>
-      </div>
-      <div class="containerCreateAccount">
-        <button class="button" id="btnCreateAccount">Crear Cuenta</button>
-      </div>
-    </main>
-  </section>
-
-  <section id="screenRegistration">
-    <header>
-      <button class="buttonClose" id="btnCloseRegistration">X</button>
-      <img src="images/WikiMoms.png" id="imgWikiMoms">
-      <h2>Regístrate para hacer parte de nuestra comunidad de Mamás</h2>
-    </header>
-
-    <main>
-      <div class="containerLogInGoogle">
-        <button id="btnGoogle" type="submit"><img id="logoGoogle" src="images/logoGoogle.png">Iniciar sesión con
-          Google</button>
-        <img src="images/imgLineas.png">
-      </div>
-      <div class="containerRegistration">
-        <form id="signUp">
-          <input type="email" id="signUpEmail" placeholder="Correo electronico" class="input" required>
-          <input type="password" id="signUpPassword" placeholder="Contraseña" class="input" required>
-          <button type="submit" class="button" id="Register">Registrarte</button>
-        </form>
-      </div>
-    </main>
-  </section>
-
-  <section id="screenWall">
-    <header>
-      <div class="headerWall">
-        <img src="images/WikiMomsNegro.png">
-        <button id="btnUser" type="submit"><img id="imgUser" src="images/IconoUsuario.png"></button>
-      </div>
-    </header>
-
-    <main>
-      <form id="logOut">
-        <button type="submit" id="btnLogOut">Cerrar sesion</button>
-      </form>
-    </main>
-
-  </section>
-
-  <footer>
-
-  </footer>
-
-</body>
-<script src="main.js" type="module"></script>
-<!--firebase-->
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+  <script src="./Firebase/config.js"></script>
 
 </html>
