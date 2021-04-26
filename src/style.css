@@ -67,7 +67,7 @@ body{
 * {box-sizing: border-box}
 
 
-/* Add padding to containers */
+/* Aqui comienza la seccion de registro */
 .registro div:hover{
   border: solid blue;  
 }
@@ -77,41 +77,30 @@ body{
 }
 .registro{
   display: grid;
-  border: solid ;
-
+  
  grid-template-rows: 1fr;
-
+ 
  row-gap:5em;
 
 }
 
-
 .fecha{
   display: grid;
-  
- 
   justify-content: center;
-  
+ 
   
 }
 .superior{
   display: grid;
-  grid-template-rows:2fr 2fr ;
+  grid-template-rows:1fr 1fr ;
+
 }
 
-.inputInicio{
-  display: flex;
-  width: 50%;
-  height: 50%;
-  justify-content: center;
-  align-items: center;
-}
 
 .botonRegistro{
   display: flex;
   justify-content: center;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-bottom: 3em;
 }
 .inputsRegistro{
   display: flex;
@@ -126,9 +115,24 @@ body{
 .contenedorinputreregistro{
   display: grid;
   row-gap: 2em;
-  grid-template-rows: 1fr 1fr 1fr 3fr 1 fr 1 fr
+  grid-template-rows: 1fr 1fr 1fr 3fr 1 fr 1 fr;
+  padding-top: 3em;
 }
-.inicioGoogle{
+.inicioGoogle {
   display: grid;
   grid-template-columns: 50% 50%;
+  
+   justify-items: center;
+   align-items: center;
+}
+.inicioGoogle div{
+  border: seagreen
+}
+.tituloRegistro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.registroGoogle{
+  justify-self: start;
 }
