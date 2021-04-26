@@ -1,0 +1,19 @@
+/* body{
+    background-color: rgb(178, 111, 240);
+} */
+
+@media  (max-width: 600px){
+
+main #Bienvenida{
+ /* background-image:url(imagenes/Fondo.jpg); */
+width: 100px;
+height: 100px;
+    }
+    
+    body{
+        background-image:url(imagenes/Fondo.jpg);
+        width: 100px;
+        height: 100px;
+    
+}
+}
