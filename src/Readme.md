@@ -8,6 +8,7 @@ Nuestra red social tiene como finalidad descubrir, conocer y compartir los lugar
 
 Se trata de una maravillosa forma para potenciar las economías locales y apoyar el desarrollo turístico.
 
+
 ## PERFIL DEL USUARIO
 
  No  solo  son amantes de la comida. Y es que ellos saben que las rutas gastronómicas los pueden llevar a vivir una verdadera aventura, a tener experiencias distintas, a comprender otras maneras de ver el mundo.
