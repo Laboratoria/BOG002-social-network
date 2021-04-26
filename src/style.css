@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: url("Imagenes/img2.jpg") no-repeat center center;
+    background-size: 100% 100%;
+    filter: blur(15px);
+}
+
+
+@media only screen and (max-width: 500px) {
+    body {
+      background-image: url("Imagenes/fondo2.jpg");
+      filter: blur(15px);
+    }
+  }
