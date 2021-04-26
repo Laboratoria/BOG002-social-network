@@ -20,11 +20,11 @@
       <img class="img-login" src="Images/Web image.png" att="app">
     </div>
 
-    <div class="signin" id="register">
+    <div id="register">
       <form id="signin-form">
         <h1>WALKTER</h1>
-        <input class="input-email" id="signin-email" placeholder="Correo electrónico">
-        <input class="input-password" id="signin-password" placeholder="Contraseña">
+        <input type="email" class="input-email" id="signin-email" placeholder="Correo electrónico">
+        <input type="password" class="input-password" id="signin-password" placeholder="Contraseña">
         <p><a class="link-forgetMyPassword" type="button">Olvide la contraseña</a></p>
         <button id="btn-sing-in" name="boton" type="submit">Iniciar sesión</button>
         <span class="line"></span>
@@ -34,25 +34,17 @@
 
       <div class="container-new-user">
         <p class="title-Newaccount">¿No tienes una cuenta?</p>
-        <button id="btn-create-account" name="boton" type="submit">Crear cuenta</button>
+        <form id="signup-form">
+          <p class="snRegister">Registrarme con:</p>
+          <input type="email" class="input-signup-email" id="signup-email" placeholder="Correo electrónico">
+          <input type="password" class="input-signup-password" id="signup-password" placeholder="Contraseña">
+          <input type="passwordconfirm" class="input-password2" id="password2" placeholder="Confirmar contraseña">
+          <button id="btn-create-account" name="boton" type="submit">Crear cuenta</button>
+          <span class="line">o</span>
+          <img class="icon-gmail" id="GoogleLogin" type="button" src="Images/Google.png" alt="Gmail">
+          <img class="icon-facebook" id="FacebookLogin" type="button" src="Images/Facebook.png" alt="Facebook">
+        </form>
       </div>
-    </div>
-
-    <div id="signup">
-      <form id="signup-form">
-        contenedor amarillo en CSS
-        <p class="snRegister">Registrarme con:</p>
-        <a href="https://www.gmail.com/" target="_blank"><img class="gmail1" src="Images/Google.png" alt="Gmail"></a>
-        <a href="https://www.facebook.com/" target="_blank"><img class="facebook1" src="Images/Facebook.png"
-            alt="Facebook"></a>
-
-        <img class="o1" src="Images/O.png" alt="line">
-        <input type="email" id="signup-email" placeholder="Correo electrónico">
-        <input type="password" id="signup-password" placeholder="Contraseña">
-        <input type="passwordconfirm" id="password2" placeholder="Confirmar contraseña">
-        <button class="btnCreate-account1" name="boton" type="submit">Crear cuenta</button>
-        <p><a class="optionSignIn" type="button">O iniciar sesión</a></p>
-      </form>
     </div>
 
   </section>
@@ -66,11 +58,11 @@
       <img id=icon-lupa src="images/icons/icon-lupa.png">
     </header>
 
-    <div id="map">
+    <!--<div id="map">
       <iframe id="mapa"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d254508.3928106861!2d-74.24789140391782!3d4.648625932164217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9bfd2da6cb29%3A0x239d635520a33914!2zQm9nb3TDoQ!5e0!3m2!1ses!2sco!4v1618855424331!5m2!1ses!2sco"
         style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
+    </div>-->
 
     <footer>
       <img class="icon-profile" src="images/icons/icon-profile.png">
@@ -143,7 +135,7 @@
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
   </script>
-  
+
   <script type="module" src="main.js"></script>
 </body>
 

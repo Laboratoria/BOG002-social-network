@@ -67,7 +67,7 @@ h1 {
 }
 
 /*Configuracion de divisón de registro en landing page*/
-#container-login {
+#signin-form {
     width: auto;
     height: fit-content;
     background: var(--amarillo);
@@ -76,9 +76,9 @@ h1 {
 }
 
 /* Configuración inputs sing-in*/
-.input-email, .input-password{
+[class ^= "input"]{
     width: 250px;
-    height: 40px;
+    height: 30px;
     margin: 10px;
     padding: 6px; 
     border: 1px solid #000000;
@@ -106,7 +106,7 @@ h1 {
 /*Contenedor de registro o cuenta*/
 .container-new-user{
     width: auto;
-    height: 100px;
+    height: fit-content;
     background: var(--verde);
     border-radius: 20px;
     text-align: center;
@@ -200,7 +200,7 @@ footer img{padding: 0.5px}
     #Presentation {display: none}
     #muro header img{display: none}
 
-    #container-login h1{
+    #signin-form h1{
         margin: 0;
         padding: 20px;
         font-size: 50px
@@ -217,7 +217,7 @@ footer img{padding: 0.5px}
   and (max-width: 2000px)
   and (min-width: 800px){
 
-    #container-login h1 {display: none}
+    #signin-form  h1 {display: none}
     #muro footer {display: none}
 
     #Presentation h1{font-size: 90px}
