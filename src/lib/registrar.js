@@ -18,9 +18,8 @@ botonregistro.addEventListener('click', ()=>{firebase.auth().createUserWithEmail
       // ..
     });
   }
-  );
+  )};
 
 
 
 
-/**/
