@@ -7,6 +7,9 @@ import {
 } from './aplicativos/app.js';
 import ingresar from './aplicativos/ingreso.js';
 import CrearRegistro from './componentes/registro.js';
+import firebaseInitialize from './firebaseController/firebaseConfig.js';
+
+firebaseInitialize();
 
 const main = document.getElementById('main');
 main.appendChild(CrearFormulario());

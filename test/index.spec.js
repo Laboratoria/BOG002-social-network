@@ -24,7 +24,16 @@ describe("ingresar con email", () => {
   it("Deberia poder ingresar con email registrado", () => {
     nuevoIngreso("correo@correo.com", "123abc").then((user) => {
       // eslint-disable-next-line no-undef
-      expect(user.operationType).toBe("singIn");
+      expect(user.operationType).toBe("signIn");
+    });
+  });
+});
+
+describe("ingresar con facebook", () => {
+  it("ingresar con usuario de Facebbok", () => {
+    providerFacebook().then((credential) => {
+      console.log(credential);
+      expect(credential).toBe("signIn");
     });
   });
 });
