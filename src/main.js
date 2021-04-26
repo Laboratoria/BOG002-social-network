@@ -8,6 +8,7 @@ import {
 import ingresar from "./aplicativos/ingreso.js";
 import CrearRegistro from "./componentes/registro.js";
 import firebaseInitialize from "./firebaseController/firebaseConfig.js";
+import crearPost from "./componentes/post.js";
 
 firebaseInitialize();
 
@@ -28,10 +29,26 @@ document.addEventListener("click", (e) => {
 
 // BOTON QUE VUELVE AL LOGIN
 document.addEventListener("click", (e) => {
-  e.preventDefault();
   if (e.target.matches("#volver")) {
     main.innerHTML = "";
     window.location = "#login";
     main.appendChild(CrearFormulario());
   }
 });
+
+// Formulario para publicaciones
+document.addEventListener("click", (e) => {
+  if (e.target.matches("#btnC")) {
+    main.innerHTML = "";
+    window.location = "#crear-publicacion";
+    main.appendChild(crearPost());
+  }
+});
+
+// document.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   const title = taskForm["task-title"].value;
+//   const description = taskForm["task-description"].value;
+
+//   console.log(title, description);
+// });

@@ -116,16 +116,6 @@ p {
   margin: 1em 0.4em;
 }
 
-/* .parrafos {
-  display: block;
-  text-align: center;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-size: 20px;
-} */
-
   form {
     background: rgba(235, 228, 228, 0.82);
     width: 30vw;
@@ -144,6 +134,7 @@ p {
   ol {
     text-align: start;
     justify-content: flex-start;
+    background-color: rgba(235, 228, 228, 0.82) ;
   }
   li {
       padding: 2vh;

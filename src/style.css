@@ -120,19 +120,11 @@
   margin: 1em 0.4em;
 }
  
-/* .parrafos {
-  display: block;
-  text-align: center;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-size: 20px;
-} */
+ol {
+  text-align: start;  
+}
 
   .footer {
     grid-area: footer;
   }
-  ol {
-    text-align: start;
-  }
+  
