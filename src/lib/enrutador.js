@@ -2,7 +2,7 @@
 
 import { formularioRegistro} from './vistas.js';
 
-
+import {registro} from './registrar.js'
 const idRegistro = document.querySelector('#registro');
 const logo = document.getElementById("seccionInicio");
 
