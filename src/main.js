@@ -9,9 +9,13 @@ import { router} from './lib/enrutador.js';
 const init = () => {
     //pintar la vista en la que estoy
     window.addEventListener('hashchange', () => {
-      var componente=document.getElementById("opcionesInicio");
-        router(window.location.hash,componente);
+      
+      var componenteInicio = document.querySelector(".opcionesInicio");
+      var componenteRegistro = document.querySelector(".opcionesRegistro");
+        router(window.location.hash,componenteRegistro,componenteInicio);
       });
 }
 init();
+
+
 //formularioRegistro();

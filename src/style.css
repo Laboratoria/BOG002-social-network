@@ -1,173 +1,146 @@
 body{
-    background-image: url(./imagenes/fondo.jpg);
-    
-    width: 100%;
-    
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover;
-    background-attachment: fixed;
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-    box-sizing: content-box;
+  background-image: url(./imagenes/fondo.jpg);
+  
+  width: 100%;
+  
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  box-sizing: content-box;
 }
 
 @media only screen and (max-width: 700px ){
-    #seccionInicio{
-        display: grid;
-        grid-template-columns: 25% 50% 25%;
-        grid-template-rows: 40% 30% 30%;
-        height: 100vh;
-        justify-content: center;
-    }
-    #seccionInicio .div{
-        text-align: center;
-    }
-
-
-    #logo{
-        grid-column: 1/4;
-        display: flex;
-        align-content: center;
-        justify-content: center;
-        margin-top: 25px;
-        margin-bottom: 20px;
-    }
-    .opcionesInicio a {
-        background-color: rgba(161, 5, 0, 0.79);
-        border: none;
-        margin: 20px;
-        padding: 10px;
-        width: 40%;
-        border-radius: 22px;
-        text-align: center;
-        font-size:x-large;
-        cursor: pointer;
-        color: white;
-        font-weight: bold;
-    }
-
-
-    .opcionesInicio button{
-        background-color: transparent;
-        border: none;
-        border-radius: 22px;
-        text-align: center;
-        font-family: 'Cormorant Garamond', serif;
-        font-size:x-large;
-        cursor: pointer;
-        color: white;
-        font-weight: bold;
-        justify-content: center;
-        align-content: center;
-    
-
-    }
-   
+  #seccionInicio{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 40% 30% 30%;
+    height: 100vh;
+    justify-content: center;
+}
+  #seccionInicio .div{
+    text-align: center;
+}
+  #logo{
+      grid-column: 1/4;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      margin-top: 25px;
+      margin-bottom: 20px;
+  }
+  .opcionesInicio a {
+      background-color:transparent;
+  }
+  .opcionesInicio button{
+      background-color: rgba(161, 5, 0, 0.79);
+      border: none;
+      border-radius: 22px;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size:x-large;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+      justify-content: center;
+      align-content: center;
+      width: 140px;
+      height: 50px;
+  }
     .opcionesInicio{
-        margin-top: 60px;
-        display: flex;
-        justify-content: center;
-        align-content: space-between;
-       grid-row: 2/3;
-       grid-column: 2/3;
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+      align-content: space-between;
+     grid-row: 2/3;
+     grid-column: 2/3;
 
-    }
-    .opcionesRegistro a {
-        background-color: rgba(161, 5, 0, 0.79);
-        border: none;
-        margin: 20px;
-        padding: 10px;
-        width: 40%;
-        border-radius: 22px;
-        text-align: center;
-        font-size:x-large;
-        cursor: pointer;
-        color: white;
-        font-weight: bold;
-    }
+  }
+  .opcionesRegistro a {
+    background-color:transparent;
+}
+.opcionesRegistro button{
+    background-color: rgba(161, 5, 0, 0.79);
+    border: none;
+    border-radius: 22px;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size:x-large;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    justify-content: center;
+    align-content: center;
+    width: 140px;
+    height: 50px;
+}
 
+.opcionesRegistro{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+   grid-row: 3/4;
+   grid-column: 2/3;
 
-    .opcionesRegistro button{
-        background-color: transparent;
-        border: none;
-        border-radius: 22px;
-        text-align: center;
-        font-family: 'Cormorant Garamond', serif;
-        font-size:x-large;
-        cursor: pointer;
-        color: white;
-        font-weight: bold;
-        justify-content: center;
-        align-content: center;
-    
-
-    }
-   
-    .opcionesRegistro{
-        margin-top: 60px;
-        display: flex;
-        justify-content: center;
-        align-content: space-between;
-       grid-row: 3/4;
-       grid-column: 2/3;
-
-    }
+}
 }
 * {box-sizing: border-box}
 
 
 /* Add padding to containers */
 .container {
-  padding: 16px;
-  
+padding: 16px;
+
 }
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: solid black;
-  background: #f1f1f1;
+width: 100%;
+padding: 15px;
+margin: 5px 0 22px 0;
+display: inline-block;
+border: solid black;
+background: #f1f1f1;
 }
 
 input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
+background-color: #ddd;
+outline: none;
 }
 
 /* Overwrite default styles of hr */
 hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+border: 1px solid #f1f1f1;
+margin-bottom: 25px;
 }
 
 /* Set a style for the submit/register button */
 .registerbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
+background-color: #4CAF50;
+color: white;
+padding: 16px 20px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+opacity: 0.9;
 }
 
 .registerbtn:hover {
-  opacity:1;
+opacity:1;
 }
 
 /* Add a blue text color to links */
 a {
-  color: dodgerblue;
+color: dodgerblue;
 }
 
 /* Set a grey background color and center the text of the "sign in" section */
 .signin {
-  background-color: #f1f1f1;
-  text-align: center;
+background-color: #f1f1f1;
+text-align: center;
 }

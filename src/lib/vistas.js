@@ -1,4 +1,3 @@
-/* eslint-disable max-classes-per-file */
 /* eslint-disable no-useless-constructor */
 /* eslint-disable indent */
 export const formularioRegistro = () => {
@@ -10,7 +9,7 @@ export const formularioRegistro = () => {
 
   connectedCallback() {
       // eslint-disable-next-line quotes
-      this.innerHTML =  `<form>
+      this.innerHTML = `<form>
       <div class="container">
         <h1>Register</h1>
         <p>Please fill in this form to create an account.</p>
