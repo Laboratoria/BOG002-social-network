@@ -1,5 +1,6 @@
 import { reset } from "./Utils.js";
 
+
 export function Login() {
   reset();
   const login = document.createElement("div");
@@ -10,14 +11,14 @@ export function Login() {
               <form action=" " autocomplete="off">
                 <div>
                   <label for="email">Email address</label>
-                  <input type="email" required id="email"/>
+                  <input type="email" required id="emailSignIn"/>
                 </div>  
                 <div>
                   <label for="password">Password</label>
-                  <input type="password" required id="password"/>
+                  <input type="password" required id="passwordSignIn"/>
                 </div> 
                 <div class="button">
-                  <button type="submit">Ingresar</button>
+                  <button type="submit" id="signIn">Sign In</button>
                 </div>
               </form>
               <span>or register with</span>
@@ -28,3 +29,20 @@ export function Login() {
 
   return login;
 }
+
+/*export function logInUser () {
+  const btnSignIn = document.querySelector('#signIn');
+  btnSignIn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const emailSignIn = document.querySelector('#emailSignIn').value;
+    const passwordSignIn= document.querySelector('#passwordSignIn').value;
+
+    auth
+      .signInUserWithEmailAndPassword(emailSignIn, passwordSignIn)
+      .then (userCredential => {
+          console.log('y si me quieres comer sigueme mi amor')
+      })
+  })  
+  
+}*/
