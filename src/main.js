@@ -3,6 +3,9 @@ s/* eslint-disable import/named */
 import { router} from './lib/enrutador.js';
 //import { formularioRegistro} from './lib/vistas.js';
 
+//import { registro} from './lib/registrar.js'
+//registro()
+
 const init = () => {
     //pintar la vista en la que estoy
     window.addEventListener('hashchange', () => {
