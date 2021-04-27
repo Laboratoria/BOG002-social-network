@@ -124,6 +124,12 @@ ol {
   text-align: start;  
 }
 
+#logo {
+  max-height: 90px;
+  display: block;
+  margin: auto;
+}
+
   .footer {
     grid-area: footer;
   }

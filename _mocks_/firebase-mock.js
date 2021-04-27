@@ -1,3 +1,4 @@
+/* eslint-disable arrow-body-style */
 // expect(user.providerData[0].providerId).toBe(true);
 const auth = () => {
   return {
@@ -21,12 +22,11 @@ const auth = () => {
     },
     signInWithPopup: (provider) => {
       return new Promise((resolve) => {
-        resolve("signIn")
-      }
-      )
+        resolve("signIn");
+      });
     },
-  }
-}
+  };
+};
 
 const firebase = {
   auth: auth,

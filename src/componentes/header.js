@@ -1,20 +1,22 @@
 export default function crearHeader() {
   const headerDiv = document.createElement("div");
   const htmlheader = `
-    <img src="img/logo-huc.png" alt="Logo HUC" width="100" height="100"/>
-    <details class="menu">
-      <summary> Nickname </summary>
-        <ul>
-          <li><a href='#crear-publicacion'> Aportar</a></li>
-          <li><a href='#social'> Social</a></li>    
-          <li> Salir</li>
-        </ul>
-    </details>  
+  
+  <nav class="responsive-nav">
+  <div id="div-logo">
+  <img id="logo" src="img/logo-huc.png" alt="logo">
+  </div>
+   </nav>
+
+ 
   `;
   headerDiv.innerHTML = htmlheader;
   document.getElementById("header").appendChild(headerDiv);
   headerDiv.style.display = "flex";
-  headerDiv.style.flexDirection = "row";
-  headerDiv.style.justifyContent = "space-between";
+  headerDiv.style.position = "fixed";
+  headerDiv.style.width = "100%";
+  headerDiv.style.height = "80px";
+  headerDiv.style.top = "0";
+  headerDiv.style.left = "0";
   headerDiv.style.backgroundColor = "#4B656E";
 }
