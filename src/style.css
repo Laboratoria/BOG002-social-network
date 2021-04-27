@@ -1,6 +1,7 @@
 * {
    margin: 0%;
    padding: 0%;
+   text-decoration: none;
  
 }
 body {
@@ -12,10 +13,31 @@ body {
  @media (max-width:500px){
     body{
         background-image: url("Imagenes/fondoblur.jpg");
-      
-    }
-    
-   
+          }
+   .contenedorInicio{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   } 
+   .logo{
+    width: 286px;
+    height: 150px;
+   }
+ footer img {
+    width: 15px;
+    height: 15px;
+ }   
 
+  }
 
+  footer{   
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    margin: 1em;
+    width: 100%;
+    bottom: 0; /* esta llevando el footer al final pero debemos revisar si asignandole un tamaño a body estaria sobrando */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
