@@ -67,7 +67,7 @@ body{
 * {box-sizing: border-box}
 
 
-/* Aqui comienza la seccion de registro */
+/* AQUI COMIENZA LA SECCION DE REGISTRO*/
 
 .registro{
   display: grid;
@@ -176,3 +176,4 @@ body{
     
     font-size: 1.2em;
   }
+  /* AQUI TERMINA LA SECCION DE REGISTRO*/
