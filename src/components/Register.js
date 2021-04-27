@@ -2,11 +2,15 @@ import { reset } from "./Utils.js";
 import { google_provider } from '../index.js';
 
 export function Register() {
-  reset();
-  const register = document.createElement("div");
-  register.innerHTML = ` 
-    <div id="form-container">
-            <h1 class="register-tittle">Register</h1>
+    reset();
+    const register = document.createElement("div");
+    register.innerHTML = ` 
+        <div class="container>
+        <a href="#/"><img class="back" src=./assets/back.svg alt="arrow"></a>
+        <h1 class="register-tittle">Enjoy Gleam</h1>
+        </div>
+
+
             <div class="form">
               <form action=" " autocomplete="off" id="formRegister">
                 <div>
@@ -37,43 +41,40 @@ export function Register() {
                 <button><img id="logoFb" src=./assets/logo-fb.svg></button>
                 <button><img id="logoGoogle" src=./assets/logo-google.svg></button>
               </div>
-            </div>
-          </div>`;
+            </div>`;
 
-  return register;
+    return register;
 }
 
 export function addUser() {
-  
-  const btnContinue = document.querySelector('#register');
-  const formRegister = document.querySelector('#formRegister');
-  const btnFb = document.querySelector('#logoFb');
-  const btnGoogle = document.querySelector('#logoGoogle');
-  btnContinue.addEventListener('click', (e) => {
-    e.preventDefault();
 
-    const email = document.querySelector('#email').value;
-    const password = document.querySelector('#password').value;
+    const btnContinue = document.querySelector('#register');
+    const formRegister = document.querySelector('#formRegister');
+    const btnFb = document.querySelector('#logoFb');
+    const btnGoogle = document.querySelector('#logoGoogle');
+    btnContinue.addEventListener('click', (e) => {
+        e.preventDefault();
 
-    const auth = firebase.auth();
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then(userCredential => {
-        formRegister.reset()
-        console.log('3312 3312 tenemos un 3312')
-      })
+        const email = document.querySelector('#email').value;
+        const password = document.querySelector('#password').value;
 
-  })
+        const auth = firebase.auth();
+        auth
+            .createUserWithEmailAndPassword(email, password)
+            .then(userCredential => {
+                formRegister.reset()
+                console.log('3312 3312 tenemos un 3312')
+            })
 
-/*btnGoogle.addEventListener('click', (e) => {
-  google_provider;
-  auth.signWithPopup(google_provider)
-})*/
+    })
 
-/*btnFb.addEventListener('click', (e) => {
-  const providerFb = firebase.auth.FacebookAuthProvider();
-})*/
+    /*btnGoogle.addEventListener('click', (e) => {
+      google_provider;
+      auth.signWithPopup(google_provider)
+    })*/
+
+    /*btnFb.addEventListener('click', (e) => {
+      const providerFb = firebase.auth.FacebookAuthProvider();
+    })*/
 
 }
-
-

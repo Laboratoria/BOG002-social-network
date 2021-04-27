@@ -20,7 +20,6 @@ body {
     flex-direction: column;
     padding: 30px;
     top: 80px;
-
 }
 
 .btns-container-mobile {
@@ -61,4 +60,26 @@ body {
     margin-top: 20px;
     font-size: 18px;
     font-weight: 700;
+}
+
+.grid {
+    margin: 0 auto;
+    padding: 24px;
+    align-items: center;
+    height: 100%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat (6, 1fr);
+    grid-gap: 12px;
+}
+
+.back {
+    grid-column: 2/2;
+    cursor: pointer;
+}
+
+.register-tittle {
+    grid-column: 2/6;
 }
