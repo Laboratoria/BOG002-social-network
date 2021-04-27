@@ -56,7 +56,21 @@ export const logInEmail = (email, password,signinForm) => {
 // Creación de cuenta con email y password 
 export const signUpEmail = (email, password,signupForm) => {
     //Comprobar que el email no esté duplicado
-    firebase.database()
+    let usuario = this.db.collection('users').doc(user.uid);
+    usuario.get().then( usuarioBBDD => {
+        if (!usuarioBBDD .exists) {
+            console.log("No existe el usuario");
+            auth
+            .createUserWithEmailAndPassword(email, password)
+            .then(userCredential => {
+                signupForm.reset();
+            });
+        } else {
+            console.log("Existe el usuario");
+        }
+    }
+
+    /*firebase.database()
         .ref('usuarios')
         .orderByChild('usuario')
         .equalTo(user)
@@ -64,11 +78,7 @@ export const signUpEmail = (email, password,signupForm) => {
             console.log(snapshot.exists() ? 'user exist' : 'user non existent');
         }, function(error) {
             console.log(error);
-       });
+       });*/
     //Si existe, escribe en consola User Exist. Si no, User non existent 
-    auth
-        .createUserWithEmailAndPassword(email, password)
-        .then(userCredential => {
-            signupForm.reset();
-        });
+    
 }
