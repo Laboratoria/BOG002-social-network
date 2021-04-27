@@ -52,6 +52,13 @@ h1 {
     font-family: 'Fredoka One', cursive;
 }
 
+h2 {
+    margin-top: 0;
+    font-size: 27px; 
+    padding-bottom:10px ;
+    border-bottom: 2px solid #000;
+}
+
 /*Sección de inicio de sesión*/
 
 /* Imagen en landing page*/
@@ -142,31 +149,6 @@ footer img{padding: 0.5px}
     align-items: center;
 }
 
-.content {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: calc(100vh - 150px);
-}
-
-.pad {
-    border-radius: 20px;
-    padding: 20px;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content:space-between;
-}
-
-.left{
-    background-color: var(--verde);
-    width: 24%;
-}
-
-.rigth{
-    background-color: var(--amarillo);
-    width: 72%;
-}
-
 .input-image {
     padding: 5px;
     width: 100%;
@@ -191,6 +173,26 @@ footer img{padding: 0.5px}
     color: #FFF;
 }
 
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: calc(100vh - 150px);
+}
+
+.pad {
+    width:100%;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content:space-between;
+}
+
+.left{ background-color: var(--verde) }
+
+.rigth{ background-color: var(--amarillo) }
+
 /*Responsive*/
 
 /* Responsive para dispositivos Mobile*/
@@ -210,6 +212,7 @@ footer img{padding: 0.5px}
         width: auto;
         height: 40px;
     }
+	  
 }
 
 /* Responsive para dispositivos Desktop*/
@@ -238,4 +241,7 @@ footer img{padding: 0.5px}
     #muro header input{
         width: 400px;
     }
+	  
+    .left{ width: 24% }
+    .rigth{ width: 72% }
 }
