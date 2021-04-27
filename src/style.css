@@ -68,19 +68,15 @@ body{
 
 
 /* Aqui comienza la seccion de registro */
-.registro div:hover{
-  border: solid blue;  
-}
-.registro div {
-  background: salmon;
-  
-}
+
 .registro{
   display: grid;
-  
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: bold;
  grid-template-rows: 1fr;
- 
  row-gap:5em;
+ 
+ background-color: rgba(161, 5, 0, 0.79);
 
 }
 
@@ -111,28 +107,72 @@ body{
  display: flex;
   justify-content: center;
   align-items: center;
+  font-size:x-large;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
 }
 .contenedorinputreregistro{
   display: grid;
   row-gap: 2em;
   grid-template-rows: 1fr 1fr 1fr 3fr 1 fr 1 fr;
   padding-top: 3em;
+  padding-bottom: 2em;
 }
 .inicioGoogle {
   display: grid;
+  width: 70%;
   grid-template-columns: 50% 50%;
-  
+ justify-self: center;
    justify-items: center;
    align-items: center;
+   background-color:rgb(197, 187, 187);
 }
-.inicioGoogle div{
-  border: seagreen
-}
+
 .tituloRegistro{
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size:x-large;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
 }
 .registroGoogle{
   justify-self: start;
+  font-size: 1.2em;
+  font-weight: bold;
 }
+.inputRegistrarse{
+  border-color: transparent transparent white transparent;
+  font-family: 'Cormorant Garamond', serif;
+    font-weight: bolder;
+    background-color: transparent;
+    font-size: 1.5em;
+  
+  }
+  ::placeholder{
+    color:rgb(247, 242, 219);
+  }
+
+  .registerbtn{
+    
+    background-color: white;
+     color: rgb(138, 22, 22);
+      height: 110%;
+      width: 35%;
+     border-radius: 5em;
+     border-color: transparent;
+     font-family: 'Cormorant Garamond', serif;
+     font-weight: bold;
+     font-size: 1.5em;
+   }
+   .inferior{
+    display: grid;
+    grid-template-rows: 1.3fr 1fr 2fr;
+    row-gap:1em ;
+  }
+  #start{
+    
+    font-size: 1.2em;
+  }

@@ -28,10 +28,10 @@ export const formularioRegistro = () => {
      </div>
      <div class="inputsRegistro"  > <input type="text" placeholder="Email" name="email" id="email" class="inputRegistrarse"  required>
      </div>
-      <div class="inputsRegistro"  ><input type="password" placeholder="Enter Password" name="psw" id="psw" class="inputRegistrarse"  required>
+      <div class="inputsRegistro"  ><input type="password" placeholder="Escribe tu contraseña" name="psw" id="psw" class="inputRegistrarse"  required>
       </div>
- 
- 
+      </div>
+    <div class="inferior">
        <div class="fecha">
        <input type="date" id="start" name="trip-start"
         value=""
@@ -44,7 +44,7 @@ export const formularioRegistro = () => {
         
  
         <div class="botonRegistro">
-          <button type="submit" class="registerbtn">Register</button></div>
+          <button type="submit" class="registerbtn">Registrate</button></div>
     </div>
     
     </form>`;

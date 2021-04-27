@@ -4,8 +4,8 @@ import { formularioRegistro} from './vistas.js';
 import { registro} from './registrar.js'
 
 const idRegistro = document.querySelector('#registro');
-
-export const router = (route,componenteHtml) => {
+const logo=document.querySelector("#logo");
+export const router = (route,componenteHtml,) => {
   idRegistro.innerHTML = '';
   console.log(route);
   switch (route) {
@@ -13,6 +13,7 @@ export const router = (route,componenteHtml) => {
       console.log('aiuda');
       break;
     case '#/registro': 
+    logo.style.display="none";
     componenteHtml.style.display="none";  
     idRegistro.innerHTML=`<formulario-registro></formulario-registro>`
     formularioRegistro();
