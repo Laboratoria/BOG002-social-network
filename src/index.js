@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/no-cycle
 import { App } from "./app/App.js";
 
-export const google_provider = new firebase.auth.GoogleAuthProvider();
+//export const google_provider = new firebase.auth.GoogleAuthProvider()
 
 document.addEventListener("DOMContentLoaded", App);
 window.addEventListener("hashchange", App);
