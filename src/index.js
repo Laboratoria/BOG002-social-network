@@ -1,6 +1,6 @@
 import { App } from "./app/App.js";
 
-export const google_provider = new firebase.auth.GoogleAuthProvider()
+//export const google_provider = new firebase.auth.GoogleAuthProvider()
 
 document.addEventListener("DOMContentLoaded", App);
 window.addEventListener("hashchange", App);
@@ -13,12 +13,11 @@ const firebaseConfig = {
     storageBucket: "sn-gleam.appspot.com",
     messagingSenderId: "454363590320",
     appId: "1:454363590320:web:0809dc8ad3570efc371575"
-  };
-  // Initialize Firebase
- const init = () => {
+};
+// Initialize Firebase
+const init = () => {
     firebase.initializeApp(firebaseConfig);
-    
- } 
 
- window.addEventListener = ('load', init());
- 
+}
+
+window.addEventListener = ('load', init());
