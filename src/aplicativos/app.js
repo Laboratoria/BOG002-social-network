@@ -1,10 +1,5 @@
-// LOGIN CON GOOGLE
-export function registroGoogle() {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithRedirect(provider);
-}
-
-// LOGIN CON FACEBOOK
+import { providerFacebook, providerGoogle } from "../firebaseController/firebaseFunctions.js";
+import { irReglas } from "./redireccion.js";
 
 // creando cuenta de usuario
 export function registrar() {
@@ -15,7 +10,6 @@ export function registrar() {
       crearUsuario(informacion[0][1].value, informacion[0][2].value)
         .then(() => {
           // Signed in
-
           irReglas();
         })
         .catch((error) => {
@@ -28,41 +22,32 @@ export function registrar() {
 
 // registro con Google
 export function registroGoogle() {
-  const botonGoogle = document.getElementById('botonGoogle');
-
-  botonGoogle.addEventListener('click', (e) => {
-    e.preventDefault();
-    const provider = new firebase.auth.GoogleAuthProvider();
-    providerGoogle(provider)
-      .then(() => {
-        irReglas();
-      })
-      .catch(() => {
-      });
-  });
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#botonGoogle")) {
+      e.preventDefault();
+      const provider = new firebase.auth.GoogleAuthProvider();
+      providerGoogle(provider)
+        .then(() => {
+          irReglas();
+        })
+        .catch(() => {
+        });
+    };
+  })
 }
 
-// export function logout() {
-//   firebase
-//     .auth()
-//     .signOut()
-//     .then(function () {
-//       // Sign-out successful.
-//     })
-//     .catch(function (error) {
-//       // An error happened.
-//       // console.log(error);
-//     });
-// }
-
-  botonFacebook.addEventListener('click', (e) => {
-    e.preventDefault();
-    const provider = new firebase.auth.FacebookAuthProvider();
-    providerFacebook(provider)
-      .then(() => {
-        irReglas();
-      })
-      .catch(() => {
-      });
-  });
+// registro con Facebook
+export function registroFacebook() {
+  document.addEventListener("click", (e) => {
+    if (e.target.matches("#botonFacebook")) {
+      e.preventDefault();
+      const provider = new firebase.auth.FacebookAuthProvider();
+      providerFacebook(provider)
+        .then(() => {
+          irReglas();
+        })
+        .catch(() => {
+        });
+    };
+  })
 }

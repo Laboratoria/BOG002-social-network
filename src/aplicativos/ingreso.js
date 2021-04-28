@@ -1,5 +1,5 @@
 import { nuevoIngreso } from '../firebaseController/firebaseFunctions.js';
-import irReglas from './redireccionReglas.js';
+import { irReglas } from './redireccion.js';
 
 export default function ingresar() {
   window.location = '#login';

@@ -11,6 +11,12 @@ export default function firebaseInitialize() {
 
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+  .then(() => {
+    // la sesión se mantiene iniciada
+  })
+
 }
 
 // export const store = firebase.firestore();

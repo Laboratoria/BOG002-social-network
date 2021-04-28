@@ -9,11 +9,14 @@ import ingresar from "./aplicativos/ingreso.js";
 import CrearRegistro from "./componentes/registro.js";
 import firebaseInitialize from "./firebaseController/firebaseConfig.js";
 import crearPost from "./componentes/post.js";
+import { cerrarSesion, verificarSesion } from "./aplicativos/redireccion.js";
 
 firebaseInitialize();
 
+verificarSesion();
+
 const main = document.getElementById("main");
-main.appendChild(CrearFormulario());
+//main.appendChild(CrearFormulario());
 
 registrar();
 registroGoogle();
@@ -41,6 +44,9 @@ document.addEventListener("click", (e) => {
   if (e.target.matches("#btnC")) {
     main.innerHTML = "";
     window.location = "#crear-publicacion";
-    main.appendChild(crearPost());
+   crearPost();
   }
 });
+
+// cerrar sesión
+cerrarSesion();
