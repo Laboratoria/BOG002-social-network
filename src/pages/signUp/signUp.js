@@ -22,7 +22,9 @@ export function registroPage(){
             <div class="containerRegistration">
                 <form id="signUp">
                 <input type="email" id="signUpEmail" placeholder="Correo electronico" class="input" required>
+                <P class="errorMessage" id="errorEmail"></p>
                 <input type="password" id="signUpPassword" placeholder="Contraseña" class="input" required>
+                <P class="errorMessage" id="errorPassword"></p>
                 <button  class="button" id="Register">Registrarte</button>
                 </form>
             </div>
@@ -47,32 +49,29 @@ export function signUp() {
     button.addEventListener("click", function () {
         const email = document.getElementById("signUpEmail").value;
         const pass = document.getElementById("signUpPassword").value;
+        const errorEmail = document.getElementById("errorEmail");
+        const errorPassword = document.getElementById("errorPassword");
         console.log(email, pass);
+
+        document.querySelectorAll(".errorMessage").forEach(function(errorMessage) {
+            setTimeout(function(){ errorMessage.innerHTML=""}, 3000);
+        });
+
         if (email.length > 0 && pass.length > 0) {
             register(email, pass)
                 .then(userCredential => {
-                    console.log('Creaste una nueva cuenta')
+                    console.log('Creaste una nueva cuenta', userCredential)
                     signUpForm.reset();
+                    window.location='#/timeline'
                 })
-                .catch(() => {
-                    console.log("ingrese correo y pass word ocurrio un error")
+                .catch((e) => {
+                    console.log("ingrese correo y pass word ocurrio un error",e.code)
                 })
-                button.onclick = "window.location='#/timeline'"
+               
         }
         else {
-            if(email.length>0){
-                const divError = document.createElement("div");
-                divError.innerHTML= `<p class="mensajeError"> El correo es inválido </p>`;
-                signUpForm.appendChild(divError)
-            
-                // appendChild(document.createTextNode("Por favor ingrese un correo electronico"));
-                console.log("soy error ingresar contraseña")
-            }
-            if(pass.length>0){
-                div.appendChild(document.createTextNode("Por favor ingrese una contraseña"));
-                console.log("soy error ingresar email")
-            }
-            
+        
+            console.log("error");
         }
     })
 

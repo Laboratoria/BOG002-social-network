@@ -1,6 +1,6 @@
-import login from '../../index.js';
-export function loginPage () {
-//const loginPage = () => {
+import { Login } from '../../index.js';
+
+export function loginPage() {
 
     const view = `
         <section id="screenLogIn">
@@ -13,8 +13,10 @@ export function loginPage () {
                 <div class="containerLogIn">
                     <form id="signIn">
                     <input type="email" id="signInEmail" placeholder="Correo electronico" class="input" required>
+                    <P class="errorMessage" id="errorEmail"></p>
                     <input type="password" id="signInpassword" placeholder="Contraseña" class="input" required>
-                    <button class="button" id="btnLogIn" onclick= "window.location='#/timeline'">Iniciar Sesión</button>
+                    <P class="errorMessage" id="errorPassword"></p>
+                    <button type= "button" class="button" id="btnLogIn">Iniciar Sesión</button>
                     </form>
                 </div>
                 <div class="containerCreateAccount">
@@ -24,32 +26,56 @@ export function loginPage () {
         </section>    
     `
     const divElement = document.createElement('div');
-    divElement.innerHTML = view;   
+    divElement.innerHTML = view;
 
     return divElement;
 }
 
 
-export function login () {
+export function logIn() {
     const btnSignIn = document.getElementById("btnLogIn");
-btnSignIn.addEventListener('click', () => {
-    let email = document.getElementById('signInEmail').value
-    let password = document.getElementById('signInpassword').value
-    if (email.length>0 && password.length>0) {
+    btnSignIn.addEventListener('click', () => {
+        let email = document.getElementById('signInEmail').value
+        let password = document.getElementById('signInpassword').value
+        const errorEmail = document.getElementById("errorEmail");
+        const errorPassword = document.getElementById("errorPassword");
         
-        login(email, password)
+        document.querySelectorAll(".errorMessage").forEach(function(errorMessage) {
+            setTimeout(function(){ errorMessage.innerHTML=""}, 3000);
+        });
+
+
+        if (email.length == 0 ) {
+            errorEmail.innerHTML=`Ingrese un correo válido`
+            return false;
+        }
+        if (password.length == 0) {
+            errorPassword.innerHTML=`Ingrese la contraseña`
+            return false
+        }
+    
+        Login(email, password)
             .then(() => {
-                
+            window.location='#/timeline'
             })
-            .catch(() => {
-                console.log("ocurrio un error")
-            })
-    }
-    else {
-        console.log("error ingresar email")
-    }
+            .catch((err) => {
+                console.log(err);
 
-})
+                if (err.code=="auth/user-not-found"){
+                errorEmail.innerHTML=`El correo electronico no posee una cuenta válida`
+                return false;
+                }
+                if (err.code=="auth/wrong-password") {
+                errorPassword.innerHTML=`La contraseña no es válida`
+                return false
+                }
+                if (err.code=="auth/too-many-requests") {
+                    errorPassword.innerHTML=`El acceso a esta cuenta se ha desactivado temporalmente debido a muchos intentos fallidos de inicio de sesión. `
+                    return false
+                }
+                errorPassword.innerHTML=err.message
+            })
+
+            
+    })
 }
-
-//export default loginPage
