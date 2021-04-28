@@ -6,7 +6,7 @@ body{
     padding: 0;
 }
 .root-container{
-  height:100vh;
+  height:98vh;
   display: grid;
   background: black;
   grid-gap: 2vw;
