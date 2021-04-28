@@ -6,7 +6,7 @@ body{
     padding: 0;
 }
 .root-container{
-  height:98vh;
+  height:100vh;
   display: grid;
   background: black;
   grid-gap: 2vw;
@@ -47,7 +47,7 @@ body{
   z-index: 50;
   width:73vw;
   height: 70vh;
-  margin-top: 12vh;
+  margin-top: 6vh;
   background:#EAE6CA;
   left: 13vw;
   justify-content: center;
