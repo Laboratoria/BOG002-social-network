@@ -19,7 +19,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
    } 
-   .logo{
+   #logoInicio{
     width: 286px;
     height: 150px;
    }
@@ -28,7 +28,7 @@ body {
     height: 15px;
  }   
 
-  }
+}
 
   footer{   
     position: absolute;
