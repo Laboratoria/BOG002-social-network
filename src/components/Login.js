@@ -1,6 +1,5 @@
 import { reset } from "./Utils.js";
 
-
 export function Login() {
   reset();
   const login = document.createElement("div");
@@ -30,7 +29,7 @@ export function Login() {
   return login;
 }
 
-/*export function logInUser () {
+/* export function logInUser () {
   const btnSignIn = document.querySelector('#signIn');
   btnSignIn.addEventListener('click', (e) => {
     e.preventDefault();
