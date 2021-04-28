@@ -1,6 +1,6 @@
 import {loginPage, logIn} from '../pages/login/login.js';
-import {registroPage,signUp} from '../pages/signUp/signUp.js';
-import timelinePage from '../pages/timeline/timeline.js';
+import {registroPage,signUp,signUpGoogle} from '../pages/signUp/signUp.js';
+import {timelinePage,signOutGoogle} from '../pages/timeline/timeline.js';
 
 
 let content = document.getElementById('root');
@@ -11,13 +11,16 @@ export const router = (route) => {
         case '#/registration': 
             content.appendChild(registroPage());
             signUp();
+            signUpGoogle();
             break;
         case '#/timeline': 
             content.appendChild(timelinePage());
+            signOutGoogle();
             break;
         default:
             content.appendChild(loginPage());
             logIn();
+            signUpGoogle();
             break;
     }
 }
