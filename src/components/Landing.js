@@ -1,10 +1,10 @@
-Import { reset } from './Utils.js';
+import { reset } from "./Utils.js";
 
 export function Landing() {
   reset();
-  const template = document.createElement('div');
+  const template = document.createElement("div");
   template.insertAdjacentHTML(
-    'afterbegin',
+    "afterbegin",
     `<div id="container">
       <img class="logo" src="./assets/gleam.svg" alt="Gleam logo">
         <p class="copy"> Welcome, we're the best and inclusive app in the world just 
@@ -14,21 +14,21 @@ export function Landing() {
           <button id="logIn">Log In</button>
       </div>
     </div>
-    `,
+    `
   );
   return template;
 }
 
 export function random() {
-  const btnRegister = document.getElementById('signUp');
-  btnRegister.addEventListener('click', (e) => {
+  const btnRegister = document.getElementById("signUp");
+  btnRegister.addEventListener("click", (e) => {
     e.preventDefault();
-    window.location.assign('#/register');
+    window.location.assign("#/register");
   });
 
-  const btnLogin = document.getElementById('logIn');
-  btnLogin.addEventListener('click', (e) => {
+  const btnLogin = document.getElementById("logIn");
+  btnLogin.addEventListener("click", (e) => {
     e.preventDefault();
-    window.location.assign('#/login');
+    window.location.assign("#/login");
   });
 }
