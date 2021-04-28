@@ -46,7 +46,7 @@
     margin: 10px auto;
     border: 0.5px solid rgb(1, 12, 15);
     padding: 10px;
-    background: white;
+    background: #5F4053;
     border-radius: 10px;
     color: rgb(1, 12, 15);
     font-size: 16px;
@@ -67,8 +67,15 @@
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
-    margin-inline-end: 0px;
+    margin-inline-end: 0px; 
+    font-size: 20px;   
   }
+
+  #parrafos {
+    font-size: 14px;
+  }
+
+  
   #mesagge {
     color: red;
   }
@@ -84,9 +91,46 @@
     width: 50vmin;
   }
 
+  .icono {
+    max-width: 25px;
+    vertical-align: middle;
+    padding: 5px;
+    display: inline-block;
+}
+
+.login {
+  padding: 0 10px;
+  background-color: white;
+  display: block;
+  border-radius: 10px;
+  margin: 10px auto;
+  width: 250px;
+     
+}
+
+
+.login p {
+  margin: 1em;
+  display: inline-block;
+  color: #737373;
+  font-size: 20px;
+} 
+
+.login.facebook p{
+  margin: 1em 0.4em;
+}
+ 
+ol {
+  text-align: start;  
+}
+
+#logo {
+  max-height: 90px;
+  display: block;
+  margin: auto;
+}
+
   .footer {
     grid-area: footer;
   }
-  ol {
-    text-align: start;
-  }
+  

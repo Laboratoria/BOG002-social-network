@@ -4,6 +4,11 @@ body {
     background-size: cover;
 }
 
+.header {
+  grid-area: header;
+  
+}
+
   .grid-container {
     display: grid;
     grid-template-areas: 'header header header header' 'column1 main main column2' 'footer footer footer footer'
@@ -38,12 +43,12 @@ body {
     border: 0.5px solid rgb(1, 12, 15);
   }
 
-  button {
+    button {
     
     margin: 10px auto;
     border: 0.5px solid rgb(1, 12, 15);
     padding: 10px;
-    background: white;
+    background: #5F4053;
     border-radius: 10px;
     color: rgb(1, 12, 15);
     font-size: 16px;
@@ -54,7 +59,21 @@ body {
     color: white;
     background-color: rgb(1, 12, 15);
 }
-  
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px; 
+  font-size: 20px; 
+}
+
+#parrafos {
+  font-size: 14px;
+}
+
+ 
   #btnI{
     margin-left: 2vw;
   }
@@ -74,6 +93,34 @@ body {
     width: 50vmin;
   }
 
+  .icono {
+    max-width: 25px;
+    vertical-align: middle;
+    padding: 5px;
+    display: inline-block;
+}
+
+.login {
+  padding: 0 10px;
+  background-color: white;
+  display: block;
+  border-radius: 10px;
+  margin: 10px auto;
+  width: 250px;
+  cursor: pointer;
+    
+}
+
+.login p {
+  margin: 1em;
+  display: inline-block;
+  color: #737373
+} 
+
+.login.facebook p{
+  margin: 1em 0.4em;
+}
+
   form {
     background: rgba(235, 228, 228, 0.82);
     width: 30vw;
@@ -92,6 +139,7 @@ body {
   ol {
     text-align: start;
     justify-content: flex-start;
+    background-color: rgba(235, 228, 228, 0.82) ;
   }
   li {
       padding: 2vh;
@@ -100,6 +148,12 @@ body {
   }
 #buttonReglas {
     margin-top: 5vh;
+}
+
+#logo {
+  max-height: 90px;
+  display: block;
+  margin-top: auto;
 }
 
 .footer {

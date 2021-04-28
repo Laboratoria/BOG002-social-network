@@ -6,35 +6,40 @@ export function registroGoogle() {
 
 // LOGIN CON FACEBOOK
 
-export function registroFacebook() {
-  const provider = new firebase.auth.FacebookAuthProvider();
-  firebase.auth().signInWithRedirect(provider);
+// creando cuenta de usuario
+export function registrar() {
+  const informacion = document.getElementsByClassName('formInformacion');
+
+  document.addEventListener('click', (e) => {
+    if (e.target.matches('#btnR')) {
+      crearUsuario(informacion[0][1].value, informacion[0][2].value)
+        .then(() => {
+          // Signed in
+
+          irReglas();
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          document.getElementById('errorRegistro').innerHTML = errorMessage;
+        });
+    }
+  });
 }
 
-// LOGIN CON EMAIL Y PWD
-export function ingresar(email, password) {
-  firebase
-    .auth()
-    .signInWithEmailAndPassword(email, password)
-    .catch(function (error) {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      if (errorCode === "auth/invalid-email") {
-        alert("Email inválido");
-      }
-      if (errorCode === "auth/user-disabled") {
-        alert("Usuario deshabilitado");
-      }
-      if (errorCode === "auth/user-not-found") {
-        alert("Usuario no encontrado");
-      }
-      if (errorCode === "auth/wrong-password") {
-        alert("Contraseña incorrecta");
-      }
-      // console.log(`${errorCode} ${errorMessage}`);
-      // ...
-    });
+// registro con Google
+export function registroGoogle() {
+  const botonGoogle = document.getElementById('botonGoogle');
+
+  botonGoogle.addEventListener('click', (e) => {
+    e.preventDefault();
+    const provider = new firebase.auth.GoogleAuthProvider();
+    providerGoogle(provider)
+      .then(() => {
+        irReglas();
+      })
+      .catch(() => {
+      });
+  });
 }
 
 // export function logout() {
@@ -50,27 +55,14 @@ export function ingresar(email, password) {
 //     });
 // }
 
-// // CREAR CUENTA MAIL Y PWD
-// export function registrar(mail, pwd) {
-//   firebase
-//     .auth()
-//     .createUserWithEmailAndPassword(mail, pwd)
-//     .then(function () {
-//       window.socialNetwork.verification();
-//     })
-//     .catch(function (error) {
-//       // Handle Errors here.
-//       // const errorCode = error.code;
-//       // const errorMessage = error.message;
-//       if (errorCode === "auth/email-already-in-use") {
-//         alert("Correo en uso");
-//       }
-//       if (errorCode === "auth/invalid-email") {
-//         alert("Email inválido");
-//       }
-//       if (errorCode === "auth/weak-password") {
-//         alert("Contraseña tiene que tener más de 6 caracteres");
-//       }
-//       // console.log(`${errorCode} ${errorMessage}`);
-//     });
-// }
+  botonFacebook.addEventListener('click', (e) => {
+    e.preventDefault();
+    const provider = new firebase.auth.FacebookAuthProvider();
+    providerFacebook(provider)
+      .then(() => {
+        irReglas();
+      })
+      .catch(() => {
+      });
+  });
+}
