@@ -53,13 +53,16 @@ configurationFireBase();
 
 const init = () => {
   let hash = window.location.hash.substring(1);
-  document.querySelector('.body').innerHTML = '';
-  router(hash);
+  const $containerGeneral = document.createElement('div');
+  $containerGeneral.classList.add('bigContainer');
+  document.querySelector('.body').appendChild($containerGeneral);
+  document.querySelector('.bigContainer').innerHTML = '';
+  router(hash, $containerGeneral);
 
   window.addEventListener('hashchange', () => {
     hash = window.location.hash.substring(1);
-    document.querySelector('.body').innerHTML = '';
-    router(hash);
+    document.querySelector('.bigContainer').innerHTML = '';
+    router(hash, $containerGeneral);
   });
 };
 

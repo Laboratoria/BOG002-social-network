@@ -8,8 +8,11 @@ import { userLogIn } from './LogIn.js';
 import { LogInGoogle } from '../auth/logInUser.js';
 
 function gridAndCard($containerGeneral) {
-  gridImage($containerGeneral);
-  const $newDiv = $containerGeneral.appendChild(card());
+  const $containerRegisterLogin = document.createElement('div');
+  $containerRegisterLogin.classList.add('root-container');
+  gridImage($containerRegisterLogin);
+  $containerGeneral.appendChild($containerRegisterLogin);
+  const $newDiv = $containerRegisterLogin.appendChild(card());
   return $newDiv;
 }
 
@@ -27,7 +30,12 @@ export function renderRegister($containerGeneral) {
   visibility();
 }
 
-export function renderHome() {
+export function renderHome($containerGeneral) {
   const container = '<p> esto es home </p>';
   document.querySelector('.body').insertAdjacentHTML('afterbegin', container);
 }
+
+//export function renderHome() {
+//  const container = home();
+//  document.querySelector('.body').insertAdjacentHTML('afterbegin', container);
+//}
