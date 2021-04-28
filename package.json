@@ -27,6 +27,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^24.3.6",
     "firestore-jest-mock": "^0.11.1",
+    "gh-pages": "^3.1.0",
     "htmlhint": "^0.14.0",
     "jest": "^26.4.2",
     "regenerator-runtime": "^0.13.1",
