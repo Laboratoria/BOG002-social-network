@@ -1,4 +1,7 @@
-const timelinePage = () => {
+import { signOut } from '../../index.js';
+
+
+ export function timelinePage() {
 
     const view = `
         <section id="screenWall">
@@ -11,7 +14,7 @@ const timelinePage = () => {
 
             <main>
                 <form id="logOut">
-                    <button id="btnLogOut" onclick= "window.location='#/'">Cerrar sesion</button>
+                    <button id="btnLogOut">Cerrar sesion</button>
                 </form>
             </main>
         </section>    
@@ -22,4 +25,20 @@ const timelinePage = () => {
     return divElement;
 }
 
-export default timelinePage;
+
+export function signOutGoogle() {
+    const buttonSignOut = document.getElementById('btnLogOut');
+    buttonSignOut.addEventListener('click', function () {
+        signOut()
+            .then(() => {
+                console.log ('cerraste sesión')
+                window.location = '#/'                
+            })
+            .catch(err => {
+                console.log(err)
+            })
+
+    });
+}
+
+//export default timelinePage;
