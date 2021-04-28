@@ -1,9 +1,9 @@
 //import view from './signUp';
-import {register} from '../../index.js';
+import { register, registerGoogle } from '../../index.js';
 
 // const registroPage = () => {
 
-export function registroPage(){
+export function registroPage() {
 
     const view = `
     <section id="screenRegistration">
@@ -15,7 +15,7 @@ export function registroPage(){
 
         <main>
             <div class="containerLogInGoogle">
-                <button id="btnGoogle" type="submit"><img id="logoGoogle" src="assets/logoGoogle.png">Iniciar sesión con
+                <button id="btnGoogle" type="submit"><img id="logoGoogle" src="assets/logoGoogle.png">Registrarte con
                 Google</button>
                 <img src="assets/imgLineas.png">
             </div>
@@ -30,14 +30,10 @@ export function registroPage(){
             </div>
         </main>
      </section>   
-    `    
+    `
     const divElement = document.createElement('div');
-    divElement.innerHTML = view;   
+    divElement.innerHTML = view;
 
-    // // const botonPrueba = divElement.querySelector('#Register')
-    // // botonPrueba.addEventListener('click', () => {
-    // //     console.log('Hola me hicieron Click, soy registro')
-    // // })
 
     return divElement;
 }
@@ -53,8 +49,8 @@ export function signUp() {
         const errorPassword = document.getElementById("errorPassword");
         console.log(email, pass);
 
-        document.querySelectorAll(".errorMessage").forEach(function(errorMessage) {
-            setTimeout(function(){ errorMessage.innerHTML=""}, 3000);
+        document.querySelectorAll(".errorMessage").forEach(function (errorMessage) {
+            setTimeout(function () { errorMessage.innerHTML = "" }, 3000);
         });
 
         if (email.length > 0 && pass.length > 0) {
@@ -62,20 +58,31 @@ export function signUp() {
                 .then(userCredential => {
                     console.log('Creaste una nueva cuenta', userCredential)
                     signUpForm.reset();
-                    window.location='#/timeline'
+                    window.location = '#/timeline'
                 })
                 .catch((e) => {
-                    console.log("ingrese correo y pass word ocurrio un error",e.code)
+                    console.log("ingrese correo y pass word ocurrio un error", e.code)
                 })
-               
+
         }
         else {
-        
+
             console.log("error");
         }
     })
 
 }
+export function signUpGoogle() {
+    const buttonGoogle = document.getElementById('btnGoogle');
+    buttonGoogle.addEventListener('click', function () {
+        const googleAccount = new firebase.auth.GoogleAuthProvider
+        registerGoogle(googleAccount)
+            .then(result => {
+                window.location = '#/timeline'
+            })
+            .catch(err => {
+                console.log(err)
+            })
 
-
-// export default registroPage; 
+    });
+}

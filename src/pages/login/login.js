@@ -17,6 +17,9 @@ export function loginPage() {
                     <input type="password" id="signInpassword" placeholder="Contraseña" class="input" required>
                     <P class="errorMessage" id="errorPassword"></p>
                     <button type= "button" class="button" id="btnLogIn">Iniciar Sesión</button>
+                    <img src="assets/imgLineas.png">
+                    <button id="btnGoogle" type="submit"><img id="logoGoogle" src="assets/logoGoogle.png">Iniciar sesión con
+                    Google</button>
                     </form>
                 </div>
                 <div class="containerCreateAccount">
