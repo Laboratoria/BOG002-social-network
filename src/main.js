@@ -89,10 +89,7 @@ const btnSignIn = document.getElementById("btnLogIn");
 btnSignIn.addEventListener('click', () => {
     let email = document.getElementById('signInEmail').value
     let password = document.getElementById('signInpassword').value
-    if (email && password) {
-        //if (email != "" && password != "")
-        //if (email.length>0 && password.length>0)
-
+    if (email.length>0 && password.length>0){
         login(email, password)
             .then(() => {
                 document.getElementById("screenRegistration").style = "display:none"
