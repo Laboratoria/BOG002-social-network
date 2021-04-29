@@ -18,10 +18,8 @@ body {
     position: relative;
     justify-content: space-around;
     height: 100vh;
-    /* vertical-align: middle; */
     flex-direction: column;
     padding: 30px;
-    /* top: 80px; */
 }
 #container .logo{
     width: 50%;
@@ -92,7 +90,6 @@ body {
     cursor: pointer;
 }
 .register-tittle {
-    /* grid-column: 2/6; */
     margin: 0 auto;
     font-size: 20px;
 }
@@ -111,7 +108,6 @@ body {
     border-bottom: solid 1px #630092;
 }
 .button {
-    /* text-align: center; */
     padding: 10px;
 }
 .social {
@@ -127,24 +123,3 @@ body {
     width: 100%;
     height: 100%;
 }
-/* .grid {
-    margin: 0 auto;
-    padding: 24px;
-    align-items: center;
-    height: 100%;
-} */
-
-/* .container {
-    display: grid;
-    grid-template-columns: repeat (6, 1fr);
-    grid-gap: 12px;
-}
-
-.back {
-    grid-column: 2/2;
-    cursor: pointer;
-}
-
-.register-tittle {
-    grid-column: 2/6;
-} */
