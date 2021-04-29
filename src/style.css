@@ -32,7 +32,6 @@ body {
     flex-direction: column;
     /* top: 115px; */
 }
-
 .copy {
     position: relative;
     text-align: center;
@@ -122,4 +121,15 @@ body {
 .social button img {
     width: 100%;
     height: 100%;
+}
+span {
+    padding: 10px 0;
+    text-align: center;
+    display: block;
+}
+span a{
+    color: #6002B2;
+}
+span:last-child {
+    margin-top: 20px;
 }

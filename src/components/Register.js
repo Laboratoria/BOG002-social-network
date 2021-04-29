@@ -39,12 +39,10 @@ export function Register() {
                 <button><img id="logoFb" src=./assets/logo-fb.svg></button>
                 <button><img id="logoGoogle" src=./assets/logo-google.svg></button>
               </div>
-              <div class="span">
-                <span>Already have an Account?
+              <span>Already have an Account?
                   <a href="#">Sign Up</a>
-                </span>
-              </div>
-      </div>`;
+              </span>
+            </div>`;
 
   return register;
 }

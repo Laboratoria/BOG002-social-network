@@ -4,27 +4,35 @@ export function Login() {
   reset();
   const login = document.createElement("div");
   login.innerHTML = ` 
+  <div class="container">
+    <a href="#/"><img class="back" src=./assets/back.svg alt="arrow"></a>
+    <h1 class="register-tittle"> Login </h1>
+  </div>
     <div id="form-container">
-            <h1 class="login-tittle">Login</h1>
-            <div class="form">
-              <form action=" " autocomplete="off">
-                <div>
+    <div class="form">
+              <form action=" " autocomplete="off" id="formRegister">
+                <div class="form_styles">
                   <label for="email">Email address</label>
-                  <input type="email" required id="emailSignIn"/>
-                </div>  
-                <div>
+                  <input type="email"  id="email"/>
+                </div> 
+                <div class="form_styles">
                   <label for="password">Password</label>
-                  <input type="password" required id="passwordSignIn"/>
+                  <input type="password"  id="password"/>
                 </div> 
                 <div class="button">
-                  <button type="submit" id="signIn">Sign In</button>
+                  <button type="submit" id="register" class="button_general">Create Account</button>
                 </div>
               </form>
-              <span>or register with</span>
+              <span>or login with</span>
               <div class="social">
+                <!-- botones para ingreso con fb y gmail -->
+                <button><img id="logoFb" src=./assets/logo-fb.svg></button>
+                <button><img id="logoGoogle" src=./assets/logo-google.svg></button>
               </div>
-            </div>
-          </div>`;
+              <span> Don’t have have an Account?
+                  <a href="#">Sign In</a>
+              </span>
+            </div>`;
 
   return login;
 }
