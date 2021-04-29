@@ -2,12 +2,13 @@
 
 export function registro(){
  let botonregistro= document.querySelector('.registerbtn');
-botonregistro.addEventListener('click', ()=>{
-  var email = document.getElementById("email").value;
-  var password = document.getElementById("psw").value;
 
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => { console.log(userCredential);
+
+botonregistro.addEventListener('click', ()=>{ 
+    var email=document.getElementById("email").value;
+    var password=document.getElementById("psw").value;
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
       // Signed in
       var user = userCredential.user;
       // ...
@@ -18,12 +19,11 @@ botonregistro.addEventListener('click', ()=>{
       var errorMessage = error.message;
       console.log(errorMessage)
       // ..
-    });
-});
+    });});
 
 }
 export function google() {
-  let googleInicio = document.querySelector('#google');
+  let googleInicio = document.querySelector('#botongoogle');
   googleInicio.addEventListener('click', () => {
 
       var provider = new firebase.auth.GoogleAuthProvider();

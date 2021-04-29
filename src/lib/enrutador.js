@@ -4,8 +4,11 @@ import { formularioRegistro} from './vistas.js';
 import { registro,google} from './registrar.js';
 
 const idRegistro = document.querySelector('#registro');
+const logo=document.querySelector("#logo");
 
 export const router = (route,componenteHtml) => {
+  
+
   idRegistro.innerHTML = '';
   console.log(route);
   switch (route) {
@@ -13,7 +16,8 @@ export const router = (route,componenteHtml) => {
       console.log('aiuda');
       break;
     case '#/registro':
-    componenteHtml.style.display="none";
+      logo.style.display="none";
+      componenteHtml.style.display="none"; 
     idRegistro.innerHTML=`<formulario-registro></formulario-registro>`
     formularioRegistro();
     registro();
@@ -23,3 +27,4 @@ export const router = (route,componenteHtml) => {
       return console.log('si funciona pero  esta enlazando la principal');
   }
 };
+console.log(typeof(router))
