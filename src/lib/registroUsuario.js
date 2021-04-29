@@ -1,9 +1,9 @@
 export const registroUsuario = () => {
-    const contenedorRegistro = document.createElement("div");
-    contenedorRegistro.id = "contenedorRegistro";
+  const contenedorRegistro = document.createElement('div');
+  contenedorRegistro.id = 'contenedorRegistro';
 
-    let encabezado = document.createElement("div");
-    const contenidoEncabezado = `
+  const encabezado = document.createElement('div');
+  const contenidoEncabezado = `
         <img alt="logoRegistro" class="logoRegistro" src = "Imagenes/LogoBeer.png"/>
         <h3> Conviértete en un Beer Lover's </h3>
         <div>
@@ -13,8 +13,8 @@ export const registroUsuario = () => {
         <p> ---------- O ---------- </p>
     `;
 
-    let formRegistroUsuario = document.createElement("form");
-    const contenidoForm = `
+  const formRegistroUsuario = document.createElement('form');
+  const contenidoForm = `
         <div class = "contenidoForm">
         <input class = "inputForm" id = "email" type ="email" placeholder = "Correo Eletrónico">
         <input class = "inputForm" id= "nombreYApellido" type="name" placeholder="Nombre y Apellido">
@@ -27,10 +27,10 @@ export const registroUsuario = () => {
         </div>
     `;
 
-    encabezado.innerHTML = contenidoEncabezado;
-    formRegistroUsuario.innerHTML = contenidoForm;
-    contenedorRegistro.appendChild(encabezado);
-    contenedorRegistro.appendChild(formRegistroUsuario);
+  encabezado.innerHTML = contenidoEncabezado;
+  formRegistroUsuario.innerHTML = contenidoForm;
+  contenedorRegistro.appendChild(encabezado);
+  contenedorRegistro.appendChild(formRegistroUsuario);
 
-    return contenedorRegistro
-}
+  return contenedorRegistro;
+};

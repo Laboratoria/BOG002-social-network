@@ -51,12 +51,10 @@ body {
     #btnIniciarSesion{
       margin-top: 60px;
     }
-
     footer img {
     width: 15px;
     height: 15px;
     }   
-
 }
 
 footer{   
@@ -72,8 +70,4 @@ footer{
 footer a{
   color: white;
   font-size: 12px;
-}
-
-#contenedorRegistro{
-  display: "none";
 }

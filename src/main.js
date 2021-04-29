@@ -1,37 +1,25 @@
-// importamos las funciones que crear los elementos y las llamamos con los addeventlistener asi interactuamos con el DOM
-
 import { pantallaInicio } from './lib/inicio.js';
-import { registroUsuario } from './lib/RegistroUsuario.js';
+import { registroUsuario } from './lib/registroUsuario.js';
 import { inicioSesion } from './lib/inicioSesion.js';
 
 let rootHtml = document.getElementById("root");
+let appenPantallaInicio = rootHtml.appendChild(pantallaInicio());
 
-//Funcion que permite ver la pantalla de Inicio.
-// function cargarPantalla() {
-    let appenPantallaInicio = rootHtml.appendChild(pantallaInicio());
-// }
-// window.onload = cargarPantalla();
-window.onload = appenPantallaInicio;
+const bntRegistro = document.getElementById("btnRegistrate");
+const btnIniciarSesion = document.getElementById("btnIniciarSesion");
 
-// //prueba con document.elemet si no funciona hacerlo en inciio.add...
-// const bntRegistro = document.getElementById("btnRegistrate");
-// const btnIniciarSesion = document.getElementById("btnIniciarSesion");
+let mostrarLogin = () => {
+    let appPantallaLogin = rootHtml.appendChild(inicioSesion());
+    appenPantallaInicio.style.display = "none";
+    appPantallaLogin.style.display = "flex";
+}
 
-// // function loadRegistroUsuario (){
-//     let appePantallaRegistro = rootHtml.appendChild(registroUsuario());
-//     let appPantallaLogin = rootHtml.appendChild(inicioSesion());
-// // }
+let mostrarRegistro = () => {
+    let appePantallaRegistro = rootHtml.appendChild(registroUsuario());
+    appenPantallaInicio.style.display = "none";
+    appePantallaRegistro.style.display = "flex";
+}
 
-// let mostrarRegistro = () => {
-//     appenPantallaInicio.style.display = "none";
-//     appePantallaRegistro.style.display = "flex";
-//     appPantallaLogin.style.display = "none";
-// }
-// let mostrarLogin = () => {
-//     appenPantallaInicio.style.display = "none";
-//     appePantallaRegistro.style.display = "none";
-//     appPantallaLogin.style.display = "flex";
-// }
-// bntRegistro.addEventListener("click",mostrarRegistro);
-// btnIniciarSesion.addEventListener("click",mostrarLogin);
+bntRegistro.addEventListener("click",mostrarRegistro);
+btnIniciarSesion.addEventListener("click",mostrarLogin);
 
