@@ -16,7 +16,8 @@ export const router = (route,componenteHtml) => {
       console.log('aiuda');
       break;
     case '#/registro':
-    componenteHtml.style.display="none";
+      logo.style.display="none";
+      componenteHtml.style.display="none"; 
     idRegistro.innerHTML=`<formulario-registro></formulario-registro>`
     formularioRegistro();
     registro();
