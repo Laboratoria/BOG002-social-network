@@ -12,17 +12,17 @@ logo.id="logoInicio";
 textoCervecero.textContent="Para los verdaderos amantes de la cerveza";
 textoCervecero.className="textoCervecero";
 
-btnIniciarSesion.textContent="Iniciar Sesión";
+btnIniciarSesion.textContent= "Iniciar Sesión";
+btnIniciarSesion.id = "btnIniciarSesion";
+btnIniciarSesion.className = "botonesInicio"
 btnRegistarte.textContent="Regístrate";
 btnRegistarte.id="btnRegistrate";
-
+btnRegistarte.className = "botonesInicio";
 
 inicio.appendChild(logo);
 inicio.appendChild(textoCervecero);
 inicio.appendChild(btnIniciarSesion);
 inicio.appendChild(btnRegistarte);
-
-
 
 return inicio;
 };
