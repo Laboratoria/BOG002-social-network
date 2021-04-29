@@ -1,7 +1,7 @@
 // aqui exportaras las funciones que necesites
 
 import { formularioRegistro} from './vistas.js';
-import { registro} from './registrar.js'
+import { registro,google} from './registrar.js';
 
 const idRegistro = document.querySelector('#registro');
 const logo=document.querySelector("#logo");
@@ -15,12 +15,12 @@ export const router = (route,componenteHtml) => {
     case '#/inicio':
       console.log('aiuda');
       break;
-    case '#/registro': 
-    logo.style.display="none";
-    componenteHtml.style.display="none";  
+    case '#/registro':
+    componenteHtml.style.display="none";
     idRegistro.innerHTML=`<formulario-registro></formulario-registro>`
     formularioRegistro();
     registro();
+    google();
     break;
     default:
       return console.log('si funciona pero  esta enlazando la principal');
