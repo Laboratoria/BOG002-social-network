@@ -3,7 +3,7 @@
 import { router} from './lib/enrutador.js';
 
 
-const init = () => {
+export const init = () => {
    
     window.addEventListener('hashchange', () => {
       var componente=document.getElementById("opcionesInicio");

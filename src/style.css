@@ -121,12 +121,13 @@ body{
 }
 .inicioGoogle {
   display: grid;
-  width: 70%;
-  grid-template-columns: 50% 50%;
+  width: 80%;
+  height: 90%;
+  grid-template-columns: 35% 65%;
  justify-self: center;
    justify-items: center;
    align-items: center;
-   background-color:rgb(197, 187, 187);
+   background-color:white;
 }
 
 .tituloRegistro{

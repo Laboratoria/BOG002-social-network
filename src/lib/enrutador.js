@@ -5,7 +5,10 @@ import { registro} from './registrar.js'
 
 const idRegistro = document.querySelector('#registro');
 const logo=document.querySelector("#logo");
-export const router = (route,componenteHtml,) => {
+
+export const router = (route,componenteHtml) => {
+  
+
   idRegistro.innerHTML = '';
   console.log(route);
   switch (route) {
@@ -23,3 +26,4 @@ export const router = (route,componenteHtml,) => {
       return console.log('si funciona pero  esta enlazando la principal');
   }
 };
+console.log(typeof(router))
