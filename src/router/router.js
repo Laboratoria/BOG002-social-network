@@ -1,6 +1,6 @@
 import {loginPage, logIn} from '../pages/login/login.js';
 import {registroPage,signUp,signUpGoogle} from '../pages/signUp/signUp.js';
-import {timelinePage,signOutGoogle} from '../pages/timeline/timeline.js';
+import {timelinePage,signOutGoogle,postsTimeline} from '../pages/timeline/timeline.js';
 
 
 let content = document.getElementById('root');
@@ -16,6 +16,7 @@ export const router = (route) => {
         case '#/timeline': 
             content.appendChild(timelinePage());
             signOutGoogle();
+            postsTimeline();
             break;
         default:
             content.appendChild(loginPage());
