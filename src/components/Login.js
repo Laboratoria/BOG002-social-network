@@ -1,3 +1,4 @@
+// eslint-disable-next-line quotes
 import { reset } from "./Utils.js";
 
 export function Login() {
@@ -50,6 +51,5 @@ export function Login() {
       .then (userCredential => {
           console.log('y si me quieres comer sigueme mi amor')
       })
-  })  
-  
-}*/
+  });
+} */

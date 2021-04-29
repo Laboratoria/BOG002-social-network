@@ -13,7 +13,7 @@ export function Landing() {
           <button id="signUp" class="button_general">Enjoy Gleam</button>
           <button id="logIn">Log In</button>
       </div>
-    </div> `;
+    </div> `
   );
   return template;
 }

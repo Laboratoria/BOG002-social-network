@@ -16,10 +16,8 @@ export function Register() {
                   <input type="email"  id="email"/>
                 </div> 
                 <div class="form_styles">
-                  <label for="text">First name</label>
+                  <label for="text">Full name</label>
                   <input type="text"  id="name"/>
-                  <label for="text">Last name</label>
-                  <input type="text"  id="text"/>
                 </div> 
                 <div class="form_styles">
                   <label for="date">Date of birth</label>
