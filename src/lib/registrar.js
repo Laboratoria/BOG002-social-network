@@ -23,7 +23,7 @@ botonregistro.addEventListener('click', ()=>{
 
 }
 export function google() {
-  let googleInicio = document.querySelector('#botongoogle');
+  let googleInicio = document.querySelector('#google');
   googleInicio.addEventListener('click', () => {
 
       var provider = new firebase.auth.GoogleAuthProvider();
