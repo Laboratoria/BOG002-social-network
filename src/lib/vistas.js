@@ -13,7 +13,7 @@ export const formularioRegistro = () => {
       <div class="superior">
        <div class="tituloRegistro"> <h1>Registro</h1></div>
        
-        <div type="button" class="inicioGoogle">
+        <div type="button" class="inicioGoogle" id=google>
           <input type="image" name="boton" value="pasar" id="botongoogle"  src="./imagenes/simbologoogle.png" width="30%"  >
          <div class=registroGoogle>Registro con Google</div>
          </div>
