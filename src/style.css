@@ -43,15 +43,16 @@ body {
     font-weight: 500;
 }
 
-#signUp {
+.button_general {
     border: none;
     border-radius: 50px;
     cursor: pointer;
+    width: 100%;
     height: 50px;
     text-decoration: none;
     background-color: #630092;
     color: white;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 700;
 }
 
@@ -59,18 +60,72 @@ body {
     border: 2px solid #630092;
     border-radius: 50px;
     cursor: pointer;
+    width: 100%;
     height: 50px;
     text-decoration: none;
     background-color: white;
     color: #630092;
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 700;
 }
 #signUp:hover, #logIn:hover {
     background-color: #DE4DD8;
     color: white;
     border: none;
+}
+/* register screen */
+.grid {
+    padding: 15px;
+    height: 100vh;
+    width: 100%;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+}
+.back {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+.register-tittle {
+    /* grid-column: 2/6; */
+    margin: 0 auto;
+    font-size: 20px;
+}
+.form_styles { 
+    display: flex;
+    flex-flow: column;
+}
+.form_styles label {
+    padding: 5px 0;
+}
+.form_styles input {
+    border: 0;
+    border-bottom: solid 1px black;
+}
+.form_styles input:hover {
+    border-bottom: solid 1px #630092;
+}
+.button {
+    /* text-align: center; */
+    padding: 10px;
+}
+.social {
+    text-align: center;
+}
+.social button {
+    border: none;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+}
+.social button img {
+    width: 100%;
+    height: 100%;
 }
 /* .grid {
     margin: 0 auto;
@@ -79,7 +134,7 @@ body {
     height: 100%;
 } */
 
-.container {
+/* .container {
     display: grid;
     grid-template-columns: repeat (6, 1fr);
     grid-gap: 12px;
@@ -92,4 +147,4 @@ body {
 
 .register-tittle {
     grid-column: 2/6;
-}
+} */

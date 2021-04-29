@@ -10,7 +10,7 @@ export function Landing() {
         <p class="copy"> Welcome, we're the best and inclusive app in the world just 
         created for your Freedom, inclusion, and love. </p>
       <div class="btns-container-mobile">
-          <button id="signUp">Enjoy Gleam</button>
+          <button id="signUp" class="button_general">Enjoy Gleam</button>
           <button id="logIn">Log In</button>
       </div>
     </div>

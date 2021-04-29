@@ -5,34 +5,32 @@ export function Register() {
   reset();
   const register = document.createElement("div");
   register.innerHTML = ` 
-        <div class="container>
-        <a href="#/"><img class="back" src=./assets/back.svg alt="arrow"></a>
-        <h1 class="register-tittle">Enjoy Gleam</h1>
+        <div class="container">
+          <a href="#/"><img class="back" src=./assets/back.svg alt="arrow"></a>
+          <h1 class="register-tittle"> Enjoy Gleam </h1>
         </div>
-
-
             <div class="form">
               <form action=" " autocomplete="off" id="formRegister">
-                <div>
+                <div class="form_styles">
                   <label for="email">Email address</label>
                   <input type="email"  id="email"/>
                 </div> 
-                <div>
+                <div class="form_styles">
                   <label for="text">First name</label>
                   <input type="text"  id="name"/>
                   <label for="text">Last name</label>
                   <input type="text"  id="text"/>
                 </div> 
-                <div>
+                <div class="form_styles">
                   <label for="date">Date of birth</label>
                   <input type="date"  id="date"/>
                 </div> 
-                <div>
+                <div class="form_styles">
                   <label for="password">Password</label>
                   <input type="password"  id="password"/>
                 </div> 
                 <div class="button">
-                  <button type="submit" id="register">Create Account</button>
+                  <button type="submit" id="register" class="button_general">Create Account</button>
                 </div>
               </form>
               <span>or register with</span>
@@ -41,7 +39,12 @@ export function Register() {
                 <button><img id="logoFb" src=./assets/logo-fb.svg></button>
                 <button><img id="logoGoogle" src=./assets/logo-google.svg></button>
               </div>
-            </div>`;
+              <div class="span">
+                <span>Already have an Account?
+                  <a href="#">Sign Up</a>
+                </span>
+              </div>
+      </div>`;
 
   return register;
 }
