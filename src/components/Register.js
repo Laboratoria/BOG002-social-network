@@ -79,7 +79,7 @@ export function addUser() {
                 // ...
             })
             .catch((error) => {
-                console.log("error 3312");
+                console.log(error);
             });
     });
 
