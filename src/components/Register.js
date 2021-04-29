@@ -62,7 +62,11 @@ export function addUser() {
             .then((userCredential) => {
                 formRegister.reset();
                 console.log("estas registrado");
+            })
+            .catch((error) => {
+                console.log(error);
             });
+
     });
 
     btnGoogle.addEventListener("click", (e) => {
