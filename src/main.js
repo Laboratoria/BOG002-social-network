@@ -6,12 +6,12 @@ myFunction();
 
 
 const submit = document.querySelector("#signUp");
-submit.addEventListener("hashchange", MostrarRegistro)
+submit.addEventListener("click", MostrarRegistro)
 
 function MostrarRegistro(){
     
-    // FormularioDeRegistro();
-  console.log("Haz dado click en resgistrar")
+    FormularioDeRegistro();
+  console.log("Haz dado click en registrar")
  }
 
  function FormularioDeRegistro(){
@@ -29,9 +29,9 @@ function MostrarRegistro(){
     
     <input type="text" class="input" placeholder="User name"> 
     <input type="email" class="input" placeholder="email"> 
-    <input type="password" class="input" placeholder="password> 
+    <input type="password" class="input" placeholder ="password"> 
     
-    <button type="submit" id="Register" class="btn" > <a href="#Register"> REGISTER</a></button>
+    <button type="submit" id="Register" class="btn" > REGISTER <a href="#Register"> </a> </button>
     
     `;
    document.getElementById("Body").appendChild(NewForm)

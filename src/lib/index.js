@@ -7,6 +7,6 @@ export const myFunction = () => {
 
  
 
- const ROUTER = new Router(Rutas);
+//  const ROUTER = new Router(Rutas);
 
 // https://dev.to/alexcamachogz/creando-un-router-con-vanilla-javascript-27pl

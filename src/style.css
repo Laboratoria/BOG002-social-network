@@ -15,16 +15,32 @@ body h1{
     color: white;
     font-size: 64px;
 }
-body form{
+form{
     font-family: 'Dancing Script', cursive;
     display: flex;
     flex-direction: column;
+    height: 80%;
+    align-items: center;
+    position: relative;
+    top: 4.5em;
 }
-body .inputs{
+.input{
     font-family: 'Dancing Script', cursive;
     color: white;
     display: flex;
     flex-direction: column;
+    height: 2em;
+    width: 60%;
+    border-radius: 10px;
+    margin: 0.5em;
+    font-size: 15px;
+    font-family: 'Poly';
+    
+}
+#Register{
+    background-color: #8adb94;
+    position: relative;
+    top: 1em;
 }
 #Bienvenida h1{
     font-family: 'Dancing Script', cursive;
