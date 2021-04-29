@@ -1,9 +1,9 @@
 export const inicioSesion = () => {
 
-    const contenedorIniciosesion = document.createElement("div");
-    contenedorIniciosesion.className = "ContenedorIniciosesion";
+const contenedorIniciosesion = document.createElement("div");
+contenedorIniciosesion.className = "ContenedorIniciosesion";
 
-    const contenidoEncabezadoinicio = `
+const contenidoEncabezadoinicio = `
   
     <h3> Para los verdaderos amantes de la cerveza </h3>
     <div class = "contenidoInputs">
@@ -15,7 +15,7 @@ export const inicioSesion = () => {
     </div>
 
     `;
-    contenedorIniciosesion.innerHTML= contenidoEncabezadoinicio;
+contenedorIniciosesion.innerHTML= contenidoEncabezadoinicio;
 
-    return contenedorIniciosesion;
+return contenedorIniciosesion;
 }
