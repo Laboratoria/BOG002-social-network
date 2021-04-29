@@ -16,10 +16,8 @@ export function Register() {
                   <input type="email"  id="email"/>
                 </div> 
                 <div class="form_styles">
-                  <label for="text">First name</label>
+                  <label for="text">Full name</label>
                   <input type="text"  id="name"/>
-                  <label for="text">Last name</label>
-                  <input type="text"  id="text"/>
                 </div> 
                 <div class="form_styles">
                   <label for="date">Date of birth</label>
@@ -39,12 +37,10 @@ export function Register() {
                 <button><img id="logoFb" src=./assets/logo-fb.svg></button>
                 <button><img id="logoGoogle" src=./assets/logo-google.svg></button>
               </div>
-              <div class="span">
-                <span>Already have an Account?
+              <span>Already have an Account?
                   <a href="#">Sign Up</a>
-                </span>
-              </div>
-      </div>`;
+              </span>
+            </div>`;
 
   return register;
 }

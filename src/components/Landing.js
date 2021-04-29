@@ -5,7 +5,7 @@ export function Landing() {
   const template = document.createElement("div");
   template.insertAdjacentHTML(
     "afterbegin",
-    `<div id="container">
+    `<div id="container" class"form">
       <img class="logo" src="./assets/gleam.svg" alt="Gleam logo">
         <p class="copy"> Welcome, we're the best and inclusive app in the world just 
         created for your Freedom, inclusion, and love. </p>
@@ -13,8 +13,7 @@ export function Landing() {
           <button id="signUp" class="button_general">Enjoy Gleam</button>
           <button id="logIn">Log In</button>
       </div>
-    </div>
-    `
+    </div> `
   );
   return template;
 }
