@@ -7,8 +7,25 @@ body{
     background-position: center;
     display: flex;
     flex-direction: column;
+    font-family: 'Dancing Script', cursive;
+    color: white;
 }
-
+body h1{
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    font-size: 64px;
+}
+body form{
+    font-family: 'Dancing Script', cursive;
+    display: flex;
+    flex-direction: column;
+}
+body .inputs{
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
 #Bienvenida h1{
     font-family: 'Dancing Script', cursive;
     color: white;

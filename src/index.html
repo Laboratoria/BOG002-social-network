@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,21 +13,29 @@
   <title>Document</title>
 </head>
 
-<body>
+<body id="Body">
   
 
-<main id="Bienvenida">
+<main id="Bienvenida" class="Bienvenida"  onclick="ROUTER.load('home')">
   <h1>FoodFans</h1>
   <span>Social Network</span>
   <p>Postea tus mejores platos, comparte tu experiencia y enseñala a tus amigos.</p>
 </main>
-  <section >
-    <button type="button" id="signUpGoogle" class="btn" value="Sign up Google"> <img src="imagenes/google.png"> <a href="#signUpGoogle"> SIGN UP WITH GOOGLE</a> </button>
-    <button type="button" id="signUp" class="btn" value="Sign Up"> <a href="#signUp"> SIGN UP</a></button>
-    <button type="button" id="login" class="btn" value="login"> <a href="#login">LOGIN</a></button>
-    
+<!-- Botones para el ingreso y registro -->
+  <section id="Botones" class="Bienvenida">
+    <button type="button" id="signUpGoogle" class="btn"  onclick="ROUTER.load('signUpGoogle')"> <img src="imagenes/google.png">SIGN UP WITH GOOGLE</button>
+    <button type="button" id="signUp"       class="btn"  onclick="ROUTER.load('signUp')">SIGN UP</button>
+    <button type="button" id="login"        class="btn"  onclick="ROUTER.load('login')"> LOGIN</button>
   </section>
 
+  
+
+<!-- Para insertar contenido -->
+  <div id="content"></div>
+
+<!-- Archivos para la navegacion -->
   <script type="module" src="main.js"></script>
+  <script type="module" src="router.js"></script>
+  <script type="module" src="routes.js"></script>
 </body>
 </html>
