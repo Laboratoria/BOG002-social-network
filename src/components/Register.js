@@ -13,19 +13,19 @@ export function Register() {
               <form action=" " autocomplete="off" id="formRegister">
                 <div class="form_styles">
                   <label for="email">Email address</label>
-                  <input type="email"  id="email"/>
+                  <input type="email" required id="email"/>
                 </div> 
                 <div class="form_styles">
                   <label for="text">Full name</label>
-                  <input type="text"  id="name"/>
+                  <input type="text" required id="name"/>
                 </div> 
                 <div class="form_styles">
                   <label for="date">Date of birth</label>
-                  <input type="date"  id="date"/>
+                  <input type="date" required id="date"/>
                 </div> 
                 <div class="form_styles">
                   <label for="password">Password</label>
-                  <input type="password"  id="password"/>
+                  <input type="password" required id="password"/>
                 </div> 
                 <div class="button">
                   <button type="submit" id="register" class="button_general">Create Account</button>
