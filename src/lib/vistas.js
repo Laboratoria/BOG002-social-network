@@ -60,3 +60,36 @@ if (window.customElements.get("formulario-registro")===undefined){
 
 };
 
+export const formularioInicio = () => {
+  class formInicio extends HTMLElement {
+  constructor() {
+      super();
+  }
+
+  connectedCallback() {
+      // eslint-disable-next-line quotes
+      this.innerHTML = `<form action="" method="POST" id="formularioInicio">
+      <div class="formulario">
+        <h1>Iniciar Sesión</h1>
+        <div class="grupo">
+          <input type="email" name="" id="usser" required> <span class="barra"></span>
+          <label for="">Usuario</label>
+        </div>
+        <div class="grupo">
+          <input type="password" name="" id="password" required> <span class="barra"></span>
+          <label for="">Contraseña</label>
+        </div>
+        <button id="botonAcceder">Iniciar Sesión</button>
+      </div>
+      
+  
+    </form>`;
+  }
+}
+
+if (window.customElements.get('formulario-inicio') === undefined) {
+  window.customElements.define('formulario-inicio', formInicio);
+} else {
+  window.customElements.get('formulario-incio');
+}
+};

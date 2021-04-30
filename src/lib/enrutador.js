@@ -1,19 +1,25 @@
 // aqui exportaras las funciones que necesites
 
-import { formularioRegistro} from './vistas.js';
+import { formularioRegistro,formularioInicio } from './vistas.js';
 import { registro,google} from './registrar.js';
+import { ingreso } from './acceder.js';
 
 const idRegistro = document.querySelector('#registro');
 const logo=document.querySelector("#logo");
+const idInicio = document.querySelector('#inicio');
 
 export const router = (route,componenteHtml) => {
   
-
   idRegistro.innerHTML = '';
   console.log(route);
   switch (route) {
     case '#/inicio':
-      console.log('aiuda');
+      idInicio.style.display = 'block';
+      logo.style.display = 'none';
+      componenteHtml.style.display="none"; 
+      idInicio.innerHTML = '<formulario-inicio></formulario-inicio>';
+      formularioInicio();
+      ingreso();
       break;
     case '#/registro':
       logo.style.display="none";
