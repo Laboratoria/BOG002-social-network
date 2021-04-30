@@ -1,0 +1,20 @@
+/*Sección del muro*/
+
+/*Parámetros del primer input en una división (tener en cuenta si no hay más así)*/
+#muro header input{
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+/*Posición de los imagenes (iconos) en la sección header de muro*/
+footer img{padding: 0.5px}
+
+.icon-profile,#icon-settings{
+    float: right
+}
+/*Propiedades del mapa*/
+#mapa{
+    width: 100%;
+    height: 530px; /*Solo sirve en mobile, hacer responsive*/
+    padding: 10px; 
+}

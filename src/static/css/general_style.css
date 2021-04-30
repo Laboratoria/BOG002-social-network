@@ -1,0 +1,51 @@
+/*Parámetros generales*/
+
+@import url(https://fonts.googleapis.com/css2?family=Archivo&family=Fredoka+One&display=swap);
+
+body {margin:0;}
+
+/* Selector de clases que comiencen con 'icon', configuración de íconos en toda la app*/
+[class ^= "icon"]{
+    width: auto;
+    height: 40px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+/*Selector de clases que comiencen con 'btn', configuración de botones en toda la app*/
+[id ^= btn] {
+    padding: 12px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: transparent; 
+    font-size: 15px;
+    color: #ffffff;
+    background-color: var(--morado);
+}
+
+
+/* Variables de definción de colores*/
+:root {
+    --amarillo: #FCDB4B; 
+    --morado: #9f4bf2; 
+    --verde: #05ce78;
+}
+
+/* Todo el archivo con tipografía, tamaño y borde igual*/
+* {
+    box-sizing: border-box;
+    font-family: 'Archivo', sans-serif; 
+}
+
+/* Configuración de tamaño para todas las secciones*/
+section {
+    width: 100vw;
+    height: 100vh;
+    padding: 15px;
+}
+
+/*Parámetros título Walkter en las secciones que se use como h1*/
+h1 {
+    font-family: 'Fredoka One', cursive;
+}

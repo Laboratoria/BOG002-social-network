@@ -1,0 +1,48 @@
+/*Responsive*/
+
+/* Responsive para dispositivos Mobile*/
+@media screen 
+  and (max-width: 800px){
+
+    #Presentation {display: none}
+    #muro header img{display: none}
+
+    #signin-form h1{
+        margin: 0;
+        padding: 20px;
+        font-size: 50px
+    }
+
+    #muro header input{
+        width: auto;
+        height: 40px;
+    }
+}
+
+/* Responsive para dispositivos Desktop*/
+@media screen 
+  and (max-width: 2000px)
+  and (min-width: 800px){
+
+    #signin-form  h1 {display: none}
+    #muro footer {display: none}
+
+    #Presentation h1{font-size: 90px}
+    .header h1{font-size: 60px}
+
+    #inicio{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+	    align-items: center;
+	    align-content: stretch;
+    }
+
+    #inicio > div{
+        flex: 1;
+    }
+
+    #muro header input{
+        width: 400px;
+    }
+}

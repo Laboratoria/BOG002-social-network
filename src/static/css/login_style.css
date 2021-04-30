@@ -1,0 +1,60 @@
+
+/*Sección de inicio de sesión*/
+
+/* Imagen en landing page*/
+.img-login {
+    width: 600px;
+    margin-bottom: 0;
+}
+
+/*Configuración del tamaño para slogan*/
+.slogan{
+    font-size: 40px;
+    letter-spacing: 3px;
+}
+
+/*Configuracion de divisón de registro en landing page*/
+#signin-form {
+    width: auto;
+    height: fit-content;
+    background: var(--amarillo);
+    border-radius: 30px;
+    text-align: center;
+}
+
+/* Configuración inputs sing-in*/
+[class ^= "input"]{
+    width: 250px;
+    height: 30px;
+    margin: 10px;
+    padding: 6px; 
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 15px; 
+    font-size: 15px;
+}
+
+/*Parametros del link en caso de olvidar contraseña*/
+.link-forgetMyPassword {
+    margin-top: 0px;
+    font-size: 13px;
+    cursor: pointer;
+    color: rgb(0, 162, 255);
+}
+
+/*Línea divisoria Sign In y Sign Up*/
+.line{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ffffff;
+    display: block;
+}
+
+/*Contenedor de registro o cuenta*/
+.container-new-user{
+    width: auto;
+    height: fit-content;
+    background: var(--verde);
+    border-radius: 20px;
+    text-align: center;
+}

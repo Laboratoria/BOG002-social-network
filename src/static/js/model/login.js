@@ -1,4 +1,5 @@
-// Inicio de sesión con Google
+
+//Inicio de sesión con Google
 export const logInGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider)
@@ -43,21 +44,30 @@ export const logInFacebook = () => {
         })
 };
 
+
 // Inicio de sesión con email y password
-export const logInEmail = (email, password,signinForm) => {
-    auth
-        .signInWithEmailAndPassword(email, password)
-        .then(userCredential => {
+export const logInEmail = (email, password, signinForm) => {
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
             signinForm.reset();
             console.log('signin')
         })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+        });
 }
 
 // Creación de cuenta con email y password 
-export const signUpEmail = (email, password,signupForm) => {
-    auth
-        .createUserWithEmailAndPassword(email, password)
-        .then(userCredential => {
+export const signUpEmail = (email, password, signupForm) => {
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
             signupForm.reset();
+        })
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ..
         });
 }
+
