@@ -19,7 +19,7 @@ export const registroUsuario = () => {
         <input class = "inputForm" id = "email" type ="email" placeholder = "Correo Eletrónico">
         <input class = "inputForm" id= "nombreYApellido" type="name" placeholder="Nombre y Apellido">
         <input class = "inputForm" id = "nombreDeUsuario" type ="nickname" placeholder = "Nombre de Usuario">
-        <input class = "inputForm" id= "contraseña" type ="new-password" placeholder ="Contraseña">
+        <input class = "inputForm" id= "password" type ="new-password" placeholder ="Contraseña">
         <p class="registro">¿Ya tienes cuenta?<a href = " ">Iniciar sesión</a></p>
         <p>Para formar parte de la comunidad Beer Lovers debes aceptar que  eres mayor de edad.</p>
         <input class = "checkbox" type ="checkbox"><label for="">Soy mayor de edad</label>
@@ -34,3 +34,21 @@ export const registroUsuario = () => {
 
   return contenedorRegistro;
 };
+
+export const registerUSer = (email,password) =>{
+
+firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // Signed in
+    console.log(userCredential.user);
+    // var user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    console.log("error",error);
+    // var errorCode = error.code;
+    // var errorMessage = error.message;
+    // ..
+  });
+
+}
