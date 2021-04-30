@@ -54,7 +54,8 @@ body {
    footer img {
    width: 15px;
    height: 15px;
-   }   
+   }  
+ /*   estilos inicio de sesión  */
    .contenedorIniciosesion{
     display: flex;
     flex-wrap: wrap;
@@ -62,9 +63,7 @@ body {
     margin-top: 40px;
     flex-direction: row;
     align-content: center;
-   
    }
-
    .contenedorIniciosesion h3{
     font-family: inherit;
     font-size: 20px;
@@ -120,10 +119,9 @@ body {
     font-family: inherit;
     color:#143df3e7;
     font-weight:bolder;
-  
    }
-}
 
+}
 footer{   
  position: absolute;
  text-align: center;
