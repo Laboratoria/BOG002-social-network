@@ -34,26 +34,3 @@
 
 
   
-//   OPCION 2 
-
-
-// class Router {
-//   // Carga el listado de rutas y el inicializa el router 
-//   constructor(Rutas){
-//     this.ruta = ruta;
-//     this._loadInitialRoute();
-//   }
-
-//   _loadInitialRoute(){
-    
-//     const pathNameSplit = window.location.pathname.split('/');
-//     // window.location.pathname.split('/');  Crea un array
-//     // (2)["", "index.html"]
-  
-//     const pathSegs = pathNameSplit.length > 1 ? pathNameSplit.slice(1) : '';
-//     // pathSegs = ["index.html"]
-  
-//     this.loadRoute(...pathSegs);
-//     // this.loadRoute("index.html");
-//   } 
-// }

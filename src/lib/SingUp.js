@@ -1,21 +1,25 @@
 // creacion de formulario sign up
 
-// export  function FormularioDeRegistro(){
-//     const NewForm = document.createElement("form");
+export function FormularioDeRegistro(){
+     
+     let vaciar =  document.getElementById("Body") 
+     vaciar.innerHTML = ""
+    const NewForm = document.createElement("form");
+
+    // const Main = document.getElementsByTagName("main")
+    // const Formulario = 
     
-//     let SignUp = document.getElementsByTagName("main")
-//     Formulario = `
-//     <form>
-//     <h1> Created account </h1>
+    NewForm.innerHTML= `
     
-//     <input type="text" placeholder="User name"> 
-//     <input type="email" placeholder="email"> 
-//     <input type="password" placeholder="password> 
+    <h1> Created account </h1>
     
-//     <button type="submit" id="Register" class="btn" > <a href="#Register"> REGISTER</a></button>
+    <input type="text" class="input" placeholder="User name"> 
+    <input type="email" class="input" placeholder="email"> 
+    <input type="password" class="input" placeholder ="password"> 
     
-//     </form>`
-//     NewForm.appendChild(Formulario)
-//     SignUp.innerHTML = NewForm
+    <button type="submit" id="Register" class="btn" > REGISTER <a href="#Register"> </a> </button>
     
-// }
+    `;
+   document.getElementById("Body").appendChild(NewForm)
+  
+}
