@@ -6,7 +6,7 @@ import { App } from "./app/App.js";
 document.addEventListener("DOMContentLoaded", App);
 window.addEventListener("hashchange", App);
 
-const firebaseConfig = {
+/*const firebaseConfig = {
     apiKey: "AIzaSyCYY8zyVFV_RB_SDWHdE2WVybpxlM35AkU",
     authDomain: "sn-gleam.firebaseapp.com",
     projectId: "sn-gleam",
@@ -19,4 +19,4 @@ const init = () => {
     firebase.initializeApp(firebaseConfig);
 };
 
-window.addEventListener = ("load", init());
+window.addEventListener = ("load", init());*/
