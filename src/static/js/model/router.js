@@ -1,7 +1,7 @@
 import { renderTimeline } from '../views/timelineView.js';
 import { renderLogin } from '../views/loginView.js';
 import { renderSettings } from '../views/settingsView.js';
-
+import { logInGoogle, logInFacebook, logInEmail, signUpEmail } from '../model/login.js'
 
 let container = document.getElementById('root');
 
