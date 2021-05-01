@@ -7,9 +7,11 @@ export const inicioSesion = () => {
     <div class = "contenidoInputs">
         <img alt="logoIniciosesion" class="logoIniciosesion" id="logoIniciosesion"src = "Imagenes/LogoBeer.png"/>
         <h3> Para los verdaderos amantes de la cerveza </h3>
+        <form id = "formularioInicioSesion">
         <input class = "inputSesion" id = "emailLogin" type ="email" placeholder = "Correo Eletrónico">
-        <input class = "inputSesion" id= "contraseñaLogin" type ="password" placeholder ="Contraseña">
+        <input class = "inputSesion" id= "passwordLogin" type ="password" placeholder ="Contraseña">
         <button class="iniciarSesion" id="btnIniciarsesion" type="submit"> Inicio de sesión </button>
+        </form>
         <p class = "mensajeCuentainicio">¿No tienes cuenta?
         <a href = " "> Regístrate</a></p>
     </div>
