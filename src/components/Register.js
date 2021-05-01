@@ -14,18 +14,22 @@ export function Register() {
                 <div class="form_styles">
                   <label for="email">Email address</label>
                   <input type="email" required id="email"/>
+                  <div class="input__indicator"></div>
                 </div> 
                 <div class="form_styles">
                   <label for="text">Full name</label>
                   <input type="text" required id="name"/>
+                  <div class="input__indicator"></div>
                 </div> 
                 <div class="form_styles">
                   <label for="date">Date of birth</label>
                   <input type="date" required id="date"/>
+                  <div class="input__indicator"></div>
                 </div> 
                 <div class="form_styles">
                   <label for="password">Password</label>
                   <input type="password" required id="password"/>
+                  <div class="input__indicator"></div>
                 </div> 
                 <div class="button">
                   <button type="submit" id="register" class="button_general">Create Account</button>
@@ -38,7 +42,7 @@ export function Register() {
                 <button><img id="logoGoogle" src=./assets/logo-google.svg></button>
               </div>
               <span>Already have an Account?
-                  <a href="#">Sign Up</a>
+                  <a href="#/login">Sign Up</a>
               </span>
             </div>`;
 
@@ -76,7 +80,7 @@ export function addUser() {
         auth
             .signInWithPopup(google_provider)
             .then((result) => {
-              console.log('google register', result);
+                console.log('google register', result);
                 /*/** @type {firebase.auth.OAuthCredential} */
                 //let credential = result.credential;
                 // This gives you a Google Access Token. You can use it to access the Google API.
@@ -91,16 +95,16 @@ export function addUser() {
     });
 
     btnFb.addEventListener("click", (e) => {
-      e.preventDefault();
-      //formRegister.reset();
+        e.preventDefault();
+        //formRegister.reset();
         const providerFb = new firebase.auth.FacebookAuthProvider();
         firebase
             .auth()
             .signInWithPopup(providerFb)
             .then((result) => {
-              console.log('Facebook register')
-                /*/** @type {firebase.auth.OAuthCredential} */
-                //let credential = result.credential;
+                console.log('Facebook register')
+                    /*/** @type {firebase.auth.OAuthCredential} */
+                    //let credential = result.credential;
 
                 // The signed-in user info.
                 //let user = result.user;

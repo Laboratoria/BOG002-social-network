@@ -21,7 +21,8 @@ body {
     flex-direction: column;
     padding: 30px;
 }
-#container .logo{
+
+#container .logo {
     width: 50%;
     margin: 0 auto;
 }
@@ -32,10 +33,11 @@ body {
     flex-direction: column;
     /* top: 115px; */
 }
+
 .copy {
     position: relative;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     /* top: 30px; */
     font-weight: 500;
 }
@@ -66,71 +68,117 @@ body {
     font-size: 15px;
     font-weight: 700;
 }
-.button_general:hover, #logIn:hover {
+
+.button_general:hover,
+#logIn:hover {
     background-color: #DE4DD8;
     color: white;
     border: none;
 }
+
+
 /* register screen */
+
 .grid {
-    padding: 15px;
+    padding: 30px;
     height: 100vh;
     width: 100%;
 }
+
 .container {
     display: flex;
     justify-content: space-between;
-    padding: 15px;
+    padding: 15px 15px 30px 15px;
     align-items: center;
 }
+
 .back {
     height: 15px;
     width: 15px;
     cursor: pointer;
 }
+
 .register-tittle {
     margin: 0 auto;
     font-size: 20px;
+    font-weight: bold;
 }
-.form_styles { 
+
+.form_styles {
     display: flex;
     flex-flow: column;
 }
+
 .form_styles label {
     padding: 5px 0;
 }
+
 .form_styles input {
-    border: 0;
-    border-bottom: solid 1px black;
+    border: none;
+    border-bottom: 1px solid #353535;
+    width: 100%;
     outline: none;
+    padding: 0;
+    height: 20px;
 }
-.form_styles input:hover {
-    border-bottom: solid 1px #630092;
+
+.form_styles {
+    margin-bottom: 25px;
+    position: relative;
 }
+
+.input__indicator {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    width: 0;
+    transition: all 300ms ease-in-out;
+}
+
+.form_styles input:focus~.input__indicator {
+    background-color: #9e09de;
+    width: 100%;
+    left: 0%;
+}
+
+
+/*.form_styles input:hover {
+    border-bottom: solid 1px #009092;
+}*/
+
 .button {
     padding: 10px;
 }
+
 .social {
     text-align: center;
 }
+
 .social button {
     border: none;
     background-color: white;
     width: 60px;
     height: 60px;
 }
+
 .social button img {
     width: 100%;
     height: 100%;
 }
+
 span {
     padding: 10px 0;
     text-align: center;
     display: block;
 }
-span a{
+
+span a {
     color: #6002B2;
+    text-decoration: none;
+    cursor: pointer;
 }
+
 span:last-child {
     margin-top: 20px;
 }
