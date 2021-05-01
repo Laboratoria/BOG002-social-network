@@ -1,7 +1,7 @@
 import { pantallaInicio } from './lib/inicio.js';
-import { registroUsuario } from './lib/registroUsuario.js';
+import { registroUsuario,registerUSer } from './lib/registroUsuario.js';
 import { inicioSesion } from './lib/inicioSesion.js';
-
+console.log(firebase);
 const rootHtml = document.getElementById('root');
 const appenPantallaInicio = rootHtml.appendChild(pantallaInicio());
 
@@ -20,3 +20,7 @@ const mostrarRegistro = () => {
 };
 bntRegistro.addEventListener('click', mostrarRegistro);
 btnIniciarSesion.addEventListener('click', mostrarLogin);
+
+// aqui vamos a traer la información del registro 41:51
+const emailRegistro = document.getElementById('email');
+const passwordRegistro = document.getElementById('password');

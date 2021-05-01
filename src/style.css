@@ -122,6 +122,54 @@ body {
     font-family: inherit;
     color:#143df3e7;
     font-weight:bolder;
+<<<<<<< HEAD
+=======
+   }
+   /*Estilos registro*/
+   #contenedorRegistro{
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    }
+   .logoRegistro{
+    width: 286px;
+    height: 150px;
+    }
+    #contenedorRegistro h3{
+     font-family: inherit;
+     font-size: 24px;
+     color: #F7CB2D;
+     text-shadow: 0.1em 0.1em 3px #000;
+     margin: 10px;
+    }
+   .contenedorGmail{
+     display: flex;
+     font-family: inherit;
+     font-size: 20px;
+     justify-content: center;
+     margin-top: 10px;
+   }
+   .contenedorGmail h4{
+    color: #F1e5B9;
+    text-shadow: 0.1em 0.1em 3px #000;
+   }
+
+   .contenedorGmail img{ 
+    width: 50px;
+   }
+   .inputForm {
+    width: 275px;
+    height: 41px;
+    border-radius: 5px;
+    background: #F1e5B9;
+    border: 0.2px solid #000000;
+    margin: 5px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+>>>>>>> 1154611d57737a1bb1daee648735e3d11291f58d
    }
    /*Estilos registro*/
    #contenedorRegistro{
