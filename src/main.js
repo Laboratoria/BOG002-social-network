@@ -1,7 +1,7 @@
 // Este es el punto de entrada de tu aplicacion
 
 import { myFunction } from './lib/index.js';
-import {FormularioDeRegistro} from './lib/SingUp.js';
+import {FormularioDeRegistro } from './lib/SingUp.js';
 import {FormularioDeIngreso} from './lib/Login.js';
   
 myFunction();
@@ -11,12 +11,10 @@ myFunction();
 
 
 
-
-
 // Mostrando pantallas de registro e inicio
 
 const Registro = document.querySelector("#signUp");
-      Registro .addEventListener("click", MostrarRegistro)
+      Registro.addEventListener("click", MostrarRegistro)
 
 const ingresoUsuario = document.querySelector("#login");
       ingresoUsuario .addEventListener("click", MostrarIngreso);
