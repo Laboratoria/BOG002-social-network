@@ -12,4 +12,5 @@ export function ingreso() {
   }
    
   observador();
-console.log("estoy probando esta rama")
+console.log("estoy probando esta rama,ojala no se me haya desorganizado la modularizacion")
+
