@@ -1,5 +1,4 @@
-import {FormularioDeIngreso } from './Login.js';
-import {FormularioDeRegistro} from './SingUp.js';
+
 
 
 export function home() {
@@ -18,14 +17,14 @@ export function home() {
             <button type="button" id="login" class="btn" value="login"> <a href="#login">LOGIN</a></button>
         
          </section>`
-
-  const Bienvenida = document.getElementById('root').innerHTML = html;
-  
-  return Bienvenida;
 }
 
+
+
+
+
 // capturamos el click sobre el boton de login
-export function BotondeLogin () {
+/* export function BotondeLogin () {
   
     const Login = document.getElementById('login');
     Login.addEventListener('click',() =>{
@@ -43,6 +42,7 @@ export function BotondeCrearCuenta () {
     })
     
   }
+  // capturamos el click sobre el boton crear cuenta con Google
   export function BotondeCrearCuentaconGoogle () {
   
     const RegistroConGoogle = document.getElementById('signUpGoogle');
@@ -50,4 +50,4 @@ export function BotondeCrearCuenta () {
       document.getElementById('root').innerHTML = `<h1>Registro con Google</h1>`;
     })
     
-  }
+  } */

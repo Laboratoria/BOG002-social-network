@@ -16,7 +16,25 @@
 // }
 
 
-
+import {home } from './Pages/Home.js';
+import {FormularioDeRegistro} from './Pages/SingUp.js';
+import {FormularioDeIngreso} from './Pages/Login.js';
+ 
+let content = document.getElementById('root');
+ 
+export const router = (route) => {
+    content.innerHTML = "";
+    switch(route) {
+        case '#/':
+            return content.innerHTML= home;
+        case '#/signUp':
+            return content.innerHTML = FormularioDeRegistro;
+        case '#/login':
+                return content.innerHTML = FormularioDeIngreso;
+        default:
+            return console.log('404!!!')
+    }
+} 
 
 
 

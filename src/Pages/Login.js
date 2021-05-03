@@ -12,8 +12,6 @@ export function FormularioDeIngreso(){
       <button type="submit" id="login" class="btn" > LOGIN <a href="#Register"> </a> </button>
       
       <form> `
-      const Login = document.getElementById('root').innerHTML = html;
-  
-      return Login;
+      
  
 }
