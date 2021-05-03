@@ -9,9 +9,9 @@ export function FormularioDeIngreso(){
       <input type="email"    class="input" placeholder="email"> 
       <input type="password" class="input" placeholder ="password"> 
       
-      <button type="submit" id="login" class="btn" > LOGIN <a href="#Register"> </a> </button>
+      <button type="submit" id="login" class="btn" > LOGIN <a href="#/Register"> </a> </button>
       
       <form> `
       
- 
+  return html;
 }

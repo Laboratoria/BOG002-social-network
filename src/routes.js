@@ -17,7 +17,7 @@
 
 
 import {home } from './Pages/Home.js';
-import {FormularioDeRegistro} from './Pages/SingUp.js';
+import {FormularioDeRegistro, ObtenerDatosDelRegistro} from './Pages/SingUp.js';
 import {FormularioDeIngreso} from './Pages/Login.js';
  
 let content = document.getElementById('root');
@@ -26,13 +26,17 @@ export const router = (route) => {
     content.innerHTML = "";
     switch(route) {
         case '#/':
-            return content.innerHTML= home;
+            content.innerHTML= home();
+            break;
         case '#/signUp':
-            return content.innerHTML = FormularioDeRegistro;
+            content.innerHTML = FormularioDeRegistro();
+            ObtenerDatosDelRegistro();
+            break;
         case '#/login':
-                return content.innerHTML = FormularioDeIngreso;
+             content.innerHTML = FormularioDeIngreso();
+             break;
         default:
-            return console.log('404!!!')
+             console.log('404!!!')
     }
 } 
 
