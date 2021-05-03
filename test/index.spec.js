@@ -1,27 +1,27 @@
 // importamos la funcion que vamos a testear
 // import { getAuth, useAuthEmulator } from 'firebase/auth';
-import { configurationFireBase } from '../src/firebase/config.js';
+// import { configurationFireBase } from '../src/firebase/config.js';
 import { LogIn, LogInGoogle } from '../src/auth/logInUser.js';
 import { Information } from '../src/auth/newUser.js';
 
 const { mockFirebase } = require('firestore-jest-mock');
-const firebase = require('firebase');
-// const firebase = require('firestore-jest-mock');
-global.firebase = firebase;
-configurationFireBase();
-// const auth = firebase.auth();
-// auth.useEmulator('http://localhost:9099');
-// useAuthEmulator(auth, 'http://localhost:9099');
-// Create a fake Firestore with a `users` and `posts` collection
+
+ // const firebase = require('firestore-jest-mock');
+ //global.firebase = firebase;
+// console.log(firebase);
 mockFirebase({
   database: {
     posts: [{ id: '123abc', title: 'Really cool title' }],
   },
 });
+global.firebase = require('firebase');
 
-const email = 'testnomadas01234s@gmail.com';
+const email = 'testnomadas01234sjuju@gmail.com';
 const password = 'colombia123';
 const name = 'valen';
+/* global.firebase.auth = jest.fn().mockResolvedValue(
+  new firebase.FakeAuth()
+); */
 /*  -------  Pruebas de Registro   ----------   */
 describe('Information', () => {
   it('debería ser una función', () => {

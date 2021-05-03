@@ -1,3 +1,4 @@
+
 export const Information = (email, password, username) => new Promise((resolve, reject) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
     const userc = userCredential.user;
