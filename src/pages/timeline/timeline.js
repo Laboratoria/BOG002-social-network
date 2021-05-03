@@ -57,7 +57,7 @@ export function postsTimeline() {
             data.forEach(doc => {
                 const post = doc.data();
                 const li = `
-            <li>           
+            <li>                  
             <p>${post.Contents}</p>
             </li>
             `;
