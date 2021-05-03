@@ -17,7 +17,7 @@
 
 
 import {home } from './Pages/Home.js';
-import {FormularioDeRegistro, ObtenerDatosDelRegistro} from './Pages/SingUp.js';
+import {FormularioDeRegistro, ObtenerDatosDelRegistro,MostrarContraseña} from './Pages/SingUp.js';
 import {FormularioDeIngreso} from './Pages/Login.js';
  
 let content = document.getElementById('root');
@@ -31,6 +31,7 @@ export const router = (route) => {
         case '#/signUp':
             content.innerHTML = FormularioDeRegistro();
             ObtenerDatosDelRegistro();
+            
             break;
         case '#/login':
              content.innerHTML = FormularioDeIngreso();

@@ -35,9 +35,16 @@ fieldset{
     width: 80%;
     border: none;
 }
-span{
+ fieldset{
+    width: 90%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+}
+fieldset img{
+    width: 20px;
+    position: relative;
+    left: 120px;
+    top: -30px;
 }
 .input{
     font-family: 'Dancing Script', cursive;
@@ -65,8 +72,6 @@ span{
     color: white;
     font-size: 64px;
     font-weight: lighter;
-    /* position: relative;
-    left: 1em; */
     display: flex;
     justify-content: center;}
 
@@ -102,8 +107,8 @@ span{
         background-color: #8adb94;
         position: relative;
         top: 1em;
-    }
-      span{
+}
+span{
         font-family: 'Poly', serif;
         color: white;
         font-weight: lighter;
@@ -112,7 +117,7 @@ span{
         top: -2.5em;
         left: 8em;
         }
-     p{
+ p{
             font-family: 'Poly', serif;
             color: white;
             font-weight: lighter;
@@ -165,4 +170,5 @@ span{
         top: 12em;
         
     }
+ 
     }

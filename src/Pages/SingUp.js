@@ -6,15 +6,14 @@ export function FormularioDeRegistro(){
     <form>
     <h1> Created account </h1>
       <fieldset>
-    <input type="text" id="NameUser" class="input"  placeholder="User name" maxlength="10"   title="Maximo 16 caracteres" required
-    "> 
-    <span id="CampoVacioName" class="error"></span>
+    <input type="text" id="NameUser" class="input"  placeholder="User name" maxlength="10"   title="Maximo 16 caracteres" required ">
+    <img src="" id="CampoVacioName" class="error">
 
     <input type="email"id="EmailUser"class="input" placeholder="email"> 
-    <span id="CampoVacioEmail" class="error"></span>
+    <img src="" id="CampoVacioEmail" class="error">
 
-    <input type="password" id="PasswordUser"class="input" placeholder ="password"> 
-    <span id="CampoVacioPassword" class="error"></span>
+    <input type="password" id="PasswordUser"class="input" placeholder ="password">
+    <img src="" id="CampoVacioPassword" class="error">
     
     <button type="submit" id="Register" class="btn" > REGISTER <a href="#Register"> </a> </button>
     </fieldset>
@@ -32,9 +31,9 @@ export function FormularioDeRegistro(){
             // event.preventDefault();
             // console.log("click en boton de enviar")
    
-       const Name     = document.getElementById("NameUser").value;
-      const Email    = document.getElementById("EmailUser").value;
-      const Password = document.getElementById("PasswordUser").value; 
+        const Name     = document.getElementById("NameUser").value;
+        const Email    = document.getElementById("EmailUser").value;
+        const Password = document.getElementById("PasswordUser").value; 
    
    
       
@@ -47,36 +46,52 @@ export function FormularioDeRegistro(){
          // validacion para nombre de usuario
          if (Name == "" || Name.length <3 || !usuario.test(Name)) {
             document.getElementById("NameUser").style.border = "2px solid red";
-            document.getElementById("CampoVacioName").innerHTML = "Campo incorrecto " 
+            document.getElementById("CampoVacioName").src= "./imagenes/cancelar.png" 
             // return false
          }
          else{
             document.getElementById("NameUser").style.border = "2px solid green";
-            document.getElementById("CampoVacioName").innerHTML ="correcto"
+            document.getElementById("CampoVacioName").src ="./imagenes/comprobado.png"
          }
          // validacion para correo de usuario
          if (Email.length == 0 || Email.length <3 ||!correo.test(Email)) {
             document.getElementById("EmailUser").style.border = "2px solid red";
-            document.getElementById("CampoVacioEmail").textContent= "Campo incorrecto";
+            document.getElementById("CampoVacioEmail").src= "./imagenes/cancelar.png";
             // return false
          }
          else{
             document.getElementById("EmailUser").style.border = "2px solid green";
-            document.getElementById("CampoVacioEmail").style.display ="none"
+            document.getElementById("CampoVacioEmail").src ="./imagenes/comprobado.png";
          }
          // validacion para contraseña de usuario
          if (Password =="" || Password.length <4 || !contraseña.test(Password)) {
             document.getElementById("PasswordUser").style.border = "2px solid red";
-            document.getElementById("CampoVacioPassword").textContent= "  Campo incorrecto" 
+            document.getElementById("CampoVacioPassword").src= "./imagenes/cancelar.png";
             // return false
             
          }
          else{
             document.getElementById("PasswordUser").style.border = "2px solid green";
-            document.getElementById("CampoVacioPassword").style.display ="none"
+            document.getElementById("CampoVacioPassword").src ="./imagenes/comprobado.png";
          }
-   
+
+          
       })
+       
       });
-        ;
+      
+   
+        
  }
+ export function MostrarContraseña(){
+   const Password = document.getElementById("PasswordUser").value;
+   const VerUocultar = document.getElementsByTagName('img');
+    VerUocultar.addEventListener('click', () =>{
+      if(Password.type == 'password'){
+         Password.type = 'text';
+      }else{
+         Password.type = 'password';
+      }
+   })
+   
+}
