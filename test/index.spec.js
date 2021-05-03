@@ -22,6 +22,9 @@ global.firebase = firebase;
 const email = 'testnomadas0123467s@gmail.com';
 const password = 'colombia123';
 const name = 'valen';
+/* global.firebase.auth = jest.fn().mockResolvedValue(
+  new firebase.FakeAuth()
+); */
 /*  -------  Pruebas de Registro   ----------   */
 describe('Information', () => {
   it('debería ser una función', () => {

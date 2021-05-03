@@ -6,8 +6,15 @@ import { userRegistration } from './Register.js';
 import { visibility } from '../components/visibilityPassword.js';
 import { userLogIn } from './LogIn.js';
 import { LogInGoogle } from '../auth/logInUser.js';
+import '../components/menu-mobile.js';
+import '../components/menu-desktop.js';
 
-function gridAndCard($containerGeneral) {
+function gridAndCard() {
+  const $containerGeneral = document.createElement('div');
+  $containerGeneral.classList.add('bigContainer');
+  $containerGeneral.setAttribute('id','idBigContainer');
+  document.querySelector('.body').appendChild($containerGeneral);
+  document.querySelector('.bigContainer').innerHTML = '';
   const $containerRegisterLogin = document.createElement('div');
   $containerRegisterLogin.classList.add('root-container');
   gridImage($containerRegisterLogin);
@@ -16,26 +23,39 @@ function gridAndCard($containerGeneral) {
   return $newDiv;
 }
 
-export function renderLogin($containerGeneral) {
-  gridAndCard($containerGeneral).innerHTML += renderFormLogin();
+export function renderLogin() {
+  gridAndCard().innerHTML += renderFormLogin();
   document.querySelector('.formHome').addEventListener('submit', userLogIn);
   visibility();
   document.querySelector('.buttonInicioGoogle').addEventListener('click', LogInGoogle);
   // console.log('ingresa render login');
 }
 
-export function renderRegister($containerGeneral) {
-  gridAndCard($containerGeneral).innerHTML += renderFormRegister();
-  document.querySelector('.formRegister').addEventListener('submit', userRegistration);
+export function renderRegister() {
+  gridAndCard().innerHTML += renderFormRegister();
+  document.querySelector('.formRegister').addEventListener('submit', userRegistration); 
   visibility();
 }
 
-export function renderHome($containerGeneral) {
-  const container = '<p> esto es home </p>';
-  document.querySelector('.body').insertAdjacentHTML('afterbegin', container);
+export function renderHome() {
+  const mql = window.matchMedia('(max-width: 768px)'); 
+  const desktop = document.createElement("desktop-menu");
+  const mobile = document.createElement("mobile-menu");
+  function pantalla(mobileView, value){
+    if (mobileView) {
+      if(value){ document.querySelector('.body').removeChild(desktop); }
+      console.log("pantalla pequeña");
+      document.body.appendChild(mobile);
+    } else {
+      if(value){ document.querySelector('.body').removeChild(mobile); }
+      console.log("pantalla grande");      
+      document.body.appendChild(desktop);
+    }
+  }
+  mql.addEventListener('change', (e) => { 
+    const mobileView = e.matches;
+    pantalla(mobileView, true);
+  });  
+  const mobileView = mql.matches;
+  pantalla(mobileView, false);
 }
-
-//export function renderHome() {
-//  const container = home();
-//  document.querySelector('.body').insertAdjacentHTML('afterbegin', container);
-//}

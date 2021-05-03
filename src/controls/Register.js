@@ -17,16 +17,18 @@ export function userRegistration(event) {
       const title = document.querySelector('.titleForm');
       confirmationRegistro.style.display = 'none';
       title.style.display = 'none';
+      document.querySelector('.cardContainer').innerHTML ='';
       const messageExito = document.createElement('div');
       messageExito.textContent = 'Tu registro se ha realizado con exito!!!!';
       messageExito.className = 'messageExitoso';
-      cardContainer.appendChild(messageExito);
+      document.querySelector('.cardContainer').appendChild(messageExito);
       const SignupRegister = document.createElement('button');
       SignupRegister.type = 'button';
       SignupRegister.innerText = 'Iniciar sesion';
       SignupRegister.className = 'buttonInicioSesion';
       messageExito.appendChild(SignupRegister);
-      SignupRegister.addEventListener('click', window.location.hash = '#home');
+      document.querySelector('.buttonInicioSesion').addEventListener('click', function () {
+      window.location.hash = '#home'});
     })
     .catch((error) => {
       // console.log(error);
