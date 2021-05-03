@@ -1,3 +1,4 @@
+
 //Function Register
 export const register = (email, password) => {
     return firebase.auth().createUserWithEmailAndPassword(email, password);
@@ -17,3 +18,9 @@ export const registerGoogle = (provider) => {
 export const signOut = () => {
     return firebase.auth().signOut();
 }
+
+//Funcion subir publicaciones 
+
+export const collectionPost = (input) => {
+    return fireStore.collection("posts").add({Contents:input}); 
+} 
