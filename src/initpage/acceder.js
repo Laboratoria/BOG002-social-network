@@ -12,4 +12,4 @@ export function ingreso() {
   }
    
   observador();
-
+console.log("estoy probando esta rama")
