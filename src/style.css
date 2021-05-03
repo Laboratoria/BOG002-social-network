@@ -24,19 +24,32 @@ form{
     position: relative;
     top: 4.5em;
 }
+fieldset{
+    font-family: 'Dancing Script', cursive;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    align-items: center;
+    position: relative;
+    top: 4.5em; 
+    width: 90%;
+    border: none;
+}
 .input{
     font-family: 'Dancing Script', cursive;
     color: rgb(10, 9, 9);
     display: flex;
     flex-direction: column;
     height: 2em;
-    width: 60%;
+    width: 70%;
+    border: none;
     border-radius: 10px;
-    margin: 0.5em;
-    font-size: 15px;
+    margin: 0.9em;
+    font-size: 17px;
     font-family: 'Poly';
     
 }
+
 #Register{
     background-color: #8adb94;
     position: relative;
