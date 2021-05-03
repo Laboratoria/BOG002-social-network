@@ -1,16 +1,21 @@
 
 
 export function registro(){
- let botonregistro= document.querySelector('.registerbtn');
+ let form= document.querySelector('#formularioRegistro');
 
 
-botonregistro.addEventListener('click', ()=>{ 
+form.addEventListener('submit', (e)=>{
+    e.preventDefault() ;
     var email=document.getElementById("email").value;
     var password=document.getElementById("psw").value;
     firebase.auth().createUserWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in
       var user = userCredential.user;
+      console.log(user)
+      console.log(email)
+      console.log(password)
+      
       // ...
     })
     .catch((error) => {

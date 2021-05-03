@@ -33,4 +33,3 @@ export const router = (route,componenteHtml) => {
       return console.log('si funciona pero  esta enlazando la principal');
   }
 };
-console.log(typeof(router))
