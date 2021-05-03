@@ -1,8 +1,15 @@
 // importamos la funcion que vamos a testear
-import { myFunction } from '../src/lib/index';
+import { register } from '../src/index.js';
 
-describe('myFunction', () => {
-  it('debería ser una función', () => {
-    expect(typeof myFunction).toBe('function');
+
+
+describe('casos de prueba registro', () => {
+  it('registro de usuario nuevo', () => {
+    let datos = register('sergio@gmail.com','contraseña') 
+    expect (typeof datos).toBe (Promise)
   });
 });
+
+//export const register = (email, password) => {
+//  return firebase.auth().createUserWithEmailAndPassword(email, password);
+//};
