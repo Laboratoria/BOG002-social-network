@@ -122,8 +122,6 @@ body {
     font-family: inherit;
     color:#143df3e7;
     font-weight:bolder;
-<<<<<<< HEAD
-=======
    }
    /*Estilos registro*/
    #contenedorRegistro{
@@ -169,7 +167,6 @@ body {
     font-size: 18px;
     font-weight: bold;
     text-align: center;
->>>>>>> 1154611d57737a1bb1daee648735e3d11291f58d
    }
    /*Estilos registro*/
    #contenedorRegistro{
@@ -232,3 +229,75 @@ footer a{
  color: white;
  font-size: 12px;
 }
+
+/* css Nelida */
+
+
+
+
+
+/* fin csc Nelida */
+
+/* CSS Astrid */
+@media (min-width:501px){
+.contenedorIniciosesion {
+position: relative;
+width: 1440px;
+height: 1024px; 
+display: flex;
+flex-wrap: nowrap;
+justify-content: space-between;
+flex-direction: row;
+align-content: space-around;
+
+
+}
+.logoIniciosesion {
+width: 328px;
+height: 202px; 
+
+
+
+}
+.contenidoInputs {
+width: 400px;
+height: 522px;
+left: 118px;
+background: rgba(237, 211, 118, 0.47);
+border-radius: 79px; 
+
+}
+.contenedorIniciosesion h3{
+/* position: relative;
+width: 713px;
+height: 334px;
+font-family: SeoulNamsan CBL;
+font-style: normal;
+font-weight: normal;
+font-size: 55px;
+line-height: 45px;
+text-align: right;
+color: #EDD376;
+right: 100px; */
+
+font-family: inherit;
+font-size: 30px;
+color: #f7cb2d;
+text-align: right;
+text-shadow: 0.1em 0.1em 3px #000;
+font-weight: bold;
+margin-right: 215px;
+margin-left: 500px;
+
+}
+#formularioInicioSesion{
+
+width: 436px;
+height: 98px;
+
+
+}
+}
+
+
+/* fin css Astrid */

@@ -1,26 +1,41 @@
 import { pantallaInicio } from './lib/inicio.js';
-import { registroUsuario,registerUSer } from './lib/registroUsuario.js';
+import { registroUsuario } from './lib/registroUsuario.js';
 import { inicioSesion } from './lib/inicioSesion.js';
-console.log(firebase);
+import { registerUSer, loginUSer } from './lib/firebaseAuth.js';
+
 const rootHtml = document.getElementById('root');
 const appenPantallaInicio = rootHtml.appendChild(pantallaInicio());
 
 const bntRegistro = document.getElementById('btnRegistrate');
 const btnIniciarSesion = document.getElementById('btnIniciarSesion');
+
 const mostrarLogin = () => {
   const appPantallaLogin = rootHtml.appendChild(inicioSesion());
   appenPantallaInicio.style.display = 'none';
   appPantallaLogin.style.display = 'flex';
+  const formularioInicioSesion = document.getElementById('formularioInicioSesion');
+  formularioInicioSesion.addEventListener('submit', (event) => {
+    const emailLogin = document.getElementById('emailLogin').value;
+    const passwordLogin = document.getElementById('passwordLogin').value;
+    event.preventDefault();
+
+    loginUSer(emailLogin, passwordLogin);
+  });
 };
 
 const mostrarRegistro = () => {
   const appePantallaRegistro = rootHtml.appendChild(registroUsuario());
   appenPantallaInicio.style.display = 'none';
   appePantallaRegistro.style.display = 'flex';
+
+  // aqui vamos a traer la información del formulario del registro 41:51
+  const formularioRegistro = document.getElementById('formularioRegistroUsuario');
+  formularioRegistro.addEventListener('submit', (event) => {
+    const emailRegistro = document.getElementById('emailRegistro').value;
+    const passwordRegistro = document.getElementById('passwordRegistro').value;
+    event.preventDefault();
+    registerUSer(emailRegistro, passwordRegistro);
+  });
 };
 bntRegistro.addEventListener('click', mostrarRegistro);
 btnIniciarSesion.addEventListener('click', mostrarLogin);
-
-// aqui vamos a traer la información del registro 41:51
-const emailRegistro = document.getElementById('email');
-const passwordRegistro = document.getElementById('password');
