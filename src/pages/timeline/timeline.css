@@ -1,0 +1,44 @@
+.headerWall {
+    width: 100vw; 
+    background-color: #ECD4EA;
+    padding: 3%;
+    margin: -2%;
+    }
+
+#imgUser {
+    margin-left: 110px;
+    }
+
+ul {
+    padding: 4% 8% 0% 8%;
+    }
+
+li {
+    background-color: white;
+    border: 2px solid #ECC4B1;
+    border-radius: 8px;
+    list-style: none;
+    margin: 2px 0px 20px 0px;
+    }
+
+#btnLogOut {
+    margin: 4% 0% 0% 60%;
+    background-color: #ECD4EA;
+    color: #923367;
+    font-family: 'Yusei Magic';
+    font-size: 13px;
+    border: 1px solid #923367;
+    border-radius: 5px;
+    }
+
+#btnPost {
+    background-color: #923367;
+    color: #F9F4F4;
+    font-family: 'Yusei Magic';
+    font-size: 13px;
+    border-radius: 10px;
+    width: 230px;
+    height: 35px;
+    border:none;
+    margin: 5% 0% 0% 0%;
+    }
