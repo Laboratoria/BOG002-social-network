@@ -1,18 +1,15 @@
-export const Information = (email, password, username) => new Promise((resolve, reject) => {
+export const Information = (email, password) => new Promise((resolve, reject) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
     const userc = userCredential.user;
-    userc.updateProfile({
-      displayName: username,
-    }).then(() => {
-      resolve(userc);
-    });
+    // console.log(userc);
+    resolve(userc);
   })
     .catch((error) => {
       const errorCode = error.code;
       reject(errorCode);
     });
 });
-/*
+
 export const assignName = (username) => {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
@@ -22,7 +19,7 @@ export const assignName = (username) => {
     }
     // console.log(user);
   });
-}; */
+}; 
 /*
 export const LogIn = (email, password) => new Promise((resolve, reject) => {
   firebase.auth().signInWithEmailAndPassword(email, password)
