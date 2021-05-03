@@ -39,7 +39,6 @@ export function FormularioDeRegistro(){
    
       
          let usuario= /^[a-zA-Z0-9\_\-]{3,16}$/; // Letras, numeros, guion y guion_bajo
-         // const nombre= /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
          let correo= /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
          let contraseña= /^.{4,12}$/; // 4 a 12 digitos.
          
@@ -48,12 +47,12 @@ export function FormularioDeRegistro(){
          // validacion para nombre de usuario
          if (Name == "" || Name.length <3 || !usuario.test(Name)) {
             document.getElementById("NameUser").style.border = "2px solid red";
-            document.getElementById("CampoVacioName").textContent = "Campo incorrecto " 
+            document.getElementById("CampoVacioName").innerHTML = "Campo incorrecto " 
             // return false
          }
          else{
             document.getElementById("NameUser").style.border = "2px solid green";
-            document.getElementById("CampoVacioName").style.display ="none"
+            document.getElementById("CampoVacioName").innerHTML ="correcto"
          }
          // validacion para correo de usuario
          if (Email.length == 0 || Email.length <3 ||!correo.test(Email)) {
