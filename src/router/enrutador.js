@@ -1,8 +1,8 @@
 // aqui exportaras las funciones que necesites
 
-import { formularioRegistro,formularioInicio } from './vistas.js';
-import { registro,google} from './registrar.js';
-import { ingreso } from './acceder.js';
+import { formularioRegistro,formularioInicio } from '/HTMLscreens/formularios.js';
+import { registro,google} from '/initpage/registrar.js';
+import { ingreso } from '/initpage/acceder.js';
 
 const idRegistro = document.querySelector('#registro');
 const logo=document.querySelector("#logo");
