@@ -18,10 +18,10 @@ export function FormularioDeRegistro(){
     "> 
     <span id="CampoVacioName"></span>
 
-    <input type="email" id="EmailUser"class="input" placeholder="Email"> 
+    <input type="email" id="EmailUser" class="input" placeholder="Email"> 
     <span id="CampoVacioEmail"></span>
 
-    <input type="password" id="PasswordUser"class="input" placeholder ="Password"> 
+    <input type="password" id="PasswordUser" class="input" placeholder ="Password" > 
     <span id="CampoVacioPassword"></span>
     
     <button type="submit" id="Register" class="btn" > REGISTER <a href="#Register"> </a> </button>
@@ -33,11 +33,11 @@ export function FormularioDeRegistro(){
 
 
 
-   const Submit    = document.getElementById("Register")    
-         Submit.addEventListener("click", (event)=>{
+   const Submit    = document.querySelectorAll(".input")    
+         Submit.addEventListener("keyup", (event)=>{
 
          event.preventDefault();
-         console.log("click en boton de enviar")
+         
 
    const Name     = document.getElementById("NameUser").value;
    const Email    = document.getElementById("EmailUser").value;
@@ -55,7 +55,7 @@ export function FormularioDeRegistro(){
       // validacion para nombre de usuario
       if (Name == "" || Name.length <3 || !usuario.test(Name)) {
          document.getElementById("NameUser").style.border = "2px solid red";
-         document.getElementById("CampoVacioName").textContent    = "Campo incorrecto " 
+         document.getElementById("CampoVacioName").textContent = "Campo incorrecto " 
          // return false
       }
       else{
@@ -65,7 +65,7 @@ export function FormularioDeRegistro(){
       // validacion para correo de usuario
        if (Email.length == 0 || Email.length <3 ||!correo.test(Email)) {
          document.getElementById("EmailUser").style.border = "2px solid red";
-         document.getElementById("CampoVacioEmail").textContent  = "Campo incorrecto";
+         document.getElementById("CampoVacioEmail").textContent= "Campo incorrecto";
          // return false
       }
       else{
