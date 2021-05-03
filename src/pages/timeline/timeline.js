@@ -11,17 +11,18 @@ export function timelinePage() {
                     <img id="imgUser" src="assets/IconoUsuario.png">
                 </div>
             </header>
-
             <main>
-                <form id="logOut">
-                    <button id="btnLogOut">Cerrar sesion</button>
-                </form>
                 <div class = "container" id = "containerPosts">
+                <form id="logOut">
+                    <button class="button" id="btnLogOut">Cerrar sesion</button>
+                </form>
+                    <button id="btnPost">¿Qué nos quieres compartir?</button>
                     <div id ="posts">
                         <ul id = "listPost">
                         </ul>
                     </div>
                 </div>
+                
             </main>
         </section>    
     `
