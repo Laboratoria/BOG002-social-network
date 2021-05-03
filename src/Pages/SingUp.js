@@ -2,17 +2,9 @@
 
 export function FormularioDeRegistro(){
      
-     let vaciar =  document.getElementById("Body") 
-     vaciar.innerHTML = ""
-    const NewForm = document.createElement("form");
-
-    // const Main = document.getElementsByTagName("main")
-    // const Formulario = 
-    
-    NewForm.innerHTML= `
-    
+   const html= `
+    <form>
     <h1> Created account </h1>
-    <fieldset>
 
     <input type="text" id="NameUser" class="input"  placeholder="User name" maxlength="10"   title="Maximo 16 caracteres" required
     "> 
@@ -25,9 +17,10 @@ export function FormularioDeRegistro(){
     <span id="CampoVacioPassword"></span>
     
     <button type="submit" id="Register" class="btn" > REGISTER <a href="#Register"> </a> </button>
-    </fieldset>
-    `;
-   document.getElementById("Body").appendChild(NewForm)
+    </form>`;
+    const signUp = document.getElementById('root').innerHTML = html;
+  
+    return signUp;
 
 // Valores de los inputs
 
