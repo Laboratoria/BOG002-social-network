@@ -33,8 +33,8 @@ export function FormularioDeRegistro(){
 
 
 
-   const Submit    = document.querySelectorAll(".input")    
-         Submit.addEventListener("keyup", (event)=>{
+   const Submit    = document.getElementById("Register")    
+         Submit.addEventListener("click", (event)=>{
 
          event.preventDefault();
          
