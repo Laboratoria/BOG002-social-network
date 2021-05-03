@@ -1,7 +1,7 @@
 import { pantallaInicio } from './lib/inicio.js';
 import { registroUsuario } from './lib/registroUsuario.js';
 import { inicioSesion } from './lib/inicioSesion.js';
-import { registerUSer, loginUSer } from './lib/firebaseAuth.js';
+import { registerUSer, loginUSer, registroGmail } from './lib/firebaseAuth.js';
 
 const rootHtml = document.getElementById('root');
 const appenPantallaInicio = rootHtml.appendChild(pantallaInicio());
@@ -38,7 +38,14 @@ const mostrarRegistro = () => {
         registerUSer(emailRegistro, passwordRegistro);
     });
 
+    // registro Gmail
+    const contenedorclickGmail = document.getElementById("contenedorclickGmail");
+    contenedorclickGmail.addEventListener('click',registroGmail)
+    
+    
 };
+
 bntRegistro.addEventListener('click', mostrarRegistro);
 btnIniciarSesion.addEventListener('click', mostrarLogin);
+
 

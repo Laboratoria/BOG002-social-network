@@ -6,7 +6,7 @@ export const registroUsuario = () => {
   const contenidoEncabezado = `
         <img alt="logoRegistro" class="logoRegistro" src = "Imagenes/LogoBeer.png"/>
         <h3> Conviértete en un Beer Lover's </h3>
-        <div class= "contenedorGmail">
+        <div class= "contenedorGmail" id="contenedorclickGmail">
             <h4> Regístrate con Gmail</h4>
             <img alt="gmail" class="gmail" src="Imagenes/Gmail-Logo.png"/>
         </div>
