@@ -31,9 +31,8 @@ li {
     border-radius: 5px;
     }
 
-#btnPost {
-    background-color: #923367;
-    color: #F9F4F4;
+#inputPost {
+    background-color: white;
     font-family: 'Yusei Magic';
     font-size: 13px;
     border-radius: 10px;
@@ -42,3 +41,4 @@ li {
     border:none;
     margin: 5% 0% 0% 0%;
     }
+

@@ -1,4 +1,4 @@
-import { signOut } from '../../index.js';
+import { signOut, collectionPost } from '../../index.js';
 
 
 export function timelinePage() {
@@ -16,11 +16,13 @@ export function timelinePage() {
                 <form id="logOut">
                     <button class="button" id="btnLogOut">Cerrar sesion</button>
                 </form>
-                    <button id="btnPost">¿Qué nos quieres compartir?</button>
+                    <input id="inputPost" class="input" type="text" placeholder="¿Qué nos quieres compartir?">
+                    <button id="btnPost" class="button">Publicar</button>
                     <div id ="posts">
                         <ul id = "listPost">
                         </ul>
                     </div>
+                
                 </div>
                 
             </main>
@@ -55,9 +57,8 @@ export function postsTimeline() {
             data.forEach(doc => {
                 const post = doc.data();
                 const li = `
-            <li>
-            <h5>${post.titulo}</h5>
-            <p>${post.contenido}</p>
+            <li>           
+            <p>${post.Contents}</p>
             </li>
             `;
                 html += li;
@@ -83,17 +84,19 @@ export function postsTimeline() {
     })
 }
 
-export function collectionPost() {
-
-    fireStore.collection("posts").add({
-        first: "Ada",
-        last: "Lovelace",
-        born: 1815
-    })
+export function newCollectionPost() {
+    const btnPosts = document.getElementById('btnPost')
+    btnPosts.addEventListener('click', () => {
+        const newPost = document.getElementById('inputPost').value
+         collectionPost(newPost)
         .then((docRef) => {
-            console.log("Document written with ID: ", docRef.id);
-        })
-        .catch((error) => {
-            console.error("Error adding document: ", error);
-        });
+                  console.log("Document written with ID: ", docRef.id);
+                })
+                .catch((error) => {
+                    console.error("Error adding document: ", error);
+                });
+
+    });
 }
+
+
