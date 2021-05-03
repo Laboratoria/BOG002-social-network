@@ -1,10 +1,11 @@
 
-//Inicio de sesión con Google
-export const logInGoogle = () => {
+//Crear cuenta con Google
+export const signUpGoogle = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth()
         .signInWithPopup(provider)
         .then((result) => {
+            window.location.assign('#/timeline')
             /** @type {firebase.auth.OAuthCredential} */
             var credential = result.credential;
 
@@ -26,15 +27,15 @@ export const logInGoogle = () => {
 };
 
 
+// Crear cuenta con Facebook
 
-// Inicio de sesión con Facebook
-
-export const logInFacebook = () => {
+export const signUpFacebook = () => {
     var provider = new firebase.auth.FacebookAuthProvider();
     firebase
         .auth()
         .signInWithPopup(provider)
         .then((result) => {
+            window.location.assign('#/timeline')
             /** @type {firebase.auth.OAuthCredential} */
             var credential = result.credential;
 
@@ -60,11 +61,10 @@ export const logInFacebook = () => {
 }
 
 // Inicio de sesión con email y password
-export const logInEmail = (email, password, signinForm) => {
+export const logInEmail = (email, password) => {
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
-            signinForm.reset();
-            console.log('signin')
+        window.location.assign('#/timeline')
         })
         .catch((error) => {
             var errorCode = error.code;
@@ -72,15 +72,27 @@ export const logInEmail = (email, password, signinForm) => {
         });
 }
 
+/*Olvido de contraseña
+var auth = firebase.auth();
+var emailAddress = "user@example.com";
+
+auth.sendPasswordResetEmail(emailAddress).thens(function() {
+  // Email sent.
+}).catch(function(error) {
+  // An error happened.
+});*/
+
 // Creación de cuenta con email y password 
-export const signUpEmail = (email, password, signupForm) => {
+export const signUpEmail = (email, password) => {
     firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
-            signupForm.reset();
+            window.location.assign('#/timeline')
         })
         .catch((error) => {
+            
             var errorCode = error.code;
             var errorMessage = error.message;
             // ..
         });
 }
+

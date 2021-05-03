@@ -1,7 +1,6 @@
 import { renderTimeline } from '../views/timelineView.js';
-import { renderLogin } from '../views/loginView.js';
+import { renderLogin, afterRenderLogin } from '../views/loginView.js';
 import { renderSettings } from '../views/settingsView.js';
-import { logInGoogle, logInFacebook, logInEmail, signUpEmail } from '../model/login.js'
 
 let container = document.getElementById('root');
 
@@ -12,10 +11,7 @@ export const init = () => {
     switch(url){
         case '#/login':
             container.appendChild(renderLogin());
-            logInEmail();
-            logInFacebook();
-            logInGoogle();
-            signUpEmail();
+            afterRenderLogin();
             break;
         case '#/timeline':
             container.appendChild(renderTimeline());
@@ -25,10 +21,7 @@ export const init = () => {
             break;
         default: 
             container.appendChild(renderLogin());
-            logInEmail();
-            logInFacebook();
-            logInGoogle();
-            signUpEmail();
+            afterRenderLogin();
             break;
     }
 }
