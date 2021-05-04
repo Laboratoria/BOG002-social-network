@@ -61,7 +61,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 20px;
     flex-direction: row;
     align-content: center;
    }
@@ -72,18 +72,24 @@ body {
     text-align: right;
     text-shadow: 0.1em 0.1em 3px #000;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 20px;
     margin-right: 15px;
     margin-left: 100px;
+   }
+   .contenidoInputs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    flex-direction: row;
+    align-content: center; 
    }
    #logoIniciosesion{
     width: 286px;
     height: 150px;
-    margin-left: 29px;
-    margin-top: auto;
+
    }
-  
-   .contenedorIniciosesion input{
+   #formularioInicioSesion input{
     width: 275px;
     height: 41px;
     border-radius: 5px;
@@ -96,10 +102,16 @@ body {
     font-weight: bold;
     text-align: center;
    }
-   .contenedorIniciosesion button{
+  .textoCervecero1 {
+    display: none;
+  }
+   #formularioInicioSesion #emailLogin{
+     margin-top: 55px;
+   }
+   #formularioInicioSesion button{
     margin-top: 40px;
     width: 160px;
-    height: 42px;
+    height: 52px;
     border-radius: 79px;
     background:#523412;
     border: 0.2px solid #000000;
@@ -108,14 +120,14 @@ body {
     font-family: inherit;
     font-size: 18px;
     font-weight: bold;
+    color: #EDD376;
    }
    .contenedorIniciosesion p{
-    margin-left: 55px;
     font-size: 18px;
     font-family: inherit;
     color: black;
     font-weight:bold;
-    margin-top: 100px;
+    margin-top: 50px;
    }
    .contenedorIniciosesion a{
     font-size: 18px;
@@ -124,17 +136,20 @@ body {
     font-weight:bolder;
    }
    /*Estilos registro*/
-   #contenedorRegistro{
+   .classcontenedorRegistro{
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
     margin: 20px;
     }
    .logoRegistro{
-    width: 286px;
-    height: 150px;
+    width: 200px;
+    /* height: 150px; */
     }
-    #contenedorRegistro h3{
+    .encabezado h3{
+      display: none;
+    }
+    .encabezado h3{
      font-family: inherit;
      font-size: 24px;
      color: #F7CB2D;
@@ -149,10 +164,9 @@ body {
      margin-top: 10px;
    }
    .contenedorGmail h4{
-    color: #F1e5B9;
+    color: #F1E5B9;
     text-shadow: 0.1em 0.1em 3px #000;
    }
-
    .contenedorGmail img{ 
     width: 50px;
    }
@@ -160,7 +174,7 @@ body {
     width: 275px;
     height: 41px;
     border-radius: 5px;
-    background: #F1e5B9;
+    background: #F1E5B9;
     border: 0.2px solid #000000;
     margin: 5px;
     font-family: inherit;
@@ -168,52 +182,62 @@ body {
     font-weight: bold;
     text-align: center;
    }
-   /*Estilos registro*/
-   #contenedorRegistro{
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    margin: 20px;
-    }
-   .logoRegistro{
-    width: 286px;
-    height: 150px;
-    }
-    #contenedorRegistro h3{
-     font-family: inherit;
-     font-size: 24px;
-     color: #F7CB2D;
-     text-shadow: 0.1em 0.1em 3px #000;
-     margin: 10px;
-    }
-   .contenedorGmail{
-     display: flex;
-     font-family: inherit;
-     font-size: 20px;
-     justify-content: center;
-     margin-top: 10px;
-   }
-   .contenedorGmail h4{
-    color: #F1e5B9;
-    text-shadow: 0.1em 0.1em 3px #000;
-   }
+    .contenidoForm { 
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+   } 
+   /* pantalla de registro texto  */
+.contenidoForm p{
+  font-weight:600;
+  font-size: 15px;
+  /* color: #BE291C;
+    text-shadow: 0.1em 0.1em 3px #000; */
+    /* color: #1C98BE;
+    text-shadow: 0.1em 0.1em 3px #000; */
+    color: #F88603;
+    text-shadow: 0.1em 0.1em 1px #000;
+    /* color: #FFFFFF;
+    text-shadow: 0.1em 0.1em 3px #000; */
+}
+.contenidoForm label{
+  font-weight:600;
+  font-size: 15px;
+  /* color: #BE291C;
+    text-shadow: 0.1em 0.1em 3px #000; */
+    /* color: #1C98BE;
+    text-shadow: 0.1em 0.1em 3px #000; */
+    color: #F88603;
+    text-shadow: 0.1em 0.1em 1px #000;
+    /* color: #FFFFFF;
+    text-shadow: 0.1em 0.1em 3px #000; */
+}
+.contenidoForm a{
+  font-weight:600;
+  font-size: 15px;
+  color: #FD5613;
+    text-shadow: 0.1em 0.1em 1px #000;
+    /* color: #1C98BE;
+    text-shadow: 0.1em 0.1em 3px #000; */
+    /* color: #F88603;
+    text-shadow: 0.1em 0.1em 3px #000; */
+    /* color: #FFFFFF;
+    text-shadow: 0.1em 0.1em 3px #000; */
+}
+.contenidoForm button{
+  margin-top: 10px;
+  width: 200px;
+  height: 51px;
+  border-radius: 79px;
+  background:#523412;
+  border: 0.2px solid #000000;
+   font-family: inherit;
+  font-size: 22px;
+  font-weight: bold;
+  color: #EDD376;
 
-   .contenedorGmail img{ 
-    width: 50px;
-   }
-   .inputForm {
-    width: 275px;
-    height: 41px;
-    border-radius: 5px;
-    background: #F1e5B9;
-    border: 0.2px solid #000000;
-    margin: 5px;
-    font-family: inherit;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-   }
-
+}
+  
 }
 footer{   
  position: absolute;
@@ -239,56 +263,53 @@ footer a{
 /* fin csc Nelida */
 
 /* CSS Astrid */
-@media (min-width:501px){
+@media only screen and (max-width: 1440px) and (min-width: 501px){
 .contenedorIniciosesion {
-position: relative;
-width: 1440px;
-height: 1024px; 
-display: flex;
-flex-wrap: nowrap;
-justify-content: space-between;
-flex-direction: row;
-align-content: space-around;
+  display: inline-block;
+  flex-direction: column;
 
+}
+.textoCervecero2 {
+  display: none;
+}
+.contenidoInputs{
 
 }
 .logoIniciosesion {
-width: 328px;
-height: 202px; 
-
-
-
+width: 228px;
+height: 102px; 
 }
+.mensajeCervecero {
+    font-family: inherit;
+    font-size: 20px;
+    color: #f7cb2d;
+    text-align: right;
+    text-shadow: 0.1em 0.1em 3px #000;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-right: 15px;
+    margin-left: 100px;
+    float: left;
+   }
 .contenidoInputs {
-width: 400px;
+width: 337px;
 height: 522px;
 left: 118px;
 background: rgba(237, 211, 118, 0.47);
 border-radius: 79px; 
 
 }
-.contenedorIniciosesion h3{
-/* position: relative;
-width: 713px;
-height: 334px;
-font-family: SeoulNamsan CBL;
-font-style: normal;
-font-weight: normal;
-font-size: 55px;
-line-height: 45px;
-text-align: right;
-color: #EDD376;
-right: 100px; */
-
-font-family: inherit;
-font-size: 30px;
-color: #f7cb2d;
-text-align: right;
-text-shadow: 0.1em 0.1em 3px #000;
-font-weight: bold;
-margin-right: 215px;
-margin-left: 500px;
-
+.textoCervecero1{
+  font-family: inherit;
+  font-size: 30px;
+  color: #f7cb2d;
+  text-align: right;
+  text-shadow: 0.1em 0.1em 3px #000;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-right: 15px;
+  margin-left: 100px;
+  float: left;
 }
 #formularioInicioSesion{
 
