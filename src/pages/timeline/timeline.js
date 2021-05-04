@@ -58,7 +58,8 @@ export function postsTimeline() {
       data.forEach((doc) => {
         const post = doc.data();
         const li = `
-          <li>                  
+          <li> 
+            <h3>${post.Title}</h3>          
             <p>${post.Contents}</p>
           </li>
         `;
@@ -79,7 +80,7 @@ export function postsTimeline() {
           setPost(snapshot.docs);
         });
     } else {
-      console.log('cerraste sesion');
+      console.log('Inicia sesion para ver los posts');
     }
   });
 }
@@ -88,7 +89,9 @@ export function newCollectionPost() {
   const btnPosts = document.getElementById('btnPost');
   btnPosts.addEventListener('click', () => {
     const newPost = document.getElementById('inputPost').value;
-    collectionPost(newPost)
+    const userMail = auth.currentUser;
+    const user = userMail.email;
+    collectionPost(user,newPost)
       .then((docRef) => {
         console.log('Document written with ID: ', docRef.id);
       })
