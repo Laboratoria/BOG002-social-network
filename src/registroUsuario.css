@@ -1,0 +1,218 @@
+/* Estilo Android */
+@media (max-width:500px){
+body{
+background-image: url("Imagenes/fondoblur.jpg");
+}
+.classcontenedorRegistro{
+flex-wrap: wrap;
+justify-content: center;
+text-align: center;
+margin: 20px;
+}
+.logoRegistro{
+width: 200px;
+/* height: 150px; */
+}
+.encabezado h3{
+display: none;
+}
+.encabezado h3{
+font-family: inherit;
+font-size: 24px;
+color: #F7CB2D;
+text-shadow: 0.1em 0.1em 3px #000;
+margin: 10px;
+}
+.contenedorGmail{
+display: flex;
+font-family: inherit;
+font-size: 20px;
+justify-content: center;
+margin-top: 10px;
+}
+.contenedorGmail h4{
+color: #F1E5B9;
+text-shadow: 0.1em 0.1em 3px #000;
+}
+.contenedorGmail img{ 
+width: 50px;
+}
+.inputForm {
+width: 275px;
+height: 41px;
+border-radius: 5px;
+background: #F1E5B9;
+border: 0.2px solid #000000;
+margin: 5px;
+font-family: inherit;
+font-size: 18px;
+font-weight: bold;
+text-align: center;
+}
+.contenidoForm { 
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+} 
+/* pantalla de registro texto  */
+.contenidoForm p{
+font-weight:600;
+font-size: 15px;
+/* color: #BE291C;
+text-shadow: 0.1em 0.1em 3px #000; */
+/* color: #1C98BE;
+ text-shadow: 0.1em 0.1em 3px #000; */
+color: #F88603;
+text-shadow: 0.1em 0.1em 1px #000;
+/* color: #FFFFFF;
+text-shadow: 0.1em 0.1em 3px #000; */
+}
+.contenidoForm label{
+font-weight:600;
+font-size: 15px;
+/* color: #BE291C;
+text-shadow: 0.1em 0.1em 3px #000; */
+/* color: #1C98BE;
+text-shadow: 0.1em 0.1em 3px #000; */
+color: #F88603;
+text-shadow: 0.1em 0.1em 1px #000;
+/* color: #FFFFFF;
+text-shadow: 0.1em 0.1em 3px #000; */
+}
+.contenidoForm a{
+font-weight:600;
+font-size: 15px;
+color: #FD5613;
+text-shadow: 0.1em 0.1em 1px #000;
+/* color: #1C98BE;
+text-shadow: 0.1em 0.1em 3px #000; */
+/* color: #F88603;
+text-shadow: 0.1em 0.1em 3px #000; */
+/* color: #FFFFFF;
+text-shadow: 0.1em 0.1em 3px #000; */
+}
+.contenidoForm button{
+margin-top: 10px;
+width: 200px;
+height: 51px;
+border-radius: 79px;
+background:#523412;
+border: 0.2px solid #000000;
+font-family: inherit;
+font-size: 22px;
+font-weight: bold;
+color: #EDD376;
+}
+}
+/* Estilos Desktop */
+@media only screen and (max-width: 1440px) and (min-width: 501px)  {
+.contenedorRegistro{
+display: inline-block;
+max-width: 1440px;
+flex-wrap: wrap;
+/* justify-content: center; */
+text-align: center;
+margin: 20px;
+}
+.logoRegistro{
+width: 496px;
+/* height: 150px; */
+}
+.leftDesktop{
+float: left;
+background:blue
+/* width: 50%; */
+}
+.rigthDesktop{
+float: right;
+background:rgb(255, 0, 0)
+/* width: 50%; */
+}
+.encabezado h3{
+font-family: inherit;
+font-size: 24px;
+color: #F7CB2D;
+text-shadow: 0.1em 0.1em 3px #000;
+margin: 10px;
+}
+.contenedorGmail{
+display: flex;
+font-family: inherit;
+font-size: 20px;
+justify-content: center;
+margin-top: 10px;
+}
+.contenedorGmail h4{
+color: #F1E5B9;
+text-shadow: 0.1em 0.1em 3px #000;
+}
+.contenedorGmail img{ 
+width: 50px;
+}
+.inputForm {
+width: 275px;
+height: 41px;
+border-radius: 5px;
+background: #F1E5B9;
+border: 0.2px solid #000000;
+margin: 5px;
+font-family: inherit;
+font-size: 18px;
+font-weight: bold;
+text-align: center;
+}
+.contenidoForm { 
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+} 
+/* pantalla de registro texto  */
+.contenidoForm p{
+font-weight:600;
+font-size: 15px;
+/* color: #BE291C;
+text-shadow: 0.1em 0.1em 3px #000; */
+/* color: #1C98BE;
+text-shadow: 0.1em 0.1em 3px #000; */
+color: #F88603;
+text-shadow: 0.1em 0.1em 1px #000;
+/* color: #FFFFFF;
+text-shadow: 0.1em 0.1em 3px #000; */
+}
+.contenidoForm label{
+font-weight:600;
+font-size: 15px;
+/* color: #BE291C;
+text-shadow: 0.1em 0.1em 3px #000; */
+/* color: #1C98BE;
+text-shadow: 0.1em 0.1em 3px #000; */
+color: #F88603;
+text-shadow: 0.1em 0.1em 1px #000;
+/* color: #FFFFFF;
+text-shadow: 0.1em 0.1em 3px #000; */
+}
+.contenidoForm a{
+font-weight:600;
+font-size: 15px;
+color: #FD5613;
+text-shadow: 0.1em 0.1em 1px #000;
+/* color: #1C98BE;
+text-shadow: 0.1em 0.1em 3px #000; */
+/* color: #F88603;
+text-shadow: 0.1em 0.1em 3px #000; */
+/* color: #FFFFFF;
+text-shadow: 0.1em 0.1em 3px #000; */
+}
+.contenidoForm button{
+margin-top: 10px;
+width: 200px;
+height: 51px;
+border-radius: 79px;
+background:#523412;
+border: 0.2px solid #000000;
+font-family: inherit;
+font-size: 22px;
+font-weight: bold;
+color: #EDD376;
+}
+}
