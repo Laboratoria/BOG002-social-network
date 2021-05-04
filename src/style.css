@@ -130,10 +130,11 @@ body {
     margin-top: 50px;
    }
    .contenedorIniciosesion a{
-    font-size: 18px;
-    font-family: inherit;
-    color:#143df3e7;
-    font-weight:bolder;
+  font-size: 18px;
+  font-family: inherit;
+  color:#143df3e7;
+  font-weight:bolder;
+
    }
    /*Estilos registro*/
    .classcontenedorRegistro{
@@ -141,6 +142,7 @@ body {
     justify-content: center;
     text-align: center;
     margin: 20px;
+    cursor: pointer;
     }
    .logoRegistro{
     width: 200px;
@@ -189,52 +191,46 @@ body {
    } 
    /* pantalla de registro texto  */
 .contenidoForm p{
-  font-weight:600;
-  font-size: 15px;
-  /* color: #BE291C;
-    text-shadow: 0.1em 0.1em 3px #000; */
-    /* color: #1C98BE;
-    text-shadow: 0.1em 0.1em 3px #000; */
-    color: #F88603;
-    text-shadow: 0.1em 0.1em 1px #000;
-    /* color: #FFFFFF;
-    text-shadow: 0.1em 0.1em 3px #000; */
+font: weight 900px;;
+font-size: 15px;
+font-family: inherit;
+color: black;
+text-shadow: 0.1em 0.1em 1px rgb(34, 0, 0);
+margin-top: 10px;
+text-align: center;
+}
+.contenidoForm .checkbox{
+  margin-top: 20px;
 }
 .contenidoForm label{
-  font-weight:600;
-  font-size: 15px;
-  /* color: #BE291C;
-    text-shadow: 0.1em 0.1em 3px #000; */
-    /* color: #1C98BE;
-    text-shadow: 0.1em 0.1em 3px #000; */
-    color: #F88603;
-    text-shadow: 0.1em 0.1em 1px #000;
-    /* color: #FFFFFF;
-    text-shadow: 0.1em 0.1em 3px #000; */
+font-weight:bold;
+font-size: 15px;
+color:#143df3e7;
+text-shadow: 0.1em 0.1em 1px rgb(249, 249, 250);
+margin-left: 1px;
+    
 }
 .contenidoForm a{
-  font-weight:600;
-  font-size: 15px;
-  color: #FD5613;
-    text-shadow: 0.1em 0.1em 1px #000;
-    /* color: #1C98BE;
-    text-shadow: 0.1em 0.1em 3px #000; */
-    /* color: #F88603;
-    text-shadow: 0.1em 0.1em 3px #000; */
-    /* color: #FFFFFF;
-    text-shadow: 0.1em 0.1em 3px #000; */
+ 
+font-size: 15px;
+text-shadow: 0.1em 0.1em 1px rgb(12, 2, 59);
+font-family: inherit;
+color:#143df3e7;
+font-weight:bolder;
+margin-top: 10px;
 }
 .contenidoForm button{
-  margin-top: 10px;
+  margin-top: 15px;
   width: 200px;
   height: 51px;
   border-radius: 79px;
   background:#523412;
   border: 0.2px solid #000000;
-   font-family: inherit;
+  font-family: inherit;
   font-size: 22px;
   font-weight: bold;
   color: #EDD376;
+  cursor: pointer;
 
 }
   
@@ -265,60 +261,86 @@ footer a{
 /* CSS Astrid */
 @media only screen and (max-width: 1440px) and (min-width: 501px){
 .contenedorIniciosesion {
-  display: inline-block;
-  flex-direction: column;
+position: relative;
+margin: 20px;
+width: 1440PX;
+height: 1024px;
+cursor: pointer;
 
-}
-.textoCervecero2 {
-  display: none;
 }
 .contenidoInputs{
-
-}
-.logoIniciosesion {
-width: 228px;
-height: 102px; 
-}
-.mensajeCervecero {
-    font-family: inherit;
-    font-size: 20px;
-    color: #f7cb2d;
-    text-align: right;
-    text-shadow: 0.1em 0.1em 3px #000;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-right: 15px;
-    margin-left: 100px;
-    float: left;
-   }
-.contenidoInputs {
 width: 337px;
 height: 522px;
-left: 118px;
 background: rgba(237, 211, 118, 0.47);
-border-radius: 79px; 
+border-radius: 50px;
+margin-top: 15px;
+margin-left: 120px;
 
 }
-.textoCervecero1{
+.textoCervecero1 {
+width: 380px;
+color: #f7cb2d;
+font-size: 35px;
+text-align: right;
+text-shadow: 0.1em 0.1em 3px #000;
+margin-top: 15px;
+margin-right: 55px;
+margin-left: 450px;
+}
+.textoCervecero2 {
+display: none;
+}
+.logoIniciosesion {
+width: 300px;
+height: 154px;
+margin-left: 20px;
+margin-top: 18px;
+}
+#formularioInicioSesion input {
+  width: 275px;
+  height: 41px;
+  border-radius: 5px;
+  background: #F1e5B9;
+  border: 0.2px solid #000000;
+  margin: 12px;
+  margin-left: 35px;
   font-family: inherit;
-  font-size: 30px;
-  color: #f7cb2d;
-  text-align: right;
-  text-shadow: 0.1em 0.1em 3px #000;
+  font-size: 18px;
   font-weight: bold;
-  margin-top: 20px;
-  margin-right: 15px;
-  margin-left: 100px;
-  float: left;
-}
-#formularioInicioSesion{
-
-width: 436px;
-height: 98px;
-
-
+  text-align: center;
+  cursor: pointer;
 }
 }
-
-
+#formularioInicioSesion #emailLogin{
+  margin-top: 45px;
+}
+#formularioInicioSesion button {
+  margin-top: 40px;
+  width: 160px;
+  height: 52px;
+  border-radius: 79px;
+  background:#523412;
+  border: 0.2px solid #000000;
+  margin: 12px;
+  margin-left: 95px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  color: #EDD376;
+  cursor: pointer;
+}
+.contenedorIniciosesion p{
+  font-size: 18px;
+  font-family: inherit;
+  color: black;
+  font-weight:bold;
+  margin-top: 50px;
+  text-align: center;
+ }
+ .contenedorIniciosesion a{
+  font-size: 18px;
+  font-family: inherit;
+  color:#143df3e7;
+  font-weight:bolder;
+ }
 /* fin css Astrid */

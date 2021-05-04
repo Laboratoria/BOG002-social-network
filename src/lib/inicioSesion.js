@@ -3,7 +3,7 @@ export const inicioSesion = () => {
   contenedorIniciosesion.className = 'contenedorIniciosesion';
 
   const contenidoEncabezadoinicio = `
-  <h3 class='textoCervecero1'> Para los verdaderos amantes de la cerveza </h3> 
+  
     <div class = "contenidoInputs">
         <img alt="logoIniciosesion" class="logoIniciosesion" id="logoIniciosesion"src = "Imagenes/LogoBeer.png"/>
         <div class ="mensajeCervecero">
@@ -17,6 +17,9 @@ export const inicioSesion = () => {
         <p class = "mensajeCuentainicio">¿No tienes cuenta?
         <a href = " "> Regístrate</a></p>
     </div>
+    <div class='textoCervecero1'>
+  <h3 > Para los verdaderos amantes de la cerveza </h3> 
+  </div>
     `;
   contenedorIniciosesion.innerHTML = contenidoEncabezadoinicio;
 
