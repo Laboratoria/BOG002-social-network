@@ -21,6 +21,7 @@ export function registroPage() {
             </div>
             <div class="containerRegistration">
                 <form id="signUp">
+                <input type="text" id="NameUser" placeholder="Nombre de usuario" class="input">
                 <input type="email" id="signUpEmail" placeholder="Correo electronico" class="input" required>
                 <P class="errorMessage" id="errorEmail"></p>
                 <input type="password" id="signUpPassword" placeholder="Contraseña" class="input" required>
