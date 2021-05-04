@@ -10,7 +10,7 @@ body{
     font-family: 'Dancing Script', cursive;
     color: white;
 }
-body h1{
+ h1{
     font-family: 'Dancing Script', cursive;
     color: white;
     font-size: 64px;
@@ -29,18 +29,13 @@ fieldset{
     display: flex;
     flex-direction: column;
     height: 90%;
+    width: 80%;
     align-items: center;
     position: relative;
     top: 4.5em; 
-    width: 80%;
     border: none;
 }
- fieldset{
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-}
-fieldset img{
+ fieldset img{
     width: 20px;
     position: relative;
     left: 120px;

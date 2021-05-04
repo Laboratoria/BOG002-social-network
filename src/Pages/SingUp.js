@@ -14,6 +14,8 @@ export function FormularioDeRegistro(){
 
     <input type="password" id="PasswordUser"class="input" placeholder ="password">
     <img src="" id="CampoVacioPassword" class="error">
+    <input type="checkbox" id="show">show password
+    
     
     <button type="submit" id="Register" class="btn" > REGISTER <a href="#Register"> </a> </button>
     </fieldset>
@@ -44,6 +46,7 @@ export function FormularioDeRegistro(){
       
       
          // validacion para nombre de usuario
+      
          if (Name == "" || Name.length <3 || !usuario.test(Name)) {
             document.getElementById("NameUser").style.border = "2px solid red";
             document.getElementById("CampoVacioName").src= "./imagenes/cancelar.png" 
@@ -53,7 +56,9 @@ export function FormularioDeRegistro(){
             document.getElementById("NameUser").style.border = "2px solid green";
             document.getElementById("CampoVacioName").src ="./imagenes/comprobado.png"
          }
+      
          // validacion para correo de usuario
+      
          if (Email.length == 0 || Email.length <3 ||!correo.test(Email)) {
             document.getElementById("EmailUser").style.border = "2px solid red";
             document.getElementById("CampoVacioEmail").src= "./imagenes/cancelar.png";
@@ -63,7 +68,9 @@ export function FormularioDeRegistro(){
             document.getElementById("EmailUser").style.border = "2px solid green";
             document.getElementById("CampoVacioEmail").src ="./imagenes/comprobado.png";
          }
+      
          // validacion para contraseña de usuario
+      
          if (Password =="" || Password.length <4 || !contraseña.test(Password)) {
             document.getElementById("PasswordUser").style.border = "2px solid red";
             document.getElementById("CampoVacioPassword").src= "./imagenes/cancelar.png";
@@ -74,24 +81,22 @@ export function FormularioDeRegistro(){
             document.getElementById("PasswordUser").style.border = "2px solid green";
             document.getElementById("CampoVacioPassword").src ="./imagenes/comprobado.png";
          }
-
-          
-      })
-       
-      });
-      
-   
-        
- }
- export function MostrarContraseña(){
-   const Password = document.getElementById("PasswordUser").value;
-   const VerUocultar = document.getElementsByTagName('img');
-    VerUocultar.addEventListener('click', () =>{
-      if(Password.type == 'password'){
+           //mostrar y ocultar contraseña
+         const ShowPassword = document.getElementById('show');
+         ShowPassword.addEventListener('click', () =>{
+         if(Password.type === 'password'){
          Password.type = 'text';
-      }else{
-         Password.type = 'password';
-      }
-   })
+         }
+         else {
+            Password.type = "password";
+          }
+         });
+          
+      });
    
+  })
+  
 }
+
+
+ 
