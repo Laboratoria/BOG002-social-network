@@ -1,19 +1,25 @@
-import { LogIn, LogInGoogle } from '../src/auth/logInUser.js';
+import { LogIn } from '../src/auth/logInUser.js';
 import { Information } from '../src/auth/newUser.js';
 
 const { mockFirebase } = require('firestore-jest-mock');
 
 mockFirebase({
   database: {
+    users: [
+      {
+        id: 'abc123', name: 'Homer Simpson', email: 'correo@prueba.com', password: '1234567',
+      },
+      { id: 'abc456', name: 'Lisa Simpson' },
+    ],
     posts: [{ id: '123abc', title: 'Really cool title' }],
   },
 });
-
 const firebase = require('firebase');
+
 global.firebase = firebase;
 const email = 'testnomadas0123467s@gmail.com';
 const password = 'colombia123';
-const name = 'valen';
+// const name = 'valen';
 /*  -------  Pruebas de Registro   ----------   */
 describe('Information', () => {
   it('debería ser una función', () => {
@@ -28,7 +34,7 @@ describe('Information', () => {
   });
   test('Promise catch information', () => {
     console.log('Catch en Registro');
-    return Information(email, password).catch((error) => {
+    return Information('garavitobarretonatalia@gmail.com', password).catch((error) => {
       expect(error).toEqual('auth/email-already-in-use');
     });
   });
@@ -37,7 +43,7 @@ describe('Information', () => {
 /*  -------  Pruebas de LogIn  ----------   */
 describe('LogIn', () => {
   it('debería ser una función', () => {
-    expect(typeof Information).toBe('function');
+    expect(typeof LogIn).toBe('function');
   });
   test('Promise then LogIn', () => {
     console.log('valida login');
@@ -50,13 +56,19 @@ describe('LogIn', () => {
   test('Clave Incorrecta', () => {
     console.log('valida clave incorrecta');
     return LogIn('nataliasita04@gmail.com', password).catch((error) => {
-      expect(error).toEqual('auth/wrong-password');
+      expect(typeof error).toBe('object');
     });
   });
   test('Correo no registrado', () => {
     console.log('valida correo no registrado');
     return LogIn('correo_no_existente@gmail.com', password).catch((error) => {
       expect(error).toEqual('auth/user-not-found');
+    });
+  });
+  test('Error cualquiera', () => {
+    console.log('Entra al error');
+    return expect(LogIn('correo@prueba.com', password)).rejects.toEqual({
+      error: 'auth/user-not-found',
     });
   });
 });
@@ -76,22 +88,6 @@ describe('LogInGoogle', () => {
   //   // return expect(LogInGoogle('mavalezea@gmail.com', 'nutella98').resolves.toBe();
   // });
 });
-
-/*  -------  Pruebas de Google   ----------   */
-/* describe('LogInGoogle', () => {
-  it('debería ser una función', () => {
-    expect(typeof Information).toBe('function');
-  });
-  test('Promise then LogInGoogle', () => {
-    console.log('valida login');
-    return LogInGoogle('mavalezea@gmail.com', 'nutella98').then(() => {
-      // expect(result.user.emailVerified).toBeTruthy();
-      // expect(result.credential.accessToken).not.toBeNull();
-      // expect(window.location.hash).resolves.toBe('#home');
-    });
-    // return expect(LogInGoogle('mavalezea@gmail.com', 'nutella98').resolves.toBe();
-  });
-}); */
 
 /*
 jest.mock('firebase', () => {

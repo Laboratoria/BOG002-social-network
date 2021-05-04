@@ -6,6 +6,7 @@ import { userRegistration } from './Register.js';
 import { visibility } from '../components/visibilityPassword.js';
 import { userLogIn } from './LogIn.js';
 import { LogInGoogle } from '../auth/logInUser.js';
+import { RetrieveData } from '../controls/prueba.js'
 import '../components/menu-mobile.js';
 import '../components/menu-desktop.js';
 import '../components/post-card.js';
@@ -29,32 +30,32 @@ export function renderLogin($containerGeneral) {
 
 export function renderRegister($containerGeneral) {
   gridAndCard($containerGeneral).innerHTML += renderFormRegister();
-  document.querySelector('.formRegister').addEventListener('submit', userRegistration); 
+  document.querySelector('.formRegister').addEventListener('submit', userRegistration);
   visibility();
 }
 
-export function renderHome($containerGeneral) {
-  const mql = window.matchMedia('(max-width: 768px)'); 
-  const desktop = document.createElement("desktop-menu");
-  const mobile = document.createElement("mobile-menu");
-  const postCard = document.createElement("post-card");
-  function pantalla(mobileView, value){
+export function renderHome($containerGeneral, db) {
+  const mql = window.matchMedia('(max-width: 768px)');
+  const desktop = document.createElement('desktop-menu');
+  const mobile = document.createElement('mobile-menu');
+  const postCard = document.createElement('post-card');
+  function pantalla(mobileView, value) {
     if (mobileView) {
-      if(value){ $containerGeneral.removeChild(desktop); }
-      console.log("pantalla pequeña");
+      if (value) $containerGeneral.removeChild(desktop);
+      // console.log("pantalla pequeña");
       $containerGeneral.appendChild(mobile);
       $containerGeneral.appendChild(postCard);
     } else {
-      if(value){ $containerGeneral.removeChild(mobile); }
-      console.log("pantalla grande");      
+      if (value) $containerGeneral.removeChild(mobile);
       $containerGeneral.appendChild(desktop);
       $containerGeneral.appendChild(postCard);
     }
   }
-  mql.addEventListener('change', (e) => { 
+  mql.addEventListener('change', (e) => {
     const mobileView = e.matches;
     pantalla(mobileView, true);
-  });  
+  });
   const mobileView = mql.matches;
   pantalla(mobileView, false);
+  RetrieveData(db);
 }

@@ -99,12 +99,12 @@ template.innerHTML = `
     </footer>
 `;
 
-class MobileMenu extends HTMLElement{
-    constructor(){
-        super();
-        this.attachShadow({mode: 'open'});
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
-    }
+class MobileMenu extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+  }
 }
 
 window.customElements.define('mobile-menu', MobileMenu);

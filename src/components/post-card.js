@@ -170,13 +170,12 @@ template.innerHTML = `
     </section>
 `;
 
-class PostCard extends HTMLElement{
-    constructor(){
-        super();
-        this.attachShadow({mode: 'open'});
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
-    }
+class PostCard extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+  }
 }
 
 window.customElements.define('post-card', PostCard);
-
