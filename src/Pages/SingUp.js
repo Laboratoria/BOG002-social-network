@@ -14,7 +14,7 @@ export function FormularioDeRegistro(){
 
     <input type="password" id="PasswordUser"class="input" placeholder ="password">
     <img src="" id="CampoVacioPassword" class="error">
-    <input type="checkbox" id="show">show password
+    <button type="button" id="show"> ver contraseña</button>
     
     
     <button type="submit" id="Register" class="btn" > REGISTER <a href="#Register"> </a> </button>
@@ -24,6 +24,9 @@ export function FormularioDeRegistro(){
     return html;
     
 }
+
+
+  
 
  export function ObtenerDatosDelRegistro() {
    const inputs   = document.querySelectorAll(".input");
@@ -81,16 +84,21 @@ export function FormularioDeRegistro(){
             document.getElementById("PasswordUser").style.border = "2px solid green";
             document.getElementById("CampoVacioPassword").src ="./imagenes/comprobado.png";
          }
-           //mostrar y ocultar contraseña
-         const ShowPassword = document.getElementById('show');
-         ShowPassword.addEventListener('click', () =>{
-         if(Password.type === 'password'){
-         Password.type = 'text';
-         }
-         else {
-            Password.type = "password";
-          }
-         });
+
+
+          
+ //mostrar y ocultar contraseña
+ 
+   const contrasena = document.getElementById("PasswordUser");
+   const mostrarPassword = document.getElementById("show");
+      mostrarPassword.addEventListener("mousedown", () =>{
+      // Eliminamos su type del input
+      contrasena.removeAttribute("type");
+});
+      mostrarPassword.addEventListener("mouseup", ( ) => {
+      // Agregamos type de input
+      contrasena.setAttribute("type", "password");
+});
           
       });
    
