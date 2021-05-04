@@ -177,3 +177,22 @@ span{
     }
  
     }
+
+/* Estilos Desktop */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main .fondo{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+}
+ h1{
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    font-size: 64px;
+    position: relative;
+    top:1em;
+}
