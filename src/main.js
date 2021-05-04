@@ -1,6 +1,6 @@
 
 
-import { router} from './lib/enrutador.js';
+import { router} from './router/enrutador.js';
 
 
 export const init = () => {

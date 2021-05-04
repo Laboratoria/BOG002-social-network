@@ -9,7 +9,7 @@ export const formularioRegistro = () => {
 
   connectedCallback() {
       // eslint-disable-next-line quotes
-      this.innerHTML =  `<form >
+      this.innerHTML =  `<form  id=formularioRegistro>
       <div class="superior">
        <div class="tituloRegistro"> <h1>Registro</h1></div>
        
@@ -43,8 +43,10 @@ export const formularioRegistro = () => {
          </div>
         
  
-        <div class="botonRegistro">
-          <button type="submit" class="registerbtn">Registrate</button></div>
+         <div class="botonRegistro">
+        
+         <a href="#/principal" class="registerbtn">  <button type="submit" >Registrate</button></a>
+         </div>
     </div>
     
     </form>`;
@@ -60,3 +62,37 @@ if (window.customElements.get("formulario-registro")===undefined){
 
 };
 
+export const formularioInicio = () => {
+  class formInicio extends HTMLElement {
+  constructor() {
+      super();
+  }
+
+  connectedCallback() {
+      // eslint-disable-next-line quotes
+      this.innerHTML = `<form action="" method="POST" id="formularioInicio">
+      <div class="formulario">
+        <h1>Iniciar Sesión</h1>
+        <div class="grupo">
+          <input type="email" name="" id="usser" required> <span class="barra"></span>
+          <label for="">Usuario</label>
+        </div>
+        <div class="grupo">
+          <input type="password" name="" id="password" required> <span class="barra"></span>
+          <label for="">Contraseña</label>
+        </div>
+        
+        <button id="botonAcceder"><a href="#/principal">Iniciar Sesión</a></button>
+      </div>
+      
+  
+    </form>`;
+  }
+}
+
+if (window.customElements.get('formulario-inicio') === undefined) {
+  window.customElements.define('formulario-inicio', formInicio);
+} else {
+  window.customElements.get('formulario-incio');
+}
+};

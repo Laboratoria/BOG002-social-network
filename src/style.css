@@ -35,7 +35,7 @@ body{
         cursor: pointer;
         color: white;
         font-weight: bold;
-
+        
     }
     #opcionesInicio button{
         background-color: transparent;
@@ -63,8 +63,7 @@ body{
         margin-top: 70px;
 
     }
-}
-* {box-sizing: border-box}
+    * {box-sizing: border-box}
 
 
 /* AQUI COMIENZA LA SECCION DE REGISTRO*/
@@ -157,16 +156,33 @@ body{
   }
 
   .registerbtn{
-    
-    background-color: white;
+    display: flex;
+    background-color:white;
      color: rgb(138, 22, 22);
       height: 110%;
-      width: 35%;
+      width: 30%;
      border-radius: 5em;
-     border-color: transparent;
-     font-family: 'Cormorant Garamond', serif;
-     font-weight: bold;
-     font-size: 1.5em;
+     
+     border: none;
+     justify-content: center;
+     text-decoration: none;
+
+   }
+   
+   .registerbtn button{
+     background-color: transparent;
+        border: none;
+       
+        
+        border-radius: 22px;
+   
+        text-align: center;
+        font-family: 'Cormorant Garamond', serif;
+        font-size:x-large;
+        cursor: pointer;
+        color: rgb(138, 22, 22);
+        font-weight: bold;
+
    }
    .inferior{
     display: grid;
@@ -178,3 +194,118 @@ body{
     font-size: 1.2em;
   }
   /* AQUI TERMINA LA SECCION DE REGISTRO*/
+
+
+  /*AQUI COMIENZA INICIO*/
+
+  #inicio{
+    display: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: bold;
+    row-gap:5em;
+    background-color: rgba(161, 5, 0, 0.79);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0%;
+    }
+    .formulario h1{
+      text-align: center;
+      font-size: x-large;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: bold;
+  
+    }
+    .grupo{
+      position: relative;
+      margin: 45px;
+    }
+   .grupo input{
+     background: none;
+     font-size: 18px;
+     padding: 10px 10px 10px 5px;
+     display: block;
+     width: 90%;
+     border: none;
+     border-bottom: 2px solid white;
+  
+    }
+    .grupo input:focus{
+      outline: none;
+      color:rgba(0, 0, 0, 0.90);
+  
+    }
+    .grupo label{
+      color: black;
+      font-size: 20px;
+      position: absolute;
+      bottom: 0;
+      left: 5px;
+      top:10px;
+      transition: 0.5s ease all;
+      pointer-events: none;
+    }
+    .grupo input:focus~label,
+     input:valid~label{
+      top: -14px;
+      font-size: 15px;
+    }
+  .barra{
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  .formulario button{
+    font-family: 'Cormorant Garamond', serif; 
+    background: white; 
+    border: none;
+    border-radius: 5em;
+    display: block;
+    width: 80%;
+    font-size:1.5em;
+    font-weight: bold;
+    margin: 10px auto;
+    color: A10500;
+    height: 40px;
+    color: #A10500;
+  
+  
+  }
+
+  /*AQUI TERMINA INICIO*/
+
+  /*AQUI COMIENZA TEMPLATE DE BASE PARA MOVIL*/
+  
+.container-barra{
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  background-color: #ffff;
+  }
+  .logo {
+    grid-column: 1/2;
+  
+  }
+  .button-barra img {
+    display: flex;
+    flex-direction: row;
+    width:33%;
+    flex: 33%;
+    padding: 6px 33%;
+  
+  }
+  
+  .container-menu {
+  display: flex;
+  background-color: #A32222;
+  width: 100vw;
+  bottom: 0;
+  position:fixed;
+  }
+  
+  .button-menu img {
+    width:33%;
+    flex: 33%;
+    padding: 6px 33%;
+  }
+  /*AQUI TERMINA TEMPLATE*/
+}
