@@ -9,14 +9,3 @@ export const Information = (email, password) => new Promise((resolve, reject) =>
       reject(errorCode);
     });
 });
-
-export const assignName = (username) => {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      user.updateProfile({
-        displayName: username,
-      });
-    }
-    // console.log(user);
-  });
-};

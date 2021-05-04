@@ -6,6 +6,7 @@ export const LogIn = (email, password) => new Promise((resolve, reject) => {
       resolve(user);
     })
     .catch((error) => {
+      console.log(error);
       const errorCode = error.code;
       reject(errorCode);
     });

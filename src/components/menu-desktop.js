@@ -40,30 +40,31 @@ template.innerHTML = `
     background-repeat: no-repeat;
     background-size: 32% 100%;
     background-position: right;
-    z-index:90;
+    justify-content: center;
+    }
 }
 </style>
-<section class="body_container"></section>
+<section class="body_container">
 <nav class="desk_nav">
 <img class="logo_desk" src="assets/imagesIcon/Complete_logo.png">
-<li><a href="#home_btn"><img class="logo_Nav" id="home_btn" src="assets/imagesIcon/HomeWhiteV.png">Home</a></li>
+<li><a href="#home"><img class="logo_Nav" id="home_btn" src="assets/imagesIcon/HomeWhiteV.png">Home</a></li>
 <li><a href=""><img class="logo_Nav" id="post_btn" src="assets/imagesIcon/EditWhiteV.png">Publicar</a></li>
 <li><a href=""><img class="logo_Nav" id="profile_btn" src="assets/imagesIcon/UserWhiteV.png">Mi perfil</a></li>
 <li><a href=""><img class="logo_Nav" id="exit_btn" src="assets/imagesIcon/CloseWhiteV.png">Cerrar sesión</a></li>
 </nav>
+</section>
 `;
 
-class DesktopMenu extends HTMLElement{
-    constructor(){
-        super();
-        this.attachShadow({mode: 'open'});
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
-    }
+class DesktopMenu extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+  }
 
-    connectedCallback(){
-      // this.shadowRoot.getElementbyId("home_btn").addEventListener("click",  )
-    }
-
+  // connectedCallback(){
+  //     this.shadowRoot.getElementbyId("home_btn").addEventListener("click",  )
+  // }
 }
 
 window.customElements.define('desktop-menu', DesktopMenu);

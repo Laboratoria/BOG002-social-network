@@ -97,18 +97,18 @@ template.innerHTML = `
     <section class="body_container">
     </section>
     <footer class="mobile_nav">
-    <li class="list"><a href=""><img class="logo_mobileNav" src="assets/imagesIcon/HomeWhiteV.png"></a></li>
+    <li class="list"><a href="#home"><img class="logo_mobileNav" src="assets/imagesIcon/HomeWhiteV.png"></a></li>
     <li class="list"><a href=""><img class="logo_mobileNav" src="assets/imagesIcon/EditWhiteV.png"></a></li>
     <li class="list"><a href=""><img class="logo_mobileNav" src="assets/imagesIcon/UserWhiteV.png"></a></li>
     </footer>
 `;
 
-class MobileMenu extends HTMLElement{
-    constructor(){
-        super();
-        this.attachShadow({mode: 'open'});
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
-    }
+class MobileMenu extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+  }
 }
 
 window.customElements.define('mobile-menu', MobileMenu);

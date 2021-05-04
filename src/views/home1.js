@@ -1,5 +1,5 @@
 export function home() {
-    const container = `
+  const container = `
       <div class="prueba">
       <header class="header_home">
       <img class="logo_mobile" src="assets/imagesIcon/Only_logo.png">
@@ -20,6 +20,5 @@ export function home() {
     </nav>
     </div>
       `;
-    return container;
-  }
-  
+  return container;
+}

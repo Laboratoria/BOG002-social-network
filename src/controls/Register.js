@@ -1,4 +1,14 @@
-import { Information, assignName } from '../auth/newUser.js';
+import { Information } from '../auth/newUser.js';
+
+const assignName = (username) => {
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      user.updateProfile({
+        displayName: username,
+      });
+    }
+  });
+};
 
 export function userRegistration(event) {
   event.preventDefault();
@@ -7,17 +17,15 @@ export function userRegistration(event) {
   const password = document.querySelector('.inputPassword').value;
   Information(email, password)
     .then((user) => {
-      // console.log(user.displayName);
       const usuario = document.createElement('div');
       usuario.innerHTML = user;
-      usuario.className = 'divGhost';
       assignName(username);
-      const cardContainer = document.querySelector('.cardContainer');
+      usuario.className = 'divGhost';
       const confirmationRegistro = document.getElementById('formRegister');
       const title = document.querySelector('.titleForm');
       confirmationRegistro.style.display = 'none';
       title.style.display = 'none';
-      document.querySelector('.cardContainer').innerHTML ='';
+      document.querySelector('.cardContainer').innerHTML = '';
       const messageExito = document.createElement('div');
       messageExito.textContent = 'Tu registro se ha realizado con exito!!!!';
       messageExito.className = 'messageExitoso';
@@ -27,8 +35,11 @@ export function userRegistration(event) {
       SignupRegister.innerText = 'Iniciar sesion';
       SignupRegister.className = 'buttonInicioSesion';
       messageExito.appendChild(SignupRegister);
-      document.querySelector('.buttonInicioSesion').addEventListener('click', function () {
-      window.location.hash = '#home'});
+      document
+        .querySelector('.buttonInicioSesion')
+        .addEventListener('click', () => {
+          window.location.hash = '#home';
+        });
     })
     .catch((error) => {
       // console.log(error);
