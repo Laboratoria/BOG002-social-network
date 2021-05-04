@@ -81,6 +81,22 @@
        #btnIniciarSesion{
          margin-top: 50px;
        }
+       .botonesInicio:hover,
+       .botonesInicio:focus {
+       box-shadow: 0 0.9em 0.9em -0.7em #221910;
+       -webkit-transform: translateY(-0.25em);
+       transform: translateY(-0.25em);
+      }
+      .botonesInicio {
+      --hover: #8A5C28;
+      -webkit-transition: 0.25s;
+      transition: 0.25s;
+      }
+     .botonesInicio:hover, button:focus {
+      border-color: var(--hover);
+      color: #fff;
+      background-color: #F7CB2D;
+      }
      }
      /*Pantalla de Inicio de Android*/
      @media (max-width:500px){
