@@ -43,8 +43,10 @@ export const formularioRegistro = () => {
          </div>
         
  
-        <div class="botonRegistro">
-          <button type="submit" class="registerbtn">Registrate</button></div>
+         <div class="botonRegistro">
+        
+         <a href="#/principal" class="registerbtn">  <button type="submit" >Registrate</button></a>
+         </div>
     </div>
     
     </form>`;
@@ -79,7 +81,8 @@ export const formularioInicio = () => {
           <input type="password" name="" id="password" required> <span class="barra"></span>
           <label for="">Contraseña</label>
         </div>
-        <button id="botonAcceder">Iniciar Sesión</button>
+        
+        <button id="botonAcceder"><a href="#/principal">Iniciar Sesión</a></button>
       </div>
       
   

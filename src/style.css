@@ -63,8 +63,7 @@ body{
         margin-top: 70px;
 
     }
-}
-* {box-sizing: border-box}
+    * {box-sizing: border-box}
 
 
 /* AQUI COMIENZA LA SECCION DE REGISTRO*/
@@ -157,16 +156,33 @@ body{
   }
 
   .registerbtn{
-    
-    background-color: white;
+    display: flex;
+    background-color:white;
      color: rgb(138, 22, 22);
       height: 110%;
-      width: 35%;
+      width: 30%;
      border-radius: 5em;
-     border-color: transparent;
-     font-family: 'Cormorant Garamond', serif;
-     font-weight: bold;
-     font-size: 1.5em;
+     
+     border: none;
+     justify-content: center;
+     text-decoration: none;
+
+   }
+   
+   .registerbtn button{
+     background-color: transparent;
+        border: none;
+       
+        
+        border-radius: 22px;
+   
+        text-align: center;
+        font-family: 'Cormorant Garamond', serif;
+        font-size:x-large;
+        cursor: pointer;
+        color: rgb(138, 22, 22);
+        font-weight: bold;
+
    }
    .inferior{
     display: grid;
@@ -257,3 +273,39 @@ body{
   }
 
   /*AQUI TERMINA INICIO*/
+
+  /*AQUI COMIENZA TEMPLATE DE BASE PARA MOVIL*/
+  
+.container-barra{
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+  background-color: #ffff;
+  }
+  .logo {
+    grid-column: 1/2;
+  
+  }
+  .button-barra img {
+    display: flex;
+    flex-direction: row;
+    width:33%;
+    flex: 33%;
+    padding: 6px 33%;
+  
+  }
+  
+  .container-menu {
+  display: flex;
+  background-color: #A32222;
+  width: 100vw;
+  bottom: 0;
+  position:fixed;
+  }
+  
+  .button-menu img {
+    width:33%;
+    flex: 33%;
+    padding: 6px 33%;
+  }
+  /*AQUI TERMINA TEMPLATE*/
+}
