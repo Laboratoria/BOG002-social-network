@@ -1,0 +1,45 @@
+.buttonClose {
+    background-color: #350B1F;
+    color: #c997c0;
+    font-size: 16px;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px 8px 4px 8px;
+    margin-left: 90%;
+    margin-top: 1%;
+    border-radius: 14px;
+    border:none;
+    }   
+ 
+#imgWikiMoms {
+    margin: 7% 0% 3% 0%;
+    }   
+ 
+.containerLogInGoogle{
+    padding: 0% 0% 6% 0%;
+    border-radius: 8px;
+    margin: 0% 7% 0% 7%;
+    text-align: center;
+    width: 86%;
+    } 
+
+#imgLineas {
+    margin: 3% 0% 0% 0%
+}
+
+#NameUser {
+    margin: 5%;
+}
+ 
+.containerRegistration{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#ECD4EA ;
+    padding: 3% 0% 4% 0%;
+    border-radius: 8px;
+    margin: 0% 7% 0% 7%;
+    width: 86%;
+    } 
