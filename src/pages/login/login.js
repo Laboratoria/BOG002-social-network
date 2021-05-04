@@ -1,8 +1,7 @@
 import { Login } from '../../index.js';
 
 export function loginPage() {
-
-    const view = `
+  const view = `
         <section id="screenLogIn">
             <header>
                 <img src="assets/LogowikimomsMobile.png">
@@ -27,58 +26,56 @@ export function loginPage() {
                 </div>
             </main>
         </section>    
-    `
-    const divElement = document.createElement('div');
-    divElement.innerHTML = view;
+    `;
+  const divElement = document.createElement('div');
+  divElement.innerHTML = view;
 
-    return divElement;
+  return divElement;
 }
 
-
 export function logIn() {
-    const btnSignIn = document.getElementById("btnLogIn");
-    btnSignIn.addEventListener('click', () => {
-        let email = document.getElementById('signInEmail').value
-        let password = document.getElementById('signInpassword').value
-        const errorEmail = document.getElementById("errorEmail");
-        const errorPassword = document.getElementById("errorPassword");
-        
-        document.querySelectorAll(".errorMessage").forEach(function(errorMessage) {
-            setTimeout(function(){ errorMessage.innerHTML=""}, 3000);
-        });
+  const btnSignIn = document.getElementById('btnLogIn');
+  btnSignIn.addEventListener('click', () => {
+    const email = document.getElementById('signInEmail').value;
+    const password = document.getElementById('signInpassword').value;
+    const errorEmail = document.getElementById('errorEmail');
+    const errorPassword = document.getElementById('errorPassword');
 
+    document.querySelectorAll('.errorMessage').forEach((errorMessage) => {
+      const e = errorMessage;
+      setTimeout(() => { e.innerHTML = ''; }, 3000);
+      return true;
+    });
 
-        if (email.length == 0 ) {
-            errorEmail.innerHTML=`Ingrese un correo válido`
-            return false;
+    if (email.length === 0) {
+      errorEmail.innerHTML = 'Ingrese un correo válido';
+      return false;
+    }
+    if (password.length === 0) {
+      errorPassword.innerHTML = 'Ingrese la contraseña';
+      return false;
+    }
+
+    Login(email, password)
+      .then(() => {
+        window.location = '#/timeline';
+      })
+      .catch((err) => {
+        if (err.code === 'auth/user-not-found') {
+          errorEmail.innerHTML = 'El correo electronico no posee una cuenta válida';
+          return false;
         }
-        if (password.length == 0) {
-            errorPassword.innerHTML=`Ingrese la contraseña`
-            return false
+        if (err.code === 'auth/wrong-password') {
+          errorPassword.innerHTML = 'La contraseña no es válida';
+          return false;
         }
-    
-        Login(email, password)
-            .then(() => {
-            window.location='#/timeline'
-            })
-            .catch((err) => {
-                console.log(err);
-
-                if (err.code=="auth/user-not-found"){
-                errorEmail.innerHTML=`El correo electronico no posee una cuenta válida`
-                return false;
-                }
-                if (err.code=="auth/wrong-password") {
-                errorPassword.innerHTML=`La contraseña no es válida`
-                return false
-                }
-                if (err.code=="auth/too-many-requests") {
-                    errorPassword.innerHTML=`El acceso a esta cuenta se ha desactivado temporalmente debido a muchos intentos fallidos de inicio de sesión. `
-                    return false
-                }
-                errorPassword.innerHTML=err.message
-            })
-
-            
-    })
+        if (err.code === 'auth/too-many-requests') {
+          errorPassword.innerHTML = 'El acceso a esta cuenta se ha desactivado temporalmente debido a muchos intentos fallidos de inicio de sesión.';
+          return false;
+        }
+        errorPassword.innerHTML = err.message;
+        return true;
+      });
+    return true;
+  });
 }

@@ -1,11 +1,7 @@
-//import view from './signUp';
 import { register, registerGoogle } from '../../index.js';
 
-// const registroPage = () => {
-
 export function registroPage() {
-
-    const view = `
+  const view = `
     <section id="screenRegistration">
         <header>
             <button class="buttonClose" id="btnCloseRegistration" onclick= "window.location='#/'" >X</button>
@@ -25,64 +21,80 @@ export function registroPage() {
                 <P class="errorMessage" id="errorEmail"></p>
                 <input type="password" id="signUpPassword" placeholder="Contraseña" class="input" required>
                 <P class="errorMessage" id="errorPassword"></p>
-                <button  class="button" id="Register">Registrarte</button>
+                <button  type="button" class="button" id="Register">Registrarte</button>
                 </form>
             </div>
         </main>
      </section>   
-    `
-    const divElement = document.createElement('div');
-    divElement.innerHTML = view;
+    `;
+  const divElement = document.createElement('div');
+  divElement.innerHTML = view;
 
-
-    return divElement;
+  return divElement;
 }
 
 export function signUp() {
-    const button = document.getElementById("Register")
-    const signUpForm = document.getElementById("signUp");
+  const button = document.getElementById('Register');
+  const signUpForm = document.getElementById('signUp');
 
-    button.addEventListener("click", function () {
-        const email = document.getElementById("signUpEmail").value;
-        const pass = document.getElementById("signUpPassword").value;
-        const errorEmail = document.getElementById("errorEmail");
-        const errorPassword = document.getElementById("errorPassword");
-        console.log(email, pass);
+  button.addEventListener('click', () => {
+    const email = document.getElementById('signUpEmail').value;
+    const pass = document.getElementById('signUpPassword').value;
+    const errorEmail = document.getElementById('errorEmail');
+    const errorPassword = document.getElementById('errorPassword');
 
-        document.querySelectorAll(".errorMessage").forEach(function (errorMessage) {
-            setTimeout(function () { errorMessage.innerHTML = "" }, 3000);
-        });
-
-        if (email.length > 0 && pass.length > 0) {
-            register(email, pass)
-                .then(userCredential => {
-                    console.log('Creaste una nueva cuenta', userCredential)
-                    signUpForm.reset();
-                    window.location = '#/timeline'
-                })
-                .catch((e) => {
-                    console.log("ingrese correo y pass word ocurrio un error", e.code)
-                })
-
-        }
-        else {
-
-            console.log("error");
-        }
-    })
-
-}
-export function signUpGoogle() {
-    const buttonGoogle = document.getElementById('btnGoogle');
-    buttonGoogle.addEventListener('click', function () {
-        const googleAccount = new firebase.auth.GoogleAuthProvider
-        registerGoogle(googleAccount)
-            .then(result => {
-                window.location = '#/timeline'
-            })
-            .catch(err => {
-                console.log(err)
-            })
-
+    document.querySelectorAll('.errorMessage').forEach((errorMessage) => {
+      const e = errorMessage;
+      setTimeout(() => { e.innerHTML = ''; }, 3000);
+      return true;
     });
+
+    if (email.length === 0) {
+      errorEmail.innerHTML = 'Ingrese un correo válido';
+      return false;
+    }
+    if (pass.length === 0) {
+      errorPassword.innerHTML = 'Ingrese la contraseña';
+      return false;
+    }
+
+    register(email, pass)
+      .then((userCredential) => {
+        console.log('Creaste una nueva cuenta', userCredential);
+        signUpForm.reset();
+        window.location = '#/timeline';
+      })
+      .catch((e) => {
+        if (e.code === 'auth/email-already-in-use') {
+          errorEmail.innerHTML = 'El correo electronico ingresado ya esta registrado';
+          return false;
+        }
+        if (e.code === 'auth/invalid-email') {
+          errorEmail.innerHTML = 'Ingrese un correo con el formato usuario@xyz.com';
+          return false;
+        }
+        errorPassword.innerHTML = e.message;
+        return true;
+      });
+    return true;
+  });
+  return true;
+}
+
+export function signUpGoogle() {
+  const buttonGoogle = document.getElementById('btnGoogle');
+  buttonGoogle.addEventListener('click', () => {
+    const errorPassword = document.getElementById('errorPassword');
+    const googleAccount = new firebase.auth.GoogleAuthProvider();
+    registerGoogle(googleAccount)
+      .then((result) => {
+        console.log('soy resultado', result);
+        window.location = '#/timeline';
+      })
+      .catch((err) => {
+        errorPassword.innerHTML = err.message;
+        return true;
+      });
+    return true;
+  });
 }

@@ -1,9 +1,10 @@
 import { signOut, collectionPost } from '../../index.js';
 
+const fireStore = firebase.firestore();
+const auth = firebase.auth();
 
 export function timelinePage() {
-
-    const view = `
+  const view = `
         <section id="screenWall">
             <header>
                 <div class="headerWall">
@@ -27,76 +28,72 @@ export function timelinePage() {
                 
             </main>
         </section>       
-    `
-    const divElement = document.createElement('div');
-    divElement.innerHTML = view;
+    `;
+  const divElement = document.createElement('div');
+  divElement.innerHTML = view;
 
-    return divElement;
+  return divElement;
 }
-
 
 export function signOutGoogle() {
-    const buttonSignOut = document.getElementById('btnLogOut');
-    buttonSignOut.addEventListener('click', function () {
-        signOut()
-            .then(() => {
-                console.log('cerraste sesión')
-                window.location = '#/'
-            })
-            .catch(err => {
-                console.log(err)
-            })
-
-    });
+  const buttonSignOut = document.getElementById('btnLogOut');
+  buttonSignOut.addEventListener('click', () => {
+    signOut()
+      .then(() => {
+        console.log('cerraste sesión');
+        window.location = '#/';
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+  return true;
 }
+
 export function postsTimeline() {
-    const postlist = document.getElementById('listPost');
-    const setPost = data => {
-        if (data.length) {
-            let html = '';
-            data.forEach(doc => {
-                const post = doc.data();
-                const li = `
-            <li>                  
+  const postlist = document.getElementById('listPost');
+  const setPost = (data) => {
+    if (data.length) {
+      let html = '';
+      data.forEach((doc) => {
+        const post = doc.data();
+        const li = `
+          <li>                  
             <p>${post.Contents}</p>
-            </li>
-            `;
-                html += li;
-
-            });
-            postlist.innerHTML = html;
-        } else {
-            postlist.innerHTML = '<p>No hay publicaciones</p>'
-        }
+          </li>
+        `;
+        html += li;
+      });
+      postlist.innerHTML = html;
+    } else {
+      postlist.innerHTML = '<p>No hay publicaciones</p>';
     }
+  };
 
-    // Eventos 
-    auth.onAuthStateChanged(user => {
-        if (user) {
-            fireStore.collection('posts')
-                .get()
-                .then((snapshot) => {
-                    setPost(snapshot.docs)
-                })
-        } else {
-            console.log('cerraste sesion')
-        }
-    })
+  // Eventos
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      fireStore.collection('posts')
+        .get()
+        .then((snapshot) => {
+          setPost(snapshot.docs);
+        });
+    } else {
+      console.log('cerraste sesion');
+    }
+  });
 }
 
 export function newCollectionPost() {
-    const btnPosts = document.getElementById('btnPost')
-    btnPosts.addEventListener('click', () => {
-        const newPost = document.getElementById('inputPost').value
-         collectionPost(newPost)
-        .then((docRef) => {
-                  console.log("Document written with ID: ", docRef.id);
-                })
-                .catch((error) => {
-                    console.error("Error adding document: ", error);
-                });
-
-    });
+  const btnPosts = document.getElementById('btnPost');
+  btnPosts.addEventListener('click', () => {
+    const newPost = document.getElementById('inputPost').value;
+    collectionPost(newPost)
+      .then((docRef) => {
+        console.log('Document written with ID: ', docRef.id);
+      })
+      .catch((error) => {
+        console.error('Error adding document: ', error);
+      });
+  });
 }
-
-

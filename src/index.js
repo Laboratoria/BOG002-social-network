@@ -1,26 +1,30 @@
-
-//Function Register
+// Function Register
 export const register = (email, password) => {
-    return firebase.auth().createUserWithEmailAndPassword(email, password);
+  const auth = firebase.auth();
+  return auth.createUserWithEmailAndPassword(email, password);
 };
 
-//Función Login
+// Función Login
 export const Login = (email, password) => {
-    return firebase.auth().signInWithEmailAndPassword(email, password);
+  const auth = firebase.auth();
+  return auth.signInWithEmailAndPassword(email, password);
 };
 
-//Función Register Google
+// Función Register Google
 export const registerGoogle = (provider) => {
-    return firebase.auth().signInWithPopup(provider);
+  const auth = firebase.auth();
+  return auth.signInWithPopup(provider);
 };
 
-//Función Sing Out
+// Función Sing Out
 export const signOut = () => {
-    return firebase.auth().signOut();
-}
+  const auth = firebase.auth();
+  return auth.signOut();
+};
 
-//Funcion subir publicaciones 
+// Funcion subir publicaciones
 
 export const collectionPost = (input) => {
-    return fireStore.collection("posts").add({Contents:input}); 
-} 
+  const fireStore = firebase.firestore();
+  return fireStore.collection('posts').add({ Contents: input });
+};
