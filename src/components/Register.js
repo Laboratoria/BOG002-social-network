@@ -1,5 +1,5 @@
 import { reset } from "./Utils.js";
-//import { google_provider } from '../index.js';
+import { singUp, authGoogle, authFacebook } from '../Firebase/Services.js';
 
 export function Register() {
     reset();
@@ -50,81 +50,24 @@ export function Register() {
 }
 
 export function addUser() {
-    const auth = firebase.auth();
-    // const firestore = firebase.firestore(); --> TODO FIRESTORE
+
     const btnContinue = document.querySelector("#register");
-    const formRegister = document.querySelector("#formRegister");
     const btnFb = document.querySelector("#logoFb");
     const btnGoogle = document.querySelector("#logoGoogle");
     btnContinue.addEventListener("click", (e) => {
         e.preventDefault();
-
         const email = document.querySelector("#email").value;
         const password = document.querySelector("#password").value;
-        auth
-            .createUserWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-                formRegister.reset();
-                console.log("estas registrado");
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-
+        singUp(email, password);
     });
 
     btnGoogle.addEventListener("click", (e) => {
         e.preventDefault();
-        //formRegister.reset();
-        const google_provider = new firebase.auth.GoogleAuthProvider();
-        auth
-            .signInWithPopup(google_provider)
-            .then((result) => {
-                console.log('google register', result);
-                /*/** @type {firebase.auth.OAuthCredential} */
-                //let credential = result.credential;
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                //let token = credential.accessToken;
-                // The signed-in user info.
-                //let user = result.user;
-                // ...
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        authGoogle();
     });
 
     btnFb.addEventListener("click", (e) => {
         e.preventDefault();
-        //formRegister.reset();
-        const providerFb = new firebase.auth.FacebookAuthProvider();
-        firebase
-            .auth()
-            .signInWithPopup(providerFb)
-            .then((result) => {
-                console.log('Facebook register')
-                    /*/** @type {firebase.auth.OAuthCredential} */
-                    //let credential = result.credential;
-
-                // The signed-in user info.
-                //let user = result.user;
-
-                // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-                //let accessToken = credential.accessToken;
-
-                // ...
-            })
-            .catch((error) => {
-                console.log(error);
-                // Handle Errors here.
-                //let errorCode = error.code;
-                //let errorMessage = error.message;
-                // The email of the user's account used.
-                //let email = error.email;
-                // The firebase.auth.AuthCredential type that was used.
-                //let credential = error.credential;
-
-                // ...
-            });
+        authFacebook();
     });
 }
