@@ -3,6 +3,7 @@
 export function FormularioDeRegistro(){
      
    const html= `
+   <img src="./imagenes/Fondo.jpg" class="fondo">
     <form>
     <h1> Created account </h1>
       <fieldset>
@@ -91,11 +92,11 @@ export function FormularioDeRegistro(){
  
    const contrasena = document.getElementById("PasswordUser");
    const mostrarPassword = document.getElementById("PasswordUser");
-      mostrarPassword.addEventListener("mouseover", () =>{
+      mostrarPassword.addEventListener("keydown", () =>{
       // Eliminamos su type del input
       contrasena.removeAttribute("type");
 });
-      mostrarPassword.addEventListener("mouseout", ( ) => {
+      mostrarPassword.addEventListener("keyup", ( ) => {
       // Agregamos type de input
       contrasena.setAttribute("type", "password");
 });

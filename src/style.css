@@ -1,19 +1,20 @@
 @media  (max-width: 600px){
-body{
-    background-image:url(imagenes/Fondo.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Dancing Script', cursive;
-    color: white;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main .fondo{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
 }
  h1{
     font-family: 'Dancing Script', cursive;
     color: white;
     font-size: 64px;
+    position: relative;
+    top:1em;
 }
 form{
     font-family: 'Dancing Script', cursive;
@@ -24,6 +25,15 @@ form{
     position: relative;
     top: 4.5em;
 }
+#Form-login{
+    font-family: 'Dancing Script', cursive;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    align-items: center;
+    position: relative;
+    top: 14.5em;
+}
 fieldset{
     font-family: 'Dancing Script', cursive;
     display: flex;
@@ -32,7 +42,7 @@ fieldset{
     width: 80%;
     align-items: center;
     position: relative;
-    top: 4.5em; 
+    top: 8.5em; 
     border: none;
 }
  fieldset img{
@@ -60,7 +70,7 @@ fieldset{
 #Register{
     background-color: #8adb94;
     position: relative;
-    top: 1em;
+    top: 4.5em;
 }
 #Bienvenida h1{
     font-family: 'Dancing Script', cursive;
@@ -84,32 +94,15 @@ fieldset{
         height: 80%;
         align-items: center;
         position: relative;
-        top: 4.5em;
+        /* top: 14.5em; */
     }
-    .input{
-        color: black;
-        display: flex;
-        justify-content: center;
-        height: 2em;
-        width: 60%;
-        border-radius: 10px;
-        margin: 0.5em;
-        font-size: 15px;
-        font-family: 'Poly';
-        
-    }
-    #Register{
-        background-color: #8adb94;
-        position: relative;
-        top: 1em;
-}
 span{
         font-family: 'Poly', serif;
         color: white;
         font-weight: lighter;
         font-size: 18px;
         position: relative;
-        top: -2.5em;
+        top: 2.5em;
         left: 8em;
         }
  p{
@@ -120,6 +113,7 @@ span{
             margin: 0%;
             position: relative;
             left: 0.3em;
+            top:  3em;
     }
     
     .btn{
@@ -132,6 +126,9 @@ span{
         text-transform: uppercase;
         font-weight:normal;
         font-size: 1rem;
+        position: relative;
+        top: 10em;
+    
         
     }
     .btn a{
@@ -145,10 +142,12 @@ span{
     #login{
         background-color: #3d3d3d79;
         color: wheat;
+        position: relative;
+        top: 8em;
         
     }
     #signUpGoogle{
-        background-color: #e9ab59;
+        background-color: transparent;
         color: wheat;
         display: flex;
         justify-content: space-around;
@@ -162,7 +161,18 @@ span{
         justify-content: space-between;
         height: 150px;
         position: relative;
-        top: 12em;
+        top: 9em;
+        
+    }
+    section img{
+        background: white;
+        border-radius: 50%;
+        border: white solid 10px;
+    }
+    #loginPpal{
+        background-color: #3d3d3d79;
+        color: wheat;
+        
         
     }
  
