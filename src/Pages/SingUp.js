@@ -90,12 +90,12 @@ export function FormularioDeRegistro(){
  //mostrar y ocultar contraseña
  
    const contrasena = document.getElementById("PasswordUser");
-   const mostrarPassword = document.getElementById("show");
-      mostrarPassword.addEventListener("mousedown", () =>{
+   const mostrarPassword = document.getElementById("PasswordUser");
+      mostrarPassword.addEventListener("mouseover", () =>{
       // Eliminamos su type del input
       contrasena.removeAttribute("type");
 });
-      mostrarPassword.addEventListener("mouseup", ( ) => {
+      mostrarPassword.addEventListener("mouseout", ( ) => {
       // Agregamos type de input
       contrasena.setAttribute("type", "password");
 });
