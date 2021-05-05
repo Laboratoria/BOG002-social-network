@@ -34,7 +34,7 @@ export function timelinePage() {
 
   return divElement;
 }
-
+// Funcion cerrar sesión 
 export function signOutGoogle() {
   const buttonSignOut = document.getElementById('btnLogOut');
   buttonSignOut.addEventListener('click', () => {
@@ -49,6 +49,7 @@ export function signOutGoogle() {
   });
   return true;
 }
+// funcion publicaciones en pantalla
 
 export function postsTimeline() {
   const postlist = document.getElementById('listPost');
@@ -59,8 +60,10 @@ export function postsTimeline() {
         const post = doc.data();
         const li = `
           <li> 
-            <h3>${post.Title}</h3>          
+            <h3>${post.Title}</h3> 
+            <p>${(new Date(post.Date.seconds * 1000)).toLocaleDateString("es-CO")}</p>                
             <p>${post.Contents}</p>
+                        
           </li>
         `;
         html += li;
@@ -71,28 +74,37 @@ export function postsTimeline() {
     }
   };
 
-  // Eventos
+  // Eventos actualizar y publicar verificando si el usuario esta
+
   auth.onAuthStateChanged((user) => {
     if (user) {
       fireStore.collection('posts')
-        .get()
-        .then((snapshot) => {
-          setPost(snapshot.docs);
-        });
+        .orderBy('Date', 'desc')
+        .onSnapshot((snapshot) => {
+          snapshot.docChanges().forEach((change) => {
+            //if (change.type === 'added'){}
+            setPost(snapshot.docs)
+
+          })
+          //console.log(snapshot.docChanges())
+        })
     } else {
-      console.log('Inicia sesion para ver los posts');
+      postlist.innerHTML = '<h1>No hay publicaciones</h1>' + '<h3>Inicia sesión o registrarte para ver las publicaciones </h3>'
     }
   });
 }
 
+// funcion enviando datos al FireBase 
 export function newCollectionPost() {
   const btnPosts = document.getElementById('btnPost');
   btnPosts.addEventListener('click', () => {
     const newPost = document.getElementById('inputPost').value;
     const userMail = auth.currentUser;
     const user = userMail.email;
-    collectionPost(user,newPost)
+    const date = new Date()
+    collectionPost(user, newPost, date)
       .then((docRef) => {
+        window.reload = '#/timeline'
         console.log('Document written with ID: ', docRef.id);
       })
       .catch((error) => {
@@ -100,3 +112,4 @@ export function newCollectionPost() {
       });
   });
 }
+

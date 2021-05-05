@@ -24,7 +24,7 @@ export const signOut = () => {
 
 // Funcion subir publicaciones
 
-export const collectionPost = (email,input) => {
-  const fireStore = firebase.firestore();
-  return fireStore.collection('posts').add({Title:email, Contents: input });
+export const collectionPost = (email,input,date) => {
+  const fireStore = firebase.firestore();   
+  return fireStore.collection('posts').add({Title:email, Contents: input, Date:date});
 };
