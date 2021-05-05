@@ -56,10 +56,10 @@ footer img {
   }
   .logoBotones{
     background: rgba(237, 211, 118, 0.47);
-    border-radius: 79px;
+    border-radius: 50px;
     width: 337px;
     height: 522px;
-    margin: 40px;
+    margin: 40px; 
     margin-left: 150px;
   }
   .textoInicioGrande{
@@ -96,7 +96,7 @@ footer img {
     cursor: pointer;
   }
    #btnIniciarSesion{
-     margin-top: 50px;
+    margin-top: 50px;
   }
 }
      
