@@ -6,7 +6,7 @@ export const inicioSesion = () => {
   
     <div class = "contenidoInputs">
         <img alt="logoIniciosesion" class="logoIniciosesion" id="logoIniciosesion"src = "Imagenes/LogoBeer.png"/>
-        <div>
+        <div >
          <h3 class='mensajeCervecero2'> Para los verdaderos amantes de la cerveza </h3>
         </div>
         <form id = "formularioInicioSesion">
@@ -17,8 +17,8 @@ export const inicioSesion = () => {
         <p class = "mensajeCuentainicio">¿No tienes cuenta?
         <a href = " "> Regístrate</a></p>
     </div>
-    <div >
-      <h3 class='mensajeCervecero1'> Para los verdaderos amantes de la cerveza </h3> 
+    <div class= 'textoSesionGrande' >
+      <p class='mensajeCervecero1'> Para los verdaderos amantes de la cerveza </p> 
     </div>
     `;
   contenedorIniciosesion.innerHTML = contenidoEncabezadoinicio;
