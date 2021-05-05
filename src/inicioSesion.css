@@ -82,39 +82,32 @@
 
  @media (min-width: 501px){
  .contenedorIniciosesion {
-  position: relative;
-  margin: 20px;
-  width: 1440PX;
-  height: 1024px;
-  cursor: pointer;  
- }
+  text-align: center;
+  margin: 40px;
+   }
  .contenidoInputs{
   width: 337px;
   height: 522px;
   background: rgba(237, 211, 118, 0.47);
   border-radius: 50px;
-  margin-top: 15px;
-  margin-left: 120px;   
+  margin: 40px;
+  margin-left: 150px;   
  }
+ .logoIniciosesion {
+    width: 270px;
+    margin-top: 30px;
+   }
  .mensajeCervecero1 {
-  width: 380px;
-  color: #f7cb2d;
-  font-size: 35px;
-  text-align: right;
-  text-shadow: 0.1em 0.1em 3px #000;
-  margin-top: 15px;
-  margin-right: 55px;
-  margin-left: 450px;
+    font-size: 50px;
+    color: #F7CB2D;
+    text-align: right;
+    text-shadow: 0.1em 0.1em 3px #000;
+    font-weight: bold;
  }
  .mensajeCervecero2 {
   display: none;
  }
- .logoIniciosesion {
-  width: 300px;
-  height: 154px;
-  margin-left: 20px;
-  margin-top: 18px;
- }
+ 
  #formularioInicioSesion input {
   width: 275px;
   height: 41px;
@@ -122,43 +115,46 @@
   background: #F1e5B9;
   border: 0.2px solid #000000;
   margin: 12px;
-  margin-left: 35px;
   font-family: inherit;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  cursor: pointer;
  }   
  #formularioInicioSesion #emailLogin{
   margin-top: 45px;
  }
  #formularioInicioSesion button {
-  margin-top: 40px;
   width: 160px;
   height: 52px;
   border-radius: 79px;
   background:#523412;
   border: 0.2px solid #000000;
-  margin: 12px;
-  margin-left: 95px;
+  margin: 15px;
   font-family: inherit;
   font-size: 18px;
   font-weight: bold;
   color: #EDD376;
   cursor: pointer;
  }
- .contenedorIniciosesion p{
+ .mensajeCuentainicio {
   font-size: 18px;
   font-family: inherit;
-  color: black;
+  color: #F1e5B9;
   font-weight:bold;
-  margin-top: 50px;
+  margin-top: 10px;
   text-align: center;
  }
+
+ .textoSesionGrande {
+    float: right;
+    max-width: 340px;
+    margin-right: 40px;
+ }
  .contenedorIniciosesion a{
-  font-size: 18px;
-  font-family: inherit;
-  color:#143df3e7;
-  font-weight:bolder;
+    font-size: 19px;
+    font-family: inherit;
+    color: #3f1e01;
+    font-weight: bolder;
+    text-shadow: 0.1em 0.1em 3px #f1e5b9;
  }
 }
