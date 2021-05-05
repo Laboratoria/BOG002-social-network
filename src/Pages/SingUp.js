@@ -4,7 +4,7 @@ export function FormularioDeRegistro(){
      
    const html= `
    <img src="./imagenes/Fondo.jpg" class="fondo">
-    <form>
+    <form >
     <h1> Created account </h1>
       <fieldset>
     <input type="text" id="NameUser" class="input"  placeholder="User name" maxlength="10"   title="Maximo 16 caracteres" required ">
@@ -15,8 +15,6 @@ export function FormularioDeRegistro(){
 
     <input type="password" id="PasswordUser"class="input" placeholder ="password">
     <img src="" id="CampoVacioPassword" class="error">
-    <button type="button" id="show"> ver contraseña</button>
-    
     
     <button type="submit" id="Register" class="btn" > REGISTER <a href="#Register"> </a> </button>
     </fieldset>
@@ -106,6 +104,36 @@ export function FormularioDeRegistro(){
   })
   
 }
+// OPCION 1 DE ENVIAR FORMULARIO
 
 
- 
+// function validate(){
+//    if (Name == "" || Name.length <3  ) {
+//       console.log("Completa correctamente los campos")
+//       return false
+//    }
+//    else if (Email =="" || Email.length <4){
+//       console.log("Completa correctamente los campos")
+//       return false
+//    }
+//    else if (Password =="" || Password.length <4){
+//       console.log("Completa correctamente los campos")
+//       return false
+//    }
+//    else{console.log(enviado)
+     
+//    }}
+
+//    console.log(validate)
+
+
+
+// OPCION 2 DE ENVIAR FORMULARIO
+
+// const submit  = document.getElementById("Register");
+//          submit.addEventListener("submit", ()=>{
+//             if (Name == "") {
+//                alert ("Completa correctamente los campos")
+//             }
+//          }
+//          )

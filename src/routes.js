@@ -8,7 +8,7 @@ let content = document.getElementById('root');
 export const router = (route) => {
     content.innerHTML = "";
     switch(route) {
-        case '#/':
+        case '':
             content.innerHTML= home();
             break;
         case '#/signUp':

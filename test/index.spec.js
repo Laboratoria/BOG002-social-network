@@ -7,6 +7,11 @@ describe('myFunction', () => {
   });
 });
 
+describe(' expresion regular', () => {
+  test('debería retornar el email', () => {
+    expect("ejemplo@gmail.com").toBe('function');
+  });
+});
 
 // usar --watch para ver el teste en vivo.
 // jest.fn() funcion tipo mock, MockResolveValue
