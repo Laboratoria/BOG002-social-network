@@ -1,10 +1,11 @@
 // eslint-disable-next-line quotes
 import { reset } from "./Utils.js";
+import { login } from "../Firebase/Services.js";
 
 export function Login() {
-    reset();
-    const login = document.createElement("div");
-    login.innerHTML = ` 
+  reset();
+  const login = document.createElement("div");
+  login.innerHTML = ` 
   <div class="container">
     <a href="#/"><img class="back" src=./assets/back.svg alt="arrow"></a>
     <h1 class="register-tittle"> Login </h1>
@@ -23,7 +24,7 @@ export function Login() {
                   <div class="input__indicator"></div>
                 </div> 
                 <div class="button">
-                  <button type="submit" id="register" class="button_general">Create Account</button>
+                  <button type="submit" id="signIn" class="button_general">Login</button>
                 </div>
               </form>
               <span>or login with</span>
@@ -37,21 +38,15 @@ export function Login() {
               </span>
             </div>`;
 
-    return login;
+  return login;
 }
 
-/* export function logInUser () {
-  const btnSignIn = document.querySelector('#signIn');
-  btnSignIn.addEventListener('click', (e) => {
+export function logInUser() {
+  const btnSignIn = document.querySelector("#signIn");
+  btnSignIn.addEventListener("click", (e) => {
     e.preventDefault();
-
-    const emailSignIn = document.querySelector('#emailSignIn').value;
-    const passwordSignIn= document.querySelector('#passwordSignIn').value;
-
-    auth
-      .signInUserWithEmailAndPassword(emailSignIn, passwordSignIn)
-      .then (userCredential => {
-          console.log('y si me quieres comer sigueme mi amor')
-      })
+    const email = document.querySelector("#email").value;
+    const password = document.querySelector("#password").value;
+    login(email, password);
   });
-} */
+}
