@@ -1,6 +1,6 @@
 // eslint-disable-next-line quotes
 import { reset } from "./Utils.js";
-import { login } from "../Firebase/Services.js";
+import { authGoogle, login, authFacebook } from "../Firebase/Services.js";
 
 export function Login() {
   reset();
@@ -48,5 +48,16 @@ export function logInUser() {
     const email = document.querySelector("#email").value;
     const password = document.querySelector("#password").value;
     login(email, password);
+  });
+  // logo google
+  const btnGoogle = document.querySelector("#logoGoogle");
+  btnGoogle.addEventListener("click", (e) => {
+    e.preventDefault();
+    authGoogle();
+  });
+  const btnFb = document.querySelector("#logoFb");
+  btnFb.addEventListener("click", (e) => {
+    e.preventDefault();
+    authFacebook();
   });
 }
