@@ -47,7 +47,6 @@ template.innerHTML = `
         margin: auto 0;
       }
       .mobile_nav{
-        // margin-top: 80vh;
         margin: auto 0;
         width: 100vw;
         height: 10vh;
@@ -62,9 +61,6 @@ template.innerHTML = `
       }
       .logo_mobileNav{
         width: 8vw;
-        // height: 5.5vh;
-        // margin:12vw;
-        // margin-top: 2.2vh;
       }
       .desk_nav{
         display: none;
