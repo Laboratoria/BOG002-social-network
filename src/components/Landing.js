@@ -16,8 +16,7 @@ export function Landing() {
   );
   return template;
 }
-const grid = document.querySelector(".grid");
-grid.classList.remove("padding");
+
 export function random() {
   const btnRegister = document.getElementById("signUp");
   btnRegister.addEventListener("click", (e) => {
