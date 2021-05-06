@@ -84,6 +84,7 @@ inputs.forEach((input) => {
 	input.addEventListener('blur', validarFormulario);
 });
 
+// enlazando el formulario con firebase
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 	if( campos.nombre && campos.password && campos.correo ){
