@@ -4,6 +4,7 @@
 export function home() {
   
     const html = `
+   
        <img src="./imagenes/Fondo.jpg" class="fondo">
         <h1>FoodFans</h1>
         <span>Social Network</span>
@@ -17,7 +18,8 @@ export function home() {
             <button type="button" id="signUp" class="btn" value="Sign Up"> <a href="#/signUp"> SIGN UP</a></button>
             <button type="button" id="loginPpal" class="btn" value="login"> <a href="#/login">LOGIN</a></button>
         
-         </section>`;
+         </section>
+        `;
     return html;
          
 }

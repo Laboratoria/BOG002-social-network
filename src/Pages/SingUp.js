@@ -3,7 +3,7 @@ import {autenticacionUsuario} from  '../firebaseAuth.js';
 
 export function FormularioDeRegistro(){
      
-   const html= `
+   let html= `
    <img src="./imagenes/Fondo.jpg" class="fondo">
     <form id="formulario">
     <h1> Created account </h1>

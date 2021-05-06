@@ -1,6 +1,10 @@
 // se trae desde main js 
+import {modalError} from  './Pages/error.js'
 console.log(auth)
+
+
 export const autenticacionUsuario =(email, password)=>{
+
   auth.createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
     // Signed in 
@@ -10,8 +14,6 @@ export const autenticacionUsuario =(email, password)=>{
   })
   .catch((error) => {
     console.log("error", error)
-    // var errorCode = error.code;
-    // var errorMessage = error.message;
-    // ..
+    modalError(error);
   });
 } 
