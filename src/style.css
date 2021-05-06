@@ -1,10 +1,10 @@
 body{
     background-image: url(./imagenes/fondo.jpg);
-    
+
     width: 100%;
-    
-    background-position: center; 
-    background-repeat: no-repeat; 
+
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     padding: 0;
@@ -35,15 +35,15 @@ body{
         cursor: pointer;
         color: white;
         font-weight: bold;
-        
+
     }
     #opcionesInicio button{
         background-color: transparent;
         border: none;
-       
-        
+
+
         border-radius: 22px;
-   
+
         text-align: center;
         font-family: 'Cormorant Garamond', serif;
         font-size:x-large;
@@ -52,7 +52,7 @@ body{
         font-weight: bold;
 
     }
-   
+
     #opcionesInicio{
         display: flex;
         flex-direction: column;
@@ -74,7 +74,7 @@ body{
   font-weight: bold;
  grid-template-rows: 1fr;
  row-gap:5em;
- 
+
  background-color: rgba(161, 5, 0, 0.79);
 
 }
@@ -82,8 +82,8 @@ body{
 .fecha{
   display: grid;
   justify-content: center;
- 
-  
+
+
 }
 .superior{
   display: grid;
@@ -149,7 +149,7 @@ body{
     font-weight: bolder;
     background-color: transparent;
     font-size: 1.5em;
-  
+
   }
   ::placeholder{
     color:rgb(247, 242, 219);
@@ -162,20 +162,20 @@ body{
       height: 110%;
       width: 30%;
      border-radius: 5em;
-     
+
      border: none;
      justify-content: center;
      text-decoration: none;
 
    }
-   
+
    .registerbtn button{
      background-color: transparent;
         border: none;
-       
-        
+
+
         border-radius: 22px;
-   
+
         text-align: center;
         font-family: 'Cormorant Garamond', serif;
         font-size:x-large;
@@ -190,7 +190,7 @@ body{
     row-gap:1em ;
   }
   #start{
-    
+
     font-size: 1.2em;
   }
   /* AQUI TERMINA LA SECCION DE REGISTRO*/
@@ -214,7 +214,7 @@ body{
       font-size: x-large;
       font-family: 'Cormorant Garamond', serif;
       font-weight: bold;
-  
+
     }
     .grupo{
       position: relative;
@@ -228,12 +228,12 @@ body{
      width: 90%;
      border: none;
      border-bottom: 2px solid white;
-  
+
     }
     .grupo input:focus{
       outline: none;
       color:rgba(0, 0, 0, 0.90);
-  
+
     }
     .grupo label{
       color: black;
@@ -256,8 +256,8 @@ body{
     width: 100%;
   }
   .formulario button{
-    font-family: 'Cormorant Garamond', serif; 
-    background: white; 
+    font-family: 'Cormorant Garamond', serif;
+    background: white;
     border: none;
     border-radius: 5em;
     display: block;
@@ -268,14 +268,14 @@ body{
     color: A10500;
     height: 40px;
     color: #A10500;
-  
-  
+
+
   }
 
   /*AQUI TERMINA INICIO*/
 
   /*AQUI COMIENZA TEMPLATE DE BASE PARA MOVIL*/
-  
+
 .container-barra{
   display: grid;
   grid-template-columns:1fr 1fr 1fr;
@@ -283,17 +283,19 @@ body{
   }
   .logo {
     grid-column: 1/2;
-  
+    width: 5vw;
+
   }
   .button-barra img {
     display: flex;
     flex-direction: row;
-    width:33%;
+    width:35vw;
     flex: 33%;
     padding: 6px 33%;
-  
+    position: sticky;
+
   }
-  
+
   .container-menu {
   display: flex;
   background-color: #A32222;
@@ -301,11 +303,12 @@ body{
   bottom: 0;
   position:fixed;
   }
-  
+
   .button-menu img {
-    width:33%;
+    width:35vw;
     flex: 33%;
     padding: 6px 33%;
   }
   /*AQUI TERMINA TEMPLATE*/
+
 }

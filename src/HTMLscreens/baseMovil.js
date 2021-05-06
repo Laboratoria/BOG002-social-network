@@ -3,24 +3,13 @@ export const templateMovil = () => {
     class baseMovil extends HTMLElement {
     constructor() {
         super();
-        this.id;
-    }
-    static get observedAttributes(){
-        return["id"];
-
-    }
-    attributeChangeCallback(idprueba){
-        switch(idprueba){
-            case "id":
-                this.id="pruebaaverque"
-        }
 
     }
     connectedCallback() {
-        this.innerHTML =  ` <template id="baseMovil">
+        this.innerHTML =  ` <section id="baseMovil">
         <div class="container-barra">
           <div class="logo">
-              <img src="./imagenes/cine (1).png">
+              <img src="./imagenes/cine (1).png" width='160vw'>
           </div>
           <div class="button-barra" id="publicar">
             <a href="#publicar"><img src="./imagenes/galeria-de-imagenes.png"></a>
@@ -29,10 +18,9 @@ export const templateMovil = () => {
             <a href="#perfil"><img src="./imagenes/usuario.png"></a>
           </div>
         </div>
-      
-      
+
       <div class="intermido"></div>
-      
+
         <div class="container-menu">
           <div class="button-menu">
             <a href="#amigo"><img src="./imagenes/apoyo.png"></a>
@@ -44,10 +32,10 @@ export const templateMovil = () => {
             <a href="#megusta"><img src="./imagenes/cinema.png"></a>
           </div>
         </div>
-      
+
       </div>
-      </template>`;
-     
+      </section>`;
+
 
     }
   }
@@ -56,5 +44,5 @@ export const templateMovil = () => {
   }  else  {
     window.customElements.get("base-movil");
   };
-  
+
   };
