@@ -1,3 +1,5 @@
+const fireStore = firebase.firestore();
+
 // Function Register
 export const register = (email, password) => {
   const auth = firebase.auth();
@@ -24,7 +26,13 @@ export const signOut = () => {
 
 // Funcion subir publicaciones
 
-export const collectionPost = (email,input,date) => {
-  const fireStore = firebase.firestore();   
+export const collectionPost = (email,input,date) => {    
   return fireStore.collection('posts').add({Title:email, Contents: input, Date:date});
 };
+
+// Funcion eliminar publicaciones
+export const deletePosts = (id) => {   
+  return fireStore.collection("posts").doc(id).delete()
+
+} 
+
