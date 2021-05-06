@@ -6,8 +6,8 @@ export const registroUsuario = () => {
   const ladoIzquierdo = document.createElement('div');
   ladoIzquierdo.className = 'ladoIzquierdo';
   const contenidoLadoIzquierdo = `
-    <img alt="logoRegistro" class="logoRegistro" src = "Imagenes/LogoBeer.png"/>
-    <h3 class="textoCervecero1reg">  Para los verdaderos amantes de la cerveza  </h3>
+    <img alt="logoRegistro" class="logoRegistroizq" src = "Imagenes/LogoBeer.png"/>
+    <h3 class="textoCervecero1regizq">  Para los verdaderos amantes de la cerveza...  </h3>
   `;
   ladoIzquierdo.innerHTML = contenidoLadoIzquierdo;
   contenedorRegistro.appendChild(ladoIzquierdo);
@@ -16,7 +16,7 @@ export const registroUsuario = () => {
   ladoDerecho.className = 'ladoDerecho';
   const contenidoLadoDerecho = `
     <img alt="logoRegistro" class="logoRegistro" src = "Imagenes/LogoBeer.png"/>
-    <div class= "contenedorFraseInvitación"><p> Conviértete en un Beer Lover's </p></div>
+    <div class= "contenedorFraseInvitacionder"><p> Conviértete en un Beer Lover's </p></div>
     <div class= "contenedorGmail" id="contenedorclickGmail">
       <p> Regístrate con Gmail</p>
       <img alt="gmail" class="gmail" src="Imagenes/Gmail-Logo.png"/>

@@ -86,6 +86,7 @@
  .contenedorIniciosesion {
    text-align: center;
    margin: 40px;
+   display: block;
  }
  .contenidoInputs{
    width: 337px;
