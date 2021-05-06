@@ -1,13 +1,19 @@
 // se trae desde main js 
 
-export function AutenticacionDeUsuario (email, password){
-  firebase.auth().createUserWithEmailAndPassword(email, password)
+console.log(auth)
+export const autenticacionUsuario =(email, password)=>{
+  auth.createUserWithEmailAndPassword(email, password)
   .then((userCredential) => {
     // Signed in 
-    console.log(userCredential.user) ;
+    userCredential.user;
+    console.log( userCredential.user)
     // ...
   })
   .catch((error) => {
+    console.log("error", error)
+    // var errorCode = error.code;
+    // var errorMessage = error.message;
+
     // ..
   });
 } 

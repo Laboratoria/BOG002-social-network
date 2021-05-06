@@ -5,7 +5,6 @@ import {DatosDelRegistro} from './Pages/SingUp.js';
 import {AutenticacionDeUsuario} from './firebaseAuth.js';
 
 
-
 window.addEventListener('load',() => {
   router(window.location.hash);
 }); 
