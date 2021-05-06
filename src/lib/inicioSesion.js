@@ -10,8 +10,8 @@ export const inicioSesion = () => {
         <img alt="logoIniciosesion" class="logoIniciosesion" id="logoIniciosesion"src = "Imagenes/LogoBeer.png"/>
         <h3 class='mensajeCervecero2'> Para los verdaderos amantes de la cerveza.</h3>
         <form id = "formularioInicioSesion">
-        <input class = "inputSesion" id = "emailLogin" type ="email" placeholder = "Correo Eletrónico">
-        <input class = "inputSesion" id= "passwordLogin" type ="password" placeholder ="Contraseña">
+        <input class = "inputSesion" id = "emailLogin" type ="email" placeholder = "Correo Eletrónico" required>
+        <input class = "inputSesion" id= "passwordLogin" type ="password" placeholder ="Contraseña" required>
         <button class="iniciarSesion" id="btnIniciarsesion" type="submit"> Iniciar sesión </button>
         </form>
         <p class = "mensajeCuentainicio">¿No tienes cuenta?<a href = " "> Regístrate</a></p>
