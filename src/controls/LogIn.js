@@ -1,4 +1,4 @@
-import { LogIn } from '../auth/logInUser.js';
+import { LogIn, LogInGoogleAuth, LogOutAuth } from '../auth/logInUser.js';
 
 export function userLogIn(event) {
   event.preventDefault();
@@ -11,7 +11,7 @@ export function userLogIn(event) {
       // console.log(error);
       const popupEmail = document.getElementById('popupEmail');
       const popupPassword = document.getElementById('popupPassword');
-      switch (error) {
+      switch (error.code) {
         case 'auth/user-not-found':
           popupEmail.style.display = 'block';
           popupEmail.innerHTML = 'Su correo no se encuentra registrado';
@@ -40,4 +40,18 @@ export function userLogIn(event) {
           break;
       }
     });
+}
+
+export function LogInGoogle(){
+  LogInGoogleAuth()
+    .then(() => {
+      window.location.hash = '#home';
+    })
+}
+
+export function LogOut(){
+  LogOutAuth()
+    .then(() => {
+      window.location.hash = '';
+    })
 }

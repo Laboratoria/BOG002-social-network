@@ -1,3 +1,5 @@
+import { renderSignOut } from '../views/signOut.js';
+
 const template = document.createElement('template');
 template.innerHTML = `
 
@@ -28,7 +30,7 @@ template.innerHTML = `
         // margin-top: 2.3vh;
         border-radius: 30px;
       }
-      .logo_sigOut{
+      .logo_signOut{
         width: 10vw;
         // height: 5.5vh;
         // margin-left: 9vw;
@@ -92,23 +94,64 @@ template.innerHTML = `
     <header class="header_home">
     <img class="logo_mobile" src="assets/imagesIcon/Only_logo.png">
     <img class="logo_name" src="assets/imagesIcon/Title_nomadas.png">
-    <a href=""><img class="logo_sigOut" src="assets/imagesIcon/CloseWhiteV.png"></a>
+    <a id="signOutContainer"><img class="logo_signOut" src="assets/imagesIcon/CloseWhiteV.png"></a>
     </header>
     <section class="body_container">
     </section>
     <footer class="mobile_nav">
-    <li class="list"><a href="#home"><img class="logo_mobileNav" src="assets/imagesIcon/HomeWhiteV.png"></a></li>
-    <li class="list"><a href=""><img class="logo_mobileNav" src="assets/imagesIcon/EditWhiteV.png"></a></li>
-    <li class="list"><a href=""><img class="logo_mobileNav" src="assets/imagesIcon/UserWhiteV.png"></a></li>
+    <li class="list"><a href="#home" id="homeP"><img class="logo_mobileNav" id="imgHome" src="assets/imagesIcon/HomeWhiteV.png"></a></li>
+    <li class="list"><a href="#post" id="postP"><img class="logo_mobileNav" id="imgPost" src="assets/imagesIcon/EditWhiteV.png"></a></li>
+    <li class="list"><a href="#profile" id="profileP"><img class="logo_mobileNav" id="imgProfile" src="assets/imagesIcon/UserWhiteV.png"></a></li>
     </footer>
 `;
 
 class MobileMenu extends HTMLElement {
   constructor() {
     super();
+    this.hash = window.location.hash.substring(1);
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
+
+  changeHash() {
+    const imgHome = this.shadowRoot.getElementById('imgHome');
+    const imgPost = this.shadowRoot.getElementById('imgPost');
+    const imgProfile = this.shadowRoot.getElementById('imgProfile');
+
+    switch (this.hash) {
+      case 'home':
+        imgHome.setAttribute('src', 'assets/imagesIcon/HomeWhiteC.png');
+        break;
+      case 'post':
+        imgPost.setAttribute('src', 'assets/imagesIcon/EditWhiteC.png')
+          break;
+      case 'profile':
+        imgProfile.setAttribute('src', 'assets/imagesIcon/UserWhiteC.png')
+        break;
+      default:
+        // renderError($containerGeneral);
+        break;
+    } 
+  }
+
+  connectedCallback(){
+    this.changeHash();
+    this.shadowRoot.getElementById('signOutContainer').addEventListener('click', () => {
+      const imgHome = this.shadowRoot.getElementById('imgHome');
+      const imgPost = this.shadowRoot.getElementById('imgPost');
+      const imgProfile = this.shadowRoot.getElementById('imgProfile');
+      const imgExit = this.shadowRoot.querySelector('.logo_signOut');
+      imgHome.setAttribute('src', 'assets/imagesIcon/HomeWhiteV.png');
+      imgPost.setAttribute('src', 'assets/imagesIcon/EditWhiteV.png');
+      imgProfile.setAttribute('src', 'assets/imagesIcon/UserWhiteV.png');
+      imgExit.setAttribute('src', 'assets/imagesIcon/CloseWhiteC.png'); 
+      this.shadowRoot.getElementById('homeP').removeAttribute("href");
+      this.shadowRoot.getElementById('postP').removeAttribute("href");
+      this.shadowRoot.getElementById('profileP').removeAttribute("href"); 
+      renderSignOut();
+    }, {once: true});
+  }
+
 }
 
 window.customElements.define('mobile-menu', MobileMenu);

@@ -1,21 +1,26 @@
-import { renderLogin, renderRegister, renderHome } from './renderViews.js';
+import { renderLogin, renderRegister, renderHome, renderProfile, renderPost} from './renderViews.js';
 
 export function router(hash, $containerGeneral, db) {
-  // console.log(db);
+  
+  
   switch (hash) {
+    case '':
+      renderLogin($containerGeneral);
+      break;
     case 'register':
       renderRegister($containerGeneral);
-      break;
-    case 'profile':
-      // renderProfile($containerGeneral);
       break;
     case 'home':
       renderHome($containerGeneral, db);
       break;
-    case '':
-      renderLogin($containerGeneral);
+    case 'post':
+        renderPost($containerGeneral);
+        break;
+    case 'profile':
+      renderProfile($containerGeneral);
       break;
     default:
+      // renderError($containerGeneral);
       break;
   }
 }

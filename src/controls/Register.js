@@ -1,4 +1,4 @@
-import { Information } from '../auth/newUser.js';
+import { createUser } from '../auth/logInUser.js';
 
 const assignName = (username) => {
   firebase.auth().onAuthStateChanged((user) => {
@@ -15,8 +15,9 @@ export function userRegistration(event) {
   const username = document.querySelector('.inputName').value;
   const email = document.querySelector('.inputEmail').value;
   const password = document.querySelector('.inputPassword').value;
-  Information(email, password)
-    .then((user) => {
+  createUser(email, password)
+    .then((result) => {
+      const user = result.user;
       const usuario = document.createElement('div');
       usuario.innerHTML = user;
       assignName(username);
@@ -44,7 +45,7 @@ export function userRegistration(event) {
     .catch((error) => {
       // console.log(error);
       const popupEmail = document.getElementById('popupEmail');
-      if (error === 'auth/email-already-in-use') {
+      if (error.code === 'auth/email-already-in-use') {
         popupEmail.style.display = 'block';
         popupEmail.innerHTML = 'Su correo ya se encuentra registrado';
         // popupEmail.classList.toggle('show');

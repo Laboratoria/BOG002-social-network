@@ -1,6 +1,7 @@
 import { configurationFireBase } from './firebase/config.js';
 import { router } from './controls/router.js';
 
+
 const init = () => {
   const db = configurationFireBase();
   const $containerGeneral = document.createElement('div');
@@ -14,13 +15,13 @@ const init = () => {
     document.querySelector('.bigContainer').innerHTML = '';
     hash = window.location.hash.substring(1);
     router(hash, $containerGeneral, db);
+    firebase.auth().onAuthStateChanged((user) => {
+      if ((user) && (hash == "" || hash == "register")) {
+        location.hash = "#home";
+        document.querySelector('.bigContainer').innerHTML = '';
+      }
+    });
   });
 };
 
 init();
-
-// if(document.getElementById('idBigContainer')){
-//   document.querySelector('.body').removeChild(document.getElementById('idBigContainer'));
-//   hash = window.location.hash.substring(1);
-//   router(hash);
-// }
