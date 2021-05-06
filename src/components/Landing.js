@@ -7,8 +7,7 @@ export function Landing() {
     "afterbegin",
     `<div id="container" class"form">
       <img class="logo" src="./assets/gleam.svg" alt="Gleam logo">
-        <p class="copy"> Welcome, we're the best and inclusive app in the world just 
-        created for your Freedom, inclusion, and love. </p>
+        <p class="copy"> We are an inclusive app to show you love, peace, respect and PRIDE. </p>
       <div class="btns-container-mobile">
           <button id="signUp" class="button_general">Enjoy Gleam</button>
           <button id="logIn">Log In</button>

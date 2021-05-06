@@ -1,3 +1,4 @@
+import { Loading } from "./Loading.js";
 import { Landing, random } from "./Landing.js";
 import { Register, addUser } from "./Register.js";
 import { Home, userOut } from "./Home.js";
@@ -9,6 +10,9 @@ export function Router() {
   switch (hash) {
     case "":
     case "#/":
+      root.appendChild(Loading());
+      break;
+    case "#/landing":
       root.appendChild(Landing());
       random();
       break;
