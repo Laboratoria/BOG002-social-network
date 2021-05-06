@@ -1,6 +1,6 @@
 
 import {home } from './Pages/Home.js';
-import {FormularioDeRegistro, ObtenerDatosDelRegistro} from './Pages/SingUp.js';
+import {FormularioDeRegistro,  all} from './Pages/SingUp.js';
 import {FormularioDeIngreso} from './Pages/Login.js';
  
 let content = document.getElementById('root');
@@ -8,12 +8,12 @@ let content = document.getElementById('root');
 export const router = (route) => {
     content.innerHTML = "";
     switch(route) {
-        case '':
+        case '#/':
             content.innerHTML= home();
             break;
         case '#/signUp':
             content.innerHTML = FormularioDeRegistro();
-            ObtenerDatosDelRegistro();
+            all();
             break;
         case '#/login':
              content.innerHTML = FormularioDeIngreso();
