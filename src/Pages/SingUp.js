@@ -1,4 +1,5 @@
 // creacion de formulario sign up
+import {autenticacionUsuario} from  '../firebaseAuth.js';
 
 export function FormularioDeRegistro(){
      
@@ -25,7 +26,7 @@ export function FormularioDeRegistro(){
 }
 
 
-export function all(){
+export function Datos_de_registro(){
 const formulario = document.getElementById('formulario');
 const inputs = document.querySelectorAll('.input');
 
@@ -46,7 +47,7 @@ const campos = {
 	switch (e.target.name) {
 
 		case "nombre":
-			if(expresiones.nombre.test(e.target.value)){
+			if( e.target.value.length >3 ||expresiones.nombre.test(e.target.value)){
             document.getElementById("NameUser").style.border = "2px solid green"
             document.getElementById("CampoVacioName").src ="./imagenes/comprobado.png"
             campos["nombre"] = true;
@@ -79,10 +80,6 @@ const campos = {
 	
 
 
-
-
-
-
 inputs.forEach((input) => {
 	input.addEventListener('keyup', validarFormulario);
 	input.addEventListener('blur', validarFormulario);
@@ -91,10 +88,15 @@ inputs.forEach((input) => {
 formulario.addEventListener('submit', (e) => {
 	e.preventDefault();
 	if( campos.nombre && campos.password && campos.correo ){
-		formulario.reset();
-		console.log("enviado");
-		
+
+	 const Email = document.getElementById("EmailUser").value;
+	 const Password= document.getElementById("PasswordUser").value;
+    console.log("enviado correo  " + Email + " contraseña " + Password)
+    autenticacionUsuario(Email, Password)
+     
+
 	} else {
 		console.log("no se envia");
 	}
-});}
+});
+}
