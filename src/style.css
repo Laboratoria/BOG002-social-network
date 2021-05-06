@@ -12,6 +12,21 @@ body {
     color: rgb(84, 84, 84);
     height: 100vh;
 }
+/* loading page */
+
+@keyframes latidos {
+    from { transform: none; }
+    50% { transform: scale(1.3); }
+    to { transform: none; }
+}
+#load {
+    background-image: url(./assets/Background-Mobile1.png);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    animation: latidos 1.5s infinite;;
+}
+
 
 #template #container {
     display: flex;
@@ -80,9 +95,11 @@ body {
 /* register screen */
 
 .grid {
-    padding: 30px;
     height: 100vh;
     width: 100%;
+}
+.grid > div{
+    padding: 30px;
 }
 
 .container {
