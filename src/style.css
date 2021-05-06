@@ -182,3 +182,14 @@ span a {
 span:last-child {
     margin-top: 20px;
 }
+
+.show,
+.hide {
+    position: absolute;
+    right: 0px;
+    top: 25px;
+}
+
+.hide {
+    display: none;
+}
