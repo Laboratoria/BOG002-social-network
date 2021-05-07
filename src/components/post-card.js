@@ -6,8 +6,8 @@ template.innerHTML = `
     background: #fffbdb;
     width: 90vw;
     height: 32vh;
-    position: fixed;
-    z-index: -1;
+    position: absolute;
+    z-index: 2;
     margin-left:5vw;
     margin-top: 4vh;
     border-radius: 5px; 
@@ -137,7 +137,14 @@ template.innerHTML = `
         text-align: left;
         position:absolute;
         margin-left:12vw;
-    }   
+    } 
+    .ubication-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        margin-left: 1.5rem;
+    }  
     .ubication{
         border: #FFC300 1px solid;
         border-radius:20px;
@@ -160,6 +167,7 @@ template.innerHTML = `
         width: 75vw;
         height: 10vh;
         margin:1vh 0 2vh 7vw;
+        background:#FFFFFF;
     }
     .footer-card{
         border-bottom-left-radius:5px;
@@ -246,27 +254,39 @@ template.innerHTML = `
 
     <section class="post-card">
     <div class="header-card">
-        <img class="imagesLeft"src="assets/imagesIcon/UserWhiteC.png">
-        <p class="name_user">'Nombre Usuario'<p>
+        <img class="imagesLeft" src="assets/imagesIcon/UserWhiteC.png">
+        <slot name="headerPostTitle"></slot>
         <img class="imagesRight"src="assets/imagesIcon/MoreWhite.png">
     </div>
-    <img class="ubicationLeft"src="assets/imagesIcon/UbicationYellowC.png"><input class="ubication" type="text">
-    <input class="public" type="text">
+    <img class="ubicationLeft"src="assets/imagesIcon/UbicationYellowC.png"><slot name="descriptionPost"><input class="ubication" type="text"></slot>
+    <div class="public" type="text"><slot name="descriptionPost"></slot></div>
     <div class="footer-card">
-        <img class="imagesLeft"src="assets/imagesIcon/LikeBlueV.png">
-        <p class="name_like">Me gusta</p>
-        <p class="conteo">123 Likes</p>
+        <slot name="image_button"><img class="imagesLeft" id="imageLeftDown"></slot>
+        <slot name="label"><p class="name_like">Me gusta</p></slot>
+        <slot name="footer_right_element"><p class="conteo">123 Likes</p></slot>
     </div>
 
     </section>
 `;
 
 class PostCard extends HTMLElement {
-  constructor() {
+    constructor() {
     super();
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-  }
+    }
+
+    updateStyle(elem) {
+    let srcImg = elem.getAttribute('src');
+    this.shadowRoot.getElementById('imageLeftDown').setAttribute('src', srcImg);
+    }
+
+    static get observedAttributes() { return ['src']; }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        console.log('Custom square element attributes changed.');
+        this.updateStyle(this);
+    }
 }
 
 window.customElements.define('post-card', PostCard);

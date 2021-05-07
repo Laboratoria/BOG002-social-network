@@ -7,7 +7,8 @@ import { visibility } from '../components/visibilityPassword.js';
 import { userLogIn } from './LogIn.js';
 import { LogInGoogle } from '../controls/LogIn.js';
 import { RetrieveData } from '../controls/prueba.js'
-import { home } from '../views/home.js';
+import { HomeDesktop } from '../views/homeDesktop.js';
+import { HomeMobile } from '../views/homeMobile.js';
 import { post } from '../views/post.js';
 import { profile } from '../views/profile.js'
 import '../components/menu-mobile.js';
@@ -37,21 +38,16 @@ export function renderRegister($containerGeneral) {
   visibility();
 }
 
-export function renderHome($containerGeneral, db){
-  const postCard = document.createElement('post-card');
+export function renderPost($containerGeneral, nameUser){
   Menu($containerGeneral);
-  $containerGeneral.appendChild(postCard);
-  console.log("home");
-  // RetrieveData(db);
-  home();
+  document.querySelector('.body_container').innerHTML += post(); 
+  const p = document.createElement('p');
+  p.textContent = "Prueba2";
+  const wcPost = document.querySelector("post-card");
+  wcPost.shadowRoot.querySelector(".ubication-container").appendChild(p);
 }
 
-export function renderPost($containerGeneral){
-  Menu($containerGeneral);
-  console.log("post");
-  post();
-}
-export function renderProfile($containerGeneral){
+export function renderProfile($containerGeneral, nameUser){
   Menu($containerGeneral);
   console.log("profile");
   profile();
@@ -61,25 +57,39 @@ export function renderError($containerGeneral){
   $containerGeneral.innerHTML = "Página no encontrada";
 }
 
+export function renderHome($containerGeneral, db){
+  // const postCard = document.createElement('post-card'); 
+  const postCard = `<post-card src="assets/imagesIcon/LikeBlueV.png">
+  <span slot="headerPostTitle">nombre usuario</span>
+  <span slot="descriptionPost">lugar</span>
+  </post-card>`;
+  //const headerPostTitle = `<span slot="headerPostTitle">nombre usuario</span>`;
+  //const descriptionPost = `<span slot="descriptionPost">lugar</span>`;
+  Menu($containerGeneral);
+  document.querySelector('.body_container').innerHTML+= postCard; 
+  //postCard.innerHTML+=headerPostTitle;
+  //postCard.innerHTML+=descriptionPost;
+  console.log("home");
+  // RetrieveData(db);
+  // home();
+}
 
 function Menu($containerGeneral) {
   const mql = window.matchMedia('(max-width: 768px)');
-  const desktop = document.createElement('desktop-menu');
-  const mobile = document.createElement('mobile-menu');
-  function pantalla(mobileView, value) {
+  function pantalla(mobileView) {
+   // $containerGeneral.innerHTML= HomeMobile();
     if (mobileView) {
-      if (value) $containerGeneral.removeChild(desktop);
-      // console.log("pantalla pequeña");
-      $containerGeneral.insertAdjacentElement('afterbegin', mobile);    
+      $containerGeneral.innerHTML= HomeMobile();    
     } else {
-      if (value) $containerGeneral.removeChild(mobile);
-      $containerGeneral.insertAdjacentElement('afterbegin', desktop);
+      $containerGeneral.innerHTML= HomeDesktop();
     }
   }
   mql.addEventListener('change', (e) => {
     const mobileView = e.matches;
-    pantalla(mobileView, true);
+    pantalla(mobileView);
+    location.reload();
   });
   const mobileView = mql.matches;
-  pantalla(mobileView, false);
+  pantalla(mobileView);
 }
+

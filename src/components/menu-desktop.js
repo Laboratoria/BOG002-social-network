@@ -14,6 +14,7 @@ template.innerHTML = `
   list-style: none;
   align-items: space-between;
   flex-direction: column;
+  position:absolute;
 }
 .desk_nav a{
   text-decoration: none;
@@ -34,18 +35,10 @@ template.innerHTML = `
   height:6vh;
   margin: 7vh 1.5vw 0 4vw ;
 }
-.body_container{
-  width: 100vw;
-  height: 100%;
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: 32% 100%;
-  background-position: right;
-  justify-content: center;
-  }
+
 }
 </style>
-<section class="body_container">
+
 <nav class="desk_nav">
 <img class="logo_desk" src="assets/imagesIcon/Complete_logo.png">
 <li ><a id="homeP" href="#home"><img class="logo_Nav" id="home_btn" src="assets/imagesIcon/HomeWhiteV.png">Home</a></li>
@@ -53,7 +46,7 @@ template.innerHTML = `
 <li><a href="#profile" id="profileP"><img class="logo_Nav" id="profile_btn" src="assets/imagesIcon/UserWhiteV.png">Mi perfil</a></li>
 <li ><a id="logOutP"><img class="logo_Nav" id="exit_btn" src="assets/imagesIcon/CloseWhiteV.png">Cerrar sesión</a></li>
 </nav>
-</section>
+
 `;
 
 class DesktopMenu extends HTMLElement {
