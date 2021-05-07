@@ -4,7 +4,7 @@ import {autenticacionUsuario} from  '../firebaseAuth.js';
 export function FormularioDeRegistro(){
      
    let html= `
-   <img src="./imagenes/Fondo.jpg" class="fondo">
+   <div class="fondo">
     <form id="formulario">
     <h1> Created account </h1>
       <fieldset>
@@ -16,10 +16,11 @@ export function FormularioDeRegistro(){
 
     <input type="password" id="PasswordUser"class="input" name="password" placeholder ="password" required >
     <img src="" id="CampoVacioPassword" class="error">
-    
+    <span id"completar"></span>
     <button type="submit" id="Register" class="btn" > REGISTER <a href="#Register"> </a> </button>
     </fieldset>
-    </form>`;
+    </form>
+    </div>`;
    
     return html;
     
@@ -32,7 +33,7 @@ const inputs = document.querySelectorAll('.input');
 
 const expresiones = {
 	nombre: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-	password: /^.{4,12}$/, // 4 a 12 digitos.
+	password: /^.{6,12}$/, // 4 a 12 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	
 }
@@ -47,7 +48,7 @@ const campos = {
 	switch (e.target.name) {
 
 		case "nombre":
-			if( e.target.value.length >3 ||expresiones.nombre.test(e.target.value)){
+			if(e.target.value!="" && e.target.value.length >3 && expresiones.nombre.test(e.target.value)){
             document.getElementById("NameUser").style.border = "2px solid green"
             document.getElementById("CampoVacioName").src ="./imagenes/comprobado.png"
             campos["nombre"] = true;
@@ -67,7 +68,7 @@ const campos = {
                campos["correo"] = false;}
 		break;	
       case "password":
-         if(expresiones.password.test(e.target.value)){
+         if(e.target.value.length >6 ||expresiones.password.test(e.target.value)){
             document.getElementById("PasswordUser").style.border = "2px solid green"
             document.getElementById("CampoVacioPassword").src ="./imagenes/comprobado.png"
             campos["password"] = true;
@@ -96,7 +97,7 @@ formulario.addEventListener('submit', (e) => {
      
 
 	} else {
-		console.log("no se envia");
+		alert("completar") ;
 	}
 });
 }

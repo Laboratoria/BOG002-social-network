@@ -25,6 +25,6 @@ if ( firebaseError.code=="auth/email-already-in-use") {
 }
 
 close.addEventListener('click', () => {
-  modal_container.classList.remove('show');
+    container_modal.classList.remove('show');
 });
 }
