@@ -14,26 +14,44 @@ export function timelinePage() {
             </header>
             <main>
                 <div class = "container" id = "containerPosts">
-                <form id="logOut">
+                  <form id="logOut">
                     <button class="button" id="btnLogOut">Cerrar sesion</button>
-                </form>
-                    <input id="inputPost" class="input" type="text" placeholder="¿Qué nos quieres compartir?">
-                    <button id="btnPost" class="button">Publicar</button>
+                  </form>
+                  <input id="inputPost" class="input" type="text" placeholder="¿Qué nos quieres compartir?">
+                  <button id="btnPost" class="button">Publicar</button>
                        <div id ="posts">
                           <ul id = "listPost" >
                           </ul>
                       </div>
-                  
-                
+                  <div id="modalCreate"></div>
                 </div>
                 
             </main>
         </section>       
     `;
+
   const divElement = document.createElement('div');
   divElement.innerHTML = view;
 
   return divElement;
+}
+
+//Template funcion modal eliminar post
+export function modalDelete(idPost) {
+  const modal =
+    `<section>
+          <div id="modal_container" class="modal-container">
+          <div class="modal">
+            <p id="modal">¿Estas segura de eliminar esta publicación?</p>
+            <button type="button"id="delete" data-id="${idPost}">Cancelar</button>
+            <button type="button" id="buttonModalDeletePost" data-id="${idPost}"> Aceptar </button>
+          </div>
+        </div>
+      </section>
+    `
+  const divModal = document.createElement('div');
+  divModal.innerHTML = modal;
+  return divModal;
 }
 
 // Funcion cerrar sesión 
@@ -56,27 +74,26 @@ export function signOutGoogle() {
 export function postsTimeline() {
   const postlist = document.getElementById('listPost');
   const setPost = (data) => {
-    console.log(data)
     if (data.length > 0) {
       let html = '';
       data.forEach((doc) => {
         const post = doc.data();
         const li = `
           <li id="${doc.id}" > 
-            <button class="btnDeletePost" data-id="${doc.id}">X</button>
+            <button type ="checkbox" class="btnDeletePost" data-id="${doc.id}">X</button>
             <h3>${post.Title}</h3> 
             <p>${(new Date(post.Date.seconds * 1000)).toLocaleDateString("es-CO")}</p>                
             <p>${post.Contents}</p>
                         
           </li>
-        `;
+          `;
         html += li;
       });
       postlist.innerHTML = html;
     }
   };
 
-  // Eventos actualizar y publicar verificando si el usuario esta
+  // Eventos actualizar y publicar post verificando si el usuario esta en su sesión
 
   auth.onAuthStateChanged((user) => {
     if (user) {
@@ -89,13 +106,11 @@ export function postsTimeline() {
           snapshot.docChanges().forEach((change) => {
             if (change.type === 'added') {
               setPost(snapshot.docs)
-              deleteColletionPosts()
+              modalDeleteColletionPosts()
             }
             if (change.type === 'removed') {
               document.getElementById(change.doc.id).remove()
-
             }
-
           })
         })
     } else {
@@ -113,28 +128,26 @@ export function newCollectionPost() {
     const user = userMail.email;
     const date = new Date()
     collectionPost(user, newPost, date)
-    //.then((docRef) => {
-    //  window.reload = '#/timeline'
-    //  console.log('Document written with ID: ', docRef.id);
-    //})
-    //.catch((error) => {
-    //  console.error('Error adding document: ', error);
-    //});
   });
 }
 
 
 // Funcion eliminando publicaciones 
 
-
-export function deleteColletionPosts() {
+export function modalDeleteColletionPosts() {
   const btnDeletePosts = document.querySelectorAll('.btnDeletePost');
   btnDeletePosts.forEach((button) => {
-    button.addEventListener('click', () => {
-      deletePosts(button.dataset.id)
-      console.log(button.id)
+    button.addEventListener('click', () => {      
+      const modalCreate = document.getElementById('modalCreate');
+      const modal = modalDelete(button.dataset.id);
+      modalCreate.appendChild(modal)
+      deleteColletionPosts()
     });
   })
-
 }
-
+function deleteColletionPosts() {
+  const buttonModalDeletePost = document.querySelector('#buttonModalDeletePost');
+  buttonModalDeletePost.addEventListener('click', () => {
+    deletePosts(buttonModalDeletePost.dataset.id)
+  });
+}

@@ -54,4 +54,28 @@ li {
     margin-top: 1%;
     border-radius: 14px;
     border:none;
+    cursor: pointer;
+
     }   
+
+.modal-container {
+    position: fixed;  
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5) ;    
+    transition: all 500ms ease;
+}
+
+.modal {    
+    
+    width: 200px;
+    height: 150px;
+    margin: auto;
+    background: white;
+    box-shadow: 1px 7px 25px rgba(0,0,0,0.6);
+    transition: all 500ms ease;
+    position: relative;
+   
+    
+}
+
