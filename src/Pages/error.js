@@ -30,14 +30,14 @@ close.addEventListener('click', () => {
 }
 export function modalErrorLogin(firebaseError) { 
     
-    const container_modal = document.getElementById('container_modal');
+    const login_modal = document.getElementById('login_modal');
     const close = document.getElementById('close');
     
     if ( firebaseError.code=="auth/user-not-found") {
-        container_modal.classList.add('show'); 
+        login_modal.classList.add('show'); 
     }
     
     close.addEventListener('click', () => {
-      container_modal.classList.remove('show');
+      login_modal.classList.remove('show');
     });
     }

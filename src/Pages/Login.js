@@ -3,7 +3,7 @@ import {LoginUsuario} from '../firebaseAuth.js';
 export function FormularioDeIngreso(){
 
   const html= `
-      <img src="./imagenes/Fondo.jpg" class="fondo">
+      <div class='fondo'>
       <h1> Login </h1>
       <form id="Form-login"> 
       <input type="email"id="EmailUser"class="input" name="correo" placeholder="email" required > 
@@ -13,8 +13,9 @@ export function FormularioDeIngreso(){
       <img src="" id="CampoVacioPassword" class="error"> 
       
       <button type="submit" id="login" class="btn" > LOGIN <a href="#/Register"> </a> </button>
+      <form> 
+      <div>`
       
-      <form> `
       
   return html;
 }

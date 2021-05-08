@@ -7,8 +7,12 @@ import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
 let content = document.getElementById('root');
  
 export const router = (route) => {
+    // para el registro
     const container_modal = document.getElementById('container_modal')
-    container_modal.classList.remove('show')
+    container_modal.classList.remove('show');
+    // para el login
+    const login_modal = document.getElementById('login_modal');
+    login_modal.classList.remove('show');
     content.innerHTML = "";
     switch(route) {
         case '':
