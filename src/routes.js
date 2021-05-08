@@ -7,9 +7,11 @@ import {FormularioDeIngreso} from './Pages/Login.js';
 let content = document.getElementById('root');
  
 export const router = (route) => {
+    const container_modal = document.getElementById('container_modal')
+    container_modal.classList.remove('show')
     content.innerHTML = "";
     switch(route) {
-        case '#/':
+        case '':
             content.innerHTML= home();
             break;
         case '#/signUp':
@@ -17,8 +19,13 @@ export const router = (route) => {
             FormularioDeRegistro();
             Datos_de_registro(); 
             
-
             break;
+        // case '#/errorusuarioregistrado':
+        //         content.innerHTML = 
+        //         FormularioDeRegistro();
+        //         Datos_de_registro(); 
+                
+        //         break;
         case '#/login':
              content.innerHTML = FormularioDeIngreso();
              break;
