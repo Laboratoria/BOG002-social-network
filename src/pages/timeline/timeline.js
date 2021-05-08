@@ -140,7 +140,8 @@ export function modalDeleteColletionPosts() {
     button.addEventListener('click', () => {   
       const modalCreate = document.getElementById('modalCreate');
       const modal = modalDelete(button.dataset.id);
-      modalCreate.innerHTML=modal.innerHTML;
+      innerHTML.modal="";
+      modalCreate.appendChild(modal);
       const mostrarModal = document.querySelector('#modal_container');
       mostrarModal.classList.add("show")
       deleteColletionPosts()
