@@ -80,7 +80,7 @@ export function postsTimeline() {
         const post = doc.data();
         const li = `
           <li id="${doc.id}" > 
-            <button type ="checkbox" class="btnDeletePost" data-id="${doc.id}">X</button>
+            <button type ="button" class="btnDeletePost" data-id="${doc.id}">X</button>
             <h3>${post.Title}</h3> 
             <p>${(new Date(post.Date.seconds * 1000)).toLocaleDateString("es-CO")}</p>                
             <p>${post.Contents}</p>
@@ -137,17 +137,31 @@ export function newCollectionPost() {
 export function modalDeleteColletionPosts() {
   const btnDeletePosts = document.querySelectorAll('.btnDeletePost');
   btnDeletePosts.forEach((button) => {
-    button.addEventListener('click', () => {      
+    button.addEventListener('click', () => {   
       const modalCreate = document.getElementById('modalCreate');
       const modal = modalDelete(button.dataset.id);
-      modalCreate.appendChild(modal)
+      modalCreate.innerHTML=modal.innerHTML;
+      const mostrarModal = document.querySelector('#modal_container');
+      mostrarModal.classList.add("show")
       deleteColletionPosts()
+      cancelModal()
     });
   })
 }
 function deleteColletionPosts() {
   const buttonModalDeletePost = document.querySelector('#buttonModalDeletePost');
   buttonModalDeletePost.addEventListener('click', () => {
+    const mostrarModal = document.querySelector('#modal_container');
     deletePosts(buttonModalDeletePost.dataset.id)
+    modal_container.classList.remove("show");
+  });
+}
+
+
+function cancelModal() {
+  const buttoncancelModal = document.querySelector('#delete');
+  buttoncancelModal.addEventListener('click', () => {
+    const mostrarModal = document.querySelector('#modal_container');
+    modal_container.classList.remove("show");
   });
 }

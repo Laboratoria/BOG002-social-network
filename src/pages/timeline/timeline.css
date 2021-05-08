@@ -57,7 +57,7 @@ li {
     cursor: pointer;
 
     }   
-
+/* 
 .modal-container {
     position: fixed;  
     top: 0;
@@ -77,5 +77,36 @@ li {
     position: relative;
    
     
+} */
+
+.modal-container {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+}
+  
+.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+  
+.modal {
+    background: linear-gradient(to right, #fe98d7, #87cdd1);
+    /* background-color:#ffdff4; */
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
