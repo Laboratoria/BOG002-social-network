@@ -1,7 +1,7 @@
 
 import {home } from './Pages/Home.js';
 import {FormularioDeRegistro,  Datos_de_registro} from './Pages/SingUp.js';
-import {FormularioDeIngreso} from './Pages/Login.js';
+import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
 
  
 let content = document.getElementById('root');
@@ -20,14 +20,10 @@ export const router = (route) => {
             Datos_de_registro(); 
             
             break;
-        // case '#/errorusuarioregistrado':
-        //         content.innerHTML = 
-        //         FormularioDeRegistro();
-        //         Datos_de_registro(); 
-                
-        //         break;
-        case '#/login':
-             content.innerHTML = FormularioDeIngreso();
+            case '#/login':
+             content.innerHTML = 
+             FormularioDeIngreso();
+             DatosDeLogin();
              break;
         default:
              console.log('404!!!')

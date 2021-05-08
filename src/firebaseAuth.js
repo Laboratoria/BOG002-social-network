@@ -1,5 +1,5 @@
 // se trae desde main js 
-import {modalError} from  './Pages/error.js'
+import {modalError, modalErrorLogin} from  './Pages/error.js'
 console.log(auth)
 
 
@@ -17,3 +17,15 @@ export const autenticacionUsuario =(email, password)=>{
     modalError(error);
   });
 } 
+export const LoginUsuario = (email,password) =>{
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // Signed in
+      userCredential.user;
+      // ...
+    })
+    .catch((error) => {
+      console.log('error',error);
+      modalErrorLogin(error);
+    });
+  }
