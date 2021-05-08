@@ -5,23 +5,27 @@ export function FormularioDeRegistro(){
      
    let html= `
    <div class="fondo">
-    <form id="formulario">
-    <h1> Created account </h1>
-      <fieldset>
-
-    <input type="text" id="NameUser" class="input"  name="nombre" placeholder="User name" maxlength="10"   title="Maximo 16 caracteres" required >
-    <img src="" id="CampoVacioName" class="error">
-
-    <input type="email"id="EmailUser"class="input" name="correo" placeholder="email" required > 
-    <img src="" id="CampoVacioEmail" class="error">
-
-    <input type="password" id="PasswordUser"class="input" name="password" placeholder ="password" required >
-    <img src="" id="CampoVacioPassword" class="error">
-    <span id"completar"></span>
-    <button type="submit" id="Register" class="btn" > REGISTER <a href="#Register"> </a> </button>
-    </fieldset>
+    
+       <h1> Created account </h1>
+      /* <fieldset> */
+      <form id="formulario">
+         <div id="Name" class="input">
+         <input type="text" id="NameUser"  name="nombre" placeholder="User name" maxlength="10"   title="Maximo 16 caracteres" required >
+         <img src="" id="CampoVacioName" class="error">
+         </div>
+         <div id="Email" class="input">
+         <input type="email" id="EmailUser" name="correo" placeholder="email" required > 
+         <img src="" id="CampoVacioEmail" class="error">
+         </div>
+         <div id="Password" class="input">
+         <input type="password" id="PasswordUser" name="password" placeholder ="password" required >
+         <img src="" id="CampoVacioPassword" class="error">
+         </div>
+         <span id"completar"></span>
+         <button type="submit" id="Register" class="btn" > REGISTER <a href="#Register"> </a> </button>
+     /*  </fieldset> */
     </form>
-    </div>`;
+   </div>`;
    
     return html;
     
@@ -49,35 +53,36 @@ const campos = {
 
 		case "nombre":
 			if(e.target.value!="" && e.target.value.length >3 && expresiones.nombre.test(e.target.value)){
-            document.getElementById("NameUser").style.border = "2px solid green"
+            document.getElementById("Name").style.border = "5px solid green"
             document.getElementById("CampoVacioName").src ="./imagenes/comprobado.png"
             campos["nombre"] = true;
          } else {
-            document.getElementById("NameUser").style.border = "2px solid red"
+            document.getElementById("Name").style.border = "5px solid red"
             document.getElementById("CampoVacioName").src= "./imagenes/cancelar.png"
             campos["nombre"] = false;}
 		break;
 			case "correo":
             if(expresiones.correo.test(e.target.value)){
-               document.getElementById("EmailUser").style.border = "2px solid green"
+               document.getElementById("Email").style.border = "5px solid green"
                document.getElementById("CampoVacioEmail").src ="./imagenes/comprobado.png"
                campos["correo"] = true;
             } else {
-               document.getElementById("EmailUser").style.border = "2px solid red"
+               document.getElementById("Email").style.border = "5px solid red"
                document.getElementById("CampoVacioEmail").src= "./imagenes/cancelar.png"
                campos["correo"] = false;}
 		break;	
       case "password":
          if(e.target.value.length >6 ||expresiones.password.test(e.target.value)){
-            document.getElementById("PasswordUser").style.border = "2px solid green"
+            document.getElementById("Password").style.border = "5px solid green"
             document.getElementById("CampoVacioPassword").src ="./imagenes/comprobado.png"
             campos["password"] = true;
          } else {
-            document.getElementById("PasswordUser").style.border = "2px solid red"
+            document.getElementById("Password").style.border = "5px solid red"
             document.getElementById("CampoVacioPassword").src= "./imagenes/cancelar.png"
             campos["password"] = false;}
 		break;
-         }}
+         }
+      }
 	
 
 

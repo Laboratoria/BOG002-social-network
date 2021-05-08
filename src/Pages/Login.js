@@ -6,13 +6,14 @@ export function FormularioDeIngreso(){
       <div class='fondo'>
       <h1> Login </h1>
       <form id="Form-login"> 
-      
-      <input type="email"id="EmailUser"class="input" name="correo" placeholder="email" required > 
+      <div class="input" id="Email">
+      <input type="email" name="correo" placeholder="email" required id="EmailUser"> 
       <img src="" id="CampoVacioEmail" class="error">
-  
-      <input type="password" id="PasswordUser"class="input" name="password" placeholder ="password" required >
+      </div>
+      <div class="input" id="Password">
+      <input type="password"  name="password" placeholder ="password" required id="PasswordUser">
       <img src="" id="CampoVacioPassword" class="error"> 
-      
+      </div>
       <button type="submit" id="login" class="btn" > LOGIN <a href="#/Register"> </a> </button>
       <form> 
       <div>`
@@ -39,22 +40,22 @@ export function FormularioDeIngreso(){
     switch (e.target.name) {
       case "correo":
             if(expresiones.correo.test(e.target.value)){
-               document.getElementById("EmailUser").style.border = "2px solid green";
+               document.getElementById("Email").style.border = "5px solid green";
                document.getElementById("CampoVacioEmail").src ="./imagenes/comprobado.png";
                campos["correo"] = true;
             } else {
-               document.getElementById("EmailUser").style.border = "2px solid red";
+               document.getElementById("Email").style.border = "5px solid red";
                document.getElementById("CampoVacioEmail").src= "./imagenes/cancelar.png";
                campos["correo"] = false;
             }
 		  break;	
       case "password":
          if(expresiones.password.test(e.target.value)){
-            document.getElementById("PasswordUser").style.border = "2px solid green";
+            document.getElementById("Password").style.border = "5px solid green";
             document.getElementById("CampoVacioPassword").src ="./imagenes/comprobado.png";
             campos["password"] = true;
          } else {
-            document.getElementById("PasswordUser").style.border = "2px solid red";
+            document.getElementById("Password").style.border = "5px solid red";
             document.getElementById("CampoVacioPassword").src= "./imagenes/cancelar.png";
             campos["password"] = false;
          }

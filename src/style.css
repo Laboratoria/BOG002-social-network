@@ -44,7 +44,7 @@ font-size: 22px;
 margin: 0%;
 position: relative;
 left: 0.3em;
-top:  3em;
+top:  5em;
 
 }
 
@@ -80,6 +80,7 @@ align-items: center;
 position: relative;
 top: 4.5em;
 }
+/* formulario de login */
 #Form-login{
 font-family: 'Dancing Script', cursive;
 display: flex;
@@ -89,7 +90,8 @@ align-items: center;
 position: relative;
 top: 14.5em;
 }
-fieldset{
+   
+/* fieldset{
 font-family: 'Dancing Script', cursive;
 display: flex;
 flex-direction: column;
@@ -98,28 +100,34 @@ width: 80%;
 align-items: center;
 position: relative;
 top: 8.5em; 
-border: none;
+border: none; */
 }
- fieldset img{
+/*  fieldset img{
 width: 20px;
 position: relative;
 left: 120px;
 top: -30px;
+} */
+input{
+    border: none;
+    background-color: transparent;
+    outline: none;
 }
 .input{
+background: white;
 font-family: 'Dancing Script', cursive;
 color: rgb(10, 9, 9);
 display: flex;
-flex-direction: column;
-height: 2em;
+justify-content: space-evenly;
+height: 2.5em;
 width: 70%;
-border: none;
 border-radius: 10px;
 margin: 0.9em;
 font-size: 17px;
 font-family: 'Poly';
-outline: none;
-
+}
+.input img{
+    height: 1.7em;
 }
 
 #Register{
@@ -134,15 +142,6 @@ background-color: #7cbe84;
 transform: scale(1.2);
 }
 
-form{
-font-family: 'Dancing Script', cursive;
-display: flex;
-flex-direction: column;
-height: 80%;
-align-items: center;
-position: relative;
-/* top: 14.5em; */
-}
 
 #signUp{
 background-color: #8adb94;
@@ -170,7 +169,7 @@ align-items: center;
 justify-content: space-between;
 height: 20vh;
 position: relative;
-top: 9em;
+top: 19em;
 
 
 }
@@ -266,7 +265,6 @@ top:1.5em
     position: relative;
     top:1.5em
     }
-}
 
 
 /* ********************************************************************************************************************
