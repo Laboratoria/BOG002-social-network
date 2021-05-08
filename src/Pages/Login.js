@@ -6,6 +6,7 @@ export function FormularioDeIngreso(){
       <div class='fondo'>
       <h1> Login </h1>
       <form id="Form-login"> 
+      
       <input type="email"id="EmailUser"class="input" name="correo" placeholder="email" required > 
       <img src="" id="CampoVacioEmail" class="error">
   

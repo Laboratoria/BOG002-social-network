@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 
-
-@media  (max-width: 600px){
-=======
 @media screen and  (max-width: 800px){
->>>>>>> a8423ba2081d17b483ee07a648d21d8fce124fab
 *{
 margin: 0;
 padding: 0;
@@ -154,7 +149,7 @@ background-color: #8adb94;
 color: black;   
 }
 #login{
-background-color: #3d3d3d79;
+background-color: #3d3d3deb;
 color: wheat;
 position: relative;
 top: 8em;
@@ -204,7 +199,8 @@ left: 0;
 background-color: rgba(0, 0, 0, 0.534);
 height: 100vh;
 width: 100vw;
-transition: opacity 0.3s ease;}
+transition: opacity 0.3s ease;
+}
 
 .container_modal p{
 color: black !important;
@@ -262,7 +258,16 @@ color:black !important;
 position: relative;
 top:1.5em
 }
+
+ #btn_signUp{
+    background-color: #8adb94;
+    margin-top: 1em;
+    color:black !important;
+    position: relative;
+    top:1.5em
+    }
 }
+
 
 /* ********************************************************************************************************************
 ******************************************* DESKTOP ********************************************************************
@@ -304,81 +309,6 @@ top: 3.2em;
 left: 20%;
 }
  p{
-<<<<<<< HEAD
-            font-family: 'Poly', serif;
-            color: white;
-            font-weight: lighter;
-            font-size: 22px;
-            margin: 0%;
-            position: relative;
-            left: 0.3em;
-            top:  3em;
-    }
-    
-    .btn{
-        padding: 10px;
-        width: 188px;
-        height: 45px;
-        border-radius: 20px;
-        border-style: none;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        text-transform: uppercase;
-        font-weight:normal;
-        font-size: 1rem;
-        position: relative;
-        top: 10em;
-    
-        
-    }
-    .btn a{
-        text-decoration:none;
-        color: white;
-    }
-    #signUp{
-        background-color: #8adb94;
-        color: black;   
-    }
-    #login{
-        background-color: #3d3d3d79;
-        color: wheat;
-        position: relative;
-        top: 8em;
-        
-    }
-    #signUpGoogle{
-        background-color: transparent;
-        color: wheat;
-        display: flex;
-        justify-content: space-around;
-        font-size: 14px;
-    }
-    
-    section{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        height: 150px;
-        position: relative;
-        top: 9em;
-        
-    }
-    section img{
-        background: white;
-        border-radius: 50%;
-        border: white solid 10px;
-    }
-    #loginPpal{
-        background-color: #3d3d3d79;
-        color: wheat;
-        
-        
-    }
- 
-    }
-
-/* Estilos Desktop */
-=======
 width: 30%;
 font-family: 'Poly', serif;
 color: white;
@@ -520,7 +450,6 @@ text-align: center;
 #loginPpal{
 background-color: #3d3d3dc7;
 color: wheat;
+}
+}
 
-
-}}
->>>>>>> a8423ba2081d17b483ee07a648d21d8fce124fab
