@@ -220,3 +220,45 @@ span:last-child {
 .hide {
     display: none;
 }
+
+.posts {
+    background-color: #F6EFFF;
+}
+
+.logoHome {
+    height: 160px;
+    width: 130px;
+}
+
+.logoMenu {
+    height: 80px;
+    width: 40px;
+}
+.headerHome {
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    left: 0;
+    align-items: center;
+}
+
+footer {
+    background-color: #630092;
+}
+
+.logoHome {
+
+    text-align: left;
+
+}
+.navBar{
+    position: absolute;
+    height: 55px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    left: 0;
+    align-items: center;
+}
