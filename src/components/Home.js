@@ -6,16 +6,36 @@ export function Home() {
   const template = document.createElement("div");
   template.insertAdjacentHTML(
     "afterbegin",
-    `<div id="container" class"form">
-        <img class="logo" src="./assets/gleam.svg" alt="Gleam logo">
-        <p class="copy">Posting...</p>
-        <div class="btns-container-mobile">
-          <button id="signOut" class="button_general">Vemos!!</button>
+    `<header class="headerHome">
+      <div>
+      <img class="logoHome" src="./assets/LogoHome.svg" alt="Gleam logo">
       </div>
-    </div>`
+      <div>
+      <img class="logoMenu" src="./assets/Menu.svg" alt="Gleam logo">
+      </div>
+     </header>
+      <div id="container" class="posts"> 
+      </div>
+      <footer class="navBar">
+      <!-- nav bar -->
+      <div>
+      <a href="#/"><img class="logo-Home" src=./assets/Home.svg alt="arrow"></a>
+      </div>
+      <div>
+      <a href="#/"><img class="logo-Post" src=./assets/Post.svg alt="arrow"></a>
+      </div>
+      <div>
+      <a href="#/"><img class="logo-Profile" src=./assets/Profile.svg alt="arrow"></a>
+      </div>
+      </footer>
+    `
   );
   return template;
 }
+/*<div class="btns-container-mobile">
+          <button id="signOut" class="button_general">LogOut</button>
+        </div>*/
+
 export function userOut() {
   const logOut = document.querySelector("#signOut");
   logOut.addEventListener("click", (e) => {
