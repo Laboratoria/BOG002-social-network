@@ -47,7 +47,21 @@ left: 0.3em;
 top:  5em;
 
 }
-
+.btnHome{
+padding: 10px;
+width: 188px;
+height: 45px;
+border-radius: 20px;
+border-style: none;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+text-transform: uppercase;
+font-weight:normal;
+font-size: 1rem;
+position: relative;
+top: -3em;  
+margin-top: 1.5em; 
+transition: transform 250ms;
+}
 .btn{
 padding: 10px;
 width: 188px;
@@ -65,6 +79,14 @@ transition: transform 250ms;
 .btn:hover{
 background-color: #7cbe84;
 transform: scale(1.2);
+}
+.btnHome:hover{
+background-color: #7cbe84;
+transform: scale(1.2);
+}
+.btnHome a{
+text-decoration:none;
+color: white;
 }
 .btn a{
 text-decoration:none;
@@ -109,9 +131,9 @@ left: 120px;
 top: -30px;
 } */
 input{
-    border: none;
-    background-color: transparent;
-    outline: none;
+border: none;
+background-color: transparent;
+outline: none;
 }
 .input{
 background: white;
@@ -127,7 +149,7 @@ font-size: 17px;
 font-family: 'Poly';
 }
 .input img{
-    height: 1.7em;
+height: 1.7em;
 }
 
 #Register{
@@ -166,7 +188,7 @@ section {
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: space-between;
+/* justify-content: space-between; */
 height: 20vh;
 position: relative;
 top: 19em;
@@ -259,12 +281,12 @@ top:1.5em
 }
 
  #btn_signUp{
-    background-color: #8adb94;
-    margin-top: 1em;
-    color:black !important;
-    position: relative;
-    top:1.5em
-    }
+background-color: #8adb94;
+margin-top: 1em;
+color:black !important;
+position: relative;
+top:1.5em
+}
 
 
 /* ********************************************************************************************************************
@@ -338,6 +360,21 @@ background: white;
 border-radius: 50%;
 border: white solid 10px;
 }
+.btnHome{
+padding: 10px;
+width: 188px;
+height: 45px;
+border-radius: 20px;
+border-style: none;
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+text-transform: uppercase;
+font-weight:normal;
+font-size: 1rem;
+position: relative;
+top: 1em;  
+margin-top: 2em;
+transition: transform 250ms;
+}
 .btn{
 margin-top: 1em;
 padding: 1px;
@@ -354,9 +391,17 @@ top: 2em;
 cursor: pointer;
 transition: transform 250ms;
 }
+.btnHome:hover{
+    background-color: #7cbe84;
+    transform: scale(1.2);
+}
 .btn:hover{
 background-color: #7cbe84;
 transform: scale(1.2);
+}
+.btnHome a{
+text-decoration:none;
+color: white;
 }
 .btn a{
 text-decoration:none;
@@ -402,7 +447,7 @@ top: 8em;
 }
 #signUpGoogle{
 background-color: transparent;
-color: wheat;
+color: rgb(255, 255, 255);
 display: flex;
 justify-content: space-around;
 font-size: 14px;
