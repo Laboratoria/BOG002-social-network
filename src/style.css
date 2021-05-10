@@ -392,8 +392,8 @@ cursor: pointer;
 transition: transform 250ms;
 }
 .btnHome:hover{
-    background-color: #7cbe84;
-    transform: scale(1.2);
+background-color: #7cbe84;
+transform: scale(1.2);
 }
 .btn:hover{
 background-color: #7cbe84;
@@ -494,5 +494,43 @@ text-align: center;
 background-color: #3d3d3dc7;
 color: wheat;
 }
+#Form-login{
+font-family: 'Dancing Script', cursive;
+display: flex;
+flex-direction: column;
+height: 80%;
+align-items: center;
+position: relative;
+top: 14.5em;
+}
+#login{
+background-color: #3d3d3deb;
+color: wheat;
+position: relative;
+top: 5em;
+
+}
+input{
+border: none;
+background-color: transparent;
+outline: none;
+}
+.input{
+background: white;
+font-family: 'Dancing Script', cursive;
+color: rgb(10, 9, 9);
+display: flex;
+justify-content: space-evenly;
+height: 2.5em;
+width: 30vw;
+border-radius: 10px;
+margin: 0.9em;
+font-size: 17px;
+font-family: 'Poly';
+}
+.input img{
+height: 1.7em;
+}
+
 }
 
