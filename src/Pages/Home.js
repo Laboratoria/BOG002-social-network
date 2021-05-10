@@ -14,7 +14,7 @@ export function home() {
             <!-- Botones para el ingreso y registro -->
          <section id="Botones" class="Bienvenida">
       
-            <button type="button" id="signUpGoogle" class="btnHome" value="Sign up Google"> <img src="imagenes/google.png"> <a href="#signUpGoogle"> SIGN UP WITH GOOGLE</a> </button>
+            <button type="button" id="signUpGoogle" class="btnHome" value="Sign up Google"> <img src="imagenes/google.png">SIGN UP WITH GOOGLE</button>
             <button type="button" id="signUp" class="btnHome" value="Sign Up"> <a href="#/signUp"> SIGN UP</a></button>
             <button type="button" id="loginPpal" class="btnHome" value="login"> <a href="#/login">LOGIN</a></button>
         
@@ -26,35 +26,33 @@ export function home() {
          
 }
 
-
-
-
-
-/* // capturamos el click sobre el boton de login
-export function BotondeLogin () {
-  
-    const Login = document.getElementById('login');
-    Login.addEventListener('click',() =>{
-      document.getElementById('root').innerHTML = FormularioDeIngreso();
-    })
-    
-  }
-
-// capturamos el click sobre el boton de Sign Up
-export function BotondeCrearCuenta () {
-  
-    const Registro = document.getElementById('signUp');
-    Registro.addEventListener('click',() =>{
-      document.getElementById('root').innerHTML = FormularioDeRegistro();
-    })
-    
-  }
-  // capturamos el click sobre el boton crear cuenta con Google
+// capturamos el click sobre el boton crear cuenta con Google
   export function BotondeCrearCuentaconGoogle () {
   
     const RegistroConGoogle = document.getElementById('signUpGoogle');
     RegistroConGoogle.addEventListener('click',() =>{
-      document.getElementById('root').innerHTML = `<h1>Registro con Google</h1>`;
-    })
+      const provider = new firebase.auth.GoogleAuthProvider();
     
-  } */
+      firebase.auth().signInWithPopup(provider)
+      .then((result) => {
+        /** @type {firebase.auth.OAuthCredential} */
+        var credential = result.credential;
+    
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
+    
+    })
+  }

@@ -1,5 +1,5 @@
 
-import {home } from './Pages/Home.js';
+import {home, BotondeCrearCuentaconGoogle} from './Pages/Home.js';
 import {FormularioDeRegistro,  Datos_de_registro} from './Pages/SingUp.js';
 import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
 
@@ -17,6 +17,7 @@ export const router = (route) => {
     switch(route) {
         case '':
             content.innerHTML= home();
+            BotondeCrearCuentaconGoogle();
             break;
         case '#/signUp':
             content.innerHTML = 
