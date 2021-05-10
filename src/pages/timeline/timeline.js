@@ -3,6 +3,7 @@ import { signOut, collectionPost, deletePosts } from '../../index.js';
 const fireStore = firebase.firestore();
 const auth = firebase.auth();
 
+// Template screen muro
 export function timelinePage() {
   const view = `
         <section id="screenWall">
@@ -36,7 +37,7 @@ export function timelinePage() {
   return divElement;
 }
 
-//Template funcion modal eliminar post
+// Template funcion modal eliminar post
 export function modalDelete(idPost) {
   const modal =
     `<section>
@@ -70,7 +71,7 @@ export function signOutGoogle() {
   return true;
 }
 
-// funcion publicaciones en pantalla
+// Funcion publicaciones en pantalla
 export function postsTimeline() {
   const postlist = document.getElementById('listPost');
   const setPost = (data) => {
@@ -80,11 +81,11 @@ export function postsTimeline() {
         const post = doc.data();
         const li = `
           <li id="${doc.id}" > 
-            <button type ="button" class="btnDeletePost" data-id="${doc.id}">X</button>
-            <h3>${post.Title}</h3> 
-            <p>${(new Date(post.Date.seconds * 1000)).toLocaleDateString("es-CO")}</p>                
-            <p>${post.Contents}</p>
-                        
+            <button type="button" class="btnDeletePost" data-id="${doc.id}">X</button>
+            <img id="imgUser" src="assets/IconoUsuarioPostMobile.png">
+            <h3 id="titlePost">${post.Title}</h3> 
+            <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString("es-CO")}</p>                
+            <p id="textPost">${post.Contents}</p>
           </li>
           `;
         html += li;
@@ -93,9 +94,8 @@ export function postsTimeline() {
     }
   };
 
-  // Eventos actualizar y publicar post verificando si el usuario esta en su sesión
-
-  auth.onAuthStateChanged((user) => {
+// Eventos actualizar y publicar post verificando si el usuario esta en su sesión
+auth.onAuthStateChanged((user) => {
     if (user) {
       fireStore.collection('posts')
         .orderBy('Date', 'desc')
@@ -119,7 +119,7 @@ export function postsTimeline() {
   });
 }
 
-// funcion enviando datos al FireBase 
+// Función enviando datos al FireBase 
 export function newCollectionPost() {
   const btnPosts = document.getElementById('btnPost');
   btnPosts.addEventListener('click', () => {
@@ -131,16 +131,14 @@ export function newCollectionPost() {
   });
 }
 
-
-// Funcion eliminando publicaciones 
-
+// Función eliminando publicaciones 
 export function modalDeleteColletionPosts() {
   const btnDeletePosts = document.querySelectorAll('.btnDeletePost');
   btnDeletePosts.forEach((button) => {
     button.addEventListener('click', () => {   
       const modalCreate = document.getElementById('modalCreate');
       const modal = modalDelete(button.dataset.id);
-      innerHTML.modal="";
+      //innerHTML.modal="";
       modalCreate.appendChild(modal);
       const mostrarModal = document.querySelector('#modal_container');
       mostrarModal.classList.add("show")
@@ -149,20 +147,22 @@ export function modalDeleteColletionPosts() {
     });
   })
 }
+
 function deleteColletionPosts() {
   const buttonModalDeletePost = document.querySelector('#buttonModalDeletePost');
   buttonModalDeletePost.addEventListener('click', () => {
     const mostrarModal = document.querySelector('#modal_container');
+    mostrarModal.classList.add("show")
     deletePosts(buttonModalDeletePost.dataset.id)
     modal_container.classList.remove("show");
   });
 }
 
-
 function cancelModal() {
   const buttoncancelModal = document.querySelector('#delete');
   buttoncancelModal.addEventListener('click', () => {
     const mostrarModal = document.querySelector('#modal_container');
+    mostrarModal.classList.add("show")
     modal_container.classList.remove("show");
   });
 }

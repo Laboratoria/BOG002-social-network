@@ -1,38 +1,40 @@
 import { Login } from '../../index.js';
 
+// Template screen Inicio de sesión
 export function loginPage() {
   const view = `
-        <section id="screenLogIn">
-            <header>
-                <img src="assets/LogowikimomsMobile.png">
-                <h2>WikiMoms te ayuda a compartir experiencias en tus etapas de embarazo, lactancia y postparto.</h2>
-            </header>
+      <section id="screenLogIn">
+        <header>
+          <img src="assets/LogowikimomsMobile.png">
+          <h2>WikiMoms te ayuda a compartir experiencias en tus etapas de embarazo, lactancia y postparto.</h2>
+        </header>
 
-            <main>
-                <div class="containerLogIn">
-                    <form id="signIn">
-                    <input type="email" id="signInEmail" placeholder="Correo electronico" class="input" required>
-                    <P class="errorMessage" id="errorEmail"></p>
-                    <input type="password" id="signInpassword" placeholder="Contraseña" class="input" required>
-                    <P class="errorMessage" id="errorPassword"></p>
-                    <button type= "button" class="button" id="btnLogIn">Iniciar Sesión</button>
-                    <img src="assets/imgLineas1.png">
-                    <button id="btnGoogle" type="submit"><img id="logoGoogle" src="assets/logoGoogle.png">Iniciar sesión con
-                    Google</button>
-                    </form>
-                </div>
-                <div class="containerCreateAccount">
+        <main>
+          <div class="containerLogIn">
+            <form id="signIn">
+              <input type="email" id="signInEmail" placeholder="Correo electronico" class="input" required>
+              <P class="errorMessage" id="errorEmail"></p>
+              <input type="password" id="signInpassword" placeholder="Contraseña" class="input" required>
+              <P class="errorMessage" id="errorPassword"></p>
+              <button type= "button" class="button" id="btnLogIn">Iniciar Sesión</button><br>
+              <img src="assets/imgLineas1.png"><br>
+              <button id="btnGoogle" type="submit"><img id="logoGoogle" src="assets/logoGoogle.png">Iniciar sesión con Google</button>
+            </form>
+          </div>
+          <div class="containerCreateAccount">
                     <button class="button" id="btnCreateAccount" onclick= "window.location='#/registration'">Crear Cuenta</button>
-                </div>
-            </main>
-        </section>    
-    `;
+          </div>
+        </main>
+      </section>    
+      `;
+
   const divElement = document.createElement('div');
   divElement.innerHTML = view;
 
   return divElement;
 }
 
+// Función Iniciar sesión 
 export function logIn() {
   const btnSignIn = document.getElementById('btnLogIn');
   btnSignIn.addEventListener('click', () => {

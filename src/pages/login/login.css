@@ -1,9 +1,13 @@
+section {
+    width: 320px;
+    }
+
 header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   }
+    }
 
 body {
     background-color:#c997c0;
@@ -25,8 +29,8 @@ body {
     background-color:#ECD4EA ;
     padding: 5% 0% 4% 0%;
     border-radius: 8px;
-    margin: 0% 7% 0% 7%;
-    width: 86%;
+    margin: 0% 5% 0% 5%;
+    width: 90%;
     } 
 
 h2 {
@@ -37,9 +41,9 @@ h2 {
     background-color:#ECD4EA ;
     padding: 4% 0% 4% 0%;
     border-radius: 8px;
-    margin: 4% 7% 4% 7%;
+    margin: 4% 5% 4% 5%;
     text-align: center;
-    width: 86%;
+    width: 90%;
     }
  
 .button:hover{
@@ -71,7 +75,7 @@ h2 {
     box-sizing: border-box;
     border-radius: 4px;
     padding: 3%;
-    margin: 1% 1% 1% 1%;
+    margin: 2% 1% 1% 1%;
     }
 
 #logoGoogle {
@@ -91,3 +95,4 @@ h2 {
     width: 239px;
     height: 35px;
     }
+

@@ -1,5 +1,6 @@
 import { register, registerGoogle } from '../../index.js';
 
+// Template screen registrarse
 export function registroPage() {
   const view = `
     <section id="screenRegistration">
@@ -13,11 +14,10 @@ export function registroPage() {
             <div class="containerLogInGoogle">
                 <button id="btnGoogle" type="submit"><img id="logoGoogle" src="assets/logoGoogle.png">Registrarte con
                 Google</button>
-                <img src="assets/imgLineas.png">
+                <img id="lineas" src="assets/imgLineas.png">
             </div>
             <div class="containerRegistration">
                 <form id="signUp">
-                <input type="text" id="NameUser" placeholder="Nombre de usuario" class="input">
                 <input type="email" id="signUpEmail" placeholder="Correo electronico" class="input" required>
                 <P class="errorMessage" id="errorEmail"></p>
                 <input type="password" id="signUpPassword" placeholder="Contraseña" class="input" required>
@@ -34,6 +34,7 @@ export function registroPage() {
   return divElement;
 }
 
+// Función registrarse
 export function signUp() {
   const button = document.getElementById('Register');
   const signUpForm = document.getElementById('signUp');
@@ -82,6 +83,7 @@ export function signUp() {
   return true;
 }
 
+// Función registrarse con Google
 export function signUpGoogle() {
   const buttonGoogle = document.getElementById('btnGoogle');
   buttonGoogle.addEventListener('click', () => {
