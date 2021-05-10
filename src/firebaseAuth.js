@@ -18,7 +18,8 @@ export const autenticacionUsuario =(email, password)=>{
   });
 } 
 export const LoginUsuario = (email,password) =>{
-  firebase.auth().signInWithEmailAndPassword(email, password)
+  firebase.auth()
+  .signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in
       userCredential.user;

@@ -23,8 +23,8 @@ export function FormularioDeRegistro(){
          </div>
          <span id"completar"></span>
          <button type="submit" id="Register" class="btn" > REGISTER <a href="#Register"> </a> </button>
-         <!--</fieldset> -->
-    </form>
+   <!--</fieldset> -->
+   </form>
    </div>`;
    
     return html;

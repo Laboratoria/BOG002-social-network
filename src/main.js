@@ -2,6 +2,7 @@
 
 import {router} from './routes.js';
 
+
 window.addEventListener('load',() => {
   router(window.location.hash);
 }); 
