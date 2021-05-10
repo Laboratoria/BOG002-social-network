@@ -1,7 +1,8 @@
 // se trae desde main js 
 import {modalError, modalErrorLogin} from  './Pages/error.js'
-console.log(auth)
 
+
+// crear cuenta de usuario
 
 export const autenticacionUsuario =(email, password)=>{
 
@@ -17,6 +18,9 @@ export const autenticacionUsuario =(email, password)=>{
     modalError(error);
   });
 } 
+
+// ingresando usuario
+
 export const LoginUsuario = (email,password) =>{
   firebase.auth()
   .signInWithEmailAndPassword(email, password)
