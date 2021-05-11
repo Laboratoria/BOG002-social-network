@@ -1,7 +1,8 @@
+//import { createUserSuccessful } from '../controls/Register.js'
 export function renderFormRegister() {
   const container = `
   <h3 class="titleForm">Formulario Registro</h3>
-  <form class="formRegister" id="formRegister"autocomplete="off">
+  <form class="formRegister" id="formRegister" autocomplete="off" >
   <img class="imgIcon" src="assets/imagesIcon/UserGray.png" />
   <input class="inputName" placeholder="Nombre Completo" type="text" id="userName" minlength="7" pattern="[A-Z a-z]{1,30}" required></input><br>
   <img class="imgIcon" src="assets/imagesIcon/atGray.png" />

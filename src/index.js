@@ -3,6 +3,7 @@ import { router } from './controls/router.js';
 
 const init = () => {
   const db = configurationFireBase();
+  //const db = firebase.firestore();
   const $containerGeneral = document.createElement('div');
   $containerGeneral.classList.add('bigContainer');
   document.querySelector('.body').appendChild($containerGeneral);

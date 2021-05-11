@@ -14,7 +14,7 @@ template.innerHTML = `
   list-style: none;
   align-items: space-between;
   flex-direction: column;
-  position:absolute;
+  position:fixed;
 }
 .desk_nav a{
   text-decoration: none;

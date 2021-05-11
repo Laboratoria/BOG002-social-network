@@ -2,15 +2,17 @@ import { renderFormRegister } from '../views/RegisterForm.js';
 import { renderFormLogin } from '../views/LogInForm.js';
 import { gridImage } from '../components/image-grid.js';
 import { card } from '../components/register-login_card.js';
-import { userRegistration } from './Register.js';
+import { userRegistration} from './Register.js';
 import { visibility } from '../components/visibilityPassword.js';
 import { userLogIn } from './LogIn.js';
 import { LogInGoogle } from '../controls/LogIn.js';
-import { RetrieveData } from '../controls/prueba.js'
+import { RetrieveData } from '../firestore/firestoreData.js'
 import { HomeDesktop } from '../views/homeDesktop.js';
 import { HomeMobile } from '../views/homeMobile.js';
-import { post } from '../views/post.js';
+import { createPostCard } from '../views/post.js';
 import { profile } from '../views/profile.js'
+import { pageError } from '../views/error.js'
+import { createPost } from '../controls/firestore.js'
 import '../components/menu-mobile.js';
 import '../components/menu-desktop.js';
 import '../components/post-card.js';
@@ -33,6 +35,7 @@ export function renderLogin($containerGeneral) {
 }
 
 export function renderRegister($containerGeneral) {
+  console.log("register");
   gridAndCard($containerGeneral).innerHTML += renderFormRegister();
   document.querySelector('.formRegister').addEventListener('submit', userRegistration);
   visibility();
@@ -40,11 +43,8 @@ export function renderRegister($containerGeneral) {
 
 export function renderPost($containerGeneral, nameUser){
   Menu($containerGeneral);
-  document.querySelector('.body_container').innerHTML += post(); 
-  const p = document.createElement('p');
-  p.textContent = "Prueba2";
-  const wcPost = document.querySelector("post-card");
-  wcPost.shadowRoot.querySelector(".ubication-container").appendChild(p);
+  document.querySelector('.body_container').innerHTML += createPostCard(); 
+  document.querySelector(".post_button").addEventListener('click', createPost);
 }
 
 export function renderProfile($containerGeneral, nameUser){
@@ -54,30 +54,17 @@ export function renderProfile($containerGeneral, nameUser){
 }
 
 export function renderError($containerGeneral){
-  $containerGeneral.innerHTML = "Página no encontrada";
+  pageError($containerGeneral);
 }
 
-export function renderHome($containerGeneral, db){
-  // const postCard = document.createElement('post-card'); 
-  const postCard = `<post-card src="assets/imagesIcon/LikeBlueV.png">
-  <span slot="headerPostTitle">nombre usuario</span>
-  <span slot="descriptionPost">lugar</span>
-  </post-card>`;
-  //const headerPostTitle = `<span slot="headerPostTitle">nombre usuario</span>`;
-  //const descriptionPost = `<span slot="descriptionPost">lugar</span>`;
+export function renderHome($containerGeneral){
   Menu($containerGeneral);
-  document.querySelector('.body_container').innerHTML+= postCard; 
-  //postCard.innerHTML+=headerPostTitle;
-  //postCard.innerHTML+=descriptionPost;
-  console.log("home");
-  // RetrieveData(db);
-  // home();
+  RetrieveData(); 
 }
 
 function Menu($containerGeneral) {
   const mql = window.matchMedia('(max-width: 768px)');
   function pantalla(mobileView) {
-   // $containerGeneral.innerHTML= HomeMobile();
     if (mobileView) {
       $containerGeneral.innerHTML= HomeMobile();    
     } else {

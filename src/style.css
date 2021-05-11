@@ -26,12 +26,12 @@ footer{
 }
 .body_container{
     width: 100vw;
-    height: 80vh;
     position: absolute;
     background-image: url(assets/imagesIcon/texturamobile.png);
     background-repeat: no-repeat;
-    background-size: 77% 100%;
+    background-size: 70% 100%;
     background-position: right;
+    background-attachment:fixed, scroll;
     margin: auto 0;
 }
 .hideElement{

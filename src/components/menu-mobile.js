@@ -12,28 +12,19 @@ template.innerHTML = `
         display: flex;
         justify-content: space-around;
         align-items: center;
-        // padding: 0.5rem;
         margin:0;
       }
       .logo_mobile{
         width: 11vw;
-        // height:9vh ;
-        // padding-left: 5vw;
-        // padding-top: 1.3vh;
       }
       .logo_name{
-        // width: 51vw;
         height: 5vh;
-        // margin-left: 8vw;
         background-color: rgba(255, 255, 255, 0.438);
         padding: 0.5vh 5vw 1vh 5vw;
-        // margin-top: 2.3vh;
         border-radius: 30px;
       }
       .logo_signOut{
         width: 10vw;
-        // height: 5.5vh;
-        // margin-left: 9vw;
         margin-top: 1.5vh;
       }
       

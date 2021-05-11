@@ -1,4 +1,4 @@
-import { LogIn, LogInGoogleAuth, LogOutAuth } from '../auth/logInUser.js';
+import { LogIn, LogInGoogleAuth, LogOutAuth } from '../firebase/logInUser.js';
 
 export function userLogIn(event) {
   event.preventDefault();

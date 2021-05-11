@@ -9,8 +9,9 @@ const firebaseConfig = {
 };
 
 export function configurationFireBase() {
-  // firebase.initializeApp(firebaseConfig);
-  const app = firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore(app);
+   // firebase.initializeApp(firebaseConfig);
+   const app = firebase.initializeApp(firebaseConfig);
+   const db = firebase.firestore(app);
   return db;
-}
+ }
+

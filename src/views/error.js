@@ -1,6 +1,7 @@
-export function viewError() {
+export function  pageError($containerGeneral){
     const containerError= document.createElement('div');
     containerError.className='viewError';
+    $containerGeneral.appendChild(containerError);
     const titleError = document.createElement('h1');
     titleError.textContent = 'Lo sentimos';
     titleError.className='titleError';
