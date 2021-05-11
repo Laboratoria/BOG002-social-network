@@ -41,13 +41,13 @@ export function renderRegister($containerGeneral) {
   visibility();
 }
 
-export function renderPost($containerGeneral, nameUser){
+export function renderPost($containerGeneral){
   Menu($containerGeneral);
   document.querySelector('.body_container').innerHTML += createPostCard(); 
   document.querySelector(".post_button").addEventListener('click', createPost);
 }
 
-export function renderProfile($containerGeneral, nameUser){
+export function renderProfile($containerGeneral){
   Menu($containerGeneral);
   console.log("profile");
   profile();
@@ -59,7 +59,13 @@ export function renderError($containerGeneral){
 
 export function renderHome($containerGeneral){
   Menu($containerGeneral);
-  RetrieveData(); 
+  const containerPosts = document.createElement('div');
+  containerPosts.classList.add("containerPosts");
+  document.querySelector('.body_container').appendChild(containerPosts);
+  containerPosts.innerHTML='';
+  RetrieveData(containerPosts);
+  const allPost = document.querySelector('post-card');
+  console.log(allPost) ;
 }
 
 function Menu($containerGeneral) {

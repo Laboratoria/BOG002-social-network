@@ -12,15 +12,14 @@ const init = () => {
     document.querySelector('.bigContainer').innerHTML = '';
     firebase.auth().onAuthStateChanged((user) => {
       if(user){
-        const userName = user.displayName;
         if ((user) && ((hash == '') || (hash == 'register'))) {
           location.hash = '#home';
           door=false;
-          router(hash, $containerGeneral, db, userName);
+          router(hash, $containerGeneral, db);
         }
         else{
           if(door){
-            router(hash, $containerGeneral, db, userName);
+            router(hash, $containerGeneral, db);
           }
         }
       }

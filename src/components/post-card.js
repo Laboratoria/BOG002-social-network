@@ -1,23 +1,3 @@
-//import { data } from '../src/location.js';
-
-//const locationUser = data.location
-
-//let loc1=document.getElementById('ubication');
-//loc1.addEventListener("keyup", busqueda);
-
-//function busqueda (){
-//    const valorUser = loc1.value.toUpperCase();
-//    const resultLocation = document.getElementsByClassName('ubication');
-
-//    for (let i = 0; i < locationUser.length; i++){
-//        if (resultLocation[i].textContent.toUpperCase().includes(valorUser)){
-//            resultLocation[i].innerHTML = locationUser.ciudades;
-//        }else{
-            
-//        }
-//    }
-//}
-
 const template = document.createElement('template');
 template.innerHTML = `
 
@@ -30,7 +10,7 @@ template.innerHTML = `
     margin-top: 4vh;
     border-radius: 5px; 
     font-family:'Roboto', sans-serif;
-    font-weight: 550;
+    font-weight: 500;
     flex-direction: column;
     aling-items: space-around;
     box-shadow: 1vh 0.2vw 1vh 0vw rgba(0,0,0,0.3);
@@ -72,6 +52,9 @@ template.innerHTML = `
     height: 3vh;
     margin:3vh 0 2vh 1.5vw;
     position:absolute;
+    font-family:'Roboto', sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
 }
 .ubicationLeft{
     background-size: 20%;
@@ -90,6 +73,7 @@ template.innerHTML = `
     writing-mode:horizontal-tb;
     font-family:'Roboto', sans-serif;
     font-weight: 550;
+    color:#424348;
 }
 .textAreapublic{
     border: #FFC300 1px solid;
@@ -98,7 +82,8 @@ template.innerHTML = `
     height: 10vh;
     writing-mode:horizontal-tb;
     font-family:'Roboto', sans-serif;
-    font-weight: 550;
+    font-weight: 500;
+    color:#424348;
 }
 .footer-card{
     border-bottom-left-radius:5px;
@@ -126,6 +111,11 @@ template.innerHTML = `
     position:absolute;
     margin-left:12vw;
     color: #0C244F;
+}
+::slotted(img) {
+    background-size: 20%;
+    width: 9vw;
+    aling-self:flex-end;
 }
 ::slotted(button) {
     background-color: #0C244F;
@@ -185,13 +175,22 @@ template.innerHTML = `
         position:absolute;
         margin-left:12vw;
         margin-left:4vw;
-    }    
+    }   
+    ::slotted(img) {
+        background-size: 20%;
+        width: 3.5vw;
+        aling-self:flex-end;
+    } 
     .ubication-container{
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
         margin-left: 1.5rem;
+        text-transform: capitalize;
+        font-family:'Roboto', sans-serif;
+        font-weight: 500;
+        
     }  
     .ubication{
         border: #FFC300 1px solid;
@@ -200,6 +199,7 @@ template.innerHTML = `
         height: 4.5vh;
         margin:4vh 0 2vh 1vw;
         position:absolute;
+        text-transform: capitalize;
     }
     .ubicationLeft{
         background-size: 20%;
@@ -321,7 +321,7 @@ template.innerHTML = `
     <div class="header-card">
         <slot name="imgagePofile"><img class="imagesLeft" id="imgProfile"></slot>
         <slot name="headerPostTitle"></slot>
-        <img class="imagesRight" src="assets/imagesIcon/MoreWhite.png">
+        <slot name="moreButton"><img class="imagesRight" src="assets/imagesIcon/UbicationYellowC.png"></slot>
     </div>
     <img class="ubicationLeft"src="assets/imagesIcon/UbicationYellowC.png"><slot name="locationPost"><input class="ubication" id="ubication" type="text"></slot>
     <div class="public"><slot name="description"><textarea class="textAreapublic" name="textarea" rows="10" cols="50" type="text"></textarea></slot></div>
