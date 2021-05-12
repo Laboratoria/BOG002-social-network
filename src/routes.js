@@ -2,6 +2,7 @@
 import {home, BotondeCrearCuentaconGoogle} from './Pages/Home.js';
 import {FormularioDeRegistro,  Datos_de_registro} from './Pages/SingUp.js';
 import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
+import { Error404} from './Pages/Error 404.js';
 
  
 let content = document.getElementById('root');
@@ -31,7 +32,7 @@ export const router = (route) => {
              DatosDeLogin();
              break;
         default:
-             console.log('404!!!')
+             content.innerHTML = Error404();
     }
 } 
 

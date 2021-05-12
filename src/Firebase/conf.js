@@ -1,4 +1,4 @@
-import 'firebase/firestore';
+
 // Your web app's Firebase configuration
     
 var firebaseConfig = {
@@ -15,4 +15,4 @@ var firebaseConfig = {
   const auth = firebase.auth();
   console.log('firebase configurado');
 
-  export default firebase.firestore();
+   
