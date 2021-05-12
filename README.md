@@ -60,6 +60,7 @@ Event objeto, delegación de eventos)
 * [ ] Implementación de routing ([History API.](
   https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador
   ) | `hashchange`)
+ * [ ] [`localStorage`](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)
 
 ### JavaScript
 
@@ -197,10 +198,11 @@ tus H.U.:
 
 #### Creación de cuenta de usuario e inicio de sesión
 
-* _Login_ con Firebase:
+* _Login_:
   - Para el _login_ y las publicaciones en el muro puedes utilizar [Firebase](https://firebase.google.com/products/database/)
   - Creación de cuenta de acceso y autenticación con cuenta de correo y
     contraseña, y también con una cuenta de Google.
+  - Si no estás implementando el proyecto con Firebase, puedes simular el _Login_ persisitiendo la información con `localstorage`.
 * Validaciones:
   - Solamente se permite el acceso a usuarios con cuentas válidas.
   - No pueden haber usuarios repetidos.
@@ -236,7 +238,7 @@ tus H.U.:
  [Single Page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
 * Alterar y persistir datos. Los datos que agregues o modifiques deberán
   persistir a lo largo de la aplicación. Te recomendamos que uses
-  [Firebase](https://firebase.google.com/) para eso también.
+  [Firebase](https://firebase.google.com/) o `localstorage` una `web storage API`.
 
 #### Pruebas unitarias (unit tests)
 
