@@ -322,7 +322,45 @@ template.innerHTML = `
         .name_like{
             margin-left:4vw;
             color: #0C244F;
-        }   
+        } 
+        .editDeletePopUp{
+            position:absolute;
+            display:flex;
+            width:20vw;
+            height:20vh;
+            z-index:200;
+            background:#E0AB00;
+            color:white;
+            justify-content: space-between;
+            flex-direction:row;
+            right:10em;
+            border-radius:10px;
+        }  
+        .buttonPopUp{
+            width:10vw;
+            height:5vh;
+            text-decoration:none;
+            background:none;
+            border:none;
+            color:white;
+            display:flex;
+            flex-flow: column wrap;
+            right:2vw;
+        }
+        .imgPopUp{
+            width:3vw;
+            height:5vh;
+            flex-flow: column nowrap;
+        }
+        #imgClosePopUp{
+            width:2vw;
+            height:3vh;
+            display:flex;
+            justify-content: flex-end;
+            right:0;
+            position:absolute;
+            padding: 1.2vh 1vw 0 0;
+        }
     }    
     
     </style>
@@ -334,6 +372,13 @@ template.innerHTML = `
         <slot name="headerPostTitle"></slot>
         <slot name="moreButton"><img class="imagesRight" src="assets/imagesIcon/UbicationYellowC.png"></slot>
     </div>
+    <div class="editDeletePopUp" style="display: none;">
+        <img id="imgClosePopUp" src="assets/imagesIcon/close.png">
+        <img class="imgPopUp" src="assets/imagesIcon/EditWhiteV.png"/>
+        <img class="imgPopUp" src="assets/imagesIcon/removeWhite.png"/>
+        <button class="buttonPopUp">Editar</button>
+        <button class="buttonPopUp">Eliminar</button>
+    </div>
     <slot name="userIconPost"><img class="imagesRight" src="assets/imagesIcon/UserBlueC.png"></slot>
     <slot name="nameUserPost"></slot>
     <slot name="ubicationPostBlue"><img class="ubicationLeft" src="assets/imagesIcon/UbicationYellowC.png"></slot>
@@ -344,7 +389,6 @@ template.innerHTML = `
         <slot name="label"><p class="name_like">Me gusta</p></slot>
         <slot name="footer_right_element"><p class="conteo">123 Likes</p></slot>
     </div>
-
     </section>
 `;
 
@@ -366,6 +410,13 @@ class PostCard extends HTMLElement {
 
     attributeChangedCallback(name, oldValue, newValue) {
         this.updateStyle(this);
+    }
+
+    connectedCallback(){
+        const editDeletePopUp = this.shadowRoot.querySelector('.editDeletePopUp');
+        this.shadowRoot.querySelector('#imgClosePopUp').addEventListener('click', () => {
+            editDeletePopUp.style.display = 'none';
+        });
     }
 }
 

@@ -22,19 +22,23 @@ export function AllPostsCard(docID, username, location, description, likes, ownP
     document.querySelectorAll('#moreImageButton').forEach(element => {
         element.addEventListener("click", (event) => {
             const editPost = event.target.closest('post-card').dataset.ownPost; 
-            console.log(editPost);
             if (editPost == "true"){
+                const eventTarget = event.target.closest('post-card');
                 const postID = event.target.closest('post-card').dataset.id;
-                showPopUp(postID);
+                const popUp = eventTarget.shadowRoot.querySelector('.editDeletePopUp');
+                popUp.style.display = 'block';
+                // showPopUp(eventTarget, postID);
             } 
         });
     });
 }
 
-function showPopUp(postID){
-    const editDeletePost = document.createElement('div');
-    document.querySelector('post-card').appendChild(editDeletePost);
+function showPopUp(eventTarget, postID){
+    // document.querySelector('.body').innerHTML ="";
+    const editDeletePost = document.createElement('section');
+    editDeletePost.className='editDeletePopUp';
     const divDeletePost = document.createElement('div');
+    divDeletePost.className='pruebaPopUp';
     const divEditPost = document.createElement('div');
     const cancelEditDelete = document.createElement('button');
     editDeletePost.appendChild(divDeletePost);
@@ -49,11 +53,14 @@ function showPopUp(postID){
     divEditPost.appendChild(buttonEdit);
     divEditPost.appendChild(imageEdit);
     buttonDelete.setAttribute('class', 'buttonDelete');
-    imageTrash.setAttribute('class', imageTrash);
+    imageTrash.classList.add('imageTrash');
     buttonEdit.setAttribute('class', 'buttonEdit');
-    imageEdit.setAttribute('class', imageEdit);
+    imageEdit.classList.add('imageEdit');
     imageTrash.setAttribute('src', 'assets/imagesIcon/removeWhite.png');
     imageEdit.setAttribute('src', 'assets/imagesIcon/EditWhiteV.png');
+   // document.querySelector('.body').appendChild(editDeletePost);
+    eventTarget.appendChild(editDeletePost);
+    console.log(eventTarget);
 
     cancelEditDelete.addEventListener('click', () => {
         document.querySelector('post-card').removeChild(editDeletePost);
