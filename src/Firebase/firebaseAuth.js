@@ -1,5 +1,5 @@
 // se trae desde main js 
-import {modalError, modalErrorLogin} from  './Pages/error.js'
+import {modalError, modalErrorLogin} from  '../Pages/error.js'
 
 
 // crear cuenta de usuario

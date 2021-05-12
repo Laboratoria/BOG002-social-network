@@ -6,41 +6,11 @@ export const myFunction = () => {
   // console.log('Hola mundo!');
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // cargando vistas
 
 //  const ROUTER = new Router(Rutas);
- 
 //  document.getElementById("signUpGoogle").addEventListener("click", ()=>{
 //   ROUTER.load('EntrarConGoogle');
-  
 //  })
 //  document.getElementById("signUp").addEventListener("click", ()=>{
 //   ROUTER.load('Registro')
@@ -48,7 +18,7 @@ export const myFunction = () => {
 //  document.getElementById("login").addEventListener("click", ()=>{
 //   ROUTER.load('Ingreso')
 //  })
- 
+// eslint-disable-next-line no-multiple-empty-lines
 
 
 
