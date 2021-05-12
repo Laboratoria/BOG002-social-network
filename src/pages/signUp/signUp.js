@@ -61,8 +61,7 @@ export function signUp() {
     }
 
     register(email, pass)
-      .then((userCredential) => {
-        console.log('Creaste una nueva cuenta', userCredential);
+      .then(() => {
         signUpForm.reset();
         window.location = '#/timeline';
       })
@@ -90,8 +89,7 @@ export function signUpGoogle() {
     const errorPassword = document.getElementById('errorPassword');
     const googleAccount = new firebase.auth.GoogleAuthProvider();
     registerGoogle(googleAccount)
-      .then((result) => {
-        console.log('soy resultado', result);
+      .then(() => {
         window.location = '#/timeline';
       })
       .catch((err) => {

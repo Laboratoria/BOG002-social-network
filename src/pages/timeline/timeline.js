@@ -1,4 +1,9 @@
-import { signOut, collectionPost, deletePosts } from '../../index.js';
+import {
+  signOut,
+  collectionPost,
+  deletePosts,
+  editPosts,
+} from '../../index.js';
 
 const fireStore = firebase.firestore();
 const auth = firebase.auth();
@@ -39,8 +44,7 @@ export function timelinePage() {
 
 // Template funcion modal eliminar post
 export function modalDelete(idPost) {
-  const modal =
-    `<section>
+  const modal = `<section>
           <div id="modal_container" class="modal-container">
           <div class="modal">
             <p id="modal">¿Estas segura de eliminar esta publicación?</p>
@@ -49,23 +53,21 @@ export function modalDelete(idPost) {
           </div>
         </div>
       </section>
-    `
+    `;
   const divModal = document.createElement('div');
   divModal.innerHTML = modal;
   return divModal;
 }
 
-// Funcion cerrar sesión 
+// Funcion cerrar sesión
 export function signOutGoogle() {
   const buttonSignOut = document.getElementById('btnLogOut');
   buttonSignOut.addEventListener('click', () => {
     signOut()
       .then(() => {
-        console.log('cerraste sesión');
         window.location = '#/';
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
       });
   });
   return true;
@@ -82,10 +84,11 @@ export function postsTimeline() {
         const li = `
           <li id="${doc.id}" > 
             <button type="button" class="btnDeletePost" data-id="${doc.id}">X</button>
+            <button type="button" class="btnEditPost" data-id="${doc.id}">editar</button>
             <img id="imgUser" src="assets/IconoUsuarioPostMobile.png">
             <h3 id="titlePost">${post.Title}</h3> 
-            <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString("es-CO")}</p>                
-            <p id="textPost">${post.Contents}</p>
+            <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>                
+            <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
           </li>
           `;
         html += li;
@@ -94,67 +97,69 @@ export function postsTimeline() {
     }
   };
 
-// Eventos actualizar y publicar post verificando si el usuario esta en su sesión
-auth.onAuthStateChanged((user) => {
+  // Eventos actualizar y publicar post verificando si el usuario esta en su sesión
+  auth.onAuthStateChanged((user) => {
     if (user) {
       fireStore.collection('posts')
         .orderBy('Date', 'desc')
         .onSnapshot((snapshot) => {
-          if (snapshot.docChanges().length == 0) {
-            postlist.innerHTML = '<p>No hay publicaciones</p>'
+          if (snapshot.docChanges().length === 0) {
+            postlist.innerHTML = '<p>No hay publicaciones</p>';
           }
           snapshot.docChanges().forEach((change) => {
             if (change.type === 'added') {
-              setPost(snapshot.docs)
-              modalDeleteColletionPosts()
+              setPost(snapshot.docs);
+              modalDeleteColletionPosts();
+              editColletionPosts();
             }
             if (change.type === 'removed') {
-              document.getElementById(change.doc.id).remove()
+              document.getElementById(change.doc.id).remove();
             }
-          })
-        })
+          });
+        });
     } else {
-      postlist.innerHTML = '<h1>No hay publicaciones</h1>' + '<h3>Inicia sesión o registrarte para ver las publicaciones </h3>'
+      postlist.innerHTML = '<h1>No hay publicaciones, Inicia sesión o registrarte para ver las publicaciones </h1>';
     }
   });
 }
 
-// Función enviando datos al FireBase 
+// Función enviando datos al FireBase
 export function newCollectionPost() {
   const btnPosts = document.getElementById('btnPost');
   btnPosts.addEventListener('click', () => {
     const newPost = document.getElementById('inputPost').value;
     const userMail = auth.currentUser;
     const user = userMail.email;
-    const date = new Date()
-    collectionPost(user, newPost, date)
+    const date = new Date();
+    const userID = userMail.uid;
+    collectionPost(user, newPost, date, userID);
   });
 }
 
-// Función eliminando publicaciones 
+// Función eliminando publicaciones
 export function modalDeleteColletionPosts() {
   const btnDeletePosts = document.querySelectorAll('.btnDeletePost');
   btnDeletePosts.forEach((button) => {
-    button.addEventListener('click', () => {   
+    button.addEventListener('click', () => {
       const modalCreate = document.getElementById('modalCreate');
       const modal = modalDelete(button.dataset.id);
-      //innerHTML.modal="";
+      modalCreate.innerHTML = '';
       modalCreate.appendChild(modal);
       const mostrarModal = document.querySelector('#modal_container');
-      mostrarModal.classList.add("show")
-      deleteColletionPosts()
-      cancelModal()
+      mostrarModal.classList.add('show');
+      deleteColletionPosts();
+      cancelModal();
     });
-  })
+  });
 }
 
 function deleteColletionPosts() {
   const buttonModalDeletePost = document.querySelector('#buttonModalDeletePost');
   buttonModalDeletePost.addEventListener('click', () => {
     const mostrarModal = document.querySelector('#modal_container');
-    mostrarModal.classList.add("show")
-    deletePosts(buttonModalDeletePost.dataset.id)
-    modal_container.classList.remove("show");
+    mostrarModal.classList.add('show');
+    deletePosts(buttonModalDeletePost.dataset.id);
+    modal_container.classList.remove('show');
   });
 }
 
@@ -162,7 +167,30 @@ function cancelModal() {
   const buttoncancelModal = document.querySelector('#delete');
   buttoncancelModal.addEventListener('click', () => {
     const mostrarModal = document.querySelector('#modal_container');
-    mostrarModal.classList.add("show")
-    modal_container.classList.remove("show");
+    mostrarModal.classList.add('show');
+    modal_container.classList.remove('show');
+  });
+}
+
+function editColletionPosts() {
+  const buttonEditPosts = document.querySelectorAll('.btnEditPost');
+  buttonEditPosts.forEach((button) => {
+    button.addEventListener('click', () => {
+      button.innerHTML = 'Guardar';
+      const inputText = document.getElementById('textPost' + button.dataset.id).value;
+      const newInput = document.getElementById('textPost' + button.dataset.id);
+      const idPost = button.dataset.id;
+      newInput.disabled = false;
+
+      button.onclick = function () {
+        editPosts(idPost, inputText)
+          .then(function () {            
+            button.innerHTML = 'Editar';
+            newInput.disabled = true;
+          })
+          .catch(function () {            
+          });
+      };
+    });
   });
 }

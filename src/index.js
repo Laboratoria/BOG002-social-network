@@ -26,13 +26,25 @@ export const signOut = () => {
 
 // Funcion subir publicaciones
 
-export const collectionPost = (email,input,date) => {    
-  return fireStore.collection('posts').add({Title:email, Contents: input, Date:date});
+export const collectionPost = (email, input, date, uid) => {
+  const fireStoreCollection = fireStore.collection('posts');
+  return fireStoreCollection.add({
+    Title: email,
+    Contents: input,
+    Date: date,
+    Uid: uid,
+  });
 };
 
 // Funcion eliminar publicaciones
-export const deletePosts = (id) => {   
-  return fireStore.collection("posts").doc(id).delete()
+export const deletePosts = (id) => {
+  const fireStoreCollection = fireStore.collection('posts');
+  return fireStoreCollection.doc(id).delete();
+};
 
-} 
-
+export const editPosts = (id, input) => {
+  const fireStoreCollection = fireStore.collection('posts');
+  return fireStoreCollection.doc(id).update({
+    Contents: input,
+  });
+};

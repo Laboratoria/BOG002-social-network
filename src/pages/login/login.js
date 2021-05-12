@@ -34,7 +34,7 @@ export function loginPage() {
   return divElement;
 }
 
-// Función Iniciar sesión 
+// Función Iniciar sesión
 export function logIn() {
   const btnSignIn = document.getElementById('btnLogIn');
   btnSignIn.addEventListener('click', () => {

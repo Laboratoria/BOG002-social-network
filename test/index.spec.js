@@ -7,4 +7,3 @@ describe('casos de prueba registro', () => {
     expect(typeof datos).toBe(Promise);
   });
 });
-.
