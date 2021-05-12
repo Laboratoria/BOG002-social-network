@@ -2,6 +2,8 @@
 import {home, BotondeCrearCuentaconGoogle} from './Pages/Home.js';
 import {FormularioDeRegistro,  Datos_de_registro} from './Pages/SingUp.js';
 import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
+import { inicio } from './Pages/inicio.js';
+import { perfil } from './Pages/perfil.js';
 
  
 let content = document.getElementById('root');
@@ -14,6 +16,7 @@ export const router = (route) => {
     const login_modal = document.getElementById('login_modal');
     login_modal.classList.remove('show');
     content.innerHTML = "";
+    
     switch(route) {
         case '':
             content.innerHTML= home();
@@ -29,7 +32,18 @@ export const router = (route) => {
              content.innerHTML = 
              FormularioDeIngreso();
              DatosDeLogin();
+             
              break;
+        case '#/release':
+            content.innerHTML = 
+            inicio();
+            
+            break;
+            case '#/profile':
+                content.innerHTML = 
+               perfil();
+                
+                break;
         default:
              console.log('404!!!')
     }

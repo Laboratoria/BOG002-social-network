@@ -1,6 +1,3 @@
-
-
-
 export function home() {
   
     const html = `
@@ -37,8 +34,8 @@ export function home() {
       .then((result) => {
         // /** @type {firebase.auth.OAuthCredential} */
         // var credential = result.credential;
-        console.log("holaa")
-    
+        
+        // inicio();
         // // This gives you a Google Access Token. You can use it to access the Google API.
         // var token = credential.accessToken;
         // // The signed-in user info.

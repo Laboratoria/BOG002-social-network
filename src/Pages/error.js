@@ -28,6 +28,9 @@ close.addEventListener('click', () => {
     container_modal.classList.remove('show');
 });
 }
+
+
+
 export function modalErrorLogin(firebaseError) { 
     
     const login_modal = document.getElementById('login_modal');
