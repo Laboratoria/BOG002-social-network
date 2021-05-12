@@ -1,7 +1,7 @@
 import { Loading } from "./Loading.js";
 import { Landing, random } from "./Landing.js";
 import { Register, addUser } from "./Register.js";
-import { Home, userOut } from "./Home.js";
+import { Home, homeListener } from "./Home.js";
 import { Login, logInUser } from "./Login.js";
 
 export function Router() {
@@ -28,7 +28,8 @@ export function Router() {
       break;
     case "#/home":
       root.appendChild(Home());
-      userOut();
+      // userOut();
+      homeListener();
       break;
   }
 }

@@ -173,22 +173,18 @@ body {
 /*.form_styles input:hover {
     border-bottom: solid 1px #009092;
 }*/
-
 .button {
     padding: 10px;
 }
-
 .social {
     text-align: center;
 }
-
 .social button {
     border: none;
     background-color: white;
     width: 60px;
     height: 60px;
 }
-
 .social button img {
     width: 100%;
     height: 100%;
@@ -205,26 +201,22 @@ span a {
     text-decoration: none;
     cursor: pointer;
 }
-
 span:last-child {
     margin-top: 20px;
 }
-
-.show,
-.hide {
+.show, .hide {
     position: absolute;
     right: 0px;
     top: 25px;
 }
-
 .hide {
     display: none;
 }
-
 .posts {
-    background-color: #F6EFFF;
+    background-color: #dacaf1;
+    position: relative;
+    z-index: 0;
 }
-
 .logoHome {
     height: 160px;
     width: 130px;
@@ -236,22 +228,20 @@ span:last-child {
 }
 .headerHome {
     position: absolute;
-    height: 40px;
+    height: 80px;
     width: 100%;
     display: flex;
     justify-content: space-around;
     left: 0;
     align-items: center;
+    z-index: 1;
+    background-color: white;
 }
-
 footer {
     background-color: #630092;
 }
-
 .logoHome {
-
     text-align: left;
-
 }
 .navBar{
     position: absolute;
@@ -261,4 +251,100 @@ footer {
     justify-content: space-around;
     left: 0;
     align-items: center;
+    z-index: 1;
+}
+#home{
+    padding: 0;
+}
+/* hamburger menu */
+#hamburger_menu button {
+    background: none;
+    border:none;
+    cursor: pointer;
+    padding: 0;
+    width: 60px;
+    height: 60px;
+}
+#hamburger_menu button span {
+    display: block;
+    background: #630092;
+    border-radius: 5px;
+    width: 60%;
+    margin: 5px auto;
+    height: 4px;
+    padding: 0;
+    animation: 1s;
+    animation-fill-mode: forwards;
+}
+/* boton abierto */
+#hamburger_menu button.open .top_line{
+    animation-name: top_line_animation;
+}
+#hamburger_menu button.open .middle_line{
+    animation-name: middle_line_animation;
+}
+#hamburger_menu button.open .bottom_line{
+    animation-name: bottom_line_animation;
+}
+/* boton cerrado */
+#hamburger_menu button .top_line{
+    animation-name: top_line_animation_close;
+}
+#hamburger_menu button .middle_line{
+    animation-name: middle_line_animation_close;
+}
+#hamburger_menu button .bottom_line{
+    animation-name: bottom_line_animation_close;
+}
+/* animaciones */
+@keyframes top_line_animation{
+    50%,100%{
+        margin: 0 auto;
+        transform: translateY(5px) rotate(-45deg);
+    }
+}
+@keyframes bottom_line_animation{
+    50%,100%{
+        margin: 0 auto;
+        transform: translateY(-2px) rotate(45deg);
+    }
+}
+@keyframes middle_line_animation{
+    50%,100%{
+        margin: 0 auto;
+        width: 0;
+        opacity: 0;
+    }
+}
+@keyframes top_line_animation_close {
+    0%{
+        margin: 0 auto;
+        transform: translateY(5px) rotate(-45deg);
+    }
+    50%, 100%{
+        margin: 5px auto;
+        transform: translateY(0) rotate(0);
+    }
+}
+@keyframes bottom_line_animation_close{
+    0%{
+        margin: 0 auto;
+        transform: translateY(-2px) rotate(45deg);
+    }
+    50%, 100%{
+        margin: 5px auto;
+        transform: translateY(0) rotate(0);
+    }
+}
+@keyframes middle_line_animation_close {
+    0%{
+        margin: 0 auto;
+        width: 0;
+        opacity: 0;
+    }
+    50%, 100%{
+        margin: 0 auto;
+        width: 60%;
+        opacity: 1;
+    }
 }
