@@ -1,7 +1,7 @@
 // se trae desde main js 
 
-import {modalError, modalErrorLogin} from  './Pages/error.js'
-import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
+import {modalError, modalErrorLogin} from  '../Pages/error.js'
+import {FormularioDeIngreso,DatosDeLogin} from '../Pages/Login.js';
 
 // crear cuenta de usuario
 
