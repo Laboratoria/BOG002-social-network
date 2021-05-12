@@ -41,9 +41,9 @@ export function renderRegister($containerGeneral) {
   visibility();
 }
 
-export function renderPost($containerGeneral){
+export function renderPost($containerGeneral, name){
   Menu($containerGeneral);
-  document.querySelector('.body_container').innerHTML += createPostCard(); 
+  document.querySelector('.body_container').innerHTML += createPostCard(name); 
   document.querySelector(".post_button").addEventListener('click', createPost);
 }
 
@@ -64,8 +64,13 @@ export function renderHome($containerGeneral){
   document.querySelector('.body_container').appendChild(containerPosts);
   containerPosts.innerHTML='';
   RetrieveData(containerPosts);
-  const allPost = document.querySelector('post-card');
-  console.log(allPost) ;
+  //  console.log(result);
+  // const nodes = document.querySelectorAll('post-card');
+  // console.log(nodes);
+  // const elem = document.querySelectorAll('#moreImageButton');
+  // console.log(elem);
+  
+  
 }
 
 function Menu($containerGeneral) {

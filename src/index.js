@@ -11,15 +11,16 @@ const init = () => {
   function verificateUser(hash, door){
     document.querySelector('.bigContainer').innerHTML = '';
     firebase.auth().onAuthStateChanged((user) => {
+      const name = user.displayName;
       if(user){
         if ((user) && ((hash == '') || (hash == 'register'))) {
           location.hash = '#home';
           door=false;
-          router(hash, $containerGeneral, db);
+          router(hash, $containerGeneral, db, name);
         }
         else{
           if(door){
-            router(hash, $containerGeneral, db);
+            router(hash, $containerGeneral, db, name);
           }
         }
       }

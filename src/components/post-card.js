@@ -117,10 +117,16 @@ template.innerHTML = `
     width: 9vw;
     aling-self:flex-end;
 }
+::slotted(a) {
+    background-size: 20%;
+    width: 9vw;
+    aling-self:flex-end;
+}
 ::slotted(button) {
     background-color: #0C244F;
     border-radius: 10px;
     color: #FFFFFF;
+    width: 9vw;
 }
 
 @media (min-width: 1200px) {
@@ -177,6 +183,11 @@ template.innerHTML = `
         margin-left:4vw;
     }   
     ::slotted(img) {
+        background-size: 20%;
+        width: 3.5vw;
+        aling-self:flex-end;
+    } 
+    ::slotted(button) {
         background-size: 20%;
         width: 3.5vw;
         aling-self:flex-end;
@@ -323,7 +334,10 @@ template.innerHTML = `
         <slot name="headerPostTitle"></slot>
         <slot name="moreButton"><img class="imagesRight" src="assets/imagesIcon/UbicationYellowC.png"></slot>
     </div>
-    <img class="ubicationLeft"src="assets/imagesIcon/UbicationYellowC.png"><slot name="locationPost"><input class="ubication" id="ubication" type="text"></slot>
+    <slot name="userIconPost"><img class="imagesRight" src="assets/imagesIcon/UserBlueC.png"></slot>
+    <slot name="nameUserPost"></slot>
+    <slot name="ubicationPostBlue"><img class="ubicationLeft" src="assets/imagesIcon/UbicationYellowC.png"></slot>
+    <slot name="locationPost"><input class="ubication" id="ubication" type="text"></slot>
     <div class="public"><slot name="description"><textarea class="textAreapublic" name="textarea" rows="10" cols="50" type="text"></textarea></slot></div>
     <div class="footer-card">
         <slot name="image_button"><img class="imagesLeft" id="imageLeftDown"></slot>
