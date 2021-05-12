@@ -1,6 +1,7 @@
 // se trae desde main js 
 
 import {modalError, modalErrorLogin} from  '../Pages/error.js'
+/* import { CerrarSesion } from '../Pages/inicio.js'; */
 import {FormularioDeIngreso,DatosDeLogin} from '../Pages/Login.js';
 
 // crear cuenta de usuario
@@ -43,15 +44,27 @@ export const LoginUsuario = (email,password) =>{
 
  export function SoloUsuarios(contenido){
   var user = firebase.auth().currentUser;
+  let content = document.getElementById('root');
   if (user) {
-    let content = document.getElementById('root');
-      content.innerHTML = 
+       content.innerHTML = 
           contenido
-  }               else {
+  }else {
       content.innerHTML = 
       FormularioDeIngreso();
       DatosDeLogin();
    // No user is signed in.
   }
   
+}
+// cerrar sesion
+export function Salir(){
+  
+  firebase.auth().signOut()
+  .then(() => {
+    // Sign-out successful.
+    window.location.hash = "#/login"
+  }).catch((error) => {
+    // An error happened.
+    console.log('no se pudo cerrar sesion')
+  });
 }

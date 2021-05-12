@@ -1,3 +1,6 @@
+import {Salir} from '../Firebase/firebaseAuth.js';
+
+
 export function inicio(){
 
     let html= `
@@ -9,7 +12,7 @@ export function inicio(){
 
 	<div id="menu">
 		<span class= "setting">Cambiar nombre</span>
-		<span class= "setting">Cerra sesion</span>
+		<span class= "setting" id="cerrar-sesion">Cerra sesion</span>
 	</div>
 
 	<div id="publicaciones">
@@ -33,3 +36,9 @@ export function inicio(){
         
     return html;
   }
+
+export function CerrarSesion(){
+	const BotonCerrar = document.getElementById('cerrar-sesion');
+	BotonCerrar.addEventListener('click',Salir);
+}
+
