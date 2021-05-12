@@ -60,7 +60,7 @@ Event objeto, delegación de eventos)
 * [ ] Implementación de routing ([History API.](
   https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador
   ) | `hashchange`)
- * [ ] [`localStorage`]
+ * [ ] [`localStorage`](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)
 
 ### JavaScript
 
