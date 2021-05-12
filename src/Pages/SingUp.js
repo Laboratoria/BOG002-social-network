@@ -51,21 +51,21 @@ const campos = {
 
 		case "nombre":
 			if(e.target.value!="" && e.target.value.length >3 && expresiones.nombre.test(e.target.value)){
-            document.getElementById("Name").style.border = "5px solid green"
+            document.getElementById("Name").style.border = "3px solid green"
             document.getElementById("CampoVacioName").src ="./imagenes/comprobado.png"
             campos["nombre"] = true;
          } else {
-            document.getElementById("Name").style.border = "5px solid red"
+            document.getElementById("Name").style.border = "3px solid red"
             document.getElementById("CampoVacioName").src= "./imagenes/cancelar.png"
             campos["nombre"] = false;}
 		break;
 			case "correo":
             if(expresiones.correo.test(e.target.value)){
-               document.getElementById("Email").style.border = "5px solid green"
+               document.getElementById("Email").style.border = "3px solid green"
                document.getElementById("CampoVacioEmail").src ="./imagenes/comprobado.png"
                campos["correo"] = true;
             } else {
-               document.getElementById("Email").style.border = "5px solid red"
+               document.getElementById("Email").style.border = "3px solid red"
                document.getElementById("CampoVacioEmail").src= "./imagenes/cancelar.png"
                campos["correo"] = false;}
 		break;	

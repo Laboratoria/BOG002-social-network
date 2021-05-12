@@ -2,6 +2,9 @@
 import {home, BotondeCrearCuentaconGoogle} from './Pages/Home.js';
 import {FormularioDeRegistro,  Datos_de_registro} from './Pages/SingUp.js';
 import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
+import {SoloUsuarios} from './firebaseAuth.js'
+import { inicio } from './Pages/inicio.js';
+import { perfil } from './Pages/perfil.js';
 import { Error404} from './Pages/Error 404.js';
 
  
@@ -15,9 +18,11 @@ export const router = (route) => {
     const login_modal = document.getElementById('login_modal');
     login_modal.classList.remove('show');
     content.innerHTML = "";
+    
     switch(route) {
         case '':
-            content.innerHTML= home();
+            content.innerHTML= 
+            home();
             BotondeCrearCuentaconGoogle();
             break;
         case '#/signUp':
@@ -25,18 +30,25 @@ export const router = (route) => {
             FormularioDeRegistro();
             Datos_de_registro(); 
             
+            
             break;
-            case '#/login':
+        case '#/login':
              content.innerHTML = 
              FormularioDeIngreso();
              DatosDeLogin();
+             
              break;
+        case '#/release':
+            SoloUsuarios(inicio())
+
+            break;
+        case '#/profile':
+            SoloUsuarios(perfil())
+                
+                break;
         default:
              content.innerHTML = Error404();
     }
 } 
-
-
-
 
 

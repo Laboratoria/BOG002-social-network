@@ -5,8 +5,14 @@ export function FormularioDeIngreso(){
   const html= `
       <div class='fondo'>
       <h1> Login </h1>
-      <form id="Form-login"> 
       <div id="usuario"> <img src="./imagenes/usuario.png"></div>
+      
+      <form id="Form-login"> 
+<<<<<<< HEAD
+      
+=======
+      <div id="usuario"> <img src="./imagenes/usuario.png"></div>
+>>>>>>> 2debc0dceec3d8a3d6532df1d9fb66a5cf78ae3f
       <div class="input" id="Email">
       <input type="email" name="correo" placeholder="email" required id="EmailUser"> 
       <img src="" id="CampoVacioEmail" class="error">
@@ -41,22 +47,22 @@ export function FormularioDeIngreso(){
     switch (e.target.name) {
       case "correo":
             if(expresiones.correo.test(e.target.value)){
-               document.getElementById("Email").style.border = "5px solid green";
+               document.getElementById("Email").style.border = "3px solid green";
                document.getElementById("CampoVacioEmail").src ="./imagenes/comprobado.png";
                campos["correo"] = true;
             } else {
-               document.getElementById("Email").style.border = "5px solid red";
+               document.getElementById("Email").style.border = "3px solid red";
                document.getElementById("CampoVacioEmail").src= "./imagenes/cancelar.png";
                campos["correo"] = false;
             }
 		  break;	
       case "password":
          if(expresiones.password.test(e.target.value)){
-            document.getElementById("Password").style.border = "5px solid green";
+            document.getElementById("Password").style.border = "3px solid green";
             document.getElementById("CampoVacioPassword").src ="./imagenes/comprobado.png";
             campos["password"] = true;
          } else {
-            document.getElementById("Password").style.border = "5px solid red";
+            document.getElementById("Password").style.border = "3px solid red";
             document.getElementById("CampoVacioPassword").src= "./imagenes/cancelar.png";
             campos["password"] = false;
          }
@@ -82,11 +88,13 @@ export function FormularioDeIngreso(){
 // enlazando el formulario con firebase
    formularioLogin.addEventListener('submit', (e) => {
 	   e.preventDefault();
+     
 	if( campos.password && campos.correo ){
+
     const Email = document.getElementById("EmailUser").value;
 	  const Password= document.getElementById("PasswordUser").value;
-    console.log("enviado correo  " + Email + " contraseña " + Password)
-    LoginUsuario(Email, Password)
+    // console.log("enviado correo  " + Email + " contraseña " + Password)
+      LoginUsuario(Email, Password)
    } else {
 		console.log("no se envia");
 	}
