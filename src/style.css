@@ -330,16 +330,24 @@ position: absolute;
 right: 3%;
 display: flex;
 flex-direction: column;
-display: none;
+display: block;
 z-index:  100;
 }
-#menu span{
-padding: 2em;
-border-bottom: rgb(212, 212, 212) solid 1px;
-
+.setting{
+    color: black;
+    font-weight: lighter;
+    font-size: 1rem;
+    position: relative;
+    top: 3em;
+    left:30px;
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+    width: 80%;
 }
-#menu span:hover{
+.setting:hover{
 background-color: #f8dc9b
+
 }
 #publicaciones{
   width: 100%;

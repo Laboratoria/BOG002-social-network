@@ -4,12 +4,12 @@ export function inicio(){
     
 	<div id="encabezado">
 		<div id="logo"> FoodFans </div>
-		<div id="configuracion"> Configuracion</div> 
+		<div id="configuracion"><img src="./imagenes/Setting.svg"></div> 
 	</div>
 
 	<div id="menu">
-		<span>Cambiar nombre</span>
-		<span>Cerra sesion</span>
+		<span class= "setting">Cambiar nombre</span>
+		<span class= "setting">Cerra sesion</span>
 	</div>
 
 	<div id="publicaciones">
