@@ -5,6 +5,7 @@ import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
 import {SoloUsuarios} from './firebaseAuth.js'
 import { inicio } from './Pages/inicio.js';
 import { perfil } from './Pages/perfil.js';
+import { Error404} from './Pages/Error 404.js';
 
  
 let content = document.getElementById('root');
@@ -46,7 +47,7 @@ export const router = (route) => {
                 
                 break;
         default:
-             console.log('404!!!')
+             content.innerHTML = Error404();
     }
 } 
 

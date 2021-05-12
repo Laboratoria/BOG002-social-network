@@ -1,12 +1,10 @@
 // creacion de formulario sign up
-import {autenticacionUsuario} from  '../firebaseAuth.js';
+import { autenticacionUsuario } from '../Firebase/firebaseAuth.js';
 
 export function FormularioDeRegistro(){
-     
    let html= `
    <div class="fondo">
-    
-       <h1> Created account </h1>
+     <h1> Created account </h1>
        <!--<fieldset> -->
       <form id="formulario">
          <div id="Name" class="input">

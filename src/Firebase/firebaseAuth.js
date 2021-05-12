@@ -1,8 +1,12 @@
 // se trae desde main js 
+<<<<<<< HEAD:src/firebaseAuth.js
 import {modalError, modalErrorLogin} from  './Pages/error.js'
 import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
 
 
+=======
+import {modalError, modalErrorLogin} from  '../Pages/error.js'
+>>>>>>> 2debc0dceec3d8a3d6532df1d9fb66a5cf78ae3f:src/Firebase/firebaseAuth.js
 
 
 // crear cuenta de usuario

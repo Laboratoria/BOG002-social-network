@@ -288,6 +288,7 @@ color:black !important;
 position: relative;
 top:1.5em
 }
+<<<<<<< HEAD
 #usuario{
 width: 30vw;
 height: 30vh;
@@ -419,6 +420,20 @@ nav ul  :hover {
   height: 5vh;
   color: #fff;
 }
+=======
+#usuario img{
+position: relative;
+width: 125px;
+top: -50px;
+
+}
+/* Error 404 */
+#error404{
+    width: 350px;
+    position: relative;
+    top:100px;
+    
+>>>>>>> 2debc0dceec3d8a3d6532df1d9fb66a5cf78ae3f
 }
 
 /* ********************************************************************************************************************
