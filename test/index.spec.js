@@ -1,6 +1,6 @@
 // importamos la funcion que vamos a testear
 
-const firebasemock = require('firebase-mock');
+/*const firebasemock = require('firebase-mock');
 const mockauth = new firebasemock.MockFirebase();
 const mockfirestore = new firebasemock.MockFirestore();
 mockfirestore.autoFlush();
@@ -22,7 +22,7 @@ describe('lista de notas', () => {
                 expect(user.email).toBe('mica19@hotmail.com');
             });
     });
-});
+});*/
 
 
 
@@ -37,7 +37,7 @@ describe('lista de notas', () => {
 
 
 
-/*import { singUp } from "../src/Firebase/Services.js";
+import { singUp } from "../src/Firebase/Services.js";
 const firebasemock = require('firebase-mock');
 const mockauth = new firebasemock.MockAuthentication();
 const mocksdk = new firebasemock.MockFirebaseSdk(

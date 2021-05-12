@@ -1,8 +1,9 @@
 import { Loading } from "./Loading.js";
 import { Landing, random } from "./Landing.js";
 import { Register, addUser } from "./Register.js";
-import { Home, homeListener } from "./Home.js";
+import { Home, menu } from "./Home.js";
 import { Login, logInUser } from "./Login.js";
+import { Post, menuHam } from "./Post.js"
 
 export function Router() {
   const { hash } = location;
@@ -23,13 +24,17 @@ export function Router() {
     case "#/login":
       root.appendChild(Login());
       logInUser();
-      break;
-    default:
-      break;
+      break;  
     case "#/home":
       root.appendChild(Home());
       // userOut();
-      homeListener();
+      menu();
       break;
+    default:
+      break;
+    case "#/post":
+      root.appendChild(Post());
+      menuHam();
+      break;  
   }
 }
