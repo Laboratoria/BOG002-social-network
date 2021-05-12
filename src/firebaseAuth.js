@@ -1,6 +1,8 @@
 // se trae desde main js 
 import {modalError, modalErrorLogin} from  './Pages/error.js'
-import {inicio} from './Pages/inicio.js'
+import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
+
+
 
 
 // crear cuenta de usuario
@@ -11,9 +13,7 @@ export const autenticacionUsuario =(email, password)=>{
   .then((userCredential) => {
     // Signed in 
     userCredential.user;
-    // console.log( userCredential.user)
-    inicio();
-    // ...
+    window.location.hash ='#/release'
   })
   .catch((error) => {
     console.log("error", error)
@@ -24,16 +24,36 @@ export const autenticacionUsuario =(email, password)=>{
 // ingresando usuario
 
 export const LoginUsuario = (email,password) =>{
-  firebase.auth()
+        firebase.auth()
+
   .signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in
-      userCredential.user;
-      inicio();
-     console.log(inicio())
+      window.location.hash ='#/release'
+      //  userCredential.user;
+ 
     })
+
+
     .catch((error) => {
       console.log('error',error);
       modalErrorLogin(error);
     });
   }
+
+  // solo usuarios logeados
+
+ export function SoloUsuarios(contenido){
+  var user = firebase.auth().currentUser;
+  if (user) {
+    let content = document.getElementById('root');
+      content.innerHTML = 
+          contenido
+  }               else {
+      content.innerHTML = 
+      FormularioDeIngreso();
+      DatosDeLogin();
+   // No user is signed in.
+  }
+  
+}
