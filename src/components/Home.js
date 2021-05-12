@@ -1,4 +1,4 @@
-import { reset } from "./Utils.js";
+import { reset, homeListener } from "./Utils.js";
 // import { signOut } from "../Firebase/Services.js";
 
 export function Home() {
@@ -23,10 +23,10 @@ export function Home() {
     </div>
     <footer class="navBar">
         <div>
-          <a href="#/"><img class="logo-Home" src=./assets/Home.svg alt="arrow"></a>
+          <a href="#/home"><img class="logo-Home" src=./assets/Home.svg alt="arrow"></a>
         </div>
         <div>
-          <a href="#/"><img class="logo-Post" src=./assets/Post.svg alt="arrow"></a>
+          <a href="#/post"><img class="logo-Post" src=./assets/Post.svg alt="arrow"></a>
         </div>
         <div>
           <a href="#/"><img class="logo-Profile" src=./assets/Profile.svg alt="arrow"></a>
@@ -36,7 +36,12 @@ export function Home() {
   );
   return template;
 }
-
+export function menu() {
+  const nav = document.querySelector("#hamburger_menu button");
+  nav.addEventListener("click", (e) => {
+    homeListener(nav);
+  });
+}
 /*<div class="btns-container-mobile">
           <button id="signOut" class="button_general">LogOut</button>
         </div>*/
@@ -49,9 +54,4 @@ export function Home() {
 //   });
 // }
 
-export function homeListener() {
-  const nav = document.querySelector("#hamburger_menu button");
-  nav.addEventListener("click", (e) => {
-    nav.classList.toggle("open");
-  });
-}
+
