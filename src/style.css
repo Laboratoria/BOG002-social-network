@@ -288,17 +288,17 @@ color:black !important;
 position: relative;
 top:1.5em
 }
-<<<<<<< HEAD
 #usuario{
 width: 30vw;
 height: 30vh;
 position: relative;
 top: 5em;
-left: 7.5em;
+left:7.5em;
 }
 #usuario img{
-width: 30vw;
-height: 18vh;
+width: 130px;
+height: 130px;
+/* left:5em; */
 }
 /* INICIO DENTRO DE LA PAGINA  */
 #encabezado{
@@ -329,9 +329,10 @@ width: 190px;
 background-color: rgb(255, 255, 255);
 position: absolute;
 right: 3%;
+color: black;
 display: flex;
 flex-direction: column;
-display: none;
+/* display: none; */
 z-index:  100;
 }
 #menu span{
@@ -420,20 +421,6 @@ nav ul  :hover {
   height: 5vh;
   color: #fff;
 }
-=======
-#usuario img{
-position: relative;
-width: 125px;
-top: -50px;
-
-}
-/* Error 404 */
-#error404{
-    width: 350px;
-    position: relative;
-    top:100px;
-    
->>>>>>> 2debc0dceec3d8a3d6532df1d9fb66a5cf78ae3f
 }
 
 /* ********************************************************************************************************************
