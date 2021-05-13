@@ -25,6 +25,7 @@ export function Login() {
                   <img class="hide" src=./assets/hide.svg alt="eye">
                   <div class="input__indicator"></div>
                 </div> 
+                <p id="error"></p>
                 <div class="button">
                   <button type="submit" id="signIn" class="button_general">Login</button>
                 </div>
@@ -49,7 +50,8 @@ export function logInUser() {
         e.preventDefault();
         const email = document.querySelector("#email").value;
         const password = document.querySelector("#password").value;
-        login(email, password);
+        const errorInput = document.querySelector("#error");
+        login(email, password, errorInput);
     });
     // logo google
     const btnGoogle = document.querySelector("#logoGoogle");

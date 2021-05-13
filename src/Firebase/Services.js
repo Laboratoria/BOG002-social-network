@@ -3,18 +3,22 @@
  * @param {string} email
  * @param {string} password
  */
-export const singUp = (email, password) => {
+export const singUp = (email, password, errorInput) => {
     const auth = firebase.auth();
-    auth
+    return auth
         .createUserWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-
-            const user = userCredential.user;
-            formRegister.reset();
+        .then((user) => {
             window.location = "#/home";
-
+            return user.email;
         })
         .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            if (errorCode == 'auth/weak-password') {
+                errorInput.textContent = 'The password is too weak'
+            } else {
+                errorInput.textContent = errorMessage
+            }
             console.log(error);
         });
 };
@@ -22,13 +26,22 @@ export const singUp = (email, password) => {
 export const authGoogle = () => {
     const auth = firebase.auth();
     const google_provider = new firebase.auth.GoogleAuthProvider();
-    auth
+    return auth
         .signInWithPopup(google_provider)
         .then((result) => {
             window.location = "#/home";
+            return result
         })
         .catch((error) => {
-            console.log(error);
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            const email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            const credential = error.credential;
+            // ...
+            return error;
         });
 };
 
@@ -46,22 +59,33 @@ export const authFacebook = () => {
 };
 
 // Login
-export const login = (email, password) => {
+export const login = (email, password, errorInput) => {
     const auth = firebase.auth();
-    auth
+    return auth
         .signInWithEmailAndPassword(email, password)
-        .then((userCredential) => {
-            // Signed in
-            // eslint-disable-next-line no-undef
-            formRegister.reset();
-            console.log(userCredential);
+        .then((user) => {
+
             window.location = "#/home";
-            // ...
+            return user.email;
+
         })
         .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            if (errorCode == 'auth/user-not-found') {
+                errorInput.textContent = 'The given email not corresponding'
+            } else if (errorCode == 'auth/wrong-password') {
+                errorInput.textContent = 'The password is invalid'
+            } else {
+                errorInput.textContent = errorMessage
+            }
             console.log(error);
+
         });
 };
+
+
+
 
 // sign out button
 export const signOut = () => {
