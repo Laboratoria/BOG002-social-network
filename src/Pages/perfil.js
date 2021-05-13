@@ -20,9 +20,10 @@ export function perfil(){
 
 	<nav>
 		<ul>
-			<li><a href="#/release"> Inicio </a> </li>
-			<li><a href="#/profile"> Perfil</a>   </li>
-			<li><a href="#/search"> Buscar </a>  </li>
+		<li><a href="#/release"><img src="./imagenes/Home.svg"></a>Inicio </li>
+		<li><a href="#/profile"><img src="./imagenes/Profile.svg">Perfil</a></li>
+		<li><a href="#/search"><img src="./imagenes/Search.svg"></a> </li>
+
 		</ul>
 	</nav>
 

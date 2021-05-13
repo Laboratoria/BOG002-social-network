@@ -25,9 +25,9 @@ export function inicio(){
 
 	<nav>
 		<ul>
-			<li><a href="#/release"> <span><imag src="../imagenes/Home.svg"> </span>Inicio </a> </li>
-			<li><a href="#/profile"> <span><imag src="../imagenes/Profile.svg"> </span>Perfil</a>   </li>
-			<li><a href="#/search"><span><imag src="../imagenes/Search.svg"> </span> Buscar </a>  </li>
+		<li><a href="#/release"><img src="./imagenes/Home.svg"></a>Inicio </li>
+		<li><a href="#/profile"><img src="./imagenes/Profile.svg"></a>Perfil</li>
+		<li><a href="#/search"><img src="./imagenes/Search.svg"></a> </li>
 		</ul>
 	</nav>
 
