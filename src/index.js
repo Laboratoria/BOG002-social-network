@@ -1,5 +1,3 @@
-const fireStore = firebase.firestore();
-
 // Function Register
 export const register = (email, password) => {
   const auth = firebase.auth();
@@ -27,7 +25,7 @@ export const signOut = () => {
 // Funcion subir publicaciones
 
 export const collectionPost = (email, input, date, uid) => {
-  const fireStoreCollection = fireStore.collection('posts');
+  const fireStoreCollection = firebase.firestore().collection('posts');
   return fireStoreCollection.add({
     Title: email,
     Contents: input,
@@ -35,15 +33,20 @@ export const collectionPost = (email, input, date, uid) => {
     Uid: uid,
   });
 };
+export const getPosts = (callback) => {
+  firebase.firestore().collection('posts')
+    .orderBy('Date', 'desc')
+    .onSnapshot(callback);
+};
 
 // Funcion eliminar publicaciones
 export const deletePosts = (id) => {
-  const fireStoreCollection = fireStore.collection('posts');
+  const fireStoreCollection = firebase.firestore().collection('posts');
   return fireStoreCollection.doc(id).delete();
 };
 
 export const editPosts = (id, input) => {
-  const fireStoreCollection = fireStore.collection('posts');
+  const fireStoreCollection = firebase.firestore().collection('posts');
   return fireStoreCollection.doc(id).update({
     Contents: input,
   });

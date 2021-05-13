@@ -3,9 +3,9 @@ import {
   collectionPost,
   deletePosts,
   editPosts,
+  getPosts,
 } from '../../index.js';
 
-const fireStore = firebase.firestore();
 const auth = firebase.auth();
 
 // Template screen muro
@@ -163,7 +163,7 @@ export function postsTimeline() {
               buttonAux.innerHTML = 'Editar';
               newInput.disabled = true;
             })
-            .catch(() => {});
+            .catch(() => { });
         };
       });
     });
@@ -172,23 +172,21 @@ export function postsTimeline() {
   // Eventos actualizar y publicar post verificando si el usuario esta en su sesión
   auth.onAuthStateChanged((user) => {
     if (user) {
-      fireStore.collection('posts')
-        .orderBy('Date', 'desc')
-        .onSnapshot((snapshot) => {
-          if (snapshot.docChanges().length === 0) {
-            postlist.innerHTML = '<p>No hay publicaciones</p>';
+      getPosts((snapshot) => {
+        if (snapshot.docChanges().length === 0) {
+          postlist.innerHTML = '<p>No hay publicaciones</p>';
+        }
+        snapshot.docChanges().forEach((change) => {
+          if (change.type === 'added') {
+            setPost(snapshot.docs);
+            modalDeleteColletionPosts();
+            editColletionPosts();
           }
-          snapshot.docChanges().forEach((change) => {
-            if (change.type === 'added') {
-              setPost(snapshot.docs);
-              modalDeleteColletionPosts();
-              editColletionPosts();
-            }
-            if (change.type === 'removed') {
-              document.getElementById(change.doc.id).remove();
-            }
-          });
+          if (change.type === 'removed') {
+            document.getElementById(change.doc.id).remove();
+          }
         });
+      });
     } else {
       postlist.innerHTML = '<h1>No hay publicaciones, Inicia sesión o registrarte para ver las publicaciones </h1>';
     }
