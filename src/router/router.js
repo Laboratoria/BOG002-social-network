@@ -5,7 +5,6 @@ import {
   signOutGoogle,
   postsTimeline,
   newCollectionPost,
-  modalDeleteColletionPosts,
 } from '../pages/timeline/timeline.js';
 
 const content = document.getElementById('root');
@@ -23,7 +22,6 @@ export const router = (route) => {
       signOutGoogle();
       postsTimeline();
       newCollectionPost();
-      modalDeleteColletionPosts();
       break;
     default:
       content.appendChild(loginPage());

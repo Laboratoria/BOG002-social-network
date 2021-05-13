@@ -73,6 +73,19 @@ export function signOutGoogle() {
   return true;
 }
 
+// Función enviando datos al FireBase
+export function newCollectionPost() {
+  const btnPosts = document.getElementById('btnPost');
+  btnPosts.addEventListener('click', () => {
+    const newPost = document.getElementById('inputPost').value;
+    const userMail = auth.currentUser;
+    const user = userMail.email;
+    const date = new Date();
+    const userID = userMail.uid;
+    collectionPost(user, newPost, date, userID);
+  });
+}
+
 // Funcion publicaciones en pantalla
 export function postsTimeline() {
   const postlist = document.getElementById('listPost');
@@ -97,6 +110,65 @@ export function postsTimeline() {
     }
   };
 
+  function deleteColletionPosts() {
+    const buttonModalDeletePost = document.querySelector('#buttonModalDeletePost');
+    buttonModalDeletePost.addEventListener('click', () => {
+      const mostrarModal = document.querySelector('#modal_container');
+      mostrarModal.classList.add('show');
+      deletePosts(buttonModalDeletePost.dataset.id);
+      mostrarModal.classList.remove('show');
+    });
+  }
+
+  function cancelModal() {
+    const buttoncancelModal = document.querySelector('#delete');
+    buttoncancelModal.addEventListener('click', () => {
+      const mostrarModal = document.querySelector('#modal_container');
+      mostrarModal.classList.add('show');
+      mostrarModal.classList.remove('show');
+    });
+  }
+
+  // Función eliminando publicaciones
+  function modalDeleteColletionPosts() {
+    const btnDeletePosts = document.querySelectorAll('.btnDeletePost');
+    btnDeletePosts.forEach((button) => {
+      button.addEventListener('click', () => {
+        const modalCreate = document.getElementById('modalCreate');
+        const modal = modalDelete(button.dataset.id);
+        modalCreate.innerHTML = '';
+        modalCreate.appendChild(modal);
+        const mostrarModal = document.querySelector('#modal_container');
+        mostrarModal.classList.add('show');
+        deleteColletionPosts();
+        cancelModal();
+      });
+    });
+  }
+
+  function editColletionPosts() {
+    const buttonEditPosts = document.querySelectorAll('.btnEditPost');
+    buttonEditPosts.forEach((button) => {
+      button.addEventListener('click', () => {
+        const buttonAux = button;
+        buttonAux.innerHTML = 'Guardar';
+        const inputText = document.getElementById(`textPost${button.dataset.id}`).value;
+        const newInput = document.getElementById(`textPost${button.dataset.id}`);
+        const idPost = button.dataset.id;
+        newInput.disabled = false;
+
+        buttonAux.onclick = () => {
+          editPosts(idPost, inputText)
+            .then(() => {
+              buttonAux.innerHTML = 'Editar';
+              newInput.disabled = true;
+            })
+            .catch(() => {});
+        };
+      });
+    });
+  }
+
   // Eventos actualizar y publicar post verificando si el usuario esta en su sesión
   auth.onAuthStateChanged((user) => {
     if (user) {
@@ -120,77 +192,5 @@ export function postsTimeline() {
     } else {
       postlist.innerHTML = '<h1>No hay publicaciones, Inicia sesión o registrarte para ver las publicaciones </h1>';
     }
-  });
-}
-
-// Función enviando datos al FireBase
-export function newCollectionPost() {
-  const btnPosts = document.getElementById('btnPost');
-  btnPosts.addEventListener('click', () => {
-    const newPost = document.getElementById('inputPost').value;
-    const userMail = auth.currentUser;
-    const user = userMail.email;
-    const date = new Date();
-    const userID = userMail.uid;
-    collectionPost(user, newPost, date, userID);
-  });
-}
-
-// Función eliminando publicaciones
-export function modalDeleteColletionPosts() {
-  const btnDeletePosts = document.querySelectorAll('.btnDeletePost');
-  btnDeletePosts.forEach((button) => {
-    button.addEventListener('click', () => {
-      const modalCreate = document.getElementById('modalCreate');
-      const modal = modalDelete(button.dataset.id);
-      modalCreate.innerHTML = '';
-      modalCreate.appendChild(modal);
-      const mostrarModal = document.querySelector('#modal_container');
-      mostrarModal.classList.add('show');
-      deleteColletionPosts();
-      cancelModal();
-    });
-  });
-}
-
-function deleteColletionPosts() {
-  const buttonModalDeletePost = document.querySelector('#buttonModalDeletePost');
-  buttonModalDeletePost.addEventListener('click', () => {
-    const mostrarModal = document.querySelector('#modal_container');
-    mostrarModal.classList.add('show');
-    deletePosts(buttonModalDeletePost.dataset.id);
-    modal_container.classList.remove('show');
-  });
-}
-
-function cancelModal() {
-  const buttoncancelModal = document.querySelector('#delete');
-  buttoncancelModal.addEventListener('click', () => {
-    const mostrarModal = document.querySelector('#modal_container');
-    mostrarModal.classList.add('show');
-    modal_container.classList.remove('show');
-  });
-}
-
-function editColletionPosts() {
-  const buttonEditPosts = document.querySelectorAll('.btnEditPost');
-  buttonEditPosts.forEach((button) => {
-    button.addEventListener('click', () => {
-      button.innerHTML = 'Guardar';
-      const inputText = document.getElementById('textPost' + button.dataset.id).value;
-      const newInput = document.getElementById('textPost' + button.dataset.id);
-      const idPost = button.dataset.id;
-      newInput.disabled = false;
-
-      button.onclick = function () {
-        editPosts(idPost, inputText)
-          .then(function () {            
-            button.innerHTML = 'Editar';
-            newInput.disabled = true;
-          })
-          .catch(function () {            
-          });
-      };
-    });
   });
 }

@@ -1,25 +1,25 @@
 section {
     width: 320px;
-    }
+}
 
 header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    }
+}
 
 body {
     background-color:#c997c0;
     color: #350B1F;
     text-align: center;
-    font-family: 'Yusei Magic';
+    font-family: 'Yusei Magic', sans-serif;
     font-size: 11px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    }
+}
 
 .containerLogIn{
     display: flex;
@@ -31,11 +31,11 @@ body {
     border-radius: 8px;
     margin: 0% 5% 0% 5%;
     width: 90%;
-    } 
+} 
 
 h2 {
     margin: 2% 5% 5% 5%;
-    }
+}
  
 .containerCreateAccount {
     background-color:#ECD4EA ;
@@ -44,25 +44,25 @@ h2 {
     margin: 4% 5% 4% 5%;
     text-align: center;
     width: 90%;
-    }
- 
-.button:hover{
-    background-color:#c997c0;
-    color: white;
-    border: 2px solid #c997c0;
-    }
+}
  
 .button{
     background-color: #923367;
     color: #F9F4F4;
-    font-family: 'Yusei Magic';
+    font-family: 'Yusei Magic', sans-serif;
     border-radius: 4px;
     width: 131px;
     height: 30px;
     border:none;
     margin: 3% 0% 4% 0%;
-    }
+}
  
+.button:hover{
+    background-color:#c997c0;
+    color: white;
+    border: 2px solid #c997c0;
+}
+
 .input {
     color:#923367;
     width: 239px;
@@ -70,22 +70,22 @@ h2 {
     left: 81px;
     top: 277px;    
     background: #FFFFFF;
-    font-family: 'Yusei Magic';
+    font-family: 'Yusei Magic', sans-serif;
     border: 1px solid #923367;
     box-sizing: border-box;
     border-radius: 4px;
     padding: 3%;
     margin: 2% 1% 1% 1%;
-    }
+}
 
 #logoGoogle {
     margin: 6px 20px 0px 13px;
-    }
+}
 
 #btnGoogle{
     background-color: #ECC4B1;
     color: #350B1F;
-    font-family: 'Yusei Magic';
+    font-family: 'Yusei Magic', sans-serif;
     font-weight: bold;
     text-align: center;
     padding: 0px 25px 3px 0px;
@@ -94,5 +94,4 @@ h2 {
     margin: 3% 0% 3% 0%;
     width: 239px;
     height: 35px;
-    }
-
+}
