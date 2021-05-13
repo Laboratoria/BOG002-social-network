@@ -217,6 +217,53 @@ span:last-child {
     position: relative;
     z-index: 0;
 }
+#upload {
+    display: flex;
+    flex-flow: column;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+label {
+    background-color: white;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    border: 1px solid #630092;
+    border-radius: 15px;
+    padding: 40px;
+    color: #918596;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+#addText {
+    outline: none;
+    margin-top: 15px;
+    border: 1px solid #630092;
+    width: 301px;
+    height: 130px;
+    border-radius: 15px;
+    padding: 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+}
+
+#addPost {
+    border: none;
+    border-radius: 50px;
+    background-color: gray;
+    color: white;
+    height: 50px;
+    width: 300px;
+    margin-top: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+}
+
 .logoHome {
     height: 160px;
     width: 130px;

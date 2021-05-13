@@ -19,8 +19,9 @@ export function Post() {
     </header>
     <div id="container" class="posts">
     <div class="posts"> 
-        <input type = "file" id = "addImage">
-        <input type = "text" placeholder = "Tell us what you have in mind …" id = "addText">
+        <input type = "file" id = "file" hidden>
+        <label for="file"> <img id="upload" src = "./assets/logo-image.png"> Upload Image </label>
+        <textarea  placeholder = "Tell us what you have in mind …" id = "addText"></textarea>
         <button id = "addPost"> Add Post </button>
     </div>
     </div>
