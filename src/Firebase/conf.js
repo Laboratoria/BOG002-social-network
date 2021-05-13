@@ -1,7 +1,7 @@
 
 // Your web app's Firebase configuration
     
-var firebaseConfig = {
+let firebaseConfig = {
   apiKey: "AIzaSyDybXyutc7WWfHJ-3cWqb0wqDmXLpECSuY",
   authDomain: "social-network-19982.firebaseapp.com",
   projectId: "social-network-19982",
