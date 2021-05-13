@@ -217,33 +217,48 @@ span:last-child {
     position: relative;
     z-index: 0;
 }
+
+#arrow {
+    margin: 0 10px;
+}
+
+#btnArrow{
+    border: none;
+}
+
+#labelPost {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #505050;
+}
+
 #upload {
+    margin: 10px;
     display: flex;
     flex-flow: column;
-    width: 50px;
-    height: 50px;
     text-align: center;
 }
 
-label {
+label#labelImage {
     background-color: white;
     align-items: center;
     display: flex;
     flex-flow: column;
-    border: 1px solid #630092;
+    border: 1px solid #6002B2;
     border-radius: 15px;
     padding: 40px;
-    color: #918596;
+    color: #8E8E8E;
     font-family: 'Lato', sans-serif;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 #addText {
     outline: none;
     margin-top: 15px;
-    border: 1px solid #630092;
+    border: 1px solid #6002B2;
     width: 301px;
     height: 130px;
     border-radius: 15px;
@@ -252,10 +267,15 @@ label {
     font-weight: 600;
 }
 
+#addText::placeholder{
+    color: #8E8E8E;
+
+}
+
 #addPost {
     border: none;
     border-radius: 50px;
-    background-color: gray;
+    background-color: #B1B1B1;    ;
     color: white;
     height: 50px;
     width: 300px;
