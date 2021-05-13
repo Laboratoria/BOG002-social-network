@@ -2,8 +2,8 @@
 import {home, BotondeCrearCuentaconGoogle} from './Pages/Home.js';
 import {FormularioDeRegistro,  Datos_de_registro} from './Pages/SingUp.js';
 import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
-import {SoloUsuarios} from './Firebase/firebaseAuth.js'
-import { inicio } from './Pages/inicio.js';
+import {SoloUsuarios} from './Firebase/firebaseAuth.js';
+import { inicio, CerrarSesion} from './Pages/inicio.js';
 import { perfil } from './Pages/perfil.js';
 import { Error404} from './Pages/Error 404.js';
 
@@ -39,8 +39,9 @@ export const router = (route) => {
              
              break;
         case '#/release':
-            SoloUsuarios(inicio())
-
+            SoloUsuarios(inicio());
+            CerrarSesion();
+            
             break;
         case '#/profile':
             SoloUsuarios(perfil())
