@@ -1,4 +1,4 @@
-import { reset, homeListener } from "./Utils.js";
+import { reset, homeListener, menuPrincipal } from "./Utils.js";
 // import { signOut } from "../Firebase/Services.js";
 
 export function Home() {
@@ -18,6 +18,14 @@ export function Home() {
           <span class="bottom_line"></span>
         </button>
       </div>
+      <nav class="menuppal">
+        <ul>
+          <li><a href="#">Opcion 1</a></li>
+          <li><a href="#">Opcion 2</a></li>
+          <li><a href="#">Opcion 3</a></li>
+          <li><a href="#">Opcion 4</a></li>
+        </ul>
+      </nav>
     </header>
     <div id="container" class="posts"> 
     </div>
@@ -38,8 +46,10 @@ export function Home() {
 }
 export function menu() {
   const nav = document.querySelector("#hamburger_menu button");
+  const menuppal = document.querySelector(".menuppal");
   nav.addEventListener("click", (e) => {
     homeListener(nav);
+    menuPrincipal(menuppal);
   });
 }
 /*<div class="btns-container-mobile">
@@ -53,5 +63,3 @@ export function menu() {
 //     signOut();
 //   });
 // }
-
-

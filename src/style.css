@@ -349,3 +349,42 @@ footer {
         opacity: 1;
     }
 }
+/* menu nav */
+.menuppal{
+    background-color:#9423BC;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    transform: translate3d(0px, -100%, 0px);
+    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+    width: 100%;
+    z-index: 2;
+}
+.menuppal.is_active{
+    transform: translate(120px, 80px)
+}
+.menuppal ul{
+    margin:0;
+    padding:0;
+}
+.menuppal ul li { 
+    list-style: none;
+    text-align:center;
+    font-size:1.5rem;
+    line-height:3em;
+    height:3em;
+    color:rgb(1, 11, 20);
+    text-transform:none;
+    font-weight:bold;
+}
+.menuppal ul li a{
+    text-decoration:none;
+    color:white;
+}
+.menuppal ul li a:hover{
+    text-decoration:none;
+    color:rgb(132, 228, 22);
+}
