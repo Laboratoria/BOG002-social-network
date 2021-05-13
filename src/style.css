@@ -227,6 +227,72 @@ span:last-child {
     z-index: 0;
 }
 
+#arrow {
+    margin: 0 10px;
+}
+
+#btnArrow{
+    border: none;
+}
+
+#labelPost {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #505050;
+}
+
+#upload {
+    margin: 10px;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+
+label#labelImage {
+    background-color: white;
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    border: 1px solid #6002B2;
+    border-radius: 15px;
+    padding: 40px;
+    color: #8E8E8E;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+#addText {
+    outline: none;
+    margin-top: 15px;
+    border: 1px solid #6002B2;
+    width: 301px;
+    height: 130px;
+    border-radius: 15px;
+    padding: 10px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+}
+
+#addText::placeholder{
+    color: #8E8E8E;
+
+}
+
+#addPost {
+    border: none;
+    border-radius: 50px;
+    background-color: #B1B1B1;    ;
+    color: white;
+    height: 50px;
+    width: 300px;
+    margin-top: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+}
+
 .logoHome {
     height: 160px;
     width: 130px;
