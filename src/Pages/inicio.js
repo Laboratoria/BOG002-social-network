@@ -22,9 +22,9 @@ export function inicio(){
 
 	<nav>
 		<ul>
-			<li><a href="#/release"> Inicio </a> </li>
-			<li><a href="#/profile"> Perfil</a>   </li>
-			<li><a href="#/search"> Buscar </a>  </li>
+			<li><a href="#/release"> <span><imag src="../imagenes/Home.svg"> </span>Inicio </a> </li>
+			<li><a href="#/profile"> <span><imag src="../imagenes/Profile.svg"> </span>Perfil</a>   </li>
+			<li><a href="#/search"><span><imag src="../imagenes/Search.svg"> </span> Buscar </a>  </li>
 		</ul>
 	</nav>
 
