@@ -1,4 +1,5 @@
-import { reset, homeListener } from "./Utils.js";
+import { reset, homeListener, menuPrincipal } from "./Utils.js";
+import { createPost } from "../Firebase/Storage.js";
 
 export function Post() {
   reset();
@@ -32,7 +33,7 @@ export function Post() {
         <input type = "file" id = "file" hidden>
         <label for="file" id = "labelImage"> <img id="upload" src = "./assets/logo-image.svg"> Upload Image </label>
         <textarea  placeholder = "Tell us what you have in mind …" id = "addText"></textarea>
-        <button id = "addPost"> Add Post </button>
+        <button id = "addPost" class="button_general" > Add Post </button>
     </div>
     </div>
     <footer class="navBar">
@@ -52,7 +53,16 @@ export function Post() {
 
 export function menuHam() {
   const nav = document.querySelector("#hamburger_menu button");
+  const menuppal = document.querySelector(".menuppal");
   nav.addEventListener("click", (e) => {
     homeListener(nav);
+    menuPrincipal(menuppal);
+  });
+  const addPost = document.querySelector("#addPost");
+  addPost.addEventListener("click", (e) => {
+    e.preventDefault();
+    const file = document.querySelector("#file").files[0];
+    const text = document.querySelector("#addText").value;
+    createPost(file, text);
   });
 }

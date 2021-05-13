@@ -268,8 +268,8 @@ label#labelImage {
     outline: none;
     margin-top: 15px;
     border: 1px solid #6002B2;
-    width: 301px;
-    height: 130px;
+    width: 100%;
+    height: 40%;
     border-radius: 15px;
     padding: 10px;
     font-family: 'Lato', sans-serif;
@@ -286,8 +286,8 @@ label#labelImage {
     border-radius: 50px;
     background-color: #B1B1B1;    ;
     color: white;
-    height: 50px;
-    width: 300px;
+    height: 15%;
+    width: 100%;
     margin-top: 20px;
     font-family: 'Lato', sans-serif;
     font-weight: 600;
