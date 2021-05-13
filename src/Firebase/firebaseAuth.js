@@ -42,19 +42,9 @@ export const LoginUsuario = (email,password) =>{
 
   // solo usuarios logeados
 
- export function SoloUsuarios(contenido){
-  var user = firebase.auth().currentUser;
-  let content = document.getElementById('root');
-  if (user) {
-       content.innerHTML = 
-          contenido
-  }else {
-      content.innerHTML = 
-      FormularioDeIngreso();
-      DatosDeLogin();
-   // No user is signed in.
-  }
-  
+ export function SoloUsuarios(){
+  let user = firebase.auth().currentUser;
+    return user;
 }
 // cerrar sesion
 export function Salir(){

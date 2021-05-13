@@ -18,7 +18,7 @@ export const router = (route) => {
     const login_modal = document.getElementById('login_modal');
     login_modal.classList.remove('show');
     content.innerHTML = "";
-    
+    let user = SoloUsuarios();
     switch(route) {
         case '':
             content.innerHTML= 
@@ -39,11 +39,23 @@ export const router = (route) => {
              
              break;
         case '#/release':
-            SoloUsuarios(inicio());
-            CerrarSesion();
+          
+            if (user) {
+                 content.innerHTML =  inicio();
+                    CerrarSesion();
+            }else {
+              window.location.hash ='#/login'
+            }
+           
             break;
         case '#/profile':
-            SoloUsuarios(perfil())
+           
+            if (user) {
+                 content.innerHTML =  perfil();
+                    CerrarSesion();
+            }else {
+              window.location.hash ='#/login'
+            }
                 
                 break;
         default:
