@@ -28,8 +28,10 @@ export function Post() {
     </header>
     <div id="container" class="posts">
     <div class="posts"> 
-        <input type = "file" id = "addImage">
-        <input type = "text" placeholder = "Tell us what you have in mind …" id = "addText">
+        <label id="labelPost"><button id="btnArrow"><img id="arrow" src = "./assets/post-arrow.svg"></button> Post </label>
+        <input type = "file" id = "file" hidden>
+        <label for="file" id = "labelImage"> <img id="upload" src = "./assets/logo-image.svg"> Upload Image </label>
+        <textarea  placeholder = "Tell us what you have in mind …" id = "addText"></textarea>
         <button id = "addPost"> Add Post </button>
     </div>
     </div>
