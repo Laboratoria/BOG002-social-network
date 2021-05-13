@@ -1,5 +1,46 @@
-// Este es el punto de entrada de tu aplicacion
+import { pantallaInicio } from './lib/inicio.js';
+import { registroUsuario } from './lib/registroUsuario.js';
+import { inicioSesion } from './lib/inicioSesion.js';
+import { registerUSer, loginUSer, registroGmail } from './lib/firebaseAuth.js';
 
-import { myFunction } from './lib/index.js';
+const rootHtml = document.getElementById('root');
+const appenPantallaInicio = rootHtml.appendChild(pantallaInicio());
 
-myFunction();
+const bntRegistro = document.getElementById('btnRegistrate');
+const btnIniciarSesion = document.getElementById('btnIniciarSesion');
+
+const mostrarLogin = () => {
+  const appPantallaLogin = rootHtml.appendChild(inicioSesion());
+  appenPantallaInicio.style.display = 'none';
+  appPantallaLogin.style.display = 'block';
+  const formularioInicioSesion = document.getElementById('formularioInicioSesion');
+  formularioInicioSesion.addEventListener('submit', (event) => {
+    const emailLogin = document.getElementById('emailLogin').value;
+    const passwordLogin = document.getElementById('passwordLogin').value;
+    event.preventDefault();
+
+    loginUSer(emailLogin, passwordLogin);
+  });
+};
+
+const mostrarRegistro = () => {
+  const appePantallaRegistro = rootHtml.appendChild(registroUsuario());
+  appenPantallaInicio.style.display = 'none';
+  appePantallaRegistro.style.display = 'flex';
+
+  // aqui vamos a traer la información del formulario del registro 41:51
+  const formularioRegistro = document.getElementById('formularioRegistroUsuario');
+  formularioRegistro.addEventListener('submit', (event) => {
+    const emailRegistro = document.getElementById('emailRegistro').value;
+    const passwordRegistro = document.getElementById('passwordRegistro').value;
+    event.preventDefault();
+    registerUSer(emailRegistro, passwordRegistro);
+  });
+
+  // registro Gmail
+  const contenedorclickGmail = document.getElementById('contenedorclickGmail');
+  contenedorclickGmail.addEventListener('click', registroGmail);
+};
+
+bntRegistro.addEventListener('click', mostrarRegistro);
+btnIniciarSesion.addEventListener('click', mostrarLogin);
