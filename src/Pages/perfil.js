@@ -21,8 +21,8 @@ export function perfil(){
 	<nav>
 		<ul>
 		<li><a href="#/release"><img src="./imagenes/Home.svg"></a>Inicio </li>
-		<li><a href="#/profile"><img src="./imagenes/Profile.svg">Perfil</a></li>
-		<li><a href="#/search"><img src="./imagenes/Search.svg"></a> </li>
+		<li><a href="#/profile"><img src="./imagenes/Profile.svg"></a>Perfil</li>
+		<li><a href="#/search"><img src="./imagenes/Search.svg"></a>Buscar</li>
 
 		</ul>
 	</nav>
