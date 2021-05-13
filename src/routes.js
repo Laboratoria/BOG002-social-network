@@ -39,6 +39,11 @@ export const router = (route) => {
              
              break;
         case '#/release':
+<<<<<<< HEAD
+            SoloUsuarios(inicio());
+            CerrarSesion();
+            
+=======
           
             if (user) {
                  content.innerHTML =  inicio();
@@ -47,6 +52,7 @@ export const router = (route) => {
               window.location.hash ='#/login'
             }
            
+>>>>>>> 471494661a41f885b43a5bd6409ef80a13d29953
             break;
         case '#/profile':
            

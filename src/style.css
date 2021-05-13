@@ -192,7 +192,7 @@ align-items: center;
 /* justify-content: space-between; */
 height: 20vh;
 position: relative;
-top: 19em;
+top: 12em;
 
 
 }
@@ -293,11 +293,12 @@ width: 30vw;
 height: 30vh;
 position: relative;
 top: 5em;
-left: 7.5em;
+left:7.5em;
 }
 #usuario img{
-width: 30vw;
-height: 18vh;
+width: 130px;
+height: 130px;
+/* left:5em; */
 }
 /* INICIO DENTRO DE LA PAGINA  */
 #encabezado{
@@ -328,6 +329,7 @@ width: 190px;
 background-color: rgb(255, 255, 255);
 position: absolute;
 right: 3%;
+color: black;
 display: flex;
 flex-direction: column;
 display: block;
