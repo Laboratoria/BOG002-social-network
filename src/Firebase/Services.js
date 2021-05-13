@@ -3,7 +3,7 @@
  * @param {string} email
  * @param {string} password
  */
-export const singUp = (email, password) => {
+export const singUp = (email, password, errorInput) => {
     const auth = firebase.auth();
     return auth
         .createUserWithEmailAndPassword(email, password)
@@ -12,12 +12,14 @@ export const singUp = (email, password) => {
             return user.email;
         })
         .catch((error) => {
+            const errorCode = error.code;
             const errorMessage = error.message;
-            // printHtml('errorMsg-signin', errorMessage);
-            return {
-                error: true,
-                message: errorMessage,
-            };
+            if (errorCode == 'auth/weak-password') {
+                errorInput.textContent = 'The password is too weak'
+            } else {
+                errorInput.textContent = errorMessage
+            }
+            console.log(error);
         });
 };
 
@@ -57,7 +59,7 @@ export const authFacebook = () => {
 };
 
 // Login
-export const login = (email, password) => {
+export const login = (email, password, errorInput) => {
     const auth = firebase.auth();
     return auth
         .signInWithEmailAndPassword(email, password)
@@ -68,11 +70,16 @@ export const login = (email, password) => {
 
         })
         .catch((error) => {
+            const errorCode = error.code;
             const errorMessage = error.message;
-            return {
-                error: true,
-                message: errorMessage,
-            };
+            if (errorCode == 'auth/user-not-found') {
+                errorInput.textContent = 'The given email not corresponding'
+            } else if (errorCode == 'auth/wrong-password') {
+                errorInput.textContent = 'The password is invalid'
+            } else {
+                errorInput.textContent = errorMessage
+            }
+            console.log(error);
 
         });
 };
