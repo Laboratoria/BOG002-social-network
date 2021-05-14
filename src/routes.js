@@ -6,6 +6,7 @@ import {SoloUsuarios} from './Firebase/firebaseAuth.js';
 import { inicio, CerrarSesion} from './Pages/inicio.js';
 import { perfil } from './Pages/perfil.js';
 import { Error404} from './Pages/Error 404.js';
+import { search } from './Pages/search.js';
 
  
 let content = document.getElementById('root');
@@ -17,8 +18,11 @@ export const router = (route) => {
     // para el login
     const login_modal = document.getElementById('login_modal');
     login_modal.classList.remove('show');
+    
     content.innerHTML = "";
     let user = SoloUsuarios();
+
+
     switch(route) {
         case '':
             content.innerHTML= 
@@ -58,6 +62,16 @@ export const router = (route) => {
             }
                 
                 break;
+        case '#/search':
+           
+            if (user) {
+                content.innerHTML =  search();
+                    CerrarSesion();
+            }else {
+                window.location.hash ='#/login'
+                    }
+                        
+             break;
         default:
              content.innerHTML = Error404();
     }

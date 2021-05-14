@@ -1,12 +1,9 @@
 // se trae desde main js 
 
-
-/* import { CerrarSesion } from '../Pages/inicio.js'; */
-import {FormularioDeIngreso,DatosDeLogin} from '../Pages/Login.js';
 import {modalError, modalErrorLogin} from  '../Pages/error.js'
 
 
-// crear cuenta de usuario
+// *****************crear cuenta de usuario*****************
 
 export const autenticacionUsuario =(email, password)=>{
 
@@ -22,7 +19,7 @@ export const autenticacionUsuario =(email, password)=>{
   });
 } 
 
-// ingresando usuario
+// *****************  ingresando usuario  ******************
 
 export const LoginUsuario = (email,password) =>{
         firebase.auth()
@@ -31,24 +28,21 @@ export const LoginUsuario = (email,password) =>{
     .then((userCredential) => {
       // Signed in
       window.location.hash ='#/release'
-      //  userCredential.user;
- 
     })
-
-
     .catch((error) => {
       console.log('error',error);
       modalErrorLogin(error);
     });
   }
 
-  // solo usuarios logeados
+  // *********************** solo usuarios logeados ******************
 
  export function SoloUsuarios(){
+   
   let user = firebase.auth().currentUser;
     return user;
 }
-// cerrar sesion
+// ************************ cerrar sesion ******************************
 export function Salir(){
   
   firebase.auth().signOut()
