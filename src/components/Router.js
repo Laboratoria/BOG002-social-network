@@ -4,6 +4,7 @@ import { Register, addUser } from "./Register.js";
 import { Home, menu } from "./Home.js";
 import { Login, logInUser } from "./Login.js";
 import { Post, menuHam } from "./Post.js"
+import { Password, recoverPassword } from "./Password.js";
 
 export function Router() {
   const { hash } = location;
@@ -30,11 +31,15 @@ export function Router() {
       // userOut();
       menu();
       break;
-    default:
-      break;
     case "#/post":
       root.appendChild(Post());
       menuHam();
-      break;  
+      break;
+    default:
+      break;
+    case "#/password":
+      root.appendChild(Password());
+      recoverPassword();
+      break;      
   }
 }
