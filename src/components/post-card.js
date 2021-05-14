@@ -7,7 +7,7 @@ template.innerHTML = `
     width: 90vw;
     height: 38vh;
     margin-left:5vw;
-    margin-top: 4vh;
+    margin-top: 10vh;
     border-radius: 5px; 
     font-family:'Roboto', sans-serif;
     font-weight: 500;
@@ -25,7 +25,6 @@ template.innerHTML = `
     border-top-right-radius:5px;
     color: #FFFFFF;
     padding: 0.7em;
-    display: flex;
     align-items:center;
     text-align: left;
     flex-wrap:nowrap;
@@ -60,18 +59,28 @@ template.innerHTML = `
     border: #FFC300 1px solid;
     border-radius:20px;
     border-radius: 20px;
-    width: 30vw;
+    width: 40vw;
     height: 4.5vh;
     margin: 0.5rem;
     position:absolute;
     font-family:'Roboto', sans-serif;
-    font-weight: 500;
+    font-weight: 550;
     text-transform: capitalize;
+    background: #EAE6CA; 
+}
+button:hover{
+    background: #BA8E01;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+button.leftDownButton:hover{
+    background: #06004B;
+    border-radius:5px;
 }
 .ubicationLeft{
     background-size: 20%;
     width: 9vw;
-    padding:2vh 0 0 6vw;
+    padding:2vh 0 0 1vw;
     flex-wrap:nowrap;
     margin-bottom:0;
     margin-top:0;
@@ -86,6 +95,7 @@ template.innerHTML = `
     font-family:'Roboto', sans-serif;
     font-weight: 550;
     color:#424348;
+    background:#ffffffc9;  
 }
 .textAreapublic{
     border: #FFC300 1px solid;
@@ -94,20 +104,21 @@ template.innerHTML = `
     height: 10vh;
     writing-mode:horizontal-tb;
     font-family:'Roboto', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     color:#424348;
+    background:#ffffffc9;
 }
 ::slotted(textarea){
     border: #FFC300 1px solid;
     border-radius: 5px;
-    width: 65vw;
+    width: 75vw;
     height: 10vh;
     font-weight: 600;
     writing-mode:horizontal-tb;
     font-family:'Roboto', sans-serif;
-    font-weight: 500;
     color:#424348;
-    margin-left:5vw;
+    margin-left:0;
+    background: #EAE6CA;
 }
 .footer-card{
     border-bottom-left-radius:5px;
@@ -211,20 +222,20 @@ template.innerHTML = `
     margin-left:13vw;
 }
 .location-container{
-    width: 45vw;
+    width: 80vw;
     height: 13vh; 
     display: block;
+    margin:0;
+    padding:0;
 }
 .location-box{
-    margin-left:4vw;
-    flex-wrap:wrap;
-    padding-button:1vh;
-    padding-top:
-}
+    margin-left:6vw;
+    white-space:no-wrap;
+    margin-top:2vh;
+}    
 @media (min-width: 1200px) {
     .post-card{
         width: 55vw;
-        height: 40vh;
         margin-left:33vw;
         margin-top: 12vh;
         font-family:'Roboto', sans-serif;
@@ -260,7 +271,7 @@ template.innerHTML = `
     .imagesRight{
         background-size: 20%;
         width: 9vw;
-        aling-self:flex-end;
+        right:0;
     }
     .name_user{
         text-align: left;
@@ -308,8 +319,8 @@ template.innerHTML = `
         border-radius:10px;
         width: 35vw;
         height: 10vh;
-        margin:1vh 0 2vh 10vw;
-        background:#FFFFFF;
+        margin:3vh 0 2vh 10vw;
+        background:#ffffffc9;
         font-weight: 600;
     }
     .textAreapublic{
@@ -317,7 +328,7 @@ template.innerHTML = `
         border-radius:10px;
         width: 35vw;
         height: 10vh;
-        background:#FFFFFF;
+        background:#ffffffc9;
         font-weight: 600;
     }
     .footer-card{
@@ -340,17 +351,13 @@ template.innerHTML = `
     }   
     .conteo{
         color: #0C244F;
+        font-family:'Roboto', sans-serif;
+        font-weight: 600;
     }   
-    .location-container{
-        position:absolute;
-    }
-    .location-box{
-        position: absolute;  
-    }
    @media (min-width: 1200px) {
         .post-card{
             width: 55vw;
-            height: 46vh;
+            height: 51vh;
             margin-left:33vw;
             margin-top: 7vh;
             margin-bottom: 5vh;
@@ -373,6 +380,7 @@ template.innerHTML = `
         .imagesRight{
             background-size: 20%;
             width: 3vw;
+            right:2vw;
         }
         .name_user{
             margin-left:4vw;
@@ -382,16 +390,17 @@ template.innerHTML = `
             width: 20vw;
             height: 4.5vh;
             margin:0.5rem;
+            background:#ffffffc9;
         }
         .ubicationLeft{
             width: 3vw;
-            padding:3vh 0 0 10vw;
+            padding:3vh 0 0 0;
         }
         .public{
             border-radius:5px;
             width: 35vw;
             height: 10vh;
-            margin:3vh 0 2vh 10vw;
+            margin:6vh 0 2vh 10vw;
             font-weight: 600;
         }
         .textAreapublic{
@@ -399,6 +408,7 @@ template.innerHTML = `
             width: 35vw;
             height: 10vh;
             font-weight: 600;
+            background:#ffffffc9;
         }
         .footer-card{
             border-bottom-left-radius:5px;
@@ -447,6 +457,43 @@ template.innerHTML = `
             margin-top:2vh;
             margin-left:5.5vw;
         }
+        ::slotted(textarea){
+            border: #FFC300 1px solid;
+            border-radius: 5px;
+            width: 35vw;
+            height: 10vh;
+            font-weight: 600;
+            writing-mode:horizontal-tb;
+            font-family:'Roboto', sans-serif;
+            font-weight: 600;
+            color:#424348;
+            margin-top:0;
+        }
+        ::slotted(input){
+            border: #FFC300 1px solid;
+            border-radius:20px;
+            border-radius: 20px;
+            width: 30vw;
+            height: 4.5vh;
+            margin: 0.5rem;
+            position:absolute;
+            font-family:'Roboto', sans-serif;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+        .location-container{
+            width: 40vw;
+            height: 13vh; 
+            display: block;
+            margin:0;
+            padding:0;
+        }
+        .location-box{
+            margin-left:10vw;
+            white-space:no-wrap;
+            margin-top:2vh;
+            margin-button:2vh;
+        }
     }    
     </style>
 
@@ -467,7 +514,7 @@ template.innerHTML = `
     </div>
     <div class="location-container">
         <div class="location-box">
-            <slot name="userIconPost"><img class="imagesRight" src="assets/imagesIcon/UserBlueC.png"></slot><slot name="nameUserPost"></slot> 
+        <slot name="userIconPost"><img class="imagesRight" src="assets/imagesIcon/UserBlueC.png"> </slot><slot name="nameUserPost"></slot> 
         </div>
         <div class="location-box">
             <slot name="ubicationPostBlue"><img class="ubicationLeft" src="assets/imagesIcon/UbicationYellowC.png"></slot><slot name="locationPost"><input class="ubication" id="ubication" type="text"/></slot>
@@ -475,7 +522,7 @@ template.innerHTML = `
     </div>
     <div class="public"><slot name="description"><textarea class="textAreapublic" name="textarea" rows="10" cols="50" type="text"></textarea></slot></div>
     <div class="footer-card">
-        <slot name="image_button"><img class="imagesLeft" id="imageLeftDown"></slot>
+        <button class="leftDownButton"><slot name="image_button"><img class="imagesLeft" id="imageLeftDown"></slot></button>
         <slot name="label"><p class="name_like">Me gusta</p></slot>
         <slot name="footer_right_element"><p class="conteo">123 Likes</p></slot>
     </div>

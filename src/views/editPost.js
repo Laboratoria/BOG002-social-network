@@ -22,5 +22,4 @@ export function editPostCard(postID, postuser, location, description, likes) {
         const descriptionEdit = document.querySelector("#textAreaPublicEdit").value;
         editPost(postID, postuser, locationEdit, descriptionEdit);
     });
-    
 }

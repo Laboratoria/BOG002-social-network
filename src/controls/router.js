@@ -1,4 +1,4 @@
-import { renderLogin, renderRegister, renderHome, renderProfile, renderPost, renderError, renderEditPost} from './renderViews.js';
+import { renderLogin, renderRegister, renderHome, renderProfile, renderPost, renderError} from './renderViews.js';
 
 export function router(hash, $containerGeneral, db, name) {
   
@@ -18,8 +18,6 @@ export function router(hash, $containerGeneral, db, name) {
     case 'profile':
       renderProfile($containerGeneral);
       break;
-    case 'edit-post':
-      renderEditPost();
     default:
       renderError($containerGeneral);
       break;

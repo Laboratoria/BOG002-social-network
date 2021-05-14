@@ -394,8 +394,6 @@ button.buttonInicioGoogle:hover{
     width: 9vw;
     margin: 0;
     padding: 0;
-    position: relative;
-    align-items: flex-start;
 }
 .viewError{
   width: 100vw;
@@ -724,7 +722,7 @@ button.buttonInicioGoogle:hover{
     }
   .moreImage{
     width: 3.5vw;
-    align-items:flex-end;
+    margin-left: 5vw;
   }
   .imgError{
     width: 12vw;

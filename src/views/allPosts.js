@@ -33,6 +33,24 @@ export function AllPostsCard(containerPosts, docID, username, location, descript
             } 
         });
     });
+    console.log(nodes);
+    // const likeButtons = nodes.shadowRoot.querySelectorAll('.leftDownButton');
+    // console.log(likeButtons);
+
+    nodes.forEach(element => {
+        element.shadowRoot.querySelector('.leftDownButton').addEventListener("click", (event) => {
+            console.log(event.target.closest('post-card'));
+            // const editPost = event.target.closest('post-card'); 
+            // console.log(editPost);
+            // if (editPost == "true"){
+            //     const eventTarget = event.target.closest('post-card');
+            //     const postID = event.target.closest('post-card').dataset.id;
+            //     const popUp = eventTarget.shadowRoot.querySelector('.editDeletePopUp');
+            //     popUp.style.display = 'block';
+            //     showPopUp(eventTarget, postID);
+            // } 
+        });
+    });
 }
 
 function showPopUp(eventTarget, postID){

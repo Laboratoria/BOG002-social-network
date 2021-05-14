@@ -1,7 +1,6 @@
 import { paintAllPosts } from '../controls/firestore.js';
 
 export function RetrieveData(containerPosts){
-    console.log(containerPosts)
     const db = firebase.firestore(); 
     db.collection("posts").orderBy("date", "desc")
     .onSnapshot((querySnapshot) => {
@@ -30,7 +29,7 @@ export function sendData(db, location, description, uid, name, date){
     })
     .then((docRef) => {
         console.log("Document written with ID: ", docRef.id);
-        location.reload();
+        window.location.hash="#home";
     })
     .catch((error) => {
         console.error("Error adding document: ", error);
@@ -66,8 +65,6 @@ export function deletePost(postID){
 
 export function editPost(postID, postuser, locationEdit, descriptionEdit){
     const db = firebase.firestore(); 
-    console.log(postID, postuser);
-    console.log( locationEdit, descriptionEdit);
     db.collection("posts").doc(postID).set({
         location: locationEdit,
         description: descriptionEdit,
@@ -78,7 +75,8 @@ export function editPost(postID, postuser, locationEdit, descriptionEdit){
     })
     .then(() => {
         console.log("documento editado!");
-        window.location.hash = '#home';
+        //window.location.hash = '#home';
+        location.reload();
     })
     .catch((error) => {
         console.error("Ocurrió algún error al editar el post: ", error);

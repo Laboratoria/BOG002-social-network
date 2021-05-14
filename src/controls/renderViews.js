@@ -44,21 +44,13 @@ export function renderRegister($containerGeneral) {
 
 export function renderPost($containerGeneral, name){
   Menu($containerGeneral);
-  console.log(name)
   document.querySelector('.body_container').innerHTML += createPostCard(name); 
   document.querySelector(".post_button").addEventListener('click', createPost);
 }
 
-export function renderEditPost(){
-  //Menu($containerGeneral);
-  // document.querySelector('.body_container').innerHTML += editPostCard(); 
-  // document.querySelector(".post_button").addEventListener('click', createPost);
-}
-
 export function renderProfile($containerGeneral){
   Menu($containerGeneral);
-  console.log("profile");
-  profile();
+  document.querySelector('.body_container').innerHTML += profile();
 }
 
 export function renderError($containerGeneral){
@@ -71,7 +63,6 @@ export function renderHome($containerGeneral){
   containerPosts.classList.add("containerPosts");
   document.querySelector('.body_container').appendChild(containerPosts);
   containerPosts.innerHTML='';
-  console.log(containerPosts);
   RetrieveData(containerPosts);
 }
 
