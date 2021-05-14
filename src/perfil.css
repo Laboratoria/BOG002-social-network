@@ -1,0 +1,56 @@
+/* Estilos del componente perfil.js con css grid*/
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 3fr 0.3fr;
+    grid-gap:0.2rem;
+    grid-template-areas: 
+      "nav nav nav "
+      "section section section"
+      " footer footer footer";
+  }
+  nav{
+    grid-area: nav;
+    
+  }
+  nav .menu{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px
+  }
+  nav .logo{
+    font-family: Dancing Script;
+    font-size: 25px;
+  
+  }
+  nav img{
+    width: 50px;
+  }
+  .enlaces {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    transition: all 1s ease;
+  }
+  .enlaces:hover{
+    background-color: #f8dc9b;
+  }
+  
+  section{
+    /* background: #a7c6ff; */
+    grid-area: section;
+  }
+  footer{
+    background: #f9ffa7;
+    grid-area: footer;
+  }
+  footer ul{
+    display: flex;
+    justify-content: space-around;
+  }
+  footer ul li{
+    display: flex;
+    flex-direction: column;
+  }
