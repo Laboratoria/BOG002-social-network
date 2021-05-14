@@ -1,10 +1,6 @@
 // se trae desde main js 
 
-
-/* import { CerrarSesion } from '../Pages/inicio.js'; */
-import {FormularioDeIngreso,DatosDeLogin} from '../Pages/Login.js';
 import {modalError, modalErrorLogin} from  '../Pages/error.js'
-
 
 // crear cuenta de usuario
 
@@ -59,4 +55,20 @@ export function Salir(){
     // An error happened.
     console.log('no se pudo cerrar sesion')
   });
+}
+
+const db = firebase.firestore();
+
+export const SaveUser = (user) => {
+  db.collection("usuarios").add({
+     user
+  })
+  .then((docRef) => {
+    console.log("Document written with ID: ", docRef.id);
+  })
+  .catch((error) => {
+    console.error("Error adding document: ", error);
+  });
+  
+  
 }

@@ -1,5 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 
+import { Footer } from './Pages/Footer.js';
 import {router} from './routes.js';
 
 
