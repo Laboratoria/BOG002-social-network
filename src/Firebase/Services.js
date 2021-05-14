@@ -102,3 +102,16 @@ export const signOut = () => {
             // An error happened.
         });
 };
+
+//Recover password
+export const recover = (recoveryEmail) => {
+    const auth = firebase.auth();
+    auth
+        .sendPasswordResetEmail(recoveryEmail)
+        .then(() => {
+            alert ("We've sent a message to your email.");
+        })
+        .catch ((error) => {
+            alert ("Enter a valid email address.")
+        });
+};

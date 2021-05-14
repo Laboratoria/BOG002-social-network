@@ -36,6 +36,7 @@ export function Login() {
                 <button><img id="logoFb" src=./assets/logo-fb.svg></button>
                 <button><img id="logoGoogle" src=./assets/logo-google.svg></button>
               </div>
+              <a href="#/password"> Forgot Password? </a>
               <span> Don’t have have an Account?
                   <a href="#/register">Sign In</a>
               </span>
