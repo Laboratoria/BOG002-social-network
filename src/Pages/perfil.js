@@ -7,24 +7,24 @@ export function perfil(){
     let html= `
 	
 	<div class="container">
-	 <nav>
+	 <header>
 	   <div class="menu">
 		<div class="logo"> 
 		<h1>FoodFans<h1></div>
 		<div id="configuracion"><img src="./imagenes/Setting.svg">
 		<div class="enlaces" id="enlaces">
-          <a href="" id="editar-perfil">Editar Perfil</a>
-		  <span class= "setting" id="cerrar-sesion">Cerra sesion</span>
+		<span class= "setting">Editar Perfil</span>
+		<span class= "setting" id="cerrar-sesion">Cerrar sesion</span>
 		</div>
 		</div> 
 		
-	  </nav>
+	  </header>
       <section>
 	  <form>
 	  <input type="text" class="input" id="name" placeholder="Name" name="name"></input>
 	  <input type="text" class="input"id="apellido" placeholder="Apellido" name="apellido"></input>
 	  <input type="text" class="input" id="descripcion" placeholder="Descripcion" name="descripcion"></input>
-	  <button id='guardar'>Guardar</button>
+	  <button id='guardar'class="btn">Guardar</button>
       </form>
 	  
 	  </section>
@@ -41,22 +41,30 @@ export function perfil(){
   }
   
   export function EditarPerfil (){
-    const guardarCambios = document.getElementById('guardar');
-	guardarCambios.addEventListener('click',(event) =>{
+    const InfoPerfil = document.getElementById('guardar');
+	InfoPerfil.addEventListener('click',(event) =>{
 		event.preventDefault();
        let nombre = document.getElementById('name').value;
 	   let apellido = document.getElementById('apellido').value;
 	   let descripcion = document.getElementById('descripcion').value;
-		console.log('hola')
 
 		const user = {
 			nombre,
 			apellido,
 			descripcion
 		}
-		SaveUser(user)
+		SaveUser(user);
+		
 	});
 
-
 	}
+    function configuracion(){
+		const BotonConfiguracion = document.getElementById('configuracion');
+		BotonConfiguracion.addEventListener('click', () =>{
+		 document.querySelectorAll('.enlaces').style.display = "block";
+			
+		})
+	
+	}
+	
 	
