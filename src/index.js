@@ -11,8 +11,8 @@ const init = () => {
   function verificateUser(hash, door){
     document.querySelector('.bigContainer').innerHTML = '';
     firebase.auth().onAuthStateChanged((user) => {
-      const name = user.displayName;
       if(user){
+        const name = user.displayName;
         if ((user) && ((hash == '') || (hash == 'register'))) {
           location.hash = '#home';
           door=false;

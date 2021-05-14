@@ -16,15 +16,15 @@ export function createPost() {
     }
 }
 
-export function paintAllPosts(docID, username, UID, location, description, likes){
+export function paintAllPosts(containerPosts, docID, username, UID, location, description, likes){
   retrieveUserData();
   let ownPost;
-  if(uid == UID){
+  if(username == name){
     ownPost = true;
   }else{
     ownPost = false;
   }
-  AllPostsCard(docID, username, location, description, likes, ownPost);
+  AllPostsCard(containerPosts, docID, username, location, description, likes, ownPost);
 }
 
 function retrieveUserData(){

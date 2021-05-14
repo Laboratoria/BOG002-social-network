@@ -396,7 +396,32 @@ button.buttonInicioGoogle:hover{
     padding: 0;
     position: relative;
     align-items: flex-start;
-    text-decoration: ;
+}
+.viewError{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background: #EAE6CA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+.imgError{
+  width: 43vw;
+  flex-direction: column;
+  align-items: left;
+}
+.titleError{
+  width: 30vw;
+  height: 20vh;
+  margin-top: 15vh;
+  padding: 5vh;
+}
+
+.imgErrorFly{
+  width: 48vw;
 }
 @media (min-width: 1200px) {
 
@@ -701,4 +726,23 @@ button.buttonInicioGoogle:hover{
     width: 3.5vw;
     align-items:flex-end;
   }
+  .imgError{
+    width: 12vw;
+    height: auto;
+}
+.titleError{
+  width: 30vw;
+  height: 20vh;
+  margin-top: 15vh;
+  padding: 5vh;
+}
+/* .titleblock{
+  width: 20vw;
+  height: 10vh;
+  margin-top: 5vh;
+} */
+.imgErrorFly{
+  width: 16vw;
+  height: auto;
+}
 }

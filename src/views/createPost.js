@@ -7,5 +7,5 @@ export function createPostCard(name) {
     <p slot="label">Agregar Imagen</p>
     <span slot="footer_right_element"><button class="post_button">Publicar</button></span>
     </post-card>`;
-    return container;
-  }
+    return container;  
+}

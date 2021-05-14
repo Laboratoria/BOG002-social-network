@@ -5,7 +5,7 @@ template.innerHTML = `
 .post-card{
     background: #fffbdb;
     width: 90vw;
-    height: 32vh;
+    height: 38vh;
     margin-left:5vw;
     margin-top: 4vh;
     border-radius: 5px; 
@@ -50,7 +50,19 @@ template.innerHTML = `
     border-radius:20px;
     width: 45vw;
     height: 3vh;
-    margin:3vh 0 2vh 1.5vw;
+    margin: 0.5rem;
+    position:absolute;
+    font-family:'Roboto', sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+::slotted(input){
+    border: #FFC300 1px solid;
+    border-radius:20px;
+    border-radius: 20px;
+    width: 30vw;
+    height: 4.5vh;
+    margin: 0.5rem;
     position:absolute;
     font-family:'Roboto', sans-serif;
     font-weight: 500;
@@ -69,7 +81,7 @@ template.innerHTML = `
     border-radius:10px;
     width: 75vw;
     height: 10vh;
-    margin:1vh 0 2vh 7vw;
+    margin:2vh 0 1vh 7vw;
     writing-mode:horizontal-tb;
     font-family:'Roboto', sans-serif;
     font-weight: 550;
@@ -85,13 +97,25 @@ template.innerHTML = `
     font-weight: 500;
     color:#424348;
 }
+::slotted(textarea){
+    border: #FFC300 1px solid;
+    border-radius: 5px;
+    width: 65vw;
+    height: 10vh;
+    font-weight: 600;
+    writing-mode:horizontal-tb;
+    font-family:'Roboto', sans-serif;
+    font-weight: 500;
+    color:#424348;
+    margin-left:5vw;
+}
 .footer-card{
     border-bottom-left-radius:5px;
     border-bottom-right-radius:5px;
     background:#FFFFFF;
     display: flex;
     justify-content: space-between;
-    margin:0;
+    margin:3vh 0 0 0 ;
     height:3.5vh;
     border: #FFC300 1px solid;
     padding: 0.7em;
@@ -128,7 +152,75 @@ template.innerHTML = `
     color: #FFFFFF;
     width: 9vw;
 }
-
+.editDeletePopUp{
+    position:absolute;
+    display:inline-block;
+    width:50vw;
+    height:17vh;
+    background:#E0AB00;
+    color:white;
+    align-items:space-between;
+    flex-direction: row;
+    right:1em;
+    border-radius:10px;
+}  
+.buttonPopUp{
+    width:25vw;
+    height:5vh;
+    text-decoration:none;
+    background:none;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-bottom-style:solid;
+    border-bottom-color:white;
+    color:white;
+    padding-bottom:0;
+    margin-top:2vh;
+    text-align: left;
+    margin-bottom:2vh;
+    font-family:'Roboto', sans-serif;
+    font-weight: 600;
+}
+.imgPopUp{
+    width:7vw;
+    height:4vh;
+    display:flex;
+    margin-left:4vw;
+    flex-direction:column;
+    margin-top:3vh;
+}
+#imgClosePopUp{
+    width:4vw;
+    height:3vh;
+    display:flex;
+    justify-content: flex-end;
+    right:0;
+    position:absolute;
+    padding: 1.2vh 2vw 0 0;
+}
+.popup_btn_edit{
+    width:26vw;
+    height:12vh;
+    position:absolute;
+    display:flex;
+    float:right;
+    top:1vh;
+    margin-top:1vh;
+    flex-direction:column;
+    margin-left:13vw;
+}
+.location-container{
+    width: 45vw;
+    height: 13vh; 
+    display: block;
+}
+.location-box{
+    margin-left:4vw;
+    flex-wrap:wrap;
+    padding-button:1vh;
+    padding-top:
+}
 @media (min-width: 1200px) {
     .post-card{
         width: 55vw;
@@ -201,17 +293,8 @@ template.innerHTML = `
         text-transform: capitalize;
         font-family:'Roboto', sans-serif;
         font-weight: 500;
-        
     }  
-    .ubication{
-        border: #FFC300 1px solid;
-        border-radius:20px;
-        width: 20vw;
-        height: 4.5vh;
-        margin:4vh 0 2vh 1vw;
-        position:absolute;
-        text-transform: capitalize;
-    }
+    
     .ubicationLeft{
         background-size: 20%;
         width: 3vw;
@@ -258,11 +341,16 @@ template.innerHTML = `
     .conteo{
         color: #0C244F;
     }   
-
+    .location-container{
+        position:absolute;
+    }
+    .location-box{
+        position: absolute;  
+    }
    @media (min-width: 1200px) {
         .post-card{
             width: 55vw;
-            height: 40vh;
+            height: 46vh;
             margin-left:33vw;
             margin-top: 7vh;
             margin-bottom: 5vh;
@@ -293,7 +381,7 @@ template.innerHTML = `
             border-radius:20px;
             width: 20vw;
             height: 4.5vh;
-            margin:4vh 0 2vh 1vw;
+            margin:0.5rem;
         }
         .ubicationLeft{
             width: 3vw;
@@ -303,7 +391,7 @@ template.innerHTML = `
             border-radius:5px;
             width: 35vw;
             height: 10vh;
-            margin:1vh 0 2vh 10vw;
+            margin:3vh 0 2vh 10vw;
             font-weight: 600;
         }
         .textAreapublic{
@@ -317,6 +405,7 @@ template.innerHTML = `
             border-bottom-right-radius:5px;
             background:#FFFFFF;
             height:5vh;
+            margin:7vh 0 0 0 ;
             padding: 0.7em;
         }
         .name_like{
@@ -324,65 +413,66 @@ template.innerHTML = `
             color: #0C244F;
         } 
         .editDeletePopUp{
-            position:absolute;
-            display:flex;
             width:20vw;
-            height:20vh;
-            z-index:200;
-            background:#E0AB00;
-            color:white;
-            justify-content: space-between;
-            flex-direction:row;
+            height:19vh;
             right:10em;
             border-radius:10px;
         }  
         .buttonPopUp{
             width:10vw;
             height:5vh;
-            text-decoration:none;
-            background:none;
-            border:none;
-            color:white;
-            display:flex;
-            flex-flow: column wrap;
-            right:2vw;
+            padding-bottom:0;
+            margin-top:2vh;
+            margin-bottom:3vh;
+            font-family:'Roboto', sans-serif;
+            font-weight: 600;
         }
         .imgPopUp{
-            width:3vw;
+            width:2.5vw;
             height:5vh;
-            flex-flow: column nowrap;
+            margin-left:2vw;
+            margin-top:3vh;
         }
         #imgClosePopUp{
-            width:2vw;
-            height:3vh;
+            width:1vw;
+            height:2.5vh;
             display:flex;
-            justify-content: flex-end;
             right:0;
-            position:absolute;
             padding: 1.2vh 1vw 0 0;
         }
+        .popup_btn_edit{
+            width:16vw;
+            height:12vh;
+            top:1vh;
+            margin-top:2vh;
+            margin-left:5.5vw;
+        }
     }    
-    
     </style>
-
 
     <section class="post-card">
     <div class="header-card">
         <slot name="imgagePofile"><img class="imagesLeft" id="imgProfile"></slot>
         <slot name="headerPostTitle"></slot>
-        <slot name="moreButton"><img class="imagesRight" src="assets/imagesIcon/UbicationYellowC.png"></slot>
+        <slot name="moreButton"><img class="imagesRight"></slot>
     </div>
     <div class="editDeletePopUp" style="display: none;">
         <img id="imgClosePopUp" src="assets/imagesIcon/close.png">
         <img class="imgPopUp" src="assets/imagesIcon/EditWhiteV.png"/>
         <img class="imgPopUp" src="assets/imagesIcon/removeWhite.png"/>
-        <button class="buttonPopUp">Editar</button>
-        <button class="buttonPopUp">Eliminar</button>
+        <div class="popup_btn_edit">
+        <button class="buttonPopUp" id="editButton">Editar</button>
+        <button class="buttonPopUp" id="deleteButton">Eliminar</button>
+        </div>
     </div>
-    <slot name="userIconPost"><img class="imagesRight" src="assets/imagesIcon/UserBlueC.png"></slot>
-    <slot name="nameUserPost"></slot>
-    <slot name="ubicationPostBlue"><img class="ubicationLeft" src="assets/imagesIcon/UbicationYellowC.png"></slot>
-    <slot name="locationPost"><input class="ubication" id="ubication" type="text"></slot>
+    <div class="location-container">
+        <div class="location-box">
+            <slot name="userIconPost"><img class="imagesRight" src="assets/imagesIcon/UserBlueC.png"></slot><slot name="nameUserPost"></slot> 
+        </div>
+        <div class="location-box">
+            <slot name="ubicationPostBlue"><img class="ubicationLeft" src="assets/imagesIcon/UbicationYellowC.png"></slot><slot name="locationPost"><input class="ubication" id="ubication" type="text"/></slot>
+        </div>
+    </div>
     <div class="public"><slot name="description"><textarea class="textAreapublic" name="textarea" rows="10" cols="50" type="text"></textarea></slot></div>
     <div class="footer-card">
         <slot name="image_button"><img class="imagesLeft" id="imageLeftDown"></slot>

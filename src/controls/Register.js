@@ -34,26 +34,3 @@ export function userRegistration(event) {
       }
     });
 }
-
-/*export function createUserSuccessful() {
-      // const confirmationRegistro = document.getElementById('formRegister');
-      // const title = document.querySelector('.titleForm');
-      // confirmationRegistro.style.display = 'none';
-      // title.style.display = 'none';
-      document.querySelector('.cardContainer').innerHTML = '';
-      const messageExito = document.createElement('div');
-      messageExito.textContent = 'Tu registro se ha realizado con exito!!!!';
-      messageExito.className = 'messageExitoso';
-      document.querySelector('.cardContainer').appendChild(messageExito);
-      const SignupRegister = document.createElement('button');
-      SignupRegister.type = 'button';
-      SignupRegister.innerText = 'Iniciar sesion';
-      SignupRegister.className = 'buttonInicioSesion';
-      messageExito.appendChild(SignupRegister);
-      console.log("despues de asignar nombre usuario")
-      document.querySelector('.buttonInicioSesion').addEventListener('click', () => {
-        console.log("entra boton iniciar sesion");
-         // window.location.hash = '#home';
-        });
-        return (false);
-} */

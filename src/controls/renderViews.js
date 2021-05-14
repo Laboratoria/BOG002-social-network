@@ -9,10 +9,11 @@ import { LogInGoogle } from '../controls/LogIn.js';
 import { RetrieveData } from '../firestore/firestoreData.js'
 import { HomeDesktop } from '../views/homeDesktop.js';
 import { HomeMobile } from '../views/homeMobile.js';
-import { createPostCard } from '../views/post.js';
-import { profile } from '../views/profile.js'
-import { pageError } from '../views/error.js'
-import { createPost } from '../controls/firestore.js'
+import { createPostCard } from '../views/createPost.js';
+import { profile } from '../views/profile.js';
+import { pageError } from '../views/error.js';
+import { editPostCard } from '../views/editPost.js';
+import { createPost } from '../controls/firestore.js';
 import '../components/menu-mobile.js';
 import '../components/menu-desktop.js';
 import '../components/post-card.js';
@@ -43,8 +44,15 @@ export function renderRegister($containerGeneral) {
 
 export function renderPost($containerGeneral, name){
   Menu($containerGeneral);
+  console.log(name)
   document.querySelector('.body_container').innerHTML += createPostCard(name); 
   document.querySelector(".post_button").addEventListener('click', createPost);
+}
+
+export function renderEditPost(){
+  //Menu($containerGeneral);
+  // document.querySelector('.body_container').innerHTML += editPostCard(); 
+  // document.querySelector(".post_button").addEventListener('click', createPost);
 }
 
 export function renderProfile($containerGeneral){
@@ -63,17 +71,11 @@ export function renderHome($containerGeneral){
   containerPosts.classList.add("containerPosts");
   document.querySelector('.body_container').appendChild(containerPosts);
   containerPosts.innerHTML='';
+  console.log(containerPosts);
   RetrieveData(containerPosts);
-  //  console.log(result);
-  // const nodes = document.querySelectorAll('post-card');
-  // console.log(nodes);
-  // const elem = document.querySelectorAll('#moreImageButton');
-  // console.log(elem);
-  
-  
 }
 
-function Menu($containerGeneral) {
+export function Menu($containerGeneral) {
   const mql = window.matchMedia('(max-width: 768px)');
   function pantalla(mobileView) {
     if (mobileView) {

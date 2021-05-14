@@ -1,6 +1,8 @@
 import { deletePost } from '../firestore/firestoreData.js';
-export function AllPostsCard(docID, username, location, description, likes, ownPost){
-    const containerPosts = document.querySelector('.containerPosts');
+import { editPostCard } from '../views/editPost.js';
+export function AllPostsCard(containerPosts, docID, username, location, description, likes, ownPost){
+    // const containerPosts = document.querySelector('.containerPosts');
+    // console.log("entra all post card");
     let src;
     ownPost ? src="assets/imagesIcon/MoreWhite.png" : src="";
     const postCard = `
@@ -8,7 +10,7 @@ export function AllPostsCard(docID, username, location, description, likes, ownP
     <span slot="headerPostTitle">${username}</span>
     <a slot="moreButton" id="moreImageButton"><img class="moreImage" src="${src}"></a>
     <img slot="userIconPost" src="" class="IconsPost"/>
-    <span slot="locationPost">${location}</span>
+    <span slot="locationPost" id="locationPost">${location}</span>
     <span slot="description">${description}</span>
     <span slot="footer_right_element">${likes} Likes</span>
     </post-card>`;
@@ -27,49 +29,29 @@ export function AllPostsCard(docID, username, location, description, likes, ownP
                 const postID = event.target.closest('post-card').dataset.id;
                 const popUp = eventTarget.shadowRoot.querySelector('.editDeletePopUp');
                 popUp.style.display = 'block';
-                // showPopUp(eventTarget, postID);
+                showPopUp(eventTarget, postID);
             } 
         });
     });
 }
 
 function showPopUp(eventTarget, postID){
-    // document.querySelector('.body').innerHTML ="";
-    const editDeletePost = document.createElement('section');
-    editDeletePost.className='editDeletePopUp';
-    const divDeletePost = document.createElement('div');
-    divDeletePost.className='pruebaPopUp';
-    const divEditPost = document.createElement('div');
-    const cancelEditDelete = document.createElement('button');
-    editDeletePost.appendChild(divDeletePost);
-    editDeletePost.appendChild(divEditPost);
-    editDeletePost.appendChild(cancelEditDelete);
-    const buttonDelete = document.createElement('button');
-    const imageTrash = document.createElement('img');
-    const buttonEdit = document.createElement('button');
-    const imageEdit = document.createElement('img');
-    divDeletePost.appendChild(buttonDelete);
-    divDeletePost.appendChild(imageTrash);
-    divEditPost.appendChild(buttonEdit);
-    divEditPost.appendChild(imageEdit);
-    buttonDelete.setAttribute('class', 'buttonDelete');
-    imageTrash.classList.add('imageTrash');
-    buttonEdit.setAttribute('class', 'buttonEdit');
-    imageEdit.classList.add('imageEdit');
-    imageTrash.setAttribute('src', 'assets/imagesIcon/removeWhite.png');
-    imageEdit.setAttribute('src', 'assets/imagesIcon/EditWhiteV.png');
-   // document.querySelector('.body').appendChild(editDeletePost);
-    eventTarget.appendChild(editDeletePost);
-    console.log(eventTarget);
+    const nodes = eventTarget.querySelectorAll('span');
+    const postuser = nodes[0].textContent;
+    const location = nodes[1].textContent;
+    const description = nodes[2].textContent;
+    const likes = nodes[3].textContent;
+    const editButton = eventTarget.shadowRoot.getElementById('editButton');
+    const deleteButton = eventTarget.shadowRoot.getElementById('deleteButton');
+    editButton.addEventListener('click', () => {
+        editPostCard(postID, postuser, location, description, likes);
+        // window.location.hash = "#edit-post";
+        console.log("click en edit");
+    });
 
-    cancelEditDelete.addEventListener('click', () => {
-        document.querySelector('post-card').removeChild(editDeletePost);
-    });
-    
-    buttonDelete.addEventListener('click',() => {
+    deleteButton.addEventListener('click', () => {
+        console.log(postID);
         deletePost(postID);  
-        location.reload();
+        // setTimeout(()=>{ location.reload(); }, 3000);
     });
-    
-    
 }
