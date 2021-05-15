@@ -4,7 +4,8 @@ import {FormularioDeRegistro,  Datos_de_registro} from './Pages/SingUp.js';
 import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
 import {SoloUsuarios} from './Firebase/firebaseAuth.js';
 import { inicio, CerrarSesion} from './Pages/inicio.js';
-import { perfil, EditarPerfil } from './Pages/perfil.js';
+import { perfil } from './Pages/perfil.js';
+import { FormularioPerfilDeUsuario, EditarPerfil } from './Pages/DatosUsuario.js';
 import { Error404} from './Pages/Error 404.js';
 import { search } from './Pages/search.js';
 
@@ -56,7 +57,7 @@ export const router = (route) => {
            
             if (user) {
                  content.innerHTML =  perfil();
-                 EditarPerfil();
+                 
                     
             }else {
               window.location.hash ='#/login'
@@ -68,6 +69,17 @@ export const router = (route) => {
             if (user) {
                 content.innerHTML =  search();
                     CerrarSesion();
+            }else {
+                window.location.hash ='#/login'
+                    }
+                        
+             break;
+             case '#/editarPerfil':
+           
+            if (user) {
+                content.innerHTML =  FormularioPerfilDeUsuario();
+                EditarPerfil();
+                CerrarSesion();
             }else {
                 window.location.hash ='#/login'
                     }

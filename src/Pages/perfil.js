@@ -1,6 +1,3 @@
-import {SaveUser} from '../Firebase/firebase-collection.js'
-
-
 
 export function perfil(){
 
@@ -13,20 +10,18 @@ export function perfil(){
 		<h1>FoodFans<h1></div>
 		<div id="configuracion"><img src="./imagenes/Setting.svg">
 		<div class="enlaces" id="enlaces">
-		<span class= "setting">Editar Perfil</span>
+		<span class= "setting"><a href="#/editarPerfil">Editar Perfil</a></span>
 		<span class= "setting" id="cerrar-sesion">Cerrar sesion</span>
 		</div>
 		</div> 
-		
-	  </header>
+	 </header>
       <section>
-	  <form>
-	  <input type="text" class="input" id="name" placeholder="Name" name="name"></input>
-	  <input type="text" class="input"id="apellido" placeholder="Apellido" name="apellido"></input>
-	  <input type="text" class="input" id="descripcion" placeholder="Descripcion" name="descripcion"></input>
-	  <button id='guardar'class="btn">Guardar</button>
-      </form>
-	  
+	  <div class="perfil">
+	  <img src="./imagenes/usuario.png" id="foto-perfil">
+	  <h1>Pepito Perez</h1>
+	  <p class="descripcion">Aqui va una breve descripcion del usuario</p>
+	  </div>
+	  <div id="publicaciones"></div>
 	  </section>
 	
 	  <footer>
@@ -40,24 +35,7 @@ export function perfil(){
     return html;
   }
   
-  export function EditarPerfil (){
-    const InfoPerfil = document.getElementById('guardar');
-	InfoPerfil.addEventListener('click',(event) =>{
-		event.preventDefault();
-       let nombre = document.getElementById('name').value;
-	   let apellido = document.getElementById('apellido').value;
-	   let descripcion = document.getElementById('descripcion').value;
-
-		const user = {
-			nombre,
-			apellido,
-			descripcion
-		}
-		SaveUser(user);
-		
-	});
-
-	}
+ 
     function configuracion(){
 		const BotonConfiguracion = document.getElementById('configuracion');
 		BotonConfiguracion.addEventListener('click', () =>{
