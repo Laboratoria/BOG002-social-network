@@ -12,7 +12,8 @@ export function RetrieveData(containerPosts){
             const location = doc.data().location;
             const description = doc.data().description;
             const likes = doc.data().likes;
-            paintAllPosts(containerPosts, docID, username, UID, location, description, likes);
+            const likeable = doc.data().likeable;
+            paintAllPosts(containerPosts, docID, username, UID, location, description, likes, likeable);
         });  
     });
 }
@@ -25,7 +26,8 @@ export function sendData(db, location, description, uid, name, date){
         UID: uid,
         userName: name,
         likes: 0,
-        date : date
+        date : date,
+        likeable: true
     })
     .then((docRef) => {
         console.log("Document written with ID: ", docRef.id);
@@ -57,7 +59,6 @@ export function deletePost(postID){
     const db = firebase.firestore(); 
     db.collection("posts").doc(postID).delete().then(() => {
         console.log(postID, "Document successfully deleted!");
-        // RetrieveData();
     }).catch((error) => {
         console.error("Ocurrió algún error al eliminar el post: ", error);
     });
@@ -65,20 +66,27 @@ export function deletePost(postID){
 
 export function editPost(postID, postuser, locationEdit, descriptionEdit){
     const db = firebase.firestore(); 
-    db.collection("posts").doc(postID).set({
+    db.collection("posts").doc(postID).update({
         location: locationEdit,
         description: descriptionEdit,
         UID: postID,
         userName: postuser,
-        likes: 0,
         date: Date(Date.now())
     })
     .then(() => {
-        console.log("documento editado!");
-        //window.location.hash = '#home';
+        //console.log("documento editado!");
         location.reload();
     })
     .catch((error) => {
         console.error("Ocurrió algún error al editar el post: ", error);
+    });
+}
+
+export function updateLikes(postSelected, newLikes, likeableNew){
+    //console.log(newLikes);
+    const db = firebase.firestore(); 
+    db.collection("posts").doc(postSelected).update({
+        likes: newLikes,
+        likeable: likeableNew
     });
 }

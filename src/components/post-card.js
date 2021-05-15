@@ -68,14 +68,10 @@ template.innerHTML = `
     text-transform: capitalize;
     background: #EAE6CA; 
 }
-button:hover{
+button.buttonPopUp:hover{
     background: #BA8E01;
     border-top-left-radius:5px;
     border-top-right-radius:5px;
-}
-button.leftDownButton:hover{
-    background: #06004B;
-    border-radius:5px;
 }
 .ubicationLeft{
     background-size: 20%;
@@ -232,6 +228,13 @@ button.leftDownButton:hover{
     margin-left:6vw;
     white-space:no-wrap;
     margin-top:2vh;
+}
+.leftDownButton{
+    border:none;
+    border-radius:10px;
+}
+button.leftDownButton:hover{
+    background: rgba(8, 0, 117, 0.1);
 }    
 @media (min-width: 1200px) {
     .post-card{
@@ -526,6 +529,7 @@ button.leftDownButton:hover{
         <slot name="label"><p class="name_like">Me gusta</p></slot>
         <slot name="footer_right_element"><p class="conteo">123 Likes</p></slot>
     </div>
+    <slot name="likeable" style="display:none"></slot>
     </section>
 `;
 

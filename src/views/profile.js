@@ -48,9 +48,9 @@ export function profile() {
     display:none;
   }
   .listUser{
-    border-left:#e0ac0080 1px solid;
-    border-right:#e0ac0080 1px solid;
-    border-bottom:#e0ac0080 1px solid;
+    border-left:#bd9100ad 1px solid;
+    border-right:#bd9100ad 1px solid;
+    border-bottom:#bd9100ad 1px solid;
     border-top:none;
     border-radius:10px;
     width: 70vw;

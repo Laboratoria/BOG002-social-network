@@ -1,18 +1,19 @@
-import { deletePost } from '../firestore/firestoreData.js';
+import { deletePost, updateLikes } from '../firestore/firestoreData.js';
 import { editPostCard } from '../views/editPost.js';
-export function AllPostsCard(containerPosts, docID, username, location, description, likes, ownPost){
-    // const containerPosts = document.querySelector('.containerPosts');
-    // console.log("entra all post card");
-    let src;
+
+export function AllPostsCard(containerPosts, docID, username, location, description, likes, likeable, ownPost){
+    let src, srcLike;
     ownPost ? src="assets/imagesIcon/MoreWhite.png" : src="";
+    likeable == true ? srcLike = "assets/imagesIcon/LikeBlueV.png" : srcLike = "assets/imagesIcon/LikeBlueC.png";
     const postCard = `
-    <post-card src="assets/imagesIcon/LikeBlueV.png" srcimgProfile="assets/imagesIcon/UserWhiteC.png">
+    <post-card src="${srcLike}" srcimgProfile="assets/imagesIcon/UserWhiteC.png">
     <span slot="headerPostTitle">${username}</span>
     <a slot="moreButton" id="moreImageButton"><img class="moreImage" src="${src}"></a>
     <img slot="userIconPost" src="" class="IconsPost"/>
     <span slot="locationPost" id="locationPost">${location}</span>
     <span slot="description">${description}</span>
     <span slot="footer_right_element">${likes} Likes</span>
+    <span slot="likeable">${likeable}</span>
     </post-card>`;
     containerPosts.innerHTML += postCard;
 
@@ -33,43 +34,40 @@ export function AllPostsCard(containerPosts, docID, username, location, descript
             } 
         });
     });
-    console.log(nodes);
-    // const likeButtons = nodes.shadowRoot.querySelectorAll('.leftDownButton');
-    // console.log(likeButtons);
-
-    nodes.forEach(element => {
-        element.shadowRoot.querySelector('.leftDownButton').addEventListener("click", (event) => {
-            console.log(event.target.closest('post-card'));
-            // const editPost = event.target.closest('post-card'); 
-            // console.log(editPost);
-            // if (editPost == "true"){
-            //     const eventTarget = event.target.closest('post-card');
-            //     const postID = event.target.closest('post-card').dataset.id;
-            //     const popUp = eventTarget.shadowRoot.querySelector('.editDeletePopUp');
-            //     popUp.style.display = 'block';
-            //     showPopUp(eventTarget, postID);
-            // } 
+    nodes.forEach(element => {  
+        console.log(element);  
+        const likesButton = element.shadowRoot.querySelector('.leftDownButton');
+        likesButton.addEventListener("click", () => {
+            const nodesSelected = element.querySelectorAll('span');
+            const likes = nodesSelected[3].textContent;
+            let likeableNew = nodesSelected[4].textContent;
+            const postSelected  = element.dataset.id;
+            let parsedLikes = parseInt((likes.slice(0, -6)), 10);
+            if (likeableNew == 'true'){
+                parsedLikes++;
+                likeableNew = false;
+            }else{
+                parsedLikes--;
+                likeableNew = true;
+            }
+            updateLikes(postSelected, parsedLikes, likeableNew);
         });
     });
 }
 
 function showPopUp(eventTarget, postID){
-    const nodes = eventTarget.querySelectorAll('span');
-    const postuser = nodes[0].textContent;
-    const location = nodes[1].textContent;
-    const description = nodes[2].textContent;
-    const likes = nodes[3].textContent;
-    const editButton = eventTarget.shadowRoot.getElementById('editButton');
-    const deleteButton = eventTarget.shadowRoot.getElementById('deleteButton');
-    editButton.addEventListener('click', () => {
-        editPostCard(postID, postuser, location, description, likes);
-        // window.location.hash = "#edit-post";
-        console.log("click en edit");
+        const nodes = eventTarget.querySelectorAll('span');
+        const postuser = nodes[0].textContent;
+        const location = nodes[1].textContent;
+        const description = nodes[2].textContent;
+        const editButton = eventTarget.shadowRoot.getElementById('editButton');
+        const deleteButton = eventTarget.shadowRoot.getElementById('deleteButton');
+        editButton.addEventListener('click', () => {
+        editPostCard(postID, postuser, location, description);
     });
 
     deleteButton.addEventListener('click', () => {
         console.log(postID);
         deletePost(postID);  
-        // setTimeout(()=>{ location.reload(); }, 3000);
     });
 }

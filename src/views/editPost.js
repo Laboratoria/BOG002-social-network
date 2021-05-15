@@ -1,7 +1,7 @@
 import { Menu } from '../controls/renderViews.js';
 import { editPost } from '../firestore/firestoreData.js';
 
-export function editPostCard(postID, postuser, location, description, likes) {
+export function editPostCard(postID, postuser, location, description) {
     const mainContainer = document.querySelector('.body_container');
     Menu(mainContainer);
     document.querySelector('.bigContainer').appendChild(mainContainer);
