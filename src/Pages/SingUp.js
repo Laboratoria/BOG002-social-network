@@ -4,9 +4,10 @@ import { autenticacionUsuario } from '../Firebase/firebaseAuth.js';
 export function FormularioDeRegistro(){
    let html= `
    <div class="fondo">
-     <h1> Created account </h1>
+     
        <!--<fieldset> -->
       <form id="formulario">
+         <h1 id="titulo-registro"> Created account </h1>
          <div id="Name" class="input">
          <input type="text" id="NameUser"  name="nombre" placeholder="User name" maxlength="10"   title="Maximo 16 caracteres" required >
          <img src="" id="CampoVacioName" class="error">
