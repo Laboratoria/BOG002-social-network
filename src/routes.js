@@ -3,7 +3,7 @@ import {home, BotondeCrearCuentaconGoogle} from './Pages/Home.js';
 import {FormularioDeRegistro,  Datos_de_registro} from './Pages/SingUp.js';
 import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
 import {SoloUsuarios} from './Firebase/firebaseAuth.js';
-import { inicio, CerrarSesion} from './Pages/inicio.js';
+import { inicio, CerrarSesion,ParaPublicar} from './Pages/inicio.js';
 import { perfil, EditarPerfil } from './Pages/perfil.js';
 import { Error404} from './Pages/Error 404.js';
 import { search } from './Pages/search.js';
@@ -46,6 +46,7 @@ export const router = (route) => {
           
             if (user) {
                  content.innerHTML =  inicio();
+                    ParaPublicar()
                     CerrarSesion();
             }else {
               window.location.hash ='#/login'

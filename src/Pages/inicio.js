@@ -1,4 +1,5 @@
 import {Salir} from '../Firebase/firebaseAuth.js';
+import{SavePublicaciones} from '../Firebase/firebase-collection.js'
 
 
 export function inicio(){
@@ -17,7 +18,7 @@ export function inicio(){
 
 	<div id="publicaciones">
 		 
-		 <textarea class="publicar" placeholder="Publica aqui"></textarea>
+		 <input type="text" class="publicar" placeholder="Publica aqui">
 		 <div>
 		 <button class="btn" id="publicar-btn"> Publicar </button> 
 		 </div>
@@ -34,8 +35,30 @@ export function inicio(){
     return html;
   }
 
-export function CerrarSesion(){
+export function CerrarSesion()	{
 	let BotonCerrar = document.getElementById('cerrar-sesion');
 		BotonCerrar.addEventListener('click', Salir);
 }
 
+export function ParaPublicar(){
+	//  obtener valores
+	const BtnPublicar = document.getElementById("publicar-btn")
+		  BtnPublicar.addEventListener("click", () => {
+
+					let descripcion = document.querySelector(".publicar").value;
+					
+					let contenedorPublicaciones = document.getElementById("publicaciones")
+					let div = document.createElement("div");
+					div.classList.add("post");
+					contenedorPublicaciones.appendChild(div)
+					div.innerHTML  = descripcion
+
+			 let publicaciones= {
+   					nombre: "Tokyo",
+   					foto: false,
+   					descripcion,
+   					lugar:"Bogota"}
+					   SavePublicaciones(publicaciones)
+			})
+	
+}

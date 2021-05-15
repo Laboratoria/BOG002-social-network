@@ -114,23 +114,6 @@ position: relative;
 top: 5em;
 }
    
-/* fieldset{
-font-family: 'Dancing Script', cursive;
-display: flex;
-flex-direction: column;
-height: 90%;
-width: 80%;
-align-items: center;
-position: relative;
-top: 8.5em; 
-border: none; */
-
-/*  fieldset img{
-width: 20px;
-position: relative;
-left: 120px;
-top: -30px;
-} */
 input{
 border: none;
 background-color: transparent;
@@ -200,10 +183,8 @@ border-radius: 50%;
 border: white solid 10px;
 }
 #loginPpal{
-background-color: #3d3d3d79;
-color: wheat;
-
-
+background-color: #27242479;
+color: rgb(255, 255, 255);
 }
 .container_modal {
 display: flex;
@@ -360,7 +341,7 @@ color: rgb(255, 255, 255);
   position: relative;
   top: 2em;
   text-align: center;
-  background-color: rgb(240, 236, 236);
+  background-color: rgb(236, 236, 236);
 }
 #profile{
   width: 100%;
@@ -422,12 +403,13 @@ nav ul  :hover {
 .publicar{
   margin-top: 2em;
   width: 90%;
-  height: auto;
+  height: 7vh;
   font-family: poly;
   border-radius: 10px;
   border:rgb(187, 186, 186) solid 1px;
   padding: 0.5em;
   outline:none;
+  background-color: white;
 
 }
 #publicar-btn{
@@ -452,10 +434,8 @@ nav ul  :hover {
   width: 90%;
   left: 1em;
   text-align:center;
-  /* justify-content:left; */
 }
 #input-search{
-  /* margin-bottom: 0.7em; */
   display: flex;
   position: relative;
   top: -0.5em;
@@ -465,6 +445,15 @@ nav ul  :hover {
   border-radius: 10px;
   height: 5vh;
   margin-left: 1em;
+ }
+ .post{
+   height: 10vh;
+   width: 85vw;
+   background-color: #fff;
+   position: relative;
+   margin: 0.5em;
+   border-bottom: rgb(216, 215, 215) solid 2px;
+ 
  }
 }
 

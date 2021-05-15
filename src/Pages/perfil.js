@@ -57,7 +57,7 @@ export function perfil(){
 		
 	});
 
-	}
+}
     function configuracion(){
 		const BotonConfiguracion = document.getElementById('configuracion');
 		BotonConfiguracion.addEventListener('click', () =>{

@@ -1,9 +1,8 @@
 // Add a new document with a generated id.
-db.collection("Publicaciones").add({
-    nombre: "Tokyo",
-    foto:"",
-    descripcion: "Japan",
-    lugar:""
+export const SavePublicaciones=(publicaciones)=> {
+
+db.collection("publicaciones").add({
+publicaciones
 })
 .then((docRef) => {
     console.log("Document written with ID: ", docRef.id);
@@ -11,6 +10,7 @@ db.collection("Publicaciones").add({
 .catch((error) => {
     console.error("Error adding document: ", error);
 });
+}
 
 export const SaveUser = (user) => {
     db.collection("usuarios").add({
