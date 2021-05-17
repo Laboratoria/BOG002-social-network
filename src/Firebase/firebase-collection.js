@@ -18,6 +18,7 @@ export const SaveUser = (user) => {
     })
     .then((docRef) => {
       console.log("Enviado a la consola firestore ", docRef.id);
+      window.location.hash ='#/profile';
     })
     .catch((error) => {
       console.error("Error adding document: ", error);

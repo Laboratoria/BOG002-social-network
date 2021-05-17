@@ -17,29 +17,58 @@
   }
   header .menu{
     display: flex;
-    justify-content: space-around;
-    padding: 15px
+    justify-content: space-between;
+    padding: 11px;
   }
-  header .logo{
+  .logo{
     font-family: Dancing Script;
-    font-size: 25px;
+    font-size: 20px;
   
   }
   header img{
     width: 50px;
+    position: relative;
+    cursor: pointer;
   }
  .enlaces{
+    background-color: #ffff;
      display: none;
+     position: absolute;
+     top: 20px;
+     right: 5px;
+         
  }
-  .setting:hover{
-    background-color: #f8dc9b;
-  }
+
+ #configuracion:hover .enlaces{
+   display: block;
   
-  section{
-    grid-area: section;
+}
+  .setting:hover{
+    background-color: #FFE8B4;
   }
+ 
+  section .perfil{
+    position: relative;
+    top: -130px;
+    display: flex;
+    flex-direction: column;
+    align-content: baseline;
+    align-items: center;
+  }
+  section #foto-perfil{
+    width: 130px;
+    height: 130px;
+  }
+  .descripcion{
+    color: black;
+    width: 100vw;
+    padding-top: 10px;
+    font-size: 18px;
+    position: relative;
+    top: 0px;
+   }
   footer{
-    background: #f9ffa7;
+    background: #FFE8B4;
     grid-area: footer;
   }
   footer ul{
@@ -50,6 +79,9 @@
     display: flex;
     flex-direction: column;
   }
+  footer ul  :hover {
+    background-color: #FFD575;
+   }
   
 
   
