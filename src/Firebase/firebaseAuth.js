@@ -1,23 +1,22 @@
-// se trae desde main js 
-
 import {modalError, modalErrorLogin} from  '../Pages/error.js'
-
 
 // *****************crear cuenta de usuario*****************
 
-export const autenticacionUsuario =(email, password)=>{
+export const autenticacionUsuario =(email, password, Name)=>{
 
   auth.createUserWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-    // Signed in 
-    userCredential.user;
-    window.location.hash ='#/release'
-  })
-  .catch((error) => {
-    console.log("error", error)
-    modalError(error);
+      .then((result) => {
+          // Signed in 
+          window.location.hash ='#/release'
+          return result.user.updateProfile({
+                  displayName: Name
+    })
+      .catch((error) => {
+        console.log("error", error)
+        modalError(error);
   });
-} 
+})}
+
 
 // *****************  ingresando usuario  ******************
 
@@ -27,6 +26,8 @@ export const LoginUsuario = (email,password) =>{
   .signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in
+      userCredential.user;
+      console.log(userCredential.user)
       window.location.hash ='#/release'
     })
     .catch((error) => {

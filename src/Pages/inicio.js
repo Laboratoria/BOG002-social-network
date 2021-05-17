@@ -1,4 +1,4 @@
-import {Salir} from '../Firebase/firebaseAuth.js';
+import {Salir, autenticacionUsuario} from '../Firebase/firebaseAuth.js';
 import{SavePublicaciones} from '../Firebase/firebase-collection.js'
 
 
@@ -15,13 +15,19 @@ export function inicio(){
 		<span class= "setting">Cambiar nombre</span>
 		<span class= "setting" id="cerrar-sesion">Cerra sesion</span>
 	</div>
+	<div class="area-publicar">
+	<img id="foto-usuario" src="./imagenes/usuario.png">
+	<input type="text" class="publicar" placeholder="Publica aqui">
 
+	
+	<div>
+	<button class="btn" id="publicar-btn"> Publicar </button> 
+	</div>
+
+	</div>
 	<div id="publicaciones">
-		 
-		 <input type="text" class="publicar" placeholder="Publica aqui">
-		 <div>
-		 <button class="btn" id="publicar-btn"> Publicar </button> 
-		 </div>
+
+
 	</div>
 
 	<nav>
@@ -40,23 +46,34 @@ export function CerrarSesion()	{
 		BotonCerrar.addEventListener('click', Salir);
 }
 
+
 export function ParaPublicar(){
 	//  obtener valores
 	const BtnPublicar = document.getElementById("publicar-btn")
 		  BtnPublicar.addEventListener("click", () => {
 
+					let nombre = `nombre usuario ${autenticacionUsuario.Name}`
 					let descripcion = document.querySelector(".publicar").value;
+
+					let span = document.createElement("div");
+						span.classList.add("nombre-usuario");
 					
 					let contenedorPublicaciones = document.getElementById("publicaciones")
-					let div = document.createElement("div");
-					div.classList.add("post");
+					let div = document.createElement("article");
+						div.classList.add("post");
+
+					contenedorPublicaciones.appendChild(span)
 					contenedorPublicaciones.appendChild(div)
-					div.innerHTML  = descripcion
+					
+					
+					div.innerHTML  =   descripcion
+					span.innerHTML  = nombre 
+					
 
 			 let publicaciones= {
-   					nombre: "Tokyo",
-   					foto: false,
-   					descripcion,
+   					nombre,
+					descripcion,
+					foto: false,
    					lugar:"Bogota"}
 					   SavePublicaciones(publicaciones)
 			})

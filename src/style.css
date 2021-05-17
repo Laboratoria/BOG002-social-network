@@ -101,7 +101,7 @@ flex-direction: column;
 height: 80%;
 align-items: center;
 position: relative;
-top: 4.5em;
+top: 5em;
 }
 /* formulario de login */
 #Form-login{
@@ -118,6 +118,7 @@ input{
 border: none;
 background-color: transparent;
 outline: none;
+width: 80%;
 }
 .input{
 background: white;
@@ -336,12 +337,12 @@ color: rgb(255, 255, 255);
 
 #publicaciones{
   width: 100%;
-  height: 30em;
+  height: auto;
   margin-top: 2em;
   position: relative;
   top: 2em;
   text-align: center;
-  background-color: rgb(236, 236, 236);
+  /* background-color: rgb(236, 236, 236); */
 }
 #profile{
   width: 100%;
@@ -400,9 +401,45 @@ nav ul  :hover {
  }
 
 /* para publicar */
+.area-publicar{
+  position: relative;
+  top: 3em;
+  display:flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #ffffff;
+}
+#foto-usuario{
+  width: 50px;
+  height: 50px;
+  margin-top: 2em;
+  margin-right: 0.5em;
+}
+.nombre-usuario{
+  width: 55%;
+  height: 20px;
+  color: black;
+  position: relative;
+  font-family: poly;
+  font-weight: bold;
+  /* left: 1em; */
+}
+.post{
+  height: auto;
+  width: 95%;
+  background-color: #fff;
+  margin: 0.5em;
+  display: flex;
+  justify-content: flex-start;
+  padding: 1em;
+  border-bottom: rgb(216, 215, 215) solid 2px;
+  
+}
+
 .publicar{
   margin-top: 2em;
-  width: 90%;
+  width: 75%;
   height: 7vh;
   font-family: poly;
   border-radius: 10px;
@@ -446,14 +483,6 @@ nav ul  :hover {
   height: 5vh;
   margin-left: 1em;
  }
- .post{
-   height: 10vh;
-   width: 85vw;
-   background-color: #fff;
-   position: relative;
-   margin: 0.5em;
-   border-bottom: rgb(216, 215, 215) solid 2px;
- 
- }
+
 }
 

@@ -2,7 +2,7 @@
 export const SavePublicaciones=(publicaciones)=> {
 
 db.collection("publicaciones").add({
-publicaciones
+    publicaciones
 })
 .then((docRef) => {
     console.log("Document written with ID: ", docRef.id);
