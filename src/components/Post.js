@@ -2,12 +2,12 @@ import { reset, homeListener, menuPrincipal } from "./Utils.js";
 import { createPost } from "../Firebase/Storage.js";
 
 export function Post() {
-  reset();
-  const templatePost = document.createElement("div");
-  templatePost.setAttribute("id", "home");
-  templatePost.insertAdjacentHTML(
-    "afterbegin",
-    `<header class="headerHome">
+    reset();
+    const templatePost = document.createElement("div");
+    templatePost.setAttribute("id", "home");
+    templatePost.insertAdjacentHTML(
+        "afterbegin",
+        `<header class="headerHome">
       <div>
         <img class="logoHome" src="./assets/LogoHome.svg" alt="Gleam logo">
       </div>
@@ -36,6 +36,7 @@ export function Post() {
         <button id = "addPost" class="button_general" > Add Post </button>
     </div>
     </div>
+    <div id="render"></div>
     <footer class="navBar">
         <div>
           <a href="#/home"><img class="logo-Home" src=./assets/Home.svg alt="arrow"></a>
@@ -47,22 +48,37 @@ export function Post() {
           <a href="#/"><img class="logo-Profile" src=./assets/Profile.svg alt="arrow"></a>
         </div>
     </footer>`
-  );
-  return templatePost;
+    );
+    return templatePost;
 }
 
 export function menuHam() {
-  const nav = document.querySelector("#hamburger_menu button");
-  const menuppal = document.querySelector(".menuppal");
-  nav.addEventListener("click", (e) => {
-    homeListener(nav);
-    menuPrincipal(menuppal);
-  });
-  const addPost = document.querySelector("#addPost");
-  addPost.addEventListener("click", (e) => {
-    e.preventDefault();
-    const file = document.querySelector("#file").files[0];
-    const text = document.querySelector("#addText").value;
-    createPost(file, text);
-  });
+    const nav = document.querySelector("#hamburger_menu button");
+    const menuppal = document.querySelector(".menuppal");
+    nav.addEventListener("click", (e) => {
+        homeListener(nav);
+        menuPrincipal(menuppal);
+    });
+}
+
+export function postFb() {
+    //Preview Image
+    const inputFile = document.querySelector("#file");
+    const image = document.querySelector("#upload");
+    image.setAttribute('class', 'imgUpload');
+    inputFile.onchange = e => {
+            e.preventDefault();
+            const [file] = inputFile.files
+            if (file) {
+                image.src = URL.createObjectURL(file)
+            }
+        }
+        //Add Post
+    const addPost = document.querySelector("#addPost");
+    addPost.addEventListener("click", (e) => {
+        e.preventDefault();
+        const file = document.querySelector("#file").files[0];
+        const text = document.querySelector("#addText").value;
+        createPost(file, text);
+    });
 }

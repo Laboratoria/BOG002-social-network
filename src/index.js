@@ -1,10 +1,9 @@
 // eslint-disable-next-line import/no-cycle
 // import { App } from "./app/App.js";
-
 import { Router } from "./components/Router.js";
 
 export function App() {
-  Router();
+    Router();
 }
 
 document.addEventListener("DOMContentLoaded", App);

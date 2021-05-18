@@ -1,13 +1,14 @@
 import { reset, homeListener, menuPrincipal } from "./Utils.js";
+import { createPost } from "../Firebase/Storage.js";
 // import { signOut } from "../Firebase/Services.js";
 
 export function Home() {
-  reset();
-  const template = document.createElement("div");
-  template.setAttribute("id", "home");
-  template.insertAdjacentHTML(
-    "afterbegin",
-    `<header class="headerHome">
+    reset();
+    const template = document.createElement("div");
+    template.setAttribute("id", "home");
+    template.insertAdjacentHTML(
+        "afterbegin",
+        `<header class="headerHome">
       <div>
         <img class="logoHome" src="./assets/LogoHome.svg" alt="Gleam logo">
       </div>
@@ -27,7 +28,8 @@ export function Home() {
         </ul>
       </nav>
     </header>
-    <div id="container" class="posts"> 
+    <div id="container" class="posts"></div>
+
     </div>
     <footer class="navBar">
         <div>
@@ -41,17 +43,19 @@ export function Home() {
         </div>
     </footer>
     `
-  );
-  return template;
+    );
+    return template;
 }
 export function menu() {
-  const nav = document.querySelector("#hamburger_menu button");
-  const menuppal = document.querySelector(".menuppal");
-  nav.addEventListener("click", (e) => {
-    homeListener(nav);
-    menuPrincipal(menuppal);
-  });
+    const nav = document.querySelector("#hamburger_menu button");
+    const menuppal = document.querySelector(".menuppal");
+    nav.addEventListener("click", (e) => {
+        homeListener(nav);
+        menuPrincipal(menuppal);
+    });
 }
+
+
 /*<div class="btns-container-mobile">
           <button id="signOut" class="button_general">LogOut</button>
         </div>*/
