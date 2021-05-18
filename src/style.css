@@ -306,6 +306,7 @@ label#labelImage {
 
 .headerHome {
     position: absolute;
+    border-radius: 0 0 0 100px;
     height: 80px;
     width: 100%;
     display: flex;
@@ -478,15 +479,16 @@ footer {
     left: 0;
     overflow-y: scroll;
     position: fixed;
+    border-radius: 100px 0;
     top: 0;
-    transform: translate3d(0px, -100%, 0px);
-    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+    transform: translate3d(100%, 80px, 0px);
+    transition: transform 0.35s ease-out;
     width: 100%;
     z-index: 2;
 }
 
 .menuppal.is_active {
-    transform: translate(120px, 80px)
+    transform: translate(20%, 80px)
 }
 
 .menuppal ul {
