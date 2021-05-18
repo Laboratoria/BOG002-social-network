@@ -18,7 +18,7 @@ export function perfil(){
       <section>
 	  <div class="perfil">
 	  <img src="./imagenes/usuario.png" id="foto-perfil">
-	  <h1>Pepito Perez</h1>
+	  <h1 id="Nombre-de-usuario">Pepito Perez</h1>
 	  <p class="descripcion">Aqui va una breve descripcion del usuario</p>
 	  </div>
 	  <div id="publicaciones"></div>
@@ -34,30 +34,17 @@ export function perfil(){
 	</div>`;    
     return html;
   }
-  
-  export function EditarPerfil (){
-    const InfoPerfil = document.getElementById('guardar');
-	InfoPerfil.addEventListener('click',(event) =>{
-		event.preventDefault();
-       let nombre = document.getElementById('name').value;
-	   let apellido = document.getElementById('apellido').value;
-	   let descripcion = document.getElementById('descripcion').value;
+ 
+  let  user = firebase.auth().currentUser;//esta variable se usara en el documento firebaseauth
+  let Nombre_usuario = document.getElementById("Nombre-de-usuario")
+  Nombre_usuario.innerHTML =  user.displayName
+			
+					 
 
-		const user = {
-			nombre,
-			apellido,
-			descripcion
-		}
-		SaveUser(user);
-		
-	});
-
-}
     function configuracion(){
 		const BotonConfiguracion = document.getElementById('configuracion');
 		BotonConfiguracion.addEventListener('click', () =>{
-		 document.querySelectorAll('.enlaces').style.display = "block";
-			
+		 document.querySelectorAll('.enlaces').style.display = "block";	
 		})
 	
 	}

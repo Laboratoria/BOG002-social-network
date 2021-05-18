@@ -3,7 +3,7 @@ import {home, BotondeCrearCuentaconGoogle} from './Pages/Home.js';
 import {FormularioDeRegistro,  Datos_de_registro} from './Pages/SingUp.js';
 import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
 import {SoloUsuarios} from './Firebase/firebaseAuth.js';
-import { inicio, CerrarSesion} from './Pages/inicio.js';
+import { inicio, CerrarSesion, ParaPublicar} from './Pages/inicio.js';
 import { perfil } from './Pages/perfil.js';
 import { FormularioPerfilDeUsuario, EditarPerfil } from './Pages/DatosUsuario.js';
 import { Error404} from './Pages/Error 404.js';
@@ -47,7 +47,7 @@ export const router = (route) => {
           
             if (user) {
                  content.innerHTML =  inicio();
-                    ParaPublicar()
+                    ParaPublicar();
                     CerrarSesion();
             }else {
               window.location.hash ='#/login'
@@ -69,7 +69,7 @@ export const router = (route) => {
            
             if (user) {
                 content.innerHTML =  search();
-                    CerrarSesion();
+                                     CerrarSesion();
             }else {
                 window.location.hash ='#/login'
                     }
@@ -78,9 +78,9 @@ export const router = (route) => {
              case '#/editarPerfil':
            
             if (user) {
-                content.innerHTML =  FormularioPerfilDeUsuario();
-                EditarPerfil();
-                CerrarSesion();
+                content.innerHTML = FormularioPerfilDeUsuario();
+                                    EditarPerfil();
+                                    CerrarSesion();
             }else {
                 window.location.hash ='#/login'
                     }

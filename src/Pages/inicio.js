@@ -52,7 +52,9 @@ export function ParaPublicar(){
 	const BtnPublicar = document.getElementById("publicar-btn")
 		  BtnPublicar.addEventListener("click", () => {
 
-					let nombre = `nombre usuario ${autenticacionUsuario.Name}`
+					var user = firebase.auth().currentUser; //esta variable se usara en el documento firebaseauth
+			
+					let nombre = user.displayName 
 					let descripcion = document.querySelector(".publicar").value;
 
 					let span = document.createElement("div");

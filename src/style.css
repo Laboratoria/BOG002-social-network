@@ -341,7 +341,7 @@ color: rgb(255, 255, 255);
   margin-top: 2em;
   position: relative;
   top: 2em;
-  text-align: center;
+  /* text-align: center; */
   /* background-color: rgb(236, 236, 236); */
 }
 #profile{
@@ -423,7 +423,7 @@ nav ul  :hover {
   position: relative;
   font-family: poly;
   font-weight: bold;
-  /* left: 1em; */
+  left: 1em;
 }
 .post{
   height: auto;
