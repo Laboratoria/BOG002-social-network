@@ -525,11 +525,10 @@ button.leftDownButton:hover{
     </div>
     <div class="public"><slot name="description"><textarea class="textAreapublic" name="textarea" rows="10" cols="50" type="text"></textarea></slot></div>
     <div class="footer-card">
-        <button class="leftDownButton"><slot name="image_button"><img class="imagesLeft" id="imageLeftDown"></slot></button>
+        <button class="leftDownButton"><slot name="image_button"><div class="spaceImgLike"><img class="imagesLeft" id="imageLeftDown"></div></slot></button>
         <slot name="label"><p class="name_like">Me gusta</p></slot>
         <slot name="footer_right_element"><p class="conteo">123 Likes</p></slot>
     </div>
-    <slot name="likeable" style="display:none"></slot>
     </section>
 `;
 

@@ -2,8 +2,7 @@ import { configurationFireBase } from './firebase/config.js';
 import { router } from './controls/router.js';
 
 const init = () => {
-  const db = configurationFireBase();
-  //const db = firebase.firestore();
+  configurationFireBase();
   const $containerGeneral = document.createElement('div');
   $containerGeneral.classList.add('bigContainer');
   document.querySelector('.body').appendChild($containerGeneral);
@@ -12,15 +11,17 @@ const init = () => {
     document.querySelector('.bigContainer').innerHTML = '';
     firebase.auth().onAuthStateChanged((user) => {
       if(user){
+        let permise=[];
+        let imageLike=[];
         const name = user.displayName;
         if ((user) && ((hash == '') || (hash == 'register'))) {
           location.hash = '#home';
           door=false;
-          router(hash, $containerGeneral, db, name);
+          router(hash, $containerGeneral, name, permise, imageLike);
         }
         else{
           if(door){
-            router(hash, $containerGeneral, db, name);
+            router(hash, $containerGeneral, name, permise, imageLike);
           }
         }
       }

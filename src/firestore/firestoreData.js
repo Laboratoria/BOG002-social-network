@@ -1,21 +1,20 @@
 import { paintAllPosts } from '../controls/firestore.js';
 
-export function RetrieveData(containerPosts){
+export function RetrieveData(containerPosts, permise, imageLike){
     const db = firebase.firestore(); 
-    db.collection("posts").orderBy("date", "desc")
-    .onSnapshot((querySnapshot) => {
-        containerPosts.innerHTML = "";
-        querySnapshot.forEach((doc) => {
-            const docID = doc.id;
-            const username = doc.data().userName;
-            const UID = doc.data().UID;
-            const location = doc.data().location;
-            const description = doc.data().description;
-            const likes = doc.data().likes;
-            const likeable = doc.data().likeable;
-            paintAllPosts(containerPosts, docID, username, UID, location, description, likes, likeable);
-        });  
-    });
+        db.collection("posts").orderBy("date", "desc")
+        .onSnapshot((querySnapshot) => {
+            containerPosts.innerHTML = "";
+            querySnapshot.forEach((doc) => {
+                const docID = doc.id;
+                const username = doc.data().userName;
+                const UID = doc.data().UID;
+                const location = doc.data().location;
+                const description = doc.data().description;
+                const likes = doc.data().likes;
+                paintAllPosts(containerPosts, docID, username, UID, location, description, likes, permise, imageLike);
+            });  
+        });
 }
 
 export function sendData(db, location, description, uid, name, date){
@@ -82,11 +81,9 @@ export function editPost(postID, postuser, locationEdit, descriptionEdit){
     });
 }
 
-export function updateLikes(postSelected, newLikes, likeableNew){
-    //console.log(newLikes);
+export function updateLikes(postSelected, newLikes){
     const db = firebase.firestore(); 
     db.collection("posts").doc(postSelected).update({
-        likes: newLikes,
-        likeable: likeableNew
+        likes: newLikes
     });
 }

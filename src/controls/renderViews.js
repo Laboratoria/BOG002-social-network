@@ -57,13 +57,13 @@ export function renderError($containerGeneral){
   pageError($containerGeneral);
 }
 
-export function renderHome($containerGeneral){
+export function renderHome($containerGeneral, permise, imageLike){
   Menu($containerGeneral);
   const containerPosts = document.createElement('div');
   containerPosts.classList.add("containerPosts");
   document.querySelector('.body_container').appendChild(containerPosts);
   containerPosts.innerHTML='';
-  RetrieveData(containerPosts);
+  RetrieveData(containerPosts, permise, imageLike);
 }
 
 export function Menu($containerGeneral) {

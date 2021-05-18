@@ -16,7 +16,7 @@ export function createPost() {
     }
 }
 
-export function paintAllPosts(containerPosts, docID, username, UID, location, description, likes, likeable){
+export function paintAllPosts(containerPosts, docID, username, UID, location, description, likes, permise, imageLike){
   retrieveUserData();
   let ownPost;
   if(username == name){
@@ -24,7 +24,7 @@ export function paintAllPosts(containerPosts, docID, username, UID, location, de
   }else{
     ownPost = false;
   }
-  AllPostsCard(containerPosts, docID, username, location, description, likes, likeable, ownPost);
+  AllPostsCard(containerPosts, docID, username, location, description, likes, permise, ownPost, imageLike);
 }
 
 function retrieveUserData(){
