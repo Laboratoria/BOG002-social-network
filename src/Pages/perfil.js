@@ -1,35 +1,29 @@
-import {SaveUser} from '../Firebase/firebaseAuth.js'
-
 
 export function perfil(){
 
     let html= `
 	
 	<div class="container">
-	 <nav>
-	   <div id="menu">
-		<div id="logo"> 
+	 <header>
+	   <div class="menu">
+		<div class="logo"> 
 		<h1>FoodFans<h1></div>
 		<div id="configuracion"><img src="./imagenes/Setting.svg">
 		<div class="enlaces" id="enlaces">
-          <a href="" id="editar-perfil">Editar Perfil</a>
-		  <a  href="" id="close-sesion">Cerrar Sesion</a>
+		<span class= "setting"><a href="#/editarPerfil">Editar Perfil</a></span>
+		<span class= "setting" id="cerrar-sesion">Cerrar sesion</span>
 		</div>
 		</div> 
-		
-	  </nav>
+	 </header>
       <section>
-	  <form>
-	  <input type="text" class="input" id="name" placeholder="Name" name="name"></input>
-	  <input type="text" class="input"id="apellido" placeholder="Apellido" name="apellido"></input>
-	  <input type="text" class="input" id="descripcion" placeholder="Descripcion" name="descripcion"></input>
-	  <button id='guardar'>Guardar</button>
-      </form>
-	  
+	  <div class="perfil">
+	  <img src="./imagenes/usuario.png" id="foto-perfil">
+	  <h1 id="Nombre-de-usuario">Pepito Perez</h1>
+	  <p class="descripcion">Aqui va una breve descripcion del usuario</p>
+	  </div>
+	  <div id="publicaciones"></div>
 	  </section>
-
 	
-
 	  <footer>
 		<ul>
 		<li><a href="#/release"><img src="./imagenes/Home.svg"></a>Inicio </li>
@@ -40,27 +34,24 @@ export function perfil(){
 	</div>`;    
     return html;
   }
+ 
   
-  export function EditarPerfil (){
-    const guardarCambios = document.getElementById('guardar');
-	guardarCambios.addEventListener('click',(e) =>{
-		event.preventDefault();
-       let nombre = document.getElementById('name').value;
-	   let apellido = document.getElementById('apellido').value;
-	   let descripcion = document.getElementById('descripcion').value;
-		console.log('hola')
+   export function name (){
+	let Nombre_usuario = document.getElementById("Nombre-de-usuario");
+	let  user = firebase.auth().currentUser;//esta variable se usara en el documento firebaseauth
+	let n =user.displayName;
+	Nombre_usuario.innerHTML =  n;
+  }
 
-		const user = {
-			nombre,
-			apellido,
-			descripcion
-		}
-		SaveUser(user)
-	});
+			
+					 
 
-
+    function configuracion(){
+		const BotonConfiguracion = document.getElementById('configuracion');
+		BotonConfiguracion.addEventListener('click', () =>{
+		 document.querySelectorAll('.enlaces').style.display = "block";	
+		})
+	
 	}
-	/* export function CloseSesion(){
-		const Cerrar = document.getElementById('close-sesion');
-	    Cerrar.addEventListener('click', Salir);
-	} */
+	
+	

@@ -3,9 +3,17 @@ import {home, BotondeCrearCuentaconGoogle} from './Pages/Home.js';
 import {FormularioDeRegistro,  Datos_de_registro} from './Pages/SingUp.js';
 import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
 import {SoloUsuarios} from './Firebase/firebaseAuth.js';
+<<<<<<< HEAD
 import { inicio, CerrarSesion} from './Pages/inicio.js';
 import { perfil, EditarPerfil } from './Pages/perfil.js';
+=======
+import { inicio, CerrarSesion, ParaPublicar} from './Pages/inicio.js';
+import { perfil, name  } from './Pages/perfil.js';
+import { FormularioPerfilDeUsuario, EditarPerfil } from './Pages/DatosUsuario.js';
+>>>>>>> 38aafa2d5b1c202e68950a67cc6233a15c393b49
 import { Error404} from './Pages/Error 404.js';
+import { search } from './Pages/search.js';
+import { MostrarPublicaciones } from './Firebase/firebase-collection.js';
 
  
 let content = document.getElementById('root');
@@ -17,8 +25,11 @@ export const router = (route) => {
     // para el login
     const login_modal = document.getElementById('login_modal');
     login_modal.classList.remove('show');
+    
     content.innerHTML = "";
     let user = SoloUsuarios();
+
+
     switch(route) {
         case '':
             content.innerHTML= 
@@ -42,7 +53,9 @@ export const router = (route) => {
           
             if (user) {
                  content.innerHTML =  inicio();
+                    ParaPublicar();
                     CerrarSesion();
+                    MostrarPublicaciones();
             }else {
               window.location.hash ='#/login'
             }
@@ -51,14 +64,42 @@ export const router = (route) => {
         case '#/profile':
            
             if (user) {
+<<<<<<< HEAD
                  content.innerHTML =  perfil();
                    EditarPerfil(); 
                  /*  CloseSesion(); */
             }/* else {
+=======
+                 content.innerHTML =  perfil();name ();
+                 
+                    
+            }else {
+>>>>>>> 38aafa2d5b1c202e68950a67cc6233a15c393b49
               window.location.hash ='#/login'
             } */
                 
                 break;
+        case '#/search':
+           
+            if (user) {
+                content.innerHTML =  search();
+                                     CerrarSesion();
+            }else {
+                window.location.hash ='#/login'
+                    }
+                        
+             break;
+             case '#/editarPerfil':
+           
+            if (user) {
+                content.innerHTML = FormularioPerfilDeUsuario();
+                                    EditarPerfil();
+                                    CerrarSesion();
+            }else {
+                window.location.hash ='#/login'
+                    }
+                        
+             break;
         default:
              content.innerHTML = Error404();
     }

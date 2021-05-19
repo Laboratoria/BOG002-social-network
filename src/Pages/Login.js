@@ -4,19 +4,22 @@ export function FormularioDeIngreso(){
 
   const html= `
       <div class='fondo'>
-      <h1> Login </h1>
-      <div id="usuario"> <img src="./imagenes/usuario.png"></div>
-      
+  
       <form id="Form-login"> 
-      
-      <div class="input" id="Email">
-      <input type="email" name="correo" placeholder="email" required id="EmailUser"> 
-      <img src="" id="CampoVacioEmail" class="error">
-      </div>
+
+        <h1 id="titulo-login"> Login </h1>
+        <div id="usuario"> <img src="./imagenes/usuario.png"> </div>
+
+        <div class="input" id="Email">
+         <input type="email" name="correo" placeholder="email" required id="EmailUser"> 
+         <img src="" id="CampoVacioEmail" class="error">
+        </div>
+
       <div class="input" id="Password">
       <input type="password"  name="password" placeholder ="password" required id="PasswordUser">
       <img src="" id="CampoVacioPassword" class="error"> 
       </div>
+      
       <button type="submit" id="login" class="btn" > LOGIN <a href="#/Register"> </a> </button>
       <form> 
       <div>`
@@ -81,7 +84,7 @@ export function FormularioDeIngreso(){
     contrasena.setAttribute("type", "password");
     });
 
-// enlazando el formulario con firebase
+    // enlazando el formulario con firebase
    formularioLogin.addEventListener('submit', (e) => {
 	   e.preventDefault();
      
