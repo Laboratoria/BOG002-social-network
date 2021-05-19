@@ -1,25 +1,25 @@
 // Function Register
 export const register = (email, password) => {
-  const auth = firebase.auth();
-  return auth.createUserWithEmailAndPassword(email, password);
+  const registerNewUser = firebase.auth().createUserWithEmailAndPassword(email, password);
+  return registerNewUser;
 };
 
 // Función Login
 export const Login = (email, password) => {
-  const auth = firebase.auth();
-  return auth.signInWithEmailAndPassword(email, password);
+  const loginUser = firebase.auth().signInWithEmailAndPassword(email, password);
+  return loginUser;
 };
 
 // Función Register Google
 export const registerGoogle = (provider) => {
-  const auth = firebase.auth();
-  return auth.signInWithPopup(provider);
+  const registerUserWithGoogle = firebase.auth().signInWithPopup(provider);
+  return registerUserWithGoogle;
 };
 
 // Función Sing Out
 export const signOut = () => {
-  const auth = firebase.auth();
-  return auth.signOut();
+  const signOutUser = firebase.auth().signOut();
+  return signOutUser;
 };
 
 // Funcion subir publicaciones
