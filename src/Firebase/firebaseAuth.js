@@ -43,6 +43,7 @@ export const LoginUsuario = (email,password) =>{
   let user = firebase.auth().currentUser;
     return user;
 }
+ 
 // ************************ cerrar sesion ******************************
 export function Salir(){
   
