@@ -1,3 +1,5 @@
+import { CrearItem } from "../Pages/inicio.js";
+
 // Add a new document with a generated id.
 export const SavePublicaciones=(publicaciones)=> {
 
@@ -6,6 +8,7 @@ db.collection("publicaciones").add({
 })
 .then((docRef) => {
     console.log("Document written with ID: ", docRef.id);
+    CrearItem();
 })
 .catch((error) => {
     console.error("Error adding document: ", error);

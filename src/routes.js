@@ -58,7 +58,7 @@ export const router = (route) => {
            
             if (user) {
                  content.innerHTML =  perfil();name ();
-                 
+                                      CerrarSesion();
                     
             }else {
               window.location.hash ='#/login'
