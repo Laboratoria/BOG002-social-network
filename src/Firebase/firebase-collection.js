@@ -5,7 +5,9 @@ db.collection("publicaciones").add({
     publicaciones
 })
 .then((docRef) => {
-    console.log("Document written with ID: ", docRef.id);
+    console.log( docRef.id);
+
+    // meter coleccion
 })
 .catch((error) => {
     console.error("Error adding document: ", error);
@@ -27,17 +29,25 @@ export const SaveUser = (user) => {
     
   }
    // *********************** accediendo a todos los documentos de la coleccion ******************
-db.collection("publicaciones").get().then((querySnapshot) => {
-  querySnapshot.forEach((doc) => {
-    let span = document.createElement("span");
-        span.classList.add("nombre-usuario");
-  
- 
-  let div = document.createElement("div");
-      div.classList.add("post");// doc.data() is never undefined for query doc snapshots
-      console.log( doc.data().publicaciones);
-      // doc.id, " => ",
- 
+
+   	//******Esta funcion trae toda la 
+    //coleccion de firebase y la pinta al inicio, nos falta organizar por fecha****** 
+
+export function MostrarPublicaciones(){
+
+     const Publicar = document.getElementById("publicaciones")
+    
+    db.collection("publicaciones").get().then((querySnapshot) => {
+         Publicar.innerHTML = ``;
+         querySnapshot.forEach((doc) => {
+
+      Publicar.innerHTML += `	
+    	<div class="post">
+         <span class="nombre-usuario" > ${doc.data().publicaciones.nombre }</span>
+         <span class="lugar">${doc.data().publicaciones.lugar }</span>
+         <div class="contenido">${doc.data().publicaciones.descripcion } </div>
+         
+      <div>`
     
   });
-});
+});}
