@@ -3,14 +3,9 @@ import {home, BotondeCrearCuentaconGoogle} from './Pages/Home.js';
 import {FormularioDeRegistro,  Datos_de_registro} from './Pages/SingUp.js';
 import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
 import {SoloUsuarios} from './Firebase/firebaseAuth.js';
-<<<<<<< HEAD
-import { inicio, CerrarSesion} from './Pages/inicio.js';
-import { perfil, EditarPerfil } from './Pages/perfil.js';
-=======
 import { inicio, CerrarSesion, ParaPublicar} from './Pages/inicio.js';
 import { perfil, name  } from './Pages/perfil.js';
 import { FormularioPerfilDeUsuario, EditarPerfil } from './Pages/DatosUsuario.js';
->>>>>>> 38aafa2d5b1c202e68950a67cc6233a15c393b49
 import { Error404} from './Pages/Error 404.js';
 import { search } from './Pages/search.js';
 import { MostrarPublicaciones } from './Firebase/firebase-collection.js';
@@ -64,19 +59,12 @@ export const router = (route) => {
         case '#/profile':
            
             if (user) {
-<<<<<<< HEAD
-                 content.innerHTML =  perfil();
-                   EditarPerfil(); 
-                 /*  CloseSesion(); */
-            }/* else {
-=======
                  content.innerHTML =  perfil();name ();
                  
                     
             }else {
->>>>>>> 38aafa2d5b1c202e68950a67cc6233a15c393b49
               window.location.hash ='#/login'
-            } */
+            } 
                 
                 break;
         case '#/search':

@@ -23,7 +23,7 @@ export function inicio(){
 		<span class= "setting" id="cerrar-sesion">Cerra sesion</span>
 	</div>
 	<div class="area-publicar">
-		<img id="foto-usuario" src="./imagenes/usuario.png">
+		<!--<img id="foto-usuario" src="./imagenes/usuario.png">-->
 		
 		<textarea type="text" class="publicar" placeholder="Publica aqui"></textarea>
 	<div>
@@ -36,8 +36,10 @@ export function inicio(){
 			<span class="nombre-usuario" > </span>
 			<span class="lugar"></span>
 			<div class="contenido"> </div>
+			<i class="fas fa-trash-alt"></i>
 			
 		<div>
+		
 
 	</div>
 
