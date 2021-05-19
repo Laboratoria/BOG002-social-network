@@ -16,9 +16,10 @@ export function perfil(){
 		</div> 
 	 </header>
       <section>
-	  <div class="perfil">
+	  <div id='perfil' class="perfil">
 	  <img src="./imagenes/usuario.png" id="foto-perfil">
-	  <h1 id="Nombre-de-usuario">Pepito Perez</h1>
+	  <h1 id="Nombre-de-usuario"></h1>
+	  <h2 id="nombre-completo"></h2>
 	  <p class="descripcion">Aqui va una breve descripcion del usuario</p>
 	  </div>
 	  <div id="publicaciones"></div>
@@ -43,16 +44,9 @@ export function perfil(){
 	Nombre_usuario.innerHTML =  n;
   }
 
-			
+
 					 
 
-    function configuracion(){
-		const BotonConfiguracion = document.getElementById('configuracion');
-		BotonConfiguracion.addEventListener('click', () =>{
-		 document.querySelectorAll('.enlaces').style.display = "block";	
-		})
 	
-	}
-	
-	
+
 	

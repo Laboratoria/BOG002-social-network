@@ -82,7 +82,7 @@ export const router = (route) => {
             if (user) {
                 content.innerHTML = FormularioPerfilDeUsuario();
                                     EditarPerfil();
-                                    CerrarSesion();
+                                
             }else {
                 window.location.hash ='#/login'
                     }

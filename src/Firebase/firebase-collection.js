@@ -20,6 +20,7 @@ export const SaveUser = (user) => {
     })
     .then((docRef) => {
       console.log("Enviado a la consola firestore ", docRef.id);
+      
       window.location.hash ='#/profile';
     })
     .catch((error) => {
@@ -50,4 +51,8 @@ export async function MostrarPublicaciones(){
       <div>`
     
   });
-});}
+});
+}
+
+
+

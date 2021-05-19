@@ -4,27 +4,30 @@ export function FormularioPerfilDeUsuario(){
     const html = `
     <section>
       <div class="perfil">
-	   <img src="./imagenes/usuario.png" id="foto-perfil">
-       <button>Elegir Foto</button>
+	   <img src=" ">
+       
        </div>
       </section><br>
-    <form>
+    <form id="formulario">
+	<input type='file' id='my-file'></input>
       <input type="text" class="input" id="name" placeholder="Name" name="name"></input>
 	  <input type="text" class="input"id="apellido" placeholder="Apellido" name="apellido"></input>
 	  <input type="text" class="input" id="descripcion" placeholder="Descripcion" name="descripcion"></input>
-	  <button id='guardar'class="btn">Guardar</button>
+	  <button type="submit" class="btn">Guardar</button>
       </form>`;
       return html;
 }
 
 export function EditarPerfil (){
-    const InfoPerfil = document.getElementById('guardar');
-	InfoPerfil.addEventListener('click',(event) =>{
+    const InfoPerfil = document.getElementById('formulario');
+	InfoPerfil.addEventListener('submit',(event) =>{
 		event.preventDefault();
+	   let fileImage = document.getElementById('my-file');
+	   console.log(fileImage.files)
        let nombre = document.getElementById('name').value;
 	   let apellido = document.getElementById('apellido').value;
 	   let descripcion = document.getElementById('descripcion').value;
-
+      
 		const user = {
 			nombre,
 			apellido,
@@ -34,4 +37,9 @@ export function EditarPerfil (){
 		
 	});
 
+	}
+
+	export function cargarImagen(){
+		const file = document.getElementById('my-file')[0];
+		console.log(file);
 	}

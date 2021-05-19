@@ -22,9 +22,11 @@ export function inicio(){
 		<span class= "setting">Cambiar nombre</span>
 		<span class= "setting" id="cerrar-sesion">Cerra sesion</span>
 	</div>
+	
 	<div class="area-publicar">
 		<img id="foto-usuario" src="./imagenes/usuario.png">
 		<input type="text" class="publicar" placeholder="Publica aqui">
+		
 	<div>
 		<button class="btn" id="publicar-btn"> Publicar </button> 
 	</div>
