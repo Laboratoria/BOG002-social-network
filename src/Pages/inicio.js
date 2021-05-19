@@ -10,6 +10,13 @@ export function inicio(){
 		<div id="logo"> FoodFans </div>
 		<div id="configuracion"><img src="./imagenes/Setting.svg"></div> 
 	</div>
+	<nav>
+	<ul>
+	<li><a id="inicio"href="#/release"><img src="./imagenes/Home.svg"></a>Inicio </li>
+	<li><a id="perfil"href="#/profile"><img src="./imagenes/Profile.svg"></a>Perfil</li>
+	<li><a id="buscar"href="#/search"><img src="./imagenes/Search.svg"></a>Buscar</li>
+	</ul>
+	</nav>
 
 	<div id="menu">
 		<span class= "setting">Cambiar nombre</span>
@@ -33,13 +40,7 @@ export function inicio(){
 
 	</div>
 
-	<nav>
-		<ul>
-		<li><a id="inicio"href="#/release"><img src="./imagenes/Home.svg"></a>Inicio </li>
-		<li><a id="perfil"href="#/profile"><img src="./imagenes/Profile.svg"></a>Perfil</li>
-		<li><a id="buscar"href="#/search"><img src="./imagenes/Search.svg"></a>Buscar</li>
-		</ul>
-	</nav>
+
 `  
     return html;
   }
