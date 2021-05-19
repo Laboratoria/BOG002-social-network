@@ -416,27 +416,49 @@ nav ul  :hover {
   margin-top: 2em;
   margin-right: 0.5em;
 }
+
+.post{
+  background-color: rgb(62, 201, 154);
+  height: auto;
+  width: 95%;
+  background-color: #fff;
+  margin: 0.5em;
+  display: flex;
+  padding: 1em;
+  border-bottom: rgb(216, 215, 215) solid 2px;
+  flex-direction: column;
+  align-items: left; 
+
+}
 .nombre-usuario{
-  width: 55%;
+  width: 75%;
   height: 20px;
   color: black;
   position: relative;
   font-family: poly;
   font-weight: bold;
   left: 1em;
+  top: 1px;
+  /* background-color: rgb(159, 180, 37); */
 }
-.post{
-  height: auto;
-  width: 95%;
-  background-color: #fff;
-  margin: 0.5em;
+.contenido{
+  top: 3px;
+  /* background-color: #fca863; */
+  position: relative;
+  width: 60vw;
   display: flex;
-  justify-content: flex-start;
-  padding: 1em;
-  border-bottom: rgb(216, 215, 215) solid 2px;
-  
+  text-align: left;
+  height:auto ;
+  left: 1em;
 }
-
+.lugar{
+/* background-color: burlywood; */
+width: 40%;
+height:3vh;
+color: grey;
+top: 0.5px;
+left: 1em;
+}
 .publicar{
   margin-top: 2em;
   width: 75%;

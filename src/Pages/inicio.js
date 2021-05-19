@@ -1,5 +1,5 @@
 import {Salir, autenticacionUsuario} from '../Firebase/firebaseAuth.js';
-import{MostrarPublicacion, SavePublicaciones} from '../Firebase/firebase-collection.js'
+import{ SavePublicaciones} from '../Firebase/firebase-collection.js'
 
 
 export function inicio(){
@@ -16,27 +16,30 @@ export function inicio(){
 		<span class= "setting" id="cerrar-sesion">Cerra sesion</span>
 	</div>
 	<div class="area-publicar">
-	<img id="foto-usuario" src="./imagenes/usuario.png">
-	<input type="text" class="publicar" placeholder="Publica aqui">
-
-	
+		<img id="foto-usuario" src="./imagenes/usuario.png">
+		<input type="text" class="publicar" placeholder="Publica aqui">
 	<div>
-	<button class="btn" id="publicar-btn"> Publicar </button> 
+		<button class="btn" id="publicar-btn"> Publicar </button> 
+	</div>
 	</div>
 
-	</div>
 	<div id="publicaciones">
-
+		<div class="post">
+			<span class="nombre-usuario" > </span>
+			<span class="lugar"></span>
+			<div class="contenido"> </div>
+			
+		<div>
 
 	</div>
 
-	<nav>
+	<footer>
 		<ul>
-		<li><a id="inicio"href="#/release"><img src="./imagenes/Home.svg"></a>Inicio </li>
-		<li><a id="perfil"href="#/profile"><img src="./imagenes/Profile.svg"></a>Perfil</li>
-		<li><a id="buscar"href="#/search"><img src="./imagenes/Search.svg"></a>Buscar</li>
-		</ul>
-	</nav>
+		<li><a href="#/release"><img src="./imagenes/Home.svg"></a>Inicio </li>
+		<li><a href="#/profile"><img src="./imagenes/Profile.svg"></a>Perfil</li>
+		<li><a href="#/search"><img src="./imagenes/Search.svg"></a>Buscar </li>
+       </ul>
+	  </footer>
 `  
     return html;
   }
@@ -46,31 +49,19 @@ export function CerrarSesion()	{
 		BotonCerrar.addEventListener('click', Salir);
 }
 
-
-export function ParaPublicar(){
 	//  obtener valores
+export function ParaPublicar(){
+
+	//******Esta funcion solo sirve cuando se oprime el boton publicar, 
+	// obtiene valores y los envia a la coleccion de firebase****** 
+
 	const BtnPublicar = document.getElementById("publicar-btn")
 		  BtnPublicar.addEventListener("click", () => {
 
-					var user = firebase.auth().currentUser; //esta variable se usara en el documento firebaseauth
-			
-					let nombre = user.displayName 
-					let descripcion = document.querySelector(".publicar").value;
-
-					let span = document.createElement("span");
-						span.classList.add("nombre-usuario");
-					
-					let contenedorPublicaciones = document.getElementById("publicaciones")
-					let div = document.createElement("div");
-						div.classList.add("post");
-
-					contenedorPublicaciones.appendChild(span)
-					contenedorPublicaciones.appendChild(div)
-					
-					
-					div.innerHTML  =   descripcion
-					span.innerHTML  = nombre 
-					
+			let user = firebase.auth().currentUser; //esta variable se usara en el documento firebaseauth
+			let nombre = user.displayName 
+			let descripcion = document.querySelector(".publicar").value;
+	
 
 			 let publicaciones= {
    					nombre,
