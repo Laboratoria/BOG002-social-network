@@ -41,4 +41,15 @@ describe('collectionPost', () => {
         });
       });
   });
+  it('Debería existir un nuevo post en la base de datos', (done) => {
+    const addPost = collectionPost('dani@gmail.com', 'Buenas tardes', 1301090400, 'abc456');
+    return addPost
+      .then(() => {
+        getPosts((data) => {
+          const result = data._data.find(post => post._data.Title === 'dani@gmail.com')// eslint-disable-line
+          expect(result._data.Title).toBe('dani@gmail.com')// eslint-disable-line
+          done();
+        });
+      });
+  });
 });

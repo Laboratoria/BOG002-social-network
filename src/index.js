@@ -45,6 +45,7 @@ export const deletePosts = (id) => {
   return fireStoreCollection.doc(id).delete();
 };
 
+// Funcion editar publicaciones
 export const editPosts = (id, input) => {
   const fireStoreCollection = firebase.firestore().collection('posts');
   return fireStoreCollection.doc(id).update({
