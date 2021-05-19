@@ -6,11 +6,11 @@
 }
 
 #imgUser {
-    margin-left: 110px;
+    margin-left: 80px;
 }
 
 ul {
-    padding: 4% 8% 0% 8%;
+    padding: 2% 8% 0% 5%;
 }
 
 li {
@@ -19,6 +19,7 @@ li {
     border-radius: 8px;
     list-style: none;
     margin: 2px 0px 20px 0px;
+    width: 280px;
 }
 
 #btnLogOut {
@@ -29,58 +30,107 @@ li {
     font-size: 13px;
     border: 1px solid #923367;
     border-radius: 5px;
+    width: 100px;
 }
-
+         
 #inputPost {
     background-color: white;
     font-family: 'Yusei Magic', sans-serif;
     font-size: 13px;
+    text-align: center;
     border-radius: 10px;
-    width: 230px;
+    width: 250px;
     height: 35px;
     border:none;
     margin: 5% 0% 0% 0%;
 }
 
-.btnDeletePost {
-    background-color: #350B1F;
-    color: white;
-    font-size: 12px;
-    font-family: 'Varela Round', sans-serif;
-    font-weight: bold;
-    text-align: center;
-    padding: 4px 8px 4px 8px;
-    margin-left: 90%;
-    margin-top: 1%;
-    border-radius: 14px;
-    border:none;
-    cursor: pointer;
-}   
-/* 
-.modal-container {
-    position: fixed;  
-    top: 0;
-    left: 0;
-    background: rgba(0,0,0,0.5) ;    
-    transition: all 500ms ease;
+#btnPost {
+    width: 80px;
 }
 
-.modal {    
+#containerButtonsDeleteEdit {
+    display: flex;
+    flex-direction: row;
+}
+
+#containerTitlePost {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+#imgUserMobile {
+    margin-left: 10px;
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+#titlePost {
+    font-size: 15px;
+    margin: 3px;
+}
+
+#datePost {
+    font-size: 10px;
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 0px;
+}
+
+.btnDeletePost {
+    background-color: #350B1F;
+    border-radius: 14px;
+    width: 30px;
+    height: 30px;
+    margin-top: 2%;
+    margin-left: 2%;
     
-    width: 200px;
-    height: 150px;
-    margin: auto;
-    background: white;
-    box-shadow: 1px 7px 25px rgba(0,0,0,0.6);
-    transition: all 500ms ease;
-    position: relative;
+} 
+
+.btnEditPost {
+    background-color: #350B1F;
+    border-radius: 14px;
+    width: 30px;
+    height: 30px;
+    margin-top: 2%;
+    margin-left: 74%;
+    
+}
+
+#imageEdit {
+    width: 12px;
+    background-color: #350B1F;
+    }
+
+#imageDelete {
+    width: 12px;
+    background-color: #350B1F;
+    margin: 2px;
+    }
+
+#imageSave {
+    width: 14px;
+    background-color: #350B1F;
+    margin: 1px 1px 0 0;
+    }
+
+input {
+    background-color: white;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 13px;
+    /*text-align: center;*/
+    width: 230px;
+    border:none;
+    margin-bottom: 10px;
    
-    
-} */
+}
 
 .modal-container {
     display: flex;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
+    font-family: 'Yusei Magic', sans-serif;
     align-items: center;
     justify-content: center;
     position: fixed;
@@ -99,9 +149,9 @@ li {
 }
   
 .modal {
-    background: linear-gradient(to right, #fe98d7, #87cdd1);
-    /* background-color:#ffdff4; */
-    width: 600px;
+    background-color: #ECD4EA;
+    font-size: 13px;
+    width: 160px;
     max-width: 100%;
     padding: 30px 50px;
     border-radius: 5px;
@@ -109,3 +159,22 @@ li {
     text-align: center;
 }
 
+#delete {
+    background-color: #923367;
+    color: #F9F4F4;
+    font-family: 'Yusei Magic', sans-serif;
+    border-radius: 4px;
+    width: 70px;
+    height: 30px;
+    border:none;
+}
+
+#buttonModalDeletePost {
+    background-color: #923367;
+    color: #F9F4F4;
+    font-family: 'Yusei Magic', sans-serif;
+    border-radius: 4px;
+    width: 70px;
+    height: 30px;
+    border:none;
+}
