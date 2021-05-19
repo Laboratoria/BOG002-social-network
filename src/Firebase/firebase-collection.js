@@ -1,6 +1,6 @@
 // Add a new document with a generated id.
 export const SavePublicaciones=(publicaciones)=> {
-
+ 
 db.collection("publicaciones").add({
     publicaciones
 })
@@ -33,13 +33,13 @@ export const SaveUser = (user) => {
    	//******Esta funcion trae toda la 
     //coleccion de firebase y la pinta al inicio, nos falta organizar por fecha****** 
 
-export function MostrarPublicaciones(){
-
+export async function MostrarPublicaciones(){
+  
      const Publicar = document.getElementById("publicaciones")
     
-    db.collection("publicaciones").get().then((querySnapshot) => {
+    db.collection("publicaciones").onSnapshot((querySnapshot) => {
          Publicar.innerHTML = ``;
-         querySnapshot.forEach((doc) => {
+         querySnapshot.forEach((doc ) => {
 
       Publicar.innerHTML += `	
     	<div class="post">

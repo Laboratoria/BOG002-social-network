@@ -335,15 +335,7 @@ background-color: #f8dc9b;
 color: rgb(255, 255, 255);
 }
 
-#publicaciones{
-  width: 100%;
-  height: auto;
-  margin-top: 2em;
-  position: relative;
-  top: 2em;
-  /* text-align: center; */
-  /* background-color: rgb(236, 236, 236); */
-}
+
 #profile{
   width: 100%;
   height: 15em;
@@ -358,11 +350,12 @@ nav {
   height: 10vh;
   width: 100%;
   position: fixed;
+  z-index: 100;
   bottom: 0%;
   padding: 0%;
   margin: 0%;
   background-color: transparent;
-  display: flex;
+  /* display: flex; */
 }
 nav ul {
   display: inline-flex;
@@ -416,13 +409,19 @@ nav ul  :hover {
   margin-top: 2em;
   margin-right: 0.5em;
 }
+#publicaciones{
+  width: 100%;
+  height: auto;
+  margin-top: 2em;
+  position: relative;
+  top: 2em;
+}
 
 .post{
-  background-color: rgb(62, 201, 154);
   height: auto;
-  width: 95%;
-  background-color: #fff;
-  margin: 0.5em;
+  width: 98vw;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 0.5em;
   display: flex;
   padding: 1em;
   border-bottom: rgb(216, 215, 215) solid 2px;
