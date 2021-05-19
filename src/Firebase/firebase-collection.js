@@ -29,3 +29,18 @@ export const SaveUser = (user) => {
     
     
   }
+   // *********************** accediendo a todos los documentos de la coleccion ******************
+db.collection("publicaciones").get().then((querySnapshot) => {
+  querySnapshot.forEach((doc) => {
+    let span = document.createElement("span");
+        span.classList.add("nombre-usuario");
+  
+ 
+  let div = document.createElement("div");
+      div.classList.add("post");// doc.data() is never undefined for query doc snapshots
+      console.log( doc.data().publicaciones);
+      // doc.id, " => ",
+ 
+    
+  });
+});

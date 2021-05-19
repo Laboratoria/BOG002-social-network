@@ -57,11 +57,11 @@ export function ParaPublicar(){
 					let nombre = user.displayName 
 					let descripcion = document.querySelector(".publicar").value;
 
-					let span = document.createElement("div");
+					let span = document.createElement("span");
 						span.classList.add("nombre-usuario");
 					
 					let contenedorPublicaciones = document.getElementById("publicaciones")
-					let div = document.createElement("article");
+					let div = document.createElement("div");
 						div.classList.add("post");
 
 					contenedorPublicaciones.appendChild(span)
