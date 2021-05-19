@@ -1,5 +1,5 @@
 import {Salir, autenticacionUsuario} from '../Firebase/firebaseAuth.js';
-import{SavePublicaciones} from '../Firebase/firebase-collection.js'
+import{MostrarPublicacion, SavePublicaciones} from '../Firebase/firebase-collection.js'
 
 
 export function inicio(){
@@ -78,6 +78,7 @@ export function ParaPublicar(){
 					foto: false,
    					lugar:"Bogota"}
 					   SavePublicaciones(publicaciones)
+					
 			})
 	
 }
