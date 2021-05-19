@@ -4,13 +4,11 @@ export const SavePublicaciones=(publicaciones)=> {
 db.collection("publicaciones").add({
     publicaciones
 })
-.then((docRef) => {
-    console.log( docRef.id);
-
-    // meter coleccion
+        .then((docRef) => {
+           console.log("enviado")
 })
-.catch((error) => {
-    console.error("Error adding document: ", error);
+        .catch((error) => {
+           console.error("Error adding document: ", error);
 });
 }
 
@@ -30,24 +28,24 @@ export const SaveUser = (user) => {
   }
    // *********************** accediendo a todos los documentos de la coleccion ******************
 
-   	//******Esta funcion trae toda la 
-    //coleccion de firebase y la pinta al inicio, nos falta organizar por fecha****** 
-
 export async function MostrarPublicaciones(){
   
+  
      const Publicar = document.getElementById("publicaciones")
-    
-    db.collection("publicaciones").onSnapshot((querySnapshot) => {
-         Publicar.innerHTML = ``;
-         querySnapshot.forEach((doc ) => {
-
-      Publicar.innerHTML += `	
-    	<div class="post">
-         <span class="nombre-usuario" > ${doc.data().publicaciones.nombre }</span>
-         <span class="lugar">${doc.data().publicaciones.lugar }</span>
-         <div class="contenido">${doc.data().publicaciones.descripcion } </div>
+     db.collection("publicaciones").onSnapshot((querySnapshot) => {
+      db.collection("publicaciones") .orderBy("fecha", "desc");
+        Publicar.innerHTML = ``;
+        querySnapshot.forEach((doc ) => {
+          
+        Publicar.innerHTML += `	
+              	<div class="post">
+                  
+                  <span class="nombre-usuario" > ${doc.data().publicaciones.nombre }</span>
+                  <span class="fecha" > ${doc.data().publicaciones.fecha }</span>
+                  <span class="lugar">${doc.data().publicaciones.lugar }</span>
+                  <div class="contenido">${doc.data().publicaciones.descripcion } </div>
          
-      <div>`
-    
+                 <div>`
+                
   });
 });}

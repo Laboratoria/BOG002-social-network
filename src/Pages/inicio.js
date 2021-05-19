@@ -24,7 +24,8 @@ export function inicio(){
 	</div>
 	<div class="area-publicar">
 		<img id="foto-usuario" src="./imagenes/usuario.png">
-		<input type="text" class="publicar" placeholder="Publica aqui">
+		
+		<textarea type="text" class="publicar" placeholder="Publica aqui"></textarea>
 	<div>
 		<button class="btn" id="publicar-btn"> Publicar </button> 
 	</div>
@@ -62,13 +63,17 @@ export function ParaPublicar(){
 			let user = firebase.auth().currentUser; //esta variable se usara en el documento firebaseauth
 			let nombre = user.displayName 
 			let descripcion = document.querySelector(".publicar").value;
-	
+			const objectoAccion = new Date(Date.now());
+
 
 			 let publicaciones= {
    					nombre,
 					descripcion,
 					foto: false,
-   					lugar:"Bogota"}
+					fecha: objectoAccion.toLocaleString(),
+					// fecha: firebase.firestore.FieldValue.serverTimestamp(),
+   					lugar:"Bogota",
+				}
 					   SavePublicaciones(publicaciones)
 			})
 	

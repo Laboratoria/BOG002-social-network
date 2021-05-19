@@ -415,6 +415,7 @@ nav ul  :hover {
   margin-top: 2em;
   position: relative;
   top: 2em;
+  margin-bottom:5em ;
 }
 
 .post{
@@ -438,36 +439,41 @@ nav ul  :hover {
   font-weight: bold;
   left: 1em;
   top: 1px;
-  /* background-color: rgb(159, 180, 37); */
 }
 .contenido{
   top: 3px;
-  /* background-color: #fca863; */
   position: relative;
   width: 60vw;
   display: flex;
   text-align: left;
   height:auto ;
   left: 1em;
+  flex-wrap: wrap;
+  overflow:hidden;
 }
 .lugar{
-/* background-color: burlywood; */
 width: 40%;
 height:3vh;
 color: grey;
 top: 0.5px;
 left: 1em;
+font-size: 15px;
+}
+.fecha{
+  color: grey;
 }
 .publicar{
   margin-top: 2em;
   width: 75%;
-  height: 7vh;
+  max-height: auto;
   font-family: poly;
   border-radius: 10px;
   border:rgb(187, 186, 186) solid 1px;
   padding: 0.5em;
   outline:none;
   background-color: white;
+  overflow:visible;
+  flex-wrap: wrap;
 
 }
 #publicar-btn{
