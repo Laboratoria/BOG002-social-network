@@ -95,11 +95,15 @@ export function postsTimeline() {
       data.forEach((doc) => {
         const post = doc.data();
         const li = `
-          <li id="${doc.id}" > 
-            <button type="button" class="btnDeletePost" data-id="${doc.id}">X</button>
-            <button type="button" class="btnEditPost" data-id="${doc.id}">editar</button>
-            <img id="imgUser" src="assets/IconoUsuarioPostMobile.png">
-            <h3 id="titlePost">${post.Title}</h3> 
+          <li id="${doc.id}" >
+            <div id="containerButtonsDeleteEdit">
+              <button type="button" class="btnEditPost" data-id="${doc.id}"><img id="imageEdit" src="assets/logoEditar.png"></button>
+              <button type="button" class="btnDeletePost" data-id="${doc.id}"><img id="imageDelete" src="assets/logoEliminar.png"></button>
+            </div>
+            <div id="containerTitlePost">
+              <img id="imgUserMobile" src="assets/IconoUsuario.png">
+              <h3 id="titlePost">${post.Title}</h3> 
+            </div> 
             <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>                
             <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
           </li>
@@ -146,12 +150,13 @@ export function postsTimeline() {
     });
   }
 
+  // Función editando publicaciones
   function editColletionPosts() {
     const buttonEditPosts = document.querySelectorAll('.btnEditPost');
     buttonEditPosts.forEach((button) => {
       button.addEventListener('click', () => {
         const buttonAux = button;
-        buttonAux.innerHTML = 'Guardar';
+        buttonAux.innerHTML = '<img id="imageSave" src="assets/logoGuardar.png">';
         const inputText = document.getElementById(`textPost${button.dataset.id}`).value;
         const newInput = document.getElementById(`textPost${button.dataset.id}`);
         const idPost = button.dataset.id;
