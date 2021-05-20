@@ -13,7 +13,8 @@ db.collection("publicaciones").add({
 }
 
 export const SaveUser = (user) => {
-    db.collection("usuarios").add({
+  const usuariosRef =  db.collection("usuarios")
+  .add({
        user
     })
         .then((docRef) => {
@@ -61,3 +62,11 @@ export async function MostrarPublicaciones(){
 // }).catch((error) => {
 //   console.error("Error removing document: ", error);
 // });
+
+// Actualizacion de Usuario
+usuariosRef.doc('ETgI7y2sV97wnUDlngKG')
+.update({
+  nombre: 'Carlos',
+  apellido: 'Perez',
+  descripcion: 'guia'
+})

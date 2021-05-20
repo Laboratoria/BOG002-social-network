@@ -43,6 +43,16 @@ export const LoginUsuario = (email,password) =>{
   let user = firebase.auth().currentUser;
     return user;
 }
+// Actualizar perfil del usuario
+
+user.updateProfile({
+  displayName: "Jane Q. User",
+  photoURL: "https://example.com/jane-q-user/profile.jpg"
+}).then(function() {
+  // Update successful.
+}).catch(function(error) {
+  // An error happened.
+});
  
 // ************************ cerrar sesion ******************************
 export function Salir(){
@@ -56,3 +66,4 @@ export function Salir(){
     console.log('no se pudo cerrar sesion')
   });
 }
+
