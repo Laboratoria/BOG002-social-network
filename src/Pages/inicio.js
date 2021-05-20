@@ -27,19 +27,22 @@ export function inicio(){
 		<img id="foto-usuario" src="./imagenes/usuario.png">
 		<input type="text" class="publicar" placeholder="Publica aqui">
 		
+		
 	<div>
 		<button class="btn" id="publicar-btn"> Publicar </button> 
 	</div>
 	</div>
 
 	<div id="publicaciones">
+	
 		<div class="post">
+		    <span class="id"></span>
 			<span class="nombre-usuario" > </span>
 			<span class="lugar"></span>
 			<div class="contenido"> </div>
 			
 		<div>
-
+		
 	</div>
 
 `  
@@ -59,7 +62,7 @@ export function ParaPublicar(){
 
 	const BtnPublicar = document.getElementById("publicar-btn")
 		  BtnPublicar.addEventListener("click", () => {
-
+            
 			let user = firebase.auth().currentUser; //esta variable se usara en el documento firebaseauth
 			let nombre = user.displayName 
 			let descripcion = document.querySelector(".publicar").value;

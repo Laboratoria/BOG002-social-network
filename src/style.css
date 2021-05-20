@@ -416,7 +416,10 @@ nav ul  :hover {
   position: relative;
   top: 2em;
 }
-
+#icons{
+  display: flex;
+  justify-content: space-around;
+}
 .post{
   height: auto;
   width: 98vw;

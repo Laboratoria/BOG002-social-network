@@ -51,6 +51,7 @@ export const router = (route) => {
                     ParaPublicar();
                     CerrarSesion();
                     MostrarPublicaciones();
+                    
             }else {
               window.location.hash ='#/login'
             }

@@ -1,3 +1,7 @@
+// importamos el mock manual que creamos
+import MockFirebase from '../_mock_/firebase-mock.js'
+global.firebase = MockFirebase();
+
 // importamos la funcion que vamos a testear
 import { myFunction } from '../src/lib/index';
 

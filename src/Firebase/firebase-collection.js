@@ -40,13 +40,14 @@ export async function MostrarPublicaciones(){
     
     db.collection("publicaciones").onSnapshot((querySnapshot) => {
          Publicar.innerHTML = ``;
-         querySnapshot.forEach((doc ) => {
-
-      Publicar.innerHTML += `	
-    	<div class="post">
+         querySnapshot.forEach((doc) => {
+           console.log(doc.id);
+        Publicar.innerHTML += `	
+    	  <div class="post">
          <span class="nombre-usuario" > ${doc.data().publicaciones.nombre }</span>
          <span class="lugar">${doc.data().publicaciones.lugar }</span>
          <div class="contenido">${doc.data().publicaciones.descripcion } </div>
+         
          
       <div>`
     
@@ -54,5 +55,15 @@ export async function MostrarPublicaciones(){
 });
 }
 
-
-
+//Borrar datos
+export function Eliminar(nombre){
+  const borrar = document.getElementById('delete');
+  borrar.addEventListener('click',() =>{
+    db.collection("publicaciones").doc(doc.id)
+    .then(() => {
+      console.log("Document successfully deleted!");
+    }).catch((error) => {
+      console.error("Error removing document: ", error);
+    });
+  })
+}
