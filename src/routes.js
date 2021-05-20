@@ -49,6 +49,7 @@ export const router = (route) => {
             if (user) {
                  content.innerHTML =  inicio();
                     ParaPublicar();
+                    perfil();
                     CerrarSesion();
                     MostrarPublicaciones();
                     
@@ -60,9 +61,14 @@ export const router = (route) => {
         case '#/profile':
            
             if (user) {
+<<<<<<< HEAD
                  content.innerHTML =  perfil();name ();
                                       CerrarSesion();
                     
+=======
+                 content.innerHTML = perfil();
+                                     name ();       
+>>>>>>> 21175b3fcc4346e3f4c93b8a56daf76114bb7969
             }else {
               window.location.hash ='#/login'
             }
