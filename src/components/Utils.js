@@ -35,5 +35,5 @@ export function renderPost(doc) {
     <div class="text"><p class"textPost">${doc.description}</p></div>
     </div>
     `
-    return containerPost
+        //return containerPost
 }

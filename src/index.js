@@ -8,3 +8,14 @@ export function App() {
 
 document.addEventListener("DOMContentLoaded", App);
 window.addEventListener("hashchange", App);
+/*window.addEventListener("load", () => {
+    const db = firebase.firestore();
+    db.collection("usersPost").onSnapshot(query => {
+        let changePost = query.docChanges();
+        changePost.forEach(post => {
+            renderPost(post.doc.data());
+        })
+        console.log("ocurrio un cambio")
+    });
+    console.log("carga pagina")
+});*/

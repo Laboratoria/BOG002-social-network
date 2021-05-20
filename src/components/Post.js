@@ -36,7 +36,6 @@ export function Post() {
         <button id = "addPost" class="button_general" > Add Post </button>
     </div>
     </div>
-    <div id="render"></div>
     <footer class="navBar">
         <div>
           <a href="#/home"><img class="logo-Home" src=./assets/Home.svg alt="arrow"></a>
@@ -80,5 +79,6 @@ export function postFb() {
         const file = document.querySelector("#file").files[0];
         const text = document.querySelector("#addText").value;
         createPost(file, text);
+        window.location.assign("#/home");
     });
 }
