@@ -1,5 +1,4 @@
-import { reset, homeListener, menuPrincipal } from "./Utils.js";
-import { createPost } from "../Firebase/Storage.js";
+import { reset, homeListener, menuPrincipal, renderPost } from "./Utils.js";
 // import { signOut } from "../Firebase/Services.js";
 
 export function Home() {
@@ -28,7 +27,7 @@ export function Home() {
         </ul>
       </nav>
     </header>
-    <div id="container" class="posts"></div>
+    <div id="container" class="posts"><div id="render"></div></div>
 
     </div>
     <footer class="navBar">
@@ -53,6 +52,30 @@ export function menu() {
         homeListener(nav);
         menuPrincipal(menuppal);
     });
+}
+
+export function getData() {
+    const db = firebase.firestore();
+    db.collection("usersPost").onSnapshot(query => {
+        let changePost = query.docChanges();
+        changePost.forEach(post => {
+            console.log(post.doc.data())
+            renderPost(post.doc.data());
+        })
+
+    });
+}
+/*db.collection("usersPost").onSnapshot()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                // doc.data() is never undefined for query doc snapshots
+                //console.log(doc.id, " => ", doc.data());
+                renderPost(doc.data());
+            });
+        })
+        .catch((error) => {
+            console.log("Error getting documents: ", error);
+        });
 }
 
 
