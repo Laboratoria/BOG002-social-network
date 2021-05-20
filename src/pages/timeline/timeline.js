@@ -14,7 +14,7 @@ export function timelinePage() {
         <section id="screenWall">
             <header>
                 <div class="headerWall">
-                    <img src="assets/WikiMomsNegro.png">
+                    <img id="WikiBlack" src="assets/WikiMomsNegro.png">
                     <img id="imgUser" src="assets/IconoUsuario.png">
                 </div>
             </header>

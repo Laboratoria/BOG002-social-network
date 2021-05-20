@@ -5,8 +5,13 @@
     margin: -2%;
 }
 
+#WikiBlack {
+    width: 160px;
+}
+
 #imgUser {
     margin-left: 80px;
+    width: 45px;
 }
 
 ul {
@@ -57,7 +62,7 @@ li {
 #containerTitlePost {
     display: flex;
     flex-direction: row;
-    margin-top: 5px;
+    margin-top: -8px;
 }
 
 #imgUserMobile {
@@ -76,55 +81,54 @@ li {
     font-size: 10px;
     text-align: right;
     margin-right: 20px;
-    margin-top: 0px;
+    margin-top: -8px;
 }
 
 .btnDeletePost {
     background-color: #350B1F;
     border-radius: 14px;
-    width: 30px;
-    height: 30px;
+    width: 27px;
+    height: 27px;
     margin-top: 2%;
-    margin-left: 2%;
+    margin-left: 1%;
     
 } 
 
 .btnEditPost {
     background-color: #350B1F;
     border-radius: 14px;
-    width: 30px;
-    height: 30px;
+    width: 27px;
+    height: 27px;
     margin-top: 2%;
-    margin-left: 74%;
-    
+    margin-left: 78%;
 }
 
 #imageEdit {
     width: 12px;
     background-color: #350B1F;
-    }
+    margin-top: 2px;
+}
 
 #imageDelete {
     width: 12px;
     background-color: #350B1F;
-    margin: 2px;
-    }
+    margin-top: 2px;
+    
+}
 
 #imageSave {
-    width: 14px;
+    width: 12px;
     background-color: #350B1F;
-    margin: 1px 1px 0 0;
-    }
+    margin: 2px 6px 0px 0px;
+}
 
 input {
     background-color: white;
     font-family: 'Yusei Magic', sans-serif;
     font-size: 13px;
-    /*text-align: center;*/
     width: 230px;
     border:none;
     margin-bottom: 10px;
-   
 }
 
 .modal-container {
@@ -177,4 +181,66 @@ input {
     width: 70px;
     height: 30px;
     border:none;
+}
+
+@media (min-width: 700px) {
+
+    .headerWall {
+        padding: 1%;
+        }
+
+    #WikiBlack {
+        width: 220px;
+        padding-bottom: 5px;
+    }
+
+    #imgUser {
+        margin-left: 200px;
+        width: 60px;
+        padding-top: 7px;
+    }
+
+    #btnLogOut {
+        margin: 4% 0% 0% 52%;
+    }
+
+    li {
+        margin: 0px 0px 20px 80px;
+        width: 500px;
+    }
+
+    #inputPost {
+        font-size: 14px;
+        width: 390px;
+        height: 35px;
+        padding: 0%;
+        margin: 25px 10px 0px 0px;
+    }
+
+    input {
+        width: 400px;        
+    }
+
+    .btnEditPost {
+        margin-left: 84%;
+    }
+
+    #datePost {
+        font-size: 11px;
+        margin-right: 100px;
+        margin-top: -30px;
+        margin-bottom: 40px;
+    }
+
+    #containerTitlePost {
+        margin-top: -27px;
+        
+    }
+}
+
+@media (min-width: 1024px) { 
+
+  
+
+
 }

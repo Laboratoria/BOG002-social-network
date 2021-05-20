@@ -2,11 +2,20 @@ section {
     width: 320px;
 }
 
+.background-image {
+    display: flex;
+    justify-content: center;
+}
+
 header {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#ImageHeader {
+    width: 240px;
 }
 
 body {
@@ -96,10 +105,50 @@ h2 {
     height: 35px;
 }
 
-@media (min-width: 780px) {
+@media (min-width: 700px) {
+
+    section {
+        width: 700px;
+    }
 
     .containerLogIn{
-        width: 400px;
+        width: 65%;
+        margin-left: 130px;
+    }
+    
+    .containerCreateAccount {
+        width: 65%;
+        margin-left: 130px;
     } 
     
+    h2 {
+        margin: 2% 18% 5% 18%;
+    }
+
+    .input {
+        width: 300px;
+    }
+
+    #ImageHeader {
+        width: 320px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    section {
+        width: 1024px;
+        height: 770px;
+        border-radius: 15px;
+        margin-top: 50px;
+        background-color:#c997c0;
+    } 
+
+    body {
+        background: url(/src/assets/FondoDesktop.jpg);
+    }
+
+    #ImageHeader {
+        margin: 20px;
+    }
 }

@@ -4,8 +4,9 @@ import { Login } from '../../index.js';
 export function loginPage() {
   const view = `
       <section id="screenLogIn">
+      
         <header>
-          <img src="assets/LogowikimomsMobile.png">
+          <img id="ImageHeader" src="assets/LogoWikimoms.png">
           <h2>WikiMoms te ayuda a compartir experiencias en tus etapas de embarazo, lactancia y postparto.</h2>
         </header>
 
