@@ -3,12 +3,12 @@ import {home, BotondeCrearCuentaconGoogle} from './Pages/Home.js';
 import {FormularioDeRegistro,  Datos_de_registro} from './Pages/SingUp.js';
 import {FormularioDeIngreso,DatosDeLogin} from './Pages/Login.js';
 import {SoloUsuarios} from './Firebase/firebaseAuth.js';
-import { inicio, CerrarSesion, ParaPublicar} from './Pages/inicio.js';
+import { inicio, CerrarSesion, FormPublicar, LeerPublicacion} from './Pages/inicio.js';
 import { perfil, name  } from './Pages/perfil.js';
 import { FormularioPerfilDeUsuario, EditarPerfil } from './Pages/DatosUsuario.js';
 import { Error404} from './Pages/Error 404.js';
 import { search } from './Pages/search.js';
-import { MostrarPublicaciones } from './Firebase/firebase-collection.js';
+//import { MostrarPublicaciones } from './Firebase/firebase-collection.js';
 
  
 let content = document.getElementById('root');
@@ -48,9 +48,10 @@ export const router = (route) => {
           
             if (user) {
                  content.innerHTML =  inicio();
-                    ParaPublicar();
+                    FormPublicar();
+                    LeerPublicacion();
                     CerrarSesion();
-                    MostrarPublicaciones();
+                   // MostrarPublicaciones();
             }else {
               window.location.hash ='#/login'
             }

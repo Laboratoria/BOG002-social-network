@@ -27,11 +27,9 @@ export const LoginUsuario = (email,password) =>{
     .then((userCredential) => {
       // Signed in
       userCredential.user;
-      console.log(userCredential.user)
       window.location.hash ='#/release'
     })
     .catch((error) => {
-      console.log('error',error);
       modalErrorLogin(error);
     });
   }

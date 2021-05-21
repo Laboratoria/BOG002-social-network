@@ -3,11 +3,12 @@
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.3fr 3fr 0.3fr;
+    grid-template-rows: 0.3fr 1fr  2fr 0.3fr;
     grid-gap:0.2rem;
     grid-template-areas: 
     "header header header"
     "section section section"
+    "div div div"
     "footer footer footer";
   
   }
@@ -30,12 +31,14 @@
     position: relative;
     cursor: pointer;
   }
- .enlaces{
+  .enlaces{
     background-color: #ffff;
-     display: none;
-     position: absolute;
-     top: 20px;
-     right: 5px;
+    height: 100px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 5px;
          
  }
 
@@ -46,6 +49,10 @@
   .setting:hover{
     background-color: #FFE8B4;
   }
+  section img{
+    width: 50px;
+    height: 50px;
+  }
  
   section .perfil{
     position: relative;
@@ -55,10 +62,7 @@
     align-content: baseline;
     align-items: center;
   }
-  section #foto-perfil{
-    width: 130px;
-    height: 130px;
-  }
+ 
   .descripcion{
     color: black;
     width: 100vw;
@@ -66,6 +70,12 @@
     font-size: 18px;
     position: relative;
     top: 0px;
+   }
+   div .all-post{
+     grid-area: div;
+     font-size: 12px;
+    color: black;
+     
    }
   footer{
     background: #FFE8B4;
@@ -82,6 +92,45 @@
   footer ul  :hover {
     background-color: #FFD575;
    }
+   #post{
+    width: 100vw;
+    height: 200px;
+    position: initial;
+  }
   
-
+  .publicar{
+    
+    margin-top: 2em;
+    width: 75%;
+    max-height: auto;
+    font-family: poly;
+    border-radius: 10px;
+    border:rgb(187, 186, 186) solid 1px;
+    padding: 0.5em;
+    outline:none;
+    background-color: white;
+    overflow:visible;
+    flex-wrap: wrap;
+  
+  }
+  #publicar-btn{
+    position: relative;
+    top: 0%;
+    width: 25vw;
+    height: 5vh;
+    padding: 0.5em;
+    color: #fff;
+  } 
+  .all-post {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+  }
+  .all-post  p{
+    position: relative;
+    font-size: 12px;
+    color: black;
+    
+  }
+  
   

@@ -10,8 +10,8 @@ export function perfil(){
 		<h1>FoodFans<h1></div>
 		<div id="configuracion"><img src="./imagenes/Setting.svg">
 		<div class="enlaces" id="enlaces">
-		<span class= "setting"><a href="#/editarPerfil">Editar Perfil</a></span>
-		<span class= "setting" id="cerrar-sesion">Cerrar sesion</span>
+		<h3 class= "setting"><a href="#/editarPerfil">Editar Perfil</a></h3>
+		<h3 class= "setting" id="cerrar-sesion"><a href="#">Cerrar sesion</a></h3>
 		</div>
 		</div> 
 	 </header>
