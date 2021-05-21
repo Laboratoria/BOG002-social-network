@@ -1,13 +1,35 @@
 import { reset, homeListener, menuPrincipal, renderPost } from "./Utils.js";
 // import { signOut } from "../Firebase/Services.js";
 
+const renderEachPost = (templateElement) => {
+  const timeline = templateElement.dataset.timeline;
+  const timelineData = JSON.parse(timeline);
+  timelineData.forEach((post) => {
+    renderPost(post);
+  });
+};
+
+export const renderPosts = async () => {
+  const templateApp = document.querySelector("#template");
+  const timeline = templateApp.dataset.timeline;
+
+  if (timeline) {
+    renderEachPost(templateApp);
+  } else {
+    setTimeout(() => {
+      renderEachPost(templateApp);
+    }, 3000);
+  }
+};
+
 export function Home() {
-    reset();
-    const template = document.createElement("div");
-    template.setAttribute("id", "home");
-    template.insertAdjacentHTML(
-        "afterbegin",
-        `<header class="headerHome">
+  reset();
+
+  const template = document.createElement("div");
+  template.setAttribute("id", "home");
+  template.insertAdjacentHTML(
+    "afterbegin",
+    `<header class="headerHome">
       <div>
         <img class="logoHome" src="./assets/LogoHome.svg" alt="Gleam logo">
       </div>
@@ -27,7 +49,9 @@ export function Home() {
         </ul>
       </nav>
     </header>
-    <div id="container" class="posts"><div id="render"></div></div>
+    <div id="container" class="posts">
+      <div id="render"></div>
+    </div>
 
     </div>
     <footer class="navBar">
@@ -42,29 +66,19 @@ export function Home() {
         </div>
     </footer>
     `
-    );
-    return template;
+  );
+  return template;
 }
+
 export function menu() {
-    const nav = document.querySelector("#hamburger_menu button");
-    const menuppal = document.querySelector(".menuppal");
-    nav.addEventListener("click", (e) => {
-        homeListener(nav);
-        menuPrincipal(menuppal);
-    });
+  const nav = document.querySelector("#hamburger_menu button");
+  const menuppal = document.querySelector(".menuppal");
+  nav.addEventListener("click", (e) => {
+    homeListener(nav);
+    menuPrincipal(menuppal);
+  });
 }
 
-export function getData() {
-    const db = firebase.firestore();
-    db.collection("usersPost").onSnapshot(query => {
-        let changePost = query.docChanges();
-        changePost.forEach(post => {
-            console.log(post.doc.data())
-            renderPost(post.doc.data());
-        })
-
-    });
-}
 /*db.collection("usersPost").onSnapshot()
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {

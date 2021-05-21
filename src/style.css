@@ -38,7 +38,7 @@ body {
     ;
 }
 
-#template #container {
+ #container {
     display: flex;
     position: relative;
     justify-content: space-around;
@@ -530,6 +530,7 @@ footer {
     display: flex;
     flex-direction: column;
     padding-top: 70px;
+    /* margin-top: 400px; */
 }
 
 .newPost {
