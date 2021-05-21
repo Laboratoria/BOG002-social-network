@@ -18,12 +18,7 @@ export function inicio() {
 		  </div>
 		</div> 
 	 </header>
-       <form id= 'post'>
-	   <input type="file" id="my-file"></input>
-	   <input type="text" class="input" id="lugar" placeholder="lugar"></input>
-		<textarea type="text" class="publicar" placeholder="Publica aqui"></textarea>
-		<button type="submit" class="btn" id="publicar-btn"> Publicar </button> 
-		</form>
+       <button type="submit" class="btn" id="abrir-modal"> Publicar </button> 
 		<div class="all-post" id="all-post"></div>
 	 <footer>
 		<ul>
@@ -47,46 +42,81 @@ export function CerrarSesion() {
 
 //  obtener valores
 export function FormPublicar() {
+	const botonAbrirModal = document.getElementById('abrir-modal');
+	const modalPublicacion = document.getElementById('post_modal');
+	const cerrarModal = document.getElementById('publicar-btn')
+	botonAbrirModal.addEventListener('click', () => {
+		modalPublicacion.classList.add('show');
+	})
+	cerrarModal.addEventListener('click', () => {
+		modalPublicacion.classList.remove('show');
+	})
+
 
 	const formPublicacion = document.getElementById("post")
 	formPublicacion.addEventListener("submit", (e) => {
-        e.preventDefault();
-	    let descripcion = document.querySelector(".publicar").value;
+		e.preventDefault();
+		let descripcion = document.querySelector(".publicar").value;
 		let lugar = document.querySelector("#lugar").value;
 		let user = firebase.auth().currentUser; //esta variable se usara en el documento firebaseauth
-		let nombre = user.displayName ;
-		crearPublicacion(descripcion,lugar);
-        formPublicacion.reset();
+		const n = user.displayName;
+		crearPublicacion(n, descripcion, lugar);
 
 
-	})		
-	function crearPublicacion(descripcion,lugar){
+
+	})
+	function crearPublicacion(n, descripcion, lugar) {
 		let publicaciones = {
+			nombre: n,
 			descripcion: descripcion,
 			lugar: lugar,
 			foto: false,
-			//fecha: objectoAccion.toLocaleString(),
-			// fecha: firebase.firestore.FieldValue.serverTimestamp(),
-		}	
-			SavePublicaciones(publicaciones);
+
+		}
+		SavePublicaciones(publicaciones);
 	}
-		
+
 }
-export function LeerPublicacion (){
+export function LeerPublicacion() {
 	db.collection("publicaciones")
-	 .onSnapshot((snapshot)=>{
-       const post = document.getElementById('all-post');
-	   post.innerHTML = '';
-	  snapshot.forEach((doc => {
-		
-		post.innerHTML +=`
-	       <div class= "post">
+		.onSnapshot((snapshot) => {
+			const post = document.getElementById('all-post');
+			post.innerHTML = '';
+			snapshot.forEach((doc => {
+
+				post.innerHTML += `
+		   
+	     <article class="post" id="${doc.id}">
+		    <h3>${doc.data().publicaciones.nombre}</h3>
             <p>${doc.data().publicaciones.descripcion}</p>
-			<p>${doc.data().publicaciones.nombre}</p>
-		 </div>	
-		 <div id="opciones">
-		 </div>
+			<h5>${doc.data().publicaciones.lugar}</h5>
+			<div id="opciones">
+		    <button id="borrar">Delete</button>
+		    <button class="editar">Editar</button>
+		     </div>
+		</article>
         `
-	  }))
-	})
+			}))
+		})
+}
+export function EditarPublicacion() {
+	db.collection("publicaciones")
+		.onSnapshot("child changed", (snapshot) => {
+			const elementoEditar = document.getElementById('${doc.id}');
+			const botonEditar = document.querySelector('.editar');
+			botonEditar.addEventListener('click', () => {
+				console.log('boton activado')
+				elementoEditar.innerHTML = FormPublicar();
+			})
+		})
+}
+export function EliminarPublicacion() {
+	const BotonEliminar = document.getElementById("borrar");
+	BotonEliminar.addEventListener("click", () => {
+		db.collection("publicaciones").doc(id).delete().then(function () {
+			reset();
+		}).catch(function (error) {
+			console.error('Error removiendo documento', error)
+		});
+	});
 }
