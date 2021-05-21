@@ -46,11 +46,14 @@
 <section class="container_modal" id="login_modal">
   <div class="modal">
 	   <form>
+      
 			<input type="text" class="input" id="name" placeholder="Name" name="name"></input>
 			<input type="text" class="input"id="apellido" placeholder="Apellido" name="apellido"></input>
 			<input type="text" class="input" id="descripcion" placeholder="Descripcion" name="descripcion"></input>
 			<button id='guardar'>Guardar</button>
+      
 	    </form>
+      
     </div>
    </section>
 	
@@ -58,10 +61,15 @@
 <section class="container_modal" id="post_modal">
   <div class="modal">
     <form id= 'post'>
+      <p id="cerrar">X</p>
       <input type="file" id="my-file"></input>
-      <input type="text" class="input" id="lugar" placeholder="lugar"></input>
-      <textarea type="text" class="publicar" placeholder="descripcion"></textarea>
+      <input type="text" class="input" id="lugar" placeholder="lugar" required></input>
+      <textarea type="text" class="publicar" placeholder="descripcion" required></textarea>
       <button type="submit" class="btn" id="publicar-btn"> Publicar </button> 
+      
+		    <button id="${doc.id}" >Delete</button>
+		    <button type="button" id="${doc.id}">Editar</button>
+		     
 	    </form>
     </div>
    </section>

@@ -21,7 +21,7 @@ export function perfil(){
 	  <h1 id="Nombre-de-usuario">Pepito Perez</h1>
 	  <p class="descripcion">Aqui va una breve descripcion del usuario</p>
 	  </div>
-	  <div id="publicaciones"></div>
+	  <div class="all-post" id="all-post"></div>
 	  </section>
 	
 	  <footer>

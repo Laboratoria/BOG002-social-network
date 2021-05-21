@@ -61,11 +61,12 @@ export const router = (route) => {
            
             if (user) {
                  content.innerHTML =  perfil();name ();
-                 
+                                    
                     
             }else {
               window.location.hash ='#/login'
             } 
+            
                 
                 break;
         case '#/search':

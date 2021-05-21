@@ -44,14 +44,17 @@ export function CerrarSesion() {
 export function FormPublicar() {
 	const botonAbrirModal = document.getElementById('abrir-modal');
 	const modalPublicacion = document.getElementById('post_modal');
-	const cerrarModal = document.getElementById('publicar-btn')
+	const cerrarModal = document.getElementById('publicar-btn');
+	const cerrarSinPublicar = document.getElementById('cerrar');
 	botonAbrirModal.addEventListener('click', () => {
 		modalPublicacion.classList.add('show');
 	})
 	cerrarModal.addEventListener('click', () => {
 		modalPublicacion.classList.remove('show');
 	})
-
+    cerrarSinPublicar.addEventListener('click', () => {
+		modalPublicacion.classList.remove('show');
+	})
 
 	const formPublicacion = document.getElementById("post")
 	formPublicacion.addEventListener("submit", (e) => {
@@ -90,31 +93,35 @@ export function LeerPublicacion() {
 		    <h3>${doc.data().publicaciones.nombre}</h3>
             <p>${doc.data().publicaciones.descripcion}</p>
 			<h5>${doc.data().publicaciones.lugar}</h5>
-			<div id="opciones">
-		    <button id="borrar">Delete</button>
-		    <button class="editar">Editar</button>
-		     </div>
+			
 		</article>
         `
 			}))
 		})
 }
-export function EditarPublicacion() {
-	db.collection("publicaciones")
-		.onSnapshot("child changed", (snapshot) => {
-			const elementoEditar = document.getElementById('${doc.id}');
-			const botonEditar = document.querySelector('.editar');
-			botonEditar.addEventListener('click', () => {
-				console.log('boton activado')
-				elementoEditar.innerHTML = FormPublicar();
-			})
-		})
+export function EditarPublicacion(lugar,descripcion) {
+	const botonEditar = document.querySelector('btn')
+	botonEditar.addEventListener('click',()=>{
+		console.log('edicion activada')
+		
+	})
+	let publicaciones = {
+		descripcion: descripcion,
+		lugar: lugar,
+		foto: false,
+	}
+	db.collection("publicaciones").set()
+	
+	
+		
+			
 }
-export function EliminarPublicacion() {
-	const BotonEliminar = document.getElementById("borrar");
+export function EliminarPublicacion(id) {
+	const BotonEliminar = document.getElementById("${doc.id}");
 	BotonEliminar.addEventListener("click", () => {
-		db.collection("publicaciones").doc(id).delete().then(function () {
-			reset();
+		db.collection("publicaciones").doc(id).delete()
+		.then(function () {
+			console.log('eliminado')
 		}).catch(function (error) {
 			console.error('Error removiendo documento', error)
 		});
