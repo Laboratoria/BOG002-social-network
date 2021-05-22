@@ -433,9 +433,11 @@ border-radius: 5px;
 }
 .interaciones{
   display: inline-flex;
-  align-items: stretch;
+  justify-content: space-around;
   position: relative;
   left: 1em;
+  margin-top: 1em;
+  width: 60vw;
 }
 #foto-usuario{
   width: 50px;

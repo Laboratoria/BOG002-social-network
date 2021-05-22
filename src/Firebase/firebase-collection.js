@@ -28,26 +28,30 @@ export const SaveUser = (user) => {
   }
    // *********************** accediendo a todos los documentos de la coleccion ******************
 
-   db.collection("publicaciones") .orderBy("fecha", "desc");
-export async function MostrarPublicaciones(){
 
-     const Publicar = document.getElementById("publicaciones")
-     db.collection("publicaciones").onSnapshot((Snapshot) => {
-  
+export  function MostrarPublicaciones(){
+
+     const  Publicar = document.getElementById("publicaciones");
+     db.collection("publicaciones").onSnapshot((querySnapshot) => {
+
         Publicar.innerHTML = ``;
-        Snapshot.forEach((doc ) => {
-          
+        querySnapshot.forEach((doc ) => {
+         
         Publicar.innerHTML += `	
-              	<div class="post">
-                    <span class="nombre-usuario" > <a href="#profile">${doc.data().publicaciones.nombre}</a> </span>
+              	<div class="post" data-id="${doc.id}">
+                    <span class="nombre-usuario" > ${doc.data().publicaciones.nombre} </span>
                     <span class="contenido">${doc.data().publicaciones.descripcion } </span>
                     <div id="fecha-lugar">
                        <span class="fecha" > ${doc.data().publicaciones.fecha }</span>
                        <span class="lugar"> <img src="./imagenes/Location-1.svg">${doc.data().publicaciones.lugar }</span>
                     </div>
                     <div class="interaciones">
-                    <img src="./imagenes/Star-1.svg"> 
-                    <img src="./imagenes/More Square.png">
+                        <img src="./imagenes/Star-1.svg"> 
+                        <img src="./imagenes/More Square.png">
+                        <i class="far fa-edit" ></i>
+                        <span class="basura">
+                        <i class="fas fa-trash-alt" ></i>
+                        </span>
                     </div>
                  <div>`
                 
@@ -55,9 +59,20 @@ export async function MostrarPublicaciones(){
 });}
 
    // *********************** eliminando  los documentos de la coleccion ******************
+   export function eliminar (){
+     const  Publicar = document.getElementById("publicaciones");
+     const btnsBorrar = Publicar.querySelectorAll(".basura");
 
-// db.collection("cities").doc("DC").delete().then(() => {
-//   console.log("Document successfully deleted!");
-// }).catch((error) => {
-//   console.error("Error removing document: ", error);
-// });
+btnsBorrar.forEach((btn) =>
+         btn.addEventListener("click",  () => {
+
+            db.collection("publicaciones").doc(id).delete()
+
+            .then(() => {
+                   console.log("Document successfully deleted!");
+})
+            .catch((error) => {
+                   console.error("Error removing document: ", error);
+});
+}))
+}
