@@ -8,7 +8,7 @@ import { perfil, name  } from './Pages/perfil.js';
 import { FormularioPerfilDeUsuario, EditarPerfil } from './Pages/DatosUsuario.js';
 import { Error404} from './Pages/Error 404.js';
 import { search } from './Pages/search.js';
-import { MostrarPublicaciones } from './Firebase/firebase-collection.js';
+import { eliminar, MostrarPublicaciones } from './Firebase/firestore.js';
 
  
 let content = document.getElementById('root');
@@ -49,9 +49,9 @@ export const router = (route) => {
             if (user) {
                  content.innerHTML =  inicio();
                     ParaPublicar();
-                    perfil();
                     CerrarSesion();
                     MostrarPublicaciones();
+                    eliminar();
                     
             }else {
               window.location.hash ='#/login'
@@ -61,8 +61,9 @@ export const router = (route) => {
         case '#/profile':
            
             if (user) {
-                 content.innerHTML = perfil();
-                                     name ();       
+                 content.innerHTML =  perfil();name ();
+                                      CerrarSesion();
+     
             }else {
               window.location.hash ='#/login'
             }

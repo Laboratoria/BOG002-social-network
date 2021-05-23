@@ -1,4 +1,4 @@
-import {SaveUser} from '../Firebase/firebase-collection.js';
+import {SaveUser} from '../Firebase/firestore.js';
 
 export function FormularioPerfilDeUsuario(){
     const html = `
@@ -20,13 +20,13 @@ export function FormularioPerfilDeUsuario(){
 
 export function EditarPerfil (){
     const InfoPerfil = document.getElementById('formulario');
-	InfoPerfil.addEventListener('submit',(event) =>{
-		event.preventDefault();
-	   let fileImage = document.getElementById('my-file');
-	   console.log(fileImage.files)
-       let nombre = document.getElementById('name').value;
-	   let apellido = document.getElementById('apellido').value;
-	   let descripcion = document.getElementById('descripcion').value;
+		  InfoPerfil.addEventListener('submit',(event) =>{
+
+	   event.preventDefault();
+	   let fileImage 	 = document.getElementById('my-file');				        
+       let nombre   	 = document.getElementById('name').value;
+	   let apellido		 = document.getElementById('apellido').value;
+	   let descripcion	 = document.getElementById('descripcion').value;
       
 		const user = {
 			nombre,
@@ -34,10 +34,8 @@ export function EditarPerfil (){
 			descripcion
 		}
 		SaveUser(user);
-		
 	});
-
-	}
+}
 
 	export function cargarImagen(){
 		const file = document.getElementById('my-file')[0];

@@ -3,7 +3,7 @@
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.3fr 3fr 0.3fr;
+    grid-template-rows: 0.3fr 2fr 0.3fr;
     grid-gap:0.2rem;
     grid-template-areas: 
     "header header header"
@@ -35,8 +35,7 @@
      display: none;
      position: absolute;
      top: 20px;
-     right: 5px;
-         
+     right: 5px;      
  }
 
  #configuracion:hover .enlaces{
@@ -66,18 +65,38 @@
     font-size: 18px;
     position: relative;
     top: 0px;
+    text-align: center;
    }
   footer{
-    background: #FFE8B4;
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    bottom: 0%;
+    padding: 0%;
+    margin: 0%;
+    background-color: transparent;
     grid-area: footer;
   }
   footer ul{
-    display: flex;
-    justify-content: space-around;
+    display: inline-flex;
+    justify-content:space-between;
+    width: 100%;
+    padding-left: 0%;
+    height: 100%;
+    background-color: #FFE8B4;
+    border-top: rgb(212, 212, 212) solid 1px;
   }
   footer ul li{
+    margin: 0%;
+    padding: 1em;
+    list-style: none;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   footer ul  :hover {
     background-color: #FFD575;

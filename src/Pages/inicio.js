@@ -1,5 +1,5 @@
 import {Salir, autenticacionUsuario} from '../Firebase/firebaseAuth.js';
-import{ SavePublicaciones} from '../Firebase/firebase-collection.js'
+import{ SavePublicaciones} from '../Firebase/firestore.js'
 
 
 export function inicio(){
@@ -8,7 +8,11 @@ export function inicio(){
     
 	<div id="encabezado">
 		<div id="logo"> FoodFans </div>
-		<div id="configuracion"><img src="./imagenes/Setting.svg"></div> 
+		<div id="configuracion"><img src="./imagenes/Setting.svg">
+		<!-- <div class="enlaces" id="enlaces">
+				<span class= "setting"><a href="#/editarPerfil">Editar Perfil</a></span>
+				<span class= "setting" id="cerrar-sesion">Cerrar sesion</span> -->
+		</div> 
 	</div>
 
 	<nav>
@@ -49,25 +53,24 @@ export function CerrarSesion()	{
 }
 
 	//  obtener valores
-export function ParaPublicar(){
+export async function ParaPublicar(){
 
 
 	const BtnPublicar = document.getElementById("publicar-btn")
-		  BtnPublicar.addEventListener("click", (e) => {
+		  await BtnPublicar.addEventListener("click", (e) => {
 			e.preventDefault();
-			let user = firebase.auth().currentUser; //esta variable se usara en el documento firebaseauth
-			let nombre = user.displayName 
-			let descripcion = document.querySelector(".publicar").value;
-			let lugar = document.querySelector("#input-lugar").value;
-			const objectoAccion = new Date(Date.now());
+			const user   		= firebase.auth().currentUser; //esta variable se usara en el documento firebaseauth
+			const nombre 		= user.displayName 
+			const descripcion   = document.querySelector(".publicar").value;
+			const lugar 		= document.querySelector("#input-lugar").value;
+			const objectoAccion =  Date(Date.now());
 
 
-			 let publicaciones= {
+			 const publicaciones= {
    					nombre,
 					descripcion,
 					foto: false,
 					fecha: objectoAccion.toLocaleString(),
-					// fecha: firebase.firestore.FieldValue.serverTimestamp(),
    					lugar,
 			}
 			SavePublicaciones(publicaciones);
