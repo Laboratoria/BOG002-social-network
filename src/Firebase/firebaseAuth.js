@@ -37,8 +37,7 @@ export const LoginUsuario = (email,password) =>{
     return user;
 }
 // Actualizar perfil del usuario
-
-user.updateProfile({
+/* user.updateProfile({
   displayName: "Jane Q. User",
   photoURL: "https://example.com/jane-q-user/profile.jpg"
 }).then(function() {
@@ -46,7 +45,7 @@ user.updateProfile({
 }).catch(function(error) {
   // An error happened.
 });
- 
+  */
 // ************************ cerrar sesion ******************************
 export function Salir(){
   
