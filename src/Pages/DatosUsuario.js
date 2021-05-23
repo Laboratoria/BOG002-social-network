@@ -1,4 +1,4 @@
-import {SaveUser} from '../Firebase/firebase-collection.js';
+import {SaveUser} from '../Firebase/firestore.js';
 
 export function FormularioPerfilDeUsuario(){
     const html = `

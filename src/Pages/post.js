@@ -1,5 +1,3 @@
-//  import {MostrarPublicaciones} from '../Firebase/firebase-collection'
-
 
     export function PrintCollection (Publicar, ID, NombreUser, Descripcion, Fecha, Lugar){{
         Publicar.innerHTML += `	

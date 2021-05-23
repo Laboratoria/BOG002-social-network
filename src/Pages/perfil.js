@@ -1,4 +1,4 @@
-import {SaveUser} from '../Firebase/firebase-collection.js';
+
 export function perfil(){
 
     let html= `

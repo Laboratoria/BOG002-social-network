@@ -8,7 +8,7 @@ import { perfil, name  } from './Pages/perfil.js';
 import { FormularioPerfilDeUsuario, EditarPerfil } from './Pages/DatosUsuario.js';
 import { Error404} from './Pages/Error 404.js';
 import { search } from './Pages/search.js';
-import { eliminar, MostrarPublicaciones } from './Firebase/firebase-collection.js';
+import { eliminar, MostrarPublicaciones } from './Firebase/firestore.js';
 
  
 let content = document.getElementById('root');

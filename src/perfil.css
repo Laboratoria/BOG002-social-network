@@ -3,7 +3,7 @@
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.3fr 3fr 0.3fr;
+    grid-template-rows: 0.3fr 2fr 0.3fr;
     grid-gap:0.2rem;
     grid-template-areas: 
     "header header header"
@@ -35,8 +35,7 @@
      display: none;
      position: absolute;
      top: 20px;
-     right: 5px;
-         
+     right: 5px;      
  }
 
  #configuracion:hover .enlaces{
