@@ -26,7 +26,7 @@ export const LoginUsuario = (email,password) =>{
   .signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // Signed in
-      userCredential.user;
+      userCredential.user.currentUser;
       window.location.hash ='#/release'
     })
     .catch((error) => {

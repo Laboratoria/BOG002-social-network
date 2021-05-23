@@ -18,7 +18,7 @@ export function inicio() {
 		  </div>
 		</div> 
 	 </header>
-       <button type="submit" class="btn" id="abrir-modal"> Publicar </button> 
+       <button type="submit" class="btn btn-publicar" id="abrir-modal"> Publicar </button> 
 		<div class="all-post" id="all-post"></div>
 	 <footer>
 		<ul>
@@ -62,17 +62,19 @@ export function FormPublicar() {
 		let descripcion = document.querySelector(".publicar").value;
 		let lugar = document.querySelector("#lugar").value;
 		let user = firebase.auth().currentUser; //esta variable se usara en el documento firebaseauth
-		const n = user.displayName;
-		crearPublicacion(n, descripcion, lugar);
+		let n = user.displayName;
+		let userId = user.uid;
+		crearPublicacion(n, descripcion, lugar,userId,);
 
 
 
 	})
-	function crearPublicacion(n, descripcion, lugar) {
+	function crearPublicacion(n, descripcion, lugar, userId) {
 		let publicaciones = {
 			nombre: n,
 			descripcion: descripcion,
 			lugar: lugar,
+			UserID : userId,
 			foto: false,
 
 		}
@@ -91,6 +93,7 @@ export function LeerPublicacion() {
 		   
 	     <article class="post" id="${doc.id}">
 		    <h3>${doc.data().publicaciones.nombre}</h3>
+			<p>${doc.data().publicaciones.UserID}</p>
             <p>${doc.data().publicaciones.descripcion}</p>
 			<h5>${doc.data().publicaciones.lugar}</h5>
 			
@@ -99,7 +102,7 @@ export function LeerPublicacion() {
 			}))
 		})
 }
-export function EditarPublicacion(lugar,descripcion) {
+/* export function EditarPublicacion(lugar,descripcion) {
 	const botonEditar = document.querySelector('btn')
 	botonEditar.addEventListener('click',()=>{
 		console.log('edicion activada')
@@ -115,7 +118,7 @@ export function EditarPublicacion(lugar,descripcion) {
 	
 		
 			
-}
+} */
 export function EliminarPublicacion(id) {
 	const BotonEliminar = document.getElementById("${doc.id}");
 	BotonEliminar.addEventListener("click", () => {

@@ -18,11 +18,12 @@ export function perfil(){
       <section>
 	  <div class="perfil">
 	  <img src="./imagenes/usuario.png" id="foto-perfil">
-	  <h1 id="Nombre-de-usuario">Pepito Perez</h1>
-	  <p class="descripcion">Aqui va una breve descripcion del usuario</p>
+	  <h1 id="Nombre-de-usuario"></h1>
+	  <p class="descripcion"></p>
 	  </div>
-	  <div class="all-post" id="all-post"></div>
+	  
 	  </section>
+	  <div class="all-post" id="all-post"></div>
 	
 	  <footer>
 		<ul>
@@ -42,16 +43,48 @@ export function perfil(){
 	let n =user.displayName;
 	Nombre_usuario.innerHTML =  n;
   }
+  export function LeerPublicacionUid() {
+	let user = firebase.auth().currentUser;
+	db.collection('publicaciones')
+	 .onSnapshot((snapshot) => {
+			const post = document.getElementById('all-post');
+			post.innerHTML = '';
+			snapshot.forEach((doc => {
 
-			
-					 
-
-    function configuracion(){
-		const BotonConfiguracion = document.getElementById('configuracion');
-		BotonConfiguracion.addEventListener('click', () =>{
-		 document.querySelectorAll('.enlaces').style.display = "block";	
-		})
+				post.innerHTML += `
+		   
+	     <article class="post" id="${doc.id}">
+		    <h3>${doc.data().publicaciones.nombre}</h3>
+			<p>${doc.data().publicaciones.UserID}</p>
+            <p>${doc.data().publicaciones.descripcion}</p>
+			<h5>${doc.data().publicaciones.lugar}</h5>
+			<div id="opciones">
+			<button class="enable">Delete</button>
+		    <button type="button" class="enable">Editar</button>
+			</div>
+		</article>
+        `
+			}))
 	
-	}
+		})
+		return post;
+}
+
+
+ // resulta que al obtener nuestro boton editar no permite
+ //hacer el addEventListener pues es un NodeList en este caso debemos iterar sobre cada elemento
+ // y luego aplicarle el escuchador de eventos
+  
+ const botonesEditar = document.querySelectorAll('button .enable');
+ console.log(botonesEditar);
+export function editarPerfil(){
+  botonesEditar.forEach(botonEditar =>{
+	botonEditar.addEventListener('click',()=>{
+		console.log("aqui edito")
+	})
+	
+  })
+}
+	
 	
 	

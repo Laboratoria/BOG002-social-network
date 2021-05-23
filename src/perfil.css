@@ -97,6 +97,16 @@
     height: 500px;
     position: initial;
   }
+  .btn-publicar{
+    position: relative;
+    left: 40%;
+    top: 10px;
+  }
+  #cerrar{
+    position: relative;
+    left: 110px;
+    top: -15px;
+  }
   
   .publicar{
     
