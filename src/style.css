@@ -500,7 +500,8 @@ footer {
 
 .menuppal ul li {
     list-style: none;
-    text-align: center;
+    text-align: start;
+    padding: 30px;
     font-size: 1.5rem;
     line-height: 3em;
     height: 3em;

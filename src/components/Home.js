@@ -1,5 +1,5 @@
 import { reset, homeListener, menuPrincipal, renderPost } from "./Utils.js";
-// import { signOut } from "../Firebase/Services.js";
+import { signOut } from "../Firebase/Services.js";
 
 const renderEachPost = (templateElement) => {
   const timeline = templateElement.dataset.timeline;
@@ -42,10 +42,16 @@ export function Home() {
       </div>
       <nav class="menuppal">
         <ul>
-          <li><a href="#">Opcion 1</a></li>
-          <li><a href="#">Opcion 2</a></li>
-          <li><a href="#">Opcion 3</a></li>
-          <li><a href="#">Opcion 4</a></li>
+          <li>
+            <button class="button_general">
+            <img class="logo-Post" src=./assets/edit-icon.svg alt="arrow">
+            Edit Post</button>
+          </li>
+          <li>
+            <button id="signOut" class="button_general">
+            <img class="logo-Post" src=./assets/logout-icon.svg alt="arrow">
+            Log Out</button>
+          </li>
         </ul>
       </nav>
     </header>
@@ -79,6 +85,15 @@ export function menu() {
   });
 }
 
+export function userOut() {
+  const logOut = document.querySelector("#signOut");
+  logOut.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log("aqui estoy");
+    signOut();
+  });
+}
+
 /*db.collection("usersPost").onSnapshot()
         .then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
@@ -90,17 +105,4 @@ export function menu() {
         .catch((error) => {
             console.log("Error getting documents: ", error);
         });
-}
-
-
-/*<div class="btns-container-mobile">
-          <button id="signOut" class="button_general">LogOut</button>
-        </div>*/
-
-// export function userOut() {
-//   const logOut = document.querySelector("#signOut");
-//   logOut.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     signOut();
-//   });
-// }
+}*/
