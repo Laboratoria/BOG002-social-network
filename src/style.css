@@ -283,7 +283,7 @@ label#labelImage {
     color: #8E8E8E;
 }
 
-#addPost {
+/* #addPost {
     border: none;
     border-radius: 50px;
     background-color: #B1B1B1;
@@ -294,7 +294,7 @@ label#labelImage {
     margin-top: 20px;
     font-family: 'Lato', sans-serif;
     font-weight: 600;
-}
+} */
 
 .logoHome {
     height: 160px;

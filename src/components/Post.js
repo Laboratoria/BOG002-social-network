@@ -1,5 +1,6 @@
 import { reset, homeListener, menuPrincipal } from "./Utils.js";
 import { createPost } from "../Firebase/Storage.js";
+import { signOut } from "../Firebase/Services.js";
 
 export function Post() {
   reset();
@@ -20,10 +21,16 @@ export function Post() {
       </div>
       <nav class="menuppal">
         <ul>
-          <li><a href="#">Opcion 1</a></li>
-          <li><a href="#">Opcion 2</a></li>
-          <li><a href="#">Opcion 3</a></li>
-          <li><a href="#">Opcion 4</a></li>
+        <li>
+        <button class="button_general">
+        <img class="logo-Post" src=./assets/edit-icon.svg alt="arrow">
+        Edit Post</button>
+      </li>
+      <li>
+        <button id="signOut" class="button_general">
+        <img class="logo-Post" src=./assets/logout-icon.svg alt="arrow">
+        Log Out</button>
+      </li>
         </ul>
       </nav>
     </header>
@@ -82,5 +89,12 @@ export function postFb() {
     setTimeout(() => {
       window.location.assign("#/home");
     }, 2000);
+  });
+}
+export function userOutPost() {
+  const logOut = document.querySelector("#signOut");
+  logOut.addEventListener("click", (e) => {
+    e.preventDefault();
+    signOut();
   });
 }

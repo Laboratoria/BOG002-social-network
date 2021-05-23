@@ -3,7 +3,7 @@ import { Landing, random } from "./Landing.js";
 import { Register, addUser } from "./Register.js";
 import { Home, menu, renderPosts, userOut } from "./Home.js";
 import { Login, logInUser } from "./Login.js";
-import { Post, menuHam, postFb } from "./Post.js";
+import { Post, menuHam, postFb, userOutPost } from "./Post.js";
 import { Password, recoverPassword } from "./Password.js";
 
 export function Router() {
@@ -36,6 +36,7 @@ export function Router() {
       root.appendChild(Post());
       menuHam();
       postFb();
+      userOutPost();
       break;
     default:
       break;

@@ -89,7 +89,6 @@ export function userOut() {
   const logOut = document.querySelector("#signOut");
   logOut.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log("aqui estoy");
     signOut();
   });
 }
