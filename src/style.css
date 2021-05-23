@@ -439,6 +439,11 @@ border-radius: 5px;
   margin-top: 1em;
   width: 60vw;
 }
+.basura{
+  color: black;
+  top: 0%;
+  left: 0%;
+}
 #foto-usuario{
   width: 50px;
   height: 50px;
@@ -461,7 +466,10 @@ border-radius: 5px;
   margin-bottom:8em ;
   box-sizing:content-box
 }
-
+#icons{
+  display: flex;
+  justify-content: space-around;
+}
 .post{
   min-height:10em;
   height: auto;

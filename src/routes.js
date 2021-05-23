@@ -52,6 +52,7 @@ export const router = (route) => {
                     CerrarSesion();
                     MostrarPublicaciones();
                     eliminar();
+                    
             }else {
               window.location.hash ='#/login'
             }
@@ -60,8 +61,9 @@ export const router = (route) => {
         case '#/profile':
            
             if (user) {
-                 content.innerHTML = perfil();
-                                     name ();       
+                 content.innerHTML =  perfil();name ();
+                                      CerrarSesion();
+     
             }else {
               window.location.hash ='#/login'
             }
@@ -82,7 +84,7 @@ export const router = (route) => {
             if (user) {
                 content.innerHTML = FormularioPerfilDeUsuario();
                                     EditarPerfil();
-                                    CerrarSesion();
+                                
             }else {
                 window.location.hash ='#/login'
                     }

@@ -1,4 +1,4 @@
-
+import {SaveUser} from '../Firebase/firebase-collection.js';
 export function perfil(){
 
     let html= `
@@ -8,18 +8,19 @@ export function perfil(){
 	   <div class="menu">
 		<div class="logo"> 
 		<h1>FoodFans<h1></div>
-		<div id="configuracion"><img src="./imagenes/Setting.svg">
-		<div class="enlaces" id="enlaces">
-		<span class= "setting"><a href="#/editarPerfil">Editar Perfil</a></span>
-		<span class= "setting" id="cerrar-sesion">Cerrar sesion</span>
-		</div>
+			<div id="configuracion"><img src="./imagenes/Setting.svg">
+				<div class="enlaces" id="enlaces">
+				<span class= "setting"><a href="#/editarPerfil">Editar Perfil</a></span>
+				<span class= "setting" id="cerrar-sesion">Cerrar sesion</span>
+			</div>
 		</div> 
 	 </header>
       <section>
-	  <div class="perfil">
+	  <div id='perfil' class="perfil">
 	  <img src="./imagenes/usuario.png" id="foto-perfil">
-	  <h1 id="Nombre-de-usuario">Pepito Perez</h1>
-	  <p class="descripcion">Aqui va una breve descripcion del usuario</p>
+	  <h1 id="Nombre-de-usuario"></h1>
+	  <h2 id="nombre-completo"></h2>
+	  <p class="descripcion"> Aqui va una breve descripcion del usuario</p>
 	  </div>
 	  <div id="publicaciones"></div>
 	  </section>
@@ -37,21 +38,23 @@ export function perfil(){
  
   
    export function name (){
+	//    obteniendo valores
 	let Nombre_usuario = document.getElementById("Nombre-de-usuario");
-	let  user = firebase.auth().currentUser;//esta variable se usara en el documento firebaseauth
-	let n =user.displayName;
-	Nombre_usuario.innerHTML =  n;
-  }
+	let Nombre_completo = document.getElementById("Nombre-completo");
+	let Descripcion = document.getElementsByClassName("descripcion");
 
-			
+	let  user = firebase.auth().currentUser;//esta variable se usara en el documento firebaseauth
+	let NombreRegistro = user.displayName;
+	
+	// pintando valores
+		Nombre_usuario.innerHTML =  NombreRegistro ;
+
+
+}
+
+
 					 
 
-    function configuracion(){
-		const BotonConfiguracion = document.getElementById('configuracion');
-		BotonConfiguracion.addEventListener('click', () =>{
-		 document.querySelectorAll('.enlaces').style.display = "block";	
-		})
 	
-	}
-	
+
 	

@@ -10,14 +10,11 @@ export const autenticacionUsuario =(email, password, Name)=>{
           window.location.hash ='#/release'
           return result.user.updateProfile({
                   displayName: Name
-    })
+})
       .catch((error) => {
-        console.log("error", error)
         modalError(error);
-  });
+});
 })}
-
-
 // *****************  ingresando usuario  ******************
 
 export const LoginUsuario = (email,password) =>{
@@ -25,17 +22,13 @@ export const LoginUsuario = (email,password) =>{
 
   .signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
-      // Signed in
-      userCredential.user;
-      console.log(userCredential.user)
+      console.log( "id de usuario: " + userCredential.user.uid)
       window.location.hash ='#/release'
-    })
+})
     .catch((error) => {
-      console.log('error',error);
       modalErrorLogin(error);
-    });
-  }
-
+});
+}
   // *********************** solo usuarios logeados ******************
 
  export function SoloUsuarios(){
@@ -52,7 +45,6 @@ export function Salir(){
     // Sign-out successful.
     window.location.hash = "#/login"
   }).catch((error) => {
-    // An error happened.
     console.log('no se pudo cerrar sesion')
   });
 }
