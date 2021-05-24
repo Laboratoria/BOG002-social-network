@@ -25,6 +25,7 @@ export function timelinePage() {
                   </form>
                   <input id="inputPost" class="input" type="text" placeholder="¿Qué nos quieres compartir?">
                   <button id="btnPost" class="button">Publicar</button>
+                  <h3 id= "errorInputPost"></h3>
                        <div id ="posts">
                           <ul id = "listPost" >
                           </ul>
@@ -78,11 +79,17 @@ export function newCollectionPost() {
   const btnPosts = document.getElementById('btnPost');
   btnPosts.addEventListener('click', () => {
     const newPost = document.getElementById('inputPost').value;
-    const userMail = auth.currentUser;
-    const user = userMail.email;
-    const date = new Date();
-    const userID = userMail.uid;
-    collectionPost(user, newPost, date, userID);
+    if (newPost.length > 0) {
+      const userMail = auth.currentUser;
+      const user = userMail.email;
+      const date = new Date();
+      const userID = userMail.uid;
+      collectionPost(user, newPost, date, userID);
+    } else {
+      const errorInput = document.getElementById('errorInputPost');
+      errorInput.innerHTML = 'Ingresa un texto para completar tu publicación';
+      setTimeout(() => { errorInput.innerHTML = ''; }, 3000);
+    }
   });
 }
 
@@ -106,6 +113,8 @@ export function postsTimeline() {
             </div> 
             <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>                
             <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
+            <span class="likeCounter" data-id="${doc.id}">0</span>
+            <button type="button" class="increase" data-id="${doc.id}">Aumentar</button>     
           </li>
           `;
         html += li;
@@ -145,7 +154,7 @@ export function postsTimeline() {
         const mostrarModal = document.querySelector('#modal_container');
         mostrarModal.classList.add('show');
         deleteColletionPosts();
-        cancelModal();
+        cancelModal();       
       });
     });
   }
@@ -165,7 +174,7 @@ export function postsTimeline() {
         buttonAux.onclick = () => {
           editPosts(idPost, inputText)
             .then(() => {
-              buttonAux.innerHTML = 'Editar';
+              buttonAux.innerHTML = '<img id="imageEdit" src="assets/logoEditar.png">';
               newInput.disabled = true;
             })
             .catch(() => { });
@@ -186,6 +195,7 @@ export function postsTimeline() {
             setPost(snapshot.docs);
             modalDeleteColletionPosts();
             editColletionPosts();
+            Likes();
           }
           if (change.type === 'removed') {
             document.getElementById(change.doc.id).remove();
@@ -197,3 +207,28 @@ export function postsTimeline() {
     }
   });
 }
+//Likes
+function Likes () {
+const likeCounter = document.querySelectorAll('.likeCounter');
+
+const btnLike = document.querySelectorAll('.increase')
+btnLike.forEach(button => {
+  button.addEventListener('click', (e) => {
+    const idPost = button.dataset.id;
+    const spanId = button.dataset.id;  
+    const contador = 2;   
+    console.log(idPost,'soy id de boton');
+    console.log(spanId, 'soy id de span');
+
+    const estilo = e.currentTarget.classList;
+    if (estilo.contains('increase')){
+      contador++
+    } else {
+      alert('no hay likes')
+    }
+    likeCounter.textContent = contador;
+    
+    });
+});
+}
+

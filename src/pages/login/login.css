@@ -145,7 +145,7 @@ h2 {
     } 
 
     body {
-        background: url(/src/assets/FondoDesktop.jpg);
+        background: url(../../assets/FondoDesktop.jpg); 
     }
 
     #ImageHeader {
