@@ -38,10 +38,10 @@ export async function MostrarPublicaciones(){
         querySnapshot.forEach((doc) => {
            
          let ID = doc.id;
-         let NombreUser  = doc.data().publicaciones.nombre;
-         let Descripcion = doc.data().publicaciones.descripcion;
-         let Fecha = doc.data().publicaciones.fecha;
-         let Lugar = doc.data().publicaciones.lugar 
+         let NombreUser  = doc.data().nombre;
+         let Descripcion = doc.data().descripcion;
+         let Fecha = doc.data().fecha;
+         let Lugar = doc.data().lugar 
 
          PrintCollection (Publicar, ID, NombreUser, Descripcion, Fecha, Lugar)
 });

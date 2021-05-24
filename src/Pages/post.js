@@ -1,5 +1,5 @@
 
-    export function PrintCollection (Publicar, ID, NombreUser, Descripcion, Fecha, Lugar){{
+    export function PrintCollection (Publicar, ID, NombreUser, Descripcion, Fecha, Lugar){
         Publicar.innerHTML += `	
         <div class="post" data-id="${ID}">
           <span class="nombre-usuario"  > ${NombreUser} </span>
@@ -18,5 +18,5 @@
           </div>
         <div>`
      
-    }}
+    }
   

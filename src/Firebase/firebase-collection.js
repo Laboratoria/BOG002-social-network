@@ -1,9 +1,9 @@
 // Add a new document with a generated id.
 export const SavePublicaciones=(publicaciones)=> {
  
-db.collection("publicaciones").add({
+db.collection("publicaciones").add(
     publicaciones
-})
+)
         .then((docRef) => {
            console.log("enviado")
 })
@@ -14,9 +14,9 @@ db.collection("publicaciones").add({
 
 export const SaveUser = (user) => {
   const usuariosRef =  db.collection("usuarios")
-  .add({
+  .add(
        user
-    })
+    )
         .then((docRef) => {
           console.log("Enviado a la consola firestore ", docRef.id);
           window.location.hash ='#/profile';
