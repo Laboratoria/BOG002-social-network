@@ -103,8 +103,11 @@ function showPosts(doc) {
   let html = '';
   getLikes(doc.id);
   const post = doc.data();
-  // console.log(post,data.length);
-  const li = `
+  const idPost = post.Uid;
+  const idUser = auth.currentUser.uid;
+  console.log(idPost, idUser)
+  if (idPost === idUser) {
+    const li = `
       <li id="${doc.id}" >
       <div id="containerButtonsDeleteEdit"> 
       <button type="button" class="btnEditPost" data-id="${doc.id}"><img id="imageEdit" src="assets/logoEditar.png"></button>
@@ -121,10 +124,26 @@ function showPosts(doc) {
           <button type="button" class="btnDislikesPost" id="btnDisLikes${doc.id}" data-id="${doc.id}">Dislike</button>
           </li>
           `;
-  html += li;
-  postlist.insertAdjacentHTML('afterbegin', html);
+    html += li;
+    postlist.insertAdjacentHTML('afterbegin', html);
+  } else {
+    const li = `
+  <li id="${doc.id}" >  
+  <div id="containerTitlePost">
+  <img id="imgUserMobile" src="assets/IconoUsuario.png">
+  <h3 id="titlePost">${post.Title}</h3> 
+  </div> 
+  <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>                
+  <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
+      <span class="likesCounter" id="likePost${doc.id}">0</span>
+      <button type="button" class="btnlikesPost" id="btnLikes${doc.id}" data-id="${doc.id}">Like</button>
+      <button type="button" class="btnDislikesPost" id="btnDisLikes${doc.id}" data-id="${doc.id}">Dislike</button>
+      </li>
+      `;
+    html += li;
+    postlist.insertAdjacentHTML('afterbegin', html);
+  }
 }
-
 function deleteColletionPosts() {
   const buttonModalDeletePost = document.querySelector('#buttonModalDeletePost');
   buttonModalDeletePost.addEventListener('click', () => {
@@ -179,7 +198,7 @@ function editColletionPosts() {
       buttonAux.onclick = () => {
         editPosts(idPost, inputText)
           .then(() => {
-            buttonAux.innerHTML = 'Editar';
+            buttonAux.innerHTML = '<img id="imageSave" src="assets/logoEditar.png">';
             newInput.disabled = true;
           })
           .catch(() => { });
@@ -190,15 +209,14 @@ function editColletionPosts() {
 
 // Función enviando datos a la collección Likes  en FireBase
 function newCollectionLikes(idPost) {
-  const btnLikes = document.getElementById(`btnLikes${idPost}`);  
-  btnLikes.addEventListener('click', () => {    
+  const btnLikes = document.getElementById(`btnLikes${idPost}`);
+  btnLikes.addEventListener('click', () => {
     const user = auth.currentUser;
     const postID = btnLikes.dataset.id;
     const userID = user.uid;
     setLikesPost(postID, userID);
     getLikes(postID);
     btnLikes.style.display = 'none';
-    
 
   });
 }
@@ -212,8 +230,8 @@ function getLikes(idPost) {
         datalikes.push(doc.data());
         if (doc.data().Uid === auth.currentUser.uid) {
           const idBtnLikes = document.getElementById(`btnDisLikes${idPost}`);
-          const btnLikes = document.getElementById(`btnLikes${idPost}`);          
-          idBtnLikes.addEventListener('click', () => {            
+          const btnLikes = document.getElementById(`btnLikes${idPost}`);
+          idBtnLikes.addEventListener('click', () => {
             deleteLikes(doc.id);
             console.log(doc.id)
             idBtnLikes.style.display = 'none';
@@ -247,7 +265,7 @@ export function postsTimeline() {
             modalDeleteColletionPosts();
             editColletionPosts();
             newCollectionLikes(change.doc.id);
-          }          
+          }
         });
       });
     } else {
