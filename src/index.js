@@ -33,9 +33,10 @@ export const collectionPost = (email, input, date, uid) => {
     Uid: uid,
   });
 };
+
 export const getPosts = (callback) => {
   firebase.firestore().collection('posts')
-    .orderBy('Date', 'desc')
+    .orderBy('Date', 'asc')
     .onSnapshot(callback);
 };
 
@@ -51,4 +52,25 @@ export const editPosts = (id, input) => {
   return fireStoreCollection.doc(id).update({
     Contents: input,
   });
+};
+
+export const setLikesPost = (post, uid) => {
+  const fireStoreCollection = firebase.firestore().collection('likes');
+  return fireStoreCollection.add({
+    DocIdPost: post,
+    Uid: uid,
+  });
+};
+
+export const getLikesPost = (doc) => {
+  const firebaseGetLikes = firebase.firestore().collection('likes');
+  return firebaseGetLikes
+    .where('DocIdPost', '==', doc)
+    .get();
+};
+
+// Funcion eliminar publicaciones
+export const deleteLikes = (id) => {
+  const fireStoreCollection = firebase.firestore().collection('likes');
+  return fireStoreCollection.doc(id).delete();
 };
