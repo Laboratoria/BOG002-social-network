@@ -12,11 +12,11 @@
               <img src="./imagenes/Star-1.svg"> 
               <img src="./imagenes/More Square.png">
               <i class="far fa-edit" ></i>
-              <span class="basura">
-              <i class="fas fa-trash-alt" ></i>
-              </span>
+              
+              <button class="basura" type="button" onclick="eliminar(${ID}) "><i class="fas fa-trash-alt" ></i></button> 
+            
           </div>
         <div>`
-     
+       
     }}
   
