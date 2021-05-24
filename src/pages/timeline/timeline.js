@@ -4,6 +4,8 @@ import {
   deletePosts,
   editPosts,
   getPosts,
+  setLikesPost,
+  getLikesPost,
 } from '../../index.js';
 
 const auth = firebase.auth();
@@ -65,7 +67,7 @@ export function signOutGoogle() {
   buttonSignOut.addEventListener('click', () => {
     signOut()
       .then(() => {
-        window.location = '#/';
+        window.location.hash = '#/';
       })
       .catch(() => {
       });
@@ -82,100 +84,147 @@ export function newCollectionPost() {
     const user = userMail.email;
     const date = new Date();
     const userID = userMail.uid;
-    collectionPost(user, newPost, date, userID);
+    if (newPost.length === 0) {
+      console.log('Por favor ingresa un mensaje');
+    } else {
+      collectionPost(user, newPost, date, userID);
+    }
   });
+}
+
+function pintarColletionPosts(doc) {
+  const postlist = document.getElementById('listPost');
+  let html = '';
+  getLikes(doc.id);
+  const post = doc.data();
+  // console.log(post,data.length);
+  const li = `
+      <li id="${doc.id}" >
+      <div id="containerButtonsDeleteEdit"> 
+      <button type="button" class="btnEditPost" data-id="${doc.id}"><img id="imageEdit" src="assets/logoEditar.png"></button>
+      <button type="button" class="btnDeletePost" data-id="${doc.id}"><img id="imageDelete" src="assets/logoEliminar.png"></button>
+      </div>
+      <div id="containerTitlePost">
+      <img id="imgUserMobile" src="assets/IconoUsuario.png">
+      <h3 id="titlePost">${post.Title}</h3> 
+      </div> 
+      <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>                
+      <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
+          <span class="likesCounter" id="likePost${doc.id}">0</span>
+          <button type="button" class="btnlikesPost" id="btnLikes${doc.id}" data-id="${doc.id}">Like</button>
+          </li>
+          `;
+  html += li;
+  postlist.insertAdjacentHTML('afterbegin', html);
+}
+
+function deleteColletionPosts() {
+  const buttonModalDeletePost = document.querySelector('#buttonModalDeletePost');
+  buttonModalDeletePost.addEventListener('click', () => {
+    const mostrarModal = document.querySelector('#modal_container');
+    mostrarModal.classList.add('show');
+    const deleteP = deletePosts(buttonModalDeletePost.dataset.id);
+    deleteP.then(() => {
+      console.log('Document successfully deleted!', buttonModalDeletePost.dataset.id);
+      document.getElementById(buttonModalDeletePost.dataset.id).remove();
+    }).catch((error) => {
+      console.error('Error removing document: ', error);
+    });
+    mostrarModal.classList.remove('show');
+  });
+}
+
+function cancelModal() {
+  const buttoncancelModal = document.querySelector('#delete');
+  buttoncancelModal.addEventListener('click', () => {
+    const mostrarModal = document.querySelector('#modal_container');
+    mostrarModal.classList.add('show');
+    mostrarModal.classList.remove('show');
+  });
+}
+
+// Función eliminando publicaciones
+function modalDeleteColletionPosts() {
+  const btnDeletePosts = document.querySelectorAll('.btnDeletePost');
+  btnDeletePosts.forEach((button) => {
+    button.addEventListener('click', () => {
+      const modalCreate = document.getElementById('modalCreate');
+      const modal = modalDelete(button.dataset.id);
+      modalCreate.innerHTML = '';
+      modalCreate.appendChild(modal);
+      const mostrarModal = document.querySelector('#modal_container');
+      mostrarModal.classList.add('show');
+      deleteColletionPosts();
+      cancelModal();
+    });
+  });
+}
+
+// Función editando publicaciones
+function editColletionPosts() {
+  const buttonEditPosts = document.querySelectorAll('.btnEditPost');
+  buttonEditPosts.forEach((button) => {
+    button.addEventListener('click', () => {
+      const buttonAux = button;
+      buttonAux.innerHTML = '<img id="imageSave" src="assets/logoGuardar.png">';
+      const inputText = document.getElementById(`textPost${button.dataset.id}`).value;
+      const newInput = document.getElementById(`textPost${button.dataset.id}`);
+      const idPost = button.dataset.id;
+      newInput.disabled = false;
+
+      buttonAux.onclick = () => {
+        editPosts(idPost, inputText)
+          .then(() => {
+            buttonAux.innerHTML = 'Editar';
+            newInput.disabled = true;
+          })
+          .catch(() => { });
+      };
+    });
+  });
+}
+
+// Función enviando datos a la collección Likes  en FireBase
+function newCollectionLikes(idPost) {
+  const btnLikes = document.getElementById(`btnLikes${idPost}`);
+  // btnLikes.forEach((button) => {
+  btnLikes.addEventListener('click', () => {
+    const user = auth.currentUser;
+    const postID = btnLikes.dataset.id;
+    const userID = user.uid;
+    setLikesPost(postID, userID);
+    console.log(postID, userID);
+    getLikes(postID);
+  });
+  // });
+}
+
+function getLikes(idPost) {
+  const datalikes = [];
+  let likes = 0;
+  const result = getLikesPost(idPost)
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        datalikes.push(doc.data());
+        if (doc.data().Uid === auth.currentUser.uid) {
+          console.log("dislike", idPost);
+        }
+      });
+      likes = datalikes.length;
+      const likePost = document.getElementById(`likePost${idPost}`);
+      likePost.innerHTML = likes;
+    })
+    .catch((error) => {
+      console.log('Error getting documents: ', error);
+    });
+  console.log(idPost);
 }
 
 // Funcion publicaciones en pantalla
 export function postsTimeline() {
-  const postlist = document.getElementById('listPost');
-  const setPost = (data) => {
-    if (data.length > 0) {
-      let html = '';
-      data.forEach((doc) => {
-        const post = doc.data();
-        const li = `
-          <li id="${doc.id}" >
-            <div id="containerButtonsDeleteEdit">
-              <button type="button" class="btnEditPost" data-id="${doc.id}"><img id="imageEdit" src="assets/logoEditar.png"></button>
-              <button type="button" class="btnDeletePost" data-id="${doc.id}"><img id="imageDelete" src="assets/logoEliminar.png"></button>
-            </div>
-            <div id="containerTitlePost">
-              <img id="imgUserMobile" src="assets/IconoUsuario.png">
-              <h3 id="titlePost">${post.Title}</h3> 
-            </div> 
-            <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>                
-            <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
-          </li>
-          `;
-        html += li;
-      });
-      postlist.innerHTML = html;
-    }
-  };
-
-  function deleteColletionPosts() {
-    const buttonModalDeletePost = document.querySelector('#buttonModalDeletePost');
-    buttonModalDeletePost.addEventListener('click', () => {
-      const mostrarModal = document.querySelector('#modal_container');
-      mostrarModal.classList.add('show');
-      deletePosts(buttonModalDeletePost.dataset.id);
-      mostrarModal.classList.remove('show');
-    });
-  }
-
-  function cancelModal() {
-    const buttoncancelModal = document.querySelector('#delete');
-    buttoncancelModal.addEventListener('click', () => {
-      const mostrarModal = document.querySelector('#modal_container');
-      mostrarModal.classList.add('show');
-      mostrarModal.classList.remove('show');
-    });
-  }
-
-  // Función eliminando publicaciones
-  function modalDeleteColletionPosts() {
-    const btnDeletePosts = document.querySelectorAll('.btnDeletePost');
-    btnDeletePosts.forEach((button) => {
-      button.addEventListener('click', () => {
-        const modalCreate = document.getElementById('modalCreate');
-        const modal = modalDelete(button.dataset.id);
-        modalCreate.innerHTML = '';
-        modalCreate.appendChild(modal);
-        const mostrarModal = document.querySelector('#modal_container');
-        mostrarModal.classList.add('show');
-        deleteColletionPosts();
-        cancelModal();
-      });
-    });
-  }
-
-  // Función editando publicaciones
-  function editColletionPosts() {
-    const buttonEditPosts = document.querySelectorAll('.btnEditPost');
-    buttonEditPosts.forEach((button) => {
-      button.addEventListener('click', () => {
-        const buttonAux = button;
-        buttonAux.innerHTML = '<img id="imageSave" src="assets/logoGuardar.png">';
-        const inputText = document.getElementById(`textPost${button.dataset.id}`).value;
-        const newInput = document.getElementById(`textPost${button.dataset.id}`);
-        const idPost = button.dataset.id;
-        newInput.disabled = false;
-
-        buttonAux.onclick = () => {
-          editPosts(idPost, inputText)
-            .then(() => {
-              buttonAux.innerHTML = 'Editar';
-              newInput.disabled = true;
-            })
-            .catch(() => { });
-        };
-      });
-    });
-  }
-
   // Eventos actualizar y publicar post verificando si el usuario esta en su sesión
   auth.onAuthStateChanged((user) => {
+    const postlist = document.getElementById('listPost');
     if (user) {
       getPosts((snapshot) => {
         if (snapshot.docChanges().length === 0) {
@@ -183,12 +232,13 @@ export function postsTimeline() {
         }
         snapshot.docChanges().forEach((change) => {
           if (change.type === 'added') {
-            setPost(snapshot.docs);
+            pintarColletionPosts(change.doc);
             modalDeleteColletionPosts();
             editColletionPosts();
+            newCollectionLikes(change.doc.id);
           }
           if (change.type === 'removed') {
-            document.getElementById(change.doc.id).remove();
+            // document.getElementById(change.doc.id).remove();
           }
         });
       });
