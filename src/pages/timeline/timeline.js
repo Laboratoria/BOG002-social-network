@@ -6,6 +6,7 @@ import {
   getPosts,
   setLikesPost,
   getLikesPost,
+  deleteLikes,
 } from '../../index.js';
 
 const auth = firebase.auth();
@@ -86,14 +87,18 @@ export function newCollectionPost() {
     const date = new Date();
     const userID = userMail.uid;
     if (newPost.length === 0) {
-      console.log('Por favor ingresa un mensaje');
+      const errorInput = document.getElementById('errorInputPost');
+      errorInput.innerHTML = 'Ingresa un texto para completar tu publicación';
+      setTimeout(() => {
+        errorInput.innerHTML = '';
+      }, 3000);
     } else {
       collectionPost(user, newPost, date, userID);
     }
   });
 }
 
-function pintarColletionPosts(doc) {
+function showPosts(doc) {
   const postlist = document.getElementById('listPost');
   let html = '';
   getLikes(doc.id);
@@ -113,6 +118,7 @@ function pintarColletionPosts(doc) {
       <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
           <span class="likesCounter" id="likePost${doc.id}">0</span>
           <button type="button" class="btnlikesPost" id="btnLikes${doc.id}" data-id="${doc.id}">Like</button>
+          <button type="button" class="btnDislikesPost" id="btnDisLikes${doc.id}" data-id="${doc.id}">Dislike</button>
           </li>
           `;
   html += li;
@@ -126,10 +132,7 @@ function deleteColletionPosts() {
     mostrarModal.classList.add('show');
     const deleteP = deletePosts(buttonModalDeletePost.dataset.id);
     deleteP.then(() => {
-      console.log('Document successfully deleted!', buttonModalDeletePost.dataset.id);
       document.getElementById(buttonModalDeletePost.dataset.id).remove();
-    }).catch((error) => {
-      console.error('Error removing document: ', error);
     });
     mostrarModal.classList.remove('show');
   });
@@ -187,38 +190,45 @@ function editColletionPosts() {
 
 // Función enviando datos a la collección Likes  en FireBase
 function newCollectionLikes(idPost) {
-  const btnLikes = document.getElementById(`btnLikes${idPost}`);
-  // btnLikes.forEach((button) => {
-  btnLikes.addEventListener('click', () => {
+  const btnLikes = document.getElementById(`btnLikes${idPost}`);  
+  btnLikes.addEventListener('click', () => {    
     const user = auth.currentUser;
     const postID = btnLikes.dataset.id;
     const userID = user.uid;
     setLikesPost(postID, userID);
-    console.log(postID, userID);
     getLikes(postID);
+    btnLikes.style.display = 'none';
+    
+
   });
-  // });
 }
 
 function getLikes(idPost) {
   const datalikes = [];
   let likes = 0;
-  const result = getLikesPost(idPost)
+  getLikesPost(idPost)
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         datalikes.push(doc.data());
         if (doc.data().Uid === auth.currentUser.uid) {
-          console.log("dislike", idPost);
+          const idBtnLikes = document.getElementById(`btnDisLikes${idPost}`);
+          const btnLikes = document.getElementById(`btnLikes${idPost}`);          
+          idBtnLikes.addEventListener('click', () => {            
+            deleteLikes(doc.id);
+            console.log(doc.id)
+            idBtnLikes.style.display = 'none';
+            btnLikes.style.display = 'block';
+
+          })
+
+        } else {
+
         }
       });
       likes = datalikes.length;
       const likePost = document.getElementById(`likePost${idPost}`);
       likePost.innerHTML = likes;
     })
-    .catch((error) => {
-      console.log('Error getting documents: ', error);
-    });
-  console.log(idPost);
 }
 
 // Funcion publicaciones en pantalla
@@ -233,14 +243,11 @@ export function postsTimeline() {
         }
         snapshot.docChanges().forEach((change) => {
           if (change.type === 'added') {
-            pintarColletionPosts(change.doc);
+            showPosts(change.doc);
             modalDeleteColletionPosts();
             editColletionPosts();
             newCollectionLikes(change.doc.id);
-          }
-          if (change.type === 'removed') {
-            // document.getElementById(change.doc.id).remove();
-          }
+          }          
         });
       });
     } else {
@@ -248,28 +255,3 @@ export function postsTimeline() {
     }
   });
 }
-//Likes
-function Likes () {
-const likeCounter = document.querySelectorAll('.likeCounter');
-
-const btnLike = document.querySelectorAll('.increase')
-btnLike.forEach(button => {
-  button.addEventListener('click', (e) => {
-    const idPost = button.dataset.id;
-    const spanId = button.dataset.id;  
-    const contador = 2;   
-    console.log(idPost,'soy id de boton');
-    console.log(spanId, 'soy id de span');
-
-    const estilo = e.currentTarget.classList;
-    if (estilo.contains('increase')){
-      contador++
-    } else {
-      alert('no hay likes')
-    }
-    likeCounter.textContent = contador;
-    
-    });
-});
-}
-
