@@ -61,7 +61,7 @@ export function FormPublicar() {
 		e.preventDefault();
 		let descripcion = document.querySelector(".publicar").value;
 		let lugar = document.querySelector("#lugar").value;
-		let user = firebase.auth().currentUser; //esta variable se usara en el documento firebaseauth
+		let user = firebase.auth(); //esta variable se usara en el documento firebaseauth
 		let n = user.displayName;
 		let userId = user.uid;
 		crearPublicacion(n, descripcion, lugar,userId,);
@@ -92,10 +92,10 @@ export function LeerPublicacion() {
 				post.innerHTML += `
 		   
 	     <article class="post" id="${doc.id}">
-		    <h3>${doc.data().publicaciones.nombre}</h3>
-			<p>${doc.data().publicaciones.UserID}</p>
-            <p>${doc.data().publicaciones.descripcion}</p>
-			<h5>${doc.data().publicaciones.lugar}</h5>
+		    <h3>${doc.data().nombre}</h3>
+			<p>${doc.data().UserID}</p>
+            <p>${doc.data().descripcion}</p>
+			<h5>${doc.data().lugar}</h5>
 			
 		</article>
         `

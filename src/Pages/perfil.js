@@ -44,8 +44,8 @@ export function perfil(){
 	Nombre_usuario.innerHTML =  n;
   }
   export function LeerPublicacionUid() {
-	let user = firebase.auth().currentUser;
-	db.collection('publicaciones')
+	
+	db.collection('publicaciones' + user.uid)
 	 .onSnapshot((snapshot) => {
 			const post = document.getElementById('all-post');
 			post.innerHTML = '';
@@ -54,20 +54,20 @@ export function perfil(){
 				post.innerHTML += `
 		   
 	     <article class="post" id="${doc.id}">
-		    <h3>${doc.data().publicaciones.nombre}</h3>
-			<p>${doc.data().publicaciones.UserID}</p>
-            <p>${doc.data().publicaciones.descripcion}</p>
-			<h5>${doc.data().publicaciones.lugar}</h5>
+		    <h3>${doc.data().nombre}</h3>
+			<p>${doc.data().UserID}</p>
+            <p>${doc.data().descripcion}</p>
+			<h5>${doc.data().lugar}</h5>
 			<div id="opciones">
 			<button class="enable">Delete</button>
-		    <button type="button" class="enable">Editar</button>
+		    <button type="button">Editar</button>
 			</div>
 		</article>
         `
 			}))
 	
 		})
-		return post;
+	
 }
 
 
@@ -75,11 +75,11 @@ export function perfil(){
  //hacer el addEventListener pues es un NodeList en este caso debemos iterar sobre cada elemento
  // y luego aplicarle el escuchador de eventos
   
- const botonesEditar = document.querySelectorAll('button .enable');
+ const botonesEditar = document.querySelectorAll('button.enable');
  console.log(botonesEditar);
 export function editarPerfil(){
-  botonesEditar.forEach(botonEditar =>{
-	botonEditar.addEventListener('click',()=>{
+  botonesEditar.forEach(item=>{
+	item.addEventListener('click',()=>{
 		console.log("aqui edito")
 	})
 	
