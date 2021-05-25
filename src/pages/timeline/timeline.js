@@ -114,10 +114,12 @@ function showPosts(doc) {
           <div id="containerTitlePost">
             <img id="imgUserMobile" src="assets/IconoUsuario.png">
             <h3 id="titlePost">${post.Title}</h3>
+          </div>
+          <div id="containerDate"> 
+            <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>
             <button type="button" class="btnEditPost" data-id="${doc.id}"><img id="imageEdit" src="assets/logoEditar.png"></button>
             <button type="button" class="btnDeletePost" data-id="${doc.id}"><img id="imageDelete" src="assets/logoEliminar.png"></button>
-          </div> 
-        <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>                
+          </div>                
         <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
         <div id="containerLikes"
           <span class="likesCounter" id="likePost${doc.id}">0</span>
