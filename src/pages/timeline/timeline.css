@@ -1,5 +1,5 @@
 .headerWall {
-    width: 100vw; 
+    width: 100vh; 
     background-color: #ECD4EA;
     padding: 3%;
     margin: -2%;
@@ -26,6 +26,7 @@ li {
     margin: 2px 0px 20px 0px;
     width: 280px;
 }
+
 
 #btnLogOut {
     margin: 4% 0% 0% 60%;
@@ -54,11 +55,6 @@ li {
     width: 80px;
 }
 
-#containerButtonsDeleteEdit {
-    display: flex;
-    flex-direction: row;
-}
-
 #containerTitlePost {
     display: flex;
     flex-direction: row;
@@ -68,13 +64,15 @@ li {
 #imgUserMobile {
     margin-left: 10px;
     margin-right: 5px;
+    margin-top: 25px;
     width: 35px;
     height: 35px;
 }
 
 #titlePost {
-    font-size: 15px;
+    font-size: 13px;
     margin: 3px;
+    margin-top: 30px;
 }
 
 #datePost {
@@ -86,21 +84,46 @@ li {
 
 .btnDeletePost {
     background-color: #350B1F;
+    border: 1px solid #ECC4B1;
     border-radius: 14px;
-    width: 27px;
-    height: 27px;
-    margin-top: 2%;
+    width: 25px;
+    height: 25px;
+    margin-top: 4%;
     margin-left: 1%;
-    
 } 
 
 .btnEditPost {
     background-color: #350B1F;
+    border: 1px solid white;
     border-radius: 14px;
-    width: 27px;
-    height: 27px;
-    margin-top: 2%;
-    margin-left: 78%;
+    width: 25px;
+    height: 25px;
+    margin-top: 4%;
+    margin-left: 20%;
+}
+
+.likesCounter {
+    margin-left: 195px;
+}
+
+.btnlikesPost {
+    background-color: white;
+    padding: 1px;
+    border: none;
+}
+
+.btnDislikesPost {
+    background-color: white;
+    padding: 1px;
+    border: none;
+}
+
+#imageLike {
+   width: 22px; 
+}
+
+#imageDisLike {
+   width: 27px;
 }
 
 #imageEdit {
@@ -113,13 +136,16 @@ li {
     width: 12px;
     background-color: #350B1F;
     margin-top: 2px;
-    
 }
 
 #imageSave {
     width: 12px;
     background-color: #350B1F;
     margin: 2px 6px 0px 0px;
+}
+
+#containerLikes {
+    margin-bottom: 5px;
 }
 
 input {
@@ -205,8 +231,12 @@ input {
     }
 
     li {
-        margin: 0px 0px 20px 80px;
+        margin-left: 65px;
         width: 500px;
+    }
+
+    #titlePost {
+        font-size: 15px;
     }
 
     #inputPost {
@@ -222,25 +252,61 @@ input {
     }
 
     .btnEditPost {
-        margin-left: 84%;
+        margin-left: 50%;
+    }
+
+    #imageLike {
+        width: 28px; 
+     }
+     
+    #imageDisLike {
+        width: 33px;
+     }
+
+    .likesCounter {
+        margin-left: 400px;
     }
 
     #datePost {
         font-size: 11px;
-        margin-right: 100px;
-        margin-top: -30px;
-        margin-bottom: 40px;
+        margin-right: 15px;
+        margin-top: -6px;
+        margin-bottom: 15px;
     }
 
     #containerTitlePost {
-        margin-top: -27px;
+        margin-top: -12px;
         
     }
 }
 
 @media (min-width: 1024px) { 
 
-  
+   ul {
+       background-color: #c997c0;
+   }
+
+   li {
+    width: 500px;
+    margin-left: 65px;
+    }
+
+    .headerWall {
+        padding: 1%;
+        width: 716px;
+        border-radius: 10px;
+    }
+
+    #WikiBlack {
+        width: 220px;
+        padding-bottom: 5px;
+    }
+
+    #imgUser {
+        margin-left: 300px;
+        width: 60px;
+        padding-top: 7px;
+    }
 
 
 }

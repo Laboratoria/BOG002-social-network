@@ -15,6 +15,7 @@ const auth = firebase.auth();
 export function timelinePage() {
   const view = `
         <section id="screenWall">
+                   
             <header>
                 <div class="headerWall">
                     <img id="WikiBlack" src="assets/WikiMomsNegro.png">
@@ -98,6 +99,7 @@ export function newCollectionPost() {
   });
 }
 
+// Función mostrar Posts
 function showPosts(doc) {
   const postlist = document.getElementById('listPost');
   let html = '';
@@ -106,44 +108,47 @@ function showPosts(doc) {
   const idPost = post.Uid;
   const idUser = auth.currentUser.uid;
   console.log(idPost, idUser)
-  if (idPost === idUser) {
-    const li = `
-      <li id="${doc.id}" >
-      <div id="containerButtonsDeleteEdit"> 
-      <button type="button" class="btnEditPost" data-id="${doc.id}"><img id="imageEdit" src="assets/logoEditar.png"></button>
-      <button type="button" class="btnDeletePost" data-id="${doc.id}"><img id="imageDelete" src="assets/logoEliminar.png"></button>
-      </div>
-      <div id="containerTitlePost">
-      <img id="imgUserMobile" src="assets/IconoUsuario.png">
-      <h3 id="titlePost">${post.Title}</h3> 
-      </div> 
-      <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>                
-      <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
+    if (idPost === idUser) { //Mostrar botones editar y eliminar publicacion del mismo usuario
+      const li = `
+        <li id="${doc.id}" >
+          <div id="containerTitlePost">
+            <img id="imgUserMobile" src="assets/IconoUsuario.png">
+            <h3 id="titlePost">${post.Title}</h3>
+            <button type="button" class="btnEditPost" data-id="${doc.id}"><img id="imageEdit" src="assets/logoEditar.png"></button>
+            <button type="button" class="btnDeletePost" data-id="${doc.id}"><img id="imageDelete" src="assets/logoEliminar.png"></button>
+          </div> 
+        <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>                
+        <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
+        <div id="containerLikes"
           <span class="likesCounter" id="likePost${doc.id}">0</span>
-          <button type="button" class="btnlikesPost" id="btnLikes${doc.id}" data-id="${doc.id}">Like</button>
-          <button type="button" class="btnDislikesPost" id="btnDisLikes${doc.id}" data-id="${doc.id}">Dislike</button>
-          </li>
-          `;
+          <button type="button" class="btnlikesPost" id="btnLikes${doc.id}" data-id="${doc.id}"><img id="imageLike" src="assets/IconoCorazon2.png"></button>
+          <button type="button" class="btnDislikesPost" id="btnDisLikes${doc.id}" data-id="${doc.id}"><img id="imageDisLike" src="assets/IconoCorazonLinea.png"></button>
+        </li>
+        `;
     html += li;
     postlist.insertAdjacentHTML('afterbegin', html);
-  } else {
-    const li = `
-  <li id="${doc.id}" >  
-  <div id="containerTitlePost">
-  <img id="imgUserMobile" src="assets/IconoUsuario.png">
-  <h3 id="titlePost">${post.Title}</h3> 
-  </div> 
-  <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>                
-  <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
-      <span class="likesCounter" id="likePost${doc.id}">0</span>
-      <button type="button" class="btnlikesPost" id="btnLikes${doc.id}" data-id="${doc.id}">Like</button>
-      <button type="button" class="btnDislikesPost" id="btnDisLikes${doc.id}" data-id="${doc.id}">Dislike</button>
-      </li>
-      `;
+    } else {  //Mostrar publicacion sin botones de editar y eliminar 
+      const li = `
+        <li id="${doc.id}" >  
+          <div id="containerTitlePost">
+            <img id="imgUserMobile" src="assets/IconoUsuario.png">
+            <h3 id="titlePost">${post.Title}</h3> 
+          </div> 
+          <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>                
+          <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
+          <div id="containerLikes"
+            <span class="likesCounter" id="likePost${doc.id}">0</span>
+            <button type="button" class="btnlikesPost" id="btnLikes${doc.id}" data-id="${doc.id}"><img id="imageLike" src="assets/IconoCorazon2.png"></button>
+            <button type="button" class="btnDislikesPost" id="btnDisLikes${doc.id}" data-id="${doc.id}"><img id="imageDisLike" src="assets/IconoCorazonLinea.png"></button>
+          </div>
+        </li>
+        `;
     html += li;
     postlist.insertAdjacentHTML('afterbegin', html);
   }
 }
+
+// Función modal para eliminar Publicaciones
 function deleteColletionPosts() {
   const buttonModalDeletePost = document.querySelector('#buttonModalDeletePost');
   buttonModalDeletePost.addEventListener('click', () => {
