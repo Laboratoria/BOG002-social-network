@@ -10,6 +10,7 @@ import { Error404} from './Pages/Error 404.js';
 import { search } from './Pages/search.js';
 import { eliminar, MostrarPublicaciones } from './Firebase/firestore.js';
 
+
  
 let content = document.getElementById('root');
  
@@ -30,6 +31,7 @@ export const router = (route) => {
             content.innerHTML= 
             home();
             BotondeCrearCuentaconGoogle();
+           
             break;
         case '#/signUp':
             content.innerHTML = 
@@ -50,8 +52,9 @@ export const router = (route) => {
                  content.innerHTML =  inicio();
                     ParaPublicar();
                     CerrarSesion();
-                    MostrarPublicaciones();
                     eliminar();
+                    MostrarPublicaciones();
+                   
                     
             }else {
               window.location.hash ='#/login'
@@ -63,6 +66,7 @@ export const router = (route) => {
             if (user) {
                  content.innerHTML =  perfil();name ();
                                       CerrarSesion();
+                                      MostrarPublicaciones();
      
             }else {
               window.location.hash ='#/login'

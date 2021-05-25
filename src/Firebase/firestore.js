@@ -2,9 +2,9 @@ import {PrintCollection} from '../Pages/post.js'
 // *********************** AGREGAR PUBLICACIONES A LA COLECCION *********************** 
 export const SavePublicaciones=(publicaciones)=> {
  
-db.collection("publicaciones").add({
+db.collection("publicaciones").add(
     publicaciones
-})
+)
         .then((docRef) => {
            console.log("enviado")
 })
@@ -27,45 +27,45 @@ export const SaveUser = (user) => {
 }
    // *********************** accediendo a todos los documentos de la coleccion ******************
 
- 
-   
-export async function MostrarPublicaciones(){
-
+export  function MostrarPublicaciones(){
+  
      const  Publicar = document.getElementById("publicaciones"); 
-     await db.collection("publicaciones").onSnapshot((querySnapshot) =>  {
-      // .orderBy("date", "desc")
+            db.collection('publicaciones').orderBy("fecha", "desc").onSnapshot((querySnapshot) =>  {
+         
         Publicar.innerHTML = ``;
         querySnapshot.forEach((doc) => {
-           
          let ID = doc.id;
          let NombreUser  = doc.data().nombre;
          let Descripcion = doc.data().descripcion;
-         let Fecha = doc.data().fecha;
-         let Lugar = doc.data().lugar 
-
+         let Fecha       = doc.data().fecha;
+         let Lugar       = doc.data().lugar;
+         
          PrintCollection (Publicar, ID, NombreUser, Descripcion, Fecha, Lugar)
 });
 });}
 
    // *********************** eliminando  los documentos de la coleccion por id ******************
-   export function eliminar (id){
-     const  Publicar = document.getElementById("publicaciones");
-     const btnsBorrar = Publicar.querySelectorAll(".basura");
+   export  function eliminar (id){
+   //   const  Publicar = document.getElementById("publicaciones");
 
-btnsBorrar.forEach((btn) =>
-         btn.addEventListener("click",  () => {
+   //   const  btnsBorrar = Publicar.querySelectorAll("button .basura");
+   //          console.log(btnsBorrar)
+
+         //   btnsBorrar.forEach((btn) =>
+         //          btn.addEventListener("click",  () => {
 
             db.collection("publicaciones").doc(id).delete()
-
+   
             .then(() => {
-                   console.log("Document successfully deleted!");
+                   console.log("Borrado");
 })
             .catch((error) => {
                    console.error("Error removing document: ", error);
 });
-}))
 }
-
+// ))
+// }
+ // *********************** editar los documentos de la coleccion por id ******************
 export function editar(){
    const db = firebase.firestore(); 
    db.collection("publicaciones").doc(id).update({

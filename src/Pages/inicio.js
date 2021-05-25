@@ -9,9 +9,7 @@ export function inicio(){
 	<div id="encabezado">
 		<div id="logo"> FoodFans </div>
 		<div id="configuracion"><img src="./imagenes/Setting.svg">
-		<!-- <div class="enlaces" id="enlaces">
-				<span class= "setting"><a href="#/editarPerfil">Editar Perfil</a></span>
-				<span class= "setting" id="cerrar-sesion">Cerrar sesion</span> -->
+		s
 		</div> 
 	</div>
 
@@ -63,7 +61,8 @@ export async function ParaPublicar(){
 			const nombre 		= user.displayName 
 			const descripcion   = document.querySelector(".publicar").value;
 			const lugar 		= document.querySelector("#input-lugar").value;
-			const objectoAccion =  Date(Date.now());
+			const objectoAccion =  new Date();
+			console.log(objectoAccion);
 
 
 			 const publicaciones= {

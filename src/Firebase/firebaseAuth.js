@@ -23,6 +23,7 @@ export const LoginUsuario = (email,password) =>{
   .signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       console.log( "id de usuario: " + userCredential.user.uid)
+    
       window.location.hash ='#/release'
 })
     .catch((error) => {
@@ -57,4 +58,3 @@ export function Salir(){
     console.log('no se pudo cerrar sesion')
   });
 }
-

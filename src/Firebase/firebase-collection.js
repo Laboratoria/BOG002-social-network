@@ -28,7 +28,7 @@ export const SaveUser = (user) => {
     
   }
    // *********************** accediendo a todos los documentos de la coleccion ******************
-
+   const usuarioID =userCredential.user.uid
    db.collection("publicaciones") .orderBy("fecha", "desc");
 export async function MostrarPublicaciones(){
 
@@ -40,11 +40,11 @@ export async function MostrarPublicaciones(){
           
         Publicar.innerHTML += `	
               	<div class="post">
-                    <span class="nombre-usuario" > <a href="#profile">${doc.data().publicaciones.nombre}</a> </span>
-                    <span class="contenido">${doc.data().publicaciones.descripcion } </span>
+                    <span class="nombre-usuario" > <a href="#profile">${doc.data().nombre}</a> </span>
+                    <span class="contenido">${doc.data().descripcion } </span>
                     <div id="fecha-lugar">
-                       <span class="fecha" > ${doc.data().publicaciones.fecha }</span>
-                       <span class="lugar"> <img src="./imagenes/Location-1.svg">${doc.data().publicaciones.lugar }</span>
+                       <span class="fecha" > ${doc.data().fecha }</span>
+                       <span class="lugar"> <img src="./imagenes/Location-1.svg">${doc.data().lugar }</span>
                     </div>
                     <div class="interaciones">
                     <img src="./imagenes/Star-1.svg"> 
