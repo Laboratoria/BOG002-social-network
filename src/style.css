@@ -5,6 +5,9 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
+#root{
+  width:100% ; 
+}
 
 /* Bienvenida/home */
 main fondo{
@@ -50,7 +53,6 @@ top:  5em;
 .btnHome{
 padding: 10px;
 width: 188px;
-height: 45px;
 border-radius: 20px;
 border-style: none;
 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -103,6 +105,7 @@ align-items: center;
 position: relative;
 top: 5em;
 }
+
 /* formulario de login */
 #Form-login{
 font-family: 'Dancing Script', cursive;
@@ -135,7 +138,8 @@ font-family: 'Poly';
 }
  
 .input img{
-height: 1.7em;
+  margin-top: 0.5em;
+height: 1.2em;
 }
 
 #Register{
@@ -157,7 +161,7 @@ color: black;
 }
 #login{
 background-color: #3d3d3deb;
-color: wheat;
+color: rgb(255, 255, 255);
 position: relative;
 top: 2em;
 
@@ -170,7 +174,7 @@ justify-content: space-around;
 font-size: 14px;
 }
 
-section {
+.Bienvenida {
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -178,7 +182,7 @@ height: 20vh;
 position: relative;
 top: 12em;
 }
-section img{
+.Bienvenida img{
 background: white;
 border-radius: 50%;
 border: white solid 10px;
@@ -268,20 +272,23 @@ color:black !important;
 position: relative;
 top:1.5em
 }
+#titulo-login{
+  position: relative;
+  top:0%
+}
 #usuario{
 width: 30vw;
-height: 30vh;
+height: 20vh;
 position: relative;
-top: 4em;
+top: 0.5em;
 margin-bottom:0.5em;
 /* left:7.5em; */
 }
 #usuario img{
-width: 135px;
-height: 135px;
+width: 130px;
+height: 130px;
 
 }
-
 nav ul {
   display: inline-flex;
   justify-content:space-between;
@@ -293,41 +300,54 @@ nav ul {
 }
 
 .nombre-usuario{
-  width: 75%;
+  width: 30vw;
   height: 20px;
   color: black;
-  position: relative;
   font-family: poly;
   font-weight: bold;
   left: 1em;
   top: 1px;
 }
 .contenido{
-  top: 3px;
+  top: 0.5em;
+  margin: 0.5em;
   position: relative;
-  width: 60vw;
+  width: 85vw;
   display: flex;
   text-align: left;
   height:auto ;
   left: 1em;
   flex-wrap: wrap;
-  overflow:hidden;
+  overflow: visible;
+  color: black;
+}
+#fecha-lugar{
+  display: inline-flex;
+  position: relative;
+  justify-content: space-between;
+  top: 0.5em; 
+  left: 1em;
+  width: 80vw;
+  height: 8vh;
+  margin-left: 0%;
 }
 .lugar{
-width: 40%;
-height:3vh;
-color: grey;
-top: 0.5px;
+top: 0.5em; 
 left: 1em;
+width: 60vw;
+color: grey; 
 font-size: 15px;
 }
 .fecha{
+  top: 0.5em; 
+  left: 0em;
   color: grey;
+  width: 40vw; 
+  font-size: 15px;
 }
 #search-area{
   padding: 0.5em;
   border: 1px solid #D9D2D2;
-  box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 18px;
   position: relative;

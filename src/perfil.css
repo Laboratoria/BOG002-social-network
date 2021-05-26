@@ -3,7 +3,11 @@
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr;
+<<<<<<< HEAD
     grid-template-rows: 0.3fr 1fr  2fr 0.3fr;
+=======
+    grid-template-rows: 0.3fr 2fr 0.3fr;
+>>>>>>> 7fa67bbcb42b65b71fb0ca4395da8ee172efac38
     grid-gap:0.2rem;
     grid-template-areas: 
     "header header header"
@@ -31,6 +35,7 @@
     position: relative;
     cursor: pointer;
   }
+<<<<<<< HEAD
   .enlaces{
     background-color: #ffff;
     height: 100px;
@@ -40,23 +45,40 @@
     top: 40px;
     right: 5px;
          
+=======
+ .enlaces{
+ background-color: #ffff;
+ display: none;
+ position: absolute;
+ top: 20px;
+ right: 5px;  
+ }
+ .setting{
+   width: 5em;
+   background-color: aquamarine;
+>>>>>>> 7fa67bbcb42b65b71fb0ca4395da8ee172efac38
  }
 
  #configuracion:hover .enlaces{
    display: block;
   
 }
-  .setting:hover{
-    background-color: #FFE8B4;
+.setting:hover{
+background-color: #FFE8B4;
   }
+<<<<<<< HEAD
   section img{
     width: 50px;
     height: 50px;
   }
+=======
+
+>>>>>>> 7fa67bbcb42b65b71fb0ca4395da8ee172efac38
  
-  section .perfil{
+   .perfil{
     position: relative;
-    top: -130px;
+    top: 0px;
+    width: 98vw;
     display: flex;
     flex-direction: column;
     align-content: baseline;
@@ -65,11 +87,12 @@
  
   .descripcion{
     color: black;
-    width: 100vw;
+    width: 90vw;
     padding-top: 10px;
     font-size: 18px;
     position: relative;
     top: 0px;
+    text-align: center;
    }
    div .all-post{
      grid-area: div;
@@ -78,16 +101,34 @@
      
    }
   footer{
-    background: #FFE8B4;
+    height: 10vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 100;
+    bottom: 0%;
+    padding: 0%;
+    margin: 0%;
+    background-color: transparent;
     grid-area: footer;
   }
   footer ul{
-    display: flex;
-    justify-content: space-around;
+    display: inline-flex;
+    justify-content:space-between;
+    width: 100vw;
+    padding-left: 0%;
+    height: 100%;
+    background-color: #FFE8B4;
+    border-top: rgb(212, 212, 212) solid 1px;
   }
   footer ul li{
+    margin: 0%;
+    list-style: none;
+    width: 100vw;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   footer ul  :hover {
     background-color: #FFD575;

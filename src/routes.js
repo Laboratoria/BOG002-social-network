@@ -30,6 +30,7 @@ export const router = (route) => {
             content.innerHTML= 
             home();
             BotondeCrearCuentaconGoogle();
+           
             break;
         case '#/signUp':
             content.innerHTML = 
@@ -86,7 +87,7 @@ export const router = (route) => {
             if (user) {
                 content.innerHTML = FormularioPerfilDeUsuario();
                                     EditarPerfil();
-                                    CerrarSesion();
+                                
             }else {
                 window.location.hash ='#/login'
                     }

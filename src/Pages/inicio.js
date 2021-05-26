@@ -1,5 +1,5 @@
-import { Salir, autenticacionUsuario } from '../Firebase/firebaseAuth.js';
-import { SavePublicaciones } from '../Firebase/firebase-collection.js'
+import {Salir} from '../Firebase/firebaseAuth.js';
+import{ SavePublicaciones} from '../Firebase/firestore.js'
 
 
 export function inicio() {

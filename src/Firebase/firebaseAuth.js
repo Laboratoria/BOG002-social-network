@@ -10,14 +10,11 @@ export const autenticacionUsuario =(email, password, Name)=>{
           window.location.hash ='#/release'
           return result.user.updateProfile({
                   displayName: Name
-    })
+})
       .catch((error) => {
-        console.log("error", error)
         modalError(error);
-  });
+});
 })}
-
-
 // *****************  ingresando usuario  ******************
 
 export const LoginUsuario = (email,password) =>{
@@ -25,15 +22,19 @@ export const LoginUsuario = (email,password) =>{
 
   .signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
+<<<<<<< HEAD
       // Signed in
       userCredential.user.currentUser;
+=======
+      console.log( "id de usuario: " + userCredential.user.uid)
+    
+>>>>>>> 7fa67bbcb42b65b71fb0ca4395da8ee172efac38
       window.location.hash ='#/release'
-    })
+})
     .catch((error) => {
       modalErrorLogin(error);
-    });
-  }
-
+});
+}
   // *********************** solo usuarios logeados ******************
 
  export function SoloUsuarios(){
@@ -41,7 +42,16 @@ export const LoginUsuario = (email,password) =>{
   let user = firebase.auth().currentUser;
     return user;
 }
- 
+// Actualizar perfil del usuario
+/* user.updateProfile({
+  displayName: "Jane Q. User",
+  photoURL: "https://example.com/jane-q-user/profile.jpg"
+}).then(function() {
+  // Update successful.
+}).catch(function(error) {
+  // An error happened.
+});
+  */
 // ************************ cerrar sesion ******************************
 export function Salir(){
   
@@ -50,7 +60,6 @@ export function Salir(){
     // Sign-out successful.
     window.location.hash = "#/login"
   }).catch((error) => {
-    // An error happened.
     console.log('no se pudo cerrar sesion')
   });
 }
