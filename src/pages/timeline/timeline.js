@@ -103,51 +103,64 @@ export function newCollectionPost() {
 function showPosts(doc) {
   const postlist = document.getElementById('listPost');
   let html = '';
-  getLikes(doc.id);
   const post = doc.data();
   const idPost = post.Uid;
   const idUser = auth.currentUser.uid;
   console.log(idPost, idUser)
-    if (idPost === idUser) { //Mostrar botones editar y eliminar publicacion del mismo usuario
-      const li = `
-        <li id="${doc.id}" >
-          <div id="containerTitlePost">
-            <img id="imgUserMobile" src="assets/IconoUsuario.png">
-            <h3 id="titlePost">${post.Title}</h3>
-          </div>
-          <div id="containerDate"> 
-            <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>
-            <button type="button" class="btnEditPost" data-id="${doc.id}"><img id="imageEdit" src="assets/logoEditar.png"></button>
-            <button type="button" class="btnDeletePost" data-id="${doc.id}"><img id="imageDelete" src="assets/logoEliminar.png"></button>
-          </div>                
+
+     let btnEditar = ``;
+     let btnDelete = ``;
+
+    if (idPost === idUser) { 
+      btnEditar = `<button type="button" class="btnEditPost" data-id="${doc.id}"><img id="imageEdit" src="assets/logoEditar.png"></button>`;
+      btnDelete = `<button type="button" class="btnDeletePost" data-id="${doc.id}"><img id="imageDelete" src="assets/logoEliminar.png"></button>`;
+    }//Mostrar botones editar y eliminar publicacion del mismo usuario
+    const li = `
+      <li id="${doc.id}" >
+        <div id="containerTitlePost">
+          <img id="imgUserMobile" src="assets/IconoUsuario.png">
+          <h3 id="titlePost">${post.Title}</h3>
+        </div>
+        <div id="containerDate"> 
+          <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>
+          ${btnEditar}
+          ${btnDelete}
+        </div>                
         <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
-        <div id="containerLikes"
+        <div id="containerLikes">
           <span class="likesCounter" id="likePost${doc.id}">0</span>
-          <button type="button" class="btnlikesPost" id="btnLikes${doc.id}" data-id="${doc.id}"><img id="imageLike" src="assets/IconoCorazon2.png"></button>
-          <button type="button" class="btnDislikesPost" id="btnDisLikes${doc.id}" data-id="${doc.id}"><img id="imageDisLike" src="assets/IconoCorazonLinea.png"></button>
-        </li>
-        `;
+          <button type="button" class="btnlikesPost" id="btnLikes${doc.id}" data-id="${doc.id}" title="Dar Like">
+            <img id="imageLike" src="assets/IconoCorazon2.png">
+          </button>
+          <button type="button" class="btnDislikesPost" id="btnDisLikes${doc.id}" data-id="${doc.id}" title="Dar DisLike">
+            <img id="imageDisLike" src="assets/IconoCorazonLinea.png">
+          </button>
+        </div>                
+      </li>
+      `;
     html += li;
     postlist.insertAdjacentHTML('afterbegin', html);
-    } else {  //Mostrar publicacion sin botones de editar y eliminar 
-      const li = `
-        <li id="${doc.id}" >  
-          <div id="containerTitlePost">
-            <img id="imgUserMobile" src="assets/IconoUsuario.png">
-            <h3 id="titlePost">${post.Title}</h3> 
-          </div> 
-          <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>                
-          <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
-          <div id="containerLikes"
-            <span class="likesCounter" id="likePost${doc.id}">0</span>
-            <button type="button" class="btnlikesPost" id="btnLikes${doc.id}" data-id="${doc.id}"><img id="imageLike" src="assets/IconoCorazon2.png"></button>
-            <button type="button" class="btnDislikesPost" id="btnDisLikes${doc.id}" data-id="${doc.id}"><img id="imageDisLike" src="assets/IconoCorazonLinea.png"></button>
-          </div>
-        </li>
-        `;
-    html += li;
-    postlist.insertAdjacentHTML('afterbegin', html);
-  }
+    getLikes(doc.id);
+
+  //   } else {  //Mostrar publicacion sin botones de editar y eliminar 
+  //     const li = `
+  //       <li id="${doc.id}" >  
+  //         <div id="containerTitlePost">
+  //           <img id="imgUserMobile" src="assets/IconoUsuario.png">
+  //           <h3 id="titlePost">${post.Title}</h3> 
+  //         </div> 
+  //         <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>                
+  //         <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
+  //         <div id="containerLikes">
+  //           <span class="likesCounter" id="likePost${doc.id}">0</span>
+  //           <button type="button" class="btnlikesPost" id="btnLikes${doc.id}" data-id="${doc.id}"><img id="imageLike" src="assets/IconoCorazon2.png"></button>
+  //           <button type="button" class="btnDislikesPost" id="btnDisLikes${doc.id}" data-id="${doc.id}"><img id="imageDisLike" src="assets/IconoCorazonLinea.png"></button>
+  //         </div>
+  //       </li>
+  //       `;
+  //   html += li;
+  //   postlist.insertAdjacentHTML('afterbegin', html);
+  // }
 }
 
 // Función modal para eliminar Publicaciones
@@ -217,6 +230,7 @@ function editColletionPosts() {
 // Función enviando datos a la collección Likes  en FireBase
 function newCollectionLikes(idPost) {
   const btnLikes = document.getElementById(`btnLikes${idPost}`);
+  const btnDisLikes = document.getElementById(`btnDisLikes${idPost}`);
   btnLikes.addEventListener('click', () => {
     const user = auth.currentUser;
     const postID = btnLikes.dataset.id;
@@ -224,33 +238,39 @@ function newCollectionLikes(idPost) {
     setLikesPost(postID, userID);
     getLikes(postID);
     btnLikes.style.display = 'none';
-
+    btnDisLikes.style.display = 'block';
   });
+
+
 }
 
 function getLikes(idPost) {
   const datalikes = [];
   let likes = 0;
+  const btnDisLikes = document.getElementById(`btnDisLikes${idPost}`);
+  const btnLikes = document.getElementById(`btnLikes${idPost}`);
   getLikesPost(idPost)
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         datalikes.push(doc.data());
         if (doc.data().Uid === auth.currentUser.uid) {
-          const idBtnLikes = document.getElementById(`btnDisLikes${idPost}`);
-          const btnLikes = document.getElementById(`btnLikes${idPost}`);
-          idBtnLikes.addEventListener('click', () => {
+          btnDisLikes.addEventListener('click', () => {
             deleteLikes(doc.id);
-            console.log(doc.id)
-            idBtnLikes.style.display = 'none';
+            btnDisLikes.style.display = 'none';
             btnLikes.style.display = 'block';
-
+            getLikes(idPost);
           })
-
-        } else {
-
         }
       });
       likes = datalikes.length;
+      if (likes === 0){
+        btnDisLikes.style.display = 'none';
+        btnLikes.style.display = 'block';
+      }else{
+        btnDisLikes.style.display = 'block';
+        btnLikes.style.display = 'none';
+      }
+
       const likePost = document.getElementById(`likePost${idPost}`);
       likePost.innerHTML = likes;
     })
