@@ -57,11 +57,12 @@ export async function ParaPublicar(){
 	const BtnPublicar = document.getElementById("publicar-btn")
 		  await BtnPublicar.addEventListener("click", (e) => {
 			e.preventDefault();
-			const user   		= firebase.auth().currentUser; //esta variable se usara en el documento firebaseauth
+			let user   		= firebase.auth().currentUser; //esta variable se usara en el documento firebaseauth
 			const nombre 		= user.displayName 
 			const descripcion   = document.querySelector(".publicar").value;
 			const lugar 		= document.querySelector("#input-lugar").value;
-			const objectoAccion =  Date.now();
+			const objectoAccion =  new Date();
+			console.log(objectoAccion);
 
 
 			 const publicaciones= {

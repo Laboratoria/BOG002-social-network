@@ -32,6 +32,7 @@ export const router = (route) => {
             content.innerHTML= 
             home();
             BotondeCrearCuentaconGoogle();
+           
             break;
         case '#/signUp':
             content.innerHTML = 

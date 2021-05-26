@@ -34,8 +34,10 @@ export function perfil(){
 	  </footer>
 	</div>`;    
     return html;
+	
   }
- 
+
+
   
    export function name (){
 	//    obteniendo valores
@@ -50,7 +52,11 @@ export function perfil(){
 		Nombre_usuario.innerHTML =  NombreRegistro ;
 
 
-}
+
+
+                
+  }
+
 
 
 					 
