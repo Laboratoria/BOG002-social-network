@@ -1,4 +1,4 @@
-import {Salir, autenticacionUsuario} from '../Firebase/firebaseAuth.js';
+import {Salir} from '../Firebase/firebaseAuth.js';
 import{ SavePublicaciones} from '../Firebase/firestore.js'
 
 
@@ -9,7 +9,7 @@ export function inicio(){
 	<div id="encabezado">
 		<div id="logo"> FoodFans </div>
 		<div id="configuracion"><img src="./imagenes/Setting.svg">
-		s
+
 		</div> 
 	</div>
 
@@ -68,7 +68,7 @@ export async function ParaPublicar(){
    					nombre,
 					descripcion,
 					foto: false,
-					fecha: Date(objectoAccion.toLocaleString()),
+					fecha: Date(objectoAccion.toString()).replace(/ \w+-\d+ \(.*\)$/,""),
    					lugar,
 			}
 			SavePublicaciones(publicaciones);

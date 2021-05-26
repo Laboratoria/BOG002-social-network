@@ -8,7 +8,8 @@ import { perfil, name  } from './Pages/perfil.js';
 import { FormularioPerfilDeUsuario, EditarPerfil } from './Pages/DatosUsuario.js';
 import { Error404} from './Pages/Error 404.js';
 import { search } from './Pages/search.js';
-import { eliminar, MostrarPublicaciones } from './Firebase/firestore.js';
+import {MostrarPublicaciones } from './Firebase/firestore.js';
+
 
 
  
@@ -51,8 +52,9 @@ export const router = (route) => {
                  content.innerHTML =  inicio();
                     ParaPublicar();
                     CerrarSesion();
-                    eliminar();
                     MostrarPublicaciones();
+                    // eliminar();
+                    
                    
                     
             }else {

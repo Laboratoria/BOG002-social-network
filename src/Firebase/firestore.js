@@ -29,51 +29,57 @@ export const SaveUser = (user) => {
 
 export  function MostrarPublicaciones(){
   
-     const  Publicar = document.getElementById("publicaciones"); 
-            db.collection('publicaciones').orderBy("fecha", "desc").onSnapshot((querySnapshot) =>  {
+       const  Publicar = document.getElementById("publicaciones");
+       db.collection('publicaciones').orderBy("fecha", "desc").onSnapshot((querySnapshot) =>  {
          
         Publicar.innerHTML = ``;
         querySnapshot.forEach((doc) => {
-         let ID = doc.id;
+
+         let ID          = doc.id;
          let NombreUser  = doc.data().nombre;
          let Descripcion = doc.data().descripcion;
          let Fecha       = doc.data().fecha;
          let Lugar       = doc.data().lugar;
          
-         PrintCollection (Publicar, ID, NombreUser, Descripcion, Fecha, Lugar)
+         PrintCollection (Publicar, ID, NombreUser, Descripcion, Fecha, Lugar);
+         
 });
-});}
-
-   // *********************** eliminando  los documentos de la coleccion por id ******************
-   export  function eliminar (id){
-   //   const  Publicar = document.getElementById("publicaciones");
-
-   //   const  btnsBorrar = Publicar.querySelectorAll("button .basura");
-   //          console.log(btnsBorrar)
-
-         //   btnsBorrar.forEach((btn) =>
-         //          btn.addEventListener("click",  () => {
-
-            db.collection("publicaciones").doc(id).delete()
-   
-            .then(() => {
-                   console.log("Borrado");
-})
-            .catch((error) => {
-                   console.error("Error removing document: ", error);
+eliminar();
 });
 }
-// ))
-// }
+   // *********************** Eliminando  los documentos de la coleccion por id ******************
+  
+function eliminar(){
+
+   let btnsBorrar = document.querySelectorAll("button.basura");
+   console.log(btnsBorrar);
+
+   btnsBorrar.forEach((btn) =>{
+      btn.addEventListener("click",() => {
+         // const node= this.closest(".post") Llamar alpadre post 
+         console.log(this)
+// con el padre tomaremos su id 
+         db.collection("publicaciones").doc("id").delete()
+
+         .then(() => {
+            console.log("Borrado");
+         })
+         .catch((error) => {
+            console.error("Error removing document: ", error);
+         });
+      }
+   )})
+}
+
  // *********************** editar los documentos de la coleccion por id ******************
 export function editar(){
    const db = firebase.firestore(); 
-   db.collection("publicaciones").doc(id).update({
-      //  Lugar: locationEdit,
-      //  Descripcion: descriptionEdit,
+         db.collection("publicaciones").doc("id").update({
+      //  Lugar: 
+      //  Descripcion: 
       //  ID: postID,
-      //  Nombre: postuser,
-      //  Fecha: Date(Date.now())
+      //  Nombre: 
+      //  Fecha:
    })
    .then(() => {
        //console.log("documento editado!");
