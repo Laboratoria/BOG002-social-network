@@ -13,7 +13,7 @@ const auth = firebase.auth();
 
 // Template screen muro
 export function timelinePage() {
-  const view = `
+  const view = `. 
         <section id="screenWall">
                    
             <header>
@@ -27,8 +27,10 @@ export function timelinePage() {
                   <form id="logOut">
                     <button class="button" id="btnLogOut">Cerrar sesion</button>
                   </form>
+                  <form>
                   <input id="inputPost" class="input" type="text" placeholder="¿Qué nos quieres compartir?">
-                  <button id="btnPost" class="button">Publicar</button>
+                  <button id="btnPost" class="button" type = "reset" >Publicar</button>
+                  </form>
                   <h3 id= "errorInputPost"></h3>
                        <div id ="posts">
                           <ul id = "listPost" >
