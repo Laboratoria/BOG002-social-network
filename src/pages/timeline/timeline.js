@@ -130,37 +130,17 @@ function showPosts(doc) {
         <div id="containerLikes">
           <span class="likesCounter" id="likePost${doc.id}">0</span>
           <button type="button" class="btnLikes" id="btnLikes${doc.id}" data-id="${doc.id}" title="Dar Like">
-            <img id="imageLike" src="assets/IconoCorazon2.png">
+            <img id="imageLike" src="assets/IconoCorazonLinea.png">
           </button>
           <button type="button" class="btnLikes" id="btnDisLikes${doc.id}" data-id="${doc.id}" title="Dar DisLike">
-            <img id="imageDisLike" src="assets/IconoCorazonLinea.png">
+            <img id="imageDisLike" src="assets/IconoCorazon2.png">
           </button>
-        </div>                
+        </div>       
       </li>
       `;
     html += li;
     postlist.insertAdjacentHTML('afterbegin', html);
     getLikes(doc.id);
-
-  //   } else {  //Mostrar publicacion sin botones de editar y eliminar 
-  //     const li = `
-  //       <li id="${doc.id}" >  
-  //         <div id="containerTitlePost">
-  //           <img id="imgUserMobile" src="assets/IconoUsuario.png">
-  //           <h3 id="titlePost">${post.Title}</h3> 
-  //         </div> 
-  //         <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>                
-  //         <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
-  //         <div id="containerLikes">
-  //           <span class="likesCounter" id="likePost${doc.id}">0</span>
-  //           <button type="button" class="btnlikesPost" id="btnLikes${doc.id}" data-id="${doc.id}"><img id="imageLike" src="assets/IconoCorazon2.png"></button>
-  //           <button type="button" class="btnDislikesPost" id="btnDisLikes${doc.id}" data-id="${doc.id}"><img id="imageDisLike" src="assets/IconoCorazonLinea.png"></button>
-  //         </div>
-  //       </li>
-  //       `;
-  //   html += li;
-  //   postlist.insertAdjacentHTML('afterbegin', html);
-  // }
 }
 
 // Función modal para eliminar Publicaciones
@@ -260,7 +240,7 @@ function getLikes(idPost) {
             btnLikes.style.display = 'block';
             getLikes(idPost);
           })
-        }
+        }        
       });
       likes = datalikes.length;
       if (likes === 0){

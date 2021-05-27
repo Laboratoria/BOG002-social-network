@@ -116,10 +116,11 @@ li {
     padding: 1px;
     border: none;
     display: none;
+    cursor: pointer;
 }
 
 #imageLike {
-   width: 22px; 
+   width: 27px; 
 }
 
 #imageDisLike {
