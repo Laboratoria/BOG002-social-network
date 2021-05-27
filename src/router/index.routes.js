@@ -1,22 +1,24 @@
-import Home from "../views/home.js"
-import Login from "../views/formLogin.js"
+import Home from '../views/home.js'
+import Login from '../views/login.js'
 
 let content = document.getElementById("root");
 
 const router = (route) => {
-  content.innerHTML = '';
-  switch (route) {
-    case "#/Home": {
-      return content.appendChild(Home());
-    }
+    content.innerHTML = '';
+    switch (route) {
+        case "#/Home":
+            {
+                return content.appendChild(Home());
+            }
 
-    case "#/login": {
-      return content.appendChild(Login());
-    }
+        case "#/login":
+            {
+                return content.appendChild(Login());
+            }
 
-    default:
-      return console.log("Error 404");
-  }
+        default:
+            return console.log("Error 404");
+    }
 };
 
 export { router };
