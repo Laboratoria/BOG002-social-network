@@ -129,10 +129,10 @@ function showPosts(doc) {
         <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
         <div id="containerLikes">
           <span class="likesCounter" id="likePost${doc.id}">0</span>
-          <button type="button" class="btnlikesPost" id="btnLikes${doc.id}" data-id="${doc.id}" title="Dar Like">
+          <button type="button" class="btnLikes" id="btnLikes${doc.id}" data-id="${doc.id}" title="Dar Like">
             <img id="imageLike" src="assets/IconoCorazon2.png">
           </button>
-          <button type="button" class="btnDislikesPost" id="btnDisLikes${doc.id}" data-id="${doc.id}" title="Dar DisLike">
+          <button type="button" class="btnLikes" id="btnDisLikes${doc.id}" data-id="${doc.id}" title="Dar DisLike">
             <img id="imageDisLike" src="assets/IconoCorazonLinea.png">
           </button>
         </div>                

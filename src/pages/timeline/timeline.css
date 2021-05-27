@@ -111,17 +111,11 @@ li {
 .likesCounter {
     margin-left: 180px;
 }
-
-.btnlikesPost {
+.btnLikes {
     background-color: white;
     padding: 1px;
     border: none;
-}
-
-.btnDislikesPost {
-    background-color: white;
-    padding: 1px;
-    border: none;
+    display: none;
 }
 
 #imageLike {
