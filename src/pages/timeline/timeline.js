@@ -111,7 +111,7 @@ function showPosts(doc) {
   let btnEditar = ``;
   let btnDelete = ``;
   if (idPost === idUser) { 
-    btnEditar = `<button type="button" class="btnEditPost" data-id="${doc.id}"><img id="imageEdit" src="assets/logoEditar.png"></button>`;
+    btnEditar = `<button type="button" class="btnEditPost" id="btn${doc.id}" data-click="editar"><img id="imageEdit" src="assets/logoEditar.png"></button>`;
     btnDelete = `<button type="button" class="btnDeletePost" data-id="${doc.id}"><img id="imageDelete" src="assets/logoEliminar.png"></button>`;
   }//Mostrar botones editar y eliminar publicacion del mismo usuario
   const li = `
@@ -125,7 +125,8 @@ function showPosts(doc) {
         ${btnEditar}
         ${btnDelete}
       </div>                
-      <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
+      <textarea id="textPost${doc.id}" disabled = "true" style = "display: none">${post.Contents}</textarea>
+      <p id="paragraphToEdit${doc.id}">${post.Contents}</p>
       <div id="containerLikes">
         <span class="likesCounter" id="likePost${doc.id}">0</span>
         <button type="button" class="btnLikes" id="btnLikes${doc.id}" data-id="${doc.id}" title="Dar Like">
@@ -183,27 +184,36 @@ function modalDeleteColletionPosts() {
 }
 
 // Función editando publicaciones
-function editColletionPosts() {
-  const buttonEditPosts = document.querySelectorAll('.btnEditPost');
-  buttonEditPosts.forEach((button) => {
+function editColletionPosts(idPost) {
+  //const buttonEditPosts = document.querySelectorAll('.btnEditPost');
+  //buttonEditPosts.forEach((button) => {
+    const button = document.getElementById(`btn${idPost}`);
     button.addEventListener('click', () => {
+      const click = button.dataset.click;
       const buttonAux = button;
-      buttonAux.innerHTML = '<img id="imageSave" src="assets/logoGuardar.png">';
-      const inputText = document.getElementById(`textPost${button.dataset.id}`).value;
-      const newInput = document.getElementById(`textPost${button.dataset.id}`);
-      const idPost = button.dataset.id;
-      newInput.disabled = false;
+      const inputText = document.getElementById(`textPost${idPost}`).value;
+      const newInput = document.getElementById(`textPost${idPost}`);
+      const paragraph = document.getElementById(`paragraphToEdit${idPost}`);
 
-      buttonAux.onclick = () => {
+      if (click=="editar"){
+        buttonAux.innerHTML = '<img id="imageSave" src="assets/logoGuardar.png">';
+        button.dataset.click = "guardar"
+        newInput.disabled = false;
+        newInput.style.display = 'block';
+        paragraph.style.display = 'none';
+      }else{
+        buttonAux.innerHTML = '<img id="imageSave" src="assets/logoEditar.png">';
+        button.dataset.click = "editar"
+        newInput.disabled = true;
         editPosts(idPost, inputText)
           .then(() => {
-            buttonAux.innerHTML = '<img id="imageSave" src="assets/logoEditar.png">';
-            newInput.disabled = true;
-          })
-          .catch(() => { });
-      };
+            newInput.style.display = 'none';
+            paragraph.style.display = 'block';
+            paragraph.innerHTML = inputText;
+          });
+      }
     });
-  });
+  //});
 }
 
 // Función enviando datos a la collección Likes  en FireBase
@@ -274,7 +284,7 @@ export function postsTimeline() {
           if (change.type === 'added') {
             showPosts(change.doc);
             modalDeleteColletionPosts();
-            editColletionPosts();
+            editColletionPosts(change.doc.id);
             newCollectionLikes(change.doc.id);
           }
         });
