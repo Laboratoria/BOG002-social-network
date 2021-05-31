@@ -161,44 +161,6 @@ function showPosts(doc) {
   let html = '';
   const post = doc.data();
   const idPost = post.Uid;
-<<<<<<< HEAD
-  const idUser = auth.currentUser.uid; 
-
-     let btnEditar = ``;
-     let btnDelete = ``;
-
-    if (idPost === idUser) { 
-      btnEditar = `<button type="button" class="btnEditPost" data-id="${doc.id}"><img id="imageEdit" src="assets/logoEditar.png"></button>`;
-      btnDelete = `<button type="button" class="btnDeletePost" data-id="${doc.id}"><img id="imageDelete" src="assets/logoEliminar.png"></button>`;
-    }//Mostrar botones editar y eliminar publicacion del mismo usuario
-    const li = `
-      <li id="${doc.id}" >
-        <div id="containerTitlePost">
-          <img id="imgUserMobile" src="assets/IconoUsuario.png">
-          <h3 id="titlePost">${post.Title}</h3>
-        </div>
-        <div id="containerDate"> 
-          <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>
-          ${btnEditar}
-          ${btnDelete}
-        </div>                
-        <input value='${post.Contents}' id="textPost${doc.id}" disabled = "true" ></input>
-        <div id="containerLikes">
-          <span class="likesCounter" id="likePost${doc.id}">0</span>
-          <button type="button" class="btnlikesPost" id="btnLikes${doc.id}" data-id="${doc.id}" title="Dar Like">
-            <img id="imageLike" src="assets/IconoCorazonLinea.png">
-          </button>
-          <button type="button" class="btnDislikesPost" id="btnDisLikes${doc.id}" data-id="${doc.id}" title="Dar DisLike">
-            <img id="imageDisLike" src="assets/IconoCorazon2.png">
-          </button>
-        </div>                
-      </li>
-      `;
-    html += li;
-    postlist.insertAdjacentHTML('afterbegin', html);
-    getLikes(doc.id);
- 
-=======
   const idUser = auth.currentUser.uid;
   let btnEditar = '';
   let btnDelete = '';
@@ -237,7 +199,6 @@ function showPosts(doc) {
   html += li;
   postlist.insertAdjacentHTML('afterbegin', html);
   getLikes(doc.id);
->>>>>>> f28a05c86a8bfa6d56c9104f106fb8eb8c4bfd52
 }
 
 // Función modal para eliminar Publicaciones
@@ -310,48 +271,7 @@ function editColletionPosts(idPost) {
         });
     }
   });
-<<<<<<< HEAD
-
-
-}
-
-function getLikes(idPost) {
-  const datalikes = [];
-  let likes = 0;
-  const btnDisLikes = document.getElementById(`btnDisLikes${idPost}`);
-  const btnLikes = document.getElementById(`btnLikes${idPost}`);
-  getLikesPost(idPost)
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        datalikes.push(doc.data());
-        if (doc.data().Uid === auth.currentUser.uid) {
-          btnDisLikes.addEventListener('click', () => {
-            deleteLikes(doc.id);
-            btnDisLikes.style.display = 'none';
-            btnLikes.style.display = 'block';
-            getLikes(idPost);
-          })
-        }
-      });
-      
-      const idUser = auth.currentUser.uid;
-      const idLike = 
-      console.log(idUser,idLike)
-      likes = datalikes.length;
-     // if (likes === 0 && doc.data().Uid === auth.currentUser.uid){
-     //   btnDisLikes.style.display = 'none';
-     //   btnLikes.style.display = 'block';
-     // }else{
-     //   btnDisLikes.style.display = 'block';
-     //   btnLikes.style.display = 'none';
-     // }
-
-      const likePost = document.getElementById(`likePost${idPost}`);
-      likePost.innerHTML = likes;
-    })
-=======
   // });
->>>>>>> f28a05c86a8bfa6d56c9104f106fb8eb8c4bfd52
 }
 
 // Funcion publicaciones en pantalla
