@@ -67,10 +67,6 @@ Fue fundamental apoyarnos con la herramienta **Trello**. Inicialmente montamos t
 
 ### DOM y Web APIs
 * [ ] Uso de selectores del DOM.
-* [ ] Manejo de eventos del DOM (addEventListener, removeEventListener, Event objeto, delegación de eventos)
-* [ ] Manipulación dinámica del DOM (appendChild | createElement | createTextNode | innerHTML | textContent | etc.)
-* [ ] Implementación de routing (History API. | hashchange)
-
 ### JavaScript
 * [ ] Uso de condicionales (if-else | switch | operador ternario)
 * [ ] Uso de funciones (parámetros | argumentos | valor de retorno)
