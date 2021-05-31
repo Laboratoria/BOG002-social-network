@@ -3,6 +3,7 @@ import {
   collectionPost,
   deletePosts,
   getPosts,
+  editPosts,
 } from '../src/index.js';
 
 const fixtureData = {
@@ -15,6 +16,13 @@ const fixtureData = {
           Title: 'dana@gmail.com',
           uid: '123abc',
         },
+
+        post456: {
+          Contents: 'Hola Chicas',
+          Date: '15 de mayo de 2021',
+          Title: 'mali@gmail.com',
+          uid: 'abc123',
+        },
       },
     },
   },
@@ -22,6 +30,17 @@ const fixtureData = {
 global.firebase = new MockFirebase(fixtureData, { isNaiveSnapshotListenerEnabled: true });
 
 describe('collectionPost', () => {
+  it('el nuevo texto deberia ser Hola Mundo', (done) => {
+    const edit = editPosts('post456', 'Hola Mundo');
+    return edit
+      .then(() => {
+        getPosts((data) => {
+          const resultado = data.docs.find((post) => post.id === 'post456');
+          expect(resultado._data.Contents).toBe('Hola Mundo'); // eslint-disable-line
+          done();
+        });
+      });
+  });
   it('el titulo de la publicación deberia ser: ana@gmail.com', (done) => {
     const addPost = collectionPost('ana@gmail.com', 'Hola chicas', 1301090400, '123abcd');
     return addPost

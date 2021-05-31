@@ -127,14 +127,11 @@ li {
     border: none;
     display: none;
     cursor: pointer;
+    margin-left: 8px;
 }
 
 #imageLike {
    width: 27px; 
-}
-
-#imageDisLike {
-   width: 22px;
 }
 
 #imageEdit {
@@ -232,17 +229,8 @@ textarea {
     margin-bottom: 7px ;
 }
 
-#imageLike {
-    width: 29px; 
-}
- 
 #imageDisLike {
     width: 25px;
-}
-
-.btnLikes {
-    margin-left: 8px;
-    cursor: pointer;
 }
 
 span {
@@ -277,10 +265,6 @@ span {
         width: 500px;
     }
 
-    #titlePost {
-        font-size: 18px;
-    }
-
     #inputPost {
         font-size: 14px;
         width: 390px;
@@ -302,10 +286,6 @@ span {
         margin: 10px 0px 10px 25px;
     }
 
-    .btnDeletePost {
-        margin-right: 12px;
-    }
-
     #imgUserMobile {
         margin-top: 25px;
         width: 45px;
@@ -315,7 +295,7 @@ span {
     #titlePost {
         font-size: 16px;
         margin-left: 8px;
-        margin-top: 32px;
+        margin-top: 32px;        
     }
 
     #imageSave {
@@ -341,6 +321,7 @@ span {
         height: 29px;
         margin-top: 1px;
         margin-left: 4px;
+        margin-right: 12px;
     } 
 
     #imageLike {

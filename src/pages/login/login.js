@@ -81,6 +81,4 @@ export function logIn() {
       });
     return true;
   });
-
-  
 }
