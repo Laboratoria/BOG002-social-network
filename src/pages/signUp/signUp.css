@@ -1,0 +1,100 @@
+.buttonClose {
+    background-color: #350B1F;
+    color: #c997c0;
+    font-size: 16px;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px 8px 4px 8px;
+    margin-left: 93%;
+    margin-top: 2%;
+    border-radius: 14px;
+    border:none;
+    cursor: pointer;
+    }   
+ 
+#imgWikiMoms {
+    margin: 7% 0% 3% 0%;
+    width: 220px;
+    }   
+
+.containerLogInGoogle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 0% 4% 0%;
+    border-radius: 8px;
+    margin: 0% 7% 0% 7%;
+    width: 86%;
+    } 
+
+.containerRegistration{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#ECD4EA ;
+    padding: 8% 0% 6% 0%;
+    border-radius: 8px;
+    margin: 5% 5% 0% 5%;
+    width: 90%;
+    } 
+
+#lineas {
+    margin: 6% 0% 0% 0%
+}
+
+@media (min-width: 700px) {
+
+    section {
+        width: 700px;
+    }
+
+    .buttonClose {
+        margin-left: 83%;
+    }  
+
+    #imgWikiMoms {
+        margin: 5% 0% 3% 0%;
+        width: 300px;
+    } 
+
+    .containerLogInGoogle{
+        width: 65%;
+        margin-left: 130px;
+        padding: 0%;
+    }
+
+    .containerRegistration{
+        width: 65%;
+        margin-left: 130px;
+    }
+    
+    h2 {
+        margin: 2% 18% 3% 18%;
+    }
+
+    .input {
+        width: 300px;
+    }
+
+    #ImageHeader {
+        width: 320px;
+    }
+
+    #lineas {
+        margin: 5% 0% 0% 0%
+    }
+}
+
+@media (min-width: 1024px) {
+    
+    .buttonClose {
+        margin-left: 88%;
+        margin-top: 4%;
+    }
+
+} 
+
+ 

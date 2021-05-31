@@ -1,0 +1,381 @@
+.headerWall {
+    width: 100vh; 
+    background-color: #ECD4EA;
+    padding: 3%;
+    margin: -25px;
+}
+
+#WikiBlack {
+    width: 170px;
+}
+
+#imgUser {
+    margin-left: 60px;
+    margin-top: 4px;
+    width: 45px;
+}
+
+ul {
+    padding: 2% 8% 0% 5%;
+}
+
+li {
+    grid-row: 1;
+    background-color: white;
+    border: 2px solid #ECC4B1;
+    border-radius: 8px;
+    list-style: none;
+    margin: 2px 0px 20px 0px;
+    width: 280px;
+}
+
+#btnLogOut {
+    margin: 30px 0px 0px 190px;
+    background-color: #ECD4EA;
+    color: #923367;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 13px;
+    border: 1px solid #923367;
+    border-radius: 5px;
+    width: 100px;
+    cursor: pointer;
+}
+         
+#inputPost {
+    background-color: white;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 10px;
+    width: 250px;
+    height: 35px;
+    border:none;
+    margin: 5% 0% 0% 0%;
+}
+
+#btnPost {
+    width: 80px;
+    cursor: pointer;
+}
+
+#btnPost:hover{
+    background-color:#923367;
+    color: white;
+    border: 2px solid #923367;
+}
+
+#containerTitlePost {
+    display: flex;
+    flex-direction: row;
+}
+
+#imgUserMobile {
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-top: 15px;
+    width: 35px;
+    height: 35px;
+}
+
+#titlePost {
+    font-size: 13px;
+    margin: 3px;
+    margin-top: 20px;
+}
+
+#containerDate {
+    display: flex;
+    flex-direction: row;
+}
+
+#datePost {
+    font-size: 10px;
+    margin-left: 58% ;
+    margin-top: 5px;
+}
+
+.btnEditPost {
+    background-color: #350B1F;
+    border: 1px solid white;
+    position: relative;
+    border-radius: 14px;
+    width: 25px;
+    height: 25px;
+    margin-top: 1px;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.btnDeletePost {
+    background-color: #350B1F;
+    border: 1px solid white;
+    border-radius: 14px;
+    width: 25px;
+    height: 25px;
+    margin-top: 1px;
+    margin-left: 4px;
+    cursor: pointer;
+} 
+
+#likePost {
+    margin-left: 180px;
+}
+
+.btnLikes {
+    background-color: white;
+    padding: 1px;
+    border: none;
+    display: none;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+#imageLike {
+   width: 27px; 
+}
+
+#imageEdit {
+    width: 11px;
+    background-color: #350B1F;
+    margin-top: 2px;
+}
+
+textarea {
+    background-color: white;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 12px;
+    width: 250px;
+    border:none;
+    margin: 10px 0px 10px 18px;
+}
+
+#imageDelete {
+    width: 12px;
+    background-color: #350B1F;
+    margin-top: 2px;
+}
+
+#imageSave {
+    width: 12px;
+    padding-right: 3px;
+    background-color: #350B1F;
+    margin: 2px 6px 0px 0px;
+}
+
+#containerParagraph {
+    font-size: 12px;
+    margin-left: 18px;
+    margin-right: 18px;
+    text-align: justify;
+}
+
+.modal-container {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-family: 'Yusei Magic', sans-serif;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+}
+  
+.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+  
+.modal {
+    background-color: #ECD4EA;
+    font-size: 13px;
+    width: 160px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#delete {
+    background-color: #923367;
+    color: #F9F4F4;
+    font-family: 'Yusei Magic', sans-serif;
+    border-radius: 4px;
+    width: 70px;
+    height: 30px;
+    border:none;
+}
+
+#buttonModalDeletePost {
+    background-color: #923367;
+    color: #F9F4F4;
+    font-family: 'Yusei Magic', sans-serif;
+    border-radius: 4px;
+    width: 70px;
+    height: 30px;
+    border:none;
+    cursor: pointer;
+}
+
+#containerLikes {
+    display: flex;
+    flex-direction: row;
+    margin-left: 230px;
+    margin-bottom: 7px ;
+}
+
+#imageDisLike {
+    width: 25px;
+}
+
+span {
+    margin-top: 3px;
+}
+
+
+@media (min-width: 700px) {
+
+    .headerWall {
+        margin-top: -25px;
+        padding: 1%;
+        }
+
+    #WikiBlack {
+        width: 220px;
+        padding-bottom: 5px;
+    }
+
+    #btnLogOut {
+        margin: 35px 0px 0px 410px;
+    }
+
+    #imgUser {
+        margin-left: 185px;
+        width: 60px;
+        padding-top: 7px;
+    }
+
+    li {
+        margin-left: 65px;
+        width: 500px;
+    }
+
+    #inputPost {
+        font-size: 14px;
+        width: 390px;
+        height: 35px;
+        padding: 0%;
+        margin: 25px 10px 0px 0px;
+    }
+
+    #containerParagraph {
+        font-size: 13px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    textarea {
+        font-size: 13px;
+        width: 450px;
+        border:none;
+        margin: 10px 0px 10px 25px;
+    }
+
+    #imgUserMobile {
+        margin-top: 25px;
+        width: 45px;
+        height: 45px;
+    }
+
+    #titlePost {
+        font-size: 16px;
+        margin-left: 8px;
+        margin-top: 32px;        
+    }
+
+    #imageSave {
+        margin-left: 1px;
+        width: 14px;
+    }
+    
+    #imageDelete {
+        width: 14px;
+        margin-top: 2px;
+        margin-left: 1px;
+    }
+
+    .btnEditPost {
+        width: 29px;
+        height: 29px;
+        margin-top: 1px;
+        margin-left: 8px;
+    }
+    
+    .btnDeletePost {
+        width: 29px;
+        height: 29px;
+        margin-top: 1px;
+        margin-left: 4px;
+        margin-right: 12px;
+    } 
+
+    #imageLike {
+        width: 32px; 
+    }
+     
+    #imageDisLike {
+        width: 27px;
+    }
+
+    span {
+        margin-left: 10px;
+    }
+
+    #datePost {
+        font-size: 12px;
+        margin-left: 355px ;
+        margin-top: 5px;
+    }
+
+    #containerTitlePost {
+        margin-top: -12px;
+    }
+
+    #containerLikes {
+        margin-left: 430px;
+    }
+}
+
+@media (min-width: 1024px) { 
+
+    #imgUser {
+        margin-left: 80px;
+    }
+
+    ul {
+       background-color: #c997c0;
+    }
+
+    li {
+        width: 500px;
+        margin-left: 65px;
+    }
+
+    .headerWall {
+        padding: 1%;
+        width: 688px;
+        border-top-left-radius: 35px;
+        border-top-right-radius: 35px;
+    }
+
+    #WikiBlack {
+        width: 240px;
+        margin-right: 120px;
+        padding-bottom: 5px;
+    }
+}

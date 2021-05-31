@@ -1,0 +1,156 @@
+section {
+    width: 320px;
+}
+
+.background-image {
+    display: flex;
+    justify-content: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#ImageHeader {
+    width: 240px;
+}
+
+body {
+    background-color:#c997c0;
+    color: #350B1F;
+    text-align: center;
+    font-family: 'Yusei Magic', sans-serif;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerLogIn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#ECD4EA ;
+    padding: 5% 0% 4% 0%;
+    border-radius: 8px;
+    margin: 0% 5% 0% 5%;
+    width: 90%;
+} 
+
+h2 {
+    margin: 2% 5% 5% 5%;
+}
+ 
+.containerCreateAccount {
+    background-color:#ECD4EA ;
+    padding: 4% 0% 4% 0%;
+    border-radius: 8px;
+    margin: 4% 5% 4% 5%;
+    text-align: center;
+    width: 90%;
+}
+ 
+.button{
+    background-color: #923367;
+    color: #F9F4F4;
+    font-family: 'Yusei Magic', sans-serif;
+    border-radius: 4px;
+    width: 131px;
+    height: 30px;
+    border:none;
+    margin: 3% 0% 4% 0%;
+    cursor: pointer;
+}
+ 
+.button:hover{
+    background-color:#c997c0;
+    color: white;
+    border: 2px solid #c997c0;
+}
+
+.input {
+    color:#923367;
+    width: 239px;
+    height: 35px;
+    left: 81px;
+    top: 277px;    
+    background: #FFFFFF;
+    font-family: 'Yusei Magic', sans-serif;
+    border: 1px solid #923367;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 3%;
+    margin: 2% 1% 1% 1%;
+}
+
+#logoGoogle {
+    margin: 6px 20px 0px 13px;
+}
+
+#btnGoogle{
+    background-color: #ECC4B1;
+    color: #350B1F;
+    font-family: 'Yusei Magic', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 25px 3px 0px;
+    border: 1px solid #923367;
+    border-radius: 4px;
+    margin: 3% 0% 3% 0%;
+    width: 239px;
+    height: 35px;
+    cursor: pointer;
+}
+
+@media (min-width: 700px) {
+
+    section {
+        width: 700px;
+    }
+
+    .containerLogIn{
+        width: 65%;
+        margin-left: 130px;
+    }
+    
+    .containerCreateAccount {
+        width: 65%;
+        margin-left: 130px;
+    } 
+    
+    h2 {
+        margin: 2% 18% 5% 18%;
+    }
+
+    .input {
+        width: 300px;
+    }
+
+    #ImageHeader {
+        width: 320px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    section {
+        width: 1024px;
+        height: 770px;
+        border-radius: 15px;
+        margin-top: 50px;
+        background-color:#c997c0;
+    } 
+
+    body {
+        background: url(../../assets/FondoDesktop.jpg); 
+    }
+
+    #ImageHeader {
+        margin: 20px;
+    }
+}
