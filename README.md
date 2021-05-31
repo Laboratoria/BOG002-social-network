@@ -30,16 +30,16 @@ WikiMoms es una red social creada para que las todas las Mamás puedan compartir
 ## 3. Proceso de diseño
 
 Prototipo Inicial
-<p align = "center"> <img src= "assets/PrototipoBaja.jpg"></p>
+<p align = "center"> <img src= "https://github.com/saragutierrez15/BOG002-social-network/blob/Timeline/src/assets/PrototipoBaja.jpg"></p>
 
 Prototipo de alta para dispositivo mobile
-<p align = "center"> <img src= "assets/PrototipoAltaMobile.jpg"></p>
+<p align = "center"> <img src= "https://github.com/saragutierrez15/BOG002-social-network/blob/Timeline/src/assets/PrototipoAltaMobile.jpg"></p>
 
 Prototipo de alta para dispositivo desktop página inicial
-<p align = "center"> <img src= "assets/PrototipoDesktop1.jpg"></p>
+<p align = "center"> <img src= "https://github.com/saragutierrez15/BOG002-social-network/blob/Timeline/src/assets/PrototipoDesktop1.jpg"></p>
 
 Prototipo de alta para dispositivo desktop muro de publicaciones
-<p align = "center"> <img src= "assets/PrototipoDesktop2.jpg"></p>
+<p align = "center"> <img src= "https://github.com/saragutierrez15/BOG002-social-network/blob/Timeline/src/assets/PrototipoDesktop2.jpg"></p>
 
 [Enlace prototipo Figma](https://www.figma.com/file/GKCURL862PBCVatsx1vlyK/Wiki-Moms?node-id=18%3A2)
 
@@ -48,7 +48,7 @@ Prototipo de alta para dispositivo desktop muro de publicaciones
 
 Fue fundamental apoyarnos con la herramienta **Trello**. Inicialmente montamos todas las historias de usuario y por cada una escribimos los criterios de aceptación juntos con los de terminado. Cada historia la desglosamos en múltiples tareas concretas lo cual nos permitió avanzar de una manera mucho más organizada.
 
-<p align = "center"> <img src= "assets/TrelloSocialNetwork.jpg"></p>
+<p align = "center"> <img src= "https://github.com/saragutierrez15/BOG002-social-network/blob/Timeline/src/assets/TrelloSocialNetwork.jpg"></p>
 
 
 ## 5. Mejoras del Proyecto
