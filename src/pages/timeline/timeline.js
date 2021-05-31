@@ -126,16 +126,17 @@ function showPosts(doc) {
         ${btnDelete}
       </div>                
       <textarea id="textPost${doc.id}" disabled = "true" style = "display: none">${post.Contents}</textarea>
-      <p id="paragraphToEdit${doc.id}">${post.Contents}</p>
-      <div id="containerLikes">
-        <span class="likesCounter" id="likePost${doc.id}">0</span>
-        <button type="button" class="btnLikes" id="btnLikes${doc.id}" data-id="${doc.id}" title="Dar Like">
-          <img id="imageLike" src="assets/IconoCorazonLinea.png">
-        </button>
-        <button type="button" class="btnLikes" id="btnDisLikes${doc.id}" data-id="${doc.id}" title="Dar DisLike">
-          <img id="imageDisLike" src="assets/IconoCorazon2.png">
-        </button>
-      </div>       
+      <div id="containerParagraph"><p id="paragraphToEdit${doc.id}">${post.Contents}</p></div>
+        <div id="containerLikes">
+          <span class="likesCounter" id="likePost${doc.id}">0</span>
+          <button type="button" class="btnLikes" id="btnLikes${doc.id}" data-id="${doc.id}" title="Dar Like">
+            <img id="imageLike" src="assets/IconoCorazonLinea.png">
+          </button>
+          <button type="button" class="btnLikes" id="btnDisLikes${doc.id}" data-id="${doc.id}" title="Dar DisLike">
+            <img id="imageDisLike" src="assets/IconoCorazon2.png">
+          </button>
+        </div>  
+          
     </li>
     `;
   html += li;
