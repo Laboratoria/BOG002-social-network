@@ -14,16 +14,16 @@ export function loginPage() {
           <div class="containerLogIn">
             <form id="signIn">
               <input type="email" id="signInEmail" placeholder="Correo electronico" class="input" required>
-              <P class="errorMessage" id="errorEmail"></p>
+              <p class="errorMessage" id="errorEmail"></p>
               <input type="password" id="signInpassword" placeholder="Contraseña" class="input" required>
-              <P class="errorMessage" id="errorPassword"></p>
+              <p class="errorMessage" id="errorPassword"></p>
               <button type= "button" class="button" id="btnLogIn">Iniciar Sesión</button><br>
               <img src="assets/imgLineas1.png"><br>
               <button id="btnGoogle" type="submit"><img id="logoGoogle" src="assets/logoGoogle.png">Iniciar sesión con Google</button>
             </form>
           </div>
           <div class="containerCreateAccount">
-                    <button class="button" id="btnCreateAccount" onclick= "window.location='#/registration'">Crear Cuenta</button>
+            <button class="button" id="btnCreateAccount" onclick= "window.location='#/registration'">Crear Cuenta</button>
           </div>
         </main>
       </section>    
@@ -81,4 +81,6 @@ export function logIn() {
       });
     return true;
   });
+
+  
 }

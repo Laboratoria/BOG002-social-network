@@ -13,7 +13,7 @@ const auth = firebase.auth();
 
 // Template screen muro
 export function timelinePage() {
-  const view = `
+  const view = `. 
         <section id="screenWall">
                    
             <header>
@@ -27,8 +27,10 @@ export function timelinePage() {
                   <form id="logOut">
                     <button class="button" id="btnLogOut">Cerrar sesion</button>
                   </form>
+                  <form>
                   <input id="inputPost" class="input" type="text" placeholder="¿Qué nos quieres compartir?">
-                  <button id="btnPost" class="button">Publicar</button>
+                  <button id="btnPost" class="button" type = "reset" >Publicar</button>
+                  </form>
                   <h3 id= "errorInputPost"></h3>
                        <div id ="posts">
                           <ul id = "listPost" >
@@ -99,12 +101,67 @@ export function newCollectionPost() {
   });
 }
 
+function getLikes(idPost) {
+  const datalikes = [];
+  let likes = 0;
+  let userActualLikes = false;
+  const btnDisLikes = document.getElementById(`btnDisLikes${idPost}`);
+  const btnLikes = document.getElementById(`btnLikes${idPost}`);
+  getLikesPost(idPost)
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        datalikes.push(doc.data());
+        // si el usuario actual ya dio like, activamos variable de control
+        if (doc.data().Uid === auth.currentUser.uid) {
+          userActualLikes = true;
+          // agregar click del btn disLike
+          btnDisLikes.addEventListener('click', () => {
+            deleteLikes(doc.id);
+            getLikes(idPost);
+          });
+        }
+      });
+      // validamos si el usuario actual dio like para mostrar btn disLike
+      if (userActualLikes) {
+        btnLikes.style.display = 'none';
+        btnDisLikes.style.display = 'block';
+      } else {
+        // else mostrar btn like
+        btnLikes.style.display = 'block';
+        btnDisLikes.style.display = 'none';
+      }
+      likes = datalikes.length;
+      // si no tienes likes es porque apenas lo se esta publicando, mostar btnLike
+      if (likes === 0) {
+        btnLikes.style.display = 'block';
+      }
+      const likePost = document.getElementById(`likePost${idPost}`);
+      likePost.innerHTML = likes;
+    });
+}
+
+// Función enviando datos a la collección Likes  en FireBase
+function newCollectionLikes(idPost) {
+  const btnLikes = document.getElementById(`btnLikes${idPost}`);
+  const btnDisLikes = document.getElementById(`btnDisLikes${idPost}`);
+  btnLikes.addEventListener('click', () => {
+    const user = auth.currentUser;
+    const postID = btnLikes.dataset.id;
+    const userID = user.uid;
+    setLikesPost(postID, userID);
+    getLikes(postID);
+    btnLikes.style.display = 'none';
+    btnDisLikes.style.display = 'block';
+  });
+}
+
 // Función mostrar Posts
 function showPosts(doc) {
   const postlist = document.getElementById('listPost');
   let html = '';
   const post = doc.data();
   const idPost = post.Uid;
+<<<<<<< HEAD
   const idUser = auth.currentUser.uid; 
 
      let btnEditar = ``;
@@ -141,6 +198,46 @@ function showPosts(doc) {
     postlist.insertAdjacentHTML('afterbegin', html);
     getLikes(doc.id);
  
+=======
+  const idUser = auth.currentUser.uid;
+  let btnEditar = '';
+  let btnDelete = '';
+  if (idPost === idUser) { // Mostrar botones editar y eliminar publicacion del mismo usuario
+    btnEditar = `<button type="button" class="btnEditPost" id="btn${doc.id}" data-click="editar"><img id="imageEdit" src="assets/logoEditar.png"></button>`;
+    btnDelete = `<button type="button" class="btnDeletePost" data-id="${doc.id}"><img id="imageDelete" src="assets/logoEliminar.png"></button>`;
+  } else { // Ocultar botones editar y eliminar publicacion de usuario no logueado
+    btnEditar = `<button type="button" class="btnEditPost" id="btn${doc.id}" data-click="editar" disabled = "true" style = "opacity: 0"><img id="imageEdit" src="assets/logoEditar.png"></button>`;
+    btnDelete = `<button type="button" class="btnDeletePost" data-id="${doc.id}" disabled = "true" style = "opacity: 0"><img id="imageDelete" src="assets/logoEliminar.png"></button>`;
+  }
+  const li = `
+    <li id="${doc.id}" >
+      <div id="containerTitlePost">
+        <img id="imgUserMobile" src="assets/IconoUsuario.png">
+        <h3 id="titlePost">${post.Title}</h3>
+      </div>
+      <div id="containerDate"> 
+        <p id="datePost">${(new Date(post.Date.seconds * 1000)).toLocaleDateString('es-CO')}</p>
+        ${btnEditar}
+        ${btnDelete}
+      </div>                
+      <textarea id="textPost${doc.id}" disabled = "true" style = "display: none">${post.Contents}</textarea>
+      <div id="containerParagraph"><p id="paragraphToEdit${doc.id}">${post.Contents}</p></div>
+        <div id="containerLikes">
+          <span class="likesCounter" id="likePost${doc.id}">0</span>
+          <button type="button" class="btnLikes" id="btnLikes${doc.id}" data-id="${doc.id}" title="Dar Like">
+            <img id="imageLike" src="assets/IconoCorazonLinea.png">
+          </button>
+          <button type="button" class="btnLikes" id="btnDisLikes${doc.id}" data-id="${doc.id}" title="Dar DisLike">
+            <img id="imageDisLike" src="assets/IconoCorazon2.png">
+          </button>
+        </div>  
+          
+    </li>
+    `;
+  html += li;
+  postlist.insertAdjacentHTML('afterbegin', html);
+  getLikes(doc.id);
+>>>>>>> f28a05c86a8bfa6d56c9104f106fb8eb8c4bfd52
 }
 
 // Función modal para eliminar Publicaciones
@@ -184,42 +281,36 @@ function modalDeleteColletionPosts() {
 }
 
 // Función editando publicaciones
-function editColletionPosts() {
-  const buttonEditPosts = document.querySelectorAll('.btnEditPost');
-  buttonEditPosts.forEach((button) => {
-    button.addEventListener('click', () => {
-      const buttonAux = button;
+function editColletionPosts(idPost) {
+  // const buttonEditPosts = document.querySelectorAll('.btnEditPost');
+  // buttonEditPosts.forEach((button) => {
+  const button = document.getElementById(`btn${idPost}`);
+  button.addEventListener('click', () => {
+    const click = button.dataset.click;
+    const buttonAux = button;
+    const inputText = document.getElementById(`textPost${idPost}`).value;
+    const newInput = document.getElementById(`textPost${idPost}`);
+    const paragraph = document.getElementById(`paragraphToEdit${idPost}`);
+
+    if (click === 'editar') {
       buttonAux.innerHTML = '<img id="imageSave" src="assets/logoGuardar.png">';
-      const inputText = document.getElementById(`textPost${button.dataset.id}`).value;
-      const newInput = document.getElementById(`textPost${button.dataset.id}`);
-      const idPost = button.dataset.id;
+      button.dataset.click = 'guardar';
       newInput.disabled = false;
-
-      buttonAux.onclick = () => {
-        editPosts(idPost, inputText)
-          .then(() => {
-            buttonAux.innerHTML = '<img id="imageSave" src="assets/logoEditar.png">';
-            newInput.disabled = true;
-          })
-          .catch(() => { });
-      };
-    });
+      newInput.style.display = 'block';
+      paragraph.style.display = 'none';
+    } else {
+      buttonAux.innerHTML = '<img id="imageSave" src="assets/logoEditar.png">';
+      button.dataset.click = 'editar';
+      newInput.disabled = true;
+      editPosts(idPost, inputText)
+        .then(() => {
+          newInput.style.display = 'none';
+          paragraph.style.display = 'block';
+          paragraph.innerHTML = inputText;
+        });
+    }
   });
-}
-
-// Función enviando datos a la collección Likes  en FireBase
-function newCollectionLikes(idPost) {
-  const btnLikes = document.getElementById(`btnLikes${idPost}`);
-  const btnDisLikes = document.getElementById(`btnDisLikes${idPost}`);
-  btnLikes.addEventListener('click', () => {
-    const user = auth.currentUser;
-    const postID = btnLikes.dataset.id;
-    const userID = user.uid;
-    setLikesPost(postID, userID);
-    getLikes(postID);
-    btnLikes.style.display = 'none';
-    btnDisLikes.style.display = 'block';
-  });
+<<<<<<< HEAD
 
 
 }
@@ -258,6 +349,9 @@ function getLikes(idPost) {
       const likePost = document.getElementById(`likePost${idPost}`);
       likePost.innerHTML = likes;
     })
+=======
+  // });
+>>>>>>> f28a05c86a8bfa6d56c9104f106fb8eb8c4bfd52
 }
 
 // Funcion publicaciones en pantalla
@@ -274,7 +368,7 @@ export function postsTimeline() {
           if (change.type === 'added') {
             showPosts(change.doc);
             modalDeleteColletionPosts();
-            editColletionPosts();
+            editColletionPosts(change.doc.id);
             newCollectionLikes(change.doc.id);
           }
         });
