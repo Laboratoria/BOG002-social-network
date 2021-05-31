@@ -1,9 +1,9 @@
 export default () => {
     let viewsLogin = `
-        <form>
-            <input type="text" value="Correo">
-            <input type="password" value="Contraseña">
-            <input type="button" value="Continuar">
+        <form id="formLogin">
+            <input type="text" value="Correo" id="correoLogin">
+            <input type="password" value="Contraseña" id="contrasenaLogin">
+            <button type="submit">Continuar</button>
             <p>O</p>
             <input type="button" value="Ingresar con Facebook">
     <input type="button" value="Ingresar con Google">
