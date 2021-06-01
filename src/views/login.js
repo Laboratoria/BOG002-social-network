@@ -8,6 +8,7 @@ export default () => {
             <button type="submit">Continuar</button>
             <p>O</p>
             <input type="button" value="Ingresar con Google">
+            <p>¿Quieres ser miembro? <a href="">Regístrate</a></p>
         </form>
     `
 
