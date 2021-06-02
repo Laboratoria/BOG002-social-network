@@ -3,7 +3,9 @@ import { registroUsuario } from '../firebaseAuth.js';
 export function vistaRegistro() {
   const viewHome = `
     <h1>Explora el universo Marvel</h1>
-    <p>What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <p>En este párrafo se supone que explicaremos de que se trata nuestro proyecto
+    pero mientras se nos ocurre algo este texto se quedará ahí
+    .</p>
       <form id="formRegistro">
          <h2>Bienvenid@s a Universo Marvel</h2>
          <h2>Crear Cuenta</h2> 

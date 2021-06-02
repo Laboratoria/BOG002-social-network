@@ -23,3 +23,11 @@ export const loginUsuario = (correo, contrasena) => {
       console.log('error', error.message);
     });
 };
+
+export const logoutUsuario = (correo, contrasena) => {
+  console.log(correo, contrasena);
+  firebase.auth().sigOut()
+    .then(() => {
+      console.log('Cerrar sesion');
+    });
+};
