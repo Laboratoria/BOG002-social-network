@@ -1,7 +1,7 @@
 import { registroUsuario } from '../firebaseAuth.js';
 
 export function vistaRegistro() {
-  const viewHome = `
+    const viewHome = `
     <h1>Explora el universo Marvel</h1>
     <p>En este párrafo se supone que explicaremos de que se trata nuestro proyecto
     pero mientras se nos ocurre algo este texto se quedará ahí
@@ -21,18 +21,16 @@ export function vistaRegistro() {
          <p>¿Ya eres miembro? <a href="">Inicia Sesión</a></p>
       </form>
  `;
-
-  const elemento = document.createElement('div');
-  elemento.innerHTML = viewHome;
-  return elemento;
+    const elemento = document.createElement('div');
+    elemento.innerHTML = viewHome;
+    return elemento;
 }
-
 export function registroEvento() {
-  const formRegistro = document.getElementById('formRegistro');
-  formRegistro.addEventListener('submit', (event) => {
-    const correo = document.getElementById('correo').value;
-    const contrasena = document.getElementById('contrasena').value;
-    event.preventDefault();
-    registroUsuario(correo.trim(), contrasena.trim());
-  });
+    const formRegistro = document.getElementById('formRegistro');
+    formRegistro.addEventListener('submit', (event) => {
+        const correo = document.getElementById('correo').value;
+        const contrasena = document.getElementById('contrasena').value;
+        event.preventDefault();
+        registroUsuario(correo.trim(), contrasena.trim());
+    });
 }

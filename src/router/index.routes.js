@@ -7,6 +7,7 @@ import { logoutEvento } from '../views/logout.js';
 const content = document.getElementById('root');
 
 const router = (route) => {
+<<<<<<< HEAD
   content.innerHTML = '';
   switch (route) {
     case '':
@@ -27,6 +28,21 @@ const router = (route) => {
     default:
       console.log('Error 404');
   }
+=======
+    content.innerHTML = '';
+    switch (route) {
+        case '#/Home':
+            content.appendChild(vistaRegistro());
+            registroEvento();
+            break;
+        case '#/login':
+            content.appendChild(vistaLogin());
+            loginEvento();
+            break;
+        default:
+            console.log('Error 404');
+    }
+>>>>>>> 46dfb05b8ba79e65ce44f5a570f454b7761f618e
 };
 
 export { router };

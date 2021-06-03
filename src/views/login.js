@@ -1,7 +1,7 @@
 import { loginUsuario } from '../firebaseAuth.js';
 
 export function vistaLogin() {
-  const viewsLogin = `
+    const viewsLogin = `
         <form id="formLogin">
             <label for="correo">correo</label>
             <input type="text" placeholder="Ingrese correo" id="correoLogin">
@@ -14,18 +14,18 @@ export function vistaLogin() {
         </form>
     `;
 
-  const elemento2 = document.createElement('div');
-  elemento2.innerHTML = viewsLogin;
-  return elemento2;
+    const elemento2 = document.createElement('div');
+    elemento2.innerHTML = viewsLogin;
+    return elemento2;
 }
 
 export function loginEvento() {
-  const formLogin = document.getElementById('formLogin');
-  formLogin.addEventListener('submit', (event) => {
-    const correoLogin = document.getElementById('correoLogin').value;
-    const contrasenaLogin = document.getElementById('contrasenaLogin').value;
-    event.preventDefault();
-    loginUsuario(correoLogin.trim(), contrasenaLogin.trim());
-  });
-  console.log(firebase);
+    const formLogin = document.getElementById('formLogin');
+    formLogin.addEventListener('submit', (event) => {
+        const correoLogin = document.getElementById('correoLogin').value;
+        const contrasenaLogin = document.getElementById('contrasenaLogin').value;
+        event.preventDefault();
+        loginUsuario(correoLogin.trim(), contrasenaLogin.trim());
+    });
+    console.log(firebase);
 }
