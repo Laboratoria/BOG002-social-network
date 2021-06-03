@@ -3,7 +3,7 @@ export const registroUsuario = (correo, contrasena) => {
   firebase.auth().createUserWithEmailAndPassword(correo, contrasena)
     .then((userCredential) => {
     // Signed in
-      console.log('registrado', userCredential.user);
+      console.log('Usuario registrado', userCredential.user);
     // ...
     })
     .catch((error) => {
@@ -16,7 +16,7 @@ export const loginUsuario = (correo, contrasena) => {
   firebase.auth().signInWithEmailAndPassword(correo, contrasena)
     .then((userCredential) => {
     // Signed in
-      console.log('logueado', userCredential.user);
+      console.log('Usuario logueado', userCredential.user);
     // ...
     })
     .catch((error) => {
@@ -28,6 +28,6 @@ export const logoutUsuario = (correo, contrasena) => {
   console.log(correo, contrasena);
   firebase.auth().sigOut()
     .then(() => {
-      console.log('Cerrar sesion');
+      console.log('Sesion Cerrada');
     });
 };
