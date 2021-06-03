@@ -10,4 +10,4 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
-var db = firebase.firestore();
+const db = firebase.firestore();
