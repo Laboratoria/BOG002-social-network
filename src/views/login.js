@@ -1,4 +1,4 @@
-import { loginUsuario } from '../firebaseAuth.js';
+import { loginUsuario } from '../firebase/firebaseAuth.js';
 
 export function vistaLogin() {
     const viewsLogin = `
@@ -9,7 +9,7 @@ export function vistaLogin() {
             <input type="password" placeholder="Ingrese contraseña" id="contrasenaLogin">
             <button type="submit">Continuar</button>
             <p>O</p>
-            <input type="button" value="Ingresar con Google">
+            <input type="button" value="Ingresar con Google" id="googleLogin">
             <p>¿Quieres ser miembro? <a href="">Regístrate</a></p>
         </form>
     `;
