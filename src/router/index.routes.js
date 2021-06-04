@@ -1,6 +1,6 @@
 // import { loginEvent } from '../views/login.js';
-// import Home from '../views/home.js';
-import { vistaRegistro, registroEvento } from '../views/home.js';
+import { vistaHome } from '../views/home.js';
+import { vistaRegistro, registroEvento } from '../views/registro.js';
 import { vistaLogin, loginEvento } from '../views/login.js';
 import { logoutEvento } from '../views/logout.js';
 import { loginGoogle } from '../firebase/firebaseAuth.js';
@@ -11,10 +11,13 @@ const router = (route) => {
     content.innerHTML = '';
     switch (route) {
         case '':
-            content.appendChild(vistaRegistro());
-            registroEvento();
+            content.appendChild(vistaHome());
             break;
         case '#/Home':
+            content.appendChild(vistaHome());
+
+            break;
+        case '#/Registro':
             content.appendChild(vistaRegistro());
             registroEvento();
             break;
