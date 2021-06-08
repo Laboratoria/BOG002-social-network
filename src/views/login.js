@@ -7,7 +7,7 @@ export function vistaLogin() {
         <form id="formLogin">
             <input class="labelCorreo" type="text" placeholder="Ingrese correo" id="correoLogin">
             <input type="password" placeholder="Ingrese contraseña" id="contrasenaLogin">
-            <a class="buttonContinuar">Continuar</a>
+            <button class="buttonContinuar" type="submit">Continuar</button>
             <p class="textoO">O</p>
             <a class="button" id="googleLogin"><span><i class="fab fa-google"></i></span>Ingresar con Google</a>
             <a class="buttonFacebook blue" id="facebookLogin"><span><i class="fab fa-facebook"></i></span>Ingresar con Facebook</a>

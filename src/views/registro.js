@@ -8,9 +8,9 @@ export function vistaRegistro() {
          <h2 class="crearCuenta">Crear Cuenta</h2> 
          <input type="text" placeholder="Ingresa un correo válido" id="correo">
          <input type="password" placeholder="Crea una Contraseña" id="contrasena">
-         <a class="buttonRegistrar">Registrar</a>
+         <button class="buttonRegistrar">Registrar</button>
          <p class="textoO">O</p>
-         <a class="button" id="googleLogin"><span><i class="fab fa-google"></i></span>Ingresar con Google</a>
+         <button class="button" id="googleLogin"><span><i class="fab fa-google"></i></span>Registrar con Google</button>
          <p class="centrado">¿Ya eres miembro? <a href="#/login">Inicia Sesión</a></p>
       </form>
       </div>
