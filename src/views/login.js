@@ -9,8 +9,8 @@ export function vistaLogin() {
             <input type="password" placeholder="Ingrese contraseña" id="contrasenaLogin">
             <button class="buttonContinuar" type="submit">Continuar</button>
             <p class="textoO">O</p>
-            <a class="button" id="googleLogin"><span><i class="fab fa-google"></i></span>Ingresar con Google</a>
-            <a class="buttonFacebook blue" id="facebookLogin"><span><i class="fab fa-facebook"></i></span>Ingresar con Facebook</a>
+            <button class="button" id="googleLogin"><span><i class="fab fa-google"></i></span>Ingresar con Google</button>
+            <button class="buttonFacebook blue" id="facebookLogin"><span><i class="fab fa-facebook"></i></span>Ingresar con Facebook</button>
             <p class="centrado">¿Quieres ser miembro?<a href="#/Registro">Regístrate</a></p>
         </form>
     </div>

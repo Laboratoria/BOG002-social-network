@@ -4,14 +4,7 @@
     margin: 0;
     padding: 0;
     height: 100vh;
-    background: url(../img/fondo2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.9;
-}
-
-img {
-    opacity: 1.4;
+    background-image: radial-gradient( circle 328px at 2.9% 15%, rgba(191, 224, 251, 1) 0%, rgba(232, 233, 251, 1) 25.8%, rgba(252, 239, 250, 1) 50.8%, rgba(234, 251, 251, 1) 77.6%, rgba(240, 251, 244, 1) 100.7%);
 }
 
 
@@ -37,9 +30,9 @@ img {
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding: 10px 30px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     border-radius: 30px;
-    box-shadow: 3px 3px 0px 3px #77778b;
+    box-shadow: 0px 0px 20px #77778b;
 }
 
 .container-login .inicioSesion {
@@ -148,9 +141,9 @@ img {
     transform: translate(-50%, -50%);
     box-sizing: border-box;
     padding: 10px 30px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     border-radius: 30px;
-    box-shadow: 3px 3px 0px 3px #77778b;
+    box-shadow: 0px 0px 20px #77778b;
 }
 
 .container-registro .registro {
