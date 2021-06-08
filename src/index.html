@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Marvel Social Network</title>
-    <!--<link rel="stylesheet" href="css/estilos.css"> -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="fondo">
 
     <nav>
         <ul>
@@ -17,17 +21,18 @@
             <li><a href="#/Registro">Registro</a></li>
             <li><a href="#/login">Iniciar Sesion</a></li>
             <li><a href="#/logout" id="logout">Cerrar Sesion</a></li>
+            <i fas fa-step-forward></i>
         </ul>
     </nav>
     <div>
         <ul>
             <li>
-            <a href="#/post">Publicaciones</a>
+                <a href="#/post">Publicaciones</a>
             </li>
         </ul>
-        
+
     </div>
-  
+
     <section id="root"></section>
 
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
@@ -35,6 +40,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
     <script src="./firebase/firebaseConfig.js"></script>
     <script src="./firebase/firebaseController.js"></script>
+    <script src="https://kit.fontawesome.com/cb7441ae4b.js" crossorigin="anonymous"></script>
     <script type="module" src="main.js"></script>
 
 </body>

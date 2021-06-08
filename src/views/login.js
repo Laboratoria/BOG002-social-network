@@ -2,17 +2,18 @@ import { loginUsuario } from '../firebase/firebaseAuth.js';
 
 export function vistaLogin() {
     const viewsLogin = `
+    <div class="container-login">
+      <h3 class="inicioSesion">Inicio Sesion</h3>
         <form id="formLogin">
-            <label for="correo">correo</label>
-            <input type="text" placeholder="Ingrese correo" id="correoLogin">
-            <label for="contrasena">Contraseña</label>
+            <input class="labelCorreo" type="text" placeholder="Ingrese correo" id="correoLogin">
             <input type="password" placeholder="Ingrese contraseña" id="contrasenaLogin">
-            <button type="submit">Continuar</button>
-            <p>O</p>
-            <button type="button" id="googleLogin">Ingresar con Google</button>
-            <button type="button" id="facebookLogin">Ingresar con Facebook</button>
-            <p>¿Quieres ser miembro? <a href="">Regístrate</a></p>
+            <a class="buttonContinuar">Continuar</a>
+            <p class="textoO">O</p>
+            <a class="button" id="googleLogin"><span><i class="fab fa-google"></i></span>Ingresar con Google</a>
+            <a class="buttonFacebook blue" id="facebookLogin"><span><i class="fab fa-facebook"></i></span>Ingresar con Facebook</a>
+            <p class="centrado">¿Quieres ser miembro?<a href="#/Registro">Regístrate</a></p>
         </form>
+    </div>
     `;
 
     const elemento2 = document.createElement('div');

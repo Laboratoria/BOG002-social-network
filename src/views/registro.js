@@ -2,20 +2,18 @@ import { registroUsuario } from '../firebase/firebaseAuth.js';
 
 export function vistaRegistro() {
     const viewRegistro = `
+    <div class="container-registro">
+    <h2 class="registro">Bienvenid@s a Universo Marvel</h2>
       <form id="formRegistro">
-         <h2>Bienvenid@s a Universo Marvel</h2>
-         <h2>Crear Cuenta</h2> 
-         <label for="usuario">Usuario</label>
-         <input type="text" placeholder="Ingrese usuario" id="usuario">
-         <label for="correo">Correo</label>
+         <h2 class="crearCuenta">Crear Cuenta</h2> 
          <input type="text" placeholder="Ingresa un correo válido" id="correo">
-         <label for="contrasena">Contraseña</label>
          <input type="password" placeholder="Crea una Contraseña" id="contrasena">
-         <button type="submit">Registrar</button>
-         <p>O</p>
-         <input type="button" value="registrarse con Google">
-         <p>¿Ya eres miembro? <a href="">Inicia Sesión</a></p>
+         <a class="buttonRegistrar">Registrar</a>
+         <p class="textoO">O</p>
+         <a class="button" id="googleLogin"><span><i class="fab fa-google"></i></span>Ingresar con Google</a>
+         <p class="centrado">¿Ya eres miembro? <a href="#/login">Inicia Sesión</a></p>
       </form>
+      </div>
  `;
     const elemento = document.createElement('div');
     elemento.innerHTML = viewRegistro;
