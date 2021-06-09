@@ -1,3 +1,5 @@
+import { guardarPost } from '../firebase/firebaseStorage.js';
+
 export function vistaPost() {
   const viewsPost = `
     <form id="formPost">
@@ -9,7 +11,7 @@ export function vistaPost() {
     </div>
     <button id="btnFormPost">Guardar</button>
     </form>
-    <div>
+    <div id="contenedorPost">
     </div>
     `;
 
@@ -18,49 +20,44 @@ export function vistaPost() {
   return formPost;
 }
 
-export function postEvento() {
+export function eventoGuardarPost() {
   const formPost = document.getElementById('formPost');
-  const contenedorPost = document.getElementById('contenedorPost');
-
-  const db = firebase.firestore();
-  // Función que guarda una publicación y retorna una promesa
-  const guardarPost = (title, description) =>
-    db.collection('Publicaciones').doc().set({
-      title,
-      description,
-    });
-
-  // Función obtener publicaciones
-  
-  const getPublicaciones = () =>
-    db.collection('Publicaciones').get();
-  window.addEventListener('DOMContentLoaded', async (e) => {
-    e.preventDefault();
-    const querySnapshot = await getPublicaciones();
-
-    querySnapshot.forEach((doc) => {
-      console.log(doc.data());
-    //   contenedorPost.innerHTML += `
-    //   <div>
-    //   ${doc.data().title}
-    //   </div>
-    //   `;
-    });
-  });
+  // const contenedorPost = document.getElementById('contenedorPost');
 
   formPost.addEventListener('submit', async (e) => {
     e.preventDefault();
-
     // Se guarda el elemento en las constantes
     const title = document.getElementById('postTitle');
     const description = document.getElementById('postDescription');
 
     // Utiliza la función para guardar publicacion
-    await guardarPost(title.value, description.value);
+    await eventoGuardarPost(title.value, description.value);
     formPost.reset();
     title.focus();
+    guardarPost(title.trim(), description.trim());
 
     // console.log(title, description);
     // console.log('Enviando...');
   });
 }
+
+
+//   // Función obtener publicaciones
+  
+//   const getPublicaciones = () =>
+//     db.collection('Publicaciones').get();
+//   window.addEventListener('DOMContentLoaded', async (e) => {
+//     e.preventDefault();
+//     const querySnapshot = await getPublicaciones();
+
+//     querySnapshot.forEach((doc) => {
+//       console.log(doc.data());
+//       contenedorPost.innerHTML += `
+//       <div>
+//       ${doc.data().title}
+//       </div>
+//       `;
+//     });
+//   });
+
+
