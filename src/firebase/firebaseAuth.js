@@ -1,3 +1,5 @@
+import { db } from './firebaseConfig.js';
+
 export const registroUsuario = (correo, contrasena) => {
     console.log(correo, contrasena);
     firebase.auth().createUserWithEmailAndPassword(correo, contrasena)
@@ -65,3 +67,10 @@ export function loginFacebook() {
             })
     })
 }
+
+export const savePost = (title, description) => {
+    db.collection('Publicaciones').doc().set({
+      title,
+      description,
+    });
+  };

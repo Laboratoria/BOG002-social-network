@@ -1,63 +1,41 @@
-import { guardarPost } from '../firebase/firebaseStorage.js';
+import { savePost } from '../firebase/firebaseAuth.js';
 
 export function vistaPost() {
   const viewsPost = `
-    <form id="formPost">
-    <div>
-    <input type="text" id="postTitle" placeholder="titulo publicacion" autofocus>
-    </div>
-    <div>
-    <textarea id="postDescription" rows="3" placeholder="Descripcion publicación"></textarea>
-    </div>
-    <button id="btnFormPost">Guardar</button>
-    </form>
-    <div id="contenedorPost">
-    </div>
-    `;
-
+  
+  <div class="container">
+  <div class="row">
+      <div class="card">
+          <div>
+              <form id="formPost">
+                  <div class="form-group">
+                      <input type="text" id="postTitle" placeholder="titulo publicacion" class="form-control" autofocus>
+                  </div>
+                  <div class="form-group">
+                      <textarea id="postDescription" rows="5" placeholder="Descripcion publicación" class="form-control"></textarea>
+                  </div>
+                  <button class="btn-Guardar" id="btnFormPost">Guardar</button>
+              </form>
+           </div>
+       </div>
+   </div>
+ </div>
+  `;
   const formPost = document.createElement('div');
   formPost.innerHTML = viewsPost;
   return formPost;
 }
 
-export function eventoGuardarPost() {
-  const formPost = document.getElementById('formPost');
-  // const contenedorPost = document.getElementById('contenedorPost');
-
+export function postEvento() {
+  const formPost = document.createElement('div');
+  
   formPost.addEventListener('submit', async (e) => {
     e.preventDefault();
-    // Se guarda el elemento en las constantes
-    const title = document.getElementById('postTitle');
-    const description = document.getElementById('postDescription');
-
-    // Utiliza la función para guardar publicacion
-    await eventoGuardarPost(title.value, description.value);
-    formPost.reset();
-    title.focus();
-    guardarPost(title.trim(), description.trim());
-
-    // console.log(title, description);
-    // console.log('Enviando...');
+    
+    const title = document.getElementById('postTitle').value;
+    const description = document.getElementById('postDescription').value;
+    console.log(title, description);
+    await savePost(title, description);
+    
   });
 }
-
-
-//   // Función obtener publicaciones
-  
-//   const getPublicaciones = () =>
-//     db.collection('Publicaciones').get();
-//   window.addEventListener('DOMContentLoaded', async (e) => {
-//     e.preventDefault();
-//     const querySnapshot = await getPublicaciones();
-
-//     querySnapshot.forEach((doc) => {
-//       console.log(doc.data());
-//       contenedorPost.innerHTML += `
-//       <div>
-//       ${doc.data().title}
-//       </div>
-//       `;
-//     });
-//   });
-
-
