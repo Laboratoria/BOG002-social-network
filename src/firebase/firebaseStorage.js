@@ -13,5 +13,7 @@ export const savePost = (title, description) => {
 export const getPost = () => db.collection('Publicaciones').get();
 
 // funcion que actualiza cada vez que existen cambios
-
 export const onGetPost = (callback) => db.collection('Publicaciones').onSnapshot(callback);
+
+// funcion que elimina las publicaciones
+export const borrarPost = (id) => db.collection('Publicaciones').doc(id).delete();

@@ -1,4 +1,4 @@
-import { savePost, getPost, onGetPost } from '../firebase/firebaseStorage.js';
+import { savePost, getPost, onGetPost, borrarPost } from '../firebase/firebaseStorage.js';
 
 export function vistaPost() {
   const viewsPost = `
@@ -47,8 +47,10 @@ export function postEvento() {
     onGetPost((querySnapshot) => {
       postContainer.innerHTML = '';
       querySnapshot.forEach((doc) => {
-      console.log(doc.data());
+      // console.log(doc.data());
       const post = doc.data();
+      post.id = doc.id;
+      console.log(post);
       postContainer.innerHTML += `
       
       <div>
@@ -57,12 +59,19 @@ export function postEvento() {
         ${post.description}
         </textarea>
         <div>
-        <button class="btn-Borrar">Borrar</button> 
-        <button class="btn-Editar">Editar</button>
+        <button id="btnBorrar"class="btn-Borrar" data-id="${post.id}">Borrar</button> 
+        <button id="btnEditar"class="btn-Editar">Editar</button>
         </div>
       </div>
-      
       `;
+
+      const botonBorrar = document.querySelectorAll('.btn-Borrar');
+      botonBorrar.forEach((btn) => {
+        btn.addEventListener('click', async (e) => {
+          console.log(e.target.dataset.id); // aqui obtenemos el id de cada publicacion
+          await borrarPost(e.target.dataset.id);
+        });
+      });
       });
     });
   });
