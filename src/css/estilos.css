@@ -1,0 +1,226 @@
+/* estilos para el body */
+
+.fondo {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: radial-gradient( circle 328px at 2.9% 15%, rgba(191, 224, 251, 1) 0%, rgba(232, 233, 251, 1) 25.8%, rgba(252, 239, 250, 1) 50.8%, rgba(234, 251, 251, 1) 77.6%, rgba(240, 251, 244, 1) 100.7%);
+}
+
+
+/* titulo de inicio de sesion */
+
+.titulo {
+    text-align: center;
+}
+
+
+/* contenedor del formulario */
+
+
+/* Estilos para el formulario de inicio de sesion */
+
+.container-login {
+    background-color: #ffffff;
+    width: 500px;
+    height: 520px;
+    top: 60%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 10px 30px;
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px #77778b;
+}
+
+.container-login .inicioSesion {
+    margin: 30px;
+    padding: 0;
+    text-align: center;
+    font-size: 40px;
+}
+
+.inicioSesion {
+    font-family: 'Lato', sans-serif;
+}
+
+.container-login label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+    font-size: 15px;
+}
+
+.container-login input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.container-login input[type="text"],
+.container-login input[type="password"] {
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+}
+
+.button {
+    background: rgb(219 68 55);
+    color: #fff;
+    display: inline-block;
+    font-size: 1.25em;
+    margin: 5px;
+    padding: 10px 0;
+    text-align: center;
+    width: 420px;
+    text-decoration: none;
+    box-shadow: 0px 3px 0 #bd1a1a;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.buttonFacebook {
+    background: #3b5998;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.20em;
+    margin: 5px;
+    padding: 10px 0px;
+    text-align: center;
+    width: 420px;
+    text-decoration: none;
+    box-shadow: 0px 3px 0 #0509ff;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.buttonFacebook span {
+    margin: 15px;
+}
+
+.button span {
+    margin: 15px;
+}
+
+.textoO {
+    text-align: center;
+}
+
+.buttonContinuar {
+    background: #d3e4e1;
+    display: inline-block;
+    font-size: 1.25em;
+    margin: 5px;
+    padding: 10px 0;
+    text-align: center;
+    width: 420px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.centrado {
+    text-align: center;
+}
+
+
+/* ESTILOS PARA EL REGISTRO */
+
+.container-registro {
+    background-color: #f5e7e7;
+    width: 500px;
+    height: 520px;
+    top: 60%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 10px 30px;
+    border: 1px solid black;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px #77778b;
+}
+
+.container-registro .registro {
+    margin: 30px;
+    padding: 0;
+    text-align: center;
+    font-size: 30px;
+}
+
+.registro {
+    font-family: 'Lato', sans-serif;
+}
+
+.container-registro label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+    font-size: 15px;
+}
+
+.container-registro input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.container-registro input[type="text"],
+.container-registro input[type="password"] {
+    border: none;
+    border-bottom: 1px solid black;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+}
+
+.buttonRegistro {
+    background: rgb(219 68 55);
+    color: #fff;
+    display: inline-block;
+    font-size: 1.25em;
+    margin: 5px;
+    padding: 10px 0;
+    text-align: center;
+    width: 420px;
+    text-decoration: none;
+    box-shadow: 0px 3px 0 #bd1a1a;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.button span {
+    margin: 15px;
+}
+
+.textoO {
+    text-align: center;
+}
+
+.buttonRegistrar {
+    background: #d3e4e1;
+    display: inline-block;
+    font-size: 1.25em;
+    margin: 5px;
+    padding: 10px 0;
+    text-align: center;
+    width: 420px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.centrado {
+    text-align: center;
+}
+
+.crearCuenta {
+    text-align: center;
+    font-size: 25px;
+}
