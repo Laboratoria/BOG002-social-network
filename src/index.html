@@ -1,12 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="style-desktop.css" rel="stylesheet" type="text/css" />
+  <link href="perfil.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poly&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/b342d5f03d.js" crossorigin="anonymous"></script>
+
+  <title>FoodFans</title>
 </head>
+
 <body>
+  
+
+<main id="root"></main>
+
+
+   <!--Ventana modal error signUp-->
+<section class="container_modal" id="container_modal">
+  <div class="modal">
+  
+    <p> La dirección de correo electrónico ya está siendo utilizada por otra cuenta. ¿Que desea hacer?</p>
+    <button type="button" id="btn_login" class="btn" value="login"> <a href="#/login">LOGIN</a></button>
+    <button type="button" class="btn" id="close"><a href="#/signUp">VOLVER</a></button>
+    
+  </div>
+
+</section>
+         <!--Ventana modal error login-->
+<section class="container_modal" id="login_modal">
+  <div class="modal">
+
+    <p> El correo no se encuentra registrado</p>
+    <button type="button" id="btn_signUp" class="btn" value="signUp"> <a href="#/signUp">REGISTER</a></button>
+    <button type="button" id="close-login" class="btn" value="login"> <a href="#/login">VOLVER</a></button>
+  </div>
+
+</section>
+       
+<!-- PopUp Editar Perfil -->
+<section class="container_modal" id="login_modal">
+  <div class="modal">
+	   <form>
+      
+			<input type="text" class="input" id="name" placeholder="Name" name="name"></input>
+			<input type="text" class="input"id="apellido" placeholder="Apellido" name="apellido"></input>
+			<input type="text" class="input" id="descripcion" placeholder="Descripcion" name="descripcion"></input>
+			<button id='guardar'>Guardar</button>
+      
+	    </form>
+      
+    </div>
+   </section>
+	
+<!-- PopUp publicacion -->
+<section class="container_modal" id="post_modal">
+  <div class="modal">
+    <form id= 'post'>
+      <p id="cerrar">X</p>
+      <input type="file" id="my-file"></input>
+      <input type="text" class="input" id="lugar" placeholder="lugar" required></input>
+      <textarea type="text" class="publicar" placeholder="descripcion" required></textarea>
+      <button type="submit" class="btn" id="publicar-btn"> Publicar </button> 
+      
+		   
+		     
+	    </form>
+    </div>
+   </section>
+
+
+
+
+<!-- Archivos para la navegacion -->
   <script type="module" src="main.js"></script>
+  
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-storage.js"></script>
+
+  
+  <script src="https://kit.fontawesome.com/b342d5f03d.js" crossorigin="anonymous"></script>
+  
+
+  <script src="Firebase/conf.js"></script>
+  
 </body>
 </html>

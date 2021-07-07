@@ -1,0 +1,193 @@
+/* Estilos del componente perfil.js con css grid*/
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr;
+<<<<<<< HEAD
+    grid-template-rows: 0.3fr 1fr  2fr 0.3fr;
+=======
+    grid-template-rows: 0.3fr 2fr 0.3fr;
+>>>>>>> 7fa67bbcb42b65b71fb0ca4395da8ee172efac38
+    grid-gap:0.2rem;
+    grid-template-areas: 
+    "header header header"
+    "section section section"
+    "div div div"
+    "footer footer footer";
+  
+  }
+  header{
+    grid-area: header;
+    
+  }
+  header .menu{
+    display: flex;
+    justify-content: space-between;
+    padding: 11px;
+  }
+  .logo{
+    font-family: Dancing Script;
+    font-size: 20px;
+  
+  }
+  header img{
+    width: 50px;
+    position: relative;
+    cursor: pointer;
+  }
+<<<<<<< HEAD
+  .enlaces{
+    background-color: #ffff;
+    height: 100px;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 5px;
+         
+=======
+ .enlaces{
+ background-color: #ffff;
+ display: none;
+ position: absolute;
+ top: 20px;
+ right: 5px;  
+ }
+ .setting{
+   width: 5em;
+   background-color: aquamarine;
+>>>>>>> 7fa67bbcb42b65b71fb0ca4395da8ee172efac38
+ }
+
+ #configuracion:hover .enlaces{
+   display: block;
+  
+}
+.setting:hover{
+background-color: #FFE8B4;
+  }
+<<<<<<< HEAD
+  section img{
+    width: 50px;
+    height: 50px;
+  }
+=======
+
+>>>>>>> 7fa67bbcb42b65b71fb0ca4395da8ee172efac38
+ 
+   .perfil{
+    position: relative;
+    top: 0px;
+    width: 98vw;
+    display: flex;
+    flex-direction: column;
+    align-content: baseline;
+    align-items: center;
+  }
+ 
+  .descripcion{
+    color: black;
+    width: 90vw;
+    padding-top: 10px;
+    font-size: 18px;
+    position: relative;
+    top: 0px;
+    text-align: center;
+   }
+   div .all-post{
+     grid-area: div;
+     font-size: 12px;
+    color: black;
+     
+   }
+  footer{
+    height: 10vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 100;
+    bottom: 0%;
+    padding: 0%;
+    margin: 0%;
+    background-color: transparent;
+    grid-area: footer;
+  }
+  footer ul{
+    display: inline-flex;
+    justify-content:space-between;
+    width: 100vw;
+    padding-left: 0%;
+    height: 100%;
+    background-color: #FFE8B4;
+    border-top: rgb(212, 212, 212) solid 1px;
+  }
+  footer ul li{
+    margin: 0%;
+    list-style: none;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  footer ul  :hover {
+    background-color: #FFD575;
+   }
+   #post{
+    width: 80vw;
+    height: 500px;
+    position: initial;
+  }
+  .btn-publicar{
+    position: relative;
+    left: 40%;
+    top: 10px;
+  }
+  #cerrar{
+    position: relative;
+    left: 110px;
+    top: -15px;
+  }
+  
+  .publicar{
+    
+    margin-top: 2em;
+    width: 75%;
+    max-height: auto;
+    font-family: poly;
+    border-radius: 10px;
+    border:rgb(187, 186, 186) solid 1px;
+    padding: 0.5em;
+    outline:none;
+    background-color: white;
+    overflow:visible;
+    flex-wrap: wrap;
+  
+  }
+  #publicar-btn{
+    position: relative;
+    top: 0%;
+    width: 25vw;
+    height: 5vh;
+    padding: 0.5em;
+    color: #fff;
+  } 
+  
+  .all-post  p{
+    
+    position: relative;
+    top: 50%;
+    font-size: 12px;
+    color: black;
+    width: 100vw;
+    height: 50pxpx;
+    
+  }
+  #opciones{
+    position: relative;
+    top: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  

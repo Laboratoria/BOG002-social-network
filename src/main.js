@@ -1,5 +1,15 @@
 // Este es el punto de entrada de tu aplicacion
 
-import { myFunction } from './lib/index.js';
+import { Footer } from './Pages/Footer.js';
+import {router} from './routes.js';
 
-myFunction();
+
+window.addEventListener('load',() => {
+  router(window.location.hash);
+}); 
+// router(window.location.hash);
+
+window.addEventListener('hashchange', () => {
+  router(window.location.hash);
+}); 
+  
